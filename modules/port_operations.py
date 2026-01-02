@@ -86,7 +86,7 @@ def show():
         title='Typical Container Terminal Layout (Cross-Section View)',
         xaxis=dict(showgrid=False, showticklabels=False, range=[-0.5, 10.5]),
         yaxis=dict(showgrid=False, showticklabels=False, range=[-1, 10.5]),
-        height=500,
+        height=400,
         plot_bgcolor='white',
         showlegend=False
     )
@@ -253,7 +253,7 @@ def show():
         title='Vessel Operation Workflow (Sequential Flow)',
         xaxis=dict(showticklabels=False, title=''),
         yaxis=dict(title=''),
-        height=500,
+        height=400,
         barmode='stack'
     )
     
