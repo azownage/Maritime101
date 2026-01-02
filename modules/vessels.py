@@ -173,8 +173,16 @@ def show():
     fig.update_layout(
         title='60+ Years of Container Ship Evolution (Exponential Growth)',
         xaxis=dict(title='Year', gridcolor='#E2E8F0', showgrid=True),
-        yaxis=dict(title='TEU Capacity (Log Scale)', type='log', gridcolor='#E2E8F0'),
-        height=500,
+        yaxis=dict(
+            title='TEU Capacity',
+            type='log',
+            gridcolor='#E2E8F0',
+            dtick=1,  # One log unit per tick
+            tickformat=',',  # Thousands separator
+            tickvals=[10, 100, 1000, 10000, 100000],
+            ticktext=['10', '100', '1,000', '10,000', '100,000']
+        ),
+        height=400,
         hovermode='closest',
         plot_bgcolor='white'
     )
@@ -190,7 +198,7 @@ def show():
     # Format numbers
     display_df['TEU'] = display_df['TEU'].apply(lambda x: f"{x:,}")
     
-    st.dataframe(display_df, use_container_width=True, hide_index=True, height=500)
+    st.dataframe(display_df, use_container_width=True, hide_index=True, height=400)
     
     st.markdown("---")
     st.markdown('<p class="section-header">Vessel Size Classifications</p>', unsafe_allow_html=True)
@@ -360,7 +368,7 @@ def show():
                            '$5,000', '$6,500', '$15,000', '$3,500', '$3,500']
     })
     
-    st.dataframe(container_specs, use_container_width=True, hide_index=True, height=500)
+    st.dataframe(container_specs, use_container_width=True, hide_index=True, height=400)
     
     st.markdown("---")
     st.markdown('<p class="subsection-header">Special Container Categories</p>', unsafe_allow_html=True)
@@ -694,7 +702,7 @@ def show():
         xaxis_title='Route Profitability & Priority',
         yaxis_title='',
         showlegend=False,
-        height=500,
+        height=400,
         xaxis=dict(showticklabels=False),
         barmode='stack'
     )
