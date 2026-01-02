@@ -345,49 +345,49 @@ def show():
             'Bab el-Mandeb',
             'Strait of Gibraltar',
             'Danish Straits',
-            'Turkish Straits (Bosphorus)'
+            'Turkish Straits'
         ],
         'Location': [
-            'Between Malaysia & Indonesia',
-            'Egypt (connects Med & Red Sea)',
-            'Panama (connects Atlantic & Pacific)',
-            'Between Iran & Oman',
-            'Between Yemen & Djibouti',
-            'Between Spain & Morocco',
-            'Between Denmark & Sweden',
-            'Turkey (connects Black Sea & Med)'
+            'Malaysia/Indonesia',
+            'Egypt (Med-Red Sea)',
+            'Panama (Atl-Pac)',
+            'Iran/Oman',
+            'Yemen/Djibouti',
+            'Spain/Morocco',
+            'Denmark/Sweden',
+            'Turkey (Black Sea)'
         ],
-        'Width_Minimum': [
+        'Width': [
             '2.8 km',
-            '300m (canal)',
-            '32m (locks)',
+            '300m',
+            '32m',
             '39 km',
             '29 km',
             '14 km',
             '4 km',
             '700m'
         ],
-        'Daily_Transits': [
-            '~227 ships',
-            '~72 ships',
-            '~39 ships',
-            '~20 oil tankers',
-            '~60 ships',
-            '~90 ships',
-            '~60 ships',
-            '~140 ships'
+        'Ships/Day': [
+            '~227',
+            '~72',
+            '~39',
+            '~20',
+            '~60',
+            '~90',
+            '~60',
+            '~140'
         ],
-        'Max_Capacity': [
-            '~800 ships/day',
-            '~100 ships/day',
-            '45-57 ships/day',
+        'Max Cap.': [
+            '~800/day',
+            '~100/day',
+            '45-57/day',
             'No limit',
             'No limit',
             'No limit',
             'No limit',
             'No limit'
         ],
-        'Share_World_Trade': [
+        'Trade %': [
             '~33%',
             '~15%',
             '~5%',
@@ -397,25 +397,25 @@ def show():
             'Regional',
             'Regional'
         ],
-        'Strategic_Risk': [
-            'Piracy, collision, oil spill',
-            'Political instability, blockage (2021)',
-            'Water shortage, congestion',
-            'Iran tensions, oil supply',
-            'Yemen conflict, Houthi attacks',
+        'Main Risks': [
+            'Piracy, collision',
+            'Political, blockage',
+            'Drought, congestion',
+            'Iran tensions',
+            'Yemen conflict',
             'Low risk',
             'Low risk',
-            'Turkey control, Russia access'
+            'Turkey/Russia'
         ],
-        'Alternative_Route': [
-            'Sunda/Lombok Straits (+3 days)',
-            'Cape of Good Hope (+10 days, +$500K fuel)',
-            'Cape Horn (+weeks)',
-            'Cape of Good Hope',
-            'Cape of Good Hope',
-            'None practical',
+        'Alternative': [
+            'Sunda (+3d)',
+            'Cape GH (+10d)',
+            'Cape Horn',
+            'Cape GH',
+            'Cape GH',
             'None',
-            'None for Black Sea'
+            'None',
+            'None'
         ]
     })
     
@@ -595,7 +595,7 @@ def show():
             title='Hub-and-Spoke Network Model',
             xaxis=dict(showgrid=False, showticklabels=False, zeroline=False, range=[-3, 3]),
             yaxis=dict(showgrid=False, showticklabels=False, zeroline=False, range=[-3, 3]),
-            height=500,
+            height=400,
             showlegend=False,
             plot_bgcolor='white'
         )
