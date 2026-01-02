@@ -235,7 +235,7 @@ def show():
         title='Singapore Port Development Timeline (1819-2040)',
         xaxis_title='Year',
         yaxis_title='Annual Throughput (Million TEU)',
-        height=500,
+        height=400,
         hovermode='closest',
         plot_bgcolor='white',
         xaxis=dict(gridcolor='#E2E8F0'),
@@ -251,7 +251,7 @@ def show():
     display_df.columns = ['Year', 'Milestone', 'TEU (Millions)', 'Significance']
     display_df['TEU (Millions)'] = display_df['TEU (Millions)'].apply(lambda x: f"{x:.1f}" if x > 0 else "-")
     
-    st.dataframe(display_df, use_container_width=True, hide_index=True, height=600)
+    st.dataframe(display_df, use_container_width=True, hide_index=True, height=350)
     
     st.markdown("---")
     st.markdown('<p class="section-header">Current Port Terminals</p>', unsafe_allow_html=True)
