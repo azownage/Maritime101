@@ -82,7 +82,7 @@ def show():
             margin=dict(t=60, b=40)
         )
         
-        st.plotly_chart(fig1, use_container_width=True)
+        st.plotly_chart(fig1, width='stretch')
     
     with col2:
         # Chart 2: Number of Players Decline
@@ -115,7 +115,7 @@ def show():
             margin=dict(t=60, b=40)
         )
         
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width='stretch')
     
     st.markdown("""
     <div class="insight-box">
@@ -173,7 +173,7 @@ def show():
         height=450
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # ============================================================================
     st.markdown('<p class="subsection-header">1. 2M Alliance (34% Market Share)</p>', unsafe_allow_html=True)
@@ -562,7 +562,7 @@ def show():
         ]
     })
     
-    st.dataframe(trade_lanes, use_container_width=True, hide_index=True)
+    st.dataframe(trade_lanes, width='stretch', hide_index=True)
     
     # Trade lane volumes chart
     fig = go.Figure(data=[
@@ -594,7 +594,7 @@ def show():
         xaxis=dict(gridcolor='#E5E7EB')
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     **Key Observations:**
@@ -676,7 +676,7 @@ def show():
         yaxis=dict(gridcolor='#E5E7EB')
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="warning-box">
