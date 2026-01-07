@@ -67,7 +67,7 @@ def show():
                         'North American domestic', 'North American domestic']
     })
     
-    st.dataframe(container_specs, use_container_width=True, hide_index=True)
+    st.dataframe(container_specs, width='stretch', hide_index=True)
     
     st.markdown("""
     **Key Points:**
@@ -116,7 +116,7 @@ def show():
         xaxis=dict(gridcolor='#E5E7EB', range=[0, 55])
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # ============================================================================
     # SECTION 3: TEU - The Universal Measurement
@@ -173,7 +173,7 @@ def show():
             plot_bgcolor='white'
         )
         
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="info-box">
@@ -233,7 +233,7 @@ def show():
         ]
     })
     
-    st.dataframe(specialized, use_container_width=True, hide_index=True)
+    st.dataframe(specialized, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="warning-box">
@@ -330,7 +330,7 @@ def show():
         yaxis=dict(gridcolor='#E5E7EB')
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="info-box">
@@ -389,7 +389,7 @@ def show():
         ]
     })
     
-    st.dataframe(iso_codes, use_container_width=True, hide_index=True)
+    st.dataframe(iso_codes, width='stretch', hide_index=True)
     
     # ============================================================================
     # SECTION 7: Bay-Row-Tier Coordinate System
@@ -501,7 +501,7 @@ def show():
         yaxis=dict(gridcolor='#E5E7EB', range=[0, 120])
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # ============================================================================
     # SECTION 9: Key Takeaways
