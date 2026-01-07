@@ -247,7 +247,7 @@ def show():
         height=500
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="insight-box">
@@ -335,7 +335,7 @@ def show():
     # Sort by RPN
     fmea_example = fmea_example.sort_values('RPN', ascending=False)
     
-    st.dataframe(fmea_example, use_container_width=True, hide_index=True)
+    st.dataframe(fmea_example, width='stretch', hide_index=True)
     
     # RPN visualization
     fig = go.Figure(data=[
@@ -366,7 +366,7 @@ def show():
         xaxis=dict(gridcolor='#E5E7EB')
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="success-box">
@@ -545,7 +545,7 @@ def show():
         height=400
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown('<p class="subsection-header">Capacity Planning Horizons</p>', unsafe_allow_html=True)
     
@@ -574,7 +574,7 @@ def show():
         ]
     })
     
-    st.dataframe(capacity_horizons, use_container_width=True, hide_index=True)
+    st.dataframe(capacity_horizons, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="warning-box">
@@ -633,7 +633,7 @@ def show():
         ]
     })
     
-    st.dataframe(demand_strategies, use_container_width=True, hide_index=True)
+    st.dataframe(demand_strategies, width='stretch', hide_index=True)
     
     st.markdown("""
     **Port Industry Reality:**
@@ -802,7 +802,7 @@ def show():
         ]
     })
     
-    st.dataframe(tradeoffs, use_container_width=True, hide_index=True)
+    st.dataframe(tradeoffs, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="insight-box">
