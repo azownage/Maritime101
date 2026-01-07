@@ -71,7 +71,7 @@ def show():
         ]
     })
     
-    st.dataframe(terminal_zones, use_container_width=True, hide_index=True)
+    st.dataframe(terminal_zones, width='stretch', hide_index=True)
     
     st.markdown("""
     **Terminal Flow Logic:**
@@ -274,7 +274,7 @@ def show():
         plot_bgcolor='white'
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="success-box">
@@ -380,7 +380,7 @@ def show():
         plot_bgcolor='white'
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown('<p class="subsection-header">2. Storage Yard Planning</p>', unsafe_allow_html=True)
     
@@ -598,7 +598,7 @@ def show():
         ]
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown('<p class="subsection-header">4. Transportation Planning (Equipment Scheduling)</p>', unsafe_allow_html=True)
     
@@ -661,7 +661,7 @@ def show():
         'World-Class Target': [40, 30, 5, 12, 50]
     })
     
-    st.dataframe(equipment_productivity, use_container_width=True, hide_index=True)
+    st.dataframe(equipment_productivity, width='stretch', hide_index=True)
     
     # ============================================================================
     # SECTION 4: Terminal Capacity Planning
@@ -716,7 +716,7 @@ def show():
         ]
     })
     
-    st.dataframe(capacity_components, use_container_width=True, hide_index=True)
+    st.dataframe(capacity_components, width='stretch', hide_index=True)
     
     st.markdown("""
     **Capacity Calculation Example:**
@@ -808,7 +808,7 @@ def show():
         ]
     })
     
-    st.dataframe(tos_modules, use_container_width=True, hide_index=True)
+    st.dataframe(tos_modules, width='stretch', hide_index=True)
     
     st.markdown("""
     **TOS Information Flow:**
