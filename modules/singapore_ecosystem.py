@@ -75,7 +75,7 @@ def show():
         ]
     })
     
-    st.dataframe(services_data, use_container_width=True, hide_index=True)
+    st.dataframe(services_data, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="success-box">
@@ -212,7 +212,7 @@ def show():
         height=500
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="insight-box">
@@ -286,7 +286,7 @@ def show():
         ]
     })
     
-    st.dataframe(ecosystem_components, use_container_width=True, hide_index=True)
+    st.dataframe(ecosystem_components, width='stretch', hide_index=True)
     
     st.markdown('<p class="subsection-header">The Cluster Network Effect</p>', unsafe_allow_html=True)
     
@@ -522,7 +522,7 @@ def show():
         ]
     })
     
-    st.dataframe(support_factors, use_container_width=True, hide_index=True)
+    st.dataframe(support_factors, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="insight-box">
