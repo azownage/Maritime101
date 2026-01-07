@@ -60,7 +60,7 @@ def show():
         ]
     })
     
-    st.dataframe(success_factors, use_container_width=True, hide_index=True)
+    st.dataframe(success_factors, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="warning-box">
@@ -118,7 +118,7 @@ def show():
         height=500
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # ============================================================================
     # SECTION 2: Port Types and Strategic Positioning
@@ -287,7 +287,7 @@ def show():
         ]
     })
     
-    st.dataframe(regional_ports, use_container_width=True, hide_index=True)
+    st.dataframe(regional_ports, width='stretch', hide_index=True)
     
     st.markdown("""
     **Competitive Dynamics:**
@@ -357,7 +357,7 @@ def show():
         ]
     })
     
-    st.dataframe(global_competitors, use_container_width=True, hide_index=True)
+    st.dataframe(global_competitors, width='stretch', hide_index=True)
     
     # Top 10 ports visualization
     top_ports = pd.DataFrame({
@@ -400,7 +400,7 @@ def show():
         ]
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     **Key Observations:**
@@ -572,7 +572,7 @@ def show():
         ]
     })
     
-    st.dataframe(threats_data, use_container_width=True, hide_index=True)
+    st.dataframe(threats_data, width='stretch', hide_index=True)
     
     st.markdown("""
     **Competitive Advantage Trade-offs:**
