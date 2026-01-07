@@ -49,62 +49,81 @@ def show():
         ]
     })
     
-    fig = go.Figure()
+    col1, col2 = st.columns(2)
     
-    fig.add_trace(go.Scatter(
-        x=consolidation_timeline['Period'],
-        y=consolidation_timeline['Alliance Control %'],
-        mode='lines+markers',
-        name='Alliance Market Control',
-        line=dict(color='#3B82F6', width=4),
-        marker=dict(size=14, color='#2563EB', line=dict(color='white', width=2)),
-        yaxis='y1',
-        text=[f"{val}%" for val in consolidation_timeline['Alliance Control %']],
-        textposition='top center'
-    ))
+    with col1:
+        # Chart 1: Alliance Control Growth
+        fig1 = go.Figure()
+        
+        fig1.add_trace(go.Scatter(
+            x=consolidation_timeline['Period'],
+            y=consolidation_timeline['Alliance Control %'],
+            mode='lines+markers',
+            line=dict(color='#3B82F6', width=4),
+            marker=dict(size=14, color='#2563EB', line=dict(color='white', width=2)),
+            text=[f"{val}%" for val in consolidation_timeline['Alliance Control %']],
+            textposition='top center',
+            fill='tozeroy',
+            fillcolor='rgba(59, 130, 246, 0.1)'
+        ))
+        
+        fig1.update_layout(
+            title={
+                'text': 'Alliance Market Control ↑',
+                'x': 0.5,
+                'xanchor': 'center',
+                'font': {'size': 18, 'color': '#1F2937', 'family': 'Arial Black'}
+            },
+            yaxis_title="Market Share (%)",
+            height=400,
+            plot_bgcolor='white',
+            yaxis=dict(gridcolor='#E5E7EB', range=[0, 100]),
+            showlegend=False,
+            margin=dict(t=60, b=40)
+        )
+        
+        st.plotly_chart(fig1, use_container_width=True)
     
-    fig.add_trace(go.Scatter(
-        x=consolidation_timeline['Period'],
-        y=consolidation_timeline['Major Players'],
-        mode='lines+markers',
-        name='Number of Major Players',
-        line=dict(color='#EF4444', width=4, dash='dash'),
-        marker=dict(size=14, color='#DC2626', line=dict(color='white', width=2)),
-        yaxis='y2',
-        text=consolidation_timeline['Major Players'],
-        textposition='bottom center'
-    ))
+    with col2:
+        # Chart 2: Number of Players Decline
+        fig2 = go.Figure()
+        
+        fig2.add_trace(go.Scatter(
+            x=consolidation_timeline['Period'],
+            y=consolidation_timeline['Major Players'],
+            mode='lines+markers',
+            line=dict(color='#EF4444', width=4),
+            marker=dict(size=14, color='#DC2626', line=dict(color='white', width=2)),
+            text=consolidation_timeline['Major Players'],
+            textposition='top center',
+            fill='tozeroy',
+            fillcolor='rgba(239, 68, 68, 0.1)'
+        ))
+        
+        fig2.update_layout(
+            title={
+                'text': 'Number of Major Players ↓',
+                'x': 0.5,
+                'xanchor': 'center',
+                'font': {'size': 18, 'color': '#1F2937', 'family': 'Arial Black'}
+            },
+            yaxis_title="Major Carriers",
+            height=400,
+            plot_bgcolor='white',
+            yaxis=dict(gridcolor='#E5E7EB', range=[0, 20]),
+            showlegend=False,
+            margin=dict(t=60, b=40)
+        )
+        
+        st.plotly_chart(fig2, use_container_width=True)
     
-    fig.update_layout(
-        title={
-            'text': 'Shipping Industry Consolidation: 0% → 83% Alliance Control',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 20, 'color': '#1F2937'}
-        },
-        xaxis_title="Time Period",
-        yaxis=dict(
-            title="Alliance Market Control (%)",
-            titlefont=dict(color='#3B82F6'),
-            tickfont=dict(color='#3B82F6'),
-            gridcolor='#E5E7EB',
-            range=[0, 100]
-        ),
-        yaxis2=dict(
-            title="Number of Major Players",
-            titlefont=dict(color='#EF4444'),
-            tickfont=dict(color='#EF4444'),
-            overlaying='y',
-            side='right',
-            range=[0, 20]
-        ),
-        height=500,
-        plot_bgcolor='white',
-        hovermode='x unified',
-        legend=dict(x=0.01, y=0.99, bgcolor='rgba(255,255,255,0.8)')
-    )
-    
-    st.plotly_chart(fig, use_container_width=True)
+    st.markdown("""
+    <div class="insight-box">
+    <strong>🔍 The Inverse Relationship:</strong> As alliance control grew from 0% to 83%, the number of 
+    major players shrank from 15+ to just 9. This consolidation fundamentally changed the power dynamics—
+    ports now negotiate with powerful alliances rather than individual carriers.
+    </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("""
     <div class="warning-box">
@@ -705,7 +724,6 @@ def show():
     - Diversifying into adjacent services (bunkering, ship repair, maritime finance)
     - Building joint ventures with shipping lines to secure long-term commitments
     - Positioning as vital node vs just biggest hub (reliability > size)
-    </strong>
     </div>
     """, unsafe_allow_html=True)
     
