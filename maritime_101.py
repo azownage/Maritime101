@@ -100,7 +100,6 @@ Comprehensive maritime education covering:
 - Singapore case studies
 - Future trends
 
-Based on NUS MTM5001 lecture materials.
 """)
 
 st.sidebar.markdown("---")
@@ -152,6 +151,5 @@ st.markdown("""
 <div style='text-align: center; color: #64748B; padding: 2rem;'>
     <p style='font-size: 1.2rem;'><strong>Maritime 101 - Comprehensive Knowledge Base</strong></p>
     <p>Building maritime domain expertise for technical teams</p>
-    <p style='font-size: 0.9rem; margin-top: 1rem;'>Based on NUS MTM5001 Maritime Industry Fundamentals</p>
 </div>
 """, unsafe_allow_html=True)
