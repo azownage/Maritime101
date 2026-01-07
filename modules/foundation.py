@@ -100,7 +100,7 @@ def show():
         yaxis=dict(gridcolor='#E5E7EB', range=[0, 120])
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="success-box">
@@ -185,7 +185,7 @@ def show():
         showlegend=False
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     Container vessels have grown dramatically in size over the past 70 years:
@@ -241,7 +241,7 @@ def show():
         showlegend=False
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     Shipping lines formed alliances to share vessels, routes, and costs. Alliance control of global 
@@ -347,7 +347,7 @@ def show():
         showlegend=False
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     Larger vessels are dramatically more efficient:
