@@ -171,7 +171,7 @@ def show():
         ]
     })
     
-    st.dataframe(vessel_evolution, use_container_width=True, hide_index=True)
+    st.dataframe(vessel_evolution, width='stretch', hide_index=True)
     
     # Vessel size growth chart
     fig = go.Figure()
@@ -204,7 +204,7 @@ def show():
         hovermode='x unified'
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # ============================================================================
     # SECTION 4: Vessel Classifications
@@ -396,7 +396,7 @@ def show():
         showlegend=False
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     **Why Larger = Cheaper:**
