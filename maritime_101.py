@@ -147,9 +147,3 @@ elif page == "🇸🇬 Tuas Mega Port Case Study":
 
 # Footer
 st.markdown("---")
-st.markdown("""
-<div style='text-align: center; color: #64748B; padding: 2rem;'>
-    <p style='font-size: 1.2rem;'><strong>Maritime 101 - Comprehensive Knowledge Base</strong></p>
-    <p>Building maritime domain expertise for technical teams</p>
-</div>
-""", unsafe_allow_html=True)
