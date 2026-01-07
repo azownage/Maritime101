@@ -422,7 +422,7 @@ def show():
     # SECTION 3: Implementation Challenges
     # ============================================================================
     
-    st.markdown('<p class="section-header">Implementation Challenges: It's Not Easy</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Implementation Challenges: Not Easy</p>', unsafe_allow_html=True)
     
     st.markdown("""
     Building and operating Tuas Mega Port presents significant challenges that Singapore must navigate.
@@ -436,7 +436,7 @@ def show():
     - Thousands of workers affected: crane operators, prime mover drivers, yard crane operators
     - Social and political sensitivity in employment-focused society
     
-    **Singapore's Approach:**
+    **Singapore\'s Approach:**
     
     **Retraining Programs:**
     - **SkillsFuture**: Government-funded reskilling initiatives
@@ -465,7 +465,7 @@ def show():
     
     st.markdown("""
     **Current Situation:**
-    - Singapore's port operations rely significantly on foreign workers
+    - Singapore\'s port operations rely significantly on foreign workers
     - Lower-skilled positions filled by workers from Malaysia, Bangladesh, India, China
     - Automation reduces need for foreign workers
     
@@ -479,7 +479,7 @@ def show():
     **Concerns:**
     - May affect bilateral relationships (fewer job opportunities for neighbors)
     - Reduced wage remittances to source countries
-    - Singapore's reputation as employment destination
+    - Singapore\'s reputation as employment destination
     
     **Policy Balance:**
     - Singapore must manage transition diplomatically
@@ -532,7 +532,7 @@ def show():
     - **Nation-state threats**: Strategic target for adversaries
     - **Ransomware**: Criminal attacks seeking financial gain
     
-    **Singapore's Response:**
+    **Singapore\'s Response:**
     
     **Multi-Layer Security:**
     - **Perimeter security**: Fencing, cameras, sensors, patrols
@@ -570,7 +570,7 @@ def show():
     **1. Demand Growth Supports Expansion**
     - **Global trade growth**: 3-4% annually (historical average)
     - **Asian trade growth**: 4-5% annually (faster than global)
-    - **Singapore's transshipment role**: 85% transshipment, taps into regional flows
+    - **Singapore\'s transshipment role**: 85% transshipment, taps into regional flows
     - **Current utilization**: 37M TEU, approaching capacity limits
     - **By 2040**: 65M TEU capacity matches projected demand
     
@@ -591,7 +591,7 @@ def show():
     - **On main Asia-Europe route**: 33% of global trade passes through
     - **Center of Southeast Asia**: Ideal hub for regional distribution
     - **Deep natural harbor**: Expensive for competitors to replicate
-    - **Political stability**: Singapore's governance is unique competitive advantage
+    - **Political stability**: Singapore\'s governance is unique competitive advantage
     """)
     
     st.markdown('<p class="subsection-header">Arguments AGAINST: Tuas May Not Be Enough (or Too Much)</p>', unsafe_allow_html=True)
@@ -609,7 +609,7 @@ def show():
     - **Indonesia**: Massive domestic market (400M people), Tanjung Priok expansion
     - **Vietnam**: Rapid economic growth, port infrastructure investments
     - **Thailand Kra Canal**: Low probability but catastrophic if built (bypasses Singapore)
-    - **What if competitors capture 20-30% of Singapore's transshipment volumes?** → Tuas underutilized
+    - **What if competitors capture 20-30% of Singapore\'s transshipment volumes?** → Tuas underutilized
     
     **3. Technology Disruption**
     - **Autonomous vessels**: May prefer direct routes over hub-and-spoke (reduces transshipment)
@@ -621,7 +621,7 @@ def show():
     - **US-China decoupling**: Trade fragmentation reduces volumes on major routes
     - **Regional conflicts**: Disruption to Malacca Strait traffic
     - **Economic nationalism**: Countries favor own ports over neutral hubs
-    - **What if geopolitical tensions reduce Singapore's neutral hub status?** → Volume loss
+    - **What if geopolitical tensions reduce Singapore\'s neutral hub status?** → Volume loss
     
     **5. Environmental Regulations**
     - **Carbon pricing**: Makes shipping more expensive, could reduce trade volumes
@@ -695,12 +695,12 @@ def show():
     
     **Then:**
     - Transshipment volumes globally decline
-    - Singapore's 85% transshipment model becomes vulnerability
+    - Singapore\'s 85% transshipment model becomes vulnerability
     - Massive Tuas capacity underutilized
     - S$20B+ investment yields poor returns
     
     **However:**
-    - Singapore's government has 70+ years of strategic planning success
+    - Singapore\'s government has 70+ years of strategic planning success
     - Phased approach provides flexibility to adapt
     - Technology and efficiency provide hedge against competition
     - Even if transshipment share drops, absolute volumes may still grow
@@ -726,7 +726,7 @@ def show():
     **The risks are real but manageable:**
     - Technology disruption: Possible but uncertain timing and magnitude
     - Competition: Serious but Singapore has structural advantages
-    - Geopolitics: Could shift patterns but Singapore's neutrality is valuable
+    - Geopolitics: Could shift patterns but Singapore\'s neutrality is valuable
     - Demand: May grow slower than hoped but unlikely to decline absolutely
     
     **What would make Tuas a mistake:**
@@ -734,9 +734,9 @@ def show():
     - Even then, infrastructure has long life and can be adapted
     
     **Conclusion:**
-    Tuas represents a **calculated strategic bet** by Singapore to maintain its position as the world's 
+    Tuas represents a **calculated strategic bet** by Singapore to maintain its position as the world\'s 
     premier transshipment hub. The investment is massive, the risks are real, but the analysis suggests 
-    it's more likely to be **"about right"** than wildly over or under capacity. Singapore is essentially 
+    it\'s more likely to be **"about right"** than wildly over or under capacity. Singapore is essentially 
     buying insurance against being displaced by competitors while positioning for continued growth.
     
     **The real genius:** Phased development provides flexibility to adjust course if reality diverges from 
@@ -802,15 +802,15 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Tuas Mega Port is Singapore's S$20B+ bet to maintain its position as 
-    the world's premier transshipment hub. The five strategic drivers (consolidation, mega vessels, 
+    <strong>🔍 Bottom Line:</strong> Tuas Mega Port is Singapore\'s S$20B+ bet to maintain its position as 
+    the world\'s premier transshipment hub. The five strategic drivers (consolidation, mega vessels, 
     competition, technology, climate resilience) justify the investment. At 65M TEU capacity by 2040, Tuas 
     is likely to be well-utilized under most plausible scenarios (base case: 55-60M TEU = 85-92% utilization). 
     The phased approach (2021-2040+) provides flexibility to adjust if reality diverges from projections. 
     Key challenges include labor transition (70-80% reduction, retraining programs), transportation 
     infrastructure, and cybersecurity. The real risk is not that Tuas will be too large or too small, but 
     that the hub-and-spoke transshipment model itself could be disrupted by technology or trade pattern 
-    changes. However, Singapore's strategic planning track record, structural advantages (location, 
+    changes. However, Singapore\'s strategic planning track record, structural advantages (location, 
     stability, ecosystem), and adaptive approach make Tuas a **calculated strategic bet** more likely to 
     succeed than fail. The investment buys insurance against competitive displacement while positioning 
     for continued growth—strategic planning at its finest.
@@ -825,15 +825,15 @@ def show():
     st.markdown('<p class="section-header">🎓 Course Conclusion</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Congratulations!** You've completed the comprehensive Maritime 101 educational journey.
+    **Congratulations!** You\'ve completed the comprehensive Maritime 101 educational journey.
     
-    **What You've Learned:**
+    **What You\'ve Learned:**
     
     1. **Maritime Industry Foundation**: Why shipping matters, containerization revolution, three waves of change
     2. **Containers & Containerization**: ISO standards, TEU measurement, specialized types
     3. **Vessels & Evolution**: 500 TEU → 25,000 TEU, classifications, stowage principles
     4. **Global Shipping & Alliances**: Consolidation to 3 alliances (83% control), hub-spoke networks
-    5. **Maritime Singapore Ecosystem**: MPA's dual role, complete maritime cluster, innovation
+    5. **Maritime Singapore Ecosystem**: MPA\'s dual role, complete maritime cluster, innovation
     6. **Port Competition**: Critical success factors, gateway vs transshipment, green ports
     7. **Operations Management**: Big Six competencies, FMEA, capacity planning, trade-offs
     8. **Terminal Operations**: Berth planning, yard operations, stowage, equipment coordination
@@ -845,7 +845,7 @@ def show():
     - The physical maritime world your digital twin system must model
     - Why ports make the decisions they do (competition, economics, technology)
     - How container terminal operations actually work end-to-end
-    - The forces shaping the industry's future (decarbonization, automation, geopolitics)
+    - The forces shaping the industry\'s future (decarbonization, automation, geopolitics)
     
     **Next Steps:**
     - Apply this knowledge to build accurate digital twin models
