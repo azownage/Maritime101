@@ -26,7 +26,7 @@ def show():
     
     In the context of **port operations**, operations management focuses on:
     - Moving containers from vessels to trucks/trains (and vice versa) efficiently
-    - Optimizing resource utilisation (berths, cranes, yard space, labour)
+    - Optimising resource utilisation (berths, cranes, yard space, labour)
     - Meeting customer requirements (shipping lines, cargo owners)
     - Balancing cost, quality, speed, and reliability
     - Planning capacity for current and future demand
@@ -191,7 +191,7 @@ def show():
     
     **Cost Structure:**
     - **Fixed costs**: Berths, cranes, IT systems, overhead (60-70% of total)
-    - **Variable costs**: Labor, fuel, maintenance, utilities (30-40%)
+    - **Variable costs**: Labour, fuel, maintenance, utilities (30-40%)
     - **High fixed costs** → Economies of scale crucial
     
     **Cost Management Strategies:**
@@ -392,7 +392,7 @@ def show():
         - Used for process improvement projects
         
         **Total Quality Management (TQM):**
-        - Organization-wide commitment to quality
+        - Organisation-wide commitment to quality
         - Continuous improvement culture
         - Customer focus
         - Employee involvement at all levels
@@ -504,14 +504,14 @@ def show():
     st.markdown("""
     **Key Capacity Metrics:**
     
-    **Utilization Rate = (Actual Output / Design Capacity) × 100%**
+    **Utilisation Rate = (Actual Output / Design Capacity) × 100%**
     - Example: 23M / 30M = 77% utilisation
     
     **Efficiency Rate = (Actual Output / Effective Capacity) × 100%**
     - Example: 23M / 25.5M = 90% efficiency
     
-    **Optimal Utilization:** Typically 80-90% of effective capacity
-    - Too low (< 70%): Underutilized assets, higher unit costs
+    **Optimal Utilisation:** Typically 80-90% of effective capacity
+    - Too low (< 70%): Underutilised assets, higher unit costs
     - Too high (> 95%): No flexibility, quality issues, delays
     """)
     
@@ -561,7 +561,7 @@ def show():
         'Capacity Changes': [
             'Add/remove major capacity (berths, cranes, terminals)',
             'Add/remove minor capacity (equipment, staffing levels)',
-            'Optimize existing capacity (better scheduling, utilisation)'
+            'Optimise existing capacity (better scheduling, utilisation)'
         ],
         'Flexibility': ['Low - Hard to reverse', 'Medium - Moderately reversible', 'High - Easily adjusted'],
         'Investment': ['Very high ($billions)', 'Moderate ($millions)', 'Low (operating costs)'],
@@ -769,7 +769,7 @@ def show():
             'Cost vs Quality',
             'Cost vs Flexibility',
             'Speed vs Quality',
-            'Capacity vs Utilization',
+            'Capacity vs Utilisation',
             'Standardization vs Customization',
             'Automation vs Employment'
         ],
