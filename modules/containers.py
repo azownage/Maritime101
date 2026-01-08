@@ -20,7 +20,7 @@ def show():
     st.markdown('<p class="section-header">ISO Container Standards: The Foundation of Interoperability</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The genius of containerisation lies in **standardisation**. ISO (International Organization for 
+    The genius of containerisation lies in **standardisation**. ISO (International Organisation for 
     Standardization) containers have precise specifications that enable seamless global operations.
     """)
     
