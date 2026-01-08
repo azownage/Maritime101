@@ -164,7 +164,7 @@ def show():
     st.markdown('<p class="subsection-header">Key Container Standards</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **ISO Container Standards (International Organization for Standardization):**
+    **ISO Container Standards (International Organisation for Standardization):**
     
     **Standard Sizes:**
     - **20-foot container**: 20ft long × 8ft wide × 8ft 6in high
