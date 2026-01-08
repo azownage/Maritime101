@@ -45,7 +45,7 @@ def show():
             'Balance competitive pricing with quality service; "tight connections" for time-sensitive cargo',
             'Number of shipping lines, frequency of services, global port network reach',
             'Adequate capacity for current + future demand; modern equipment; automation; IT systems',
-            'Technical expertise, operational excellence, stable labor relations, capable leadership',
+            'Technical expertise, operational excellence, stable labour relations, capable leadership',
             'Proximity to major shipping lanes; centrality to trade flows; natural deep-water harbor'
         ],
         "Singapore's Performance": [
@@ -292,7 +292,7 @@ def show():
     **Competitive Dynamics:**
     
     **Cost Competition:**
-    - Regional ports often have **lower labor costs**
+    - Regional ports often have **lower labour costs**
     - **Cheaper land** for expansion
     - **Lower operating costs** overall
     - Singapore competes on **value** not just **price**
@@ -318,7 +318,7 @@ def show():
     <strong>⚠️ The Overcapacity Risk:</strong> If Malaysia, Indonesia, Thailand, and other neighbors all 
     expand capacity simultaneously, Southeast Asia could face <strong>port overcapacity</strong>. This would lead to:<br>
     - Price wars and margin compression<br>
-    - Underutilized facilities<br>
+    - Underutilised facilities<br>
     - Wasted infrastructure investment<br>
     - Only the most efficient ports survive<br><br>
     This is why Singapore focuses on <strong>efficiency, reliability, and connectivity</strong> rather than just 
@@ -657,7 +657,7 @@ def show():
     with col2:
         st.markdown("""
         **Operational Measures:**
-        - Optimized routing to reduce fuel use
+        - Optimised routing to reduce fuel use
         - Predictive maintenance to improve efficiency
         - Waste management and recycling programs
         - Carbon footprint monitoring and reporting
@@ -683,7 +683,7 @@ def show():
     - <strong>AGVs</strong> instead of diesel prime movers<br>
     - <strong>Energy-efficient grab dredger</strong> for reclamation<br>
     - <strong>Sustainable reclamation</strong> with waste circularity<br>
-    - <strong>Digital systems</strong> to optimize operations and reduce waste<br><br>
+    - <strong>Digital systems</strong> to optimise operations and reduce waste<br><br>
     Sustainability is not just environmental responsibility—it's becoming a <strong>competitive advantage</strong>.
     </div>
     """, unsafe_allow_html=True)
