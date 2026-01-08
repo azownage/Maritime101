@@ -73,7 +73,7 @@ def show():
     explains Singapore's coordinated maritime strategy.
     """)
     
-    st.markdown('<p class="subsection-header">MPA's Two Core Functions</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">MPA\'s Two Core Functions</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
