@@ -337,13 +337,13 @@ def show():
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ Operational Challenges of Mega Vessels:</strong>
-    - **Limited port access**: Only 20-30 ports globally can handle 20,000+ TEU vessels
-    - **Concentration risk**: One vessel carries cargo worth $500 million+
-    - **Slower port rotations**: Fewer port calls per voyage
-    - **Canal restrictions**: Cannot use Panama Canal (too wide)
-    - **Weather sensitivity**: More affected by wind due to high stacks
-    - **Single point of failure**: Breakdown affects thousands of containers
+    <strong>⚠️ Operational Challenges of Mega Vessels:</strong><br>
+    - <strong>Limited port access</strong>: Only 20-30 ports globally can handle 20,000+ TEU vessels<br>
+    - <strong>Concentration risk</strong>: One vessel carries cargo worth $500 million+<br>
+    - <strong>Slower port rotations</strong>: Fewer port calls per voyage<br>
+    - <strong>Canal restrictions</strong>: Cannot use Panama Canal (too wide)<br>
+    - <strong>Weather sensitivity</strong>: More affected by wind due to high stacks<br>
+    - <strong>Single point of failure</strong>: Breakdown affects thousands of containers
     </div>
     """, unsafe_allow_html=True)
     
