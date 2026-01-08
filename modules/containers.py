@@ -644,7 +644,7 @@ def show():
     provides universal measurement. ~90% are dry vans, with specialised types (reefer, tank, OOG) for specific 
     cargo. Each container has a unique ISO 6346 identifier (owner code + serial + check digit). The 
     Bay-Row-Tier coordinate system enables precise 3D positioning in terminals and vessels. Understanding 
-    these fundamentals is essential for modelling container terminal operations in a digital twin system.
+    these fundamentals is essential for understanding how container terminal operations work.
     </div>
     """, unsafe_allow_html=True)
     
