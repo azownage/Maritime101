@@ -147,7 +147,7 @@ def show():
         plot_bgcolor='white',
         xaxis=dict(gridcolor='#E5E7EB'),
         yaxis=dict(gridcolor='#E5E7EB', range=[0, 25000])
-    ))
+    )
     
     st.plotly_chart(fig, width='stretch')
     
