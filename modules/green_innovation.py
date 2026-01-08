@@ -788,7 +788,7 @@ def show():
     # SECTION 6: Future Trends and Challenges
     # ============================================================================
     
-    st.markdown('<p class="section-header">Future Trends: What's Next for Maritime?</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Future Trends: What\'s Next for Maritime?</p>', unsafe_allow_html=True)
     
     st.markdown("""
     Looking ahead, several major trends will shape the maritime industry over the next 20-30 years.
