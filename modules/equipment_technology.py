@@ -30,17 +30,17 @@ def show():
     **Design and Specifications:**
     
     **Physical Dimensions:**
-    - **Height**: 70-100+ meters above ground (taller than 20-story building)
-    - **Outreach**: 60-80 meters (to reach containers on mega vessels 24 containers wide)
-    - **Back reach**: 15-25 meters (for landside operations)
-    - **Lift height**: 35-50 meters above quay
-    - **Rail gauge**: 30-35 meters (distance between crane rails)
+    - **Height**: 70-100+ metres above ground (taller than 20-storey building)
+    - **Outreach**: 60-80 metres (to reach containers on mega vessels 24 containers wide)
+    - **Back reach**: 15-25 metres (for landside operations)
+    - **Lift height**: 35-50 metres above quay
+    - **Rail gauge**: 30-35 metres (distance between crane rails)
     
     **Capacity:**
     - **Lifting capacity**: 50-65 tonnes (twin-lift: two 20ft containers or one 40ft)
-    - **Hoisting speed**: 60-90 meters/minute (empty), 40-60 m/min (loaded)
-    - **Trolley speed**: 180-240 meters/minute
-    - **Gantry speed**: 30-45 meters/minute (crane traveling along quay)
+    - **Hoisting speed**: 60-90 metres/minute (empty), 40-60 m/min (loaded)
+    - **Trolley speed**: 180-240 metres/minute
+    - **Gantry speed**: 30-45 metres/minute (crane travelling along quay)
     
     **Performance:**
     - **Gross moves per hour (GMPH)**: 25-35 containers/hour (industry average)
@@ -151,14 +151,12 @@ def show():
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 Triple Hoist Technology:</strong>
-    
-    Modern quay cranes feature **three independent hoists**:
-    - **Main hoist**: Lifts containers (primary)
-    - **Auxiliary hoist**: Backup and special cargo
-    - **Boom hoist**: Adjusts crane boom angle
-    
-    **Benefit**: While main hoist lowers container landside, auxiliary hoist can already be picking up 
+    <strong>💡 Triple Hoist Technology:</strong><br><br>
+    Modern quay cranes feature <strong>three independent hoists</strong>:<br>
+    - <strong>Main hoist</strong>: Lifts containers (primary)<br>
+    - <strong>Auxiliary hoist</strong>: Backup and special cargo<br>
+    - <strong>Boom hoist</strong>: Adjusts crane boom angle<br><br>
+    <strong>Benefit</strong>: Whilst main hoist lowers container landside, auxiliary hoist can already be picking up 
     next container from vessel, reducing cycle time by 15-20%.
     </div>
     """, unsafe_allow_html=True)
@@ -178,7 +176,7 @@ def show():
     
     st.markdown("""
     **Design:**
-    - Gantry crane on rubber tires that straddles container stacks
+    - Gantry crane on rubber tyres that straddles container stacks
     - Can move freely within yard block
     - Operator cabin on top or ground-level remote control
     
@@ -242,7 +240,7 @@ def show():
     - **Precision**: ±2cm positioning accuracy
     
     **Benefits:**
-    - **Labor savings**: 70-80% reduction in yard crane operators
+    - **Labour savings**: 70-80% reduction in yard crane operators
     - **Safety**: No humans in yard block, fewer accidents
     - **Efficiency**: Optimal path planning, no idle time
     - **Space**: Higher stacking = more capacity per hectare
@@ -250,7 +248,7 @@ def show():
     **Challenges:**
     - **Very high capital cost**: $5-8 million per ARMG + automation systems
     - **Complexity**: Sophisticated IT and maintenance requirements
-    - **Transition**: Requires workforce retraining and organizational change
+    - **Transition**: Requires workforce retraining and organisational change
     """)
     
     st.markdown('<p class="subsection-header">Other Yard Equipment</p>', unsafe_allow_html=True)
@@ -346,7 +344,7 @@ def show():
     - **Lower upfront cost**: $100,000-150,000 per unit
     
     **Disadvantages:**
-    - **Labor intensive**: Requires many drivers
+    - **Labour intensive**: Requires many drivers
     - **Safety risks**: Human drivers, accident potential
     - **Emissions**: Diesel exhaust
     - **Inefficiency**: Empty return trips, waiting time
@@ -378,13 +376,13 @@ def show():
     
     **Fleet Management:**
     - **Central control system**: Computer dispatches AGVs dynamically
-    - **Optimization**: Minimizes empty travel, balances workload
+    - **Optimisation**: Minimises empty travel, balances workload
     - **Pooling**: AGVs shared across all quay cranes (not assigned to specific crane)
     - **Collision avoidance**: Sensors prevent AGV-to-AGV collisions
     - **Traffic management**: Optimal routing, congestion avoidance
     
     **Advantages:**
-    - **Labor savings**: No drivers required (70-80% labor reduction)
+    - **Labour savings**: No drivers required (70-80% labour reduction)
     - **24/7 operations**: No breaks, shifts, or fatigue
     - **Consistency**: Predictable performance
     - **Safety**: No human drivers in operations area
@@ -428,7 +426,7 @@ def show():
         'Aspect': [
             'Capital Cost',
             'Operating Cost',
-            'Labor Required',
+            'Labour Required',
             'Productivity',
             'Flexibility',
             'Safety',
@@ -437,7 +435,7 @@ def show():
         ],
         'Prime Movers': [
             '$100K-150K per unit',
-            'High (fuel, maintenance, labor)',
+            'High (fuel, maintenance, labour)',
             'One driver per PM',
             '3-4 cycles/hour',
             'High (human adaptability)',
@@ -461,22 +459,19 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 PM Deployment Strategy:</strong>
-    
-    **Traditional Fixed Assignment:**
-    - 2 Prime Movers assigned to each Quay Crane
-    - PMs dedicated to "their" crane
-    - Simple coordination but inefficient (PMs idle when crane busy with another container)
-    
-    **Modern Pooling Strategy:**
-    - Fleet of PMs/AGVs shared across all cranes
-    - Dynamic dispatch by TOS based on:
-      - Which crane needs transport next
-      - Which PM/AGV is closest and available
-      - Minimize empty travel distance
-      - Balance workload across fleet
-    
-    **Result**: 30-40% reduction in fleet size needed, higher utilization, lower costs
+    <strong>🎯 PM Deployment Strategy:</strong><br><br>
+    <strong>Traditional Fixed Assignment:</strong><br>
+    - 2 Prime Movers assigned to each Quay Crane<br>
+    - PMs dedicated to "their" crane<br>
+    - Simple coordination but inefficient (PMs idle when crane busy with another container)<br><br>
+    <strong>Modern Pooling Strategy:</strong><br>
+    - Fleet of PMs/AGVs shared across all cranes<br>
+    - Dynamic dispatch by TOS based on:<br>
+      - Which crane needs transport next<br>
+      - Which PM/AGV is closest and available<br>
+      - Minimise empty travel distance<br>
+      - Balance workload across fleet<br><br>
+    <strong>Result</strong>: 30-40% reduction in fleet size needed, higher utilisation, lower costs
     </div>
     """, unsafe_allow_html=True)
     
@@ -498,14 +493,14 @@ def show():
     2. **Documentation check**: Driver presents paperwork (delivery order, customs clearance)
     3. **Manual inspection**: Gate clerk verifies documents, container number, seal
     4. **System entry**: Clerk enters information into TOS
-    5. **Gate pass issued**: Truck authorized to enter
+    5. **Gate pass issued**: Truck authorised to enter
     6. Time: 5-10 minutes per transaction
     
     **Modern Automated Gate:**
     
     **Optical Character Recognition (OCR):**
     - Cameras automatically read:
-      - License plate number
+      - Licence plate number
       - Container number
       - Chassis number  
       - ISO code
@@ -515,7 +510,7 @@ def show():
     
     **Automated Gate Operating System (GOS):**
     - Computer system validates truck appointment
-    - Cross-checks container authorization
+    - Cross-checks container authorisation
     - Verifies customs clearance
     - Issues automated gate pass
     - Records transaction automatically
@@ -524,14 +519,14 @@ def show():
     1. Truck arrives at gate lane (no stop)
     2. OCR cameras read all information
     3. Computer validates in real-time (<5 seconds)
-    4. Traffic light signals: Green (authorized) or Red (problem)
+    4. Traffic light signals: Green (authorised) or Red (problem)
     5. If green: Truck proceeds directly into terminal
     6. Time: 30-60 seconds per transaction
     
     **Benefits:**
     - **10x faster**: 30-60 seconds vs 5-10 minutes
     - **Higher accuracy**: No manual data entry errors
-    - **Labor savings**: No gate clerks needed
+    - **Labour savings**: No gate clerks needed
     - **24/7 operations**: No staffing constraints
     - **Better tracking**: Automatic record of all movements
     """)
@@ -572,7 +567,7 @@ def show():
         'System Type': ['Traditional Manual', 'Semi-Automated', 'Fully Automated + TAS'],
         'Transaction Time': ['5-10 minutes', '2-3 minutes', '30-60 seconds'],
         'Throughput (trucks/hour/lane)': [6-12, 20-30, 60-80],
-        'Labor Required': ['1-2 clerks per lane', '1 clerk per 2-3 lanes', 'Remote monitoring only'],
+        'Labour Required': ['1-2 clerks per lane', '1 clerk per 2-3 lanes', 'Remote monitoring only'],
         'Accuracy': ['85-90% (human error)', '95-97%', '98-99%'],
         'Peak Hour Queues': ['30-60 minute waits', '10-15 minute waits', 'No queues']
     })
@@ -622,7 +617,7 @@ def show():
             'Automated OCR + validation',
             'Fully automated + TAS'
         ],
-        'Labor Reduction': [
+        'Labour Reduction': [
             'Baseline (100%)',
             '20-30% reduction',
             '50-60% reduction',
@@ -651,46 +646,43 @@ def show():
     
     **Control Systems:**
     - **TOS integration**: Equipment controlled by Terminal Operating System
-    - **Fleet management**: Optimize equipment deployment
+    - **Fleet management**: Optimise equipment deployment
     - **Collision avoidance**: Prevent equipment crashes
     - **Predictive maintenance**: IoT sensors monitor equipment health
     
     **Communication:**
     - **Wireless networks**: 4G/5G for real-time communication
     - **Edge computing**: Process data locally for faster response
-    - **Cloud platforms**: Centralized data and analytics
+    - **Cloud platforms**: Centralised data and analytics
     
     **Artificial Intelligence:**
-    - **Machine learning**: Optimize equipment scheduling
+    - **Machine learning**: Optimise equipment scheduling
     - **Computer vision**: Automated inspection, damage detection
     - **Predictive analytics**: Forecast demand, plan capacity
-    - **Digital twin**: Virtual simulation of terminal operations
+    - **Operational simulation**: Virtual simulation of terminal operations
     """)
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ Automation Trade-offs:</strong>
-    
-    **Advantages:**
-    - 70-80% labor reduction
-    - 24/7 consistent operations
-    - Higher safety (fewer human accidents)
-    - Better space utilization (higher stacking)
-    - Lower long-term operating costs
-    - Environmental benefits (electric power)
-    
-    **Challenges:**
-    - **Very high capital investment**: $500M-1B+ for fully automated terminal
-    - **Long payback period**: 10-15 years to recover investment
-    - **Complexity**: Sophisticated IT and maintenance requirements
-    - **Inflexibility**: Harder to handle exceptions and unusual situations
-    - **Workforce impact**: Job displacement requires retraining and social management
-    - **Technology risk**: System failures affect entire terminal
-    
-    **Strategic Decision:**
-    - Greenfield (new) terminals → Often choose full automation
-    - Brownfield (existing) terminals → Gradual automation difficult and expensive
-    - Labor costs → High labor costs favor automation
+    <strong>⚠️ Automation Trade-offs:</strong><br><br>
+    <strong>Advantages:</strong><br>
+    - 70-80% labour reduction<br>
+    - 24/7 consistent operations<br>
+    - Higher safety (fewer human accidents)<br>
+    - Better space utilisation (higher stacking)<br>
+    - Lower long-term operating costs<br>
+    - Environmental benefits (electric power)<br><br>
+    <strong>Challenges:</strong><br>
+    - <strong>Very high capital investment</strong>: $500M-1B+ for fully automated terminal<br>
+    - <strong>Long payback period</strong>: 10-15 years to recover investment<br>
+    - <strong>Complexity</strong>: Sophisticated IT and maintenance requirements<br>
+    - <strong>Inflexibility</strong>: Harder to handle exceptions and unusual situations<br>
+    - <strong>Workforce impact</strong>: Job displacement requires retraining and social management<br>
+    - <strong>Technology risk</strong>: System failures affect entire terminal<br><br>
+    <strong>Strategic Decision:</strong><br>
+    - Greenfield (new) terminals → Often choose full automation<br>
+    - Brownfield (existing) terminals → Gradual automation difficult and expensive<br>
+    - Labour costs → High labour costs favour automation<br>
     - Throughput volume → High volumes justify investment
     </div>
     """, unsafe_allow_html=True)
@@ -709,7 +701,7 @@ def show():
     
     st.markdown("""
     **Concept:**
-    - Yard organized in dense grid pattern
+    - Yard organised in dense grid pattern
     - Automated cranes move in X-Y grid (like chess board)
     - Containers stored very densely with minimal space between
     
@@ -720,7 +712,7 @@ def show():
     
     **Disadvantages:**
     - **Complex automation**: Requires sophisticated control systems
-    - **Higher cost**: Specialized equipment and software
+    - **Higher cost**: Specialised equipment and software
     
     **Example**: AutoStore-style systems (emerging in some ports)
     """)
@@ -767,7 +759,7 @@ def show():
     - Considered one of the world's leading TOS platforms
     
     **Why Develop In-House?**
-    - **Customization**: Tailored exactly to PSA's operational philosophy
+    - **Customisation**: Tailored exactly to PSA's operational philosophy
     - **Competitive advantage**: Proprietary system competitors cannot easily copy
     - **Control**: PSA controls development roadmap and features
     - **Integration**: Deep integration with PSA processes and equipment
@@ -791,23 +783,23 @@ def show():
             'Billing Module'
         ],
         'Primary Functions': [
-            'Allocate vessels to berths, optimize BOA, schedule berth windows',
+            'Allocate vessels to berths, optimise BOA, schedule berth windows',
             'Generate discharge/loading plans, stowage coordination, crane work lists',
-            'Allocate yard locations, minimize re-handles, track inventory',
-            'Schedule QCs, YCs, PMs/AGVs, optimize utilization',
+            'Allocate yard locations, minimise re-handles, track inventory',
+            'Schedule QCs, YCs, PMs/AGVs, optimise utilisation',
             'Real-time dispatching, tracking, performance monitoring',
-            'Truck appointments, OCR integration, automated authorization',
+            'Truck appointments, OCR integration, automated authorisation',
             'Monitor temperature, power connections, alarms for refrigerated containers',
             'Track DG containers, ensure segregation compliance, safety alerts',
             'Exchange data with port authority, customs, shipping lines',
             'Track transactions, generate invoices, payment processing'
         ],
         'Key Technologies': [
-            'Optimization algorithms, conflict resolution',
-            'Stability calculations, AI-powered stowage optimization',
-            'Machine learning for location prediction, re-handle minimization',
-            'Real-time optimization, predictive maintenance alerts',
-            'Fleet management, collision avoidance, route optimization',
+            'Optimisation algorithms, conflict resolution',
+            'Stability calculations, AI-powered stowage optimisation',
+            'Machine learning for location prediction, re-handle minimisation',
+            'Real-time optimisation, predictive maintenance alerts',
+            'Fleet management, collision avoidance, route optimisation',
             'OCR, automated validation, TAS integration',
             'IoT sensors, automated alerts, remote monitoring',
             'Regulatory database, automated checking',
@@ -837,7 +829,7 @@ def show():
     - **Reefers**: Temperature readings, power status, alarms
     
     **CITOS Processing:**
-    - **Planning algorithms**: Optimize berth, yard, equipment allocation
+    - **Planning algorithms**: Optimise berth, yard, equipment allocation
     - **Real-time coordination**: Dispatch equipment, adjust plans dynamically
     - **Exception handling**: Alert supervisors to problems, suggest solutions
     - **Performance tracking**: Calculate KPIs, identify bottlenecks
@@ -848,18 +840,18 @@ def show():
     - **Quay crane operators**: Which container to pick next, where to place
     - **Yard crane operators**: Which container to retrieve, storage location
     - **AGV control system**: Dispatch instructions, routing
-    - **Gate systems**: Authorization decisions, truck routing
+    - **Gate systems**: Authorisation decisions, truck routing
     
     **To Management:**
     - **Dashboards**: Real-time operations overview
-    - **KPI reports**: Productivity, utilization, delays
+    - **KPI reports**: Productivity, utilisation, delays
     - **Alert notifications**: Equipment failures, delays, exceptions
     - **Historical analytics**: Trends, patterns, improvement opportunities
     
     **To External Stakeholders:**
     - **PORTNET**: Vessel status, cargo manifests, berth occupancy
     - **Shipping Lines**: Container tracking, vessel progress
-    - **Trucking Companies**: Container availability, pickup authorization
+    - **Trucking Companies**: Container availability, pickup authorisation
     - **Customs**: Container movements, inspection coordination
     """)
     
@@ -871,11 +863,11 @@ def show():
         st.markdown("""
         **AI and Machine Learning:**
         - **Predictive berth planning**: Forecast vessel arrival delays
-        - **Yard location optimization**: Learn from historical patterns
-        - **Equipment scheduling**: ML-optimized crane and AGV deployment
+        - **Yard location optimisation**: Learn from historical patterns
+        - **Equipment scheduling**: ML-optimised crane and AGV deployment
         - **Maintenance prediction**: IoT data predicts equipment failures
         
-        **Real-Time Optimization:**
+        **Real-Time Optimisation:**
         - **Dynamic re-planning**: Adjust plans as situations change
         - **What-if scenarios**: Simulate impact of changes before implementing
         - **Constraint satisfaction**: Balance multiple competing objectives
@@ -884,11 +876,11 @@ def show():
     
     with col2:
         st.markdown("""
-        **Digital Twin Integration:**
-        - **Virtual terminal model**: Real-time digital replica
+        **Operational Simulation Integration:**
+        - **Virtual terminal model**: Real-time operational replica
         - **Simulation capability**: Test changes before implementation
         - **Training environment**: Train operators without disrupting operations
-        - **Optimization testing**: Evaluate improvement scenarios
+        - **Optimisation testing**: Evaluate improvement scenarios
         
         **Mobile and Cloud:**
         - **Mobile apps**: Supervisors monitor operations on tablets
@@ -899,23 +891,19 @@ def show():
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 CITOS Competitive Advantage:</strong>
-    
-    CITOS gives PSA several strategic advantages:
-    
-    1. **Operational Excellence**: Optimized operations → higher productivity, lower costs
-    2. **Rapid Innovation**: PSA controls development → can implement new features quickly
-    3. **Vendor Independence**: Not dependent on external TOS vendors
-    4. **Global Deployment**: Standard platform across PSA terminals worldwide
-    5. **Data Advantage**: Decades of operational data improve AI algorithms
-    6. **Customer Integration**: Deep APIs allow shipping lines to integrate directly
-    
-    World-class terminals like Singapore consistently achieve:
-    - **BOA >90%** (berth on arrival)
-    - **35+ GMPH** (gross moves per hour per crane)
-    - **<3 minute** average gate transaction time
-    - **<24 hour** mega vessel turnaround
-    
+    <strong>💡 CITOS Competitive Advantage:</strong><br><br>
+    CITOS gives PSA several strategic advantages:<br><br>
+    1. <strong>Operational Excellence</strong>: Optimised operations → higher productivity, lower costs<br>
+    2. <strong>Rapid Innovation</strong>: PSA controls development → can implement new features quickly<br>
+    3. <strong>Vendor Independence</strong>: Not dependent on external TOS vendors<br>
+    4. <strong>Global Deployment</strong>: Standard platform across PSA terminals worldwide<br>
+    5. <strong>Data Advantage</strong>: Decades of operational data improve AI algorithms<br>
+    6. <strong>Customer Integration</strong>: Deep APIs allow shipping lines to integrate directly<br><br>
+    World-class terminals like Singapore consistently achieve:<br>
+    - <strong>BOA >90%</strong> (berth on arrival)<br>
+    - <strong>35+ GMPH</strong> (gross moves per hour per crane)<br>
+    - <strong><3 minute</strong> average gate transaction time<br>
+    - <strong><24 hour</strong> mega vessel turnaround<br><br>
     CITOS is a critical enabler of this performance.
     </div>
     """, unsafe_allow_html=True)
@@ -945,7 +933,7 @@ def show():
         **Horizontal Transport:**
         - Prime Movers: Traditional, $100-150K
         - AGVs: Automated, $300-500K + infrastructure
-        - AGVs: 70-80% labor reduction, 24/7 operations
+        - AGVs: 70-80% labour reduction, 24/7 operations
         - Pooling strategy reduces fleet size 30-40%
         """)
     
@@ -966,7 +954,7 @@ def show():
         - Proprietary TOS developed in-house
         - 40+ years of continuous evolution
         - Deployed globally across PSA terminals
-        - AI/ML, digital twin, real-time optimization
+        - AI/ML, operational simulation, real-time optimisation
         - Competitive advantage for PSA
         """)
     
@@ -974,11 +962,11 @@ def show():
     <div class="insight-box">
     <strong>🔍 Bottom Line:</strong> Modern container terminals use sophisticated equipment ranging from 
     $10M+ quay cranes to $500K AGVs. Automation levels vary from conventional manual operations to fully 
-    automated "lights-out" terminals that achieve 70-80% labor reduction and 24/7 consistent productivity. 
+    automated "lights-out" terminals that achieve 70-80% labour reduction and 24/7 consistent productivity. 
     PSA's CITOS terminal operating system coordinates all equipment and operations, using AI/ML and 
-    real-time optimization to achieve world-class performance (>90% BOA, 35+ GMPH, <24h vessel turnaround). 
+    real-time optimisation to achieve world-class performance (>90% BOA, 35+ GMPH, <24h vessel turnaround). 
     The choice to automate involves major capital investment ($500M-1B+) but delivers long-term operational 
-    advantages, especially in high-labor-cost environments.
+    advantages, especially in high-labour-cost environments.
     </div>
     """, unsafe_allow_html=True)
     
@@ -989,6 +977,6 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** 🌱 Green Maritime & Future Trends - Explore decarbonization initiatives, alternative 
+    **Next Topic:** 🌱 Green Maritime & Future Trends - Explore decarbonisation initiatives, alternative 
     fuels, green port technologies, and the future of sustainable maritime operations.
     """)
