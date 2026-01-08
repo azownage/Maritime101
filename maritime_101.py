@@ -75,16 +75,16 @@ page = st.sidebar.radio(
     "Select Section:",
     [
         "🏠 Maritime Industry Foundation",
-        "📦 Containers & Containerization",
+        "📦 Containers & Containerisation",
         "🚢 Container Vessels & Evolution",
         "🌍 Global Shipping & Alliances",
         "🏛️ Maritime Singapore Ecosystem",
         "⚓ Port Strategy & Competition",
         "🎯 Operations Management Fundamentals",
         "🔄 Terminal Operations & Planning",
-        "🏗️ Equipment, Automation & CITOS",
+        "🤖 Equipment, Automation & CITOS",
         "🌱 Green Maritime & Future Trends",
-        "🇸🇬 Tuas Mega Port Case Study"
+        "🏗️ Tuas Mega Port Case Study"
     ]
 )
 
@@ -114,7 +114,7 @@ st.sidebar.metric("Tuas Target", "65M TEU")
 if page == "🏠 Maritime Industry Foundation":
     from modules import foundation
     foundation.show()
-elif page == "📦 Containers & Containerization":
+elif page == "📦 Containers & Containerisation":
     from modules import containers
     containers.show()
 elif page == "🚢 Container Vessels & Evolution":
@@ -135,13 +135,13 @@ elif page == "🎯 Operations Management Fundamentals":
 elif page == "🔄 Terminal Operations & Planning":
     from modules import terminal_operations
     terminal_operations.show()
-elif page == "🏗️ Equipment, Automation & CITOS":
+elif page == "🤖 Equipment, Automation & CITOS":
     from modules import equipment_technology
     equipment_technology.show()
 elif page == "🌱 Green Maritime & Future Trends":
     from modules import green_innovation
     green_innovation.show()
-elif page == "🇸🇬 Tuas Mega Port Case Study":
+elif page == "🏗️ Tuas Mega Port Case Study":
     from modules import tuas_development
     tuas_development.show()
 
