@@ -118,7 +118,6 @@ def show():
         **Before Containers (Break-Bulk Era):**
         - Loading/unloading took days or weeks per ship
         - High labor costs (large gangs of longshoremen)
-        -货物损坏和盗窃普遍
         - Ships spent more time in port than at sea
         - Limited economies of scale
         - Expensive and unpredictable
