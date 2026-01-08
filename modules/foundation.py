@@ -3,361 +3,536 @@ import plotly.graph_objects as go
 import pandas as pd
 
 def show():
-    st.markdown('<p class="main-header">🚢 Maritime Industry Foundation</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">⚓ Maritime Industry Foundation</p>', unsafe_allow_html=True)
     
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand why maritime matters, the transformative impact of containerization, and the major forces 
-    shaping the modern shipping industry.
+    Understand why maritime trade matters globally, how containerisation revolutionised shipping, 
+    and the three major waves of change reshaping the industry today.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Shipping as Lifeblood of World Economy
+    # SECTION 1: Why Maritime Matters
     # ============================================================================
     
-    st.markdown('<p class="section-header">Shipping: The Lifeblood of the World Economy</p>', unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Global Trade by Sea", "80%+", help="Over 80% of global trade by volume is carried by sea")
-    with col2:
-        st.metric("Asian Port Volumes", "64%", help="64% of seaborne trade is unloaded at Asian ports")
-    with col3:
-        st.metric("Via Malacca/Singapore", "33%", help="33% of seaborne trade passes through Straits of Malacca and Singapore")
+    st.markdown('<p class="section-header">Why Maritime Trade Matters</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Maritime shipping is the backbone of global commerce and the international supply chain. Without ships 
-    moving containers across oceans, modern international trade as we know it would not exist. The scale 
-    is staggering: over 80% of world trade by volume travels by sea, making maritime transport absolutely 
-    critical to the global economy.
-    
-    Asia dominates global maritime trade, with 64% of seaborne trade unloaded at Asian ports. The strategic 
-    Straits of Malacca and Singapore serve as a critical chokepoint, handling 33% of global seaborne trade. 
-    This geographic concentration makes the region—and particularly Singapore—vital to global supply chains.
+    Maritime shipping is the backbone of global commerce, yet it operates largely out of sight. 
+    Understanding its scale and importance is the first step in appreciating the complexity of 
+    port operations.
     """)
     
-    st.markdown('<p class="subsection-header">Maritime as a Team Sport</p>', unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.metric("Global Trade by Sea", "80%+", help="Over 80% of global trade by volume is transported by sea")
+    with col2:
+        st.metric("Asian Port Dominance", "64%", help="64% of global container throughput handled by Asian ports")
+    with col3:
+        st.metric("Via Singapore/Malacca", "33%", help="33% of global trade passes through Malacca Strait/Singapore")
     
     st.markdown("""
-    Modern maritime logistics is not a solo endeavor. It's a complex ecosystem requiring tight coordination 
-    among multiple stakeholders:
+    **The Hidden Foundation of Global Trade:**
     
-    - **Shipping Lines**: Operate the vessels that carry containers
-    - **Port Authorities**: Regulate and plan port infrastructure (e.g., MPA in Singapore)
-    - **Terminal Operators**: Handle actual cargo operations (e.g., PSA)
-    - **Freight Forwarders**: Coordinate logistics for shippers
-    - **Customs & Government Agencies**: Handle regulatory compliance
-    - **Trucking Companies**: Provide last-mile delivery
-    - **Maritime Services**: Provide bunkering, pilotage, towage, repairs
-    - **Financial & Legal Services**: Enable transactions and contracts
+    Maritime shipping moves the physical goods that power the global economy. Nearly everything we use 
+    daily—from smartphones to clothing to food—has travelled by container ship at some point in its 
+    supply chain.
     
-    Success in this industry requires seamless collaboration across this entire supply chain network.
+    **Scale of Maritime Operations:**
+    - **50,000+ merchant ships** operate globally
+    - **5,400+ container ships** specifically handle containerised cargo
+    - **800 million+ TEU** moved annually (Twenty-foot Equivalent Units)
+    - **$14 trillion** worth of goods transported by sea each year
+    - **90% of world trade by volume** travels by sea
+    
+    **Why Sea Transport Dominates:**
+    - **Cost-effective**: 10-40x cheaper than air freight per tonne-kilometre
+    - **High capacity**: Single large vessel carries 20,000+ containers
+    - **Energy efficient**: Most fuel-efficient mode for bulk cargo
+    - **Global reach**: Connects all continents and major economies
+    - **Scalable**: Can handle everything from raw materials to finished goods
     """)
     
     # ============================================================================
     # SECTION 2: The Container Revolution
     # ============================================================================
     
-    st.markdown('<p class="section-header">The Container Revolution</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">The Container Revolution: How a Simple Box Changed Everything</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Before containerization, cargo was loaded and unloaded as "break-bulk"—individual pieces handled 
-    separately by longshoremen. This was slow, expensive, labor-intensive, and prone to theft and damage.
-    
-    The introduction of standardized shipping containers in the 1950s-1960s revolutionized global trade.
+    Before containerisation, shipping was slow, expensive, and labour-intensive. The introduction of 
+    standardised containers in 1956 transformed global trade.
     """)
     
-    # Economic impact visualization
-    fig = go.Figure()
-    
-    fig.add_trace(go.Bar(
-        x=['Break-Bulk Shipping', 'Container Shipping'],
-        y=[100, 6],
-        marker=dict(
-            color=['#EF4444', '#10B981'],
-            line=dict(color='#1F2937', width=2)
-        ),
-        text=['100% (Baseline)', '6% (94% Cost Reduction)'],
-        textposition='outside',
-        textfont=dict(size=14, color='#1F2937'),
-        name='Relative Cost'
-    ))
-    
-    fig.update_layout(
-        title={
-            'text': 'Container Shipping: 94% Cost Reduction vs Break-Bulk',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 20, 'color': '#1F2937', 'family': 'Arial Black'}
-        },
-        yaxis_title="Relative Cost (Indexed to 100)",
-        xaxis_title="Shipping Method",
-        height=400,
-        showlegend=False,
-        plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB', range=[0, 120])
-    )
-    
-    st.plotly_chart(fig, width='stretch')
-    
-    st.markdown("""
-    <div class="success-box">
-    <strong>💡 Key Insight:</strong> Container shipping is 94% cheaper than break-bulk shipping for the same 
-    product. This dramatic cost reduction enabled the explosion of global trade we see today.
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown('<p class="subsection-header">What Containerization Changed</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Before Containers: Break-Bulk Shipping</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Before Containers (Break-Bulk Era):**
-        - Loading/unloading took days or weeks per ship
-        - High labor costs (large gangs of longshoremen)
-        - Ships spent more time in port than at sea
-        - Limited economies of scale
-        - Expensive and unpredictable
+        **The Old Way (Pre-1956):**
+        
+        **Break-Bulk Method:**
+        - Cargo loaded piece by piece (crates, barrels, sacks)
+        - Manual handling by longshoremen (dockworkers)
+        - Each item lifted by crane or carried by hand
+        - Stowed carefully in ship's hold
+        
+        **Time and Cost:**
+        - **7-10 days** to load/unload a single ship
+        - **50-70% of total voyage time** spent in port
+        - Labour costs extremely high
+        - Theft and damage common (loose cargo)
+        
+        **Impact:**
+        - Shipping expensive → International trade limited
+        - Long port stays → Fewer voyages per ship per year
+        - Labour-intensive → High costs, strikes common
+        - Inefficient → Goods remained expensive
         """)
     
     with col2:
         st.markdown("""
-        **After Containers:**
-        - Loading/unloading in hours
-        - Minimal labor (crane operators + truck drivers)
-        - Sealed containers reduce theft and damage
-        - Ships maximize time at sea
-        - Massive vessels (25,000+ TEU) achievable
-        - Predictable, reliable, affordable
+        **The Container Solution (1956+):**
+        
+        **Standardised Container:**
+        - Sealed metal box (20ft or 40ft standard)
+        - Loaded once at factory, sealed, opened at destination
+        - Handled by specialised cranes and equipment
+        - Can transfer between ship, truck, train without unpacking
+        
+        **Time and Cost:**
+        - **<24 hours** to load/unload same ship
+        - **<10% of total voyage time** in port
+        - Minimal labour (automated cranes)
+        - Theft and damage drastically reduced
+        
+        **Impact:**
+        - Shipping costs collapsed (94% reduction per tonne)
+        - More voyages per ship per year
+        - Global supply chains became viable
+        - Manufacturing moved to low-cost countries
+        - "Flat world" globalisation enabled
         """)
+    
+    # Before/After comparison
+    comparison_data = pd.DataFrame({
+        'Metric': [
+            'Loading/Unloading Time',
+            'Port Time % of Voyage',
+            'Cost per Tonne',
+            'Labour Required',
+            'Theft/Damage Rate',
+            'Voyages per Ship/Year'
+        ],
+        'Break-Bulk (Before)': [
+            '7-10 days',
+            '50-70%',
+            '$420 (indexed)',
+            '100 workers',
+            '20-30%',
+            '4-5 voyages'
+        ],
+        'Containerised (After)': [
+            '<24 hours',
+            '<10%',
+            '$25 (94% reduction)',
+            '10-15 workers',
+            '<1%',
+            '12-15 voyages'
+        ]
+    })
+    
+    st.dataframe(comparison_data, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    <div class="success-box">
+    <strong>💡 The Container Revolution Impact:</strong><br>
+    - <strong>94% cost reduction</strong> in shipping per tonne<br>
+    - <strong>10x faster</strong> port operations<br>
+    - <strong>3x more voyages</strong> per ship per year<br>
+    - <strong>Enabled globalisation</strong>: Made international trade economically viable for most goods<br>
+    - <strong>Supply chain transformation</strong>: "Just-in-time" manufacturing became possible<br>
+    - <strong>Economic development</strong>: Developing nations could access global markets<br><br>
+    Malcolm McLean's simple idea—a standardised metal box—fundamentally changed the world economy.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown('<p class="subsection-header">Key Container Standards</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **ISO Container Standards (International Organization for Standardization):**
+    
+    **Standard Sizes:**
+    - **20-foot container**: 20ft long × 8ft wide × 8ft 6in high
+    - **40-foot container**: 40ft long × 8ft wide × 8ft 6in high
+    - **40-foot High Cube**: 40ft long × 8ft wide × 9ft 6in high
+    
+    **Why Standardisation Matters:**
+    - **Interoperability**: Any container fits any ship, crane, truck, train
+    - **Infrastructure**: Ports design for standard dimensions
+    - **Equipment**: Cranes, chassis designed for standard sizes
+    - **Global system**: Works everywhere in the world
+    - **Economies of scale**: Mass production of containers and equipment
+    
+    **The TEU Measure:**
+    - **TEU = Twenty-foot Equivalent Unit**
+    - Standard unit for measuring container capacity
+    - One 20ft container = 1 TEU
+    - One 40ft container = 2 TEU
+    - Vessel capacity measured in TEU (e.g., "20,000 TEU vessel")
+    """)
     
     # ============================================================================
     # SECTION 3: Three Waves of Change
     # ============================================================================
     
-    st.markdown('<p class="section-header">Three Waves of Change: Reshaping Maritime</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Three Waves of Change Reshaping Maritime</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The maritime industry has been transformed by three major waves of change over recent decades. 
-    Understanding these trends is crucial to understanding the current state of the industry.
+    The maritime industry is currently experiencing three simultaneous transformations that are fundamentally 
+    changing how shipping operates.
     """)
     
-    # Wave A: Mega Vessels
-    st.markdown('<p class="subsection-header">Wave A: Arrival of Mega Vessels</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Wave 1: Mega Vessels (Scale)</p>', unsafe_allow_html=True)
     
+    st.markdown("""
+    **The Trend:**
+    Container ships have grown dramatically in size over the past 60 years, driven by economies of scale.
+    
+    **Evolution:**
+    - **1956**: First container ship (Ideal X) - 500 TEU capacity
+    - **1980s**: Panamax vessels - 4,500 TEU (limited by Panama Canal width)
+    - **2006**: Post-Panamax - 15,000 TEU
+    - **2013**: Maersk Triple-E - 18,000 TEU
+    - **2019**: MSC Gülsün - 23,756 TEU (current largest)
+    - **Today**: Multiple vessels >20,000 TEU operating
+    
+    **Why Bigger?**
+    - **Economies of scale**: Larger vessels cost less per container moved
+    - **Crew costs**: Same ~25 crew whether ship carries 5,000 or 20,000 TEU
+    - **Fuel efficiency**: Larger vessels more efficient per TEU
+    - **Port costs**: Fixed port fees spread over more containers
+    
+    **Result**: A 20,000 TEU vessel costs roughly **40-50% less per TEU** than a 5,000 TEU vessel
+    """)
+    
+    # Vessel size evolution chart
     vessel_evolution = pd.DataFrame({
-        'Era': ['1956\nEarly', '1970\nFully Cellular', '1980\nPanamax', '1988\nPost-Panamax I', 
-                '2000\nPost-Panamax II', '2006\nVLCS', '2013\nULCS', '2019\nMGX-24'],
-        'TEU Capacity': [500, 1500, 3200, 5000, 7000, 13000, 19500, 23000],
-        'Containers Across': [6, 8, 10, 13, 16, 19, 22, 24]
+        'Year': [1956, 1980, 2000, 2010, 2020],
+        'Max Vessel Size (TEU)': [500, 4500, 8000, 15000, 24000],
+        'Typical Vessel (TEU)': [500, 3000, 5000, 8000, 12000]
     })
     
     fig = go.Figure()
     
     fig.add_trace(go.Scatter(
-        x=vessel_evolution['Era'],
-        y=vessel_evolution['TEU Capacity'],
-        mode='lines+markers+text',
-        line=dict(color='#3B82F6', width=4),
-        marker=dict(size=12, color='#2563EB', line=dict(color='white', width=2)),
-        text=vessel_evolution['TEU Capacity'],
-        textposition='top center',
-        textfont=dict(size=11, color='#1F2937'),
-        name='Vessel Capacity'
+        x=vessel_evolution['Year'],
+        y=vessel_evolution['Max Vessel Size (TEU)'],
+        mode='lines+markers',
+        name='Maximum Vessel Size',
+        line=dict(color='#EF4444', width=3),
+        marker=dict(size=10)
+    ))
+    
+    fig.add_trace(go.Scatter(
+        x=vessel_evolution['Year'],
+        y=vessel_evolution['Typical Vessel (TEU)'],
+        mode='lines+markers',
+        name='Typical Vessel Size',
+        line=dict(color='#3B82F6', width=3),
+        marker=dict(size=10)
     ))
     
     fig.update_layout(
         title={
-            'text': 'Container Vessel Size Evolution: 500 TEU → 25,000 TEU',
+            'text': 'Container Vessel Size Evolution (1956-2020)',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 18, 'color': '#1F2937'}
         },
-        xaxis_title="Era / Vessel Type",
-        yaxis_title="TEU Capacity",
-        height=450,
+        xaxis_title="Year",
+        yaxis_title="Vessel Capacity (TEU)",
+        height=400,
         plot_bgcolor='white',
         yaxis=dict(gridcolor='#E5E7EB'),
-        showlegend=False
+        xaxis=dict(gridcolor='#E5E7EB'),
+        legend=dict(x=0.02, y=0.98)
     )
     
     st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
-    Container vessels have grown dramatically in size over the past 70 years:
-    
-    - **1956**: Early container ships carried just 500 TEU
-    - **1980s**: Panamax vessels (3,000-3,400 TEU) - sized to fit through Panama Canal
-    - **2000s**: Post-Panamax vessels exceeded Panama Canal limits (6,000-8,500 TEU)
-    - **2014**: New-Panamax (12,500 TEU) after canal expansion
-    - **2019**: MGX-24 ultra-large container ships reach 21,000-25,000 TEU
-    
-    This growth was driven by **economies of scale**: larger ships have lower cost per container moved. 
-    However, mega vessels require specialized port infrastructure, deep water berths, and super-sized 
-    quay cranes.
+    **Impact on Ports:**
+    - Ports must invest in deeper berths (16+ metres)
+    - Larger cranes needed (65-80m outreach for 24 containers across)
+    - Longer berths required (400+ metres)
+    - More complex stowage planning
+    - Only 20-30 ports globally can handle mega vessels
     """)
     
-    # Wave B: Mega Alliances
-    st.markdown('<p class="subsection-header">Wave B: Birth of Mega Alliances</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Wave 2: Mega Alliances (Concentration)</p>', unsafe_allow_html=True)
     
-    # Alliance evolution chart
+    st.markdown("""
+    **The Trend:**
+    Shipping lines have consolidated from many independent carriers into three dominant alliances.
+    
+    **The Consolidation:**
+    - **Year 2000**: 15+ major independent carriers competing
+    - **Year 2024**: 9 major carriers organised into 3 alliances
+    - **Current state**: Three alliances control **83% of global container capacity**
+    
+    **The Big Three Alliances:**
+    
+    **1. 2M Alliance (34% market share)**
+    - MSC (Mediterranean Shipping Company)
+    - Maersk Line
+    - Formed: 2015
+    
+    **2. Ocean Alliance (30% market share)**
+    - CMA CGM
+    - COSCO
+    - OOCL
+    - Evergreen
+    - Formed: 2017
+    
+    **3. THE Alliance (19% market share)**
+    - ONE (Ocean Network Express)
+    - HMM (Hyundai Merchant Marine)
+    - Yang Ming
+    - Formed: 2017
+    
+    **Why Alliances?**
+    - **Network coverage**: No single carrier can serve all ports economically
+    - **Vessel sharing**: Share capacity, improve utilisation
+    - **Cost reduction**: Economies of scale on operations
+    - **Frequency**: Offer daily or multiple weekly services by pooling vessels
+    - **Survival**: Overcapacity crisis forced cooperation
+    """)
+    
+    # Alliance market share
     alliance_data = pd.DataFrame({
-        'Period': ['1990s', '2000s', '2015', '2017-2024', '2025'],
-        'Alliance Control': [0, 30, 75, 80, 83],
-        'Status': ['Independent Era', 'Early Alliances', 'Consolidation', 'Mature Alliances', 'Current']
+        'Year': [2000, 2005, 2010, 2015, 2020, 2024],
+        'Alliance Control (%)': [0, 15, 35, 60, 82, 83],
+        'Major Carriers': [17, 15, 15, 15, 10, 9]
     })
     
     fig = go.Figure()
     
-    fig.add_trace(go.Bar(
-        x=alliance_data['Period'],
-        y=alliance_data['Alliance Control'],
-        marker=dict(
-            color=['#94A3B8', '#64748B', '#3B82F6', '#2563EB', '#1E40AF'],
-            line=dict(color='#1F2937', width=2)
-        ),
-        text=[f"{val}%" for val in alliance_data['Alliance Control']],
-        textposition='outside',
-        textfont=dict(size=14, color='#1F2937'),
-        name='Alliance-Controlled Volume'
+    fig.add_trace(go.Scatter(
+        x=alliance_data['Year'],
+        y=alliance_data['Alliance Control (%)'],
+        mode='lines+markers',
+        name='Alliance Control %',
+        line=dict(color='#10B981', width=4),
+        marker=dict(size=12),
+        fill='tozeroy',
+        fillcolor='rgba(16, 185, 129, 0.2)'
     ))
     
     fig.update_layout(
         title={
-            'text': 'Shipping Alliance Market Control: 0% → 83%',
+            'text': 'Alliance Control of Global Container Capacity',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 18, 'color': '#1F2937'}
         },
-        xaxis_title="Period",
-        yaxis_title="% of Global Container Volumes",
+        xaxis_title="Year",
+        yaxis_title="Alliance Control (%)",
         height=400,
         plot_bgcolor='white',
         yaxis=dict(gridcolor='#E5E7EB', range=[0, 100]),
-        showlegend=False
+        xaxis=dict(gridcolor='#E5E7EB')
     )
     
     st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
-    Shipping lines formed alliances to share vessels, routes, and costs. Alliance control of global 
-    container volumes has grown dramatically:
-    
-    - **1990s**: 0% - Carriers operated independently
-    - **2000s**: 30% - Early alliance formations
-    - **2015**: 75% - Major consolidation wave
-    - **2017-2024**: >80% - Mature alliance era
-    - **2025**: 83% - Current state with three major alliances
-    
-    **Today's Three Major Alliances:**
-    
-    1. **2M Alliance** (34% market share): Maersk + MSC
-    2. **Ocean Alliance** (30% market share): CMA CGM + COSCO + OOCL + Evergreen
-    3. **THE Alliance** (19% market share): ONE (NYK, MOL, "K" Line) + HMM + Yang Ming
-    
-    This means just 9 major shipping line groups control 83% of global container shipping. Industry 
-    consolidation from 15+ major players down to 9 has fundamentally changed port competition dynamics.
+    **Impact on Ports:**
+    - Ports negotiate with alliances (not individual carriers)
+    - Need to accommodate multiple alliance members simultaneously
+    - Long-term terminal lease agreements with alliances
+    - Port strategy must attract/retain alliance business
+    - Losing an alliance = losing significant throughput
     """)
     
-    st.markdown("""
-    <div class="insight-box">
-    <strong>🎯 Strategic Implication for Ports:</strong> To remain competitive, ports must attract and 
-    retain these mega alliances. Losing one alliance can mean losing 30%+ of your throughput overnight. 
-    This is why ports invest billions in infrastructure to meet alliance requirements.
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Wave C: Change of Cargo
-    st.markdown('<p class="subsection-header">Wave C: Change of Cargo</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Wave 3: Cargo Changes (Complexity)</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The nature of containerized cargo has shifted dramatically, driven by:
+    **The Trend:**
+    The nature of cargo and trade patterns is changing due to geopolitics, e-commerce, and supply chain shifts.
     
     **Geopolitical Shifts:**
-    - US-China trade tensions leading to diversification
-    - Trade bypassing direct US-China routes via intermediaries
-    - Rise of intermediary countries (Vietnam +80%, Malaysia +45%, Thailand +41%, Mexico +42%)
-    - Supply chains becoming longer and more complex
+    
+    **US-China Trade Tensions:**
+    - Tariffs and trade restrictions
+    - "China+1" strategy: Companies diversifying manufacturing beyond China
+    - Intermediate countries growing (Vietnam +80%, Malaysia +45%, Thailand +41%)
+    - More complex, multi-hop supply chains
+    - Impact: Shifting trade lanes, more transshipment
+    
+    **Nearshoring/Friendshoring:**
+    - Moving production closer to consumers (reduce risk, faster delivery)
+    - Emphasis on allied/trusted countries
+    - Mexico growing for US market (+42%)
+    - Eastern Europe growing for EU market
+    - Impact: Shorter trade routes, different port demands
     
     **E-commerce Explosion:**
-    - Shift from bulk wholesale to individual consumer shipments
-    - Smaller, more frequent shipments
-    - Higher variability and unpredictability
-    - Need for faster port turnaround times
     
-    **Product Mix Changes:**
-    - From raw materials to finished goods
-    - From heavy industrial cargo to lighter consumer electronics
-    - More refrigerated containers (reefers) for perishables
-    - More high-value cargo requiring security
+    **Changing Cargo Characteristics:**
+    - Smaller, more frequent shipments (vs bulk orders)
+    - Higher value goods (consumer electronics, fashion)
+    - Time-sensitive delivery expectations
+    - More SKUs (Stock Keeping Units) = more complexity
+    - Direct-to-consumer models
     
-    These changes mean ports must be more flexible, responsive, and technologically advanced than ever before.
+    **Impact on Logistics:**
+    - Need for faster port turnaround
+    - More complex inventory management
+    - Higher frequency of smaller container movements
+    - Last-mile delivery challenges
+    - Integration of maritime with e-commerce platforms
+    
+    **Supply Chain Resilience:**
+    
+    **Post-COVID Lesson:**
+    - Single-source dependencies are risky
+    - "Just-in-time" vulnerable to disruptions
+    - "Just-in-case" inventory becoming more common
+    - Redundancy and flexibility valued over pure cost optimisation
+    
+    **New Priorities:**
+    - Visibility: Real-time tracking and transparency
+    - Agility: Ability to adapt quickly to disruptions
+    - Resilience: Multiple suppliers, routes, and options
+    - Sustainability: Environmental pressures growing
     """)
     
-    # ============================================================================
-    # SECTION 4: Maritime Economics Fundamentals
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Maritime Economics of Scale</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    The maritime industry operates on extremely tight margins, making economies of scale critical. 
-    Consider the relationship between vessel size and efficiency:
-    """)
-    
-    # Vessel economics comparison
-    vessel_comparison = pd.DataFrame({
-        'Vessel Type': ['Feeder\n(1,000 TEU)', 'Panamax\n(5,000 TEU)', 'Post-Panamax\n(10,000 TEU)', 
-                       'ULCS\n(20,000 TEU)'],
-        'Cost per TEU': [100, 45, 28, 18],
-        'Port Requirements': ['Basic', 'Standard', 'Advanced', 'Ultra-Modern']
+    # Trade pattern changes
+    trade_changes = pd.DataFrame({
+        'Region': ['Vietnam', 'Malaysia', 'Thailand', 'Mexico', 'India', 'Poland'],
+        'Export Growth 2018-2023 (%)': [80, 45, 41, 42, 35, 28],
+        'Primary Driver': [
+            'China+1, low-cost manufacturing',
+            'Electronics, electrical goods',
+            'Automotive, electronics',
+            'Nearshoring to US',
+            'Pharmaceuticals, IT',
+            'Nearshoring to EU'
+        ]
     })
     
-    fig = go.Figure()
-    
-    fig.add_trace(go.Bar(
-        x=vessel_comparison['Vessel Type'],
-        y=vessel_comparison['Cost per TEU'],
-        marker=dict(
-            color=['#EF4444', '#F59E0B', '#3B82F6', '#10B981'],
-            line=dict(color='#1F2937', width=2)
-        ),
-        text=[f"${val}" for val in vessel_comparison['Cost per TEU']],
-        textposition='outside',
-        textfont=dict(size=13, color='#1F2937'),
-        name='Cost per TEU (Indexed)'
-    ))
+    fig = go.Figure(data=[
+        go.Bar(
+            x=trade_changes['Region'],
+            y=trade_changes['Export Growth 2018-2023 (%)'],
+            marker=dict(color='#F59E0B'),
+            text=trade_changes['Export Growth 2018-2023 (%)'],
+            texttemplate='%{text}%',
+            textposition='outside'
+        )
+    ])
     
     fig.update_layout(
         title={
-            'text': 'Larger Vessels = Lower Cost Per Container',
+            'text': 'Export Growth in "China+1" Countries (2018-2023)',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 18, 'color': '#1F2937'}
         },
-        xaxis_title="Vessel Type",
-        yaxis_title="Relative Cost per TEU (Indexed)",
+        xaxis_title="Country",
+        yaxis_title="Export Growth (%)",
         height=400,
         plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB'),
-        showlegend=False
+        yaxis=dict(gridcolor='#E5E7EB')
     )
     
     st.plotly_chart(fig, width='stretch')
     
-    st.markdown("""
-    Larger vessels are dramatically more efficient:
-    - A 20,000 TEU vessel costs only 18% as much per container as a 1,000 TEU feeder vessel
-    - However, larger vessels require deeper berths, bigger cranes, and more sophisticated terminals
-    - This creates a "barrier to entry" for ports—only well-equipped ports can handle mega vessels
+    # ============================================================================
+    # SECTION 4: Maritime Economics
+    # ============================================================================
     
-    **The Trade-off:**
-    - **Shipping lines** want the biggest ships possible to minimize cost per container
-    - **Ports** must invest billions to accommodate these mega vessels
-    - **Smaller ports** risk being left behind if they can't upgrade infrastructure
+    st.markdown('<p class="section-header">Maritime Economics: The Business of Shipping</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Understanding the economics helps explain why ports and shipping lines make certain strategic decisions.
+    """)
+    
+    st.markdown('<p class="subsection-header">Cost Structure</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        **Shipping Line Costs:**
+        
+        **Fixed Costs (60-70%):**
+        - Vessel purchase/lease
+        - Crew salaries
+        - Insurance
+        - Administration
+        - IT systems
+        
+        **Variable Costs (30-40%):**
+        - Fuel (largest variable cost)
+        - Port charges
+        - Container handling
+        - Maintenance
+        - Canal fees
+        
+        **Implication:**
+        - High fixed costs → Need high utilisation
+        - Empty sailing still costs ~70% of full sailing
+        - Pressure to fill vessels even at low rates
+        """)
+    
+    with col2:
+        st.markdown("""
+        **Port Costs:**
+        
+        **Fixed Costs (70-80%):**
+        - Infrastructure (berths, cranes, land)
+        - IT systems (TOS, PORTNET)
+        - Administration
+        - Maintenance
+        
+        **Variable Costs (20-30%):**
+        - Labour (operators, drivers)
+        - Equipment maintenance
+        - Utilities
+        
+        **Implication:**
+        - High fixed costs → Need high throughput
+        - Marginal cost of handling one more container is low
+        - Can offer competitive pricing when utilisation is good
+        """)
+    
+    st.markdown("""
+    **The Virtuous/Vicious Cycle:**
+    
+    **Virtuous Cycle (Successful Ports):**
+    1. High throughput → Low cost per TEU
+    2. Low cost → Competitive pricing
+    3. Competitive pricing → Attracts more shipping lines
+    4. More lines → Better connectivity
+    5. Better connectivity → Attracts more cargo
+    6. More cargo → Higher throughput (back to step 1)
+    
+    **Vicious Cycle (Struggling Ports):**
+    1. Low throughput → High cost per TEU
+    2. High cost → Uncompetitive pricing
+    3. Uncompetitive pricing → Shipping lines avoid port
+    4. Fewer lines → Poor connectivity
+    5. Poor connectivity → Less cargo
+    6. Less cargo → Lower throughput (back to step 1)
+    
+    **Strategic Implication:** Ports must maintain and grow volumes to stay competitive. This drives massive 
+    infrastructure investments like Singapore's Tuas Mega Port.
     """)
     
     # ============================================================================
@@ -370,45 +545,42 @@ def show():
     
     with col1:
         st.markdown("""
-        **Industry Scale:**
-        - 80%+ of global trade moves by sea
-        - Asia handles 64% of seaborne trade
-        - Straits of Malacca/Singapore: 33% of global trade
+        **Why Maritime Matters:**
+        - 80%+ of global trade by volume travels by sea
+        - Most cost-effective transport for bulk goods
+        - Enables globalisation and international commerce
+        - 50,000+ ships, 800M+ TEU annually
         
         **Container Revolution:**
-        - 94% cost reduction vs break-bulk
-        - Enabled modern globalization
-        - Standardization is key
-        
-        **Mega Vessels:**
-        - Evolution from 500 TEU → 25,000 TEU
-        - Driven by economies of scale
-        - Requires specialized port infrastructure
+        - 1956: Malcolm McLean's standardised container
+        - 94% reduction in shipping costs per tonne
+        - 10x faster port operations
+        - Enabled "flat world" globalisation
+        - Made just-in-time manufacturing possible
         """)
     
     with col2:
         st.markdown("""
-        **Mega Alliances:**
-        - 3 alliances control 83% of market
-        - Industry consolidated from 15 → 9 players
-        - Alliances dictate port requirements
+        **Three Waves of Change:**
+        - **Wave 1**: Mega vessels (500 TEU → 24,000 TEU)
+        - **Wave 2**: Mega alliances (3 alliances control 83%)
+        - **Wave 3**: Cargo changes (geopolitics, e-commerce, resilience)
         
-        **Changing Cargo:**
-        - Geopolitical shifts (US-China tensions)
-        - E-commerce growth
-        - More complex supply chains
-        
-        **Maritime as Team Sport:**
-        - Requires coordination across entire ecosystem
-        - Success depends on all stakeholders
-        - Technology enables collaboration
+        **Maritime Economics:**
+        - High fixed costs → Need high utilisation
+        - Virtuous vs vicious cycles
+        - Scale advantages crucial
+        - Strategic infrastructure investments essential
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> The maritime industry is the foundation of global trade, but it's 
-    being transformed by massive vessels, powerful alliances, and changing trade patterns. Understanding 
-    these forces is essential to understanding how ports must adapt to remain competitive.
+    <strong>🔍 Bottom Line:</strong> Maritime shipping is the invisible backbone of global commerce, moving 
+    80%+ of trade. The 1956 container revolution reduced costs by 94% and enabled globalisation. Today, the 
+    industry faces three simultaneous transformations: mega vessels (economies of scale), mega alliances 
+    (consolidation to 3 alliances controlling 83%), and cargo changes (geopolitics, e-commerce, supply chain 
+    resilience). Understanding these fundamentals is essential for grasping why ports like Singapore invest 
+    billions in infrastructure and how digital twins can help optimise these complex operations.
     </div>
     """, unsafe_allow_html=True)
     
@@ -419,5 +591,6 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** 📦 Containers & Containerization - Dive into the standardized boxes that make all this possible.
+    **Next Topic:** 📦 Containers & Containerisation - Dive deep into container standards, types, 
+    measurements, and the TEU system that makes global shipping possible.
     """)
