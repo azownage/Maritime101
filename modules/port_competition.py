@@ -294,7 +294,7 @@ def show():
         plot_bgcolor='white',
         yaxis=dict(gridcolor='#E5E7EB', range=[0, 110]),
         xaxis=dict(tickangle=-45)
-    ))
+    )
     
     st.plotly_chart(fig, width='stretch')
     
