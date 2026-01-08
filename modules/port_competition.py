@@ -8,691 +8,887 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand the critical success factors for transshipment hubs, competitive dynamics between ports, 
-    and strategic responses to emerging threats and opportunities.
+    Understand the critical success factors for transshipment hubs, analyse competitive dynamics in Southeast 
+    Asia, explore strategic planning frameworks, and examine Singapore\'s response to regional competition 
+    through infrastructure investment and operational excellence.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Critical Success Factors for Transshipment Hubs
+    # SECTION 1: Critical Success Factors
     # ============================================================================
     
     st.markdown('<p class="section-header">Critical Success Factors for Transshipment Hubs</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Not all ports are created equal. To succeed as a major transshipment hub in today's competitive 
-    maritime environment, ports must excel across multiple dimensions simultaneously.
+    What makes a port successful as a transshipment hub? Eight critical factors determine competitive 
+    position, and these factors are **not independent**—they interact and reinforce each other.
     """)
     
-    st.markdown('<p class="subsection-header">The Essential Eight Factors</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">The Eight Critical Factors</p>', unsafe_allow_html=True)
     
-    # Success factors with detailed breakdown
-    success_factors = pd.DataFrame({
-        'Factor': [
-            'Efficiency & Flexibility',
-            'Reliability',
-            'Security & Safety',
-            'Cost vs Service Level',
-            'Connectivity',
-            'Infrastructure & Technology',
-            'Skilled Workers + Management',
-            'Strategic Location'
+    # Critical factors detailed breakdown
+    factors_data = pd.DataFrame({
+        'Critical Factor': [
+            '1. Strategic Location',
+            '2. Efficiency & Flexibility',
+            '3. Reliability',
+            '4. Security & Safety',
+            '5. Connectivity',
+            '6. Infrastructure & Technology',
+            '7. Cost vs Service Level',
+            '8. Skilled Workforce & Governance'
+        ],
+        'Description': [
+            'Proximity to major trade routes, centre of regional trade',
+            'Fast vessel turnaround, high crane productivity, adaptable operations',
+            'Berth on Arrival >90%, consistent service quality, minimal disruptions',
+            'Low pilferage, ISPS compliance, safe working environment',
+            'Number of shipping lines, ports connected, sailing frequencies',
+            'Deep berths, modern equipment, adequate capacity, digital systems',
+            'Competitive pricing with tight connections and quality service',
+            'Experienced operators, capable management, stable supportive government'
         ],
         'Why It Matters': [
-            'Fast turnaround times reduce vessel port stay, lowering costs for shipping lines',
-            'Predictable schedules allow tight connections; JIT supply chains demand reliability',
-            'Cargo safety, port security, maritime safety standards; ISPS compliance required',
-            'Balance competitive pricing with quality service; "tight connections" for time-sensitive cargo',
-            'Number of shipping lines, frequency of services, global port network reach',
-            'Adequate capacity for current + future demand; modern equipment; automation; IT systems',
-            'Technical expertise, operational excellence, stable labor relations, capable leadership',
-            'Proximity to major shipping lanes; centrality to trade flows; natural deep-water harbor'
+            'Minimises deviation from main shipping routes, natural stopping point',
+            'Reduces vessel port time (20-30% of voyage time at port)',
+            'Predictable schedules enable tight container connections',
+            'Protects cargo value, ensures workforce safety, regulatory compliance',
+            'More options for cargo routing, higher frequencies attract cargo',
+            'Enables handling of mega vessels, supports operational efficiency',
+            'Balance between competitive rates and service quality attracts customers',
+            'Ensures consistent quality, long-term stability, continuous improvement'
         ],
-        'Singapore\'s Performance': [
-            'Excellent: 24-36 hour vessel turnaround for mega vessels; flexible berth allocation',
-            'Outstanding: BOA >90%; minimal weather disruptions; strong track record',
-            'World-class: ISPS certified; advanced security systems; low piracy risk',
-            'Competitive: Not cheapest but excellent value; premium service justifies pricing',
-            'Best-in-class: 200+ lines, 600+ ports; unmatched global reach',
-            'Leading: S$20B+ Tuas investment; automated systems; CITOS; latest cranes',
-            'Strong: Skilled workforce; SMA training; stable government; capable MPA/PSA management',
-            'Ideal: On Asia-Europe route; 33% of global trade through Straits of Malacca/Singapore'
+        'Singapore Rating': [
+            'Excellent',
+            'Excellent',
+            'Excellent',
+            'Excellent',
+            'Excellent',
+            'Excellent',
+            'Good',
+            'Excellent'
         ]
     })
     
-    st.dataframe(success_factors, width='stretch', hide_index=True)
+    st.dataframe(factors_data, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ Critical Point:</strong> These factors are **not independent**. They interact and reinforce 
-    each other. For example:
-    - **Good infrastructure** enables **efficiency**
-    - **Efficiency** attracts **connectivity** (more shipping lines)
-    - **Connectivity** increases volumes, justifying **infrastructure investment**
-    - **Skilled workers** improve **reliability and efficiency**
-    - **Strategic location** makes infrastructure investment worthwhile
+    <strong>⚠️ Critical Point:</strong> These factors are <strong>not independent</strong>—they interact and reinforce each other:<br>
+    - <strong>Good infrastructure</strong> enables <strong>efficiency and flexibility</strong><br>
+    - <strong>Efficiency</strong> attracts <strong>connectivity</strong> (more shipping lines call)<br>
+    - <strong>Connectivity</strong> increases volumes, justifying <strong>infrastructure investment</strong><br>
+    - <strong>Reliability</strong> builds reputation, attracting more <strong>shipping lines</strong><br>
+    - <strong>Skilled workers</strong> improve <strong>efficiency, reliability, and safety</strong><br>
+    - <strong>Strategic location</strong> makes all infrastructure investment worthwhile<br><br>
     
-    This creates a **virtuous cycle** for successful ports and a **vicious cycle** for struggling ones.
+    This creates a <strong>virtuous cycle</strong> for successful ports:<br>
+    Volume → Investment → Efficiency → More Volume → More Investment...<br><br>
+    
+    And a <strong>vicious cycle</strong> for struggling ports:<br>
+    Low Volume → Underinvestment → Inefficiency → Less Volume → Further Decline...
     </div>
     """, unsafe_allow_html=True)
     
-    # Visual representation of factor importance
-    factors_radar = pd.DataFrame({
-        'Factor': ['Efficiency', 'Reliability', 'Security', 'Cost/Service', 
-                   'Connectivity', 'Infrastructure', 'Workforce', 'Location'],
-        'Singapore': [95, 95, 98, 85, 100, 95, 90, 100],
-        'Competitor Average': [75, 70, 80, 70, 65, 70, 75, 60]
-    })
+    st.markdown('<p class="subsection-header">Deep Dive: Key Success Factors</p>', unsafe_allow_html=True)
     
-    fig = go.Figure()
-    
-    fig.add_trace(go.Scatterpolar(
-        r=factors_radar['Singapore'],
-        theta=factors_radar['Factor'],
-        fill='toself',
-        name='Singapore',
-        line=dict(color='#3B82F6', width=3),
-        fillcolor='rgba(59, 130, 246, 0.3)'
-    ))
-    
-    fig.add_trace(go.Scatterpolar(
-        r=factors_radar['Competitor Average'],
-        theta=factors_radar['Factor'],
-        fill='toself',
-        name='Regional Competitor Avg',
-        line=dict(color='#EF4444', width=3),
-        fillcolor='rgba(239, 68, 68, 0.2)'
-    ))
-    
-    fig.update_layout(
-        polar=dict(
-            radialaxis=dict(visible=True, range=[0, 100])
-        ),
-        showlegend=True,
-        title={
-            'text': 'Port Competitiveness: Singapore vs Regional Competitors',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        height=500
-    )
-    
-    st.plotly_chart(fig, width='stretch')
-    
-    # ============================================================================
-    # SECTION 2: Port Types and Strategic Positioning
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Port Types: Gateway vs Transshipment vs Hub</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Different ports serve different strategic roles in the global shipping network. Understanding these 
-    roles is key to understanding competitive dynamics.
-    """)
-    
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Gateway Port**
+        **Strategic Location:**
         
-        **Definition:**
-        - Serves local/regional cargo
-        - Origin or destination point
-        - Imports for local consumption
-        - Exports from local production
+        **Why Location Matters:**
+        - Vessels follow established trade routes
+        - Deviation from route costs time and fuel
+        - Ports on main routes have natural advantage
+        - Centre of regional trade captures feeder traffic
         
-        **Examples:**
-        - Los Angeles/Long Beach (US)
-        - Hamburg (Germany)
-        - Sydney (Australia)
+        **Singapore's Locational Advantages:**
+        - On main Asia-Europe route (33% global trade)
+        - Centre of Southeast Asia
+        - Malacca Strait chokepoint
+        - Equidistant from major Asian economies
+        - Natural hub for regional distribution
         
-        **Characteristics:**
-        - Hinterland-dependent
-        - Economic health tied to region
-        - Limited by local demand
-        - Less vulnerable to competition
+        **But Location Alone Isn't Enough:**
+        - Hong Kong has excellent location but Singapore surpassed it
+        - Other factors (efficiency, connectivity) can overcome locational disadvantage
+        - Location is an advantage, not a guarantee
         
-        **Strategy:**
-        - Efficient inland connections
-        - Strong customs/logistics
-        - Regional market focus
+        **Efficiency & Flexibility:**
+        
+        **Operational Metrics:**
+        - Vessel turnaround time: <24 hours for mega vessels
+        - Crane productivity: 30+ moves per hour
+        - Truck turnaround: <30 minutes
+        - Adaptability to demand fluctuations
+        
+        **Why Efficiency Matters:**
+        - Vessels spend 10-20% of voyage time in port
+        - Every hour saved = cost savings for shipping lines
+        - Faster turnaround = more voyages per year per vessel
+        - Flexibility handles demand surges without delays
+        
+        **How Singapore Achieves Efficiency:**
+        - 24/7/365 operations (no holidays)
+        - Highly automated equipment
+        - Experienced workforce
+        - Digital systems (PORTNET, TOS)
+        - Continuous process improvement
         """)
     
     with col2:
         st.markdown("""
-        **Transshipment Hub**
+        **Reliability:**
         
-        **Definition:**
-        - Cargo changes vessels
-        - Not origin/destination
-        - Connects feeder to mainline
-        - 70-90% transshipment cargo
+        **What Reliability Means:**
+        - **Berth on Arrival (BOA)**: Vessel berths on scheduled arrival time
+        - **Schedule integrity**: Vessels depart on time
+        - **Consistent quality**: No surprises, predictable service
+        - **Minimal disruptions**: Weather, labour, equipment
         
-        **Examples:**
-        - Singapore (85% transship)
-        - Dubai (70%+ transship)
-        - Colombo (Sri Lanka)
+        **Singapore's Reliability:**
+        - BOA >90% consistently
+        - No labour strikes (stable industrial relations)
+        - Robust equipment maintenance
+        - Weather resilient (no typhoons, hurricanes)
         
-        **Characteristics:**
-        - Location-critical
-        - Network position vital
-        - Highly competitive
-        - Vulnerable to route changes
+        **Why Reliability Matters:**
+        - Shipping lines plan tight connections
+        - Container arrives on Vessel A, departs on Vessel B (same day)
+        - Any delay cascades through network
+        - Unreliability = lost transshipment business
         
-        **Strategy:**
-        - Maximize connectivity
-        - Ultra-high efficiency
-        - Lock in shipping lines
-        - Scale advantages
+        **Connectivity:**
+        
+        **Measuring Connectivity:**
+        - Number of shipping lines calling
+        - Number of ports connected
+        - Sailing frequencies per week
+        - Diversity of routes served
+        
+        **Singapore's Connectivity:**
+        - 200+ shipping lines
+        - 600+ ports in 123 countries
+        - Multiple sailings daily to major hubs
+        - All three mega-alliances present
+        
+        **Network Effects:**
+        - More lines → More destinations → More cargo
+        - More cargo → More lines attracted
+        - Becomes self-reinforcing
+        - Difficult for competitors to replicate
         """)
     
-    with col3:
-        st.markdown("""
-        **Hybrid Hub Port**
-        
-        **Definition:**
-        - Mix of gateway + transship
-        - Serves local + connects
-        - Balanced cargo portfolio
-        - 30-60% transshipment
-        
-        **Examples:**
-        - Rotterdam (40% transship)
-        - Hong Kong (mixed)
-        - Busan (South Korea)
-        
-        **Characteristics:**
-        - More resilient
-        - Diversified revenue
-        - Regional + global role
-        - Strategic flexibility
-        
-        **Strategy:**
-        - Balance both functions
-        - Develop hinterland
-        - Maintain hub connectivity
-        - Risk diversification
-        """)
-    
-    st.markdown("""
-    <div class="insight-box">
-    <strong>🎯 Singapore's Position:</strong> Singapore is a **pure transshipment hub** with ~85% 
-    transshipment cargo. This creates both enormous opportunity (tap into global flows) and significant 
-    risk (vulnerable to shipping line decisions). Singapore's strategy is to be so efficient, connected, 
-    and reliable that shipping lines cannot afford to bypass it.
-    </div>
-    """, unsafe_allow_html=True)
-    
     # ============================================================================
-    # SECTION 3: Regional Competition Landscape
+    # SECTION 2: Port Types Classification
     # ============================================================================
     
-    st.markdown('<p class="section-header">Facing Increasing Regional Competition</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Port Types: Gateway, Transshipment, and Hybrid</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Singapore does not compete in isolation. Ambitious port developments across Southeast Asia are 
-    intensifying competition for transshipment volumes.
+    Ports serve different functions in global trade networks. Understanding these types helps explain 
+    competitive dynamics and strategic positioning.
     """)
     
-    st.markdown('<p class="subsection-header">Major Regional Competitors</p>', unsafe_allow_html=True)
-    
-    # Regional ports data
-    regional_ports = pd.DataFrame({
-        'Port Development': [
-            'Malaysia - Carey Island',
-            'Malaysia - Melaka Gateway',
-            'Malaysia - East Coast Rail Link',
-            'Indonesia - Tanjung Priok',
-            'Thailand - Isthmus of Kra (proposed)',
-            'Vietnam - Cai Mep',
-            'Myanmar - Kyaukpyu'
+    # Port types detailed comparison
+    port_types = pd.DataFrame({
+        'Port Type': [
+            'Gateway Port',
+            'Transshipment Hub',
+            'Hybrid Port'
         ],
-        'Location': [
-            'Near Port Klang, Malaysia',
-            'Malacca Strait, Malaysia',
-            'Kuantan to Port Klang rail',
-            'Jakarta, Indonesia',
-            'Southern Thailand',
-            'Near Ho Chi Minh City',
-            'Myanmar (Chinese investment)'
+        'Primary Function': [
+            'Serve local hinterland (domestic economy)',
+            'Connect feeder and mainline services (pure hub)',
+            'Mix of gateway and transshipment'
         ],
-        'Status': [
-            'Planned/Developing',
-            'Under development',
-            'Under construction',
-            'Expanding capacity',
-            'Proposed (decades)',
-            'Growing rapidly',
-            'Chinese BRI project'
+        'Transshipment %': [
+            '10-30%',
+            '70-90%',
+            '40-60%'
         ],
-        'Threat Level to Singapore': [
-            'Medium: Proximity to Malacca Strait',
-            'Medium: Strategic location',
-            'Low-Medium: Inland connectivity',
-            'Low: Gateway port focus',
-            'High (if built): Would bypass Singapore',
-            'Low-Medium: Different hinterland',
-            'Medium: Alternative route to China'
+        'Key Characteristics': [
+            'Large local economy, origin/destination cargo dominates, import/export focus',
+            'Strategic location, pure hub function, minimal local cargo',
+            'Regional economic centre with hub function, balanced mix'
         ],
-        'Key Advantages': [
-            'Lower costs, land availability',
-            'Good location, government support',
-            'Connects east-west Malaysia',
-            'Serves Indonesian market (large)',
-            'Could save 2-3 days transit time',
-            'Growing Vietnamese economy',
-            'Chinese backing, strategic route'
+        'Examples': [
+            'Los Angeles, Rotterdam, Hamburg, Shanghai',
+            'Singapore (85%), Colombo (95%), Salalah (100%)',
+            'Hong Kong (45%), Dubai (65%), Busan (45%)'
+        ],
+        'Competitive Advantages': [
+            'Captive local market, less dependent on transshipment',
+            'Location on trade routes, efficiency focus, low costs',
+            'Diversified revenue, resilient to trade pattern changes'
+        ],
+        'Vulnerabilities': [
+            'Limited by hinterland economy size, infrastructure constraints',
+            'Vulnerable to direct shipping bypassing hub, competition from other hubs',
+            'May not excel at either gateway or transshipment function'
         ]
     })
     
-    st.dataframe(regional_ports, width='stretch', hide_index=True)
+    st.dataframe(port_types, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Competitive Dynamics:**
+    **Singapore as Pure Transshipment Hub:**
     
-    **Cost Competition:**
-    - Regional ports often have **lower labor costs**
-    - **Cheaper land** for expansion
-    - **Lower operating costs** overall
-    - Singapore competes on **value** not just **price**
+    **The 85% Transshipment Model:**
+    - Only 15% of cargo originates or terminates in Singapore
+    - 85% arrives on one vessel, transfers to another, departs
+    - Unlike gateway ports where most cargo is for local consumption
     
-    **Location Competition:**
-    - Some ports (Carey Island, Melaka Gateway) vie for similar routing
-    - Thailand's Kra Canal (if built) would bypass Malacca Strait entirely
-    - Alternative routes threaten Singapore's locational advantage
+    **Advantages of Pure Hub Model:**
+    - Not constrained by local economy size
+    - Can grow volumes beyond domestic needs
+    - Focus purely on operational excellence
+    - Compete globally for transshipment traffic
     
-    **Government Support:**
-    - Aggressive government backing for rival ports
-    - Subsidies and incentives to attract shipping lines
-    - National pride and strategic importance drive investment
+    **Disadvantages of Pure Hub Model:**
+    - No captive local market (vulnerable to competition)
+    - Must maintain superiority in efficiency and connectivity
+    - Shipping lines can shift to competing hubs more easily
+    - Success depends entirely on competitive position
     
-    **Scale Race:**
-    - Multiple ports expanding simultaneously
-    - Risk of regional overcapacity
-    - "Build it and they will come" approach doesn't always work
+    **Strategic Implications:**
+    - Singapore cannot afford to be complacent
+    - Must continuously invest to stay ahead
+    - Operational excellence is existential, not optional
+    - Tuas investment critical to maintaining position
     """)
     
-    st.markdown("""
-    <div class="warning-box">
-    <strong>⚠️ The Overcapacity Risk:</strong> If Malaysia, Indonesia, Thailand, and other neighbors all 
-    expand capacity simultaneously, Southeast Asia could face **port overcapacity**. This would lead to:
-    - Price wars and margin compression
-    - Underutilized facilities
-    - Wasted infrastructure investment
-    - Only the most efficient ports survive
-    
-    This is why Singapore focuses on **efficiency, reliability, and connectivity** rather than just 
-    competing on price.
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # ============================================================================
-    # SECTION 4: Global Competition
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Global Port Competition</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Singapore also competes globally with other major transshipment hubs for specific trade lanes and 
-    shipping line partnerships.
-    """)
-    
-    # Global competitors
-    global_competitors = pd.DataFrame({
-        'Port': ['Shanghai', 'Ningbo-Zhoushan', 'Shenzhen', 'Busan', 'Hong Kong', 'Dubai', 'Rotterdam', 'Antwerp'],
-        'Country': ['China', 'China', 'China', 'S. Korea', 'China', 'UAE', 'Netherlands', 'Belgium'],
-        'Annual TEU (M)': [49.0, 35.0, 30.0, 22.0, 18.0, 14.0, 15.0, 14.0],
-        'Primary Type': ['Gateway', 'Gateway', 'Gateway', 'Hub', 'Hub', 'Hub', 'Hub', 'Gateway'],
-        'Competitive Focus': [
-            'Chinese exports',
-            'Chinese exports, bulk cargo',
-            'Pearl River Delta gateway',
-            'Northeast Asia hub',
-            'South China gateway + hub',
-            'Middle East/Africa hub',
-            'European gateway + hub',
-            'European gateway'
-        ]
-    })
-    
-    st.dataframe(global_competitors, width='stretch', hide_index=True)
-    
-    # Top 10 ports visualization
-    top_ports = pd.DataFrame({
-        'Port': ['Shanghai', 'Singapore', 'Ningbo-Zhoushan', 'Shenzhen', 'Guangzhou', 
-                 'Busan', 'Qingdao', 'Hong Kong', 'Tianjin', 'Rotterdam'],
-        'TEU (Millions)': [49.0, 37.3, 35.0, 30.0, 25.0, 22.0, 21.0, 18.0, 17.0, 15.0],
-        'Type': ['Gateway', 'Transship Hub', 'Gateway', 'Gateway', 'Gateway',
-                'Hub', 'Gateway', 'Hub', 'Gateway', 'Hub']
+    # Transshipment % visualisation
+    transship_data = pd.DataFrame({
+        'Port': ['Salalah (Oman)', 'Colombo (Sri Lanka)', 'Singapore', 'Dubai (UAE)', 
+                 'Busan (Korea)', 'Hong Kong', 'Shanghai', 'Los Angeles', 'Hamburg'],
+        'Transshipment %': [100, 95, 85, 65, 45, 45, 30, 15, 20],
+        'Type': ['Pure Hub', 'Pure Hub', 'Pure Hub', 'Hybrid', 'Hybrid', 'Hybrid', 'Gateway', 'Gateway', 'Gateway']
     })
     
     fig = go.Figure(data=[
         go.Bar(
-            x=top_ports['TEU (Millions)'],
-            y=top_ports['Port'],
-            orientation='h',
-            marker=dict(
-                color=['#94A3B8' if t == 'Gateway' else '#3B82F6' for t in top_ports['Type']],
-                line=dict(color='#1F2937', width=1)
-            ),
-            text=top_ports['TEU (Millions)'],
-            textposition='outside',
-            textfont=dict(size=12)
+            x=transship_data['Port'],
+            y=transship_data['Transshipment %'],
+            marker=dict(color=['#EF4444' if t == 'Pure Hub' else '#3B82F6' if t == 'Hybrid' else '#10B981' 
+                               for t in transship_data['Type']]),
+            text=transship_data['Transshipment %'],
+            texttemplate='%{text}%',
+            textposition='outside'
         )
     ])
     
     fig.update_layout(
         title={
-            'text': 'World\'s Top 10 Container Ports by Annual Throughput',
+            'text': 'Transshipment Percentage by Port Type',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 18, 'color': '#1F2937'}
         },
-        xaxis_title="Annual TEU (Millions)",
+        xaxis_title="Port",
+        yaxis_title="Transshipment %",
         height=450,
         plot_bgcolor='white',
+        yaxis=dict(gridcolor='#E5E7EB', range=[0, 110]),
+        xaxis=dict(tickangle=-45)
+    ))
+    
+    st.plotly_chart(fig, width='stretch')
+    
+    # ============================================================================
+    # SECTION 3: Regional Competition
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Regional Competition in Southeast Asia</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore faces growing competition from regional ports in Malaysia, Indonesia, Thailand, and Vietnam. 
+    Understanding these competitors is essential for strategic planning.
+    """)
+    
+    st.markdown('<p class="subsection-header">Major Regional Competitors</p>', unsafe_allow_html=True)
+    
+    # Regional competitors detailed analysis
+    competitors = pd.DataFrame({
+        'Port': [
+            'Singapore',
+            'Port Klang (Malaysia)',
+            'Tanjung Pelepas (Malaysia)',
+            'Tanjung Priok (Indonesia)',
+            'Laem Chabang (Thailand)',
+            'Cai Mep (Vietnam)',
+            'Hambantota (Sri Lanka)'
+        ],
+        '2023 Throughput (M TEU)': [37.3, 14.1, 12.5, 8.9, 8.1, 6.8, 1.4],
+        'Transshipment %': ['85%', '65%', '85%', '25%', '30%', '40%', '90%'],
+        'Key Strengths': [
+            'Location, efficiency, connectivity, ecosystem, reliability',
+            'Lower costs, proximity to Kuala Lumpur, growing volumes',
+            'Modern facilities, Maersk dedicated terminal, competitive pricing',
+            'Massive domestic market (275M people), gateway function',
+            'Gateway to Thailand (70M people), lower labour costs',
+            'Modern facilities, rapid growth, Vietnam economy boom',
+            'Strategic location on Asia-Europe route, Chinese investment'
+        ],
+        'Key Weaknesses': [
+            'Higher costs than neighbours, no local market',
+            'Lower efficiency, less connectivity, congestion issues',
+            'Limited connectivity compared to Singapore, newer port',
+            'Domestic focus, lower efficiency, congestion',
+            'Domestic focus, lower transshipment role',
+            'Still developing connectivity, smaller scale',
+            'Limited connectivity, political instability concerns'
+        ],
+        'Threat Level to Singapore': ['N/A', 'Moderate-High', 'Moderate-High', 'Low-Moderate', 'Low', 'Moderate', 'Low']
+    })
+    
+    st.dataframe(competitors, width='stretch', hide_index=True)
+    
+    st.markdown('<p class="subsection-header">Detailed Competitor Analysis</p>', unsafe_allow_html=True)
+    
+    # Malaysia threats
+    st.markdown("""
+    **Malaysia: The Closest Threat**
+    
+    **Port Klang:**
+    - Location: West Malaysia, near Kuala Lumpur
+    - 2023 Throughput: 14.1M TEU (growing steadily)
+    - Strategy: Gateway for Malaysian economy + transshipment (65%)
+    - Advantages: Lower costs, proximity to domestic market
+    - Challenges: Congestion, lower efficiency than Singapore
+    - Assessment: Moderate-High threat (steady volume growth, cost advantage)
+    
+    **Tanjung Pelepas (PTP):**
+    - Location: Johor, Malaysia (just across from Singapore)
+    - 2023 Throughput: 12.5M TEU
+    - Strategy: Pure transshipment hub (85%), Maersk dedicated terminal
+    - Advantages: Modern facilities, competitive pricing, Maersk commitment
+    - Challenges: Limited connectivity beyond Maersk, newer port
+    - Assessment: Moderate-High threat (directly competes with Singapore on transshipment)
+    
+    **East Coast Rail Link (ECRL):**
+    - Connects east and west coasts of Malaysia
+    - Potential to divert cargo from Singapore to Malaysian east coast ports
+    - Could bypass Malacca Strait entirely for some cargo
+    - Still under development, impact uncertain
+    
+    **Melaka Gateway:**
+    - Proposed mega port in Malacca
+    - Chinese-backed investment
+    - If built, could become major competitor
+    - Currently delayed due to financing issues
+    """)
+    
+    # Indonesia threats
+    st.markdown("""
+    **Indonesia: The Giant Gateway**
+    
+    **Tanjung Priok (Jakarta):**
+    - Indonesia's largest port
+    - 2023 Throughput: 8.9M TEU
+    - Population: 275 million (domestic market)
+    - Transshipment: Only 25% (primarily gateway)
+    - Challenges: Congestion, lower efficiency, cabotage laws
+    - Cabotage Laws: Require domestic cargo on Indonesian-flagged vessels (protectionism)
+    
+    **Why Indonesia Is Moderate Threat:**
+    - Massive domestic market but primarily gateway function
+    - Lower efficiency and connectivity limit transshipment appeal
+    - Cabotage laws keep some cargo domestic (doesn't transship through Singapore)
+    - Unlikely to become major transshipment hub (gateway focus)
+    
+    **But:**
+    - If efficiency improves significantly, could attract more transshipment
+    - Domestic market growth reduces Singapore's Indonesian feeder traffic
+    - Direct shipping to Indonesia bypasses Singapore hub
+    """)
+    
+    # Thailand and Vietnam
+    st.markdown("""
+    **Thailand: Laem Chabang**
+    
+    - Gateway to Thailand (70 million people)
+    - 2023 Throughput: 8.1M TEU
+    - Primarily gateway (70%), limited transshipment (30%)
+    - Lower labour costs than Singapore
+    
+    **Isthmus of Kra Canal (Proposed):**
+    - Canal across southern Thailand
+    - Would bypass Malacca Strait entirely
+    - Could cut 1,200 km off Asia-Europe route
+    - **Existential threat to Singapore if built**
+    - Likelihood: Low (massive cost, environmental concerns, decades away if ever)
+    
+    **Vietnam: Cai Mep**
+    
+    - 2023 Throughput: 6.8M TEU
+    - Rapid growth (Vietnam economy booming)
+    - Modern facilities, deep water
+    - Transshipment: ~40% (hybrid port)
+    - Growing connectivity
+    - Moderate threat: Fast growth, competitive costs
+    """)
+    
+    # Throughput comparison chart
+    throughput_data = pd.DataFrame({
+        'Year': [2018, 2019, 2020, 2021, 2022, 2023],
+        'Singapore': [36.6, 37.2, 36.9, 37.5, 37.3, 37.3],
+        'Port Klang': [12.3, 13.2, 13.2, 13.6, 14.0, 14.1],
+        'Tanjung Pelepas': [9.1, 9.7, 9.6, 10.5, 11.8, 12.5],
+        'Tanjung Priok': [7.6, 7.8, 7.2, 7.8, 8.4, 8.9]
+    })
+    
+    fig = go.Figure()
+    
+    for port in ['Singapore', 'Port Klang', 'Tanjung Pelepas', 'Tanjung Priok']:
+        fig.add_trace(go.Scatter(
+            x=throughput_data['Year'],
+            y=throughput_data[port],
+            mode='lines+markers',
+            name=port,
+            line=dict(width=3),
+            marker=dict(size=8)
+        ))
+    
+    fig.update_layout(
+        title={
+            'text': 'Regional Port Throughput Trends (2018-2023)',
+            'x': 0.5,
+            'xanchor': 'center',
+            'font': {'size': 18, 'color': '#1F2937'}
+        },
+        xaxis_title="Year",
+        yaxis_title="Throughput (Million TEU)",
+        height=450,
+        plot_bgcolor='white',
+        yaxis=dict(gridcolor='#E5E7EB'),
         xaxis=dict(gridcolor='#E5E7EB'),
-        annotations=[
-            dict(x=35, y='Singapore', text='#1 Transshipment Hub', 
-                 showarrow=True, arrowhead=2, ax=-50, ay=-30, font=dict(color='#3B82F6', size=11))
-        ]
+        legend=dict(x=0.02, y=0.98)
     )
     
     st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
-    **Key Observations:**
+    <div class="warning-box">
+    <strong>⚠️ The Overcapacity Risk:</strong> Southeast Asia faces potential <strong>port overcapacity</strong> if all 
+    countries expand simultaneously:<br>
+    - Malaysia: Port Klang expansion, PTP growth, Melaka Gateway (if built), ECRL<br>
+    - Indonesia: Tanjung Priok expansion, new ports planned<br>
+    - Thailand: Laem Chabang expansion, Kra Canal (if built)<br>
+    - Vietnam: Cai Mep expansion, new deepwater ports<br><br>
     
-    1. **Chinese Ports Dominate by Volume**
-       - Top 10 includes 7 Chinese ports
-       - Driven by massive manufacturing exports
-       - Mostly gateway ports serving local cargo
+    <strong>If overcapacity occurs:</strong><br>
+    - Price wars and margin compression<br>
+    - Underutilised facilities (wasted investment)<br>
+    - Only the most efficient ports survive<br>
+    - Consolidation of volumes to top performers<br><br>
     
-    2. **Singapore's Unique Position**
-       - #2 globally by volume
-       - #1 by transshipment volume
-       - Only pure transshipment hub in top 10
+    <strong>Singapore's response:</strong> Focus on <strong>efficiency, reliability, and connectivity</strong> rather than 
+    competing purely on price. Build switching costs through ecosystem and lock-in strategies.
+    </div>
+    """, unsafe_allow_html=True)
     
-    3. **Hub Ports vs Gateway Ports**
-       - Hub ports (Singapore, Busan, Dubai, Rotterdam) play different strategic role
-       - Gateway ports (Shanghai, Ningbo) less vulnerable to competition
-       - Singapore competes primarily with other hubs, not gateway ports
+    # ============================================================================
+    # SECTION 4: Alternative Trade Routes
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Alternative Trade Routes: Future Threats</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Beyond direct port competition, alternative trade routes could fundamentally change shipping patterns 
+    and threaten Singapore's position.
+    """)
+    
+    # Alternative routes analysis
+    alternative_routes = pd.DataFrame({
+        'Alternative Route': [
+            'Kra Canal (Thailand)',
+            'Arctic Northern Sea Route',
+            'Belt and Road Initiative (BRI)',
+            'Sunda/Makassar Straits',
+            'Direct Shipping (bypassing hubs)',
+            'Land Bridge Routes'
+        ],
+        'Description': [
+            'Canal across southern Thailand cutting 1,200km off Asia-Europe route',
+            'Ice-free Arctic route from Asia to Europe via Russia',
+            'Land-based trade corridors reducing reliance on sea routes',
+            'Alternative straits bypassing Malacca (longer but avoids Singapore)',
+            'Vessels sailing directly to destination ports, skipping transshipment',
+            'Rail/truck across land instead of sea shipping'
+        ],
+        'Impact if Realized': [
+            'Catastrophic: Bypasses Malacca Strait and Singapore entirely',
+            'Moderate-High: 30% shorter than Suez route, could divert 30% of traffic',
+            'Low-Moderate: Complements sea trade, limited capacity vs maritime',
+            'Low: Longer route, only attractive if Malacca unavailable',
+            'Moderate: Reduces transshipment volumes, hurts hub ports',
+            'Low: Limited capacity, only viable for high-value/time-sensitive'
+        ],
+        'Likelihood/Timeline': [
+            'Low: Massive cost ($28B+), environmental concerns, political complexity, decades away if ever',
+            'Moderate: Climate-dependent, viable 2-3 months/year now, could extend to 6+ months by 2040s',
+            'High: Ongoing development, gradual impact over decades',
+            'Low: Only used when Malacca congested or blocked',
+            'Ongoing: Already happening for some routes, limited by economics',
+            'Low: Cannot match maritime cost and capacity for bulk goods'
+        ],
+        'Singapore Impact': [
+            'Existential threat if built (bypasses entirely)',
+            'Moderate threat if Arctic becomes year-round viable',
+            'Indirect: Changes trade flows gradually',
+            'Minimal: Emergency alternative only',
+            'Moderate: Reduces transshipment demand',
+            'Minimal: Niche alternative'
+        ]
+    })
+    
+    st.dataframe(alternative_routes, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    **Kra Canal: The Existential Threat**
+    
+    **What It Is:**
+    - Canal across Isthmus of Kra in southern Thailand
+    - 50-100 km long, 400m wide, 25m deep (estimates vary)
+    - Would connect Andaman Sea (west) to Gulf of Thailand (east)
+    
+    **Impact:**
+    - Cuts 1,200 km off Asia-Europe route
+    - Saves 2-3 days sailing time
+    - Bypasses Malacca Strait entirely
+    - **Singapore becomes irrelevant for Asia-Europe trade**
+    
+    **Why It Hasn't Been Built:**
+    - **Massive cost**: $28-35 billion estimated
+    - **Environmental damage**: Ecosystem destruction
+    - **Political complexity**: Southern Thailand instability
+    - **Engineering challenges**: Massive excavation
+    - **Uncertain economics**: Would shipping lines actually use it?
+    
+    **Likelihood Assessment:**
+    - Extremely low in next 20-30 years
+    - Discussed for decades, never progressed beyond proposals
+    - Thailand has other priorities (land bridge proposal instead)
+    - If ever built, would be 2050+ at earliest
+    
+    **Singapore's Position:**
+    - Monitor closely but don't panic
+    - Continue building efficiency and ecosystem advantages
+    - Even if built, Singapore retains intra-Asia and trans-Pacific roles
+    - Diversify port value proposition (bunkering, ship repair, maritime services)
     """)
     
     # ============================================================================
-    # SECTION 5: Strategic Planning for Port Competitiveness
+    # SECTION 5: Strategic Planning Framework
     # ============================================================================
     
-    st.markdown('<p class="section-header">Strategic Planning for Port Competitiveness</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Port Strategic Planning Framework</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Maintaining competitiveness requires deliberate, long-term strategic planning. Successful ports 
-    follow structured strategic planning processes.
+    Ports use strategic planning to position themselves for long-term success. Understanding this framework 
+    helps appreciate Singapore's Tuas investment.
     """)
     
-    st.markdown('<p class="subsection-header">The Strategic Planning Framework</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Strategic Planning Process</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    A comprehensive port strategic plan typically includes:
+    **Strategic Plan Components:**
     
-    **1. Mission and Vision Statements**
-    - Define the port's purpose and long-term aspirations
-    - Example: Singapore's vision to remain as "vital port in inter-connected network"
+    1. **Mission and Vision Statements**
+       - Mission: Why the port exists, core purpose
+       - Vision: Desired future state (5-10 years)
     
-    **2. Values and Behavioral Standards**
-    - Core principles guiding decision-making
-    - Safety, efficiency, reliability, innovation
+    2. **Values and Behavioural Standards**
+       - Safety first
+       - Operational excellence
+       - Environmental responsibility
+       - Customer focus
     
-    **3. Analysis of Business and Environmental Factors**
-    - **SWOT Analysis**: Strengths, Weaknesses, Opportunities, Threats
-    - Market trends and forecasts
-    - Competitive intelligence
-    - Technology trends
-    - Regulatory environment
+    3. **Analysis of Business and Environmental Factors**
+       - Market trends (vessel sizes, trade flows)
+       - Competitive landscape
+       - Technological changes
+       - Regulatory environment
     
-    **4. Strategic Objectives**
-    - Specific, measurable goals
-    - Examples: Throughput targets, efficiency metrics, market share goals
+    4. **Strategic Objectives**
+       - Measurable goals (throughput, efficiency, market share)
+       - Financial targets (revenue, profitability)
+       - Quality targets (BOA%, crane productivity)
     
-    **5. Lines of Action and Forward Responsibilities**
-    - Detailed implementation plans
-    - Resource allocation
-    - Accountability assignments
-    - Timeline and milestones
+    5. **Lines of Action and Forward Responsibilities**
+       - Infrastructure projects (berths, cranes, automation)
+       - Technology initiatives (digital systems)
+       - Workforce development
+       - Customer engagement
+       - Sustainability initiatives
     
-    **Planning Horizon:** Typically 5-10 years for major infrastructure decisions, with annual reviews 
-    and adjustments.
+    **Time Frame:** Typically 5-10 years
+    
+    **Review Cycle:** Annual review and adjustment based on changing conditions
     """)
     
-    st.markdown('<p class="subsection-header">Singapore\'s Strategic Response to Competition</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Levels of Strategic Planning</p>', unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+        **Multi-National Level**
+        
+        **Scope:**
+        - Alliance of ports
+        - Regional cooperation
+        
+        **Examples:**
+        - Baltic Sea ports alliance
+        - Dover/Calais coordination
+        
+        **Objectives:**
+        - Share best practices
+        - Coordinate capacity
+        - Collective marketing
+        - Avoid destructive competition
+        """)
+    
+    with col2:
+        st.markdown("""
+        **Regional/National Level**
+        
+        **Scope:**
+        - National government planning
+        - Regional port system
+        
+        **Examples:**
+        - Singapore national port strategy
+        - China port system planning
+        
+        **Objectives:**
+        - Optimise national capacity
+        - Avoid domestic overcapacity
+        - Strategic positioning
+        - Economic development
+        """)
+    
+    with col3:
+        st.markdown("""
+        **Individual Port/Terminal Level**
+        
+        **Scope:**
+        - Single port or terminal
+        - Operational focus
+        
+        **Examples:**
+        - PSA terminal planning
+        - Tuas Mega Port development
+        
+        **Objectives:**
+        - Capacity expansion
+        - Efficiency improvement
+        - Technology adoption
+        - Customer service
+        """)
+    
+    # ============================================================================
+    # SECTION 6: Singapore's Competitive Response
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Singapore\'s Competitive Response Strategy</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Facing intensifying regional competition, Singapore has adopted a multi-pronged strategy centred on 
+    massive infrastructure investment, technology leadership, and ecosystem lock-in.
+    """)
+    
+    st.markdown('<p class="subsection-header">Tuas Mega Port: The Infrastructure Response</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Infrastructure Investment:**
-        - **Tuas Mega Port**: S$20+ billion investment
-        - 65M TEU capacity by 2040
-        - World's largest automated port
-        - Consolidates terminals for efficiency gains
+        **Scale of Investment:**
+        - **Total cost**: S$20+ billion (US$15B+)
+        - **Timeline**: Phased development to 2040
+        - **Ultimate capacity**: 65 million TEU
+        - **Current capacity**: ~37 million TEU
+        - **Expansion headroom**: +75% capacity
         
-        **Technology Leadership:**
-        - CITOS® terminal operating system
-        - Automated guided vehicles (AGVs)
-        - AI-powered berth planning
-        - Next-generation port control systems
+        **Why This Scale?**
+        - Anticipate mega vessel growth (24,000+ TEU)
+        - Accommodate all three alliances
+        - Pre-empt regional competition
+        - Lock in Singapore's position for next 50 years
         
-        **Operational Excellence:**
-        - BOA target >90% (berth on arrival)
-        - Sub-24-hour turnaround for mega vessels
-        - Continuous process improvement
-        - Lean operations methodology
+        **Phased Development:**
+        - Phase 1 (2021-2027): 21 berths, 23M TEU
+        - Phase 2 (2027-2040): Additional berths to 65M TEU
+        - Allows adaptation to market conditions
+        - Spreads financial burden over time
         """)
     
     with col2:
         st.markdown("""
-        **Lock-In Strategies:**
-        - **Joint ventures** with shipping lines (long-term commitment)
-        - Dedicated terminals for major alliances
-        - Customized services for key customers
-        - Multi-year service agreements
+        **Design Features:**
+        - **65 berths** when complete
+        - **400m+ berth length** (handle 24,000 TEU vessels)
+        - **20m depth** (accommodate deepest draft vessels)
+        - **Fully automated** (AGVs, automated cranes)
+        - **Climate resilient**: Built 5m above sea level
+        - **Integrated operations**: Single mega terminal
         
-        **Ecosystem Development:**
-        - Complete maritime cluster (finance, legal, tech)
-        - One-stop maritime services
-        - High switching costs for shipping lines
-        - Network effects and agglomeration benefits
+        **Operational Targets:**
+        - Berth productivity: 200+ moves/hour
+        - BOA: >95%
+        - Vessel turnaround: <24 hours (mega vessels)
+        - Energy efficiency: 50% reduction vs conventional
         
-        **Policy Stability:**
-        - Predictable government support
-        - "No U-turns" policy commitment
-        - Long-term infrastructure planning
-        - Pro-business regulatory environment
+        **Consolidation Benefits:**
+        - Current: 5 terminals across Singapore
+        - Future: 1 mega terminal at Tuas
+        - Better equipment utilisation
+        - Simplified operations
+        - Freed up land for redevelopment (city centre)
         """)
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 Singapore's Core Strategy:</strong> Rather than competing solely on price (a race to the 
-    bottom), Singapore competes on:
-    - **Efficiency**: Fastest turnaround times
-    - **Reliability**: Minimal disruptions, predictable operations
-    - **Connectivity**: Unmatched global network
-    - **Ecosystem**: Complete maritime services cluster
-    - **Innovation**: Technology leadership
+    <strong>💡 Tuas Mega Port Green Features:</strong><br>
+    Singapore isn\'t just building bigger—it\'s building smarter and greener:<br>
+    - <strong>Climate resilience</strong>: Built 5 metres above mean sea level (sea level rise protection)<br>
+    - <strong>Solar panel canopies</strong>: Throughout the terminal (renewable energy)<br>
+    - <strong>Fully electrified quay cranes</strong>: Zero diesel emissions (vs conventional diesel cranes)<br>
+    - <strong>Automated Guided Vehicles (AGVs)</strong>: Replace diesel prime movers<br>
+    - <strong>Energy-efficient operations</strong>: Digital optimisation reduces waste<br>
+    - <strong>Sustainable reclamation</strong>: Waste circularity in land reclamation<br>
+    - <strong>Shore power ready</strong>: Vessels can plug into grid (zero emissions at berth)<br><br>
     
-    This strategy creates **sustainable competitive advantages** that are difficult for competitors to replicate.
+    Sustainability is becoming a <strong>competitive advantage</strong>—shipping lines face pressure to reduce carbon 
+    footprint, and green ports will be preferred partners.
     </div>
     """, unsafe_allow_html=True)
     
-    # ============================================================================
-    # SECTION 6: Emerging Threats and Route Changes
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Emerging Threats: New Trade Routes and Channels</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Technology Leadership Strategy</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Beyond port-to-port competition, Singapore faces potential threats from entirely new routing options 
-    that could bypass traditional shipping lanes.
+    **Digital Transformation Initiatives:**
+    
+    **digitalPORT@SG:**
+    - AI-based port operations control
+    - Predictive analytics for vessel traffic
+    - Real-time optimisation
+    - Digital twin for scenario testing
+    
+    **Automation at Tuas:**
+    - Automated quay cranes (remote controlled)
+    - AGVs for horizontal transport
+    - Automated yard cranes
+    - Minimal manual intervention
+    
+    **Data Analytics:**
+    - Machine learning for demand forecasting
+    - Predictive maintenance (equipment failures)
+    - Dynamic yard planning
+    - Container flow optimisation
+    
+    **Benefits:**
+    - Higher productivity (24/7 operations, no fatigue)
+    - Lower operating costs (less labour)
+    - Consistent quality (no human error)
+    - Scalability (add capacity without proportional workforce)
+    - Competitive edge (technology barrier to entry)
     """)
     
-    st.markdown('<p class="subsection-header">Alternative Routes Under Development</p>', unsafe_allow_html=True)
-    
-    # Threats analysis
-    threats_data = pd.DataFrame({
-        'Threat': [
-            'Arctic Route (Northern Sea Route)',
-            'Kra Canal (Thailand)',
-            'Trans-Pacific Rail Link',
-            'Economic Zones Shifts',
-            'Shipping Alliance Changes'
-        ],
-        'Description': [
-            'Arctic melting opens Norway-Korea route, 30% shorter than Suez',
-            'Canal across Thai isthmus bypasses Malacca Strait entirely',
-            'Seaway to rail connection across North America',
-            'Manufacturing shifts affect origin/destination patterns',
-            'Alliance restructuring changes port calling patterns'
-        ],
-        'Likelihood': ['Medium (2030s-2040s)', 'Low (decades away)', 'Low-Medium', 'High (ongoing)', 'Medium-High'],
-        'Impact if Occurs': [
-            'High: Could divert Asia-Europe traffic away from Singapore',
-            'Very High: Direct threat to Singapore\'s strategic location',
-            'Low: Limited to specific routes, capacity constrained',
-            'Medium: Requires adaptation but manageable',
-            'Medium: Can be mitigated through relationships and JVs'
-        ],
-        'Singapore\'s Response': [
-            'Monitor; maintain cost competitiveness; diversify services',
-            'Tuas investment locks in scale; ecosystem creates switching costs',
-            'Not directly addressable; maintain overall competitiveness',
-            'Adapt to new trade patterns; flexible infrastructure',
-            'Joint ventures; dedicated terminals; long-term partnerships'
-        ]
-    })
-    
-    st.dataframe(threats_data, width='stretch', hide_index=True)
+    st.markdown('<p class="subsection-header">Lock-In Strategies</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Competitive Advantage Trade-offs:**
+    **Creating Switching Costs:**
     
-    Singapore's strategy explicitly recognizes trade-offs between different competitive factors:
+    **Long-Term Terminal Leases:**
+    - 20-30 year agreements with terminal operators
+    - Operators make multi-billion dollar investments
+    - High exit costs (cannot easily move)
+    - Provides stability and predictability
     
-    - **Location vs Efficiency**: Location is fixed (advantage), but efficiency must be continuously improved
-    - **Costs vs Service**: Not the cheapest, but offers best value for money
-    - **Scale vs Flexibility**: Massive Tuas investment vs ability to adapt to market changes
-    - **Connectivity vs Concentration**: Extensive network creates resilience but also dependencies
+    **Alliance-Dedicated Terminals:**
+    - Dedicated berths for specific alliances
+    - Customised to alliance needs
+    - Deep integration with alliance operations
+    - Alliance reluctant to switch (disruption cost)
+    
+    **Joint Ventures:**
+    - PSA partners with shipping lines (e.g., MSC, CMA CGM)
+    - Shared ownership = shared interests
+    - Alignment of incentives
+    - Reduces competition (partners, not just customers)
+    
+    **Ecosystem Advantage:**
+    - Not just a port—complete maritime cluster
+    - Bunkering, ship repair, finance, legal, technology
+    - One-stop solution (convenience)
+    - High switching cost (lose access to entire ecosystem)
+    
+    **Network Effects:**
+    - 200+ shipping lines create network
+    - Each line benefits from others' presence (cargo connections)
+    - Self-reinforcing: More lines → Better network → Attracts more lines
+    - Competitor needs to replicate entire network (nearly impossible)
+    """)
+    
+    # ============================================================================
+    # SECTION 7: Big Hub vs Vital Node
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Strategic Positioning: "Big Hub" vs "Vital Node"</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore's strategic thinking has evolved from "being the biggest hub" to "being a vital node in an 
+    interconnected port network." This shift is significant.
     """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 "Big Hub vs Vital Node" Strategy:</strong>
+    <strong>🎯 The Strategic Shift: Big Hub → Vital Node</strong><br><br>
     
-    Singapore increasingly emphasizes being a **vital node in an inter-connected port network** rather than 
-    simply the "biggest hub":
+    <strong>Old Thinking: "Big Hub" Mentality</strong><br>
+    - Winner-takes-all competition<br>
+    - Size matters most (biggest = best)<br>
+    - Centralised hub-and-spoke model<br>
+    - Single point of failure vulnerability<br>
+    - Pure volume focus<br><br>
     
-    **Big Hub Mentality:**
-    - Winner-takes-all competition
-    - Size matters most
-    - Vulnerability to single-point failure
+    <strong>New Thinking: "Vital Node" Mentality</strong><br>
+    - Network resilience matters<br>
+    - Reliability + connectivity + efficiency = value<br>
+    - Multiple complementary ports coexist<br>
+    - Strategic position in network topology<br>
+    - Quality over quantity focus<br><br>
     
-    **Vital Node Mentality:**
-    - Network resilience matters
-    - Reliability + connectivity + efficiency = value
-    - Multiple complementary ports coexist
-    - Strategic position in network topology
+    <strong>Why This Shift?</strong><br>
+    - <strong>Mega vessels</strong>: Can\'t call at every port, need efficient hubs<br>
+    - <strong>Alliance structures</strong>: Multiple hubs in network (not single mega hub)<br>
+    - <strong>Risk management</strong>: Shipping lines want backup options (Suez blockage lesson)<br>
+    - <strong>Regional development</strong>: Other hubs will exist (can\'t prevent), better to be best quality<br>
+    - <strong>Sustainability</strong>: Efficiency and reliability becoming differentiators<br><br>
     
-    This shift recognizes that being the **most reliable, most connected, most efficient** hub can be more 
-    valuable than being the absolute largest.
-    </div>
-    """, unsafe_allow_html=True)
+    <strong>What "Vital Node" Means:</strong><br>
+    - <strong>Indispensable</strong>: Network functions poorly without this node<br>
+    - <strong>Efficient</strong>: Fastest, most reliable, most cost-effective<br>
+    - <strong>Connected</strong>: Links to more destinations than alternatives<br>
+    - <strong>Resilient</strong>: Handles disruptions better than others<br>
+    - <strong>Trusted</strong>: Consistent quality builds long-term relationships<br><br>
     
-    # ============================================================================
-    # SECTION 7: Green Ports and Sustainability
-    # ============================================================================
+    <strong>Singapore\'s Implementation:</strong><br>
+    - Focus on operational excellence (efficiency, reliability)<br>
+    - Invest in technology (maintain edge)<br>
+    - Build ecosystem (switching costs)<br>
+    - Foster relationships (alliances, joint ventures)<br>
+    - Accept coexistence with other hubs (Port Klang, PTP) but remain superior<br><br>
     
-    st.markdown('<p class="section-header">Green Ports and Sustainability</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Environmental sustainability is increasingly a competitive factor in port strategy. Leading ports 
-    integrate green thinking into masterplanning processes.
-    """)
-    
-    st.markdown("""
-    **Why Green Ports Matter:**
-    
-    **Regulatory Pressures:**
-    - IMO 2030/2050 decarbonization targets
-    - Regional air quality regulations
-    - Carbon pricing mechanisms
-    - ESG (Environmental, Social, Governance) requirements
-    
-    **Customer Demands:**
-    - Shipping lines face pressure to reduce carbon footprint
-    - Cargo owners demand sustainable supply chains
-    - Green credentials becoming competitive differentiator
-    
-    **Economic Benefits:**
-    - Energy efficiency reduces operating costs
-    - Green technology can improve productivity
-    - Attracts eco-conscious customers and investors
-    - Prepares for future carbon pricing
-    """)
-    
-    st.markdown('<p class="subsection-header">Green Port Initiatives</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **Infrastructure Design:**
-        - Solar panels on terminal roofs
-        - LED lighting throughout facilities
-        - Energy-efficient building design
-        - Rainwater harvesting systems
-        - Green spaces and biodiversity
-        
-        **Equipment Electrification:**
-        - Electric/hybrid quay cranes
-        - Electric yard cranes (E-RTG)
-        - Automated guided vehicles (AGVs) battery-powered
-        - Shore power for vessels at berth
-        - Electric trucks and prime movers
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Operational Measures:**
-        - Optimized routing to reduce fuel use
-        - Predictive maintenance to improve efficiency
-        - Waste management and recycling programs
-        - Carbon footprint monitoring and reporting
-        
-        **Strategic Partnerships:**
-        - Collaboration with shipping lines on green initiatives
-        - Research partnerships on alternative fuels
-        - Industry consortia on sustainability standards
-        - Green technology development
-        
-        **MPA Green Port Program:**
-        - Incentives for green vessels
-        - Support for alternative fuel bunkering
-        - Green technology trials and adoption
-        """)
-    
-    st.markdown("""
-    <div class="success-box">
-    <strong>💡 Tuas Mega Port Green Features:</strong>
-    - Built **5 meters above mean sea level** (climate resilience)
-    - **Solar panel canopies** throughout the terminal
-    - **Fully electrified quay cranes** (no diesel)
-    - **AGVs** instead of diesel prime movers
-    - **Energy-efficient grab dredger** for reclamation
-    - **Sustainable reclamation** with waste circularity
-    - **Digital systems** to optimize operations and reduce waste
-    
-    Sustainability is not just environmental responsibility—it's becoming a **competitive advantage**.
+    Being the <strong>most reliable, most connected, most efficient</strong> hub is more valuable than being the 
+    absolute largest.
     </div>
     """, unsafe_allow_html=True)
     
@@ -706,55 +902,51 @@ def show():
     
     with col1:
         st.markdown("""
-        **Critical Success Factors:**
-        - Eight key factors determine competitiveness
-        - Factors are interdependent and self-reinforcing
-        - Excellence required across all dimensions
-        - Virtuous vs vicious cycles
+        **Critical Success Factors (8):**
+        - Strategic location (main trade routes)
+        - Efficiency & flexibility (fast turnaround)
+        - Reliability (BOA >90%, consistency)
+        - Security & safety (low pilferage, safe operations)
+        - Connectivity (200+ lines, 600+ ports)
+        - Infrastructure & technology (deep berths, automation)
+        - Cost vs service level (competitive with quality)
+        - Skilled workforce & governance (stable, supportive)
+        - Factors interact and reinforce (virtuous/vicious cycles)
         
         **Port Types:**
-        - Gateway: Serves local hinterland
-        - Transshipment Hub: Connects shipping networks
-        - Hybrid: Mix of both functions
-        - Singapore is pure transshipment hub (85%)
-        
-        **Regional Competition:**
-        - Malaysia, Indonesia, Thailand developing ports
-        - Lower costs but less established
-        - Risk of overcapacity in Southeast Asia
-        - Singapore competes on value, not just price
+        - Gateway: 10-30% transshipment (serve local economy)
+        - Transshipment Hub: 70-90% (pure hub function)
+        - Hybrid: 40-60% (mix of both)
+        - Singapore: 85% transshipment (pure hub, vulnerable)
         """)
     
     with col2:
         st.markdown("""
-        **Strategic Planning:**
-        - 5-10 year planning horizons
-        - SWOT analysis and market intelligence
-        - Infrastructure, technology, operations
-        - Lock-in strategies and partnerships
+        **Regional Competition:**
+        - Malaysia: Port Klang (14.1M), PTP (12.5M) - moderate-high threat
+        - Indonesia: Tanjung Priok (8.9M) - low-moderate threat
+        - Thailand: Laem Chabang (8.1M), Kra Canal (existential if built)
+        - Vietnam: Cai Mep (6.8M) - moderate threat
+        - Overcapacity risk if all expand simultaneously
         
-        **Emerging Threats:**
-        - Arctic routes (climate change)
-        - Kra Canal (if built)
-        - Alliance restructuring
-        - Trade pattern shifts
-        
-        **Strategic Response:**
-        - Tuas investment (scale advantage)
-        - Technology leadership (efficiency)
-        - Ecosystem development (switching costs)
-        - "Vital node" vs "biggest hub" mentality
-        - Green port leadership
+        **Singapore\'s Response:**
+        - Tuas Mega Port: S$20B+, 65M TEU by 2040
+        - Technology leadership: Automation, AI, digital systems
+        - Lock-in strategies: Long-term leases, JVs, ecosystem
+        - "Vital node" positioning: Quality over quantity
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Port competition is multidimensional and intensifying. Success requires 
-    excellence across efficiency, reliability, connectivity, infrastructure, workforce, and location. 
-    Singapore's stable government, long-term planning, and comprehensive ecosystem approach provide strong 
-    competitive advantages, but continuous improvement and massive infrastructure investment (Tuas) are 
-    necessary to stay ahead. Being a vital, reliable node in the inter-connected network is more valuable 
-    than simply being the biggest hub.
+    <strong>🔍 Bottom Line:</strong> Success as a transshipment hub requires eight critical factors (location, 
+    efficiency, reliability, security, connectivity, infrastructure, cost/service balance, skilled workforce) that 
+    interact and reinforce each other in virtuous or vicious cycles. Singapore, as an 85% transshipment hub (pure hub), 
+    faces moderate-to-high competition from regional ports (Malaysia\'s Port Klang and PTP, Vietnam\'s Cai Mep) and 
+    potential existential threats (Kra Canal if ever built, Arctic route if viable year-round). Singapore responds 
+    through massive infrastructure investment (Tuas S$20B+, 65M TEU capacity), technology leadership (full automation, 
+    AI, digital systems), lock-in strategies (long-term leases, joint ventures, ecosystem advantages), and strategic 
+    repositioning from "biggest hub" to "vital node" emphasising reliability, efficiency, and connectivity over pure 
+    size. The risk of regional overcapacity makes operational excellence critical for survival.
     </div>
     """, unsafe_allow_html=True)
     
@@ -765,7 +957,7 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** 🎯 Operations Management Fundamentals - Understand the "Big Six" competencies that 
-    attract customers, quality management principles, and capacity planning strategies that drive port 
-    operational excellence.
+    **Next Topic:** ⚙️ Operations Management - Explore the "Big Six" competitive competencies, quality management 
+    frameworks (FMEA), capacity planning strategies, demand management techniques, and the critical trade-offs facing 
+    port operators in day-to-day decision-making.
     """)
