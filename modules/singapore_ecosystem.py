@@ -3,13 +3,13 @@ import plotly.graph_objects as go
 import pandas as pd
 
 def show():
-    st.markdown('<p class="main-header">🇸🇬 Maritime Singapore Ecosystem</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">🏛️ Maritime Singapore Ecosystem</p>', unsafe_allow_html=True)
     
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand Singapore's comprehensive maritime cluster, MPA's dual role as regulator and developer, 
-    the complete ecosystem of maritime services, and innovation initiatives driving the industry forward.
+    Understand Singapore's unique maritime governance structure, MPA's dual role as regulator and promoter, 
+    and how the complete maritime cluster creates a world-leading ecosystem.
     </div>
     """, unsafe_allow_html=True)
     
@@ -17,611 +17,528 @@ def show():
     # SECTION 1: Singapore's Maritime Position
     # ============================================================================
     
-    st.markdown('<p class="section-header">Singapore: The World\'s Maritime Capital</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Singapore: The World\'s Premier Maritime Hub</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Singapore has deliberately cultivated its position as a global maritime hub over 70+ years. Understanding 
-    this ecosystem helps explain the context for port operations and digital innovation.
+    Singapore is not just a port—it's a comprehensive **International Maritime Centre (IMC)** offering 
+    a complete suite of maritime services. This ecosystem approach is what differentiates Singapore from 
+    competitors who focus solely on cargo handling.
     """)
     
+    # Key metrics
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("Container Throughput", "37.3M TEU", help="Annual container throughput (2023)")
+        st.metric("Container Throughput", "37.3M TEU", help="Annual container volume (2023)")
     with col2:
-        st.metric("World Ranking", "#2", help="World's 2nd largest container port by volume")
+        st.metric("Vessel Calls", "130,000+", help="Annual vessel arrivals")
     with col3:
-        st.metric("Shipping Lines", "200+", help="Over 200 shipping lines call at Singapore")
+        st.metric("Connected Ports", "600+", help="Ports in 120+ countries")
     with col4:
-        st.metric("Global Connectivity", "600+ ports", help="Connected to 600+ ports in 123 countries")
+        st.metric("Shipping Lines", "200+", help="Active container services")
     
     st.markdown("""
-    **Singapore's Maritime Strengths:**
+    **Singapore's Unique Strengths:**
     
-    **Strategic Location:**
-    - Centre of Southeast Asia
-    - On main Asia-Europe shipping route (33% of global trade)
-    - Malacca Strait chokepoint
-    - Equidistant from major Asian economies (China, India, Japan, Korea)
-    
-    **World-Class Infrastructure:**
-    - Multiple terminals: Tanjong Pagar, Keppel, Brani, Pasir Panjang
-    - Tuas Mega Port under development (65M TEU capacity by 2040)
-    - State-of-the-art equipment and automation
-    - Deep-water berths accommodating mega vessels
-    
-    **Operational Excellence:**
-    - Berth on Arrival (BOA) >90%
-    - 24-hour vessel turnaround for mega vessels
-    - 24/7/365 operations
-    - Highly efficient customs and logistics
-    
-    **Complete Ecosystem:**
-    - Not just a port—a comprehensive maritime cluster
-    - Ship repair, bunkering, maritime finance, insurance, legal, technology
-    - One-stop solution for maritime industry needs
+    - **#1 Container Transshipment Hub:** ~85% of throughput is transshipment (not origin/destination)
+    - **#1 Bunkering Port:** 40+ million tonnes of marine fuel supplied annually
+    - **Strategic Location:** On main Asia-Europe trade route, center of Southeast Asia
+    - **Straits of Malacca/Singapore:** 33% of global seaborne trade passes through
+    - **Deep Natural Harbor:** Can accommodate largest vessels (16+ meter draft)
+    - **Political Stability:** Predictable, pro-business government policies
+    - **World-Class Infrastructure:** State-of-the-art terminals and equipment
+    - **Skilled Workforce:** Strong technical and management capabilities
     """)
     
-    # ============================================================================
-    # SECTION 2: Maritime and Port Authority of Singapore (MPA)
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Maritime and Port Authority (MPA): The Dual Role</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    MPA is unique globally in combining regulatory and developmental functions. Understanding this dual role 
-    explains Singapore's coordinated maritime strategy.
-    """)
-    
-    st.markdown('<p class="subsection-header">MPA's Two Core Functions</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **Function 1: Regulator**
-        
-        **Port Safety and Security:**
-        - Vessel traffic management (VTS)
-        - Port security (ISPS Code compliance)
-        - Marine safety regulations
-        - Accident investigation
-        - Pilotage services regulation
-        
-        **Environmental Protection:**
-        - Marine pollution prevention
-        - Ballast water management
-        - Emissions monitoring
-        - Green shipping initiatives
-        
-        **Standards and Compliance:**
-        - Ship registration
-        - Crew certification
-        - Maritime labour standards
-        - International convention compliance
-        
-        **Infrastructure Regulation:**
-        - Port facility licencing
-        - Terminal operator oversight
-        - Navigational aids maintenance
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Function 2: Developer**
-        
-        **Industry Development:**
-        - Maritime cluster promotion
-        - Attracting shipping lines and services
-        - Business facilitation
-        - Investment incentives
-        
-        **Innovation and Technology:**
-        - Digital transformation (digitalPORT@SG)
-        - R&D funding and support
-        - Test-bedding facilities
-        - Innovation programmes
-        
-        **Talent Development:**
-        - Maritime training programmes
-        - Scholarships and bursaries
-        - Industry-academic partnerships
-        - Workforce upskilling
-        
-        **Strategic Planning:**
-        - Long-term port masterplanning
-        - Tuas Mega Port development
-        - International partnerships
-        - Trade route development
-        """)
-    
-    st.markdown("""
-    **Why This Dual Role Matters:**
-    
-    **Coordinated Strategy:**
-    - Single entity aligns regulation with development goals
-    - Avoids conflict between safety/security and business growth
-    - Holistic view of maritime ecosystem
-    
-    **Responsive Governance:**
-    - Quick policy adaptation to industry needs
-    - Balance between regulation and competitiveness
-    - Industry consultation embedded in decision-making
-    
-    **Long-Term Vision:**
-    - Infrastructure planning aligned with regulatory framework
-    - Innovation encouraged within safety boundaries
-    - Sustainable development prioritised
-    
-    **Example: Tuas Development**
-    - MPA as developer: Plans and builds Tuas Mega Port
-    - MPA as regulator: Ensures environmental compliance, safety standards
-    - Coordination ensures world-class facility that's also sustainable and safe
-    """)
-    
-    # ============================================================================
-    # SECTION 3: The Complete Maritime Cluster
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Singapore\'s Complete Maritime Cluster</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Singapore offers a comprehensive ecosystem of maritime services—this "one-stop shop" is a key 
-    competitive advantage.
-    """)
-    
-    st.markdown('<p class="subsection-header">The Seven Pillars of Maritime Singapore</p>', unsafe_allow_html=True)
-    
-    # Maritime cluster components
-    cluster_components = pd.DataFrame({
-        'Pillar': [
-            '1. Port and Terminal Operations',
-            '2. Shipping and Liner Services',
-            '3. Ship Repair and Shipbuilding',
-            '4. Maritime Ancillary Services',
-            '5. Maritime Finance and Insurance',
-            '6. Maritime Law and Arbitration',
-            '7. Maritime Technology and Innovation'
+    # Singapore's role visualization
+    services_data = pd.DataFrame({
+        'Service Category': [
+            'Container Handling',
+            'Bunkering',
+            'Ship Repair',
+            'Maritime Finance',
+            'Ship Management',
+            'Maritime Legal',
+            'Maritime Tech',
+            'Logistics Services'
         ],
-        'Key Players': [
-            'PSA, Jurong Port, cargo handlers',
-            '200+ shipping lines, ship management companies',
-            'Sembcorp Marine, Keppel, 40+ shipyards',
-            'Bunkering companies, ship chandlers, crew managers',
-            'Banks, ship financing, P&I clubs, marine insurance',
-            'Law firms, arbitration centres, maritime courts',
-            'Tech startups, R&D institutes, innovation centres'
-        ],
-        'Services Provided': [
-            'Container handling, cargo storage, transshipment',
-            'Liner services, vessel operations, freight forwarding',
-            'Dry-docking, repairs, retrofits, conversions, new builds',
-            'Fuel supply, provisions, crew changes, maintenance',
-            'Ship loans, project finance, hull/cargo insurance',
-            'Maritime disputes, contracts, arbitration services',
-            'Digital solutions, automation, AI, blockchain, IoT'
-        ],
-        'Why Important': [
-            'Core infrastructure for cargo movement',
-            'Connectivity to global trade network',
-            'Vessel maintenance and lifecycle support',
-            'Operational support for vessels in port',
-            'Capital and risk management for shipping',
-            'Legal framework and dispute resolution',
-            'Innovation and efficiency improvements'
+        'Global Ranking': [1, 1, 3, 3, 1, 1, 2, 1],
+        'Description': [
+            '37.3M TEU, world\'s busiest transshipment hub',
+            '40M+ tonnes fuel, largest bunkering port',
+            'Most advanced facilities in Southeast Asia',
+            'Major center for ship financing and insurance',
+            'Home to 130+ ship management companies',
+            'Leading maritime arbitration and legal center',
+            'Innovation hub for maritime technology',
+            'Complete logistics and supply chain services'
         ]
     })
     
-    st.dataframe(cluster_components, width='stretch', hide_index=True)
-    
-    st.markdown('<p class="subsection-header">Deep Dive: Key Pillars</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Bunkering (Marine Fuel Supply):**
-    
-    **Singapore's Position:**
-    - **World's largest bunkering port** (40+ million tonnes annually)
-    - 20+ licensed bunker suppliers
-    - Supplies all types: Conventional, Low-Sulphur, LNG, Biofuels
-    - Future: Methanol, ammonia bunkering infrastructure planned
-    
-    **Why Bunkering Matters:**
-    - Vessels need fuel → Must call at bunkering ports
-    - Singapore's bunkering capabilities lock in port calls
-    - Revenue source for port (alongside container handling)
-    - Strategic: Control over fuel supply = influence over shipping routes
-    
-    **Operations:**
-    - Ship-to-ship bunkering (tanker transfers fuel to vessel)
-    - Truck-to-ship bunkering (for smaller quantities)
-    - 24/7 operations, any location in port
-    - Mass Flow Meter (MFM) systems ensure accurate measurement
-    
-    **Ship Repair and Shipbuilding:**
-    
-    **Capabilities:**
-    - 40+ shipyards and repair facilities
-    - Dry-docking facilities for all vessel sizes
-    - Specialisations: Offshore platforms, naval vessels, mega yachts
-    - Retrofits: Scrubber installations, ballast water systems, efficiency upgrades
-    
-    **Strategic Value:**
-    - Vessels need periodic maintenance (dry-docking every 2-5 years)
-    - Singapore's location + expertise = natural repair hub
-    - High-value industry (skilled jobs, technology transfer)
-    
-    **Maritime Finance:**
-    
-    **Financial Hub:**
-    - Major banks offer ship financing
-    - Singapore dollar financing growing
-    - Shipping funds and private equity
-    - Insurance and reinsurance markets
-    
-    **Why Singapore?**
-    - Political stability and strong rule of law
-    - Favourable tax regime for maritime
-    - Proximity to Asian shipowners
-    - Expertise in complex shipping finance structures
-    """)
+    st.dataframe(services_data, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 The Ecosystem Advantage:</strong><br>
-    A shipowner can come to Singapore and:<br>
-    - <strong>Dock their vessel</strong> (port operations)<br>
-    - <strong>Repair and maintain</strong> (shipyard services)<br>
-    - <strong>Refuel</strong> (bunkering)<br>
-    - <strong>Change crew</strong> (crew management services)<br>
-    - <strong>Arrange financing</strong> (maritime banks)<br>
-    - <strong>Insure the vessel</strong> (marine insurance)<br>
-    - <strong>Resolve disputes</strong> (maritime lawyers/arbitration)<br>
-    - <strong>Upgrade technology</strong> (maritime tech companies)<br><br>
-    This comprehensive one-stop offering creates <strong>high switching costs</strong> and <strong>network 
-    effects</strong>—once established in Singapore, companies find it efficient to keep all services here.
+    <strong>💡 The Singapore Advantage:</strong> Unlike ports that only handle cargo, Singapore offers a 
+    **complete maritime cluster**. A shipping line can:
+    - Transship containers at PSA terminals
+    - Refuel their vessels (bunkering)
+    - Conduct repairs at Sembcorp or Keppel shipyards
+    - Arrange ship financing from Singapore banks
+    - Purchase marine insurance from Singapore underwriters
+    - Resolve disputes through Singapore maritime arbitration
+    - Access maritime technology and innovation partners
+    
+    This one-stop ecosystem creates enormous switching costs and loyalty.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 4: Digital Transformation Initiatives
+    # SECTION 2: MPA - Maritime and Port Authority of Singapore
     # ============================================================================
     
-    st.markdown('<p class="section-header">Digital Transformation: Building Maritime 4.0</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">MPA: The Regulator and Promoter</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Singapore is investing heavily in digitising and automating maritime operations.
+    The Maritime and Port Authority of Singapore (MPA) is unique in the maritime world because it plays 
+    **dual roles** as both regulator and industry promoter.
     """)
     
-    st.markdown('<p class="subsection-header">digitalPORT@SG Programme</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">MPA Formation and Vision</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    MPA's comprehensive digital transformation initiative for Singapore's port ecosystem.
+    **Formation Timeline:**
     
-    **Key Components:**
+    **1996: MPA Created through Merger**
+    - **Singapore Marine Department** (regulatory functions)
+    - **PSA's Regulatory Departments** (port regulation)
+    - **National Maritime Board** (maritime promotion)
     
-    **1. AI-Based Integrated Port Operations Control**
-    - Centralised AI system for port-wide optimisation
-    - Predictive analytics for vessel traffic and berth planning
-    - Real-time decision support for port operators
-    - Machine learning improves over time
+    **2004: Industry Promotion Enhanced**
+    - Took over industry promotion functions from IE Singapore (now Enterprise Singapore)
+    - Became comprehensive regulator + promoter
     
-    **2. Multi-Sensor Track Fusion**
-    - Integrate data from radar, AIS, cameras, sensors
-    - Complete picture of all vessel movements
-    - Enhanced situational awareness
-    - Improved safety and security
+    **MPA Vision:**
+    > "A leading maritime agency driving Singapore's global maritime aspirations"
     
-    **3. Predictive Maintenance**
-    - IoT sensors on all major equipment
-    - Monitor equipment health in real-time
-    - Predict failures before they happen
-    - Optimise maintenance schedules
-    
-    **4. Digital Twin**
-    - Virtual replica of entire port operations
-    - Test scenarios before implementing changes
-    - Training environment for operators
-    - Optimisation through simulation
-    
-    **5. Next-Gen Port Control System**
-    - Modern IT infrastructure
-    - Cloud-based platforms
-    - APIs for integration with shipping lines
-    - Enhanced cybersecurity
+    **Dual Identity:**
+    - **Regulator** for safety, security, environment
+    - **Promoter** for industry growth and development
     """)
     
-    st.markdown('<p class="subsection-header">digitalOCEANS Platform</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Vision:** Digital twin of Singapore's entire maritime domain
-    
-    **Capabilities:**
-    - **Real-time situational awareness**: Track all vessels in Singapore waters
-    - **Data integration**: Connect all maritime stakeholders on single platform
-    - **Analytics**: Advanced analytics on patterns, efficiency, safety
-    - **Collaboration**: Shared platform for government, port operators, shipping lines
-    
-    **Use Cases:**
-    - Optimise vessel routing and berth allocation
-    - Coordinate pilot and tug services
-    - Monitor marine traffic for safety
-    - Environmental monitoring and compliance
-    - Emergency response coordination
-    
-    **Benefits:**
-    - Improved operational efficiency
-    - Enhanced safety and security
-    - Better environmental outcomes
-    - Data-driven decision-making
-    - Platform for innovation (third-party apps)
-    """)
-    
-    st.markdown('<p class="subsection-header">Electronic Documentation</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Paperless Trade Initiatives:**
-    
-    **Electronic Bill of Lading (eBL):**
-    - Digital replacement for paper Bill of Lading
-    - Blockchain-based for security and authenticity
-    - Instant transfer (vs days for physical document)
-    - Reduces fraud risk
-    - Cost savings: Estimated $6.5 billion annually globally if fully adopted
-    
-    **Electronic Bunker Delivery Note (e-BDN):**
-    - Digital record of fuel delivered to vessels
-    - Automated data capture
-    - Reduces errors and fraud
-    - Integrated with port systems
-    
-    **Digital Certificates:**
-    - Ship certificates (safety, security, classification)
-    - Crew certificates
-    - Cargo certificates
-    - Instantly verifiable, reducing delays
-    
-    **PORTNET:**
-    - Singapore's maritime single window
-    - All port-related transactions through one system
-    - Integration with customs, immigration
-    - 24/7 online clearance
-    - Paperless vessel clearance since 1980s (pioneer)
-    """)
-    
-    # ============================================================================
-    # SECTION 5: Innovation Ecosystem
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Maritime Innovation Ecosystem</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Singapore actively cultivates maritime innovation through funding, infrastructure, and partnerships.
-    """)
-    
-    st.markdown('<p class="subsection-header">BLOCK71 Maritime Innovation Hub</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Overview:**
-    - Launched 2018 by MPA
-    - Accelerator for maritime technology startups
-    - Connect startups with industry challenges
-    - Funding, mentorship, pilot opportunities
-    
-    **Focus Areas:**
-    - Autonomous vessels and robotics
-    - AI and data analytics
-    - Cybersecurity
-    - Green technologies (alternative fuels, efficiency)
-    - Blockchain and digital trade
-    - IoT and sensors
-    
-    **How It Works:**
-    1. **Startups apply** with innovative maritime solutions
-    2. **Selection** based on technology potential and market fit
-    3. **Acceleration** programme: Funding, mentorship, workspace
-    4. **Pilot projects** with maritime companies (real-world testing)
-    5. **Scale** successful solutions globally
-    
-    **Success Stories:**
-    - 100+ startups supported
-    - Multiple technologies deployed commercially
-    - Singapore positioned as maritime tech hub
-    
-    **Strategic Value:**
-    - Innovation attracts talent and investment
-    - Solutions benefit Singapore's ports first
-    - Export technology globally (new revenue stream)
-    - Maintain competitive edge through innovation
-    """)
-    
-    st.markdown('<p class="subsection-header">Maritime Innovation and Technology (MINT) Fund</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Purpose:**
-    - Co-fund R&D projects
-    - Support test-bedding of new technologies
-    - Accelerate adoption of innovation
-    
-    **How It Works:**
-    - MPA co-funds up to 50% of project costs
-    - Companies contribute remainder
-    - Focus on technologies benefiting Singapore maritime
-    - Fast approval process (encourage experimentation)
-    
-    **Eligible Technologies:**
-    - Digitalisation and automation
-    - Green and sustainable shipping
-    - Safety and security enhancements
-    - Productivity improvements
-    - Novel business models
-    
-    **Impact:**
-    - Reduces risk for companies to innovate
-    - Accelerates technology adoption
-    - Builds local innovation capabilities
-    """)
-    
-    st.markdown('<p class="subsection-header">Academic and Research Partnerships</p>', unsafe_allow_html=True)
+    # MPA organizational structure
+    st.markdown('<p class="subsection-header">MPA Roles and Responsibilities</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Singapore Maritime Institute (SMI):**
-        - Coordinates maritime R&D
-        - Funds research projects
-        - Connects academia with industry
-        - Focus areas: Automation, sustainability, digitalisation
+        **As PORT AUTHORITY:**
+        - Manage port operations and traffic
+        - Allocate berths and anchorages
+        - Coordinate vessel movements
+        - Ensure safe navigation in port waters
+        - Maintain marine infrastructure
         
-        **Universities:**
-        - National University of Singapore (NUS)
-        - Nanyang Technological University (NTU)
-        - Singapore University of Technology and Design (SUTD)
-        - Maritime programmes and research centres
+        **As PORT REGULATOR:**
+        - Set port safety standards
+        - License port operators and service providers
+        - Monitor compliance with regulations
+        - Enforce maritime laws
+        - Investigate marine incidents
+        
+        **As PORT PLANNER:**
+        - Long-term port development planning
+        - Infrastructure investment decisions
+        - Tuas Mega Port masterplanning
+        - Land use optimization
+        - Future capacity expansion
         """)
     
     with col2:
         st.markdown("""
-        **Research Focus:**
-        - Autonomous vessels
-        - Port automation and optimisation
-        - Alternative fuels and propulsion
-        - Digitalisation and cybersecurity
-        - Supply chain resilience
+        **As IMC PROMOTER:**
+        - Attract maritime companies to Singapore
+        - Develop maritime services cluster
+        - Promote ship registration
+        - Support maritime startups and innovation
+        - Market Singapore as maritime hub
         
-        **Approach:**
-        - Industry-led research (solve real problems)
-        - Test-bedding facilities available
-        - Student internships and projects
-        - Knowledge transfer to industry
+        **As IMC DEVELOPER:**
+        - Develop talent and workforce
+        - Support R&D and innovation
+        - Build maritime technology capabilities
+        - Foster maritime finance and legal services
+        - Develop maritime knowledge hub
+        
+        **As NATIONAL MARITIME REPRESENTATIVE:**
+        - Represent Singapore at IMO (International Maritime Organization)
+        - Participate in regional maritime forums
+        - Negotiate bilateral maritime agreements
+        - Shape international maritime standards
+        - Advocate for Singapore's maritime interests
         """)
     
-    # ============================================================================
-    # SECTION 6: Workforce Development
-    # ============================================================================
+    # MPA roles visualization
+    fig = go.Figure()
     
-    st.markdown('<p class="section-header">Maritime Workforce Development</p>', unsafe_allow_html=True)
+    roles_data = [
+        {'Role': 'Port Authority', 'Score': 100, 'Color': '#3B82F6'},
+        {'Role': 'Port Regulator', 'Score': 100, 'Color': '#2563EB'},
+        {'Role': 'Port Planner', 'Score': 100, 'Color': '#1E40AF'},
+        {'Role': 'IMC Promoter', 'Score': 100, 'Color': '#10B981'},
+        {'Role': 'IMC Developer', 'Score': 100, 'Color': '#059669'},
+        {'Role': 'National Rep', 'Score': 100, 'Color': '#047857'}
+    ]
     
-    st.markdown("""
-    Developing skilled maritime talent is critical for maintaining competitiveness, especially with 
-    increasing automation.
-    """)
+    fig.add_trace(go.Barpolar(
+        r=[d['Score'] for d in roles_data],
+        theta=[d['Role'] for d in roles_data],
+        marker=dict(color=[d['Color'] for d in roles_data]),
+        name='MPA Roles'
+    ))
     
-    st.markdown('<p class="subsection-header">Singapore Maritime Academy (SMA)</p>', unsafe_allow_html=True)
+    fig.update_layout(
+        title={
+            'text': 'MPA\'s Six Key Roles',
+            'x': 0.5,
+            'xanchor': 'center',
+            'font': {'size': 20, 'color': '#1F2937'}
+        },
+        polar=dict(
+            radialaxis=dict(visible=False, range=[0, 100])
+        ),
+        showlegend=False,
+        height=500
+    )
     
-    st.markdown("""
-    **Mission:**
-    - Train maritime professionals
-    - Sea-going and shore-based careers
-    - Technical and management skills
-    
-    **Programmes:**
-    - Diplomas in maritime studies, nautical studies, marine engineering
-    - Degree programmes (with universities)
-    - Professional certifications
-    - Continuing education and upskilling
-    
-    **Facilities:**
-    - Ship simulators (bridge, engine room)
-    - Container terminal simulator
-    - Safety training facilities
-    - Industry-standard equipment
-    
-    **Industry Partnership:**
-    - Curriculum designed with industry input
-    - Internships and apprenticeships
-    - Guest lecturers from industry
-    - Guaranteed employment for graduates
-    """)
-    
-    st.markdown('<p class="subsection-header">SkillsFuture and Workforce Transition</p>', unsafe_allow_html=True)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
-    **Challenge:**
-    - Automation reduces traditional port jobs (crane operators, drivers)
-    - Need to reskill displaced workers
-    - Create new jobs in technology and management
+    <div class="insight-box">
+    <strong>🎯 Why This Dual Role Matters:</strong> Most countries separate regulation (government) from 
+    promotion (industry associations). MPA's unique structure allows:
+    - **Coordinated policy-making**: Regulations designed with industry growth in mind
+    - **Fast decision-making**: Single agency coordinates all maritime matters
+    - **Industry responsiveness**: Direct channel between government and industry
+    - **Strategic planning**: Long-term vision with regulatory backing
     
-    **SkillsFuture Maritime:**
-    - Government-funded training programmes
-    - Reskilling for new roles (IT, data analytics, automation management)
-    - Career coaching and transition support
-    - Portable skills development
-    
-    **New Job Categories:**
-    - Automation system operators (remote crane control)
-    - Maintenance technicians (service AGVs, automated equipment)
-    - Data analysts (optimise operations using data)
-    - Cybersecurity specialists
-    - Technology project managers
-    
-    **Approach:**
-    - Gradual transition (automation phased over 20 years)
-    - Natural attrition (retirements)
-    - Retraining programmes for willing workers
-    - Support for career transitions
-    """)
+    This explains why Singapore can implement major changes like Tuas Mega Port so effectively.
+    </div>
+    """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 7: Sustainability Initiatives
+    # SECTION 3: Singapore Maritime Ecosystem
     # ============================================================================
     
-    st.markdown('<p class="section-header">Green Maritime Initiatives</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">The Complete Maritime Cluster</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Singapore is positioning itself as a leader in maritime sustainability.
+    Singapore has deliberately built a **complete maritime ecosystem** where all components support and 
+    reinforce each other.
     """)
     
-    st.markdown('<p class="subsection-header">Green Port Programme</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Core Components of the Cluster</p>', unsafe_allow_html=True)
+    
+    # Ecosystem components
+    ecosystem_components = pd.DataFrame({
+        'Cluster Component': [
+            'Port Operations',
+            'Ship Owners & Operators',
+            'Shipbuilding & Repair',
+            'Maritime Finance',
+            'Maritime Insurance',
+            'Maritime Legal Services',
+            'Maritime Tech & Innovation',
+            'Logistics & Supply Chain',
+            'Bunkering Services',
+            'Maritime Education',
+            'Classification Societies',
+            'Maritime Agencies'
+        ],
+        'Key Players / Details': [
+            'PSA (terminals), Jurong Port (multipurpose)',
+            '130+ ship management companies, 5,000+ vessels registered',
+            'Sembcorp Marine, Keppel Offshore & Marine - leading repair facilities',
+            'DBS, OCBC, Standard Chartered - ship financing; Insurance placement',
+            'Major P&I clubs, hull & machinery underwriters',
+            'Top-tier law firms specializing in maritime; SCMA arbitration center',
+            'BLOCK71 maritime startups, R&D centers, digitalPORT@SG initiatives',
+            'Global freight forwarders, 3PLs, warehouse operators',
+            '40M+ tonnes annually, major bunkering companies (Chemoil, Sentek)',
+            'Singapore Maritime Academy, NUS Maritime programs',
+            'Lloyd\'s Register, DNV, ABS, ClassNK offices',
+            'IMO regional presence, ASEAN maritime cooperation'
+        ],
+        'Global Standing': [
+            '#1 Container Port',
+            'Top 5 Ship Registry',
+            'Top 3 in Asia',
+            'Top 3 Globally',
+            'Major Center',
+            '#1 in Asia',
+            'Leading Hub',
+            'Top Tier',
+            '#1 Globally',
+            'Regional Leader',
+            'Complete Coverage',
+            'Strategic Center'
+        ]
+    })
+    
+    st.dataframe(ecosystem_components, width='stretch', hide_index=True)
+    
+    st.markdown('<p class="subsection-header">The Cluster Network Effect</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Incentives for Green Vessels:**
-    - **Green Port Programme**: Rebates on port dues for eco-friendly vessels
-    - Criteria: NOx emissions, SOx emissions, CO2 efficiency
-    - Vessels with better environmental performance pay less
-    - Encourages shipping lines to invest in green technology
+    Each component strengthens the others, creating a **self-reinforcing ecosystem**:
     
-    **Green Shipping Corridor:**
-    - Collaboration with other ports
-    - Preferential treatment for green vessels
-    - Create demand for sustainable shipping
+    **Example 1: Ship Owner → Multiple Services**
+    - Ship owner establishes office in Singapore
+    - Uses Singapore banks for ship financing
+    - Registers vessels under Singapore flag
+    - Sends vessels to Singapore for repairs
+    - Bunkers in Singapore
+    - Uses Singapore lawyers for contracts
+    - Calls at Singapore port for cargo
     
-    **Shore Power:**
-    - Vessels plug into grid electricity at berth
-    - Shut down diesel generators (zero emissions at berth)
-    - Tuas Mega Port designed with shore power capability
-    - Incentives for vessels to use shore power
+    **Example 2: Port Success → Industry Growth**
+    - High port throughput attracts shipping lines
+    - Shipping lines establish regional HQs
+    - Need for finance, legal, insurance grows
+    - Service providers set up Singapore offices
+    - Concentration of expertise attracts more companies
+    - Creates jobs for maritime professionals
+    - Attracts talent and education programs
+    
+    **Result:** Once established, very difficult for competitors to replicate this complete cluster.
     """)
     
-    st.markdown('<p class="subsection-header">Alternative Fuels Infrastructure</p>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="warning-box">
+    <strong>⚠️ Government Policy Foundation:</strong> This cluster didn't happen by accident. Singapore 
+    government deliberately:
+    - Provides **stable, predictable policies** ("no U-turns")
+    - Maintains **pro-business environment** with competitive taxes
+    - Invests in **infrastructure** before demand (Tuas planning started in 2012)
+    - Develops **talent pipelines** through education
+    - Creates **regulatory sandboxes** for innovation
+    - Actively **markets Singapore** internationally
+    
+    As former Minister said: "Maritime Singapore would have to go beyond its status as a major hub to 
+    become an international maritime centre providing a full suite of services."
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # ============================================================================
+    # SECTION 4: Innovation and Digitalization
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Innovation: Maritime Regulatory Sandbox</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Multi-Fuel Strategy:**
+    MPA operates a **Maritime Regulatory Sandbox** to accelerate innovation while managing risk. 
+    This allows companies to test new technologies and business models with regulatory flexibility.
+    """)
     
-    **Current:**
-    - LNG bunkering well-established
-    - Multiple LNG bunker vessels operating
-    - Supporting LNG-powered vessel growth
+    st.markdown('<p class="subsection-header">Two Key Focus Areas</p>', unsafe_allow_html=True)
     
-    **Developing:**
-    - Methanol bunkering infrastructure
-    - Pilot programmes with shipping lines
-    - Building capabilities for green methanol
+    col1, col2 = st.columns(2)
     
-    **Future:**
-    - Ammonia bunkering (2030s)
-    - Hydrogen infrastructure (niche applications)
-    - Biofuels blending and supply
+    with col1:
+        st.markdown("""
+        **1. Accelerating Digitalisation & Innovation**
+        
+        **digitalPORT@SG Initiative:**
+        - AI-based integrated port operations control
+        - Multi-sensor track fusion for vessel monitoring
+        - Predictive analytics for berth planning
+        - Real-time port traffic optimization
+        
+        **digitalOCEANS Platform:**
+        - Digital twin of Singapore's maritime domain
+        - Real-time situational awareness
+        - Data sharing across stakeholders
+        - Integration with PORTNET
+        
+        **Digital Solutions:**
+        - **eBL (electronic Bill of Lading)**: Blockchain-based, paperless documentation
+        - **e-BDN (electronic Bunker Delivery Note)**: Digital fuel receipts
+        - **e-Certificates**: Digital certification for vessels
+        
+        **BLOCK71 Maritime:**
+        - First maritime ecosystem innovation builder in region (2018)
+        - Connects startups with industry challenges
+        - Funding and mentorship programs
+        - Test bed for maritime technologies
+        """)
     
-    **Strategic Importance:**
-    - Position as leading alternative fuel bunkering hub
-    - Flexibility as industry transitions
-    - Lock in bunkering business regardless of fuel type
-    - Support shipping industry decarbonisation
+    with col2:
+        st.markdown("""
+        **2. Drive Maritime Decarbonisation**
+        
+        **Future Fuels Port Network:**
+        - Singapore as bunkering hub for alternative fuels
+        - LNG bunkering capabilities
+        - Methanol bunkering infrastructure
+        - Ammonia bunkering (future)
+        
+        **Low-to-Zero Carbon Fuel Adoption:**
+        - Guidelines for ammonia and methanol use
+        - Safety standards development
+        - Infrastructure planning
+        - Industry collaboration (SABRE consortium)
+        
+        **Green Port Initiatives:**
+        - Shore power for vessels at berth
+        - Electrification of port equipment
+        - Carbon footprint tracking
+        - Incentives for green vessels
+        
+        **Technology Development:**
+        - Funding for green maritime R&D
+        - Collaboration with research institutions
+        - International partnerships
+        - Net-zero 2050 pathway development
+        """)
+    
+    st.markdown("""
+    <div class="success-box">
+    <strong>💡 The Sandbox Approach:</strong> Rather than waiting for perfect regulations, MPA allows 
+    controlled testing:
+    - Companies apply to test new technology/service
+    - MPA grants temporary regulatory relief
+    - Real-world trials with risk controls
+    - Learn from results, then create permanent regulations
+    - Fast-tracks innovation while maintaining safety
+    
+    This approach has attracted global maritime tech companies to test innovations in Singapore first.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # ============================================================================
+    # SECTION 5: Talent Development
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Talent Development: Building Maritime Workforce</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    A sophisticated maritime industry requires sophisticated talent. Singapore invests heavily in 
+    developing maritime human capital.
+    """)
+    
+    st.markdown('<p class="subsection-header">Education and Training Programs</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        **Academic Programs:**
+        - **Singapore Maritime Academy (SMA)**: Diploma programs for seafarers
+        - **National University of Singapore (NUS)**: Maritime studies, shipping management
+        - **Nanyang Technological University (NTU)**: Maritime engineering, logistics
+        - **Singapore Management University (SMU)**: Shipping and transport management
+        
+        **Professional Development:**
+        - **Singapore Maritime Foundation (SMF)**: Scholarships and career development
+        - **Maritime Cluster Fund**: Co-funding for capability building
+        - Executive education programs
+        - Industry attachment programs
+        """)
+    
+    with col2:
+        st.markdown("""
+        **Career Pathways:**
+        - **Technical**: Naval architects, marine engineers, port engineers
+        - **Operations**: Ship captains, port operators, terminal managers
+        - **Commercial**: Shipping managers, chartering, freight forwarding
+        - **Legal**: Maritime lawyers, arbitrators
+        - **Finance**: Ship finance, insurance, risk management
+        - **Technology**: Maritime IT, digitalization, innovation
+        
+        **"Sea The Difference" Campaign:**
+        - MPA career promotion initiative
+        - Showcases diverse maritime careers
+        - Attracts young talent to industry
+        - Highlights innovation and technology aspects
+        """)
+    
+    st.markdown("""
+    **The Talent Ecosystem:**
+    
+    Singapore's approach creates a **virtuous cycle**:
+    1. World-class industry attracts talented professionals
+    2. Presence of talent attracts more companies
+    3. Companies invest in training and development
+    4. Strong education institutions produce more graduates
+    5. Government supports with scholarships and programs
+    6. Ecosystem becomes globally competitive for talent
     """)
     
     # ============================================================================
-    # SECTION 8: Key Takeaways
+    # SECTION 6: Government Support and Policies
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Government Support: The Foundation</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore's maritime success is underpinned by **consistent, long-term government support** and 
+    **pro-business policies**.
+    """)
+    
+    st.markdown('<p class="subsection-header">Key Government Attributes</p>', unsafe_allow_html=True)
+    
+    # Government support factors
+    support_factors = pd.DataFrame({
+        'Factor': [
+            'Political Stability',
+            'Long-Term Thinking',
+            'Policy Consistency',
+            'Infrastructure Investment',
+            'Regulatory Efficiency',
+            'Pro-Business Environment',
+            'Rule of Law',
+            'Transparency'
+        ],
+        'Description': [
+            'Stable government for decades, predictable succession',
+            '10-20 year planning horizons (Tuas announced 2012 for 2040)',
+            '"No U-turns" - policies maintained across administrations',
+            'S$20B+ investment in Tuas before first container handled',
+            'Fast approvals, streamlined processes, single-window clearance',
+            'Competitive tax rates, incentives for maritime companies',
+            'Strong legal framework, enforceable contracts, low corruption',
+            'Clear regulations, published criteria, fair processes'
+        ],
+        'Impact on Maritime': [
+            'Companies confident to make long-term investments',
+            'Industry can plan knowing government support continues',
+            'Reduces risk and uncertainty for investors',
+            'World-class facilities attract mega vessels and alliances',
+            'Low bureaucracy costs, fast business setup',
+            'Competitive operating costs despite high land/labor costs',
+            'Singapore as trusted location for contracts and arbitration',
+            'Clear rules attract international companies'
+        ]
+    })
+    
+    st.dataframe(support_factors, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    <div class="insight-box">
+    <strong>🎯 The Singapore Model:</strong> A Minister explained Singapore's approach:
+    
+    > "Singapore will live up to its reputation for stable pro-business policies that provide certainty. 
+    > We avoid back tracking and U-turns, and we set out to make companies feel welcome and a valued part 
+    > of the Singapore maritime ecosystem."
+    
+    This consistency and reliability is perhaps Singapore's greatest competitive advantage—companies know 
+    what to expect 10, 20, 30 years into the future.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # ============================================================================
+    # SECTION 7: Key Takeaways
     # ============================================================================
     
     st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
@@ -631,56 +548,57 @@ def show():
     with col1:
         st.markdown("""
         **Singapore's Position:**
-        - World's #2 container port (37.3M TEU)
-        - 200+ shipping lines, 600+ ports connected
-        - Strategic location (Malacca Strait, Asia-Europe route)
-        - Operational excellence (>90% BOA, <24h turnaround)
+        - 37.3M TEU container throughput
+        - 130,000+ annual vessel calls
+        - Connected to 600+ ports globally
+        - 85% transshipment (critical hub role)
+        - #1 bunkering port (40M+ tonnes)
         
-        **MPA's Dual Role:**
-        - Regulator: Safety, security, standards, environment
-        - Developer: Industry promotion, innovation, talent, infrastructure
-        - Coordinated strategy enables long-term vision
+        **MPA's Unique Structure:**
+        - Dual role: Regulator + Promoter
+        - Six key functions: Authority, Regulator, Planner, IMC Promoter, IMC Developer, National Rep
+        - Formed 1996 through strategic merger
+        - Single coordinating agency for all maritime
         
         **Complete Maritime Cluster:**
-        - Port operations, shipping lines, ship repair
-        - Bunkering (world's largest), ancillary services
-        - Maritime finance, insurance, law
-        - Technology and innovation
-        - One-stop ecosystem advantage
+        - Port operations + ship owners/operators
+        - Finance, insurance, legal services
+        - Shipbuilding, repair, bunkering
+        - Technology, innovation, education
+        - Self-reinforcing network effects
         """)
     
     with col2:
         st.markdown("""
-        **Digital Transformation:**
-        - digitalPORT@SG: AI, predictive maintenance, digital twin
-        - digitalOCEANS: Maritime domain digital platform
-        - Electronic documentation: eBL, e-BDN, certificates
-        - PORTNET: Maritime single window since 1980s
+        **Innovation Leadership:**
+        - Maritime Regulatory Sandbox
+        - Digital initiatives (eBL, digitalPORT, digitalOCEANS)
+        - BLOCK71 startup ecosystem
+        - Decarbonization and green fuels
+        - Test bed for new technologies
         
-        **Innovation Ecosystem:**
-        - BLOCK71: Maritime tech accelerator (100+ startups)
-        - MINT Fund: Co-fund R&D and pilots
-        - Academic partnerships: NUS, NTU, SUTD
-        - Test-bedding facilities and support
+        **Talent Development:**
+        - Multiple educational pathways
+        - Scholarships and career programs
+        - "Sea The Difference" campaign
+        - Professional development support
         
-        **Sustainability:**
-        - Green Port Programme (incentives for eco-vessels)
-        - Alternative fuels: LNG, methanol, ammonia (future)
-        - Shore power infrastructure
-        - Positioning as green maritime leader
+        **Government Support:**
+        - Political stability and consistency
+        - Long-term planning (Tuas 2012→2040)
+        - Pro-business policies
+        - Major infrastructure investment
+        - "No U-turns" policy commitment
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Singapore has built a comprehensive maritime ecosystem over 70+ years, 
-    combining world-class port infrastructure with a complete cluster of services (bunkering, ship repair, 
-    finance, legal, technology). MPA's dual role as regulator and developer enables coordinated long-term 
-    strategy. Digital transformation initiatives (digitalPORT@SG, digitalOCEANS) position Singapore as a 
-    Maritime 4.0 leader. The innovation ecosystem (BLOCK71, MINT Fund, academic partnerships) cultivates 
-    maritime technology startups. Sustainability initiatives (green port programme, alternative fuels 
-    infrastructure) prepare for decarbonisation. This comprehensive approach creates high switching costs 
-    and network effects—once companies establish operations in Singapore, the ecosystem makes it efficient 
-    to keep all maritime services here.
+    <strong>🔍 Bottom Line:</strong> Singapore's maritime leadership isn't just about having a good port—
+    it's about creating a complete ecosystem where government, industry, education, finance, and innovation 
+    all work together. MPA's dual role as regulator and promoter allows coordinated policy-making. The 
+    complete maritime cluster creates massive switching costs and network effects. Stable, long-term 
+    government support provides the foundation for sustained competitiveness. This integrated approach 
+    is extremely difficult for competitors to replicate.
     </div>
     """, unsafe_allow_html=True)
     
@@ -691,6 +609,6 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** ⚓ Port Strategy & Competition - Explore the critical success factors for transshipment 
-    hubs, competitive dynamics, strategic planning frameworks, and Singapore's response to regional competition.
+    **Next Topic:** ⚓ Port Strategy & Competition - Understand what makes ports competitive, the factors 
+    that determine success or failure, and how Singapore positions itself against regional and global rivals.
     """)
