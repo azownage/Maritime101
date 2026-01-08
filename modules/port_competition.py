@@ -71,7 +71,6 @@ def show():
     - <strong>Connectivity</strong> increases volumes, justifying <strong>infrastructure investment</strong><br>
     - <strong>Skilled workers</strong> improve <strong>reliability and efficiency</strong><br>
     - <strong>Strategic location</strong> makes infrastructure investment worthwhile<br><br>
-    
     This creates a <strong>virtuous cycle</strong> for successful ports and a <strong>vicious cycle</strong> for struggling ones.
     </div>
     """, unsafe_allow_html=True)
@@ -322,7 +321,6 @@ def show():
     - Underutilized facilities<br>
     - Wasted infrastructure investment<br>
     - Only the most efficient ports survive<br><br>
-    
     This is why Singapore focuses on <strong>efficiency, reliability, and connectivity</strong> rather than just 
     competing on price.
     </div>
@@ -521,7 +519,6 @@ def show():
     - <strong>Connectivity</strong>: Unmatched global network<br>
     - <strong>Ecosystem</strong>: Complete maritime services cluster<br>
     - <strong>Innovation</strong>: Technology leadership<br><br>
-    
     This strategy creates <strong>sustainable competitive advantages</strong> that are difficult for competitors to replicate.
     </div>
     """, unsafe_allow_html=True)
@@ -588,21 +585,17 @@ def show():
     st.markdown("""
     <div class="insight-box">
     <strong>🎯 "Big Hub vs Vital Node" Strategy:</strong><br><br>
-    
     Singapore increasingly emphasizes being a <strong>vital node in an inter-connected port network</strong> rather than 
     simply the "biggest hub":<br><br>
-    
     <strong>Big Hub Mentality:</strong><br>
     - Winner-takes-all competition<br>
     - Size matters most<br>
     - Vulnerability to single-point failure<br><br>
-    
     <strong>Vital Node Mentality:</strong><br>
     - Network resilience matters<br>
     - Reliability + connectivity + efficiency = value<br>
     - Multiple complementary ports coexist<br>
     - Strategic position in network topology<br><br>
-    
     This shift recognizes that being the <strong>most reliable, most connected, most efficient</strong> hub can be more 
     valuable than being the absolute largest.
     </div>
@@ -691,7 +684,6 @@ def show():
     - <strong>Energy-efficient grab dredger</strong> for reclamation<br>
     - <strong>Sustainable reclamation</strong> with waste circularity<br>
     - <strong>Digital systems</strong> to optimize operations and reduce waste<br><br>
-    
     Sustainability is not just environmental responsibility—it's becoming a <strong>competitive advantage</strong>.
     </div>
     """, unsafe_allow_html=True)
