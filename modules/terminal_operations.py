@@ -43,10 +43,10 @@ def show():
             'Where vessels dock; interface between sea and land',
             'Area directly behind berth for container staging and crane operations',
             'Load/discharge containers between vessel and apron',
-            'Store containers awaiting pickup or loading; organized in blocks/bays',
+            'Store containers awaiting pickup or loading; organised in blocks/bays',
             'Move containers between yard storage and trucks/trains',
             'Entry/exit point for trucks; documentation and security checks',
-            'Central command center for terminal operations coordination',
+            'Central command centre for terminal operations coordination',
             'Roads/rail connecting terminal to hinterland'
         ],
         'Key Equipment': [
@@ -98,18 +98,17 @@ def show():
     2. Moved to **Storage Yard** for temporary holding
     3. Retrieved and moved to **Apron** when Vessel B arrives
     4. Loaded onto Vessel B
-    5. (Ideally minimizes storage time in yard)
+    5. (Ideally minimises storage time in yard)
     """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>💡 Operational Efficiency:</strong> The goal is to minimize:
-    - **Container dwell time**: Time between discharge and pickup (imports) or drop-off and loading (exports)
-    - **Vessel port stay**: Total hours from arrival to departure
-    - **Equipment idle time**: Cranes, prime movers, yard equipment waiting
-    - **Re-handles**: Moving containers multiple times to access others
-    
-    Every movement costs time and money. Efficient operations minimize unnecessary moves.
+    <strong>💡 Operational Efficiency:</strong> The goal is to minimise:<br>
+    - <strong>Container dwell time</strong>: Time between discharge and pickup (imports) or drop-off and loading (exports)<br>
+    - <strong>Vessel port stay</strong>: Total hours from arrival to departure<br>
+    - <strong>Equipment idle time</strong>: Cranes, prime movers, yard equipment waiting<br>
+    - <strong>Re-handles</strong>: Moving containers multiple times to access others<br><br>
+    Every movement costs time and money. Efficient operations minimise unnecessary moves.
     </div>
     """, unsafe_allow_html=True)
     
@@ -121,7 +120,7 @@ def show():
     
     st.markdown("""
     Container terminal operations follow a structured workflow from vessel notification to departure. 
-    Understanding this end-to-end process is crucial for digital twin modeling.
+    Understanding this end-to-end process is crucial for operational planning.
     """)
     
     st.markdown('<p class="subsection-header">Phase 1: Pre-Arrival Planning (72+ hours before arrival)</p>', unsafe_allow_html=True)
@@ -148,13 +147,13 @@ def show():
     
     st.markdown("""
     **Berth Planning Confirmation:**
-    - Finalize **berth window** (expected arrival and departure times)
+    - Finalise **berth window** (expected arrival and departure times)
     - Coordinate with other vessels to avoid conflicts
     - Target: **Berth on Arrival (BOA)** >90% (vessel berths immediately without waiting)
     
     **Discharge Planning:**
     - Plan sequence to discharge containers from vessel
-    - Objective: Minimize crane movements and re-handles
+    - Objective: Minimise crane movements and re-handles
     - Consider vessel stability during discharge process
     - Identify priority containers (time-sensitive, dangerous goods)
     
@@ -278,12 +277,11 @@ def show():
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 Target Performance:</strong>
-    - **Mega vessel (20,000+ TEU)**: 24-36 hour total port stay
-    - **Quay crane productivity**: 30-40 gross moves per hour (GMPH)
-    - **Berth on Arrival (BOA)**: >90% (vessel berths immediately)
-    - **Zero damage**: No containers or cargo damaged during handling
-    
+    <strong>💡 Target Performance:</strong><br>
+    - <strong>Mega vessel (20,000+ TEU)</strong>: 24-36 hour total port stay<br>
+    - <strong>Quay crane productivity</strong>: 30-40 gross moves per hour (GMPH)<br>
+    - <strong>Berth on Arrival (BOA)</strong>: >90% (vessel berths immediately)<br>
+    - <strong>Zero damage</strong>: No containers or cargo damaged during handling<br><br>
     World-class terminals like Singapore PSA consistently meet or exceed these targets.
     </div>
     """, unsafe_allow_html=True)
@@ -295,14 +293,14 @@ def show():
     st.markdown('<p class="section-header">The Four Key Planning Processes</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Container terminal planning involves four interconnected optimization problems that must be solved 
+    Container terminal planning involves four interconnected optimisation problems that must be solved 
     in coordination.
     """)
     
     st.markdown('<p class="subsection-header">1. Berth Planning</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Objective:** Assign vessels to berths and time windows to maximize berth utilization and minimize 
+    **Objective:** Assign vessels to berths and time windows to maximise berth utilisation and minimise 
     vessel waiting time.
     
     **Planning Horizon:** 72+ hours ahead (rolling window)
@@ -319,10 +317,10 @@ def show():
     - **Safety**: Minimum separation between vessels
     - **Priority**: Some vessels have priority (alliances, schedule commitments)
     
-    **Optimization Objectives:**
-    - **Primary**: Maximize BOA (Berth on Arrival) percentage - vessel berths immediately without waiting
-    - **Secondary**: Minimize total vessel waiting time
-    - **Tertiary**: Balance berth utilization across all berths
+    **Optimisation Objectives:**
+    - **Primary**: Maximise BOA (Berth on Arrival) percentage - vessel berths immediately without waiting
+    - **Secondary**: Minimise total vessel waiting time
+    - **Tertiary**: Balance berth utilisation across all berths
     
     **Output:**
     - **Berth allocation plan**: Which vessel at which berth
@@ -385,7 +383,7 @@ def show():
     st.markdown('<p class="subsection-header">2. Storage Yard Planning</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Objective:** Allocate storage locations for containers in the yard to minimize handling time and 
+    **Objective:** Allocate storage locations for containers in the yard to minimise handling time and 
     re-handles (moving containers to access others).
     
     **Planning Horizon:** 24-72 hours ahead
@@ -408,21 +406,21 @@ def show():
     - **Time-sensitive cargo** in priority locations
     
     **For Transshipment Containers:**
-    - **Minimize dwell time**: Direct transfer from discharge to loading if possible
+    - **Minimise dwell time**: Direct transfer from discharge to loading if possible
     - Group by **outbound vessel**
     - Segregate from import/export containers
     
-    **Yard Block Organization:**
+    **Yard Block Organisation:**
     - Yard divided into **blocks** (rectangular sections)
     - Each block has multiple **bays** (columns)
     - Each bay has multiple **rows** (across width)
     - Each position has multiple **tiers** (stacking height, typically 5-7 high)
     - Address: Block-Bay-Row-Tier (e.g., Block 3, Bay 12, Row 04, Tier 03)
     
-    **Optimization Objectives:**
-    - Minimize **re-handles**: Avoid moving containers to access others underneath
-    - Minimize **yard crane travel distance**
-    - Balance **yard utilization** across blocks
+    **Optimisation Objectives:**
+    - Minimise **re-handles**: Avoid moving containers to access others underneath
+    - Minimise **yard crane travel distance**
+    - Balance **yard utilisation** across blocks
     - Ensure **safe stacking**: Heavy on bottom, compatible types together
     
     **Key Challenges:**
@@ -433,17 +431,15 @@ def show():
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ The Re-Handle Problem:</strong>
-    
-    **Scenario:** Import containers A, B, C, D arrive from vessel and stacked vertically (D on top of A).
-    - Truck for Container A arrives first
-    - Must move containers D, C, B to access A (**3 re-handles**)
-    - Each re-handle costs time, equipment, energy
-    
-    **Solution Strategies:**
-    - Predict truck arrival patterns using historical data
-    - Stack containers likely to be picked up soon on top
-    - Use AI/ML to optimize stacking decisions
+    <strong>⚠️ The Re-Handle Problem:</strong><br><br>
+    <strong>Scenario:</strong> Import containers A, B, C, D arrive from vessel and stacked vertically (D on top of A).<br>
+    - Truck for Container A arrives first<br>
+    - Must move containers D, C, B to access A (<strong>3 re-handles</strong>)<br>
+    - Each re-handle costs time, equipment, energy<br><br>
+    <strong>Solution Strategies:</strong><br>
+    - Predict truck arrival patterns using historical data<br>
+    - Stack containers likely to be picked up soon on top<br>
+    - Use AI/ML to optimise stacking decisions<br>
     - Accept some re-handles as unavoidable (target: <10% re-handle rate)
     </div>
     """, unsafe_allow_html=True)
@@ -459,7 +455,7 @@ def show():
     **Critical Constraints:**
     
     **1. Vessel Stability:**
-    - **Center of gravity**: Must be within safe limits (too high = unstable, too low = excessive stress)
+    - **Centre of gravity**: Must be within safe limits (too high = unstable, too low = excessive stress)
     - **Longitudinal balance**: Weight distribution bow to stern (prevent hogging/sagging)
     - **Transverse balance**: Weight distribution port to starboard (prevent listing)
     - **Metacentric height (GM)**: Measure of stability (too low = risk of capsizing)
@@ -473,7 +469,7 @@ def show():
     **3. Destination Sequence:**
     - Containers for **Port 1** must be accessible before **Port 2** containers
     - Generally: **Later ports on bottom/back**, **earlier ports on top/front**
-    - Minimize **re-stows**: Moving containers between ports to access others
+    - Minimise **re-stows**: Moving containers between ports to access others
     
     **4. Container Compatibility:**
     - **Dangerous Goods (DG)**: Segregation requirements (class-specific separation distances)
@@ -483,7 +479,7 @@ def show():
     - **Empty containers**: On top (lighter weight)
     
     **5. Operational Efficiency:**
-    - Minimize **crane movements**: Complete bays sequentially
+    - Minimise **crane movements**: Complete bays sequentially
     - **Balance crane productivity**: Distribute work evenly across cranes
     - Consider **hatch cover operations**: Time to remove/replace covers
     - Enable **simultaneous operations**: Multiple cranes working without conflicts
@@ -506,12 +502,12 @@ def show():
     - Dangerous goods with proper segregation
     
     **Step 4:** Stability calculation
-    - Calculate center of gravity
+    - Calculate centre of gravity
     - Check all stability parameters
     - Adjust if necessary
     
-    **Step 5:** Optimize for efficiency
-    - Minimize crane travel
+    **Step 5:** Optimise for efficiency
+    - Minimise crane travel
     - Balance crane workload
     - Sequence for minimal re-handles
     
@@ -538,7 +534,7 @@ def show():
     # Create a sample bay plan
     for tier in range(1, 7):  # 6 tiers high
         for row in range(1, 9):  # 8 rows across
-            # Color code by destination
+            # Colour code by destination
             if tier <= 2:
                 dest = 'Port 3 (Last)'
                 color = '#EF4444'
@@ -613,14 +609,14 @@ def show():
     - Assign cranes to vessels
     - Determine **crane intensity**: How many cranes per vessel (typically 4-8 for mega vessels)
     - Create **crane work sequences**: Which crane discharges/loads which containers in what order
-    - Optimize for **crane productivity** (target: 30-40 gross moves per hour per crane)
+    - Optimise for **crane productivity** (target: 30-40 gross moves per hour per crane)
     - Avoid **crane interference**: Cranes can't cross paths
     
     **Yard Cranes (YC):**
     - Assign yard cranes to blocks
     - Schedule **retrieve operations**: Pick up export containers for loading
     - Schedule **placement operations**: Store import containers from discharge
-    - Minimize **yard crane travel** within block
+    - Minimise **yard crane travel** within block
     - Balance **workload** across yard cranes
     
     **Horizontal Transport (Prime Movers / AGVs):**
@@ -636,19 +632,19 @@ def show():
     **AGV Deployment:**
     - Modern approach: Fleet of AGVs dynamically dispatched
     - **Pooling strategy**: AGVs shared across all cranes (no fixed assignment)
-    - Computer system optimizes routing in real-time
+    - Computer system optimises routing in real-time
     - Can carry container in both directions (quay to yard, yard to quay)
-    - **Benefits**: Higher utilization, less empty travel, more flexible
+    - **Benefits**: Higher utilisation, less empty travel, more flexible
     
     **Dispatching Strategy:**
     - **Fixed assignment**: PM always works with same crane (simple but inflexible)
     - **Dynamic pooling**: PM/AGV assigned to next available job (efficient but complex)
     - **Hybrid**: Core PMs fixed, additional PMs pooled
     
-    **Optimization Objectives:**
-    - Minimize **quay crane waiting time** (always have PM/AGV ready when crane ready)
-    - Minimize **empty travel distance**
-    - Balance **fleet utilization**
+    **Optimisation Objectives:**
+    - Minimise **quay crane waiting time** (always have PM/AGV ready when crane ready)
+    - Minimise **empty travel distance**
+    - Balance **fleet utilisation**
     - Avoid **congestion** at quay and yard interfaces
     """)
     
@@ -688,7 +684,7 @@ def show():
             'Marine Channel'
         ],
         'Formula / Calculation': [
-            'Berth length × Utilization × Vessel calls per year × TEU per call',
+            'Berth length × Utilisation × Vessel calls per year × TEU per call',
             'Number of cranes × Moves per hour × Operating hours per year',
             'Yard area × Ground slots × Stacking height × Turnover rate',
             'Number of YCs × Moves per hour × Operating hours per year',
@@ -724,7 +720,7 @@ def show():
     **Given:**
     - 10 berths, each 400m long
     - Average vessel: 350m long, 2,000 TEU discharged + 2,000 TEU loaded = 4,000 TEU total moves
-    - Berth utilization target: 70% (to allow flexibility and maintenance)
+    - Berth utilisation target: 70% (to allow flexibility and maintenance)
     - Average vessel turnaround: 24 hours
     - 365 days per year
     
@@ -736,24 +732,21 @@ def show():
     
     **Sensitivity:**
     - If vessel turnaround improves to 20 hours: +20% capacity (12.2M TEU)
-    - If berth utilization increases to 80%: +14% capacity (11.6M TEU)
+    - If berth utilisation increases to 80%: +14% capacity (11.6M TEU)
     - If average vessel grows to 5,000 TEU moves: +25% capacity (12.8M TEU)
     """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 Capacity Optimization Strategies:</strong>
-    
-    **Rather than building more berths (expensive, long lead time), optimize existing capacity:**
-    
-    1. **Improve quay crane productivity**: 25 → 35 GMPH (saves 4 hours per vessel)
-    2. **Better berth planning**: Improve BOA from 85% → 95% (reduce waiting)
-    3. **Faster turnaround**: Reduce vessel port stay from 30h → 24h (20% more capacity)
-    4. **Yard efficiency**: Reduce dwell time from 5 days → 3 days (40% more yard space)
-    5. **Equipment availability**: Better maintenance reduces downtime
-    6. **Process improvement**: Eliminate bottlenecks and inefficiencies
-    
-    Modern terminals use **digital twin simulations** to identify bottlenecks and test improvement scenarios 
+    <strong>🎯 Capacity Optimisation Strategies:</strong><br><br>
+    Rather than building more berths (expensive, long lead time), optimise existing capacity:<br><br>
+    1. <strong>Improve quay crane productivity</strong>: 25 → 35 GMPH (saves 4 hours per vessel)<br>
+    2. <strong>Better berth planning</strong>: Improve BOA from 85% → 95% (reduce waiting)<br>
+    3. <strong>Faster turnaround</strong>: Reduce vessel port stay from 30h → 24h (20% more capacity)<br>
+    4. <strong>Yard efficiency</strong>: Reduce dwell time from 5 days → 3 days (40% more yard space)<br>
+    5. <strong>Equipment availability</strong>: Better maintenance reduces downtime<br>
+    6. <strong>Process improvement</strong>: Eliminate bottlenecks and inefficiencies<br><br>
+    Modern terminals use operational simulations to identify bottlenecks and test improvement scenarios 
     before implementing expensive infrastructure changes.
     </div>
     """, unsafe_allow_html=True)
@@ -785,10 +778,10 @@ def show():
             'Reporting & Analytics'
         ],
         'Functions': [
-            'Allocate vessels to berths and time windows; optimize BOA',
+            'Allocate vessels to berths and time windows; optimise BOA',
             'Generate discharge and loading plans; stowage coordination',
-            'Allocate yard locations; minimize re-handles; manage inventory',
-            'Schedule cranes, PMs, AGVs, yard cranes; optimize utilization',
+            'Allocate yard locations; minimise re-handles; manage inventory',
+            'Schedule cranes, PMs, AGVs, yard cranes; optimise utilisation',
             'Real-time dispatching of equipment; track positions; performance monitoring',
             'Truck check-in/out; documentation verification; container matching',
             'Generate shipping instructions, delivery orders, customs documentation',
@@ -800,7 +793,7 @@ def show():
             'Bay plans, crane work lists, loading sequences',
             'Yard block plans, container locations, retrieval lists',
             'Equipment assignments, work schedules',
-            'Real-time work orders, route optimization',
+            'Real-time work orders, route optimisation',
             'Gate permits, truck appointments, container releases',
             'eBL, customs declarations, manifests',
             'Invoices, payment tracking',
@@ -821,7 +814,7 @@ def show():
     - Yard inventory (current container locations)
     
     **TOS Processing:**
-    - Optimization algorithms for planning
+    - Optimisation algorithms for planning
     - Real-time dispatching and coordination
     - Exception handling and alerts
     - Performance monitoring
@@ -843,7 +836,7 @@ def show():
     
     **Modern TOS Trends:**
     - **Cloud-based**: Deployed on cloud infrastructure for scalability
-    - **AI-powered**: Machine learning for optimization and predictive analytics
+    - **AI-powered**: Machine learning for optimisation and predictive analytics
     - **Real-time**: Instant visibility and dynamic re-planning
     - **Integrated**: Connected to PORTNET, shipping lines, customs, trucking companies
     - **Mobile**: Operators access via tablets and smartphones
@@ -863,7 +856,7 @@ def show():
         **Terminal Layout:**
         - Berth/Quay, Apron, Storage Yard, Gate, Control Tower
         - Import, Export, Transshipment flows
-        - Goal: Minimize dwell time, vessel stay, re-handles
+        - Goal: Minimise dwell time, vessel stay, re-handles
         
         **Operations Process:**
         - Phase 1: Pre-arrival planning (72+ hours)
@@ -873,7 +866,7 @@ def show():
         
         **Four Key Planning Processes:**
         - **Berth Planning**: Vessel-to-berth allocation (BOA >90%)
-        - **Yard Planning**: Storage location optimization
+        - **Yard Planning**: Storage location optimisation
         - **Stowage Planning**: Container position on vessel
         - **Transportation Planning**: Equipment scheduling
         """)
@@ -882,7 +875,7 @@ def show():
         st.markdown("""
         **Terminal Capacity:**
         - Multiple bottlenecks: Berths, cranes, yard, gates
-        - Optimization > expansion (faster, cheaper)
+        - Optimisation > expansion (faster, cheaper)
         - Sensitivity to turnaround time and productivity
         
         **Equipment Coordination:**
@@ -894,7 +887,7 @@ def show():
         **Terminal Operating System (TOS):**
         - "Brain" of the terminal
         - Berth, vessel, yard, resource, equipment modules
-        - Real-time optimization and control
+        - Real-time optimisation and control
         - Integration with PORTNET and stakeholders
         - Modern: Cloud, AI, IoT, mobile
         """)
@@ -903,10 +896,10 @@ def show():
     <div class="insight-box">
     <strong>🔍 Bottom Line:</strong> Container terminal operations involve complex, interconnected planning 
     processes across berth allocation, yard management, vessel stowage, and equipment coordination. Success 
-    requires sophisticated Terminal Operating Systems (TOS) that optimize plans in real-time while managing 
+    requires sophisticated Terminal Operating Systems (TOS) that optimise plans in real-time whilst managing 
     uncertainty and exceptions. World-class terminals like Singapore PSA achieve >90% BOA, <24-hour mega 
-    vessel turnaround, and 35+ crane GMPH through operational excellence and continuous optimization. 
-    Understanding these workflows is essential for building accurate digital twin systems.
+    vessel turnaround, and 35+ crane GMPH through operational excellence and continuous optimisation. 
+    Understanding these workflows is essential for effective operational planning.
     </div>
     """, unsafe_allow_html=True)
     
