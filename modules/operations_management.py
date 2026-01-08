@@ -251,12 +251,11 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 Key Insight:</strong> The Big Six are not independent—they interact and sometimes conflict:
-    - **Quality vs Speed**: Taking time to ensure accuracy vs fast operations
-    - **Cost vs Service**: Lower prices vs premium service offerings
-    - **Agility vs Efficiency**: Spare capacity for flexibility vs maximizing utilization
-    - **Reliability vs Responsiveness**: Predictable schedules vs accommodating urgent requests
-    
+    <strong>🎯 Key Insight:</strong> The Big Six are not independent—they interact and sometimes conflict:<br>
+    - <strong>Quality vs Speed</strong>: Taking time to ensure accuracy vs fast operations<br>
+    - <strong>Cost vs Service</strong>: Lower prices vs premium service offerings<br>
+    - <strong>Agility vs Efficiency</strong>: Spare capacity for flexibility vs maximizing utilization<br>
+    - <strong>Reliability vs Responsiveness</strong>: Predictable schedules vs accommodating urgent requests<br><br>
     World-class operations balance all six competencies rather than maximizing just one.
     </div>
     """, unsafe_allow_html=True)
@@ -370,13 +369,12 @@ def show():
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 FMEA Benefits:</strong>
-    - **Proactive**: Identify risks before they occur
-    - **Systematic**: Structured approach to risk assessment
-    - **Prioritized**: Focus resources on highest-risk items
-    - **Actionable**: Clear mitigation strategies
-    - **Continuous**: Regular review and update as operations evolve
-    
+    <strong>💡 FMEA Benefits:</strong><br>
+    - <strong>Proactive</strong>: Identify risks before they occur<br>
+    - <strong>Systematic</strong>: Structured approach to risk assessment<br>
+    - <strong>Prioritized</strong>: Focus resources on highest-risk items<br>
+    - <strong>Actionable</strong>: Clear mitigation strategies<br>
+    - <strong>Continuous</strong>: Regular review and update as operations evolve<br><br>
     Modern terminals use FMEA in planning new equipment, procedures, and technologies.
     </div>
     """, unsafe_allow_html=True)
@@ -578,16 +576,15 @@ def show():
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ The Capacity-Demand Challenge:</strong>
-    - **Lead time problem**: New berths take 5-7 years to build, but demand forecasts are uncertain
-    - **Lumpiness**: Capacity comes in large chunks (can't build half a berth)
-    - **Irreversibility**: Once built, very expensive to remove
-    - **Uncertainty**: Trade patterns, alliances, technology all change
-    
-    **Singapore's Approach:**
-    - Plan long-term (Tuas announced 2012 for 2040)
-    - Build in phases (flexibility to adjust pace)
-    - Maintain excess capacity as buffer (agility)
+    <strong>⚠️ The Capacity-Demand Challenge:</strong><br>
+    - <strong>Lead time problem</strong>: New berths take 5-7 years to build, but demand forecasts are uncertain<br>
+    - <strong>Lumpiness</strong>: Capacity comes in large chunks (can't build half a berth)<br>
+    - <strong>Irreversibility</strong>: Once built, very expensive to remove<br>
+    - <strong>Uncertainty</strong>: Trade patterns, alliances, technology all change<br><br>
+    <strong>Singapore's Approach:</strong><br>
+    - Plan long-term (Tuas announced 2012 for 2040)<br>
+    - Build in phases (flexibility to adjust pace)<br>
+    - Maintain excess capacity as buffer (agility)<br>
     - Invest in efficiency gains (more output from same capacity)
     </div>
     """, unsafe_allow_html=True)
@@ -788,7 +785,7 @@ def show():
             'Cheap cranes break down more vs expensive cranes more reliable',
             'Extra berths costly but handle peaks vs no spare capacity means delays in peaks',
             'Fast turnaround risks mistakes vs thorough checks slow operations',
-            'Tuas 65M TEU capacity but currently 37M throughput vs build only what\'s needed now',
+            "Tuas 65M TEU capacity but currently 37M throughput vs build only what's needed now",
             'All vessels follow same process (efficient) vs customized handling for special cargo',
             'AGVs replace human drivers (cost-efficient) vs human workforce (employment)'
         ],
@@ -806,24 +803,21 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 The Art of Operations Management:</strong>
-    
-    There is no "perfect" operation. Every decision involves trade-offs:
-    - More capacity → Higher costs but better service
-    - More automation → Lower costs but higher unemployment
-    - More quality checks → Fewer errors but slower operations
-    - More flexibility → Higher costs but better customer satisfaction
-    
-    **World-class operations:**
-    - Understand the trade-offs explicitly
-    - Make conscious strategic choices
-    - Align trade-offs with competitive strategy
-    - Continuously improve to expand the frontier (achieve more of multiple objectives)
-    
-    **Singapore's Approach:**
-    - Premium positioning allows higher costs for quality/reliability/service
-    - Strategic excess capacity for flexibility
-    - Automation with workforce retraining programs
+    <strong>🎯 The Art of Operations Management:</strong><br><br>
+    There is no "perfect" operation. Every decision involves trade-offs:<br>
+    - More capacity → Higher costs but better service<br>
+    - More automation → Lower costs but higher unemployment<br>
+    - More quality checks → Fewer errors but slower operations<br>
+    - More flexibility → Higher costs but better customer satisfaction<br><br>
+    <strong>World-class operations:</strong><br>
+    - Understand the trade-offs explicitly<br>
+    - Make conscious strategic choices<br>
+    - Align trade-offs with competitive strategy<br>
+    - Continuously improve to expand the frontier (achieve more of multiple objectives)<br><br>
+    <strong>Singapore's Approach:</strong><br>
+    - Premium positioning allows higher costs for quality/reliability/service<br>
+    - Strategic excess capacity for flexibility<br>
+    - Automation with workforce retraining programs<br>
     - Continuous improvement to push performance boundaries
     </div>
     """, unsafe_allow_html=True)
