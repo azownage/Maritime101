@@ -64,15 +64,15 @@ def show():
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ Critical Point:</strong> These factors are **not independent**. They interact and reinforce 
-    each other. For example:
-    - **Good infrastructure** enables **efficiency**
-    - **Efficiency** attracts **connectivity** (more shipping lines)
-    - **Connectivity** increases volumes, justifying **infrastructure investment**
-    - **Skilled workers** improve **reliability and efficiency**
-    - **Strategic location** makes infrastructure investment worthwhile
+    <strong>⚠️ Critical Point:</strong> These factors are <strong>not independent</strong>. They interact and reinforce 
+    each other. For example:<br>
+    - <strong>Good infrastructure</strong> enables <strong>efficiency</strong><br>
+    - <strong>Efficiency</strong> attracts <strong>connectivity</strong> (more shipping lines)<br>
+    - <strong>Connectivity</strong> increases volumes, justifying <strong>infrastructure investment</strong><br>
+    - <strong>Skilled workers</strong> improve <strong>reliability and efficiency</strong><br>
+    - <strong>Strategic location</strong> makes infrastructure investment worthwhile<br><br>
     
-    This creates a **virtuous cycle** for successful ports and a **vicious cycle** for struggling ones.
+    This creates a <strong>virtuous cycle</strong> for successful ports and a <strong>vicious cycle</strong> for struggling ones.
     </div>
     """, unsafe_allow_html=True)
     
@@ -218,7 +218,7 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 Singapore's Position:</strong> Singapore is a **pure transshipment hub** with ~85% 
+    <strong>🎯 Singapore's Position:</strong> Singapore is a <strong>pure transshipment hub</strong> with ~85% 
     transshipment cargo. This creates both enormous opportunity (tap into global flows) and significant 
     risk (vulnerable to shipping line decisions). Singapore's strategy is to be so efficient, connected, 
     and reliable that shipping lines cannot afford to bypass it.
@@ -317,13 +317,13 @@ def show():
     st.markdown("""
     <div class="warning-box">
     <strong>⚠️ The Overcapacity Risk:</strong> If Malaysia, Indonesia, Thailand, and other neighbors all 
-    expand capacity simultaneously, Southeast Asia could face **port overcapacity**. This would lead to:
-    - Price wars and margin compression
-    - Underutilized facilities
-    - Wasted infrastructure investment
-    - Only the most efficient ports survive
+    expand capacity simultaneously, Southeast Asia could face <strong>port overcapacity</strong>. This would lead to:<br>
+    - Price wars and margin compression<br>
+    - Underutilized facilities<br>
+    - Wasted infrastructure investment<br>
+    - Only the most efficient ports survive<br><br>
     
-    This is why Singapore focuses on **efficiency, reliability, and connectivity** rather than just 
+    This is why Singapore focuses on <strong>efficiency, reliability, and connectivity</strong> rather than just 
     competing on price.
     </div>
     """, unsafe_allow_html=True)
@@ -515,14 +515,14 @@ def show():
     st.markdown("""
     <div class="success-box">
     <strong>💡 Singapore's Core Strategy:</strong> Rather than competing solely on price (a race to the 
-    bottom), Singapore competes on:
-    - **Efficiency**: Fastest turnaround times
-    - **Reliability**: Minimal disruptions, predictable operations
-    - **Connectivity**: Unmatched global network
-    - **Ecosystem**: Complete maritime services cluster
-    - **Innovation**: Technology leadership
+    bottom), Singapore competes on:<br>
+    - <strong>Efficiency</strong>: Fastest turnaround times<br>
+    - <strong>Reliability</strong>: Minimal disruptions, predictable operations<br>
+    - <strong>Connectivity</strong>: Unmatched global network<br>
+    - <strong>Ecosystem</strong>: Complete maritime services cluster<br>
+    - <strong>Innovation</strong>: Technology leadership<br><br>
     
-    This strategy creates **sustainable competitive advantages** that are difficult for competitors to replicate.
+    This strategy creates <strong>sustainable competitive advantages</strong> that are difficult for competitors to replicate.
     </div>
     """, unsafe_allow_html=True)
     
@@ -587,23 +587,23 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 "Big Hub vs Vital Node" Strategy:</strong>
+    <strong>🎯 "Big Hub vs Vital Node" Strategy:</strong><br><br>
     
-    Singapore increasingly emphasizes being a **vital node in an inter-connected port network** rather than 
-    simply the "biggest hub":
+    Singapore increasingly emphasizes being a <strong>vital node in an inter-connected port network</strong> rather than 
+    simply the "biggest hub":<br><br>
     
-    **Big Hub Mentality:**
-    - Winner-takes-all competition
-    - Size matters most
-    - Vulnerability to single-point failure
+    <strong>Big Hub Mentality:</strong><br>
+    - Winner-takes-all competition<br>
+    - Size matters most<br>
+    - Vulnerability to single-point failure<br><br>
     
-    **Vital Node Mentality:**
-    - Network resilience matters
-    - Reliability + connectivity + efficiency = value
-    - Multiple complementary ports coexist
-    - Strategic position in network topology
+    <strong>Vital Node Mentality:</strong><br>
+    - Network resilience matters<br>
+    - Reliability + connectivity + efficiency = value<br>
+    - Multiple complementary ports coexist<br>
+    - Strategic position in network topology<br><br>
     
-    This shift recognizes that being the **most reliable, most connected, most efficient** hub can be more 
+    This shift recognizes that being the <strong>most reliable, most connected, most efficient</strong> hub can be more 
     valuable than being the absolute largest.
     </div>
     """, unsafe_allow_html=True)
@@ -683,16 +683,16 @@ def show():
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 Tuas Mega Port Green Features:</strong>
-    - Built **5 meters above mean sea level** (climate resilience)
-    - **Solar panel canopies** throughout the terminal
-    - **Fully electrified quay cranes** (no diesel)
-    - **AGVs** instead of diesel prime movers
-    - **Energy-efficient grab dredger** for reclamation
-    - **Sustainable reclamation** with waste circularity
-    - **Digital systems** to optimize operations and reduce waste
+    <strong>💡 Tuas Mega Port Green Features:</strong><br>
+    - Built <strong>5 meters above mean sea level</strong> (climate resilience)<br>
+    - <strong>Solar panel canopies</strong> throughout the terminal<br>
+    - <strong>Fully electrified quay cranes</strong> (no diesel)<br>
+    - <strong>AGVs</strong> instead of diesel prime movers<br>
+    - <strong>Energy-efficient grab dredger</strong> for reclamation<br>
+    - <strong>Sustainable reclamation</strong> with waste circularity<br>
+    - <strong>Digital systems</strong> to optimize operations and reduce waste<br><br>
     
-    Sustainability is not just environmental responsibility—it's becoming a **competitive advantage**.
+    Sustainability is not just environmental responsibility—it's becoming a <strong>competitive advantage</strong>.
     </div>
     """, unsafe_allow_html=True)
     
