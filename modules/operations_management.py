@@ -21,12 +21,12 @@ def show():
     
     st.markdown("""
     **Operations Management** is the administration of business practices to create the highest level 
-    of efficiency possible within an organization. It involves converting materials and labor into goods 
+    of efficiency possible within an organisation. It involves converting materials and labour into goods 
     and services as efficiently as possible to maximize profit.
     
     In the context of **port operations**, operations management focuses on:
     - Moving containers from vessels to trucks/trains (and vice versa) efficiently
-    - Optimizing resource utilization (berths, cranes, yard space, labor)
+    - Optimizing resource utilisation (berths, cranes, yard space, labour)
     - Meeting customer requirements (shipping lines, cargo owners)
     - Balancing cost, quality, speed, and reliability
     - Planning capacity for current and future demand
@@ -38,7 +38,7 @@ def show():
     with col1:
         st.metric("Primary Goal", "Efficiency", help="Maximum output with minimum input")
     with col2:
-        st.metric("Key Constraint", "Resources", help="Berths, cranes, space, labor, time")
+        st.metric("Key Constraint", "Resources", help="Berths, cranes, space, labour, time")
     with col3:
         st.metric("Success Metric", "Customer Satisfaction", help="Meeting shipping line requirements")
     
@@ -196,10 +196,10 @@ def show():
     
     **Cost Management Strategies:**
     - Maximize throughput to spread fixed costs
-    - Automation to reduce variable labor costs
+    - Automation to reduce variable labour costs
     - Energy efficiency to reduce utility costs
     - Preventive maintenance to avoid expensive breakdowns
-    - Process optimization to improve productivity
+    - Process optimisation to improve productivity
     
     **Trade-off:**
     - Lowest price doesn't always win
@@ -254,7 +254,7 @@ def show():
     <strong>🎯 Key Insight:</strong> The Big Six are not independent—they interact and sometimes conflict:<br>
     - <strong>Quality vs Speed</strong>: Taking time to ensure accuracy vs fast operations<br>
     - <strong>Cost vs Service</strong>: Lower prices vs premium service offerings<br>
-    - <strong>Agility vs Efficiency</strong>: Spare capacity for flexibility vs maximizing utilization<br>
+    - <strong>Agility vs Efficiency</strong>: Spare capacity for flexibility vs maximizing utilisation<br>
     - <strong>Reliability vs Responsiveness</strong>: Predictable schedules vs accommodating urgent requests<br><br>
     World-class operations balance all six competencies rather than maximizing just one.
     </div>
@@ -448,7 +448,7 @@ def show():
         **Definition:**
         - Maximum theoretical output
         - Ideal conditions
-        - 100% utilization
+        - 100% utilisation
         - No downtime
         
         **Example:**
@@ -493,7 +493,7 @@ def show():
         **Example:**
         - 25.5M TEU effective capacity
         - 23M TEU actual throughput
-        - = 90% capacity utilization
+        - = 90% capacity utilisation
         
         **Reality:**
         - What actually happens
@@ -505,7 +505,7 @@ def show():
     **Key Capacity Metrics:**
     
     **Utilization Rate = (Actual Output / Design Capacity) × 100%**
-    - Example: 23M / 30M = 77% utilization
+    - Example: 23M / 30M = 77% utilisation
     
     **Efficiency Rate = (Actual Output / Effective Capacity) × 100%**
     - Example: 23M / 25.5M = 90% efficiency
@@ -561,7 +561,7 @@ def show():
         'Capacity Changes': [
             'Add/remove major capacity (berths, cranes, terminals)',
             'Add/remove minor capacity (equipment, staffing levels)',
-            'Optimize existing capacity (better scheduling, utilization)'
+            'Optimize existing capacity (better scheduling, utilisation)'
         ],
         'Flexibility': ['Low - Hard to reverse', 'Medium - Moderately reversible', 'High - Easily adjusted'],
         'Investment': ['Very high ($billions)', 'Moderate ($millions)', 'Low (operating costs)'],
@@ -612,9 +612,9 @@ def show():
         ],
         'Advantages': [
             'Stable workforce, predictable operations, lower training costs',
-            'Minimum inventory, high capacity utilization, matches demand',
+            'Minimum inventory, high capacity utilisation, matches demand',
             'Balances costs and flexibility, pragmatic approach',
-            'Smooths demand, improves utilization, maximizes revenue'
+            'Smooths demand, improves utilisation, maximizes revenue'
         ],
         'Disadvantages': [
             'Excess capacity in low periods, inventory costs, inflexibility',
@@ -623,7 +623,7 @@ def show():
             'May lose price-sensitive customers, complex pricing models'
         ],
         'Port Application': [
-            'Maintain fixed berth/crane/labor capacity year-round',
+            'Maintain fixed berth/crane/labour capacity year-round',
             'Hire temporary workers for peak season, overtime shifts',
             'Core permanent staff + temporary workers for peaks',
             'Peak pricing during busy periods, discounts for off-peak'
@@ -637,7 +637,7 @@ def show():
     
     Most ports use a **Mixed Strategy with Demand Management**:
     - Maintain core capacity (berths, cranes) as **level capacity**
-    - Adjust labor through overtime and temporary workers (**chase**)
+    - Adjust labour through overtime and temporary workers (**chase**)
     - Use pricing incentives to smooth demand (**demand management**)
     
     **Example:**
@@ -670,7 +670,7 @@ def show():
         
         **Advantages:**
         - No maintenance costs until breakdown
-        - Maximum equipment utilization
+        - Maximum equipment utilisation
         - Simple to manage
         
         **Disadvantages:**
@@ -775,11 +775,11 @@ def show():
         ],
         'Description': [
             'Lower costs often mean lower quality materials/processes vs premium quality costs more',
-            'Excess capacity for flexibility is expensive vs maximize utilization reduces flexibility',
+            'Excess capacity for flexibility is expensive vs maximize utilisation reduces flexibility',
             'Rushing operations increases error risk vs careful work takes longer',
-            'Build excess capacity for peaks (expensive) vs run at high utilization (inflexible)',
+            'Build excess capacity for peaks (expensive) vs run at high utilisation (inflexible)',
             'Standard processes are efficient but inflexible vs custom services are expensive',
-            'Automation reduces labor costs but eliminates jobs vs labor-intensive preserves jobs'
+            'Automation reduces labour costs but eliminates jobs vs labour-intensive preserves jobs'
         ],
         'Port Example': [
             'Cheap cranes break down more vs expensive cranes more reliable',
@@ -851,7 +851,7 @@ def show():
         - Design capacity (theoretical max)
         - Effective capacity (realistic max)
         - Actual output (real performance)
-        - Optimal utilization: 80-90%
+        - Optimal utilisation: 80-90%
         """)
     
     with col2:
@@ -859,7 +859,7 @@ def show():
         **Capacity Planning:**
         - Long-term: Major infrastructure (5-10 years)
         - Medium-term: Equipment and staffing (6-18 months)
-        - Short-term: Scheduling and optimization (daily)
+        - Short-term: Scheduling and optimisation (daily)
         - Build in phases for flexibility
         
         **Demand Management:**
@@ -882,7 +882,7 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Operations management is about optimizing the Big Six competencies 
+    <strong>🔍 Bottom Line:</strong> Operations management is about optimising the Big Six competencies 
     (Quality, Reliability, Responsiveness, Agility, Service, Cost) while managing capacity and demand 
     effectively. Success requires understanding trade-offs, making strategic choices, implementing quality 
     management systems (like FMEA), and planning capacity across multiple time horizons. World-class ports 
