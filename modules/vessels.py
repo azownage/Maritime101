@@ -3,337 +3,300 @@ import plotly.graph_objects as go
 import pandas as pd
 
 def show():
-    st.markdown('<p class="main-header">🚢 Container Vessels & Evolution</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">🚢 Vessels & Evolution</p>', unsafe_allow_html=True)
     
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand container vessel anatomy, the dramatic evolution in vessel sizes, vessel classification 
-    systems, and the principles of vessel stowage planning.
+    Understand vessel anatomy, the dramatic evolution in vessel sizes over decades, classification systems, 
+    and the principles of vessel stowage planning.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Container Vessel Anatomy
+    # SECTION 1: Vessel Anatomy and Terminology
     # ============================================================================
     
-    st.markdown('<p class="section-header">Container Vessel Anatomy</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Vessel Anatomy and Maritime Terminology</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    A container vessel is a highly specialized cargo ship designed specifically to carry standardized 
-    containers. Understanding vessel anatomy is essential for comprehending port operations.
+    Before diving into vessel evolution, let's understand basic vessel anatomy and the terminology used 
+    throughout the maritime industry.
     """)
     
-    st.markdown('<p class="subsection-header">Key Vessel Components</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Basic Vessel Directions and Parts</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Main Structure:**
-        - **Bow**: Front of the vessel (pointed end)
-        - **Stern**: Rear of the vessel (back end)
-        - **Port Side**: Left side when facing forward
-        - **Starboard Side**: Right side when facing forward
-        - **Hull**: Main body of the ship
-        - **Deck**: Top surface of the ship
+        **Directional Terms:**
+        - **Bow (Forward)**: Front of the ship
+        - **Stern (Aft)**: Back of the ship
+        - **Port**: Left side (facing forward)
+        - **Starboard**: Right side (facing forward)
+        - **Amidships**: Middle section
         
-        **Cargo Areas:**
-        - **Holds**: Below-deck cargo spaces (inside the ship)
-        - **Hatch Covers**: Large steel covers over holds
-        - **Cell Guides**: Vertical guide rails in holds to stack containers
-        - **On-Deck Stacks**: Containers stacked on top of deck
+        **Vertical Terms:**
+        - **Deck**: Horizontal platform/floor
+        - **Hold**: Cargo space below deck
+        - **Hatch**: Opening in deck to access hold
+        - **Superstructure**: Buildings above main deck
         """)
     
     with col2:
         st.markdown("""
-        **Operational Areas:**
-        - **Bridge (Castle)**: Navigation and control center
+        **Key Vessel Sections:**
+        - **Bridge**: Command centre, usually at stern
         - **Accommodation**: Living quarters for crew
-        - **Engine Room**: Propulsion and power systems
-        - **Ballast Tanks**: For vessel stability control
+        - **Engine Room**: Contains propulsion machinery
+        - **Cargo Holds**: Below-deck storage areas
+        - **Weather Deck**: Topmost deck exposed to elements
         
-        **Container-Specific Features:**
-        - **Reefer Plugs**: Power outlets for refrigerated containers
-        - **Lashing Bridges**: Walkways for securing deck containers
-        - **Twist Locks**: Devices securing containers to deck/each other
-        - **Container Ducts**: Ventilation for refrigerated containers
+        **Container-Specific:**
+        - **Bay**: Vertical slice (lengthwise division)
+        - **Row**: Horizontal position (across width)
+        - **Tier**: Vertical stacking position (height)
         """)
     
-    st.markdown('<p class="subsection-header">Vessel Dimensions</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Container Positioning System on Vessels</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Key measurements that determine where a vessel can operate:
+    Every container on a vessel has a precise three-dimensional address using the **Bay-Row-Tier** system:
     
-    - **LOA (Length Overall)**: Total length from bow to stern (e.g., 400 meters for ULCV)
-    - **Beam**: Width of the vessel at widest point (e.g., 59 meters for ULCV)
-    - **Draft**: Depth of vessel below waterline when loaded (e.g., 16 meters)
-    - **Air Draft**: Height from waterline to highest point (determines bridge clearance)
-    - **TEU Capacity**: Number of TEU slots available (e.g., 24,000 TEU)
-    - **Containers Across**: How many containers wide (e.g., 24 across for MGX-24)
-    """)
+    **Bay (Longitudinal Position):**
+    - Numbered from bow (front) to stern (back)
+    - Odd numbers: 20-foot container positions (01, 03, 05, 07...)
+    - Even numbers: 40-foot container positions (02, 04, 06, 08...)
+    - A 40-foot container occupies two 20-foot bays
     
-    st.markdown("""
-    <div class="warning-box">
-    <strong>⚠️ Port Infrastructure Requirements:</strong> A vessel's dimensions determine which ports 
-    it can visit:
-    - **Draft** requires deep-water berths (16m+ for mega vessels)
-    - **Beam** determines berth width and crane reach requirements
-    - **LOA** determines minimum berth length
-    - **Containers across** determines required crane outreach
-    </div>
-    """, unsafe_allow_html=True)
+    **Row (Transverse Position):**
+    - Numbered from port (left) to starboard (right)
+    - Usually 00-24 (depends on vessel width)
+    - 00 is centre-line, odd numbers port side, even numbers starboard side
     
-    # ============================================================================
-    # SECTION 2: Rows, Bays, and Tiers on Vessels
-    # ============================================================================
+    **Tier (Vertical Position):**
+    - Numbered from bottom to top
+    - Below deck: 02, 04, 06, 08... (even numbers, working down from deck)
+    - On deck: 82, 84, 86, 88... (even numbers above 80, working up from deck)
+    - Deck level itself is typically 80
     
-    st.markdown('<p class="section-header">Container Positioning: Bays, Rows & Tiers</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Containers on vessels are organized in a three-dimensional grid system for precise positioning.
-    """)
-    
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.markdown("""
-        **Bays (Longitudinal)**
-        - Front (bow) to back (stern)
-        - Odd numbers: 01, 03, 05...
-        - For 20 ft container positions
-        - Even numbers: 02, 04, 06...
-        - For 40 ft container positions
-        - Example: Bay 01 = front, Bay 20 = middle, Bay 40 = stern
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Rows (Transverse)**
-        - Port (left) to starboard (right)
-        - 00 or 01 at centerline
-        - Odd numbers on port side
-        - Even numbers on starboard side
-        - Example: Rows 01, 03, 05 (port)
-        - Rows 02, 04, 06 (starboard)
-        - Modern vessels: up to 24 rows across
-        """)
-    
-    with col3:
-        st.markdown("""
-        **Tiers (Vertical)**
-        - Bottom to top stacking
-        - Below deck: 02, 04, 06, 08...
-        - On deck: 82, 84, 86, 88...
-        - 80+ indicates above deck
-        - Example: Tier 02 = bottom hold
-        - Tier 06 = 3rd level in hold
-        - Tier 86 = 3rd level on deck
-        """)
-    
-    st.markdown("""
-    **Example Container Position: 180684**
-    - **Bay 18**: Middle section of ship
-    - **Row 06**: Starboard side, 3rd position from center
-    - **Tier 84**: Second tier on deck (above deck level)
+    **Example:** Container at position **Bay 12, Row 04, Tier 86** is:
+    - 12th bay from bow (40-foot position)
+    - 4th row from port side (starboard side)
+    - 3 tiers above deck level
     """)
     
     # ============================================================================
-    # SECTION 3: Vessel Size Evolution
+    # SECTION 2: Vessel Size Evolution
     # ============================================================================
     
-    st.markdown('<p class="section-header">The Evolution of Container Vessel Sizes</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">The Dramatic Evolution of Container Vessel Sizes</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Over the past 70 years, container vessels have grown dramatically in size, driven by economies of scale. 
-    This evolution has fundamentally changed port infrastructure requirements and global shipping economics.
+    One of the most striking transformations in maritime history is the growth in container vessel sizes. 
+    In just 60 years, vessels have grown **50 times** in capacity.
     """)
     
-    # Detailed vessel evolution table
+    # Vessel evolution data
     vessel_evolution = pd.DataFrame({
-        'Era': ['1956', '1970', '1980', '1985', '1988', '2000', '2006', '2013', '2014', '2019'],
-        'Class': ['Early Container', 'Fully Cellular', 'Panamax', 'Panamax Max', 'Post-Panamax I', 
-                  'Post-Panamax II', 'VLCS', 'ULCS', 'New-Panamax', 'MGX-24'],
-        'TEU Capacity': [500, 1500, 3200, 4000, 5000, 7500, 13000, 19500, 12500, 23000],
-        'Containers Across': [6, 8, 10, 10, 13, 16, 19, 22, 20, 24],
-        'Typical Draft (m)': [9, 9, 10, 10, 12, 14, 15, 16, 15, 16],
-        'Key Milestone': [
-            'First container ship (Ideal X)',
-            'Purpose-built cellular design',
-            'Panama Canal size limit',
-            'Maximum Panamax dimensions',
-            'Exceeded Panama Canal width',
-            'Exceeded Panama limits significantly',
-            'Very Large Container Ship',
-            'Ultra Large Container Ship',
-            'Panama Canal expansion',
-            'Maximum practical size today'
-        ]
+        'Year': [1956, 1970, 1980, 1988, 1996, 2006, 2013, 2019],
+        'Vessel Example': [
+            'Ideal X (First)',
+            'Encounter Bay',
+            'American New York',
+            'Panamax Standard',
+            'Regina Maersk',
+            'Emma Maersk',
+            'Maersk Triple E',
+            'MSC Gülsün'
+        ],
+        'Capacity (TEU)': [500, 1500, 3000, 4500, 6500, 15000, 18000, 23000],
+        'Length (m)': [135, 180, 230, 290, 318, 397, 400, 400],
+        'Width (m)': [17, 24, 30, 32, 42, 56, 59, 61],
+        'Max Draft (m)': [9, 10, 12, 13, 14, 16, 16, 16],
+        'Container Width': ['6 across', '8 across', '11 across', '13 across', '16 across', '22 across', '23 across', '24 across']
     })
     
     st.dataframe(vessel_evolution, width='stretch', hide_index=True)
     
-    # Vessel size growth chart
+    # Capacity growth visualisation
     fig = go.Figure()
     
     fig.add_trace(go.Scatter(
-        x=vessel_evolution['Era'],
-        y=vessel_evolution['TEU Capacity'],
+        x=vessel_evolution['Year'],
+        y=vessel_evolution['Capacity (TEU)'],
         mode='lines+markers',
-        line=dict(color='#3B82F6', width=4),
-        marker=dict(size=14, color='#2563EB', line=dict(color='white', width=2)),
         name='TEU Capacity',
-        text=[f"{teu:,} TEU" for teu in vessel_evolution['TEU Capacity']],
-        textposition='top center',
-        textfont=dict(size=10)
+        line=dict(color='#3B82F6', width=4),
+        marker=dict(size=12, color='#2563EB', line=dict(color='white', width=2)),
+        text=vessel_evolution['Vessel Example'],
+        hovertemplate='<b>%{text}</b><br>Year: %{x}<br>Capacity: %{y:,} TEU<extra></extra>'
     ))
     
     fig.update_layout(
         title={
-            'text': '70 Years of Vessel Evolution: 500 TEU → 25,000 TEU',
+            'text': 'Container Vessel Capacity Growth: 1956 → 2019',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 20, 'color': '#1F2937'}
         },
-        xaxis_title="Year / Era",
-        yaxis_title="Container Capacity (TEU)",
+        xaxis_title="Year",
+        yaxis_title="Capacity (TEU)",
         height=500,
         plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB'),
-        showlegend=False,
-        hovermode='x unified'
-    )
+        xaxis=dict(gridcolor='#E5E7EB'),
+        yaxis=dict(gridcolor='#E5E7EB', range=[0, 25000])
+    ))
     
     st.plotly_chart(fig, width='stretch')
     
+    st.markdown("""
+    **Key Observations:**
+    
+    **1956-1980s: Early Growth**
+    - Modest increases from 500 to 3,000 TEU
+    - Vessels constrained by port infrastructure and canal widths
+    - Focus on proving containerisation concept
+    
+    **1988: Panamax Limit**
+    - ~4,500 TEU defined by Panama Canal dimensions
+    - Maximum width: 32.3 metres (106 feet)
+    - Standard for two decades
+    
+    **1996-2006: Breaking Through**
+    - Post-Panamax vessels exceed canal limits
+    - 6,500 → 15,000 TEU in just 10 years
+    - New-Panamax canal expansion announced
+    
+    **2013-2019: Mega Vessel Era**
+    - Ultra Large Container Ships (ULCS) reach 23,000+ TEU
+    - 24 containers across width
+    - Approaching practical limits (port depth, crane reach, structural integrity)
+    """)
+    
+    st.markdown("""
+    <div class="info-box">
+    <strong>💡 Why Did Vessels Grow So Large?</strong><br>
+    <strong>Economies of Scale</strong>: Bigger vessels dramatically reduce cost per container:<br>
+    - <strong>Crew costs</strong>: Same ~25 crew whether carrying 5,000 or 20,000 TEU<br>
+    - <strong>Fuel per TEU</strong>: Larger vessels more fuel-efficient per container<br>
+    - <strong>Capital cost per TEU</strong>: Building costs don't scale linearly with size<br>
+    - <strong>Port fees per TEU</strong>: Fixed port charges spread over more containers<br><br>
+    <strong>Result</strong>: A 20,000 TEU vessel costs roughly 40-50% less per TEU than a 5,000 TEU vessel
+    </div>
+    """, unsafe_allow_html=True)
+    
     # ============================================================================
-    # SECTION 4: Vessel Classifications
+    # SECTION 3: Vessel Classification Systems
     # ============================================================================
     
-    st.markdown('<p class="section-header">Vessel Classification Categories</p>', unsafe_allow_html=True)
-    
-    st.markdown('<p class="subsection-header">Feeder Vessels (100-3,000 TEU)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Vessel Classification by Size</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Purpose:** Short-sea shipping, connecting smaller ports to major hub ports
-    
-    **Characteristics:**
-    - Small to medium size (typically 500-2,500 TEU)
-    - Can access smaller, shallower ports
-    - Flexible and agile operations
-    - Lower draft requirements (8-10 meters)
-    - Operate regional routes (e.g., within Southeast Asia)
-    
-    **Typical Routes:**
-    - Singapore ↔ Jakarta
-    - Singapore ↔ Manila
-    - Hong Kong ↔ Taiwan
-    
-    **Role in Network:** Collect cargo from smaller ports and bring to major hubs (hub-and-spoke system)
+    The industry uses several classification systems based on vessel size and capability. Understanding 
+    these categories is essential for port planning and operational discussions.
     """)
     
-    st.markdown('<p class="subsection-header">Panamax (3,000-5,000 TEU)</p>', unsafe_allow_html=True)
+    # Classification data
+    vessel_classes = pd.DataFrame({
+        'Class': [
+            'Feeder',
+            'Feedermax',
+            'Panamax',
+            'Post-Panamax',
+            'New-Panamax (Neo-Panamax)',
+            'VLCS (Very Large Container Ship)',
+            'ULCS (Ultra Large Container Ship)'
+        ],
+        'Capacity Range (TEU)': [
+            '100 - 1,000',
+            '1,000 - 3,000',
+            '3,000 - 5,000',
+            '5,000 - 10,000',
+            '10,000 - 14,500',
+            '10,000 - 18,000',
+            '18,000 - 25,000+'
+        ],
+        'Typical Width (m)': ['<23', '23-30', '32.2 (max)', '32.3-49', '49-51', '51-59', '59-61'],
+        'Defining Constraint': [
+            'Small ports, rivers',
+            'Regional routes',
+            'Old Panama Canal (retired 2016)',
+            'Suez Canal width',
+            'New Panama Canal (2016+)',
+            'Port crane reach',
+            'Port infrastructure limits'
+        ],
+        'Typical Routes': [
+            'Short-sea, river, coastal',
+            'Intra-regional (Asia, Europe)',
+            'Trans-Pacific, Asia-Europe',
+            'Major trade lanes',
+            'Trans-Pacific, Asia-Europe',
+            'Asia-Europe mainline',
+            'Asia-Europe mainline'
+        ],
+        'Example Vessels': [
+            'Regional feeders',
+            'CMA CGM Coral',
+            'APL China (retired)',
+            'Maersk Sealand',
+            'CMA CGM Brazil',
+            'Maersk Triple E',
+            'MSC Gülsün, HMM Algeciras'
+        ]
+    })
     
-    st.markdown("""
-    **Purpose:** Named after Panama Canal—sized to fit through the original canal locks
+    st.dataframe(vessel_classes, width='stretch', hide_index=True)
     
-    **Characteristics:**
-    - Length: ~294 meters (max for old Panama Canal locks)
-    - Beam: ~32 meters (max width for canal)
-    - Draft: ~12 meters
-    - 10-13 containers across deck
-    - Capacity: 3,000-5,000 TEU
+    st.markdown('<p class="subsection-header">Canal and Port Constraints</p>', unsafe_allow_html=True)
     
-    **Historical Significance:**
-    - Dominated global shipping from 1980s-2000s
-    - Panama Canal dictated maximum practical vessel size
-    - Optimized for trans-Pacific and trans-Atlantic routes
+    col1, col2 = st.columns(2)
     
-    **Current Status:** Still widely used, but being superseded by larger vessels on major routes
-    """)
+    with col1:
+        st.markdown("""
+        **Panama Canal Constraints:**
+        
+        **Old Locks (Pre-2016):**
+        - Maximum length: 294.1 m
+        - Maximum width: 32.3 m (**Panamax limit**)
+        - Maximum draft: 12.0 m
+        - Capacity: ~4,500 TEU maximum
+        
+        **New Locks (Post-2016):**
+        - Maximum length: 366 m
+        - Maximum width: 49 m (**New-Panamax limit**)
+        - Maximum draft: 15.2 m
+        - Capacity: ~14,500 TEU maximum
+        
+        **Impact:**
+        - Old canal limited vessel sizes until 2016
+        - Expansion allowed larger vessels on trans-Pacific routes
+        - Mega vessels (20,000+ TEU) still cannot use Panama Canal
+        """)
     
-    st.markdown('<p class="subsection-header">Post-Panamax (5,000-10,000 TEU)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Purpose:** Exceeded Panama Canal limits to achieve greater economies of scale
-    
-    **Characteristics:**
-    - Too wide for original Panama Canal
-    - Beam: 32-45 meters
-    - 13-18 containers across
-    - Draft: 12-14 meters
-    - Capacity: 5,000-10,000 TEU
-    
-    **Impact:**
-    - Required ports to invest in longer-reach cranes
-    - Could not use Panama Canal (until 2016 expansion)
-    - Forced route planning around Cape Horn or Suez Canal
-    - Became standard for Asia-Europe routes
-    """)
-    
-    st.markdown('<p class="subsection-header">New-Panamax (10,000-14,500 TEU)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Purpose:** Sized for the expanded Panama Canal (opened 2016)
-    
-    **Characteristics:**
-    - Length: ~366 meters (new canal lock maximum)
-    - Beam: ~49 meters (new canal maximum)
-    - Draft: ~15 meters
-    - 20 containers across
-    - Capacity: 12,000-14,500 TEU
-    
-    **Significance:**
-    - Represents the "new standard" for trans-Pacific routes
-    - Can use expanded Panama Canal
-    - More economical than Post-Panamax but not as extreme as ULCV
-    """)
-    
-    st.markdown('<p class="subsection-header">VLCS - Very Large Container Ships (10,000-18,000 TEU)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Purpose:** Mega-vessels for high-volume routes (primarily Asia-Europe)
-    
-    **Characteristics:**
-    - Length: 350-400 meters
-    - Beam: 48-56 meters
-    - 19-21 containers across
-    - Draft: 14-16 meters
-    - Capacity: 11,000-18,000 TEU
-    
-    **Requirements:**
-    - Deep-water berths (15+ meters)
-    - Super-post-Panamax cranes (70+ meter outreach)
-    - Extended berth length (400+ meters)
-    - High crane productivity requirements
-    """)
-    
-    st.markdown('<p class="subsection-header">ULCS - Ultra Large Container Ships (18,000-25,000 TEU)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Purpose:** Maximum economies of scale for ultra-high-volume routes
-    
-    **Characteristics:**
-    - Length: 400+ meters (longer than 4 football fields)
-    - Beam: 59+ meters
-    - 22-24 containers across (record: 24 across on MGX-24 class)
-    - Draft: 16+ meters
-    - Capacity: 18,000-25,000 TEU
-    - Can carry over 200,000 tons of cargo
-    
-    **Notable Examples:**
-    - MSC Gülsün: 23,756 TEU
-    - HMM Algeciras: 23,964 TEU
-    - Ever Ace: 23,992 TEU
-    - MSC Irina: 24,346 TEU (largest as of 2023)
-    
-    **Extreme Requirements:**
-    - Only a handful of ports worldwide can accommodate
-    - Requires 65+ meter crane outreach
-    - Needs 16+ meter draft berths
-    - 8-12 cranes working simultaneously for efficiency
-    - Port call duration: 24-48 hours even with optimal operations
-    """)
+    with col2:
+        st.markdown("""
+        **Suez Canal Constraints:**
+        
+        **Current Specifications:**
+        - Maximum length: No practical limit
+        - Maximum width: 77.5 m beam (much wider than Panama)
+        - Maximum draft: 20.1 m (66 feet)
+        - **No locks** (sea-level canal)
+        
+        **Strategic Importance:**
+        - Asia-Europe route (33% of global container trade)
+        - Can accommodate all existing container vessels
+        - Mega vessels (23,000 TEU) fit comfortably
+        - Critical chokepoint for global trade
+        
+        **Alternative: Cape of Good Hope**
+        - +3,500 nautical miles (+7 days sailing)
+        - +$500,000+ fuel costs
+        - Avoided unless Suez blocked
+        """)
     
     st.markdown("""
     <div class="warning-box">
@@ -348,232 +311,329 @@ def show():
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 5: Maritime Economics of Scale
+    # SECTION 4: Economics of Vessel Size
     # ============================================================================
     
-    st.markdown('<p class="section-header">Maritime Economics of Scale</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Economics of Scale: Why Bigger is (Usually) Better</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The dramatic growth in vessel size is driven by **economies of scale**: larger vessels have 
-    significantly lower cost per TEU transported.
+    The dramatic growth in vessel sizes is driven by powerful economic incentives. Let's examine the 
+    cost structure and how it changes with vessel size.
     """)
     
-    # Cost per TEU analysis
-    cost_analysis = pd.DataFrame({
-        'Vessel Size': ['Feeder\n1,000 TEU', 'Panamax\n5,000 TEU', 'Post-Panamax\n10,000 TEU', 
-                       'VLCS\n15,000 TEU', 'ULCS\n20,000 TEU', 'ULCS\n24,000 TEU'],
-        'Relative Cost per TEU': [100, 50, 32, 24, 20, 18],
-        'Crew Size': [15, 20, 22, 23, 24, 25],
-        'Fuel per TEU (Index)': [100, 55, 38, 30, 26, 24]
+    # Cost comparison data
+    cost_comparison = pd.DataFrame({
+        'Vessel Size (TEU)': [1000, 3000, 5000, 8000, 12000, 18000],
+        'Cost per TEU (Index)': [100, 68, 52, 38, 28, 18],
+        'Crew Size': [15, 20, 22, 24, 25, 25],
+        'Fuel per TEU (Index)': [100, 75, 62, 51, 43, 38],
+        'Port Cost per TEU (Index)': [100, 45, 33, 25, 20, 17]
     })
     
+    # Cost savings visualisation
     fig = go.Figure()
     
-    fig.add_trace(go.Bar(
-        x=cost_analysis['Vessel Size'],
-        y=cost_analysis['Relative Cost per TEU'],
-        marker=dict(
-            color=['#EF4444', '#F59E0B', '#3B82F6', '#10B981', '#059669', '#047857'],
-            line=dict(color='#1F2937', width=2)
-        ),
-        text=cost_analysis['Relative Cost per TEU'],
-        textposition='outside',
-        name='Cost per TEU (Indexed to 100)'
+    fig.add_trace(go.Scatter(
+        x=cost_comparison['Vessel Size (TEU)'],
+        y=cost_comparison['Cost per TEU (Index)'],
+        mode='lines+markers',
+        name='Total Cost per TEU',
+        line=dict(color='#EF4444', width=4),
+        marker=dict(size=12),
+        fill='tozeroy',
+        fillcolor='rgba(239, 68, 68, 0.2)'
     ))
     
     fig.update_layout(
         title={
-            'text': 'Economies of Scale: Cost per TEU Decreases with Vessel Size',
+            'text': 'Economies of Scale: Cost per TEU vs Vessel Size',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 18, 'color': '#1F2937'}
         },
-        yaxis_title="Relative Cost per TEU (Indexed)",
-        xaxis_title="Vessel Type & Capacity",
+        xaxis_title="Vessel Size (TEU)",
+        yaxis_title="Cost per TEU (Indexed to 1,000 TEU = 100)",
         height=450,
         plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB', range=[0, 120]),
-        showlegend=False
-    )
+        xaxis=dict(gridcolor='#E5E7EB'),
+        yaxis=dict(gridcolor='#E5E7EB', range=[0, 110])
+    ))
     
     st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
-    **Why Larger = Cheaper:**
+    **Cost Components Breakdown:**
     
-    1. **Crew Costs:** A 24,000 TEU vessel needs only 25 crew vs 15 for 1,000 TEU vessel
-       - Per TEU crew cost: 24x larger vessel, only 1.7x more crew
+    **Fixed Costs (Don't Scale with Size):**
+    - **Crew salaries**: 25 crew whether 5,000 or 20,000 TEU (~$5M/year)
+    - **Insurance**: Relatively flat
+    - **Administration**: Port agency, documentation
+    - **Port dues**: Based on vessel size, not cargo volume
     
-    2. **Fuel Efficiency:** Fuel consumption doesn't scale linearly with capacity
-       - Doubling capacity increases fuel use by only ~50%
+    **Variable Costs (Scale Less Than Proportionally):**
+    - **Fuel**: Larger vessels more efficient per TEU (hull efficiency, slower speeds possible)
+    - **Capital cost**: Building cost doesn't double when capacity doubles
+    - **Maintenance**: Slightly higher but not proportional to capacity
     
-    3. **Port Costs:** Some port fees are per-vessel, not per-container
-       - Larger vessel spreads fixed costs over more TEU
+    **Result:**
+    - 1,000 TEU vessel: $1,000 cost per TEU per voyage
+    - 18,000 TEU vessel: $180 cost per TEU per voyage (82% reduction!)
     
-    4. **Capital Costs:** Building a 20,000 TEU vessel doesn't cost 20x a 1,000 TEU vessel
-       - Capital cost per TEU slot decreases with size
+    **The Catch:**
+    - Need high utilisation (85%+ load factor) to realise savings
+    - Requires massive cargo volumes on route
+    - Limited ports can handle mega vessels
+    - Higher risk if vessel delayed or breaks down
     """)
     
-    st.markdown("""
-    <div class="insight-box">
-    <strong>💡 The Catch:</strong> While larger vessels have lower cost per TEU, they require:
-    - Massive capital investment upfront (€150-200 million per vessel)
-    - Specialized port infrastructure at every port of call
-    - Consistent high-volume cargo to fill the capacity
-    - Longer time in port (even with many cranes)
+    # ============================================================================
+    # SECTION 5: Stowage Planning Fundamentals
+    # ============================================================================
     
-    This is why only major shipping alliances can effectively operate these mega vessels on high-volume 
-    routes like Asia-Europe.
+    st.markdown('<p class="section-header">Vessel Stowage Planning: The Tetris Challenge</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Stowage planning—determining where each container goes on the vessel—is a complex optimisation problem 
+    with multiple competing constraints. It's like 3D Tetris with thousands of pieces and strict rules.
+    """)
+    
+    st.markdown('<p class="subsection-header">Stowage Planning Principles</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="info-box">
+    <strong>🎯 Stowage Planning Principles:</strong><br>
+    - <strong>Stability</strong>: Keep centre of gravity low and balanced<br>
+    - <strong>Structural limits</strong>: Don't exceed stack weight or deck load limits<br>
+    - <strong>Destination sequence</strong>: First port off containers on top/accessible<br>
+    - <strong>Container compatibility</strong>: Dangerous goods segregation, reefer power access<br>
+    - <strong>Operational efficiency</strong>: Minimise crane movements, balance workload<br>
+    - <strong>Special requirements</strong>: Out-of-gauge, hazmat, temperature-controlled
     </div>
     """, unsafe_allow_html=True)
     
-    # ============================================================================
-    # SECTION 6: Vessel Stowage Principles
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Vessel Stowage Planning Principles</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">1. Vessel Stability</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Stowage planning** is the process of determining exactly where each container should be positioned 
-    on a vessel. This is a complex optimization problem balancing multiple constraints.
+    **Why Stability Matters:**
+    - Vessel must remain upright and stable in all sea conditions
+    - Too much weight high up → Risk of capsizing (top-heavy)
+    - Uneven weight distribution → Vessel lists (leans) to one side
+    - Weight too far forward/aft → Vessel "hogs" (bends upward) or "sags" (bends downward)
+    
+    **Key Stability Concepts:**
+    
+    **Centre of Gravity (G):**
+    - Point where all weight effectively concentrated
+    - Lower G = more stable
+    - Heavy containers go low in holds, lighter on deck
+    
+    **Metacentric Height (GM):**
+    - Measure of initial stability
+    - Too low GM → Vessel unstable, may capsize
+    - Too high GM → Vessel rolls uncomfortably (harsh motion)
+    - Target: GM between 0.5 - 2.0 metres (vessel-specific)
+    
+    **Longitudinal Balance:**
+    - Weight distributed evenly bow-to-stern
+    - Prevent excessive "trim" (bow or stern too low)
+    - Target: Near-zero trim or slight stern trim
+    
+    **Transverse Balance:**
+    - Weight distributed evenly port-to-starboard
+    - Prevent "list" (leaning to one side)
+    - Target: Zero list (perfectly upright)
+    
+    **Practical Rules:**
+    - Heavy containers (>25 tonnes) in lower holds
+    - Empty containers on top tiers
+    - Balance weight port/starboard within each bay
+    - Spread heavy containers throughout vessel length
     """)
     
-    st.markdown('<p class="subsection-header">Key Stowage Constraints</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">2. Destination Sequence (Port Rotation)</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **The Challenge:**
+    - Vessel calls at multiple ports on a voyage
+    - Containers for Port 1 must be accessible before containers for Port 2
+    - Otherwise, must move containers to access others ("re-stows")
+    - Re-stows waste time and money
+    
+    **The Solution:**
+    - **Later ports on bottom/back**: Containers for Port 5 at bottom of stacks
+    - **Earlier ports on top/front**: Containers for Port 1 on top, easy to access
+    - **Segregate by destination**: Group containers by discharge port
+    
+    **Example Vessel Route:**
+    Singapore → Hong Kong → Shanghai → Busan → Los Angeles → Oakland → Seattle
+    
+    **Stowage Strategy:**
+    - Seattle cargo: Bottom tier, inaccessible until final port
+    - Oakland cargo: Mid-tiers, accessible after LA discharge
+    - Los Angeles cargo: Upper tiers, accessible early
+    - Busan cargo: Top tiers, accessible first after loading
+    
+    **Re-Stow Problem:**
+    - If a Los Angeles container is buried under Seattle containers, must remove Seattle containers temporarily (re-stow)
+    - Each re-stow costs 2-3 crane moves (lift off, set aside, replace after)
+    - Target: <2% re-stow rate (ideally zero)
+    """)
+    
+    st.markdown('<p class="subsection-header">3. Weight Distribution and Structural Limits</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Structural Constraints:**
+    
+    **Stack Weight Limits:**
+    - Maximum weight can be stacked vertically
+    - Typically 200-300 tonnes per stack
+    - Depends on cell guide strength and deck structure
+    - Heavy containers can't all be in same stack
+    
+    **Deck Load Limits:**
+    - Each deck section has maximum weight capacity
+    - Typically 5-10 tonnes per square metre
+    - Heavy containers spread across multiple positions
+    
+    **Hatch Cover Strength:**
+    - Hatch covers support containers on deck above hold
+    - Limited load capacity (weaker than solid deck)
+    - Heavy containers avoid hatch cover positions when possible
+    
+    **Bay Limits:**
+    - Maximum weight per bay (longitudinal section)
+    - Prevent excessive bending moments on hull
+    - Typically 1,000-2,000 tonnes per bay (vessel-specific)
+    
+    **Practical Implications:**
+    - Computer software calculates all loads automatically
+    - Stowage planner adjusts if limits exceeded
+    - May need to move containers between bays to balance loads
+    """)
+    
+    st.markdown('<p class="subsection-header">4. Container Type Compatibility</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Dangerous Goods (DG) Segregation:**
+    - Classes must be separated by minimum distances
+    - Class 1 (explosives) kept far from Class 3 (flammables)
+    - International Maritime Dangerous Goods (IMDG) Code specifies exact rules
+    - Some DG can't be in holds (must be on deck with ventilation)
+    
+    **Reefer (Refrigerated) Containers:**
+    - Must be within reach of power supply points
+    - Limited number of reefer plugs per bay
+    - Reefer stacks on deck or in specially-equipped holds
+    - Monitor temperature continuously during voyage
+    
+    **Out-of-Gauge (OOG) Containers:**
+    - Exceed standard dimensions (overwidth, overheight, overlength)
+    - Cannot have containers stacked on top
+    - Placed in specific positions with clearance
+    - Often require special securing equipment
+    
+    **Empty Containers:**
+    - Very light (2-4 tonnes vs 30+ tonnes full)
+    - Placed on top tiers when possible
+    - Can't support heavy containers on top
+    - Used to balance weight distribution
+    """)
+    
+    st.markdown('<p class="subsection-header">The Stowage Planning Process</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Timeline: 48-72 Hours Before Vessel Arrival**
+    
+    **Step 1: Receive Container List**
+    - Shipping line / terminal provides list of containers to load
+    - Details: Container number, size (20'/40'), weight, type, destination, special requirements
+    
+    **Step 2: Understand Vessel Configuration**
+    - Vessel's bay plan (which bays exist, capacity of each)
+    - Reefer plug locations
+    - Weight limits for each position
+    - Current cargo onboard (if mid-voyage)
+    
+    **Step 3: Group Containers**
+    - By destination port
+    - By size (20' vs 40')
+    - By type (dry, reefer, OOG, dangerous goods)
+    - By weight class (<15t, 15-25t, >25t)
+    
+    **Step 4: Initial Allocation**
+    - Assign containers to bays based on destination sequence
+    - Heavy containers to bottom tiers
+    - Reefers to powered positions
+    - Dangerous goods with proper segregation
+    
+    **Step 5: Check Stability**
+    - Calculate centre of gravity (G)
+    - Calculate metacentric height (GM)
+    - Check longitudinal and transverse balance
+    - Verify all structural limits
+    
+    **Step 6: Optimise for Efficiency**
+    - Minimise crane travel between bays
+    - Balance workload across multiple cranes
+    - Sequence loading for operational efficiency
+    - Identify any re-stow requirements
+    
+    **Step 7: Generate Final Plan**
+    - Bay plans showing exact position of every container (bay-row-tier)
+    - Loading sequence for cranes
+    - Special instructions for DG, OOG, reefers
+    - Stability report confirming safety
+    
+    **Output:**
+    - Detailed stowage plan sent to vessel and terminal
+    - Crane operators follow plan precisely
+    - Any deviations require re-calculation of stability
+    """)
+    
+    # ============================================================================
+    # SECTION 6: Technology Evolution
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Technology Evolution in Vessel Design</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Modern container vessels incorporate advanced technologies that weren't imaginable in the 1950s.
+    """)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **1. Vessel Stability**
-        - Must maintain proper center of gravity
-        - Weight distribution fore/aft (longitudinal)
-        - Weight distribution port/starboard (transverse)
-        - Metacentric height (stability measure)
-        - Prevents vessel from listing or being unstable
+        **Propulsion and Efficiency:**
+        - **Slow steaming**: Operate at 18-20 knots vs 25+ knots (30-50% fuel savings)
+        - **Optimised hull designs**: Bulbous bow, improved hydrodynamics
+        - **Efficient engines**: Two-stroke diesel, waste heat recovery
+        - **Automation**: Unmanned engine rooms, remote monitoring
         
-        **2. Structural Limits**
-        - **Stack weight limits**: Maximum weight per bay
-        - **Deck load limits**: Weight capacity of each deck section
-        - **Hatch cover strength**: Limits on containers above holds
-        - Heavy containers on bottom, lighter on top
-        
-        **3. Destination Sequence**
-        - Containers for later ports on bottom/back
-        - Containers for next port on top/accessible
-        - Minimize "re-handles" (moving containers to access others)
-        - "Last in, first out" principle where possible
+        **Environmental Technologies:**
+        - **Scrubbers**: Remove sulphur from exhaust (meet IMO 2020 regulations)
+        - **LNG dual-fuel**: Can burn LNG (20% less CO₂ than conventional fuel)
+        - **Alternative fuels ready**: Methanol, ammonia capability in new builds
+        - **Shore power**: Plug into port electricity (zero emissions at berth)
         """)
     
     with col2:
         st.markdown("""
-        **4. Container Compatibility**
-        - **Dangerous Goods (DG)**: Segregation requirements
-        - **Reefers**: Must be near power outlets
-        - **OOG (Out of Gauge)**: Cannot stack containers on top
-        - **Empty vs Full**: Empties typically on top
-        - **Heavy vs Light**: Weight distribution
+        **Operational Technologies:**
+        - **GPS and AIS**: Precise navigation and vessel tracking
+        - **Weather routing**: Optimise route for fuel efficiency and safety
+        - **Predictive maintenance**: Sensors monitor equipment health
+        - **Digital twin**: Virtual model of vessel for optimisation
         
-        **5. Operational Efficiency**
-        - **Crane productivity**: Minimize crane moves
-        - **Tight connections**: Priority containers for time-sensitive cargo
-        - **Bay planning**: Complete bays for faster operations
-        - **Minimize shifting**: Avoid moving same container multiple times
-        
-        **6. Special Requirements**
-        - Away from boiler (AFB) for heat-sensitive cargo
-        - Cargo requiring special ventilation
-        - High-value cargo in secure locations
-        - Customs/inspection requirements
+        **Cargo Management:**
+        - **Automated stowage planning**: AI-powered optimisation software
+        - **Container tracking**: IoT sensors monitor location and condition
+        - **Reefer monitoring**: Remote temperature and power monitoring
+        - **Load computers**: Real-time stability calculations
         """)
     
-    st.markdown('<p class="subsection-header">Stowage Planning Process</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Step 1: Information Collection (72 hours before arrival)**
-    - Shipping line provides vessel details via PORTNET
-    - Container list with: size, weight, type, destination, special requirements
-    - Vessel stowage plan from previous port
-    - Discharge and loading lists
-    
-    **Step 2: Discharge Planning**
-    - Determine which containers to remove
-    - Sequence to minimize re-handles
-    - Assign to specific quay cranes
-    
-    **Step 3: Loading Planning**
-    - Allocate each export container to specific bay-row-tier position
-    - Optimize for stability, destination sequence, and constraints
-    - Generate loading sequence for crane operators
-    
-    **Step 4: Verification & Review**
-    - Check all stability calculations
-    - Verify all constraints satisfied
-    - Confirm dangerous goods segregation
-    - Review for operational efficiency
-    
-    **Step 5: Execution**
-    - Real-time adjustments as needed
-    - Handle no-shows or last-minute changes
-    - Confirm final stowage matches plan
-    """)
-    
-    st.markdown("""
-    <div class="success-box">
-    <strong>💡 Intelligent Stowage Systems:</strong> Modern terminals use AI-powered stowage planning systems 
-    that can:
-    - Plan 1,000+ container positions in minutes (vs hours manually)
-    - Automatically satisfy all constraints
-    - Optimize for multiple objectives simultaneously
-    - Adapt in real-time to changes
-    - Learn from past stowage plans to improve
-    </div>
-    """, unsafe_allow_html=True)
-    
     # ============================================================================
-    # SECTION 7: Vessel Technology Evolution
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Vessel Technology Evolution</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Modern container vessels have evolved in three major areas beyond just size:
-    """)
-    
-    st.markdown('<p class="subsection-header">1. Growth in Size</p>', unsafe_allow_html=True)
-    st.markdown("""
-    - 500 TEU (1956) → 25,000 TEU (2024)
-    - Driven by economies of scale
-    - Created infrastructure arms race for ports
-    """)
-    
-    st.markdown('<p class="subsection-header">2. Increasing Specialization</p>', unsafe_allow_html=True)
-    st.markdown("""
-    - **Pure car/truck carriers (PCTC)**: Dedicated to vehicles
-    - **Heavy-lift vessels**: For industrial equipment
-    - **Reefer-optimized vessels**: More reefer plugs for perishables
-    - **LNG dual-fuel vessels**: Can run on liquefied natural gas
-    - **Fast container vessels**: Trade fuel for speed on premium routes
-    """)
-    
-    st.markdown('<p class="subsection-header">3. Environmental Impact Reduction</p>', unsafe_allow_html=True)
-    st.markdown("""
-    **Regulatory Drivers:**
-    - IMO 2020: Low sulfur fuel requirements
-    - IMO 2030: 40% carbon intensity reduction target
-    - IMO 2050: Net-zero emissions target
-    
-    **Technology Solutions:**
-    - **LNG propulsion**: 20-25% CO2 reduction vs conventional fuel
-    - **Scrubbers**: Clean exhaust gases to meet sulfur limits
-    - **Hull optimization**: Improved hydrodynamics for fuel efficiency
-    - **Slow steaming**: Reduced speed saves fuel (but increases transit time)
-    - **Wind assistance**: Modern sail technology (Flettner rotors, kites)
-    - **Shore power**: Plug into grid electricity while in port
-    - **Alternative fuels (future)**: Methanol, ammonia, hydrogen
-    """)
-    
-    # ============================================================================
-    # SECTION 8: Key Takeaways
+    # SECTION 7: Key Takeaways
     # ============================================================================
     
     st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
@@ -584,51 +644,49 @@ def show():
         st.markdown("""
         **Vessel Anatomy:**
         - Bow (front), Stern (back), Port (left), Starboard (right)
-        - Holds (below deck), On-deck stacks
-        - Bay-Row-Tier 3D coordinate system
-        - LOA, Beam, Draft determine port accessibility
+        - Bay-Row-Tier positioning system
+        - Holds (below deck), Deck (above), Superstructure
         
-        **Vessel Evolution:**
-        - 500 TEU (1956) → 25,000 TEU (2024)
-        - Driven by economies of scale
-        - Cost per TEU: 80% reduction from Feeder to ULCV
+        **Evolution:**
+        - 1956: 500 TEU (Ideal X, first container ship)
+        - 2019: 23,000+ TEU (MSC Gülsün)
+        - 46x capacity increase in 63 years
         
-        **Vessel Classifications:**
-        - Feeder (100-3,000 TEU): Regional routes
-        - Panamax (3,000-5,000 TEU): Original canal size
-        - Post-Panamax (5,000-10,000 TEU): Exceeded canal
-        - New-Panamax (10,000-14,500 TEU): Expanded canal
-        - VLCS (10,000-18,000 TEU): Very large ships
-        - ULCS (18,000-25,000 TEU): Ultra large ships
+        **Classifications:**
+        - Feeder: <3,000 TEU
+        - Panamax: ~4,500 TEU (old Panama Canal limit)
+        - New-Panamax: ~14,500 TEU (new Panama Canal)
+        - ULCS: 18,000-25,000 TEU (mega vessels)
         """)
     
     with col2:
         st.markdown("""
         **Economics of Scale:**
-        - Larger vessels = lower cost per TEU
-        - But require massive infrastructure investment
-        - Only viable on high-volume routes
-        - Limited number of ports can handle ULCV
+        - 18,000 TEU vessel: 82% lower cost per TEU vs 1,000 TEU
+        - Fixed costs (crew, insurance) don't scale with size
+        - Variable costs (fuel) scale less than proportionally
+        - Requires high utilisation and cargo volumes
         
         **Stowage Planning:**
-        - Must balance stability, destination, weight, special cargo
-        - Complex optimization problem
-        - 72-hour planning window
-        - AI systems now standard for efficiency
+        - Stability: Low centre of gravity, balanced
+        - Destination: Later ports bottom, earlier ports top
+        - Weight: Structural limits, heavy containers low
+        - Compatibility: DG segregation, reefer power, OOG
         
-        **Technology Trends:**
-        - Environmental regulations driving innovation
-        - LNG, scrubbers, alternative fuels
-        - Increasing specialization
-        - Digital systems integration
+        **Technology:**
+        - Slow steaming (fuel efficiency)
+        - Environmental (scrubbers, LNG, shore power)
+        - Automation (AI stowage, predictive maintenance)
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Container vessels have grown from 500 TEU to 25,000 TEU in 70 years, 
-    driven by dramatic economies of scale. However, these mega vessels require specialized ports with 
-    deep-water berths, super-sized cranes, and sophisticated planning systems. Only ports that can meet 
-    these requirements remain competitive in the global container shipping network.
+    <strong>🔍 Bottom Line:</strong> Container vessels have grown 46x in capacity since 1956, driven by 
+    powerful economies of scale. Modern mega vessels (20,000+ TEU) cost 80%+ less per container but require 
+    sophisticated infrastructure and operational planning. Stowage planning is a complex 3D optimisation 
+    problem balancing stability, destination sequence, structural limits, and container compatibility. 
+    Advanced technology (slow steaming, scrubbers, AI-powered planning, IoT) enables efficient, safe, and 
+    increasingly sustainable operations.
     </div>
     """, unsafe_allow_html=True)
     
@@ -640,5 +698,6 @@ def show():
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
     **Next Topic:** 🌍 Global Shipping & Alliances - Understand how shipping lines have consolidated into 
-    mega alliances controlling 83% of global container volumes, and how this shapes the competitive landscape.
+    three mega-alliances controlling 83% of global capacity, and how hub-and-spoke networks enable global 
+    connectivity.
     """)
