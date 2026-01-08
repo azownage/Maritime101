@@ -178,7 +178,7 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>💡 Why Did Vessels Grow So Large?</strong><br>
-    <strong>Economies of Scale</strong>: Bigger vessels dramatically reduce cost per container:<br>
+    - <strong>Economies of Scale</strong>: Bigger vessels dramatically reduce cost per container:<br>
     - <strong>Crew costs</strong>: Same ~25 crew whether carrying 5,000 or 20,000 TEU<br>
     - <strong>Fuel per TEU</strong>: Larger vessels more fuel-efficient per container<br>
     - <strong>Capital cost per TEU</strong>: Building costs don't scale linearly with size<br>
