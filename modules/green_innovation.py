@@ -8,7 +8,7 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand the maritime industry's decarbonization journey, alternative fuel technologies, green port 
+    Understand the maritime industry's decarbonisation journey, alternative fuel technologies, green port 
     initiatives, digital transformation, and future trends shaping sustainable maritime operations.
     </div>
     """, unsafe_allow_html=True)
@@ -17,7 +17,7 @@ def show():
     # SECTION 1: The Decarbonization Imperative
     # ============================================================================
     
-    st.markdown('<p class="section-header">The Decarbonization Imperative</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">The Decarbonisation Imperative</p>', unsafe_allow_html=True)
     
     st.markdown("""
     The maritime industry faces mounting pressure to reduce its carbon footprint and achieve net-zero 
@@ -36,10 +36,10 @@ def show():
         st.metric("IMO 2050 Target", "Net Zero", help="Net-zero greenhouse gas emissions by 2050")
     
     st.markdown("""
-    **International Maritime Organization (IMO) Targets:**
+    **International Maritime Organisation (IMO) Targets:**
     
     **Short-term (2030):**
-    - **40% reduction** in carbon intensity (CO2 per ton-mile) compared to 2008 baseline
+    - **40% reduction** in carbon intensity (CO2 per tonne-mile) compared to 2008 baseline
     - Applicable to all international shipping
     - Phased implementation through Energy Efficiency Design Index (EEDI) and Carbon Intensity Indicator (CII)
     
@@ -101,7 +101,7 @@ def show():
     
     fig.update_layout(
         title={
-            'text': 'IMO Decarbonization Pathway: 2008 → 2050',
+            'text': 'IMO Decarbonisation Pathway: 2008 → 2050',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 20, 'color': '#1F2937'}
@@ -118,14 +118,13 @@ def show():
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ The Challenge:</strong> Achieving net-zero by 2050 requires:
-    - **Complete fuel transition**: From fossil fuels to zero-carbon alternatives
-    - **New ship designs**: Vessels optimized for alternative fuels
-    - **Infrastructure transformation**: Bunkering facilities for new fuels at ports worldwide
-    - **Economic viability**: Alternative fuels currently 2-4x more expensive than conventional fuel
-    - **Technology maturity**: Some solutions still in development or early deployment
-    - **Fleet replacement**: 25-30 year ship lifespan means ships ordered today will still operate in 2050
-    
+    <strong>⚠️ The Challenge:</strong> Achieving net-zero by 2050 requires:<br>
+    - <strong>Complete fuel transition</strong>: From fossil fuels to zero-carbon alternatives<br>
+    - <strong>New ship designs</strong>: Vessels optimised for alternative fuels<br>
+    - <strong>Infrastructure transformation</strong>: Bunkering facilities for new fuels at ports worldwide<br>
+    - <strong>Economic viability</strong>: Alternative fuels currently 2-4x more expensive than conventional fuel<br>
+    - <strong>Technology maturity</strong>: Some solutions still in development or early deployment<br>
+    - <strong>Fleet replacement</strong>: 25-30 year ship lifespan means ships ordered today will still operate in 2050<br><br>
     This is not just an engineering challenge—it's an economic, political, and social transformation.
     </div>
     """, unsafe_allow_html=True)
@@ -157,7 +156,7 @@ def show():
     - Significant emissions reduction vs conventional fuel
     - Abundant supply globally
     - Meets current IMO 2030 targets
-    - Price competitive with low-sulfur fuel oil
+    - Price competitive with low-sulphur fuel oil
     
     **Disadvantages:**
     - Still a fossil fuel (not zero-carbon)
@@ -224,12 +223,12 @@ def show():
     **Characteristics:**
     - **Carbon-free**: No carbon in molecule (N-H bonds only)
     - **Energy density**: 45% of conventional fuel
-    - **Form**: Liquid at -33°C or pressurized at ambient temperature
+    - **Form**: Liquid at -33°C or pressurised at ambient temperature
     - **Production**: Haber-Bosch process (established industrial chemistry)
     
     **Advantages:**
     - **Zero-carbon**: No CO2 emissions when burned (only N2 and H2O)
-    - **Existing infrastructure**: Ammonia already produced and transported globally (fertilizer industry)
+    - **Existing infrastructure**: Ammonia already produced and transported globally (fertiliser industry)
     - **Energy carrier**: Can be produced from renewable electricity (green ammonia)
     - **High energy density**: Better than hydrogen (though less than methanol)
     
@@ -239,7 +238,7 @@ def show():
     - **NOx emissions**: Combustion produces nitrogen oxides (though manageable)
     - **Technology immature**: No commercial ammonia-powered ships yet (expected 2024-2026)
     - **Cost**: Green ammonia very expensive (3-4x conventional fuel)
-    - **Handling complexity**: Requires specialized training and equipment
+    - **Handling complexity**: Requires specialised training and equipment
     
     **Timeline:**
     - **2024-2026**: First ammonia-powered vessels expected
@@ -264,7 +263,7 @@ def show():
     - **Production**: Electrolysis (green H2) or steam methane reforming (grey/blue H2)
     
     **Advantages:**
-    - **Zero emissions**: Only water vapor produced
+    - **Zero emissions**: Only water vapour produced
     - **Abundant**: Can be produced from water and renewable electricity
     - **Multiple uses**: Fuel cells or combustion engines
     
@@ -385,30 +384,25 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 The Transition Strategy:</strong>
-    
-    Most shipping lines and ports are pursuing a **multi-fuel strategy**:
-    
-    **Phase 1 (2020-2030): Transition Fuels**
-    - LNG as primary alternative fuel
-    - Methanol (grey/bio) emerging
-    - Biofuel blending
-    - Focus on meeting 2030 targets (-40% intensity)
-    
-    **Phase 2 (2030-2040): Zero-Carbon Scaling**
-    - Green methanol scaling up
-    - Ammonia commercial deployment
-    - LNG phasing out
-    - Multiple fuels coexisting
-    
-    **Phase 3 (2040-2050): Net-Zero Achievement**
-    - Green methanol and ammonia dominate
-    - Final fossil fuel phase-out
-    - Net-zero achieved
-    
-    **Key Uncertainty:** Which fuel(s) will win long-term? Or will multiple fuels coexist?
-    - Methanol favored for container ships (easier handling)
-    - Ammonia may dominate bulk carriers, tankers (long routes, less space constraint)
+    <strong>🎯 The Transition Strategy:</strong><br><br>
+    Most shipping lines and ports are pursuing a <strong>multi-fuel strategy</strong>:<br><br>
+    <strong>Phase 1 (2020-2030): Transition Fuels</strong><br>
+    - LNG as primary alternative fuel<br>
+    - Methanol (grey/bio) emerging<br>
+    - Biofuel blending<br>
+    - Focus on meeting 2030 targets (-40% intensity)<br><br>
+    <strong>Phase 2 (2030-2040): Zero-Carbon Scaling</strong><br>
+    - Green methanol scaling up<br>
+    - Ammonia commercial deployment<br>
+    - LNG phasing out<br>
+    - Multiple fuels coexisting<br><br>
+    <strong>Phase 3 (2040-2050): Net-Zero Achievement</strong><br>
+    - Green methanol and ammonia dominate<br>
+    - Final fossil fuel phase-out<br>
+    - Net-zero achieved<br><br>
+    <strong>Key Uncertainty:</strong> Which fuel(s) will win long-term? Or will multiple fuels coexist?<br>
+    - Methanol favoured for container ships (easier handling)<br>
+    - Ammonia may dominate bulk carriers, tankers (long routes, less space constraint)<br>
     - Portfolio approach reduces risk of choosing "wrong" fuel
     </div>
     """, unsafe_allow_html=True)
@@ -420,7 +414,7 @@ def show():
     st.markdown('<p class="section-header">Green Port Technologies and Initiatives</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Ports play a critical role in maritime decarbonization through infrastructure, operations, and 
+    Ports play a critical role in maritime decarbonisation through infrastructure, operations, and 
     ecosystem development.
     """)
     
@@ -436,7 +430,7 @@ def show():
     - 40+ million tonnes marine fuel supplied annually (world's #1)
     
     **Methanol Bunkering (Scaling Up):**
-    - Pilot programs launched
+    - Pilot programmes launched
     - Infrastructure investments
     - Partnerships with methanol producers and shipping lines
     - Target: Become major methanol bunkering hub by 2030
@@ -461,7 +455,7 @@ def show():
         'Singapore Status': [
             'Established (#1 globally, 40M+ tonnes)',
             'Established (multiple providers)',
-            'Developing (pilot programs)',
+            'Developing (pilot programmes)',
             'Limited (blending)',
             'Planning (2030+ target)',
             'Research (limited scope)'
@@ -518,7 +512,7 @@ def show():
     
     **Impact:**
     - 60-70% reduction in terminal emissions
-    - Improved air quality for workers and neighbors
+    - Improved air quality for workers and neighbours
     - Lower noise pollution
     - Reduced operating costs (electricity cheaper than diesel)
     """)
@@ -527,20 +521,20 @@ def show():
     
     st.markdown("""
     **Concept:**
-    - Vessels plug into shore-based electrical grid while at berth
+    - Vessels plug into shore-based electrical grid whilst at berth
     - Shut down onboard diesel generators (which normally provide power for crew, reefers, pumps)
     - Use clean grid electricity instead
     
     **Benefits:**
     - **Emissions**: Zero emissions at berth (vs running diesel generators)
-    - **Air quality**: Major improvement in port neighborhoods
+    - **Air quality**: Major improvement in port neighbourhoods
     - **Noise**: Much quieter (no generator engines running)
     
     **Challenges:**
     - **Infrastructure cost**: $2-5 million per berth for shore power installation
     - **Vessel compatibility**: Ships need to be equipped with shore power connection
     - **Different standards**: US (60 Hz) vs Europe/Asia (50 Hz) electrical systems
-    - **Pricing**: Need competitive pricing to incentivize use
+    - **Pricing**: Need competitive pricing to incentivise use
     
     **Singapore Status:**
     - Shore power being deployed at Tuas Mega Port
@@ -562,17 +556,17 @@ def show():
     
     **Energy Efficiency:**
     - **LED lighting**: Throughout terminal
-    - **Smart controls**: AI-optimized energy usage
+    - **Smart controls**: AI-optimised energy usage
     - **Building design**: Energy-efficient HVAC and insulation
     """)
     
     st.markdown('<p class="subsection-header">5. Climate Resilience</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Ports must adapt to climate change impacts while reducing emissions.
+    Ports must adapt to climate change impacts whilst reducing emissions.
     
     **Sea Level Rise Protection:**
-    - **Tuas Mega Port**: Built **5 meters above mean sea level**
+    - **Tuas Mega Port**: Built **5 metres above mean sea level**
     - Protects against projected sea level rise through 2100
     - Incorporates climate models and storm surge predictions
     
@@ -636,14 +630,14 @@ def show():
     st.markdown('<p class="subsection-header">2. digitalPORT@SG Initiative</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    MPA's comprehensive digital transformation program for Singapore's maritime sector.
+    MPA's comprehensive digital transformation programme for Singapore's maritime sector.
     
     **Key Components:**
     
     **AI-Based Integrated Port Operations Control:**
-    - Centralized AI system coordinates all port operations
+    - Centralised AI system coordinates all port operations
     - Predictive analytics for berth planning, resource allocation
-    - Real-time optimization of vessel traffic, crane deployment
+    - Real-time optimisation of vessel traffic, crane deployment
     - Machine learning improves over time based on operational data
     
     **Multi-Sensor Track Fusion:**
@@ -655,12 +649,12 @@ def show():
     **Predictive Analytics:**
     - Forecast vessel arrival delays
     - Predict equipment failures before they happen
-    - Optimize maintenance scheduling
+    - Optimise maintenance scheduling
     - Anticipate demand patterns
     
-    **Digital Twin:**
+    **Operational Simulation:**
     - Virtual replica of entire port operations
-    - Test scenarios and optimizations before implementing
+    - Test scenarios and optimisations before implementing
     - Training environment for operators
     - "What-if" analysis for planning
     """)
@@ -668,7 +662,7 @@ def show():
     st.markdown('<p class="subsection-header">3. digitalOCEANS Platform</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Vision:** Digital twin of Singapore's entire maritime domain
+    **Vision:** Digital representation of Singapore's entire maritime domain
     
     **Capabilities:**
     - **Real-time situational awareness**: All vessel movements, port operations, marine traffic
@@ -679,7 +673,7 @@ def show():
     **Benefits:**
     - Better coordination across maritime ecosystem
     - Faster decision-making with real-time data
-    - Identify optimization opportunities
+    - Identify optimisation opportunities
     - Enhanced safety and security
     - Platform for innovation (third-party apps can build on digitalOCEANS)
     """)
@@ -750,7 +744,7 @@ def show():
     - Backup systems and redundancy
     - Containment measures (fire suppression, spill containment)
     - Insurance
-    - Compartmentalization (isolate problems)
+    - Compartmentalisation (isolate problems)
     
     **3. Eliminate Risk:**
     - Don't perform dangerous activities
@@ -769,7 +763,7 @@ def show():
     **Safety Layers:**
     - **Engineering controls**: Physical safeguards (guards, barriers, automation)
     - **Administrative controls**: Procedures, training, supervision
-    - **PPE**: Personal protective equipment (last line of defense)
+    - **PPE**: Personal protective equipment (last line of defence)
     
     **Continuous Improvement:**
     - Near-miss reporting and investigation
@@ -800,7 +794,7 @@ def show():
     **Vision:** Ships that navigate and operate without human crews (or minimal crews)
     
     **Technology Status:**
-    - **Short-range autonomous**: Ferries, harbor operations (trials ongoing)
+    - **Short-range autonomous**: Ferries, harbour operations (trials ongoing)
     - **Remote-controlled**: Vessels controlled from shore (commercially available)
     - **Fully autonomous ocean-going**: Still many years away (2030s-2040s)
     
@@ -818,7 +812,7 @@ def show():
     - **Liability**: Who's responsible if autonomous ship has accident?
     
     **Realistic Timeline:**
-    - **2025-2030**: Autonomous harbor operations, short-range ferries
+    - **2025-2030**: Autonomous harbour operations, short-range ferries
     - **2030-2040**: Remote-controlled ocean vessels (crew on shore)
     - **2040+**: Fully autonomous ocean-going ships (if regulatory framework allows)
     """)
@@ -831,7 +825,7 @@ def show():
     **Elements:**
     - **IoT sensors**: Every container tracked in real-time
     - **Blockchain**: Immutable record of ownership, location, condition
-    - **AI optimization**: Dynamic routing and scheduling based on real-time conditions
+    - **AI optimisation**: Dynamic routing and scheduling based on real-time conditions
     - **Predictive analytics**: Anticipate delays, adjust plans proactively
     - **Customer transparency**: Customers see exactly where cargo is, when it will arrive
     
@@ -860,7 +854,7 @@ def show():
     - Eliminate hazardous waste practices
     
     **Sustainable Procurement:**
-    - Favor suppliers with sustainable practices
+    - Favour suppliers with sustainable practices
     - Lifecycle assessment of equipment and materials
     - Design for disassembly and recycling
     """)
@@ -872,7 +866,7 @@ def show():
     
     **Trade Diversification:**
     - "China+1" strategies continue
-    - Supply chain resilience prioritized over pure efficiency
+    - Supply chain resilience prioritised over pure efficiency
     - Regional trade blocs gaining importance
     - Impact: More complex routing, more transshipment
     
@@ -882,14 +876,14 @@ def show():
     - Impact: Changes in port volumes and patterns
     
     **Digital Trade Barriers:**
-    - Data localization requirements
+    - Data localisation requirements
     - Cross-border data flow restrictions
     - Impact: Complicates integrated digital platforms
     
     **Climate-Driven Changes:**
     - Carbon border adjustments (EU CBAM, etc.)
     - Pressure to reduce supply chain emissions
-    - Impact: Favor efficient, green ports and shipping lines
+    - Impact: Favour efficient, green ports and shipping lines
     """)
     
     # ============================================================================
@@ -902,7 +896,7 @@ def show():
     
     with col1:
         st.markdown("""
-        **Decarbonization Imperative:**
+        **Decarbonisation Imperative:**
         - IMO 2030: -40% carbon intensity
         - IMO 2050: Net-zero emissions
         - Requires complete fuel transition
@@ -929,9 +923,9 @@ def show():
         **Digital Transformation:**
         - Paperless trade (eBL, e-BDN, e-Certificates)
         - digitalPORT@SG (AI, predictive analytics)
-        - digitalOCEANS (maritime digital twin)
+        - digitalOCEANS (maritime operational simulation)
         - BLOCK71 (innovation accelerator)
-        - Data-driven operations and optimization
+        - Data-driven operations and optimisation
         
         **Safety and Risk:**
         - Risk = Probability × Consequence
@@ -954,9 +948,9 @@ def show():
     (likely methanol and ammonia), massive infrastructure investment, and technological innovation. 
     Singapore positions itself as a leader through multi-fuel bunkering infrastructure, green port 
     technologies (Tuas built +5m above sea level, solar-powered, electrified equipment), and digital 
-    transformation (digitalPORT@SG, digitalOCEANS, BLOCK71 innovation hub). Beyond decarbonization, 
+    transformation (digitalPORT@SG, digitalOCEANS, BLOCK71 innovation hub). Beyond decarbonisation, 
     autonomous vessels, hyperconnected supply chains, and geopolitical shifts will reshape maritime 
-    competition. Ports that lead in sustainability, digitalization, and adaptability will thrive; those 
+    competition. Ports that lead in sustainability, digitalisation, and adaptability will thrive; those 
     that lag will struggle.
     </div>
     """, unsafe_allow_html=True)
