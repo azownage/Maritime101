@@ -580,7 +580,7 @@ def show():
     industry faces three simultaneous transformations: mega vessels (economies of scale), mega alliances 
     (consolidation to 3 alliances controlling 83%), and cargo changes (geopolitics, e-commerce, supply chain 
     resilience). Understanding these fundamentals is essential for grasping why ports like Singapore invest 
-    billions in infrastructure and how digital twins can help optimise these complex operations.
+    billions in infrastructure and how these complex operations work.
     </div>
     """, unsafe_allow_html=True)
     
