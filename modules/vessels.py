@@ -623,7 +623,7 @@ def show():
         - **GPS and AIS**: Precise navigation and vessel tracking
         - **Weather routing**: Optimise route for fuel efficiency and safety
         - **Predictive maintenance**: Sensors monitor equipment health
-        - **Digital twin**: Virtual model of vessel for optimisation
+        - **Virtual models**: Simulation and optimisation tools
         
         **Cargo Management:**
         - **Automated stowage planning**: AI-powered optimisation software
