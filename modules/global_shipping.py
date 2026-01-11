@@ -175,10 +175,6 @@ def show():
         
         **Formation:** 2015
         
-        **Fleet:**
-        - ~700 vessels
-        - ~4.2M TEU capacity
-        
         **Status:**
         - Largest alliance globally
         - MSC recently became #1 carrier (overtook Maersk)
@@ -215,10 +211,6 @@ def show():
         
         **Formation:** 2017
         
-        **Fleet:**
-        - ~650 vessels
-        - ~3.7M TEU capacity
-        
         **Status:**
         - Second-largest alliance
         - Strong Asian presence
@@ -253,10 +245,6 @@ def show():
         - Yang Ming (Taiwan)
         
         **Formation:** 2017
-        
-        **Fleet:**
-        - ~350 vessels
-        - ~2.3M TEU capacity
         
         **Status:**
         - Smallest of big three
