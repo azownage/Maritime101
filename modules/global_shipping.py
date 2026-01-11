@@ -514,7 +514,7 @@ def show():
     
     **Operational Excellence:**
     - BOA (Berth on Arrival) >90%
-    - 24-36 hour vessel turnaround for mega vessels
+    - Fast vessel turnaround for mega vessels
     - Highly efficient operations minimise transshipment delay
     - Reliable, predictable service
     
