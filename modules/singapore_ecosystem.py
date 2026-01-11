@@ -186,7 +186,7 @@ def show():
         'Key Players': [
             'PSA, Jurong Port, cargo handlers',
             '200+ shipping lines, ship management companies',
-            'Sembcorp Marine, Keppel, 40+ shipyards',
+            'Sembcorp Marine, Keppel, advanced shipyards',
             'Bunkering companies, ship chandlers, crew managers',
             'Banks, ship financing, P&I clubs, marine insurance',
             'Law firms, arbitration centres, maritime courts',
@@ -240,7 +240,7 @@ def show():
     **Ship Repair and Shipbuilding:**
     
     **Capabilities:**
-    - 40+ shipyards and repair facilities
+    - Advanced shipbuilding and repair facilities
     - Dry-docking facilities for all vessel sizes
     - Specialisations: Offshore platforms, naval vessels, mega yachts
     - Retrofits: Scrubber installations, ballast water systems, efficiency upgrades
@@ -330,30 +330,13 @@ def show():
     - Enhanced cybersecurity
     """)
     
-    st.markdown('<p class="subsection-header">digitalOCEANS Platform</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">digitalOCEANS™</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Vision:** Digital twin of Singapore's entire maritime domain
+    MPA's digital platform initiative as part of Singapore's maritime digitalisation efforts.
     
-    **Capabilities:**
-    - **Real-time situational awareness**: Track all vessels in Singapore waters
-    - **Data integration**: Connect all maritime stakeholders on single platform
-    - **Analytics**: Advanced analytics on patterns, efficiency, safety
-    - **Collaboration**: Shared platform for government, port operators, shipping lines
-    
-    **Use Cases:**
-    - Optimise vessel routing and berth allocation
-    - Coordinate pilot and tug services
-    - Monitor marine traffic for safety
-    - Environmental monitoring and compliance
-    - Emergency response coordination
-    
-    **Benefits:**
-    - Improved operational efficiency
-    - Enhanced safety and security
-    - Better environmental outcomes
-    - Data-driven decision-making
-    - Platform for innovation (third-party apps)
+    Part of the broader digital transformation alongside digitalPORT@SG and electronic documentation initiatives 
+    to accelerate digitalisation and innovation in the maritime sector.
     """)
     
     st.markdown('<p class="subsection-header">Electronic Documentation</p>', unsafe_allow_html=True)
