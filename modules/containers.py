@@ -34,16 +34,9 @@ def show():
             '40ft High Cube',
             '45ft High Cube'
         ],
-        'External Length': ['6.1m (20ft)', '12.2m (40ft)', '12.2m (40ft)', '13.7m (45ft)'],
+        'External Length': ['6.1m (19ft 10.5in)', '12.2m (40ft)', '12.2m (40ft)', '13.7m (45ft)'],
         'External Width': ['2.4m (8ft)', '2.4m (8ft)', '2.4m (8ft)', '2.4m (8ft)'],
-        'External Height': ['2.6m (8ft 6in)', '2.6m (8ft 6in)', '2.9m (9ft 6in)', '2.9m (9ft 6in)'],
-        'Internal Length': ['5.9m', '12.0m', '12.0m', '13.6m'],
-        'Internal Width': ['2.35m', '2.35m', '2.35m', '2.35m'],
-        'Internal Height': ['2.39m', '2.39m', '2.69m', '2.69m'],
-        'Tare Weight': ['2,300 kg', '3,750 kg', '3,940 kg', '4,800 kg'],
-        'Max Gross Weight': ['30,480 kg', '30,480 kg', '30,480 kg', '30,480 kg'],
-        'Max Payload': ['28,180 kg', '26,730 kg', '26,540 kg', '25,680 kg'],
-        'Cubic Capacity': ['33 m³', '67 m³', '76 m³', '86 m³']
+        'External Height': ['2.6m (8ft 6in)', '2.6m (8ft 6in)', '2.9m (9ft 6in)', '2.9m (9ft 6in)']
     })
     
     st.dataframe(container_specs, width='stretch', hide_index=True)
@@ -54,24 +47,15 @@ def show():
     **Universal Width:**
     - All containers are **2.4 metres (8 feet) wide**
     - This is the fundamental standard that everything else is built around
-    - Ships, cranes, trucks, trains all designed for 8ft width
     
     **Height Variations:**
-    - **Standard height**: 8ft 6in (2.6m) - Traditional standard
+    - **Standard height**: 8ft 6in (2.6m)
     - **High Cube**: 9ft 6in (2.9m) - Extra 1 foot of height
-    - High Cube allows more volume without exceeding weight limits
-    - Most new containers are High Cube (more versatile)
     
-    **Weight Limits:**
-    - **Max gross weight**: 30,480 kg (30.48 tonnes) - International standard
-    - **Tare weight**: Empty container weight (2.3-4.8 tonnes depending on type)
-    - **Max payload**: Gross minus tare (26-28 tonnes typically)
-    - Road transport may have lower limits (varies by country)
-    
-    **Why These Specific Dimensions?**
-    - 8ft width: Matches US truck width regulations (1950s standard)
-    - 20ft/40ft length: Multiples for efficient stacking and transport
-    - Heights: Balance between volume and clearance limits (bridges, tunnels)
+    **Standard Lengths:**
+    - 20ft (6.1m / 19ft 10.5in)
+    - 40ft (12.2m / 40ft)
+    - 45ft (13.7m / 45ft) - High cube variant
     """)
     
     st.markdown("""
@@ -169,36 +153,23 @@ def show():
             'Open Top',
             'Flat Rack',
             'Tank Container',
-            'Out of Gauge (OOG)',
-            'Platform/Bolster'
+            'Out of Gauge (OOG)'
         ],
-        'Percentage of Fleet': ['~90%', '~6%', '~1%', '~1%', '~1%', '<1%', '<1%'],
         'Primary Use': [
             'General cargo, boxes, pallets, bags',
             'Perishables, pharmaceuticals, chemicals requiring temperature control',
             'Oversized cargo that exceeds height, loaded from top',
             'Heavy machinery, construction equipment, oversized items',
-            'Liquids: chemicals, food-grade liquids, wine, oils',
-            'Cargo exceeding container dimensions (very large equipment)',
-            'Heavy cargo like steel coils, timber, vehicles'
+            'Liquids: chemicals, food-grade liquids, oils',
+            'Cargo exceeding container dimensions (very large equipment)'
         ],
         'Key Features': [
             'Fully enclosed, weatherproof, lockable',
-            'Built-in refrigeration unit, temperature range -35°C to +30°C, requires power',
+            'Built-in refrigeration unit, requires power',
             'Removable roof/tarpaulin, same footprint as standard',
-            'Collapsible sides, can stack flat when empty, lashing points',
-            'Cylindrical tank in standard ISO frame, various sizes (14-26k litres)',
-            'Oversized length/width/height, cannot stack containers on top',
-            'Flat base with corner posts, no walls or roof, secure heavy loads'
-        ],
-        'Special Handling': [
-            'Standard',
-            'Must connect to power (vessel/terminal/truck), monitor temperature continuously',
-            'Crane access required for loading/unloading from top',
-            'Special securing, cannot stack other containers on top',
-            'Requires certified cleaning between loads, hazmat regulations',
-            'Special stowage positions, certified lifting equipment',
-            'Heavy-duty securing, special stowage considerations'
+            'Collapsible sides, can stack flat when empty',
+            'Cylindrical tank in standard ISO frame',
+            'Oversized length/width/height, cannot stack containers on top'
         ]
     })
     
@@ -211,30 +182,17 @@ def show():
     
     **Power Requirements:**
     - Reefers need continuous electrical power
-    - Vessels: Reefer plugs in specific positions (limited number per bay)
+    - Vessels: Reefer plugs in specific positions
     - Terminals: Power outlets in yard (reefer zones)
-    - Trucks: Diesel-powered generators (clip-on units)
     
     **Temperature Monitoring:**
-    - Continuous monitoring of temperature
-    - Alarms if temperature deviates from setpoint
-    - Remote monitoring systems
+    - Continuous monitoring of temperature required
     - Temperature logs for customs/quality assurance
     
-    **Operational Challenges:**
-    - Limited reefer plug positions on vessels (stowage constraint)
-    - Power consumption at terminals (cost consideration)
-    - Breakdowns require immediate attention (cargo spoilage risk)
-    - Priority handling (time-sensitive perishables)
-    
     **Common Reefer Cargo:**
-    - Frozen meat, fish, poultry
-    - Fresh fruits and vegetables
-    - Dairy products
-    - Pharmaceuticals (vaccines, medicines)
+    - Frozen and fresh foods
+    - Pharmaceuticals
     - Chemicals requiring temperature control
-    - Wine and beverages
-    - Flowers and plants
     """)
     
     # ============================================================================
@@ -256,8 +214,6 @@ def show():
         **Corner Castings:**
         - **Most critical component** of container
         - Steel fittings at all 8 corners
-        - Standard dimensions: 178mm × 162mm × 119mm
-        - Oval holes (not circular) for twist-locks
         - Bear all lifting forces and securing loads
         - Connect container to:
           - Crane spreaders (lifting)
@@ -268,8 +224,6 @@ def show():
         **Floor:**
         - Hardwood or steel floor
         - Must support distributed load
-        - Forklift access for loading/unloading
-        - Drainage channels (if liquid spills)
         """)
     
     with col2:
@@ -293,60 +247,17 @@ def show():
         - Must be clearly visible
         """)
     
-    st.markdown('<p class="subsection-header">Weight Specifications</p>', unsafe_allow_html=True)
-    
-    # Weight table
-    weight_specs = pd.DataFrame({
-        'Specification': [
-            'Max Gross Weight',
-            'Tare Weight (20ft)',
-            'Tare Weight (40ft)',
-            'Max Payload (20ft)',
-            'Max Payload (40ft)',
-            'Typical Cargo (20ft)',
-            'Typical Cargo (40ft)'
-        ],
-        'Value': [
-            '30,480 kg (30.48 tonnes)',
-            '2,200-2,400 kg',
-            '3,600-3,900 kg',
-            '28,080-28,280 kg',
-            '26,580-26,880 kg',
-            '20,000-25,000 kg',
-            '22,000-26,000 kg'
-        ],
-        'Notes': [
-            'International ISO standard, some countries allow higher',
-            'Depends on container type (dry van vs reefer vs tank)',
-            'High cube slightly heavier than standard',
-            'Max gross minus tare weight',
-            'Max gross minus tare weight',
-            'Most containers not loaded to maximum (volume limit reached first)',
-            'Most 40ft containers hit volume limit before weight limit'
-        ]
-    })
-    
-    st.dataframe(weight_specs, width='stretch', hide_index=True)
+    st.markdown('<p class="subsection-header">Weight and CSC Plate</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Important Weight Considerations:**
-    
-    **Volume vs Weight Limits:**
-    - Most cargo is **volume-limited** (fills container before reaching weight limit)
-    - Example: Furniture, clothing, electronics (low density)
-    - **Weight-limited** cargo is less common
-    - Example: Metals, minerals, machinery (high density)
-    
-    **Road Transport Limits:**
-    - Many countries have lower weight limits for trucks
-    - Example: EU allows 44 tonnes total (truck + trailer + container + cargo)
-    - May restrict payload to 24-26 tonnes even though container can legally hold 28 tonnes
-    
-    **Weighing Requirements:**
-    - **SOLAS VGM (Verified Gross Mass)**: Mandatory since 2016
-    - All containers must be weighed before loading on vessel
-    - Prevents overweight containers (safety risk for vessel stability)
-    - Shipper responsible for providing accurate weight
+    **CSC Plate Information (from lectures):**
+    - Max weight including container
+    - Weight of container (tare weight)
+    - Max weight can be packed (payload)
+    - Max volume can be packed
+    - Container number and check digit
+    - Manufacturer information
+    - Date manufactured and inspection dates
     """)
     
     # ============================================================================
@@ -524,7 +435,6 @@ def show():
         - Universal 2.4m (8ft) width
         - Standard lengths: 20ft, 40ft, 45ft
         - Heights: 8ft 6in (standard) or 9ft 6in (high cube)
-        - Max gross weight: 30,480 kg (30.48 tonnes)
         - Standardisation enables global interoperability
         
         **TEU Measurement:**
@@ -534,9 +444,9 @@ def show():
         - Universal measure for capacity and throughput
         
         **Container Types:**
-        - Dry van: ~90% of fleet (general cargo)
-        - Reefer: ~6% (temperature-controlled)
-        - Specialised: Open top, flat rack, tank, OOG (<4%)
+        - Dry van (general cargo)
+        - Reefer (temperature-controlled)
+        - Specialised: Open top, flat rack, tank, OOG
         """)
     
     with col2:
@@ -544,8 +454,8 @@ def show():
         **Container Anatomy:**
         - Corner castings: Critical for lifting and securing
         - CSC plate: Safety certification and specifications
-        - Weight: Tare 2.3-3.9 tonnes, max payload 26-28 tonnes
-        - SOLAS VGM: Mandatory weighing before vessel loading
+        - Container number, check digit
+        - Weight information on CSC plate
         
         **Identification System:**
         - Format: Owner code (4 letters) + Serial (6 digits) + Check digit
@@ -563,12 +473,12 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Containers follow precise ISO standards (2.4m width, 20/40ft lengths, 
-    30.48 tonne max weight) that enable global interoperability. The TEU (Twenty-foot Equivalent Unit) 
-    provides universal measurement. ~90% are dry vans, with specialised types (reefer, tank, OOG) for specific 
-    cargo. Each container has a unique ISO 6346 identifier (owner code + serial + check digit). The 
-    Bay-Row-Tier coordinate system enables precise 3D positioning in terminals and vessels. Understanding 
-    these fundamentals is essential for understanding how container terminal operations work.
+    <strong>🔍 Bottom Line:</strong> Containers follow precise ISO standards (2.4m width, 20/40/45ft lengths) 
+    that enable global interoperability. The TEU (Twenty-foot Equivalent Unit) provides universal measurement. 
+    Container types include dry vans, reefers, and specialised types (tank, OOG, flat rack) for specific 
+    cargo. Each container has a unique ISO 6346 identifier (owner code + serial + check digit) and CSC plate 
+    with weight specifications. The Bay-Row-Tier coordinate system enables precise 3D positioning in terminals 
+    and vessels. Understanding these fundamentals is essential for understanding how container terminal operations work.
     </div>
     """, unsafe_allow_html=True)
     
