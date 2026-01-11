@@ -49,12 +49,12 @@ def show():
             'Proximity to major shipping lanes; centrality to trade flows; natural deep-water harbor'
         ],
         "Singapore's Performance": [
-            'Excellent: 24-36 hour vessel turnaround for mega vessels; flexible berth allocation',
+            'Excellent: Fast vessel turnaround; flexible berth allocation',
             'Outstanding: BOA >90%; minimal weather disruptions; strong track record',
             'World-class: ISPS certified; advanced security systems; low piracy risk',
             'Competitive: Not cheapest but excellent value; premium service justifies pricing',
             'Best-in-class: 200+ lines, 600+ ports; unmatched global reach',
-            'Leading: S$20B+ Tuas investment; automated systems; CITOS; latest cranes',
+            'Leading: Major Tuas investment; automated systems; CITOS; latest cranes',
             'Strong: Skilled workforce; SMA training; stable government; capable MPA/PSA management',
             'Ideal: On Asia-Europe route; 33% of global trade through Straits of Malacca/Singapore'
         ]
