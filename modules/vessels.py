@@ -1,21 +1,3 @@
-"""
-ENHANCED VERSION - January 2026
-Key Changes:
-- Verified: Vessel evolution data confirmed against lecture materials (04_World_of_Container_Shipping.pdf, a_Introduction_to_Container_Sea_Transport.pdf)
-- Corrected: Updated largest vessel to MSC Irina (24,346 TEU) from MSC Gülsün (23,756 TEU)
-- Enhanced: Added current 2024-2025 context including:
-  * Latest vessel deliveries and records (Ever Alot 24,004 TEU, HMM Algeciras 24,000 TEU)
-  * Current carrier capacity rankings (MSC 7.1M TEU, Maersk 4.6M TEU, CMA CGM 4.1M TEU as of Dec 2025)
-  * Global fleet statistics (33.6M TEU total capacity, 7.2% growth in 2024-2025)
-  * 2025 alliance changes (2M dissolved, Gemini and Premier alliances formed)
-  * Alternative fuel adoption (7% LNG-capable fleet, methanol/ammonia development)
-  * Environmental regulations (IMO 2020 implemented, IMO 2050 targets, FuelEU Maritime 2025)
-  * Current slow steaming practices and fuel efficiency improvements
-  * Red Sea disruption impact on mega vessels (avoiding Suez for 20+ months)
-- Sources: Lecture PDFs, Alphaliner December 2025, Maritime Executive, Container News, UNCTAD 2024,
-  IMO regulations, Global Maritime Forum, industry vessel tracking data
-"""
-
 import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
