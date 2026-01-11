@@ -272,10 +272,10 @@ def show():
         - Capacity: ~4,500 TEU maximum
         
         **New Locks (Post-2016):**
-        - Maximum length: 366 m
+        - Maximum length: 427 m
         - Maximum width: 49 m (**New-Panamax limit**)
-        - Maximum draft: 15.2 m
-        - Capacity: ~14,500 TEU maximum
+        - Maximum draft: 18.3 m
+        - Capacity: ~12,600 TEU maximum
         
         **Impact:**
         - Old canal limited vessel sizes until 2016
