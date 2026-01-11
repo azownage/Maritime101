@@ -27,7 +27,7 @@ def show():
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("Container Throughput", "37.3M TEU", help="Annual container throughput (2023)")
+        st.metric("Container Throughput", "39M TEU", help="Annual container throughput (2023)")
     with col2:
         st.metric("World Ranking", "#2", help="World's 2nd largest container port by volume")
     with col3:
@@ -52,7 +52,7 @@ def show():
     
     **Operational Excellence:**
     - Berth on Arrival (BOA) >90%
-    - 24-hour vessel turnaround for mega vessels
+    - Fast vessel turnaround
     - 24/7/365 operations
     - Highly efficient customs and logistics
     
@@ -366,7 +366,7 @@ def show():
     - Blockchain-based for security and authenticity
     - Instant transfer (vs days for physical document)
     - Reduces fraud risk
-    - Cost savings: Estimated $6.5 billion annually globally if fully adopted
+    - Cost savings: Significant global efficiency gains if fully adopted
     
     **Electronic Bunker Delivery Note (e-BDN):**
     - Digital record of fuel delivered to vessels
@@ -423,7 +423,7 @@ def show():
     5. **Scale** successful solutions globally
     
     **Success Stories:**
-    - 100+ startups supported
+    - Multiple startups supported
     - Multiple technologies deployed commercially
     - Singapore positioned as maritime tech hub
     
@@ -443,7 +443,7 @@ def show():
     - Accelerate adoption of innovation
     
     **How It Works:**
-    - MPA co-funds up to 50% of project costs
+    - MPA co-funds project costs
     - Companies contribute remainder
     - Focus on technologies benefiting Singapore maritime
     - Fast approval process (encourage experimentation)
@@ -631,7 +631,7 @@ def show():
     with col1:
         st.markdown("""
         **Singapore's Position:**
-        - World's #2 container port (37.3M TEU)
+        - World's #2 container port (39M TEU)
         - 200+ shipping lines, 600+ ports connected
         - Strategic location (Malacca Strait, Asia-Europe route)
         - Operational excellence (>90% BOA, <24h turnaround)
@@ -658,7 +658,7 @@ def show():
         - PORTNET: Maritime single window since 1980s
         
         **Innovation Ecosystem:**
-        - BLOCK71: Maritime tech accelerator (100+ startups)
+        - BLOCK71: Maritime tech accelerator
         - MINT Fund: Co-fund R&D and pilots
         - Academic partnerships: NUS, NTU, SUTD
         - Test-bedding facilities and support
