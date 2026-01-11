@@ -98,24 +98,31 @@ def show():
     In just 60 years, vessels have grown **50 times** in capacity.
     """)
     
-    # Vessel evolution data
+    # Vessel evolution data - based on lecture timeline
     vessel_evolution = pd.DataFrame({
-        'Year': [1956, 1970, 1980, 1988, 1996, 2006, 2013, 2019],
-        'Vessel Example': [
-            'Ideal X (First)',
-            'Encounter Bay',
-            'American New York',
-            'Panamax Standard',
-            'Regina Maersk',
-            'Emma Maersk',
-            'Maersk Triple E',
-            'MSC Gülsün'
+        'Year': [1956, 1970, 1980, 1988, 2000, 2006, 2013, 2019],
+        'Category': [
+            'Early Container Ships',
+            'Fully Cellular',
+            'Panamax',
+            'Post-Panamax I',
+            'Post-Panamax II',
+            'VLCS',
+            'ULCS',
+            'MGX-24'
         ],
-        'Capacity (TEU)': [500, 1500, 3000, 4500, 6500, 15000, 18000, 23000],
-        'Length (m)': [135, 180, 230, 290, 318, 397, 400, 400],
-        'Width (m)': [17, 24, 30, 32, 42, 56, 59, 61],
-        'Max Draft (m)': [9, 10, 12, 13, 14, 16, 16, 16],
-        'Container Width': ['6 across', '8 across', '11 across', '13 across', '16 across', '22 across', '23 across', '24 across']
+        'Capacity Range (TEU)': ['500-800', '1,000-2,500', '3,000-3,400', '4,000-6,000', '6,000-8,500', '11,000-15,000', '18,000-21,000', '21,000-25,000'],
+        'Typical Dimensions': [
+            '137×17×9m',
+            '200×20×9m',
+            '250×32×12.5m',
+            'Post-Panama width',
+            'Wider beam',
+            'Up to 400m length',
+            '400m+ length',
+            '400m+ length'
+        ],
+        'Containers Across': ['6', '8-10', '13', '13+', 'Wider', 'Up to 22', '23', '24']
     })
     
     st.dataframe(vessel_evolution, width='stretch', hide_index=True)
@@ -125,13 +132,13 @@ def show():
     
     fig.add_trace(go.Scatter(
         x=vessel_evolution['Year'],
-        y=vessel_evolution['Capacity (TEU)'],
+        y=[650, 1750, 3200, 5000, 7250, 13000, 19500, 23000],  # Midpoints of ranges
         mode='lines+markers',
         name='TEU Capacity',
         line=dict(color='#3B82F6', width=4),
         marker=dict(size=12, color='#2563EB', line=dict(color='white', width=2)),
-        text=vessel_evolution['Vessel Example'],
-        hovertemplate='<b>%{text}</b><br>Year: %{x}<br>Capacity: %{y:,} TEU<extra></extra>'
+        text=vessel_evolution['Category'],
+        hovertemplate='<b>%{text}</b><br>Year: %{x}<br>Capacity: ~%{y:,} TEU<extra></extra>'
     ))
     
     fig.update_layout(
@@ -178,12 +185,12 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>💡 Why Did Vessels Grow So Large?</strong><br>
-    - <strong>Economies of Scale</strong>: Bigger vessels dramatically reduce cost per container:<br>
-    - <strong>Crew costs</strong>: Same ~25 crew whether carrying 5,000 or 20,000 TEU<br>
-    - <strong>Fuel per TEU</strong>: Larger vessels more fuel-efficient per container<br>
-    - <strong>Capital cost per TEU</strong>: Building costs don't scale linearly with size<br>
-    - <strong>Port fees per TEU</strong>: Fixed port charges spread over more containers<br><br>
-    <strong>Result</strong>: A 20,000 TEU vessel costs roughly 40-50% less per TEU than a 5,000 TEU vessel
+    - <strong>Economies of Scale</strong>: Bigger vessels reduce cost per container:<br>
+    - <strong>Crew costs</strong>: Similar crew size regardless of vessel capacity<br>
+    - <strong>Fuel efficiency</strong>: Larger vessels more fuel-efficient per container<br>
+    - <strong>Capital costs</strong>: Building costs don't scale linearly with size<br>
+    - <strong>Port fees</strong>: Fixed port charges spread over more containers<br><br>
+    <strong>Result</strong>: Larger vessels achieve significantly lower costs per TEU transported
     </div>
     """, unsafe_allow_html=True)
     
@@ -283,26 +290,26 @@ def show():
         **Current Specifications:**
         - Maximum length: No practical limit
         - Maximum width: 77.5 m beam (much wider than Panama)
-        - Maximum draft: 20.1 m (66 feet)
+        - Maximum draft: 20.1 m
         - **No locks** (sea-level canal)
         
         **Strategic Importance:**
-        - Asia-Europe route (33% of global container trade)
+        - Critical Asia-Europe route
         - Can accommodate all existing container vessels
-        - Mega vessels (23,000 TEU) fit comfortably
+        - Mega vessels fit comfortably
         - Critical chokepoint for global trade
         
         **Alternative: Cape of Good Hope**
-        - +3,500 nautical miles (+7 days sailing)
-        - +$500,000+ fuel costs
+        - Significantly longer route
+        - Much higher fuel costs
         - Avoided unless Suez blocked
         """)
     
     st.markdown("""
     <div class="warning-box">
     <strong>⚠️ Operational Challenges of Mega Vessels:</strong><br>
-    - <strong>Limited port access</strong>: Only 20-30 ports globally can handle 20,000+ TEU vessels<br>
-    - <strong>Concentration risk</strong>: One vessel carries cargo worth $500 million+<br>
+    - <strong>Limited port access</strong>: Only select ports globally can handle ultra-large vessels<br>
+    - <strong>Concentration risk</strong>: One vessel carries enormous cargo value<br>
     - <strong>Slower port rotations</strong>: Fewer port calls per voyage<br>
     - <strong>Canal restrictions</strong>: Cannot use Panama Canal (too wide)<br>
     - <strong>Weather sensitivity</strong>: More affected by wind due to high stacks<br>
@@ -311,83 +318,7 @@ def show():
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 4: Economics of Vessel Size
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Economics of Scale: Why Bigger is (Usually) Better</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    The dramatic growth in vessel sizes is driven by powerful economic incentives. Let's examine the 
-    cost structure and how it changes with vessel size.
-    """)
-    
-    # Cost comparison data
-    cost_comparison = pd.DataFrame({
-        'Vessel Size (TEU)': [1000, 3000, 5000, 8000, 12000, 18000],
-        'Cost per TEU (Index)': [100, 68, 52, 38, 28, 18],
-        'Crew Size': [15, 20, 22, 24, 25, 25],
-        'Fuel per TEU (Index)': [100, 75, 62, 51, 43, 38],
-        'Port Cost per TEU (Index)': [100, 45, 33, 25, 20, 17]
-    })
-    
-    # Cost savings visualisation
-    fig = go.Figure()
-    
-    fig.add_trace(go.Scatter(
-        x=cost_comparison['Vessel Size (TEU)'],
-        y=cost_comparison['Cost per TEU (Index)'],
-        mode='lines+markers',
-        name='Total Cost per TEU',
-        line=dict(color='#EF4444', width=4),
-        marker=dict(size=12),
-        fill='tozeroy',
-        fillcolor='rgba(239, 68, 68, 0.2)'
-    ))
-    
-    fig.update_layout(
-        title={
-            'text': 'Economies of Scale: Cost per TEU vs Vessel Size',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        xaxis_title="Vessel Size (TEU)",
-        yaxis_title="Cost per TEU (Indexed to 1,000 TEU = 100)",
-        height=450,
-        plot_bgcolor='white',
-        xaxis=dict(gridcolor='#E5E7EB'),
-        yaxis=dict(gridcolor='#E5E7EB', range=[0, 110])
-    )
-    
-    st.plotly_chart(fig, width='stretch')
-    
-    st.markdown("""
-    **Cost Components Breakdown:**
-    
-    **Fixed Costs (Don't Scale with Size):**
-    - **Crew salaries**: 25 crew whether 5,000 or 20,000 TEU (~$5M/year)
-    - **Insurance**: Relatively flat
-    - **Administration**: Port agency, documentation
-    - **Port dues**: Based on vessel size, not cargo volume
-    
-    **Variable Costs (Scale Less Than Proportionally):**
-    - **Fuel**: Larger vessels more efficient per TEU (hull efficiency, slower speeds possible)
-    - **Capital cost**: Building cost doesn't double when capacity doubles
-    - **Maintenance**: Slightly higher but not proportional to capacity
-    
-    **Result:**
-    - 1,000 TEU vessel: $1,000 cost per TEU per voyage
-    - 18,000 TEU vessel: $180 cost per TEU per voyage (82% reduction!)
-    
-    **The Catch:**
-    - Need high utilisation (85%+ load factor) to realise savings
-    - Requires massive cargo volumes on route
-    - Limited ports can handle mega vessels
-    - Higher risk if vessel delayed or breaks down
-    """)
-    
-    # ============================================================================
-    # SECTION 5: Stowage Planning Fundamentals
+    # SECTION 4: Stowage Planning Fundamentals
     # ============================================================================
     
     st.markdown('<p class="section-header">Vessel Stowage Planning: The Tetris Challenge</p>', unsafe_allow_html=True)
@@ -431,7 +362,7 @@ def show():
     - Measure of initial stability
     - Too low GM → Vessel unstable, may capsize
     - Too high GM → Vessel rolls uncomfortably (harsh motion)
-    - Target: GM between 0.5 - 2.0 metres (vessel-specific)
+    - Target: Optimal range varies by vessel design
     
     **Longitudinal Balance:**
     - Weight distributed evenly bow-to-stern
@@ -444,7 +375,7 @@ def show():
     - Target: Zero list (perfectly upright)
     
     **Practical Rules:**
-    - Heavy containers (>25 tonnes) in lower holds
+    - Heavy containers in lower holds
     - Empty containers on top tiers
     - Balance weight port/starboard within each bay
     - Spread heavy containers throughout vessel length
