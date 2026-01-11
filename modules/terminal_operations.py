@@ -60,14 +60,14 @@ def show():
             'Trucks, trains, road/rail infrastructure'
         ],
         'Typical Dimensions': [
-            '300-450m length × 50-70m width per berth',
-            '50-100m depth behind quay',
-            '60-80m outreach for mega vessels',
-            '10-30 hectares per terminal',
-            '6-8 containers high stacking',
-            'Multiple lanes, 20-40 gates',
-            'Central location with 360° visibility',
-            'Road/rail corridors'
+            'Varies by vessel size and terminal',
+            'Area behind quay for operations',
+            'Outreach accommodates vessel width',
+            'Varies by terminal size',
+            'Multiple tiers stacking capability',
+            'Multiple lanes for truck flow',
+            'Strategic terminal location',
+            'Infrastructure to hinterland'
         ]
     })
     
@@ -279,7 +279,7 @@ def show():
     <div class="success-box">
     <strong>💡 Target Performance:</strong><br>
     - <strong>Mega vessel (20,000+ TEU)</strong>: 24-36 hour total port stay<br>
-    - <strong>Quay crane productivity</strong>: 30-40 gross moves per hour (GMPH)<br>
+    - <strong>Quay crane productivity</strong>: Conventional ~36 moves/hour, Dual hoist 40-50 moves/hour<br>
     - <strong>Berth on Arrival (BOA)</strong>: >90% (vessel berths immediately)<br>
     - <strong>Zero damage</strong>: No containers or cargo damaged during handling<br><br>
     World-class terminals like Singapore PSA consistently meet or exceed these targets.
@@ -609,7 +609,7 @@ def show():
     - Assign cranes to vessels
     - Determine **crane intensity**: How many cranes per vessel (typically 4-8 for mega vessels)
     - Create **crane work sequences**: Which crane discharges/loads which containers in what order
-    - Optimise for **crane productivity** (target: 30-40 gross moves per hour per crane)
+    - Optimise for **crane productivity** (conventional ~36 moves/hour, dual hoist 40-50 moves/hour)
     - Avoid **crane interference**: Cranes can't cross paths
     
     **Yard Cranes (YC):**
@@ -648,13 +648,17 @@ def show():
     - Avoid **congestion** at quay and yard interfaces
     """)
     
-    # Equipment productivity comparison
+    # Equipment productivity comparison - based on lecture data
     equipment_productivity = pd.DataFrame({
-        'Equipment Type': ['Quay Crane', 'Yard Crane (RTG)', 'Prime Mover', 'AGV', 'Gate Transaction'],
-        'Unit': ['Moves/hour', 'Moves/hour', 'Cycles/hour', 'Cycles/hour', 'Transactions/hour'],
-        'Traditional System': [25, 15, 4, 0, 20],
-        'Modern Automated': [35, 25, 0, 10, 40],
-        'World-Class Target': [40, 30, 5, 12, 50]
+        'Equipment Type': ['Quay Crane (Conventional)', 'Quay Crane (Dual Hoist)', 'Yard Crane (RTG)', 'Prime Mover', 'Gate Transaction'],
+        'Typical Performance': ['~36 moves/hour', '40-50 moves/hour', 'Varies by configuration', 'Varies by configuration', 'Varies by system'],
+        'Notes': [
+            'Single hoist, twin lift spreader',
+            'Tandem lift system, higher productivity',
+            'Depends on yard layout and operations',
+            'Depends on distance and container flow',
+            'Manual vs automated systems'
+        ]
     })
     
     st.dataframe(equipment_productivity, width='stretch', hide_index=True)
@@ -740,7 +744,7 @@ def show():
     <div class="insight-box">
     <strong>🎯 Capacity Optimisation Strategies:</strong><br><br>
     Rather than building more berths (expensive, long lead time), optimise existing capacity:<br><br>
-    1. <strong>Improve quay crane productivity</strong>: 25 → 35 GMPH (saves 4 hours per vessel)<br>
+    1. <strong>Improve quay crane productivity</strong>: Upgrade to dual hoist cranes (higher throughput)<br>
     2. <strong>Better berth planning</strong>: Improve BOA from 85% → 95% (reduce waiting)<br>
     3. <strong>Faster turnaround</strong>: Reduce vessel port stay from 30h → 24h (20% more capacity)<br>
     4. <strong>Yard efficiency</strong>: Reduce dwell time from 5 days → 3 days (40% more yard space)<br>
