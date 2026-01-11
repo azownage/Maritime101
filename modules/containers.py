@@ -1,19 +1,3 @@
-"""
-ENHANCED VERSION - January 2026
-Key Changes:
-- Verified: All ISO dimensions and specifications confirmed against lecture materials (a_Introduction_to_Container_Sea_Transport.pdf)
-- Corrected: Container costs updated to 2024-2025 market prices (new 40ft dry: $2,500-3,500 vs old $2,500-3,000)
-- Enhanced: Added current 2024-2025 context including:
-  * Updated container fleet statistics ($13.34B market in 2024, projected $21.9B by 2033)
-  * Refined reefer fleet percentage (6-8% confirmed, $1.94B market in 2024)
-  * SOLAS VGM implementation details (entered force 1 July 2016)
-  * Current empty container repositioning data (20% increase in 2024)
-  * 2024-2025 market trends (IoT integration, e-commerce growth, overcapacity challenges)
-  * Updated costs reflecting post-pandemic market conditions
-- Sources: Lecture PDFs (a_Introduction_to_Container_Sea_Transport.pdf), UNCTAD 2024, Container Fleet Market Reports 2024-2025, 
-  IMO SOLAS regulations, Sea-Intelligence 2024, industry pricing data 2025
-"""
-
 import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
