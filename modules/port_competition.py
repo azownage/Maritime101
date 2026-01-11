@@ -471,7 +471,7 @@ def show():
     with col1:
         st.markdown("""
         **Infrastructure Investment:**
-        - **Tuas Mega Port**: S$20+ billion investment
+        - **Tuas Mega Port**: Major investment
         - 65M TEU capacity by 2040
         - World's largest automated port
         - Consolidates terminals for efficiency gains
@@ -484,7 +484,7 @@ def show():
         
         **Operational Excellence:**
         - BOA target >90% (berth on arrival)
-        - Sub-24-hour turnaround for mega vessels
+        - Fast turnaround for mega vessels
         - Continuous process improvement
         - Lean operations methodology
         """)
