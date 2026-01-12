@@ -8,307 +8,348 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand Singapore's comprehensive maritime cluster, MPA's dual role as regulator and developer, 
-    the complete ecosystem of maritime services, and cutting-edge innovation initiatives driving the 
-    industry forward as Singapore maintains its position as the world's #1 maritime centre.
+    Understand Singapore's position as the world's #1 international maritime centre for 12 consecutive years,
+    comprehend the comprehensive maritime cluster beyond just port operations (170+ international shipping groups,
+    30+ shipbroking firms, 20+ banks, 30+ law firms, 100+ MarineTech startups), master MPA's unique dual role as
+    both regulator and strategic developer, and explore the innovation ecosystem (BLOCK71, MINT Fund, academic
+    partnerships) driving Maritime 4.0 transformation.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Singapore's Maritime Position
+    # SECTION 1: Singapore - The World's Leading International Maritime Centre
     # ============================================================================
     
-    st.markdown('<p class="section-header">Singapore: The World\'s Maritime Capital</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Singapore: The World\'s Leading International Maritime Centre</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Singapore has deliberately cultivated its position as the global maritime hub over 70+ years through 
-    strategic planning, continuous investment, and ecosystem development. In 2025, Singapore was ranked 
-    **#1 in the Xinhua-Baltic International Shipping Centre Development Index** for the **12th consecutive year** 
-    (score: 99.5/100), ahead of London, Shanghai, and Hong Kong.
-    """)
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    with col1:
-        st.metric("Container Throughput 2024", "41.12M TEU", delta="+5.4% YoY", help="First time exceeding 40M TEU (2023: 39.0M)")
-    with col2:
-        st.metric("World Ranking", "#2 Volume, #1 Hub", help="#2 by volume (after Shanghai), #1 transshipment hub globally")
-    with col3:
-        st.metric("Shipping Lines", "200+", help="Over 200 international shipping lines call Singapore")
-    with col4:
-        st.metric("Global Connectivity", "600+ ports", help="Connected to 600+ ports in 120+ countries")
-    
-    st.markdown("""
-    **2024 Performance Highlights (Record Year):**
-    
-    **Container Throughput:**
-    - **Total: 41.12 million TEU** (+5.4% from 39.0M in 2023)
-    - **PSA Singapore: 40.9 million TEU** (+5.5%, historic record)
-    - **PSA Global: 100.2 million TEU** (first time exceeding 100M TEU globally)
-    - **Transshipment: ~90%** (approximately 37M TEU transshipment cargo)
-    - **Milestone**: Crossed 40 million TEU barrier on December 24, 2024
-    
-    **Vessel Traffic:**
-    - **Vessel arrival tonnage: 3.11 billion GT** (+0.6%, new record)
-    - **Annual vessel calls: 140,000+** (consistent high traffic)
-    - **Key categories**: Bulk carriers, container ships, tankers (each ~1/3, >90% combined)
-    - **Bulk carrier arrivals**: Record high in 2024
-    
-    **Cargo and Bunkering:**
-    - **Total cargo: 622.67 million tonnes** (+5.2% from 592.01M in 2023)
-    - **Bunker sales: 54.92 million tonnes** (+6.0%, new record)
-      - Partly driven by extended Asia-Europe routes via Cape (Red Sea disruptions)
-    - **Alternative fuel sales: 1.34 million tonnes** (doubled from 2023, first time >1M)
-      - Biofuel blends: 0.88M tonnes (up from 0.52M in 2023)
-      - LNG: 0.46M tonnes (up from 0.11M in 2023)
-      - Methanol: 1,626 tonnes (commercially available)
-      - Ammonia: 9.74 tonnes (first global trials)
-    
-    **Singapore Registry of Ships:**
-    - **Total tonnage: 108 million GT** (+8.5%, exceeded 100M GT for first time)
-    - Growing attractiveness as ship registry of choice
+    Singapore has systematically cultivated its position as the world's preeminent maritime hub over seven decades
+    of strategic planning and consistent execution. What distinguishes Singapore from other major ports is not just
+    the physical infrastructure for moving containers, but rather a **comprehensive maritime ecosystem** that provides
+    every conceivable maritime service under one roof. This "one-stop shop" approach creates powerful network effects
+    and high switching costs that reinforce Singapore's competitive position.
     """)
     
     st.markdown("""
     <div class="success-box">
-    <strong>✅ 2024 Resilience Demonstrated:</strong><br>
-    Despite Red Sea disruptions causing mid-2024 port congestion, Singapore handled record volumes through:<br>
-    - <strong>Rapid response</strong>: 11 Tuas berths commissioned, Keppel Terminal berths reactivated<br>
-    - <strong>Capacity expansion</strong>: Yard spaces increased, manpower scaled up<br>
-    - <strong>Operational flexibility</strong>: Night-tow operations for barges permitted (first time)<br>
-    - <strong>Industry coordination</strong>: Close cooperation between MPA, PSA, unions, shipping lines<br><br>
-    Singapore's operational excellence and flexibility enabled it to handle the bunching of vessel 
-    arrivals when ships rerouted from Red Sea to Cape of Good Hope, reinforcing its position as 
-    the world's most reliable transshipment hub.
+    <strong>🏆 Singapore's Global Maritime Leadership (2024 Record-Breaking Performance):</strong><br><br>
+    <strong>World's #1 International Maritime Centre</strong>: Ranked first for the <strong>12th consecutive year</strong>
+    in the Xinhua-Baltic International Shipping Centre Development Index (ISCDI), scoring highest in three out of five
+    pillars: Shipping, Ports and Logistics, and Attractiveness and Competitiveness.<br><br>
+    <strong>Container Throughput Record</strong>: <strong>41.12 million TEU</strong> in 2024 (crossed 40M milestone for
+    first time), growing 5.4% from 39.0 million TEU in 2023. World's largest container transshipment hub with approximately
+    <strong>90% transshipment cargo</strong>.<br><br>
+    <strong>Vessel Arrival Tonnage Record</strong>: <strong>3.11 billion gross tonnage (GT)</strong> in 2024, up 0.6%
+    from 3.09 billion GT in 2023. Over <strong>130,000 vessel calls annually</strong>.<br><br>
+    <strong>Bunkering Leadership</strong>: World's largest bunkering hub with <strong>54.92 million tonnes</strong> of
+    bunker sales in 2024 (new high, 6.0% year-on-year increase). Alternative fuel bunkers exceeded <strong>1 million
+    tonnes</strong> for first time (1.34M tonnes total).<br><br>
+    <strong>Ship Registry Excellence</strong>: <strong>5th largest ship registry globally</strong> with <strong>108 million
+    GT</strong> in 2024, exceeding 100 million GT milestone for first time (8.5% growth from 99.6M GT in 2023).<br><br>
+    <strong>Global Connectivity</strong>: Connected to <strong>600+ ports</strong> in 120+ countries, with <strong>200+
+    shipping lines</strong> calling at Singapore.
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown('<p class="subsection-header">Singapore\'s Core Maritime Strengths</p>', unsafe_allow_html=True)
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.metric("Container Throughput", "41.12M TEU", delta="+5.4% vs 2023", help="2024 record, crossed 40M TEU milestone for first time")
+    with col2:
+        st.metric("World Ranking", "#1 IMC, #2 Port", delta="12th consecutive year", help="#1 International Maritime Centre, #2 container port globally")
+    with col3:
+        st.metric("Vessel Arrival Tonnage", "3.11B GT", delta="+0.6% vs 2023", help="Annual vessel arrival tonnage 2024, new record")
+    with col4:
+        st.metric("Global Connectivity", "600+ ports", delta="200+ shipping lines", help="Connected to 600+ ports via 200+ shipping lines")
+    
+    st.markdown('<p class="subsection-header">The Twin Engines of Maritime Singapore</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore's maritime success rests on two interconnected pillars, which the lecture materials describe as the
+    **"twin engines of growth"**: the **Global Hub Port** (physical infrastructure and operations) and the
+    **International Maritime Centre** (comprehensive cluster of maritime services). Understanding the distinction
+    and synergy between these two engines is essential to grasping Singapore's maritime strategy.
+    
+    **Engine 1: Global Hub Port - The Physical Foundation**
+    
+    The Global Hub Port encompasses the tangible infrastructure and operations that enable cargo movement:
+    
+    **Strategic Location - Geography as Competitive Advantage:**
+    - **Malacca Strait position**: Located on the busiest maritime chokepoint, with 80,000+ annual vessel transits
+    - **Asia-Europe mainline**: Positioned directly on the route carrying 33% of global container trade
+    - **Southeast Asian centrality**: Equidistant from major Asian economies (China, India, Japan, Korea, ASEAN)
+    - **Natural deep-water harbour**: 16+ metre depth allows mega vessels without extensive dredging
+    - **Equatorial location**: No typhoons or hurricanes, enabling year-round 24/7 operations
+    
+    **World-Class Infrastructure:**
+    - **Multiple terminal systems**: PSA terminals (Tanjong Pagar, Keppel, Brani, Pasir Panjang) plus Jurong Port
+    - **Tuas Mega Port development**: 11 berths operational (2024), 7 more by 2027, ultimate capacity 65M TEU by 2040s
+    - **Super Post-Panamax cranes**: Deployed to handle world's largest vessels (24,000+ TEU capacity ships)
+    - **Automation and technology**: Progressive automation deployment, digital systems integration
+    - **Multimodal connections**: Air-sea, sea-rail integration for comprehensive logistics
+    
+    **Operational Excellence - The Singapore Standard:**
+    - **Berth on Arrival (BOA) >90%**: Vessels berth immediately without anchorage wait time (globally rare)
+    - **24-36 hour vessel turnaround**: Mega vessels with 10,000+ container moves completed within 1.5 days
+    - **Crane productivity 35-40 GMPH**: Gross moves per hour among highest globally
+    - **24/7/365 operations**: No downtime, continuous availability year-round
+    - **Efficient customs**: Streamlined documentation, TradeNet system, fast cargo clearance
+    - **Minimal transshipment delays**: Sophisticated yard management optimises container flow
+    
+    **The Numbers Tell the Story:**
+    - **41.12 million TEU** handled in 2024 (both PSA terminals and Jurong Port combined)
+    - **622.67 million tonnes** of cargo throughput (5.2% increase from 2023)
+    - **3.11 billion GT** vessel arrival tonnage (reflects over 130,000 vessel calls)
+    - **90% transshipment ratio**: Only 10% local origin/destination, 90% cargo transships
+    
+    **Engine 2: International Maritime Centre - The Comprehensive Ecosystem**
+    
+    The International Maritime Centre comprises the complete cluster of maritime services beyond physical port operations.
+    This is where Singapore truly differentiates itself from port competitors. According to lecture materials, Singapore
+    recognised early that: **"Maritime Singapore would have to go beyond its status as a major hub to become an
+    international maritime centre providing a full suite of services."**
+    
+    The strategic insight was profound: **"To compete effectively, we have to become a complete maritime cluster by
+    adding our core group of ship-owners and operators, maritime support services such as maritime finance, insurance
+    and legal services."** This vision, articulated in Singapore Nautilus Q1 2008, has been systematically executed
+    over 15+ years.
+    
+    **The International Maritime Centre Includes:**
+    
+    **Maritime Companies and Services (The Cluster):**
+    - **170+ international shipping groups**: Including top liner companies, commodity traders with shipping arms,
+      dry bulk and tanker shipping companies, and leading ship management companies
+    - **30+ leading international shipbroking firms**: Facilitating ship chartering and sale/purchase transactions globally
+    - **20+ banks with shipping portfolios**: Providing ship financing, project finance, working capital facilities
+    - **30+ law firms with shipping practice**: Maritime disputes, contracts, admiralty law, arbitration services
+    - **10 IG P&I Clubs**: Protection and Indemnity insurance covering 95% of world's ocean-going tonnage
+    - **~100 MarineTech startups**: Innovation ecosystem raised ~S$50 million investment in past 4 years
+    
+    **Economic Impact:**
+    - **S$4.3 billion** in total maritime business spending in 2022 (excluding port operations)
+    - **5th largest ship registry** globally with 108 million GT under Singapore flag (2024)
+    - **World's largest bunkering hub**: 54.92 million tonnes supplied in 2024
+    - **Complete value chain**: Ship design, construction, operation, financing, insurance, maintenance, recycling
+    
+    **Why This Comprehensive Approach Matters:**
+    
+    **Network Effects and Switching Costs:**
+    
+    When a shipping company establishes Singapore operations, they gain access to the entire ecosystem:
+    - **Ship financing** from 20+ banks familiar with maritime sector
+    - **Insurance coverage** from all major P&I Clubs and marine insurers
+    - **Legal support** from 30+ specialised maritime law firms
+    - **Ship management services** from leading global managers
+    - **Bunker fuel supply** from world's largest bunkering hub
+    - **Ship repair** during port calls at world-class yards
+    - **Crew changes** with efficient immigration and travel connections
+    - **Maritime technology** from 100+ startups and innovation centres
+    
+    Once established, the **switching costs** are enormous. Moving headquarters means:
+    - Losing established banking relationships
+    - Re-negotiating insurance coverage
+    - Finding new legal counsel familiar with maritime law
+    - Rebuilding supply chain connections
+    - Training staff on different systems and processes
+    - Potentially losing access to Singapore's tax treaties and business environment
+    
+    **The Strategic Commitment:**
+    
+    The lecture materials emphasise that Singapore's government provides certainty and stability: **"Singapore will
+    live up to its reputation for stable pro-business policies that provide certainty. We avoid back tracking and
+    U-turns, and we set out to make companies feel welcome and a valued part of the Singapore maritime ecosystem."**
+    
+    This long-term commitment spanning decades creates confidence for companies making major capital investments
+    (building terminals, establishing offices, deploying vessels). Companies know Singapore's policies will remain
+    consistent and supportive.
+    """)
+    
+    # ============================================================================
+    # SECTION 2: Maritime and Port Authority of Singapore (MPA) - The Unique Dual Role
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Maritime and Port Authority of Singapore (MPA): The Strategic Orchestrator</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    The Maritime and Port Authority of Singapore (MPA) occupies a globally unique position by combining **regulatory
+    authority** with **strategic development responsibility**. This dual mandate—rare among major maritime nations—enables
+    Singapore to pursue coherent long-term strategies that align safety, security, efficiency, and competitiveness.
+    Understanding how MPA balances these potentially conflicting roles illuminates Singapore's maritime governance model.
+    """)
+    
+    st.markdown('<p class="subsection-header">MPA\'s Dual Mandate: Regulator + Developer</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Strategic Location:**
-        - **Centre of Southeast Asia** and on major trade routes
-        - **On Asia-Europe route** (33% of global container trade)
-        - **Malacca Strait chokepoint** (natural gateway)
-        - **Equidistant from major Asian economies**:
-          - China, India, Japan, South Korea all within 5,000 km
-        - **Deep natural harbour**: 20m+ depth without dredging
+        **Role 1: REGULATOR - Safety, Security, Standards**
         
-        **World-Class Infrastructure:**
-        - **Current terminals**: Tanjong Pagar, Keppel, Brani, Pasir Panjang
-        - **Tuas Mega Port** (under development):
-          - 11 berths operational (as of 2024)
-          - 7 more berths by 2027
-          - Phase 2 reclamation 75% complete (2024)
-          - Ultimate capacity: 65M TEU by 2040
-          - World's largest fully automated terminal
-        - **Super post-Panamax cranes**: Handle 24,000+ TEU mega vessels
-        - **Deep-water berths**: 60+ container berths total
+        **Port Safety and Security Operations:**
+        - **Vessel Traffic Management (VTS)**: 24/7 monitoring of Singapore Strait traffic, coordinating 130,000+
+          annual vessel transits through one of world's busiest waterways
+        - **Port security (ISPS Code)**: International Ship and Port Facility Security Code enforcement, protecting
+          against terrorism and piracy threats
+        - **Marine safety regulations**: Navigational safety rules, collision prevention, emergency response protocols
+        - **Accident investigation**: Root cause analysis, safety improvements, lessons learned dissemination
+        - **Pilotage services oversight**: Licensing pilots, ensuring competency standards, regulating operations
         
-        **Operational Excellence:**
-        - **Berth on Arrival (BOA)**: >90% achievement
-        - **Vessel turnaround**: 10-16 hours (vs 24-48 hours elsewhere)
-        - **24/7/365 operations**: No downtime, no strikes
-        - **Customs efficiency**: Fast clearance, minimal bureaucracy
-        - **Free trade port**: No tariffs on transshipment cargo
+        **Environmental Protection and Sustainability:**
+        - **Marine pollution prevention**: Oil spill response, ballast water management, garbage disposal regulations
+        - **Air emissions monitoring**: SOx, NOx, particulate matter from vessels, shore-based facilities
+        - **Green shipping incentives**: Green Port Programme rewarding eco-friendly vessels with port dues rebates
+        - **Alternative fuel infrastructure**: Facilitating LNG, methanol, ammonia bunkering capabilities
+        
+        **Standards, Compliance, and Certification:**
+        - **Ship registration**: Singapore Registry of Ships (SRS), now 5th largest globally (108M GT)
+        - **Crew certification**: STCW (Standards of Training, Certification and Watchkeeping) compliance
+        - **Maritime labour standards**: ILO Maritime Labour Convention implementation, protecting seafarer rights
+        - **International conventions**: IMO, SOLAS, MARPOL, Ballast Water Management implementation
+        
+        **Infrastructure Regulation and Oversight:**
+        - **Port facility licensing**: Terminal operators, warehouses, dangerous goods facilities
+        - **Terminal operator oversight**: Performance monitoring, safety audits, contract compliance
+        - **Navigational aids maintenance**: Lighthouses, beacons, buoys, electronic navigation systems
+        - **Hydrographic surveys**: Maintaining accurate charts, monitoring channel depths, dredging oversight
+        
+        **Why Regulation Matters:**
+        
+        Singapore's reputation as a **high-quality, safe, and secure port** attracts premium shipping lines and cargo.
+        Rigorous standards ensure:
+        - Vessels can call safely without collision or grounding risks
+        - Cargo is secure from theft, damage, or security threats
+        - Environmental impacts are minimised and controlled
+        - International best practices are consistently maintained
+        
+        This reputation enables Singapore to **charge premium port dues** compared to lower-standard competitors,
+        whilst shipping lines willingly pay because the reliability and safety justify the cost.
         """)
     
     with col2:
         st.markdown("""
-        **Complete Maritime Ecosystem:**
-        Not just a port—a comprehensive maritime cluster providing every maritime service:
-        - **Port operations**: PSA, Jurong Port (world-class efficiency)
-        - **Shipping lines**: 200+ lines, home to major Asia-Pacific headquarters
-        - **Bunkering**: World's largest (54.92M tonnes in 2024)
-        - **Ship repair**: 40+ shipyards, dry-docking for all vessel sizes
-        - **Maritime finance**: Ship financing, insurance, reinsurance
-        - **Maritime law**: Arbitration centres, maritime courts, legal expertise
-        - **Maritime technology**: 140+ startups, R&D centres, innovation ecosystem
-        - **One-stop solution**: All maritime needs met in single location
+        **Role 2: DEVELOPER - Growth, Innovation, Strategy**
         
-        **Global Recognition (2024-2025):**
-        - **Xinhua-Baltic ISCDI**: #1 maritime centre (12th consecutive year, 99.5/100 score)
-        - **DNV & Menon Economics**: #2 for Maritime Technology (2024)
-        - **Consistent rankings**: Top 3 globally across all major maritime indices
+        **Industry Promotion and Development:**
+        - **Maritime cluster building**: Attracting shipping companies, financiers, law firms, technology providers
+        - **Shipping line engagement**: Negotiating long-term commitments, understanding service requirements
+        - **Business facilitation**: Streamlining approvals, providing incentives, removing regulatory barriers
+        - **Investment attraction**: Tax incentives, grants, co-funding schemes for maritime businesses
+        - **Trade route development**: Working with shipping lines to establish new services, increase frequencies
         
-        **Competitive Advantages:**
-        - **Network effects**: More carriers → more cargo → more carriers (self-reinforcing)
-        - **High switching costs**: Ecosystem lock-in (once established, costly to leave)
-        - **Political stability**: Predictable pro-business policies, no backtracking
-        - **Skilled workforce**: Multilingual, maritime-trained, highly productive
-        - **Government support**: MPA dual role (regulator + developer), long-term vision
-        - **Innovation culture**: Regulatory sandboxes, test-bedding facilities, PIER71 ecosystem
-        """)
-    
-    # Performance comparison chart
-    st.markdown('<p class="subsection-header">Singapore vs Competitor Ports (2024)</p>', unsafe_allow_html=True)
-    
-    port_comparison = pd.DataFrame({
-        'Port': ['Singapore', 'Shanghai', 'Ningbo-Zhoushan', 'Shenzhen', 'Hong Kong', 'Busan', 'Rotterdam', 'Antwerp'],
-        'Throughput (M TEU)': [41.1, 49.2, 35.3, 30.0, 17.8, 22.9, 14.5, 12.0],
-        'Country': ['Singapore', 'China', 'China', 'China', 'China/HK', 'South Korea', 'Netherlands', 'Belgium'],
-        'Transshipment %': [90, 45, 30, 40, 65, 50, 35, 55],
-        'Role': [
-            'Pure transshipment hub',
-            'Import/export gateway',
-            'Import/export gateway',
-            'Import/export gateway',
-            'Transshipment hub',
-            'Regional transshipment',
-            'European gateway',
-            'European gateway'
-        ]
-    })
-    
-    st.dataframe(port_comparison, use_container_width=True, hide_index=True)
-    
-    st.markdown("""
-    **Singapore's Unique Position:**
-    - **Highest transshipment percentage (90%)**: Pure hub, not destination
-    - **Strategic location**: On major trade routes, not destination market
-    - **Efficiency**: 10-16 hour turnaround vs 24-48+ hours at destination ports
-    - **Reliability**: No labour strikes, consistent 24/7 operations
-    - **Competition**: Shanghai/Ningbo/Shenzhen are destination ports (serving Chinese market)
-    - **Regional**: Hong Kong/Busan compete but less comprehensive ecosystem
-    """)
-    
-    # ============================================================================
-    # SECTION 2: Maritime and Port Authority of Singapore (MPA)
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Maritime and Port Authority (MPA): The Dual Role</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    MPA is **unique globally** in combining regulatory and developmental functions. This dual mandate 
-    enables coordinated long-term strategic planning that has positioned Singapore as the world's premier 
-    maritime hub. Understanding MPA's role is essential to understanding Singapore's maritime success.
-    """)
-    
-    st.markdown('<p class="subsection-header">MPA\'s Two Core Functions</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **Function 1: Regulator (Safety, Security, Standards)**
+        **Innovation and Digital Transformation:**
+        - **digitalPORT@SG programme**: AI-powered port operations, predictive maintenance, digital twins
+        - **digitalOCEANS initiative**: Maritime domain awareness platform integrating multiple data sources
+        - **R&D funding**: Co-funding research projects through Maritime Innovation and Technology (MINT) Fund
+        - **Test-bedding facilities**: Providing real-world testing environments for new technologies
+        - **Innovation programmes**: BLOCK71 maritime tech accelerator, startup support ecosystem
         
-        **Port Safety and Security:**
-        - **Vessel Traffic Management (VTS)**: Real-time monitoring, traffic control
-        - **Port security**: ISPS Code compliance, security assessments
-        - **Marine safety regulations**: Vessel standards, crew requirements
-        - **Accident investigation**: Marine incident analysis and prevention
-        - **Pilotage services**: Licensed pilots for vessel movements
-        - **Navigation aids**: Lighthouses, buoys, channel marking
+        **Human Capital and Talent Development:**
+        - **Maritime training programmes**: Singapore Maritime Academy, professional certifications
+        - **Scholarships and bursaries**: Maritime Singapore Connect scholarship scheme, undergraduate support
+        - **Industry-academic partnerships**: Collaboration with NUS, NTU, SUTD on maritime programmes
+        - **Workforce transformation**: SkillsFuture programmes for upskilling workers displaced by automation
+        - **Attracting global talent**: Employment passes, permanent residency pathways for maritime professionals
         
-        **Environmental Protection:**
-        - **Marine pollution prevention**: Oil spill response, waste management
-        - **Ballast water management**: International compliance (IMO standards)
-        - **Emissions monitoring**: Air quality, GHG tracking
-        - **Green shipping initiatives**: Incentives for low-emission vessels
-        - **Alternative fuels**: LNG, methanol, ammonia standards development
+        **Strategic Infrastructure Planning:**
+        - **Long-term port master planning**: 20-30 year horizon, anticipating future vessel sizes and volumes
+        - **Tuas Mega Port development**: S$20 billion investment, ultimate 65M TEU capacity, world's largest automated port
+        - **International partnerships**: Sister port agreements, green shipping corridors, collaborative initiatives
+        - **Modal integration**: Sea-air, sea-rail connections, hinterland logistics development
         
-        **Standards and Compliance:**
-        - **Ship registration**: Singapore Registry of Ships (SRS) - 108M GT in 2024
-        - **Crew certification**: STCW compliance, training standards
-        - **Maritime labour standards**: MLC 2006 implementation
-        - **Classification societies**: Oversight of IACS members
-        - **Port facility approvals**: Safety and environmental compliance
+        **Why Development Matters:**
         
-        **Regulatory Innovation (2024-2025):**
-        - **Mass Flow Meter (MFM) verification**: Reduced from 2× to 1× annually (April 2025)
-          - Saves industry ~S$300,000 annually
-        - **Digital bunkering mandatory**: All suppliers must provide e-BDN from April 1, 2025
-          - Saves ~40,000 man-days annually
-        - **Risk-based audits**: Focus resources on high-risk operations
-        - **Regulatory sandboxes**: Allow innovation within controlled environments
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Function 2: Developer (Infrastructure, Innovation, Growth)**
+        Without active development, even the best-regulated port will stagnate as competitors innovate and improve.
+        MPA's developer role ensures Singapore:
+        - Continuously invests in next-generation infrastructure (Tuas)
+        - Attracts cutting-edge maritime technology and companies
+        - Develops skilled workforce for future automation era
+        - Maintains relevance as industry evolves (alternative fuels, digitization)
         
-        **Infrastructure Development:**
-        - **Tuas Mega Port**: Largest port development project globally
-          - S$20+ billion investment over 30+ years
-          - 11 berths operational (2024), 7 more by 2027
-          - Ultimate capacity: 65M TEU by 2040
-          - World's largest fully automated terminal
-        - **Existing terminals**: Maintaining/upgrading Pasir Panjang, etc.
-        - **Maritime 5G**: 12 base stations by end 2025 (full port coverage)
-        - **Alternative fuel infrastructure**: LNG, methanol bunkering facilities
-        
-        **Industry Development:**
-        - **Attract shipping lines**: Incentives, business-friendly environment
-        - **Cluster development**: Encourage maritime service providers
-        - **International marketing**: Promote Singapore as maritime hub
-        - **Bilateral cooperation**: Partnerships with major maritime nations
-        - **Green and Digital Shipping Corridors (GDSCs)**: 6 corridors established
-          - Singapore - Los Angeles/Long Beach
-          - Singapore - Tianjin
-          - Singapore - Rotterdam/Antwerp
-          - Others with Korea, Japan, Australia
-        
-        **Innovation and Technology:**
-        - **PIER71 ecosystem**: 140+ maritime tech startups (target 150 by end 2025)
-        - **MINT Fund**: S$10M+ for maritime innovation projects
-          - Since 2013: Supported 1,800+ scientists/engineers, 80+ technologies deployed
-        - **Smart Port Challenge**: Annual competition (200+ proposals in 2024)
-        - **Maritime Digital Twin**: Launched March 24, 2025 (MPA + GovTech partnership)
-        - **AI applications**: DocuMind, DocuMatch (certificate processing in minutes vs days)
-        - **Maritime Cyber Centre (MCAOC)**: Real-time threat monitoring, saves S$200K/company annually
-        - **JIT Platform**: 150+ port users onboarded (2024), expanding to tankers/anchorages by end 2025
-        
-        **Sustainability Leadership:**
-        - **Maritime Singapore Green Initiative (MSGI)**: Refreshed 2024, expanded incentives
-        - **Alternative fuel trials**: Methanol (1,626 tonnes), ammonia (9.74 tonnes first globally)
-        - **Standards development**: Methanol (2024), ammonia (2025) bunkering standards
-        - **Green corridors**: 6 GDSCs for alternative fuel/digital solutions piloting
+        The development function provides **forward momentum**, ensuring Singapore stays ahead of regional competitors
+        through continuous improvement and strategic foresight.
         """)
     
     st.markdown("""
-    **Why the Dual Role Works:**
+    **The Power of Integration: Why the Dual Role Works**
     
-    **Coordinated Strategy:**
-    - **No conflicting agendas**: Regulator and developer aligned under single authority
-    - **Long-term planning**: Can plan 30+ years ahead (Tuas example)
-    - **Rapid adaptation**: No bureaucratic silos between regulation and development
-    - **Holistic approach**: Safety, growth, innovation, sustainability coordinated
+    **Coordinated Strategy Without Internal Conflict:**
     
-    **Policy Alignment:**
-    - **Regulation enables innovation**: Sandboxes allow testing new technologies safely
-    - **Infrastructure supports standards**: Build facilities for new regulations (e.g., alternative fuels)
-    - **Industry input embedded**: Consultation built into policy-making process
-    - **Balance**: Maintain safety/environmental standards while supporting competitiveness
+    In most countries, port regulation and development are split between different government agencies, creating
+    potential conflicts:
+    - **Regulators** prioritise safety and security → may slow development with excessive caution
+    - **Developers** prioritise growth and investment → may pressure regulators to lower standards
     
-    **Example: Alternative Fuels Development**
-    - **MPA as developer**: Builds LNG/methanol bunkering infrastructure
-    - **MPA as regulator**: Develops safety standards (methanol 2024, ammonia 2025)
-    - **Result**: Safe, commercially viable alternative fuel ecosystem
-    - **Timeline**: Infrastructure and regulation co-developed, no delays
+    Singapore's **unified MPA structure** eliminates this conflict through **single leadership** that balances both
+    imperatives. When MPA plans Tuas development, the same organisation ensures:
+    - **Safety standards** integrated from design phase (not imposed afterwards)
+    - **Environmental requirements** built into specifications (not retrofit compliance)
+    - **Operational efficiency** maximised whilst maintaining safety (optimised balance)
+    - **Innovation encouraged** within appropriate regulatory guardrails (managed risk-taking)
     
-    **Contrast with Other Ports:**
-    - **Typical model**: Regulator (government) separate from developer (port authority)
-    - **Challenge**: Coordination difficulties, conflicting priorities, slower adaptation
-    - **Singapore advantage**: Unified strategy, faster decision-making, aligned incentives
+    **Responsive and Adaptive Governance:**
+    
+    The dual role enables **rapid policy adaptation** to industry needs. When COVID-19 disrupted crew changes globally:
+    - **MPA as regulator**: Temporarily relaxed restrictions whilst maintaining safety
+    - **MPA as developer**: Worked with shipping lines to facilitate safe crew change protocols
+    - **Coordination**: Implemented within weeks, not months of inter-agency negotiation
+    
+    When Red Sea crisis (2024) diverted vessels through Cape of Good Hope, causing Singapore port congestion:
+    - **MPA as regulator**: Permitted night-tow operations at Pasir Panjang Terminal (first time)
+    - **MPA as developer**: Fast-tracked commissioning of new Tuas berths, reactivated Keppel Terminal berths
+    - **Coordination**: Worked with PSA, unions, and shipping lines to optimise schedules
+    - **Result**: Most container vessels completed cargo handling and bunkering within one day despite disruption
+    
+    **Long-Term Vision Execution:**
+    
+    The Tuas Mega Port exemplifies the dual role advantage:
+    
+    **MPA as Developer:**
+    - Conceived 65M TEU mega port concept in 2000s
+    - Allocated S$20 billion budget for 40-year development
+    - Designed world's largest fully automated terminal
+    - Negotiated long-term commitments from shipping alliances
+    
+    **MPA as Regulator:**
+    - Ensured comprehensive environmental impact assessment
+    - Integrated pollution prevention from design phase
+    - Required shore power capability for all berths
+    - Mandated cybersecurity standards for automation systems
+    
+    **Integration Benefit:**
+    - Tuas will be simultaneously the **most efficient** (developer goal) and **safest, cleanest** (regulator goal)
+      port globally
+    - No compromises required—both objectives embedded from inception
+    - Industry confidence: Shipping lines know Tuas will meet highest standards whilst maximising their operational
+      efficiency
+    
+    **The Strategic Advantage:**
+    
+    According to lecture materials, Singapore's approach delivers: **"Coordinated strategy enables long-term vision...
+    Infrastructure planning aligned with regulatory framework... Innovation encouraged within safety boundaries...
+    Sustainable development prioritised."**
+    
+    This unified strategic direction, spanning decades, provides **certainty** for businesses making long-term
+    investments. Shipping lines signing 20-30 year terminal leases at Tuas know Singapore's government will maintain
+    consistent, supportive policies through both regulatory and developmental functions.
     """)
     
     # ============================================================================
-    # SECTION 3: The Complete Maritime Cluster
+    # SECTION 3: The Complete Maritime Cluster - Seven Pillars
     # ============================================================================
     
-    st.markdown('<p class="section-header">Singapore\'s Complete Maritime Cluster</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">The Complete Maritime Cluster: Seven Interdependent Pillars</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Singapore offers a comprehensive ecosystem of maritime services—this "one-stop shop" creates 
-    powerful network effects and high switching costs, reinforcing Singapore's competitive position.
+    Singapore's maritime ecosystem extends far beyond container terminals and cargo cranes. The **comprehensive
+    maritime cluster** encompasses seven interconnected pillars, each providing essential services that reinforce
+    the others. This "one-stop shop" approach creates powerful synergies: a shipping company can handle financing,
+    insurance, legal work, crew changes, ship repairs, bunkering, and cargo operations all within Singapore—often
+    within the same day—without coordination across multiple countries.
     """)
     
-    st.markdown('<p class="subsection-header">The Seven Pillars of Maritime Singapore</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">The Seven Pillars Explained</p>', unsafe_allow_html=True)
     
-    # Maritime cluster components - enhanced
+    # Comprehensive maritime cluster data
     cluster_components = pd.DataFrame({
         'Pillar': [
             '1. Port and Terminal Operations',
@@ -320,647 +361,860 @@ def show():
             '7. Maritime Technology and Innovation'
         ],
         'Key Players': [
-            'PSA (40.9M TEU 2024), Jurong Port, cargo handlers',
-            '200+ shipping lines, ship management companies, Asia-Pacific HQs',
-            'Sembcorp Marine, Keppel, 40+ shipyards, dry-docking facilities',
-            'Bunkering (54.92M tonnes 2024), ship chandlers, crew managers, supplies',
-            'Major banks, ship financing, P&I clubs, marine insurers, reinsurers',
-            'Maritime law firms, Singapore Chamber of Maritime Arbitration, courts',
-            '140+ PIER71 startups, R&D centres (NUS, NTU, SUTD, A*STAR), SMI'
+            'PSA International, Jurong Port, cargo handlers, stevedores',
+            '170+ international shipping groups (liner, bulk, tanker, management)',
+            'Sembcorp Marine, Keppel Offshore & Marine, 40+ shipyards',
+            'Bunker suppliers (50+ companies), ship chandlers, crew managers',
+            '20+ banks, marine insurers, 10 IG P&I Clubs, ship brokers',
+            '30+ law firms with shipping practice, arbitration centres',
+            '~100 MarineTech startups, research institutes, universities'
         ],
         'Services Provided': [
-            'Container handling, cargo storage, transshipment (90% of throughput)',
-            'Liner services, vessel operations, freight forwarding, ship management',
-            'Dry-docking, repairs, retrofits, conversions, new builds (offshore/naval)',
-            'Fuel supply (conventional + alternative), provisions, crew changes, maintenance',
-            'Ship loans, project finance, hull/cargo/P&I insurance, reinsurance',
-            'Maritime disputes, contracts, arbitration, litigation, advisory',
-            'Digital solutions, automation, AI, IoT, blockchain, green tech, cybersecurity'
+            'Container/cargo handling, storage, transshipment, customs clearance',
+            'Liner services (200+ lines), vessel operations, freight forwarding, ship management',
+            'Dry-docking, major repairs, retrofits, conversions, new ship construction',
+            'Bunkering (54.9M tonnes/year), provisions, crew changes, spare parts, supplies',
+            'Ship financing, project finance, mortgages, hull insurance, cargo insurance, P&I coverage',
+            'Maritime disputes resolution, contracts, admiralty law, arbitration, mediation',
+            'Automation, AI, IoT, blockchain, alternative fuels, digitalization, R&D'
         ],
-        'Why Critically Important': [
-            'Core infrastructure - without efficient port, entire hub collapses',
-            'Global connectivity - 200+ lines connect Singapore to 600+ ports worldwide',
-            'Vessel maintenance - ships need periodic servicing (dry-dock every 2-5 years)',
-            'Operational support - vessels need fuel, supplies, crew changes at every port call',
-            'Capital and risk - shipping is capital-intensive, requires sophisticated finance',
-            'Dispute resolution - international contracts need trusted legal framework',
-            'Competitive edge - innovation drives efficiency, sustainability, future growth'
+        'Annual Volume/Value': [
+            '41.12M TEU containers (2024), 622.67M tonnes cargo',
+            '170+ groups managing thousands of vessels globally',
+            'World-class repair capability, ~100 vessels in yards at any time',
+            '54.92M tonnes bunkers (world\'s largest), thousands of crew changes monthly',
+            'S$4.3B+ business spending, billions in ship loans outstanding',
+            'Hundreds of cases annually, growing arbitration caseload',
+            '~S$50M raised by startups in 4 years, extensive R&D spending'
         ],
-        'Singapore\'s Advantage': [
-            'World-class efficiency (10-16h turnaround), reliability (no strikes), scale',
-            'Most comprehensive liner connectivity globally, 200+ lines, frequent services',
-            '40+ yards, all vessel types, offshore/naval expertise, strategic location',
-            'World\'s largest bunkering port (54.92M tonnes), alternative fuels leadership',
-            'Major financial centre (ranked top 5 globally), ship finance expertise',
-            'Trusted neutral jurisdiction, English common law, maritime expertise',
-            '140+ startups, S$100M+ raised, government support (MINT, PIER71), sandboxes'
+        'Strategic Importance': [
+            'Core revenue generator, employs thousands, defines Singapore port status',
+            'Brings cargo volumes, determines ship calls, builds global connections',
+            'Retains vessels in Singapore waters, high-value services, skilled employment',
+            'Essential services attract ship calls, bunkering drives port visits',
+            'Enables ship purchases/operations, spreads maritime risk globally',
+            'Resolves disputes efficiently, protects contracts, supports transactions',
+            'Future competitiveness, maintains technological edge, attracts talent'
         ]
     })
     
-    st.dataframe(cluster_components, use_container_width=True, hide_index=True)
-    
-    st.markdown('<p class="subsection-header">Deep Dive: Key Pillars</p>', unsafe_allow_html=True)
+    st.dataframe(cluster_components, width='stretch', hide_index=True)
     
     st.markdown("""
-    **1. Bunkering (Marine Fuel Supply) - World's Largest**
+    **Understanding the Synergies and Network Effects:**
     
-    **Singapore's Dominant Position:**
-    - **54.92 million tonnes in 2024** (+6.0% YoY, new record)
-    - **World's largest bunkering port** for 35+ consecutive years
-    - **20+ licensed bunker suppliers** (competitive market)
-    - **All fuel types available**:
-      - Conventional: HSFO, LSFO, VLSFO, MGO, MDO
-      - Alternative: LNG (0.46M tonnes), biofuel blends (0.88M tonnes, up to B50), methanol (1,626 tonnes)
-      - Future-ready: Ammonia trials (9.74 tonnes, world's first), e-fuels infrastructure planned
+    The seven pillars do not operate independently—they create a self-reinforcing ecosystem where strength in one
+    pillar enhances all others:
     
-    **2024 Milestones:**
-    - **Alternative fuels: 1.34M tonnes** (doubled from 2023, first time >1M tonnes)
-    - **Digital bunkering mandatory from April 1, 2025**: All suppliers must issue e-BDN
-      - Saves ~40,000 man-days annually
-      - Reduces errors, fraud detection, regulatory compliance
-    - **Methanol bunkering standards**: Technical Reference released 2024
-    - **Ammonia bunkering standards**: Under development, expected 2025
-    - **LNG reloading EOI**: Launched December 2024 for sea-based LNG bunkering expansion
+    **Pillar 1 + Pillar 4 Synergy: Port Operations × Maritime Ancillary Services**
     
-    **Why Bunkering Matters:**
-    - **Lock-in effect**: Vessels must call Singapore to refuel → Generates port calls
-    - **Revenue diversification**: Bunkering revenue supplements container handling
-    - **Strategic control**: Fuel supply = influence over shipping routes
-    - **Red Sea impact**: 2024 increase partly due to longer Asia-Europe routes via Cape
+    Singapore's position as world's largest bunkering hub (Pillar 4) directly drives container port volumes (Pillar 1):
+    - Vessels calling for bunkers also discharge/load containers
+    - Combined port call amortises voyage costs over multiple services
+    - Efficient operations enable same-day bunkering + cargo handling
+    - Result: Singapore captures cargo that might otherwise skip the port
     
-    **Bunkering Operations:**
-    - **Ship-to-ship**: Tanker transfers fuel to vessel (most common, any location in port)
-    - **Truck-to-ship**: For smaller quantities, specific locations
-    - **24/7 operations**: Any time, any location, rapid response
-    - **Mass Flow Meters (MFM)**: Accurate measurement, transparency (verification 1×/year from April 2025)
-    - **Digital documentation**: e-BDN mandatory April 1, 2025 (default method)
+    **Pillar 2 + Pillar 5 Synergy: Shipping Lines × Maritime Finance**
     
-    **Alternative Fuels Leadership:**
-    - **First-mover advantage**: Biofuel blends commercially available (up to B50), B100 trials ongoing
-    - **LNG infrastructure**: Operational LNG bunkering (0.46M tonnes in 2024), expanding capacity
-    - **Methanol readiness**: Commercial-scale methanol bunkering (1,626 tonnes), Technical Reference published
-    - **Ammonia pioneering**: World's first ammonia bunkering trials (9.74 tonnes), safety standards in development
-    - **e-fuels future**: Expression of interest for scalable e-/bio-methane solutions
+    With 20+ banks having shipping portfolios (Pillar 5), shipping companies (Pillar 2) can:
+    - Secure ship financing in Singapore with minimal friction
+    - Tap multiple lenders for competitive terms
+    - Bundle services: vessel operations, financing, cash management in one location
+    - Result: 170+ international shipping groups establish regional headquarters in Singapore
+    
+    **Pillar 3 + Pillar 1 Synergy: Ship Repair × Port Operations**
+    
+    Ships requiring repairs (Pillar 3) often discharge/load cargo simultaneously (Pillar 1):
+    - Dry-docking schedules coordinate with port calls
+    - Repair work done whilst loading/unloading cargo
+    - Minimises vessel downtime (time = money in shipping)
+    - Result: Singapore's shipyards stay busy whilst port gains additional cargo
+    
+    **Pillar 7 + All Others: Maritime Technology Accelerating Everything**
+    
+    Maritime technology innovations (Pillar 7) enhance every other pillar:
+    - **Port automation** (Pillar 1): Faster crane operations, optimised yard management
+    - **Digital platforms** (Pillar 2): Simplified booking, tracking, documentation for shipping lines
+    - **Predictive maintenance** (Pillar 3): Reduced repair downtime using AI analytics
+    - **Bunker digitalisation** (Pillar 4): e-BDN (electronic bunker delivery notes), MFM monitoring
+    - **Fintech solutions** (Pillar 5): Blockchain-based trade finance, digital letters of credit
+    - **Legaltech** (Pillar 6): Online dispute resolution, smart contracts, digital arbitration
+    
+    **The "One-Stop Shop" Competitive Advantage:**
+    
+    This comprehensive ecosystem creates **enormous convenience** for maritime businesses. Consider a shipping company's
+    typical needs in Singapore:
+    
+    **Day 1 - Operational Services:**
+    - **0600 hours**: Vessel arrives, berths immediately (BOA >90%)
+    - **0630 hours**: Commence cargo operations with 6 cranes (Pillar 1)
+    - **0700 hours**: Bunker vessel simultaneously with cargo ops (Pillar 4)
+    - **0800 hours**: Crew change: 15 seafarers off, 15 on (Pillar 4)
+    - **1200 hours**: Ship chandler delivers provisions, spare parts (Pillar 4)
+    - **1800 hours**: Cargo ops + bunkering complete (12 hours for 3,000 moves + 2,000 tonnes bunkers)
+    - **1900 hours**: Vessel departs for next port
+    
+    **Day 2 - Business Services:**
+    - **0900 hours**: Meeting with ship financier to discuss newbuild loan (Pillar 5)
+    - **1100 hours**: Review P&I insurance coverage with underwriter (Pillar 5)
+    - **1400 hours**: Consult maritime lawyer on charter party dispute (Pillar 6)
+    - **1600 hours**: Visit shipyard to inspect vessel undergoing retrofit (Pillar 3)
+    
+    **Week - Technology and Innovation:**
+    - Pilot AI-powered predictive maintenance system developed by local startup (Pillar 7)
+    - Test new digital bunkering platform reducing paperwork by 80% (Pillar 7)
+    - Evaluate shore power connections for fleet decarbonisation (Pillar 7)
+    
+    **Result**: All maritime needs met in **one location**, with **minimal coordination** across time zones or
+    jurisdictions, in **English** (business language), under **predictable legal framework** (Singapore commercial law).
+    
+    Compare this to alternative scenarios:
+    - **Port in Country A**: Excellent terminal, but limited bunkering, must fly to Country B for ship financing
+      meetings, legal disputes heard in Country C courts with multi-year delays
+    - **Singapore**: Everything available locally, in same time zone, often same building, under consistent regulations
+    
+    **The Switching Cost Reality:**
+    
+    Once a shipping company establishes Singapore operations, relocating means:
+    - **Lost banking relationships** built over years (20+ banks to choose from in Singapore, maybe 2-3 elsewhere)
+    - **Rebuilding legal network** (30+ maritime law firms in Singapore, comprehensive expertise)
+    - **New bunker suppliers** (losing world's largest, most competitive bunkering market)
+    - **Finding alternative ship repair** (world-class yards in Singapore vs uncertain alternatives)
+    - **Retraining staff** on different country's regulations, procedures, systems
+    - **Losing efficiencies** of co-located services, time zone advantages, English working language
+    
+    These **astronomical switching costs** (likely millions of dollars + years of relationship rebuilding) mean
+    companies almost never leave Singapore once established. This creates **extraordinarily sticky** customer
+    relationships—precisely what Singapore's maritime cluster strategy intended to achieve.
+    """)
+    
+    # ============================================================================
+    # SECTION 4: Digital Transformation - Maritime 4.0
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Digital Transformation: Positioning Singapore for Maritime 4.0</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore recognises that maintaining maritime leadership in the 21st century requires not just physical
+    infrastructure but **digital infrastructure** and **technological innovation**. MPA's digital transformation
+    initiatives position Singapore at the forefront of "Maritime 4.0"—the digital revolution transforming shipping
+    through AI, IoT, blockchain, and automation.
+    """)
+    
+    st.markdown('<p class="subsection-header">digitalPORT@SG: The Smart Port Initiative</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **digitalPORT@SG** is Singapore's comprehensive programme to transform port operations through digital technologies,
+    automation, and data analytics. Launched by MPA, this initiative aims to make Singapore the world's smartest and
+    most efficient port.
+    
+    **Core Components and Technologies:**
+    
+    **1. Port Operations Digital Twin**
+    
+    A complete virtual replica of Singapore's port operations running in real-time:
+    - **3D visualization**: Every berth, crane, container, vessel represented digitally
+    - **Real-time synchronisation**: Digital twin updates instantly as physical port changes
+    - **Predictive simulation**: Test different scenarios (berth assignments, crane deployments) virtually before
+      implementation
+    - **Optimization algorithms**: AI identifies most efficient resource allocation across entire port system
+    - **Impact**: Reduces vessel waiting time, optimizes crane utilisation, maximises throughput
+    
+    **What-if Analysis Example:**
+    - Question: "If three mega vessels arrive simultaneously during peak cargo period, what's optimal berth assignment?"
+    - Digital twin: Simulates 1,000+ allocation scenarios in seconds, identifies configuration minimising total
+      turnaround time
+    - Implementation: Port operators follow digital twin recommendation, avoiding bottlenecks
+    
+    **2. Predictive Maintenance Using AI and IoT**
+    
+    Preventing equipment failures before they occur:
+    - **IoT sensors**: Thousands deployed on cranes, AGVs, yard equipment measuring vibration, temperature, load, cycles
+    - **Real-time monitoring**: Data streams to central analytics platform 24/7
+    - **AI pattern recognition**: Machine learning identifies equipment degradation patterns predicting failures weeks
+      in advance
+    - **Preventive intervention**: Maintenance scheduled during planned downtime, avoiding emergency repairs during
+      critical cargo operations
+    - **Impact**: >50% reduction in unplanned downtime, extended equipment lifespan, reduced maintenance costs
+    
+    **Real-World Impact:**
+    - **Before AI**: Crane breaks down unexpectedly during mega vessel operation → 4-hour emergency repair → vessel
+      delayed → schedule disruption cascades to feeder connections
+    - **After AI**: Sensor data predicts bearing failure 3 weeks ahead → maintenance scheduled during vessel's planned
+      absence → no operational disruption
+    
+    **3. Next-Generation Port Management Systems**
+    
+    Replacing legacy systems with cloud-based, AI-powered platforms:
+    - **Dynamic berth planning**: Real-time optimization considering vessel size, draft, cargo volume, crane availability,
+      pilot schedules
+    - **Automated gate operations**: Truck identification via license plate recognition, automated documentation, paperless
+      processing
+    - **Intelligent yard management**: AI determines optimal container stacking positions minimising future re-handles
+    - **Real-time visibility**: All stakeholders (shipping lines, truckers, customs, forwarders) see same information
+      simultaneously
+    
+    **4. Blockchain for Trade Documentation**
+    
+    Eliminating paper documents through distributed ledger technology:
+    - **Electronic Bill of Lading (eBL)**: Digital equivalent of paper B/L, legally recognised, fraud-proof
+    - **Smart contracts**: Automated payment release when conditions met (cargo delivered, documents verified)
+    - **Shared visibility**: All parties in supply chain see document status, approvals, changes in real-time
+    - **Reduced fraud risk**: Blockchain immutability prevents document tampering, duplicate financing
+    
+    **Benefits Realised:**
+    - **Time savings**: Documentation processing cut from 5-7 days to 1 day
+    - **Cost reduction**: Estimated $50-100 per container in administrative costs eliminated
+    - **Fraud prevention**: Blockchain prevents duplicate bills of lading (historical problem in trade finance)
+    """)
+    
+    st.markdown('<p class="subsection-header">digitalOCEANS: Maritime Domain Awareness Platform</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **digitalOCEANS** is Singapore's integrated maritime domain awareness platform, providing comprehensive situational
+    awareness across Singapore's waters and beyond.
+    
+    **Platform Capabilities:**
+    
+    **Integrated Data Sources:**
+    - **Vessel tracking**: AIS (Automatic Identification System) data from all vessels in Singapore waters
+    - **Port operations**: Real-time berth occupancy, cargo operations, pilot boat movements
+    - **Weather and oceanographic**: Wave heights, currents, visibility, wind for navigation safety
+    - **Environmental monitoring**: Water quality, oil spill detection, marine debris tracking
+    - **Security surveillance**: Integrated with maritime security systems, unauthorized vessel detection
+    
+    **Advanced Analytics and AI:**
+    - **Anomaly detection**: AI identifies unusual vessel behavior (potential security threats, navigation violations)
+    - **Predictive ETA**: Machine learning predicts accurate vessel arrival times considering weather, traffic, speed
+    - **Route optimization**: Suggests optimal routes considering traffic, weather, fuel efficiency
+    - **Risk assessment**: Evaluates collision risks, grounding risks, security threats automatically
+    
+    **Applications and Use Cases:**
+    
+    **1. Vessel Traffic Management:**
+    - **Real-time monitoring**: VTS operators see every vessel in Singapore Strait (80,000+ annual transits)
+    - **Collision prevention**: AI warns when vessels on collision course, suggests course corrections
+    - **Congestion management**: Optimizes anchorage allocation during peak periods (Red Sea crisis response 2024)
+    
+    **2. Port Efficiency:**
+    - **Accurate ETAs**: Shipping lines, port operators, pilots all working from same arrival prediction
+    - **Resource planning**: Pilots, tugs, berths, cranes allocated efficiently based on actual vessel movements
+    - **Just-in-time operations**: Minimises waiting time, maximises asset utilisation
+    
+    **3. Environmental Protection:**
+    - **Emissions monitoring**: Tracks vessel emissions, enforces compliance with IMO regulations
+    - **Oil spill response**: Rapid detection and response coordination
+    - **Marine life protection**: Routes vessels away from sensitive marine habitats
+    
+    **4. Security and Safety:**
+    - **Threat detection**: Identifies suspicious vessels, unauthorized entries, potential security risks
+    - **Search and rescue**: Coordinates SAR operations with real-time vessel positions, capabilities
+    - **Accident investigation**: Complete data trail for post-incident analysis
+    """)
+    
+    # ============================================================================
+    # SECTION 5: Innovation Ecosystem - BLOCK71, MINT Fund, Academic Partnerships
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">The Maritime Innovation Ecosystem: Cultivating Maritime 4.0</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore has systematically built a comprehensive innovation ecosystem to ensure it remains the global leader
+    in maritime technology. This ecosystem connects startups, corporates, government, research institutions, venture
+    capital, and academic institutions—creating a **vibrant innovation flywheel** where technology development,
+    testing, and commercialisation happen seamlessly.
+    """)
+    
+    st.markdown('<p class="subsection-header">BLOCK71 Maritime Innovation Hub</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **BLOCK71** represents Singapore's flagship maritime technology accelerator, established in **2018** by MPA as
+    the **first maritime ecosystem innovation builder in the region**. BLOCK71's mission, according to lecture
+    materials, is to **"catalyse the acceleration of innovation and transformation in the maritime industry."**
+    
+    **The Three-Part Strategy:**
+    
+    **1. Encourage Maritime Industry Innovation**
+    
+    Goal: Push traditional maritime companies to **"accelerate innovation and venture into adjacent/new growth areas
+    through working with tech start-ups."**
+    
+    - **Challenge**: Established maritime companies (shipping lines, port operators, ship managers) often risk-averse,
+      slow to adopt new technologies
+    - **BLOCK71 Solution**: Provides safe environment for corporates to experiment with startup technologies at low risk
+    - **Mechanism**: Pilot projects where startups deploy solutions in controlled settings (e.g., test automated mooring
+      system on one berth before fleet-wide rollout)
+    
+    **2. Attract Global Maritime Technology Talent**
+    
+    Goal: **"Attract, connect and groom innovative global tech start-ups/entrepreneurs and private capitals to build
+    capability and solutions for our maritime industry."**
+    
+    - **Global recruitment**: Actively scout maritime technology startups worldwide, offer relocation support to
+      Singapore
+    - **Funding access**: Connect startups with venture capital, government grants (MINT Fund), corporate investors
+    - **Market access**: Singapore maritime cluster provides immediate customers (170+ shipping groups, PSA terminals,
+      shipyards)
+    - **Talent pool**: Access to maritime engineering graduates from NUS, NTU, Singapore Maritime Academy
+    
+    **3. Strengthen Singapore's Maritime Innovation Hub Status**
+    
+    Goal: **"Strengthen Singapore as a global maritime hub for innovation and talents."**
+    
+    - **Ecosystem development**: BLOCK71 creates visible innovation centre attracting additional startups, investors, talent
+    - **Success breeds success**: Each successful startup attracts more entrepreneurs, more capital, more attention
+    - **Network effects**: Larger ecosystem provides better matching between problems (from maritime companies) and
+      solutions (from startups)
+    
+    **Focus Areas and Technologies:**
+    
+    BLOCK71 prioritises technologies addressing major maritime challenges:
+    
+    - **Autonomous vessels and robotics**: Unmanned surface vehicles, autonomous tugs, robotic inspection drones
+    - **AI and data analytics**: Predictive maintenance, route optimization, fuel efficiency algorithms
+    - **Cybersecurity**: Protecting vessels and port systems from cyber attacks (growing threat with digitization)
+    - **Green technologies**: Alternative fuel solutions, energy efficiency systems, emissions monitoring
+    - **Blockchain and digital trade**: Electronic documentation, smart contracts, supply chain visibility
+    - **IoT and sensors**: Real-time monitoring of containers, vessels, port equipment, environmental conditions
+    
+    **The BLOCK71 Innovation Process:**
+    
+    **Stage 1: Application and Selection**
+    - Startups apply with maritime innovation proposals
+    - Selection criteria: Technology potential, team capability, market fit, scalability
+    - Competitive process: Only strongest ideas selected (maintains quality)
+    
+    **Stage 2: Acceleration Programme**
+    - **Funding support**: Grants, pitch opportunities to VCs, corporate investors
+    - **Mentorship**: Maritime industry veterans, successful entrepreneurs, technical experts
+    - **Workspace**: Co-working space in Singapore, access to testing facilities
+    - **Curriculum**: Business model development, go-to-market strategy, IP protection, fundraising
+    - **Duration**: Typically 3-6 months intensive acceleration
+    
+    **Stage 3: Pilot Projects**
+    - **Real-world testing**: Deploy technology with actual maritime customers (PSA, shipping lines, yards)
+    - **Risk mitigation**: Controlled scope, support from BLOCK71, insurance coverage if needed
+    - **Data collection**: Measure performance, ROI, operational impact
+    - **Iteration**: Refine solution based on real operational feedback
+    
+    **Stage 4: Commercialisation and Scale**
+    - **Successful pilots**: Full commercial deployment with pilot customer
+    - **Reference customers**: Singapore maritime companies become showcase clients for global sales
+    - **Geographic expansion**: Use Singapore success to enter other markets (China, Europe, Americas)
+    - **Fundraising**: Successful pilots unlock Series A/B funding from VCs
+    
+    **Success Metrics and Impact:**
+    
+    According to lecture materials:
+    - **~100 MarineTech startups** supported through ecosystem
+    - **~S$50 million in investment** raised by startups in past 4 years
+    - **Multiple commercial deployments**: Technologies now operational in Singapore port, ships
+    - **Global reach**: Singapore-incubated technologies expanding to international markets
+    
+    **Real-World Impact:**
+    - Autonomous vessel technology tested in Singapore waters now deployed commercially
+    - AI-powered predictive maintenance systems reducing port equipment downtime
+    - Blockchain trade documentation platforms processing thousands of transactions
+    - Green technology startups developing alternative fuel bunkering solutions
+    """)
+    
+    st.markdown('<p class="subsection-header">Maritime Innovation and Technology (MINT) Fund</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    The **MINT Fund** complements BLOCK71 by providing **co-funding for maritime R&D projects and technology test-bedding**.
+    This government funding mechanism reduces financial risk for companies experimenting with unproven technologies.
+    
+    **How MINT Fund Works:**
+    
+    **Funding Structure:**
+    - **Government co-funding**: MPA funds up to **50% of eligible project costs**
+    - **Company contribution**: Remainder funded by company (ensures skin in the game, commitment)
+    - **Maximum grants**: Varies by project scope, typically S$500K - S$2M for major initiatives
+    - **No equity requirement**: Unlike VC funding, MINT is grant-based (government doesn't take company shares)
+    
+    **Eligible Projects:**
+    - **Digitalisation and automation**: AI systems, robotics, IoT implementations
+    - **Green and sustainable technologies**: Alternative fuels, emissions reduction, energy efficiency
+    - **Safety and security enhancements**: Cybersecurity, navigation safety, port security
+    - **Productivity improvements**: Process automation, workflow optimization, data analytics
+    - **Novel business models**: Platform businesses, sharing economy applications, new service concepts
+    
+    **Application Process:**
+    - **Proposal submission**: Company describes technology, expected benefits, timeline, budget
+    - **Technical evaluation**: MPA experts assess feasibility, innovation level, potential impact
+    - **Funding approval**: Fast decision process (typically 2-3 months) to maintain momentum
+    - **Milestone-based disbursement**: Funding released as project achieves agreed milestones
+    - **Reporting requirements**: Regular updates, final report documenting results
+    
+    **Strategic Rationale:**
+    
+    **Why Government Co-Funding?**
+    - **Market failure**: Companies under-invest in R&D due to uncertain returns, competitor free-riding
+    - **Positive externalities**: Benefits extend beyond funding recipient (e.g., port automation benefits all users)
+    - **Risk reduction**: Sharing costs makes marginal projects viable, accelerates innovation adoption
+    - **Local capability building**: Ensures Singapore companies develop expertise, don't just buy foreign solutions
+    
+    **Example MINT-Funded Projects:**
+    
+    **Project 1: AI-Powered Berth Planning System**
+    - **Challenge**: Manual berth allocation suboptimal, vessels waiting for optimal berths
+    - **Solution**: AI system optimizing berth assignments considering 20+ variables
+    - **MINT contribution**: S$800K (50% of S$1.6M total cost)
+    - **Company contribution**: S$800K
+    - **Result**: 15% reduction in average vessel waiting time, system now deployed operationally
+    
+    **Project 2: Autonomous Tug Vessel**
+    - **Challenge**: Tug operations dangerous (collisions, line handling accidents), costly (crew wages)
+    - **Solution**: Retrofit existing tug with autonomous navigation, remote operation capability
+    - **MINT contribution**: S$1.2M (50% of S$2.4M project)
+    - **Company contribution**: S$1.2M
+    - **Result**: Successful trials, regulatory approval process underway for commercial operations
+    
+    **Project 3: Blockchain-Based Bunker Delivery System**
+    - **Challenge**: Paper-based bunker delivery notes prone to errors, delays, disputes
+    - **Solution**: Digital platform using blockchain for tamper-proof delivery documentation
+    - **MINT contribution**: S$400K (50% of S$800K development cost)
+    - **Company contribution**: S$400K
+    - **Result**: Now mandatory for all bunker suppliers in Singapore (April 2025), industry-wide adoption
+    
+    **Impact on Singapore's Maritime Sector:**
+    
+    MINT Fund achieves multiple strategic objectives simultaneously:
+    - **Accelerates innovation**: Projects happen sooner, at larger scale than if companies self-funded
+    - **De-risks experimentation**: Companies willing to try riskier, more ambitious technologies
+    - **Builds local capabilities**: Singapore companies develop expertise, potentially export solutions globally
+    - **Attracts investment**: Successful MINT projects attract VC follow-on funding, scale companies
+    - **Maintains competitiveness**: Ensures Singapore maritime sector stays technologically advanced
+    """)
+    
+    st.markdown('<p class="subsection-header">Academic and Research Partnerships</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore's maritime innovation ecosystem is anchored by strong academic research capabilities, connecting
+    universities, research institutes, and maritime companies in **collaborative R&D that solves real-world problems**.
+    
+    **Key Academic Institutions:**
+    
+    **Singapore Maritime Institute (SMI):**
+    - **Role**: Coordinating body for maritime R&D in Singapore
+    - **Function**: Funds research projects, connects academia with industry, disseminates research findings
+    - **Focus areas**: Port automation, sustainable shipping, supply chain resilience, maritime technology
+    - **Funding**: Government grants for multi-year research programmes
+    - **Output**: Research papers, patents, technology prototypes for commercial development
+    
+    **Universities with Maritime Programmes:**
+    
+    **National University of Singapore (NUS):**
+    - **Department of Civil and Environmental Engineering**: Maritime infrastructure, port operations research
+    - **Centre for Maritime Studies**: Industry-focused research on shipping economics, logistics, policy
+    - **Research strengths**: Computational fluid dynamics (ship design), offshore structures, port optimization
+    - **Industry collaboration**: Joint projects with PSA, shipping companies, MPA on real operational challenges
+    
+    **Nanyang Technological University (NTU):**
+    - **School of Mechanical and Aerospace Engineering**: Ship propulsion, energy efficiency, alternative fuels
+    - **Maritime Energy and Sustainable Development (MESD) Centre of Excellence**: Green shipping research
+    - **Research strengths**: Alternative fuel combustion, LNG bunkering, methanol/ammonia feasibility studies
+    - **Industry collaboration**: Working with bunker suppliers, engine manufacturers, classification societies
+    
+    **Singapore University of Technology and Design (SUTD):**
+    - **Engineering Systems and Design**: Complex systems engineering for ports and shipping
+    - **iTrust Centre**: Maritime cybersecurity research (protecting vessels and port systems from cyber attacks)
+    - **Research strengths**: Systems thinking, cybersecurity, automation, human-machine interaction
+    - **Industry collaboration**: MariOT testbed for ship operational technology cybersecurity testing
+    
+    **Research Focus and Industry Relevance:**
+    
+    **1. Autonomous Vessels and Navigation**
+    - **Academic research**: Collision avoidance algorithms, sensor fusion, machine learning for navigation
+    - **Industry need**: Addressing seafarer shortage, improving safety, reducing costs
+    - **Test facilities**: Real-world trials in Singapore waters with regulatory support
+    - **Commercial pathway**: Startups licensing university technology, deploying on actual vessels
+    
+    **2. Alternative Fuels and Decarbonisation**
+    - **Academic research**: Methanol/ammonia combustion, hydrogen fuel cells, biofuel sustainability
+    - **Industry need**: IMO 2050 net-zero target, short-term emissions reduction requirements
+    - **Test facilities**: Engine test benches, emissions measurement, fuel quality analysis
+    - **Commercial pathway**: Bunker suppliers using research to develop commercial-scale alternative fuel offerings
+    
+    **3. Port Automation and Optimization**
+    - **Academic research**: AI planning algorithms, robotic systems, digital twin simulations
+    - **Industry need**: Handling growing cargo volumes without proportional workforce increase
+    - **Test facilities**: Port simulators, robotics laboratories, PSA terminals for real-world testing
+    - **Commercial pathway**: Technology companies commercialising university algorithms, deploying at ports globally
+    
+    **4. Supply Chain Resilience**
+    - **Academic research**: Network analysis, risk modeling, disruption recovery strategies
+    - **Industry need**: COVID-19, Suez blockage, Red Sea crisis exposed supply chain vulnerabilities
+    - **Test facilities**: Supply chain simulation labs, data from actual shipping networks
+    - **Commercial pathway**: Consulting firms using research insights, shipping lines adopting risk management frameworks
+    
+    **5. Maritime Cybersecurity**
+    - **Academic research**: Threat detection, vulnerability assessment, secure system design
+    - **Industry need**: Growing digitization creates attack surface, critical infrastructure protection
+    - **Test facilities**: MariOT testbed (world's first maritime OT cybersecurity facility)
+    - **Commercial pathway**: Cybersecurity companies developing solutions specifically for maritime systems
+    
+    **Student Involvement and Talent Pipeline:**
+    
+    **Undergraduate Programmes:**
+    - **Maritime engineering degrees**: NUS, NTU offering specialized maritime programmes
+    - **Internships**: Students work on real industry projects (PSA operations, shipping line analytics)
+    - **Final year projects**: Industry-sponsored research addressing actual operational problems
+    - **Guaranteed employment**: Maritime companies hire from programs, ensuring talent supply
+    
+    **Graduate Programmes:**
+    - **Master's programmes**: Specialized maritime programmes (shipping, ports, logistics)
+    - **Ph.D. research**: Deep technical research on cutting-edge maritime challenges
+    - **Industry funding**: Companies sponsor research students tackling their technical problems
+    - **Career pathway**: Many graduates join maritime companies, startups, or government agencies
+    
+    **Knowledge Transfer Mechanisms:**
+    
+    **Industry Seminars and Workshops:**
+    - **Regular knowledge sharing**: Universities host industry events presenting research findings
+    - **Attendance**: Maritime executives, engineers, policymakers learn latest developments
+    - **Two-way dialogue**: Industry feedback shapes future research directions
+    
+    **Collaborative Projects:**
+    - **Industry-academic teams**: Professors work alongside company engineers on joint projects
+    - **IP arrangements**: Clear frameworks for commercialising research (licensing, spin-offs)
+    - **Government facilitation**: Grants specifically for industry-academic collaboration
+    
+    **Technology Transfer:**
+    - **University spin-offs**: Startups founded by professors, students commercialising research
+    - **Licensing agreements**: Companies licensing university patents, algorithms, designs
+    - **Consulting**: Academics advising companies on technical challenges, strategic directions
+    
+    **Strategic Impact:**
+    
+    The academic-industry ecosystem ensures Singapore maintains **technological leadership** through:
+    - **Continuous innovation pipeline**: Universities constantly generating new ideas, technologies
+    - **Talent development**: Graduates with both theoretical knowledge and practical industry experience
+    - **Global recognition**: Top-tier research attracts international talent, investment, partnerships
+    - **Competitive advantage**: Technologies developed in Singapore deployed first locally, then exported globally
+    """)
+    
+    # ============================================================================
+    # SECTION 6: Sustainability and Green Maritime Initiatives
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Positioning Singapore as a Green Maritime Leader</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore is strategically positioning itself as a global leader in maritime sustainability and decarbonisation.
+    This positioning is not just environmental responsibility—it's **competitive strategy**. As the IMO's 2050 net-zero
+    target drives industry transformation, Singapore aims to be the **preferred hub for green shipping**, capturing
+    the next generation of maritime business through sustainability leadership.
+    """)
+    
+    st.markdown('<p class="subsection-header">Green Port Programme: Incentivising Eco-Friendly Shipping</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore's **Green Port Programme** uses economic incentives to encourage shipping lines to invest in cleaner,
+    more efficient vessels. The programme demonstrates how **market-based mechanisms** can drive environmental
+    improvements whilst maintaining competitiveness.
+    
+    **How the Programme Works:**
+    
+    **Incentive Structure:**
+    - **Port due rebates**: Vessels with superior environmental performance pay reduced port dues
+    - **Tiered system**: Better performance = larger rebates (up to 75% discount on port dues)
+    - **Immediate benefit**: Shipping lines see cost savings every port call, creating strong economic incentive
+    
+    **Assessment Criteria:**
+    
+    **1. Engine Emissions (NOx, SOx, Particulate Matter):**
+    - **Tier III engines**: Highest rebate (85-90% reduction vs Tier I engines)
+    - **Scrubber systems**: Vessels with SOx scrubbers qualify even with high-sulfur fuel
+    - **Particulate filters**: Bonus for PM reduction systems
+    
+    **2. Energy Efficiency (CO₂ per tonne-mile):**
+    - **EEDI/EEXI rating**: IMO's energy efficiency indices determine qualification
+    - **Operational measures**: Slow steaming, optimized voyage planning rewarded
+    - **Design efficiency**: Hull design, propulsion systems, energy recovery systems considered
+    
+    **3. Shore Power Capability:**
+    - **Cold ironing readiness**: Vessels equipped to connect to shore power eligible for rebates
+    - **Actual usage**: Additional rebates for actually using shore power during Singapore port calls
+    - **Future requirement**: Tuas Port designed with universal shore power availability
+    
+    **Economic Impact on Shipping Lines:**
+    
+    **Cost-Benefit Analysis:**
+    - **Investment**: Tier III engine vs Tier II costs $500K - $2M more per vessel
+    - **Port due savings**: $2,000 - $5,000 per Singapore call (75% rebate)
+    - **Singapore call frequency**: Major liners call 50-100 times annually
+    - **Annual savings**: $100K - $500K per vessel in Singapore alone
+    - **Payback period**: 1-4 years from Singapore savings alone, faster when all ports considered
+    - **Competitive advantage**: As more ports adopt similar schemes, green vessels gain cost advantage globally
+    
+    **Strategic Rationale for Singapore:**
+    
+    **Why Offer Rebates?**
+    - **First-mover advantage**: Pioneering port creates standard that others follow
+    - **Network externality**: All ships become cleaner = better air quality for all
+    - **Future-proofing**: Positions Singapore for increasingly strict global regulations
+    - **Competitive differentiation**: "Green port" status attracts environmentally-conscious cargo owners
+    - **Diplomatic benefit**: Demonstrates climate leadership, enhances Singapore's international standing
+    """)
+    
+    st.markdown('<p class="subsection-header">Alternative Fuels Infrastructure: Multi-Fuel Future Strategy</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Singapore recognises that maritime decarbonisation requires **multiple fuel pathways**—there is no single "winner"
+    fuel that will dominate all vessel types and routes. Therefore, Singapore is developing **comprehensive alternative
+    fuel infrastructure** across multiple fuel types, positioning as the **global leader** regardless of which fuels
+    ultimately prevail.
+    
+    **2024 Alternative Fuel Bunker Sales Performance:**
+    
+    According to MPA, Singapore's alternative fuel bunker sales exceeded **1 million tonnes for the first time**,
+    reaching **1.34 million tonnes in 2024** (year-on-year doubling from 2023):
+    
+    - **Biofuel blends**: 0.88 million tonnes (up from 0.52M in 2023)
+      - B50 blends available commercially (50% biofuel, 50% conventional fuel)
+      - B100 trials ongoing (100% biofuel)
+      - Drop-in solution: Works with existing engines, no modifications required
+    
+    - **LNG (Liquefied Natural Gas)**: 0.46 million tonnes (up from 0.11M in 2023, 4× growth!)
+      - Multiple LNG bunker vessels operational
+      - Ship-to-ship bunkering well-established
+      - Growing LNG-powered fleet (dual-fuel engines)
+    
+    - **Methanol**: 1,626 tonnes
+      - Available on commercial scale in Singapore
+      - Methanol-powered vessels increasing (Maersk, CMA CGM ordering methanol fleets)
+      - Infrastructure expanding to meet anticipated demand
+    
+    - **Ammonia**: 9.74 tonnes
+      - **World-first bunkering trials** conducted in Singapore (2024)
+      - Proving technical feasibility, safety protocols
+      - Infrastructure planning for 2030s commercial availability
+    
+    **Multi-Fuel Strategy Explained:**
+    
+    **Current Focus: LNG + Biofuels (2020s)**
+    
+    **LNG Infrastructure:**
+    - **Multiple LNG bunker vessels** operating in Singapore waters
+    - **Ship-to-ship bunkering** procedures established and proven safe
+    - **LNG terminal capacity**: Leveraging existing LNG import terminal for bunkering
+    - **Safety protocols**: Comprehensive regulations, training, emergency procedures
+    - **Customer base**: Cruise ships, LNG carriers, new dual-fuel container ships all using LNG
+    
+    **Why LNG Now:**
+    - **Proven technology**: LNG engines commercially mature, widely deployed
+    - **Emissions reduction**: 20-25% CO₂ reduction vs conventional fuel, 85-90% SOx/NOx reduction
+    - **Bridge fuel**: Reduces emissions today whilst awaiting zero-carbon alternatives
+    - **Infrastructure exists**: Natural gas infrastructure can supply maritime demand
+    
+    **Biofuel Infrastructure:**
+    - **Multiple suppliers**: Several companies offering biofuel blends in Singapore
+    - **Blending facilities**: Can create B10, B20, B30, B50 blends to customer specification
+    - **Quality assurance**: Testing labs ensure biofuel meets marine fuel specifications
+    - **Supply chain**: Sustainable feedstock sourcing (waste oils, agricultural residues, not food crops)
+    
+    **Why Biofuels Now:**
+    - **Drop-in compatibility**: Works with existing ships, engines, infrastructure (no vessel modifications)
+    - **Immediate emissions reduction**: 60-80% lifecycle CO₂ reduction vs fossil fuels
+    - **Scalability**: Production capacity growing globally
+    - **Regulatory acceptance**: Approved by IMO as low-carbon fuel
+    
+    **Near-Term Developing: Methanol (Mid-2020s)**
+    
+    **Methanol Infrastructure Being Built:**
+    - **Storage facilities**: Dedicated methanol storage tanks at bunker terminals
+    - **Bunker vessels**: Methanol-capable bunker vessels under construction/conversion
+    - **Safety systems**: Methanol-specific safety procedures (different hazards vs LNG or conventional fuel)
+    - **Supply agreements**: Contracts with methanol producers (including green methanol from renewable sources)
+    
+    **Why Methanol Important:**
+    - **Major carriers committed**: Maersk ordered 25+ methanol-powered vessels, CMA CGM following
+    - **Easier handling than LNG**: Liquid at ambient temperature/pressure (simpler than cryogenic LNG)
+    - **Green methanol potential**: Can be produced from renewable electricity + captured CO₂ (carbon-neutral)
+    - **Dual-fuel engines**: New vessels being built with methanol/conventional dual-fuel capability
+    
+    **Future Preparing: Ammonia + Hydrogen (2030s)**
+    
+    **Ammonia (NH₃) Development:**
+    - **World-first trials**: Singapore conducted **world's first ammonia bunkering trials** in 2024 (9.74 tonnes)
+    - **Technical proving**: Demonstrating safe handling, transfer, storage procedures
+    - **Infrastructure planning**: MPA coordinating with stakeholders on commercial-scale infrastructure requirements
+    - **Timeline**: Significant ammonia fleet expected 2030s, Singapore positioning to serve them
+    
+    **Why Ammonia Matters:**
+    - **Zero-carbon fuel**: Burns to produce only nitrogen and water (no CO₂ emissions)
+    - **Existing distribution**: Ammonia already produced/traded globally (fertilizer industry)
+    - **Energy density**: Higher than hydrogen, easier to store/transport
+    - **Engine compatibility**: Ammonia engines under development by major manufacturers (MAN, Wärtsilä)
+    
+    **Hydrogen (H₂) Consideration:**
+    - **Niche applications**: Likely limited to specialized vessels (short-distance ferries, offshore support)
+    - **Storage challenges**: Cryogenic (-253°C) or high-pressure storage, low energy density
+    - **Infrastructure complexity**: Requires completely new infrastructure, extremely expensive
+    - **Singapore approach**: Monitor developments, ready to provide if demand materializes
+    
+    **The Strategic Flexibility Advantage:**
+    
+    **Why Multi-Fuel Strategy?**
+    
+    **Uncertainty about winning fuel**: No consensus yet on which fuel will dominate 2040s-2050s shipping
+    - **LNG**: Good near-term but still fossil fuel (only ~20% CO₂ reduction)
+    - **Biofuels**: Scalability questions (limited sustainable feedstock)
+    - **Methanol**: Promising but production capacity needs massive scaling
+    - **Ammonia**: Zero-carbon but toxicity concerns, engine technology still developing
+    - **Hydrogen**: Ideal emissions but enormous infrastructure challenges, costs
+    
+    **Different fuels for different vessels**: One size does not fit all
+    - **Short-sea ferries**: Hydrogen or battery-electric feasible
+    - **Container ships**: Methanol or ammonia likely (need high-density fuel for long voyages)
+    - **Bulk carriers**: LNG or ammonia (cost-sensitive, simpler engines)
+    - **Cruise ships**: LNG currently (passenger safety paramount, proven technology)
+    
+    **Singapore's hedge strategy**: **Support all plausible fuels**, dominate regardless of which wins
+    - **If LNG dominates**: Singapore already world's largest LNG bunker hub
+    - **If methanol wins**: Singapore developing comprehensive methanol infrastructure
+    - **If ammonia prevails**: Singapore proved technical feasibility first, infrastructure ready
+    - **If multiple coexist**: Singapore the only hub offering all options (one-stop-shop advantage)
     
     **Competitive Positioning:**
-    Singapore's early investment in alternative fuel infrastructure positions it to maintain bunkering 
-    leadership as the industry decarbonises. Rotterdam, Antwerp, and Dubai are key competitors, but 
-    Singapore's comprehensive ecosystem and first-mover advantage in Asia provide strategic advantage.
     
-    ---
+    **Lock-in bunkering business regardless of fuel transition**: Singapore's investment in multi-fuel infrastructure
+    ensures that as the global fleet transitions from conventional bunkers to alternatives, Singapore remains the
+    **default bunkering location** because it offers **all fuel options**.
     
-    **2. Ship Repair and Shipbuilding - Southeast Asia's Largest**
+    Shipping lines appreciate this because:
+    - **Fleet transition flexibility**: Can bunker different fuel types as fleet converts gradually
+    - **Operational simplicity**: Don't need to route to different ports for different fuels
+    - **Future-proof**: As fuel preferences shift, Singapore always has supply
     
-    **Capabilities:**
-    - **40+ shipyards and repair facilities** across Singapore
-    - **Dry-docking**: All vessel sizes, from feeder vessels to ULCVs
-    - **Specialisations**:
-      - Offshore platforms and FPSOs (Sembcorp Marine, Keppel)
-      - Naval vessels and submarines (strategic capability)
-      - Mega yachts and luxury vessels
-      - Container ships and bulk carriers
-    - **Retrofits and conversions**:
-      - Scrubber installations (IMO 2020 compliance)
-      - Ballast water treatment systems (BWTSs)
-      - Energy efficiency upgrades (hull cleaning, propeller optimization)
-      - Alternative fuel conversions (LNG/methanol dual-fuel)
+    This locks in Singapore's position as **world's largest bunkering hub** for the next 30+ years of energy transition.
+    """)
     
-    **Strategic Value:**
-    - **Periodic maintenance**: Vessels require dry-docking every 2-5 years (regulatory requirement)
-    - **Location advantage**: On major trade routes, convenient for scheduled maintenance
-    - **Technical expertise**: Highly skilled workforce, advanced facilities
-    - **High-value industry**: S$10+ billion annual revenue, skilled jobs, technology transfer
+    st.markdown('<p class="subsection-header">Shore Power Infrastructure: Zero Emissions at Berth</p>', unsafe_allow_html=True)
     
-    **2024-2025 Trends:**
-    - **Retrofit demand**: Ships installing scrubbers, BWTSs, efficiency upgrades
-    - **Alternative fuel conversions**: Growing demand for LNG/methanol dual-fuel retrofits
-    - **Offshore sector**: O&G vessel maintenance, offshore wind (new growth area)
-    - **Naval contracts**: Singapore and regional navies (strategic importance)
+    st.markdown("""
+    **Shore power** (also called "cold ironing") allows vessels to shut down diesel generators whilst at berth,
+    plugging into the port's electrical grid instead. This eliminates local air pollution and reduces CO₂ emissions
+    (depending on grid electricity carbon intensity).
     
-    ---
+    **Tuas Mega Port Shore Power Plans:**
     
-    **3. Maritime Finance and Insurance - Asia's Hub**
+    According to MPA, Tuas Mega Port is being **designed with shore power capability at all berths**, representing
+    the most ambitious shore power deployment globally:
     
-    **Financial Services:**
-    - **Ship financing**: Major banks offer ship loans (DBS, OCBC, UOB, international banks)
-    - **Singapore dollar financing**: Growing share of ship finance denominated in SGD
-    - **Shipping funds**: Private equity, asset-backed securities
-    - **Leasing**: Operating leases, finance leases, bareboat charters
-    - **Insurance markets**:
-      - Hull and machinery (H&M) insurance
-      - Protection and indemnity (P&I) clubs
-      - Cargo insurance
-      - Reinsurance market
+    **Infrastructure Requirements:**
+    - **High-voltage connections**: Each berth equipped with 6.6kV or 11kV shore power connections
+    - **Frequency conversion**: Singapore grid operates at 50Hz, some vessels require 60Hz (converters installed)
+    - **Multiple berths**: All Tuas berths (eventually 65M TEU capacity) will have shore power
+    - **Automated connection**: Plug-in systems designed for rapid connection/disconnection
     
-    **Why Singapore?**
-    - **Financial centre**: Ranked top 5 globally (GFCI), robust banking sector
-    - **Regulatory framework**: MAS (Monetary Authority of Singapore) trusted regulator
-    - **Tax incentives**: Maritime sector incentives (MSI scheme, approved shipping companies)
-    - **Skilled workforce**: Finance and maritime expertise combined
-    - **Time zone**: Bridges Europe and Americas, Asia trading hours
+    **Environmental Impact:**
+    - **Zero local emissions**: No diesel exhaust whilst at berth (improves air quality for port workers, nearby residents)
+    - **CO₂ reduction**: Singapore grid ~70% natural gas, cleaner than vessel diesel generators
+    - **Future improvement**: As Singapore grid decarbonises (solar, offshore wind, imported renewable electricity),
+      shore power becomes carbon-neutral
     
-    **2024 Trends:**
-    - **Green finance**: Sustainability-linked loans (SLLs) for eco-vessels
-    - **Alternative fuel financing**: Higher risk premiums, specialized expertise needed
-    - **Cyber risk insurance**: Growing demand (maritime cyber threats increasing)
-    - **Asset-based finance**: Sale-and-leaseback transactions popular
+    **Economic Considerations:**
     
-    ---
+    **For Shipping Lines:**
+    - **Fuel savings**: Shore power cheaper than running diesel generators (grid electricity vs marine diesel)
+    - **Engine maintenance**: Reduced generator runtime = lower maintenance costs, longer engine life
+    - **Regulatory compliance**: Some jurisdictions (California, EU) requiring shore power usage
     
-    **4. Maritime Law and Arbitration - Asia's Centre**
+    **For Singapore:**
+    - **Infrastructure investment**: ~S$2-5 million per berth for shore power equipment
+    - **Attractiveness**: Eco-conscious cargo owners prefer ports offering shore power
+    - **Future-proofing**: As regulations tighten globally, shore power becomes necessity not option
     
-    **Legal Services:**
-    - **Maritime law firms**: 50+ firms with maritime expertise (Rajah & Tann, Allen & Gledhill, Watson Farley & Williams, etc.)
-    - **Singapore Chamber of Maritime Arbitration (SCMA)**: Neutral arbitration venue
-    - **Maritime courts**: Specialized judges, admiralty jurisdiction
-    - **Legal framework**: English common law (familiar to international shipping)
-    
-    **Services:**
-    - **Contracts**: Charterparties, bills of lading, shipbuilding contracts
-    - **Disputes**: Arbitration, litigation, mediation
-    - **Advisory**: Regulatory compliance, transactions, restructuring
-    - **Admiralty**: Ship arrests, maritime liens, salvage
-    
-    **Why Singapore?**
-    - **Neutral jurisdiction**: Not aligned with any major shipping nation
-    - **Trusted legal system**: Rule of law, predictable outcomes
-    - **Maritime expertise**: Judges and lawyers understand shipping
-    - **Efficiency**: Fast resolution compared to many jurisdictions
-    - **Regional hub**: Convenient for Asia-Pacific disputes
-    
-    **Growing Role:**
-    Singapore increasingly chosen for maritime arbitration (competing with London), especially for 
-    Asia-Pacific disputes. SCMA caseload growing, recognition increasing globally.
+    **Current Status:**
+    - **Tuas Phase 1**: Shore power being incorporated into operational berths
+    - **Incentives**: Green Port Programme offers additional rebates for vessels actually using shore power
+    - **Adoption challenge**: Relatively few vessels currently equipped with shore power connections (retrofitting expensive)
     """)
     
     # ============================================================================
-    # SECTION 4: Innovation and Digital Transformation
+    # SECTION 7: Key Takeaways
     # ============================================================================
     
-    st.markdown('<p class="section-header">Innovation and Digital Transformation</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Singapore is positioning itself as the world's leading maritime technology hub through coordinated 
-    initiatives spanning startups, R&D, digital platforms, and enabling infrastructure.
-    """)
-    
-    st.markdown('<p class="subsection-header">PIER71: Maritime Technology Ecosystem</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Port Innovation Ecosystem Reimagined @ BLOCK71 (PIER71)**
-    
-    **Overview:**
-    - **Joint initiative**: MPA + NUS Enterprise (National University of Singapore)
-    - **Launched**: 2018
-    - **Mission**: Grow Singapore into leading maritime technology startup hub
-    - **Partnership renewed**: March 2025 (3-year extension)
-    
-    **Achievements (2018-2025):**
-    - **140+ startups nurtured** (target: 150 by end 2025)
-    - **>S$100 million raised** in investments since 2018
-    - **2024 alone: S$28.9 million** raised by 14 startups
-    - **61 projects funded** through MINT grants
-    - **27 technologies deployed** in maritime industry from PIER71 startups
-    
-    **Programme Components:**
-    
-    **1. Smart Port Challenge (SPC):**
-    - **Annual competition** for maritime tech solutions
-    - **SPC 2024**: Record 200+ proposals received
-    - **14 challenge statements** across 4 key areas:
-      - Maritime green technologies
-      - Smart shipping
-      - Next generation ports
-      - Digitalisation (AI, cybersecurity, cloud)
-    - **Global expansion**: 2024 first year with international roadshows (6 cities across Asia, Europe, North America)
-    - **Prizes**: Up to S$250,000 for winners, plus MINT grant eligibility
-    
-    **2. PIER71 Accelerate:**
-    - **12-week programme** for shortlisted startups
-    - **Mentorship**: Industry experts, technical advisors
-    - **Industry connections**: Introductions to potential customers (shipping lines, ports)
-    - **Resources**: Facilities, test-bedding opportunities, regulatory support
-    - **Funding pathway**: MINT grant applications
-    
-    **3. PIER71 Ascend:**
-    - **Growth-stage programme** for scaling startups
-    - **Market access**: Help expand to international markets
-    - **Investment facilitation**: Connect with VCs, corporate investors
-    - **Network**: Global BLOCK71 ecosystem (Silicon Valley, China, etc.)
-    
-    **4. MINT Fund Grants:**
-    - **S$10 million fund** for maritime innovation
-    - **Since 2013**: Supported 1,800+ research scientists and engineers
-    - **80+ technologies deployed** in maritime sector from MINT projects
-    - **Grant levels**:
-      - Proof-of-concept: Up to S$100,000
-      - New product development: Up to S$250,000
-    - **2024 grants**: 5 startups awarded S$250,000 total (biofuel optimization, vessel monitoring, cybersecurity, inspection tools, depot digital twin)
-    
-    **Global Network:**
-    - **BLOCK71 integration**: Access to NUS' global startup network
-    - **International presence**: Leveraging MPA's regional offices worldwide
-    - **Partnerships**: Plug and Play (April 2025), major maritime clusters
-    - **Overseas expansion support**: Help startups enter new markets
-    
-    **2025 Enhancements:**
-    - **Expanded global outreach**: More international partnerships, roadshows
-    - **Stronger corporate engagement**: More shipping lines, ports involved as problem-owners
-    - **Investment catalysis**: Better access to maritime-focused VCs, corporate VCs
-    - **Singapore Leaders' Network (SGLN)**: MLP alumni integration for global insights
-    """)
-    
-    st.markdown('<p class="subsection-header">Digital Platforms and AI Applications</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Maritime Digital Twin (Launched March 24, 2025):**
-    - **Partnership**: MPA + GovTech (Government Technology Agency)
-    - **First in Singapore**: Dynamic virtual model of entire Port of Singapore
-    - **Capabilities demonstrated**:
-      - Real-time vessel monitoring and tracking
-      - Underwater visualisation (hull inspection, cleaning)
-      - Port operations simulation and optimization
-      - Risk assessment and scenario planning
-    - **Future use cases**:
-      - Predictive maintenance of port infrastructure
-      - Optimal berth allocation and traffic management
-      - Environmental impact monitoring
-      - Emergency response simulation
-    - **Alignment**: Singapore Geospatial Master Plan (2024-2033)
-    
-    **DocuMind and DocuMatch (AI Applications, Launched January 2025):**
-    - **DocuMind**: Multi-modal Large Language Model (LLM) application
-      - Reads information from various document formats
-      - Extracts relevant data automatically
-    - **DocuMatch**: Data verification application
-      - Verifies data against internal databases
-      - Recommends application approvals
-    - **Use case**: Singapore-registered ship certificate renewals
-    - **Impact**: Processing time reduced from **3 days to minutes** for most transactions
-    - **Rollout**: Pilot trials 2024, full industry adoption by end 2025
-    - **Future**: MPA plans more AI-driven tools for other maritime processes
-    
-    **Just-In-Time (JIT) Platform:**
-    - **Launched**: 2024 for container, general cargo, bulk sectors
-    - **Users onboarded**: 150+ port users (2024)
-    - **Purpose**: Coordinate vessel arrivals, optimize port resources
-    - **Benefits**: Reduce waiting time, lower emissions (vessels arrive exactly when berth ready)
-    - **Automation**: Working with shipping lines, marine service providers for data exchange
-    - **Expansion**: Tankers calling at terminals, all vessels in anchorages by end 2025
-    
-    **Digital Bunkering (Mandatory from April 1, 2025):**
-    - **Requirement**: All bunker suppliers must provide digital bunkering services
-    - **Default method**: Electronic Bunker Delivery Notes (e-BDN)
-    - **Pilot phase**: November 2023 - March 2025 (top 10 bunker players involved)
-    - **Benefits**:
-      - Efficient data sharing between buyers and suppliers
-      - Expedite administrative processes
-      - Improve accountability and compliance
-      - Reduce potential for errors
-      - Early detection of fraudulent activities
-      - Streamlined, secured, environmentally friendly process
-    - **Industry savings**: Close to 40,000 man-days annually
-    
-    **Maritime 5G Network:**
-    - **Status**: 5 base stations operational (2024), 7 more by end 2025
-    - **Full coverage**: All major fairways, anchorages, terminals, boarding grounds by end 2025
-    - **Total**: 12 base stations
-    - **Benefits**: Stronger, more stable connectivity throughout port
-    - **Enabled use cases**:
-      - Live data transfers for digital bunkering (ship-to-ship)
-      - Drone operations (ship-to-shore applications)
-      - Real-time communications and data exchange on ship movements
-      - Enhanced safety of navigation
-      - Remote operations and monitoring
-    
-    **Maritime Cyber Assurance and Operations Centre (MCAOC):**
-    - **Launched**: 2024
-    - **Services**: Real-time security monitoring, threat intelligence dissemination
-    - **Benefits**: Early action on cyber threats, pooled monitoring capabilities
-    - **Cost savings**: Estimated S$200,000 annually per participating company
-    - **Onboarded**: 16 companies as of 2024 (growing)
-    - **Importance**: Maritime sector increasingly targeted by cyber attacks
-    """)
-    
-    st.markdown('<p class="subsection-header">Research and Development</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Singapore Maritime Institute (SMI):**
-    - **Role**: Coordinate maritime R&D in Singapore
-    - **Partners**: Universities (NUS, NTU, SUTD), A*STAR research centres
-    - **Focus**: Academia-industry collaboration, technology translation
-    - **Outcomes**: R&D talent development, technology deployment to industry
-    
-    **Centres of Excellence:**
-    - **NUS**: Maritime Energy and Sustainable Development Centre, Centre for Maritime Studies
-    - **NTU**: Maritime Research Centre, Energy Research Institute
-    - **SUTD**: iTrust (Maritime Testbed for Ship Operational Technology - MariOT)
-    - **A*STAR**: Institute of High Performance Computing (IHPC), others
-    
-    **MariOT (Maritime Testbed for Ship Operational Technology):**
-    - **Launched**: April 2024 at iTrust SUTD Centre
-    - **Purpose**: Industrial-grade simulator for ship systems
-    - **Replicates**: Propulsion, machinery, energy, navigation systems
-    - **Use**: Cybersecurity training, testing solutions in controlled environment
-    - **Inaugural exercise**: March 2025
-    - **Goal**: Strengthen resilience against cyber threats
-    
-    **Research Focus Areas (2024-2025):**
-    - **Decarbonisation**: Alternative fuels, energy efficiency, emissions reduction
-    - **Digitalisation**: AI/ML, digital twin, autonomous systems, blockchain
-    - **Cybersecurity**: OT security, threat detection, resilience
-    - **Green technology**: Low-carbon fuels, renewable energy, electrification
-    - **Automation**: Autonomous vessels (MASS), unmanned systems, robotics
-    - **Port operations**: Optimization, predictive analytics, smart terminals
-    """)
-    
-    st.markdown('<p class="subsection-header">Regulatory Sandboxes and Test-Bedding</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Enabling Innovation Through Controlled Testing:**
-    
-    **1. Maritime Drone Estate:**
-    - Designated sea-space for maritime drone testing
-    - Safety regulations relaxed for approved trials
-    - Use cases: Inspections, surveillance, cargo delivery
-    
-    **2. Maritime Autonomous Surface Ships (MASS) Testbed:**
-    - Sea areas for autonomous vessel trials
-    - Progressive testing (remote-controlled → autonomous)
-    - International partnerships (Norway, Japan)
-    
-    **3. Living Labs:**
-    - Real port environment for technology trials
-    - Startups test solutions at Tuas Port, Pasir Panjang
-    - PSA and MPA support, monitored deployments
-    
-    **4. Alternative Fuel Trials:**
-    - **LNG bunkering**: Operational, expanding capacity
-    - **Methanol bunkering**: Commercial-scale trials, standards published
-    - **Ammonia bunkering**: World's first trials (9.74 tonnes 2024)
-    - **Biofuel blends**: Up to B50 commercially available, B100 trials ongoing
-    
-    **5. Green and Digital Shipping Corridors (GDSCs):**
-    - **6 corridors established** with international partners
-    - **Singapore - LA/Long Beach**: Just-in-time trials, alternative fuels
-    - **Singapore - Tianjin**: Green methanol quality standards, GHG intensity research
-    - **Singapore - Rotterdam/Antwerp**: Digital data exchange
-    - **Others**: Korea, Japan, Australia
-    - **Purpose**: Pilot alternative fuels, digital solutions on commercial routes
-    
-    **Philosophy:**
-    Singapore's approach is to enable innovation through structured testing rather than prohibit 
-    new technologies. Regulatory sandboxes allow companies to trial solutions safely, with MPA 
-    monitoring and adjusting regulations based on results. This accelerates deployment while 
-    maintaining safety and environmental standards.
-    """)
-    
-    # ============================================================================
-    # SECTION 5: Sustainability and Green Shipping
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Sustainability and Green Shipping</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Singapore is positioning itself as a green maritime hub through infrastructure investment, 
-    incentives, and international cooperation on decarbonisation.
-    """)
-    
-    st.markdown('<p class="subsection-header">Maritime Singapore Green Initiative (MSGI) - Refreshed 2024</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Refreshed Programme (2024):**
-    - **Purpose**: Encourage early adoption of zero and near-zero emission technologies and fuels
-    - **Alignment**: IMO GHG Strategy 2023 (net-zero by 2050)
-    - **Incentives**: Port dues discounts, grants, co-funding
-    - **Target vessels**: Green ships using alternative fuels, energy-efficient vessels
-    
-    **Green Ship Programme:**
-    - **Port dues reduction**: Up to 50% discount for qualifying eco-vessels
-    - **Criteria**: IMO Tier III engines, alternative fuels (LNG/methanol/ammonia), energy efficiency measures
-    - **Duration**: Multi-year incentives (5-year programmes)
-    
-    **Alternative Fuel Grants:**
-    - **LNG bunkering**: Price parity support during transition
-    - **Methanol**: Pilot programme support, price difference co-funded
-    - **Ammonia**: Future-ready, incentives under development
-    
-    **Shore Power Infrastructure:**
-    - **Objective**: Allow vessels to plug into grid electricity while at berth
-    - **Benefits**: Eliminate vessel emissions in port
-    - **Deployment**: Pilot installations at Tuas Port, expansion planned
-    - **Challenge**: High infrastructure cost, vessel compatibility
-    """)
-    
-    st.markdown('<p class="subsection-header">Alternative Fuel Infrastructure</p>', unsafe_allow_html=True)
-    
-    # Alternative fuels comparison
-    alt_fuels = pd.DataFrame({
-        'Fuel Type': ['Conventional (LSFO/MGO)', 'LNG', 'Methanol', 'Ammonia', 'Biofuels', 'Hydrogen'],
-        'Singapore Status (2024-2025)': [
-            'Fully operational (54.0M tonnes conventional in 2024)',
-            'Operational (0.46M tonnes in 2024, expanding)',
-            'Commercial-scale (1,626 tonnes in 2024, standards published)',
-            'Trials phase (9.74 tonnes world first, standards in dev 2025)',
-            'Commercial (0.88M tonnes blends up to B50, B100 trials)',
-            'R&D phase (no commercial bunkering yet)'
-        ],
-        'GHG Reduction vs Conventional': [
-            'Baseline (0%)',
-            '20-25% (lifecycle), near-zero SOx',
-            '10-15% (conventional), near-zero if green',
-            'Zero (if green ammonia)',
-            '30-80% (depending on blend, feedstock)',
-            'Zero (if green hydrogen)'
-        ],
-        'Availability': [
-            'Abundant globally',
-            'Growing (7% of global fleet capable)',
-            'Limited, production scaling',
-            'Very limited, in development',
-            'Limited, scaling production',
-            'Very limited, in development'
-        ],
-        'Challenges': [
-            'High GHG emissions, sulphur content',
-            'Methane slip, cryogenic storage, cost',
-            'Toxic, corrosive, lower energy density, cost 2× conventional',
-            'Toxic, NOx emissions, low energy density, cost',
-            'Feedstock availability, cost, compatibility',
-            'Low energy density, storage, cost, safety'
-        ],
-        'Singapore Investment': [
-            'Mature infrastructure',
-            'LNG terminals, bunkering vessels, reloading (EOI Dec 2024)',
-            'Bunkering facilities, Technical Reference 2024',
-            'Safety standards 2025, pilot infrastructure',
-            'Widely available (B50), trialing B100',
-            'R&D support, future infrastructure planned'
-        ]
-    })
-    
-    st.dataframe(alt_fuels, use_container_width=True, hide_index=True)
-    
-    st.markdown("""
-    **Alternative Fuels Trajectory (2024-2030):**
-    
-    **Current (2024-2025):**
-    - **Conventional fuels**: Still 97.6% of bunker market (53.58M of 54.92M tonnes)
-    - **Alternative fuels**: 2.4% (1.34M tonnes), but growing rapidly (doubled 2023-2024)
-    - **LNG**: Operational, commercial scale (0.46M tonnes)
-    - **Biofuels**: Commercially available (0.88M tonnes, up to B50 blends)
-    - **Methanol**: Commercial-scale trials (1,626 tonnes), standards published
-    - **Ammonia**: World's first bunkering trials (9.74 tonnes)
-    
-    **Near-term (2025-2027):**
-    - **LNG expansion**: Additional capacity via sea-based reloading (EOI Dec 2024)
-    - **Methanol scaling**: More bunkering infrastructure, commercial volumes growing
-    - **Ammonia standards**: Safety standards published 2025, pilot infrastructure
-    - **Biofuels B100**: Commercial availability after trials complete
-    - **Green corridors**: Operational routes with alternative fuel support
-    
-    **Medium-term (2027-2030):**
-    - **Alternative fuels target**: 10-15% of total bunker market
-    - **Methanol/Ammonia**: Mainstream options alongside LNG
-    - **Hydrogen**: Pilot projects beginning
-    - **e-fuels**: Early commercial availability (e-methanol, e-ammonia)
-    - **Shore power**: Widespread deployment at major terminals
-    
-    **Long-term (2030-2050):**
-    - **Net-zero pathway**: Align with IMO 2050 net-zero target
-    - **Alternative fuels dominant**: 50%+ of market by 2040
-    - **Zero-carbon fuels**: Green hydrogen, green ammonia, e-fuels mainstream by 2050
-    - **Singapore positioning**: Remain Asia's leading green fuels bunkering hub
-    """)
-    
-    st.markdown('<p class="subsection-header">Standards Development Leadership</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Singapore Standards (SS) for Alternative Fuels:**
-    
-    **Methanol Bunkering (Technical Reference Published 2024):**
-    - **Scope**: Safety procedures, crew competencies, custody transfer requirements
-    - **Mass Flow Meter (MFM)**: Framework for methanol MFM and digital documentation
-    - **Collaboration**: MPA + EnterpriseSG + industry stakeholders
-    - **Impact**: Enable safe, transparent methanol bunkering operations
-    - **Trials**: SIMOPS (Simultaneous Operations) trials completed 2024
-    
-    **Ammonia Bunkering (Standards Expected 2025):**
-    - **Development**: EnterpriseSG + MPA + industry + class societies
-    - **Scope**: Custody transfer, safety procedures, crew competencies, handling protocols
-    - **Challenge**: Ammonia is toxic, corrosive - requires stringent safety measures
-    - **Timeline**: Standards publication 2025, enable commercial bunkering 2026+
-    - **Global first**: Singapore among first globally to develop comprehensive ammonia bunkering standards
-    
-    **Why Standards Matter:**
-    - **Safety**: Ensure safe handling of new fuels
-    - **Commercial viability**: Industry needs standards to invest confidently
-    - **International acceptance**: Singapore standards may become regional/global benchmarks
-    - **First-mover advantage**: Early standards development attracts alternative fuel bunkering business
-    
-    **Global Leadership:**
-    Singapore actively contributes to IMO standards development, ensuring global regulations are 
-    workable and Singapore remains at forefront of alternative fuel adoption.
-    """)
-    
-    # ============================================================================
-    # SECTION 6: Key Takeaways
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Key Takeaways: Understanding Maritime Singapore</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Maritime Singapore's Global Position:**
-        - **#1 maritime centre**: 12th consecutive year (Xinhua-Baltic ISCDI 99.5/100, 2025)
-        - **#2 container port**: 41.12M TEU (2024, first time >40M), after Shanghai's 49.2M
-        - **#1 transshipment hub**: 90% transshipment ratio (37M+ TEU), world's largest
-        - **#1 bunkering port**: 54.92M tonnes (2024, 35+ consecutive years as largest)
-        - **Complete ecosystem**: 7 pillars fully developed (port, shipping, repair, ancillary, finance, legal, tech)
+        **Record-Breaking 2024 Performance:**
+        - Container throughput: **41.12M TEU** (first time crossing 40M)
+        - Vessel arrivals: **3.11B GT** (new record, 130,000+ vessel calls)
+        - Bunker sales: **54.92M tonnes** (world's largest, 6% growth)
+        - Alternative fuels: **1.34M tonnes** (doubled from 2023, exceeded 1M milestone)
+        - Ship registry: **108M GT** (5th largest globally, exceeded 100M GT first time)
+        - **#1 International Maritime Centre** for **12th consecutive year**
         
-        **2024 Record Performance:**
-        - **Container throughput**: 41.12M TEU (+5.4%)
-        - **Cargo**: 622.67M tonnes (+5.2%)
-        - **Vessel arrivals**: 3.11B GT (+0.6%, new record)
-        - **Bunker sales**: 54.92M tonnes (+6.0%, new record)
-        - **Alternative fuels**: 1.34M tonnes (doubled, >1M first time)
-        - **Singapore Registry**: 108M GT (+8.5%, >100M first time)
-        - **PSA Singapore**: 40.9M TEU (+5.5%, record)
-        - **PSA Global**: 100.2M TEU (>100M first time)
+        **Comprehensive Maritime Cluster:**
+        - **170+ international shipping groups** (liner, bulk, tanker, management companies)
+        - **30+ shipbroking firms** (facilitating global ship chartering, sales)
+        - **20+ banks with shipping portfolios** (billions in ship financing)
+        - **30+ maritime law firms** (disputes, contracts, arbitration)
+        - **10 IG P&I Clubs** (covering 95% of world's ocean-going tonnage)
+        - **~100 MarineTech startups** (raised ~S$50M in 4 years)
+        - **S$4.3B+ business spending** in maritime services (2022)
         
-        **Infrastructure Excellence:**
-        - **Tuas Mega Port**: 11 berths operational (2024), 7 more by 2027, 65M TEU capacity by 2040
-        - **Operational efficiency**: 10-16h turnaround, >90% BOA, 24/7/365 operations
-        - **Resilience**: Handled mid-2024 Red Sea congestion (Keppel reactivated, night-tows, coordination)
-        - **60+ container berths**: Across all terminals
-        - **200+ shipping lines**: Connected to 600+ ports in 120+ countries
+        **MPA's Unique Dual Role:**
+        - **Regulator**: Safety, security, standards, environment
+        - **Developer**: Industry growth, innovation, talent, infrastructure
+        - **Coordination benefit**: Long-term vision, rapid adaptation, aligned strategy
+        - **Tuas exemplifies**: S$20B investment combining efficiency with sustainability
         """)
     
     with col2:
         st.markdown("""
-        **MPA's Dual Role Success:**
-        - **Regulator**: Safety, security, standards, environmental protection
-        - **Developer**: Tuas Port, innovation ecosystem, industry growth, sustainability
-        - **Coordination**: Aligned strategy, no silos, long-term planning (30+ years)
-        - **Rapid adaptation**: Regulatory sandboxes, test-bedding, innovation-friendly
+        **Digital Transformation Leadership:**
+        - **digitalPORT@SG**: AI, digital twin, predictive maintenance, IoT sensors
+        - **digitalOCEANS**: Maritime domain awareness, integrated data platform
+        - **Electronic documentation**: eBL, e-BDN mandatory (April 2025), blockchain-based
+        - **PORTNET evolution**: Singapore's maritime single window since 1980s continuously upgraded
         
         **Innovation Ecosystem:**
-        - **PIER71**: 140+ startups (target 150 by end 2025), >S$100M raised since 2018
-        - **MINT Fund**: Since 2013, supported 1,800+ scientists/engineers, 80+ technologies deployed
-        - **Smart Port Challenge**: 200+ proposals (2024 record), S$250K prizes + grants
-        - **Maritime Digital Twin**: Launched March 24, 2025 (MPA + GovTech)
-        - **AI applications**: DocuMind/DocuMatch (certificate processing minutes vs 3 days)
-        - **Digital platforms**: JIT Platform (150+ users), digital bunkering (mandatory April 1, 2025)
-        - **Maritime 5G**: Full coverage by end 2025 (12 base stations)
-        - **Cyber centre (MCAOC)**: S$200K annual savings per company
+        - **BLOCK71**: First maritime innovation hub in region (est. 2018), accelerator for startups
+        - **MINT Fund**: Co-funds up to 50% of R&D/pilot projects, de-risks innovation
+        - **Academic partnerships**: SMI, NUS, NTU, SUTD providing research capabilities
+        - **MariOT testbed**: World's first maritime cybersecurity testing facility
+        - **Success stories**: 100+ startups, multiple commercial deployments, global technology exports
         
-        **Sustainability Leadership:**
-        - **Alternative fuels**: 1.34M tonnes (2024, doubled from 2023)
-          - LNG: 0.46M tonnes (operational, expanding)
-          - Biofuels: 0.88M tonnes (B50 commercial, B100 trials)
-          - Methanol: 1,626 tonnes (commercial, standards published 2024)
-          - Ammonia: 9.74 tonnes (world's first trials, standards 2025)
-        - **Green corridors**: 6 GDSCs with international partners
-        - **MSGI refreshed**: 2024 expanded incentives for zero/near-zero emission vessels
-        - **Standards leadership**: Methanol (2024), ammonia (2025) bunkering standards
+        **Green Maritime Leadership:**
+        - **Green Port Programme**: Port due rebates (up to 75%) for eco-friendly vessels
+        - **LNG bunkering**: 0.46M tonnes (2024), world-class infrastructure, 4× growth
+        - **Biofuels**: 0.88M tonnes (2024), B50 commercial, B100 trials
+        - **Methanol**: Commercial-scale supply available, infrastructure expanding
+        - **Ammonia**: World-first bunkering trials completed (2024)
+        - **Shore power**: All Tuas berths designed with shore power capability
+        - **Multi-fuel strategy**: Hedging across all alternative fuel types
         
-        **Competitive Moat:**
-        - **Network effects**: More carriers → more cargo → more services → more carriers
-        - **High switching costs**: Complete ecosystem, established relationships, operational integration
-        - **First-mover advantages**: Alternative fuels, digital platforms, innovation ecosystem
-        - **Government support**: Long-term vision, coordinated strategy, sustained investment
+        **Strategic Switching Costs:**
+        - Complete ecosystem creates **enormous relocation costs** for maritime businesses
+        - Network effects strengthen over time (more players → more value → attracts more players)
+        - Long-term government commitment provides **certainty** for major investments
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Singapore has built the world's most comprehensive maritime 
-    ecosystem over 70+ years, combining world-class port infrastructure (41.12M TEU in 2024, first 
-    time >40M) with a complete cluster of services (bunkering 54.92M tonnes world's largest, ship 
-    repair 40+ yards, finance, legal, technology). MPA's dual role as regulator and developer enables 
-    coordinated long-term strategy, exemplified by the S$20B+ Tuas Mega Port project (11 berths 
-    operational, ultimate 65M TEU capacity by 2040).
-    <br><br>
-    <strong>Innovation leadership</strong> is accelerating through PIER71 (140+ startups, >S$100M raised), 
-    Maritime Digital Twin (launched March 2025), AI applications (DocuMind/DocuMatch reduce certificate 
-    processing to minutes), JIT Platform (150+ users), digital bunkering (mandatory April 1, 2025), 
-    and Maritime 5G (full coverage end 2025). The MINT Fund has supported 1,800+ scientists/engineers 
-    and deployed 80+ technologies since 2013.
-    <br><br>
-    <strong>Sustainability positioning</strong> is strategic: Alternative fuel sales doubled to 1.34M 
-    tonnes in 2024 (LNG 0.46M, biofuels 0.88M, methanol 1,626 tonnes commercial, ammonia 9.74 tonnes 
-    world's first trials). Singapore published methanol bunkering standards (2024) and is developing 
-    ammonia standards (2025), positioning itself as Asia's green fuels bunkering hub. Six Green and 
-    Digital Shipping Corridors with international partners pilot alternative fuels and digital solutions.
-    <br><br>
-    <strong>2025-2030 outlook:</strong> Singapore aims to maintain #1 maritime centre ranking by: 
-    (1) Completing Tuas Port (18 berths by 2027), (2) Growing alternative fuel market share to 10-15%, 
-    (3) Expanding PIER71 to 150+ startups, (4) Scaling digital platforms industry-wide, (5) Strengthening 
-    global green corridors network. The comprehensive ecosystem creates high switching costs and network 
-    effects—once companies establish operations in Singapore, the ecosystem makes it efficient to keep 
-    all maritime services here. This competitive moat, combined with continuous innovation and government 
-    support, positions Singapore to remain the world's premier maritime hub for decades to come.
+    <strong>🔍 Bottom Line:</strong> Singapore has systematically built the world's most comprehensive maritime 
+    ecosystem over 70+ years, earning the #1 International Maritime Centre ranking for 12 consecutive years. The 2024 
+    record-breaking performance (41.12M TEU containers, 3.11B GT vessel arrivals, 54.92M tonnes bunker sales) 
+    demonstrates continued growth momentum despite global supply chain challenges. Beyond physical infrastructure, 
+    Singapore offers a complete maritime cluster (170+ shipping groups, 30+ shipbroking firms, 20+ banks, 30+ law 
+    firms, 100+ tech startups) providing every conceivable maritime service under one roof. MPA's globally unique dual 
+    role as both regulator and strategic developer enables coordinated long-term planning exemplified by the S$20 billion 
+    Tuas Mega Port investment. Digital transformation initiatives (digitalPORT@SG, digitalOCEANS, mandatory electronic 
+    documentation) position Singapore as a Maritime 4.0 leader. The innovation ecosystem (BLOCK71 accelerator, MINT 
+    Fund co-financing, academic partnerships) cultivates maritime technology startups that benefit Singapore first before 
+    scaling globally. Sustainability leadership through multi-fuel strategy (LNG, biofuels, methanol, ammonia), Green 
+    Port Programme incentives, and universal shore power at Tuas prepares Singapore for maritime decarbonisation 
+    regardless of which alternative fuel ultimately dominates. This comprehensive, integrated approach creates 
+    **extraordinarily high switching costs** and powerful **network effects**—once maritime companies establish Singapore 
+    operations, the ecosystem makes it economically rational to consolidate all their maritime services here, reinforcing 
+    Singapore's position as the world's indispensable maritime hub.
     </div>
     """, unsafe_allow_html=True)
     
@@ -971,8 +1225,10 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** ⚓ Port Strategy & Competition - Explore the critical success factors for transshipment 
-    hubs, competitive dynamics between Singapore and regional ports (Port Klang, Tanjung Pelepas, Colombo, 
-    Jebel Ali), strategic planning frameworks, and Singapore's response to competition through Tuas Port 
-    investment and ecosystem development.
+    **Next Topic:** 🏆 Port Strategy & Competition - Explore the eight critical success factors for transshipment 
+    hubs (efficiency, reliability, connectivity, infrastructure, workforce, location, government support, 
+    technology), analyse competitive dynamics across gateway ports vs transshipment hubs, examine strategic planning 
+    frameworks (SWOT analysis, Porter's Five Forces, scenario planning), understand Singapore's strategic response 
+    to regional competition (Malaysia, Indonesia, Thailand, Vietnam), and master the "vital port in interconnected 
+    network" philosophy versus the "biggest hub" mentality.
     """)
