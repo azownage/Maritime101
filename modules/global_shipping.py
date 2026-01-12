@@ -8,91 +8,146 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand industry consolidation, the dramatic 2025 alliance reshuffling, the power of shipping 
-    alliances, hub-and-spoke network structures, and how geopolitics shapes global shipping patterns.
+    Understand the dramatic industry consolidation from 15+ independent carriers to just 9 major players 
+    organised into alliances, comprehend the February 2025 alliance restructuring (dissolution of 2M Alliance, 
+    formation of Gemini Cooperation and Premier Alliance), master the hub-and-spoke network model with Singapore 
+    as the world's premier transshipment hub (85% transshipment cargo), and grasp how geopolitics is reshaping 
+    global trade patterns through "China+1" diversification strategies.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Industry Consolidation
+    # SECTION 1: Industry Consolidation - From Fragmentation to Concentration
     # ============================================================================
     
     st.markdown('<p class="section-header">Industry Consolidation: From Many to Few</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The container shipping industry has undergone dramatic consolidation over the past two decades. 
-    What was once a fragmented industry with dozens of independent carriers is now dominated by 
-    a handful of mega-carriers and strategic alliances.
+    The container shipping industry has undergone one of the most dramatic consolidation waves in modern commerce. 
+    What was once a highly fragmented industry with dozens of independent carriers competing globally has transformed 
+    into an oligopoly dominated by just **nine major players** organised into strategic alliances that now control 
+    **83% of global container capacity**. Understanding this consolidation journey is essential to comprehending 
+    today's maritime power structure and competitive dynamics.
     """)
     
-    st.markdown('<p class="subsection-header">The Consolidation Journey</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">The Consolidation Journey: Two Decades of Transformation</p>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.metric("Year 2000", "15+ Major Carriers", help="Independent carriers competing globally")
+        st.metric("Year 2000", "15+ Major Carriers", delta="Fragmented competition", help="Independent carriers competing globally")
     with col2:
-        st.metric("Year 2025", "9 Major Players", help="After mergers, acquisitions, and bankruptcies")
+        st.metric("Year 2025", "9 Major Players", delta="-6 carriers through M&A", help="After mergers, acquisitions, and bankruptcies")
     with col3:
-        st.metric("Alliance/Solo Control", "~80%", help="Four groups (3 alliances + MSC solo) control ~80% of global capacity")
+        st.metric("Alliance Control", "83%", delta="Oligopoly power", help="Three alliance structures control 83% of global capacity")
     
     st.markdown("""
-    **Key Consolidation Events:**
+    **The Consolidation Timeline:**
     
-    **1990s-2000s: Fragmented Competition**
-    - 15+ major global carriers competing independently
-    - Regional carriers dominating local trades
-    - Minimal cooperation beyond vessel sharing
-    - Intense price competition, thin margins
+    **Phase 1: Fragmented Competition (1990s-2000s)**
     
-    **2010s: Merger Wave Begins**
-    - **2005**: P&O Nedlloyd acquired by Maersk
-    - **2014**: Hamburg Süd acquired by Maersk (completed 2017)
-    - **2016**: APL acquired by CMA CGM
-    - **2016**: Hanjin Shipping bankruptcy (world's 7th largest carrier collapsed)
-    - **2017**: OOCL acquired by COSCO ($6.3 billion)
-    - **2018**: Japanese carriers (NYK, MOL, K Line) merge into ONE
+    At the turn of the millennium, the container shipping industry was highly competitive and fragmented:
     
-    **2020s: Alliance Dominance and Reshuffling**
-    - **2015-2024**: Three mega-alliances control 80-83% of global capacity
-    - **2023**: Maersk & MSC announce 2M Alliance dissolution
-    - **2024**: Major alliance reshuffling announced
-    - **2025**: Complete restructuring takes effect (February 1)
-    - **Current**: Four groups compete (3 alliances + MSC solo)
+    - **15+ major global carriers** competing independently across international routes
+    - Dozens of **regional carriers** dominating specific trade lanes (intra-Asia, Mediterranean, etc.)
+    - **Minimal cooperation** beyond occasional vessel sharing agreements
+    - **Intense price competition** driving down freight rates
+    - **Low barriers to entry**: Relatively easy for new entrants to charter vessels and compete
+    - **Capacity disciplined**: Carriers matched capacity to demand, avoiding chronic overcapacity
+    
+    This era was characterised by healthy competition, stable margins, and relatively predictable market dynamics. 
+    However, the seeds of change were already planted—the race to build ever-larger vessels was beginning, setting 
+    the stage for the overcapacity crisis that would force consolidation.
+    
+    **Phase 2: The Merger Wave Begins (2005-2016)**
+    
+    The 2000s saw the beginning of consolidation through mergers and acquisitions:
+    
+    - **2005**: P&O Nedlloyd acquired by **Maersk** ($3.3 billion deal)
+      - Created the undisputed global leader
+      - Combined fleet exceeded 2 million TEU
+      - Demonstrated that scale advantages were compelling
+    
+    - **2014-2017**: **Hamburg Süd** acquired by Maersk (completed 2017, $4 billion)
+      - Strengthened Maersk's Latin America presence
+      - Added 600,000 TEU capacity
+      - Consolidated North-South trades
+    
+    - **2016**: **APL** (American President Lines) acquired by **CMA CGM** ($2.4 billion)
+      - Gave CMA CGM strong US flag presence
+      - Enhanced trans-Pacific services
+      - Combined became #3 global carrier
+    
+    - **2016**: **Hanjin Shipping bankruptcy** - A watershed moment
+      - World's 7th largest carrier collapsed
+      - Left 500,000 TEU of cargo stranded at sea
+      - 97 vessels arrested worldwide
+      - Demonstrated that scale was now survival necessity
+      - "Get big or get out" became industry mantra
+    
+    - **2017**: **OOCL** acquired by **COSCO** ($6.3 billion)
+      - Created Chinese mega-carrier
+      - Combined capacity ~3 million TEU
+      - Gave Chinese state-owned enterprise global reach
+    
+    - **2018**: Three **Japanese carriers merge** into ONE (Ocean Network Express)
+      - **NYK, MOL, and K Line** combined container operations
+      - Created 7th largest carrier globally
+      - Response to inability to compete individually
+      - Kept cruise and bulk operations separate
+    
+    **Phase 3: Alliance Dominance and Ongoing Consolidation (2017-Present)**
+    
+    By 2017, the industry had consolidated into a new structure dominated by three mega-alliances. Then in 
+    **February 2025**, a dramatic restructuring occurred:
+    
+    - **Three alliance structures** now control **83% of global container capacity**
+    - Only **9 major carriers** remain as significant global players
+    - **Alliance cooperation** on operations whilst maintaining **pricing competition**
+    - **Further consolidation expected**: Smaller independent carriers face existential pressure
+    - **Regulatory scrutiny increasing**: Competition authorities monitoring for anti-competitive behaviour
+    
+    The lecture materials explicitly state: **"Consolidations & Alliances in the industry – from 15 to 9 main 
+    players; carrying 83% of shipping volumes."** This concentration represents one of the most dramatic 
+    industry consolidations in modern economic history.
     """)
     
-    # Industry consolidation data - updated through 2025
+    # Enhanced consolidation data
     consolidation_data = pd.DataFrame({
-        'Year': [2000, 2005, 2010, 2015, 2017, 2020, 2024, 2025],
-        'Number of Major Carriers': [17, 15, 15, 15, 12, 10, 9, 9],
-        'Top 3 Market Share (%)': [28, 32, 35, 39, 42, 48, 52, 54],
-        'Alliance/Group Control (%)': [0, 15, 35, 60, 75, 82, 83, 80]
+        'Year': [2000, 2005, 2010, 2015, 2017, 2020, 2025],
+        'Number of Major Carriers': [17, 15, 15, 15, 12, 10, 9],
+        'Top 3 Market Share (%)': [28, 32, 35, 39, 42, 48, 54],
+        'Alliance Control (%)': [0, 15, 35, 60, 75, 82, 83]
     })
     
-    # Create side-by-side charts
+    # Create side-by-side evolution charts
     col1, col2 = st.columns(2)
     
     with col1:
         fig1 = go.Figure()
         fig1.add_trace(go.Scatter(
             x=consolidation_data['Year'],
-            y=consolidation_data['Alliance/Group Control (%)'],
+            y=consolidation_data['Alliance Control (%)'],
             mode='lines+markers',
             fill='tozeroy',
-            line=dict(color='#3B82F6', width=3),
-            marker=dict(size=10),
-            name='Alliance/Group Control'
+            line=dict(color='#3B82F6', width=4),
+            marker=dict(size=12, color='#2563EB', line=dict(color='white', width=2)),
+            name='Alliance Control'
         ))
         fig1.update_layout(
-            title='Alliance/Group Control Growth',
+            title={
+                'text': 'Alliance Control Growth<br>(0% → 83% in 25 years)',
+                'x': 0.5,
+                'xanchor': 'center'
+            },
             xaxis_title="Year",
-            yaxis_title="Market Control (%)",
-            height=350,
+            yaxis_title="Alliance Control (%)",
+            height=380,
             plot_bgcolor='white',
             yaxis=dict(gridcolor='#E5E7EB', range=[0, 100]),
             xaxis=dict(gridcolor='#E5E7EB')
         )
-        st.plotly_chart(fig1, use_container_width=True)
+        st.plotly_chart(fig1, width='stretch')
     
     with col2:
         fig2 = go.Figure()
@@ -101,161 +156,390 @@ def show():
             y=consolidation_data['Number of Major Carriers'],
             mode='lines+markers',
             fill='tozeroy',
-            line=dict(color='#EF4444', width=3),
-            marker=dict(size=10),
+            line=dict(color='#EF4444', width=4),
+            marker=dict(size=12, color='#DC2626', line=dict(color='white', width=2)),
             name='Major Carriers'
         ))
         fig2.update_layout(
-            title='Number of Major Players Declining',
+            title={
+                'text': 'Major Players Declining<br>(17 → 9 carriers)',
+                'x': 0.5,
+                'xanchor': 'center'
+            },
             xaxis_title="Year",
             yaxis_title="Number of Major Carriers",
-            height=350,
+            height=380,
             plot_bgcolor='white',
             yaxis=dict(gridcolor='#E5E7EB', range=[0, 20]),
             xaxis=dict(gridcolor='#E5E7EB')
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width='stretch')
     
     st.markdown("""
-    **Why Consolidation Happened:**
+    **Why Consolidation Happened: The Perfect Storm**
     
-    **Overcapacity Crisis (2015-2016):**
-    - Carriers ordered too many mega vessels in 2000s-2010s
-    - Supply growth exceeded demand growth → Freight rates collapsed
-    - Many carriers losing money (2015-2016 particularly severe)
-    - Hanjin bankruptcy shocked industry (August 2016)
-    - Forced wave of mergers, acquisitions, and consolidation
+    **Root Cause: The Chronic Overcapacity Crisis**
     
-    **Economies of Scale:**
-    - Bigger carriers negotiate better prices with ports and suppliers
-    - Spread fixed costs (IT systems, management, brand) over larger volumes
-    - Larger networks attract more customers (network effects)
-    - Better bargaining power with ports for terminal rates
-    - Can deploy mega vessels economically (20,000+ TEU)
+    The fundamental driver of consolidation was a massive overcapacity crisis that plagued the industry for over 
+    a decade:
     
-    **Survival Strategy:**
-    - Small carriers couldn't compete on costs alone
-    - Mergers and acquisitions provided scale economies
-    - Alliances allowed cooperation without full mergers
-    - **"Get big or get out"** became industry mantra
-    - Only the largest survived profitably
+    - **Vessel ordering spree (2005-2015)**: Carriers ordered hundreds of mega vessels during boom years
+    - **Construction lag**: Vessels ordered in 2010-2012 delivered in 2014-2016, after demand had cooled
+    - **Supply exceeded demand**: Global container capacity grew 8-10% annually whilst demand grew only 3-5%
+    - **Freight rate collapse**: Average rates fell 60-70% from 2010 peaks to 2016 lows
+    - **Industry-wide losses**: 2015-2016 saw carriers collectively lose billions of dollars
+    - **Hanjin bankruptcy**: The collapse of world's 7th largest carrier shocked the industry into action
+    
+    **Economic Imperative: Economies of Scale**
+    
+    Larger scale provides compelling cost advantages:
+    
+    - **Purchasing power**: Mega carriers negotiate 20-30% better prices with ports, suppliers, fuel providers
+    - **Fixed cost spreading**: IT systems, management, marketing costs spread over larger volumes
+    - **Network effects**: Larger networks attract more customers (virtuous cycle)
+    - **Bargaining power**: Can demand favourable terminal lease terms, priority berth access
+    - **Survival threshold**: Below 2-3% global market share, carriers cannot compete profitably
+    
+    **The Survival Imperative: "Get Big or Get Out"**
+    
+    Small and mid-sized carriers faced an impossible situation:
+    
+    - **Cannot match mega-carrier costs**: Structural cost disadvantage of 15-25% per TEU
+    - **Cannot afford mega vessels**: $150-200M per ULCS requires enormous capital
+    - **Cannot maintain global networks**: Need minimum scale to serve all major trade lanes
+    - **Caught in vicious cycle**: Low volumes → high unit costs → customer defections → lower volumes
+    
+    **Strategic responses**:
+    - **Merge or acquire**: Combine to reach minimum efficient scale
+    - **Join alliance**: Share vessels with partners to gain network coverage
+    - **Exit the market**: Bankruptcy (Hanjin) or sell to larger carrier (OOCL sold to COSCO)
+    
+    The result: "Get big or get out" became the industry mantra. Mid-sized carriers had no viable independent future.
     """)
     
     # ============================================================================
-    # SECTION 2: The Great Reshuffling of 2025
+    # SECTION 2: The Alliance Restructuring of February 2025
     # ============================================================================
     
-    st.markdown('<p class="section-header">The Great Reshuffling of 2025</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">February 2025: The Great Alliance Restructuring</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    In **February 2025**, the global shipping alliance landscape underwent its most dramatic transformation since 
+    alliances were first formed. The 2M Alliance—which had dominated global shipping for a decade—dissolved, 
+    triggering a complete reorganisation of carrier partnerships. Understanding this restructuring is essential 
+    for anyone involved in maritime logistics, as it fundamentally changes how global container shipping operates.
+    """)
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ MAJOR INDUSTRY RESTRUCTURING - February 1, 2025</strong><br>
-    The alliance structure that dominated container shipping for a decade completely changed on February 1, 2025. 
-    The 2M Alliance (MSC + Maersk) dissolved, THE Alliance lost its largest member, and two new competitive 
-    groups emerged. This represents the biggest reshuffling of global shipping alliances since their formation.
+    <strong>🔄 CRITICAL UPDATE: February 2025 Alliance Restructuring</strong><br><br>
+    The alliance structure described in most 2024 materials is now <strong>outdated</strong>. As of February 2025, 
+    the industry has completely reorganised:<br><br>
+    <strong>DISSOLVED:</strong> 2M Alliance (MSC + Maersk) - Ended after 10 years<br>
+    <strong>DISSOLVED:</strong> THE Alliance name - Rebranded as Premier Alliance<br><br>
+    <strong>NEW:</strong> Gemini Cooperation (Maersk + Hapag-Lloyd) - Launched February 2025<br>
+    <strong>NEW:</strong> Premier Alliance (ONE + HMM + Yang Ming) - Rebranded from THE Alliance<br>
+    <strong>CHANGED:</strong> MSC now operates independently with selective cooperation<br>
+    <strong>UNCHANGED:</strong> Ocean Alliance continues (CMA CGM + COSCO + OOCL + Evergreen)
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown('<p class="subsection-header">Timeline of the 2025 Reshuffling</p>', unsafe_allow_html=True)
-    
-    # Timeline
-    timeline_data = pd.DataFrame({
-        'Date': [
-            'January 2023',
-            'January 17, 2024',
-            'September 9, 2024',
-            'January 31, 2025',
-            'February 1, 2025',
-            'February-May 2025',
-            'June 2025'
-        ],
-        'Event': [
-            '2M Alliance Dissolution Announced',
-            'Gemini Cooperation Announced',
-            'Premier Alliance Announced',
-            'Last Day of 2M and THE Alliances',
-            'New Alliance Structure Takes Effect',
-            'Transition Period (Network Phase-In)',
-            'Gemini Fully Operational'
-        ],
-        'Impact': [
-            'MSC & Maersk announce end of 10-year partnership (effective Jan 2025)',
-            'Maersk + Hapag-Lloyd announce new long-term cooperation starting Feb 2025',
-            'ONE + HMM + Yang Ming announce 5-year cooperation (THE rebranded)',
-            '2M ends after decade; Hapag-Lloyd exits THE Alliance 2 years early',
-            'Ocean (unchanged), Gemini (new), Premier (rebranded), MSC (solo) begin',
-            'Gradual rollout of new networks, services, port rotations',
-            'All Gemini vessels operating on new schedules, >90% reliability target'
-        ]
-    })
-    
-    st.dataframe(timeline_data, use_container_width=True, hide_index=True)
-    
-    st.markdown("""
-    **Why the Reshuffling Happened:**
-    
-    **MSC-Maersk Divorce (2M Dissolution):**
-    - **Strategic divergence**: MSC focused on aggressive growth and scale; Maersk pivoted to integrated logistics
-    - **Cultural mismatch**: MSC owner-operated (Aponte family); Maersk publicly traded (shareholder pressure)
-    - **Growth trajectories**: MSC adding capacity rapidly (400+ ships in 5 years); Maersk more selective
-    - **Business models**: MSC remains pure shipping; Maersk expanding into air freight, warehousing, trucking
-    - **Scale disparity**: By 2024, MSC (6.4M TEU) had grown 50% larger than Maersk (4.5M TEU)
-    - **Competitive tension**: Partners becoming rivals rather than collaborators
-    
-    **Maersk-Hapag-Lloyd Partnership (Gemini Formation):**
-    - **"Like-minded" carriers**: Both focus on reliability, service quality, decarbonisation
-    - **Complementary assets**: Both own terminal networks (APM Terminals, Hapag-Lloyd terminals)
-    - **Environmental alignment**: Maersk (net-zero 2040), Hapag-Lloyd (2045) - most ambitious timelines
-    - **Operational philosophy**: Both prioritise schedule reliability over maximum port coverage
-    - **Strategic fit**: Gemini enables Maersk's integrator strategy with controlled terminals
-    
-    **THE Alliance Breakdown (Hapag-Lloyd Exit):**
-    - Hapag-Lloyd left 2 years ahead of schedule (original agreement until March 2027)
-    - Remaining members (ONE, HMM, Yang Ming) rebranded as **Premier Alliance**
-    - Loss of largest member (Hapag-Lloyd ~2M TEU) created capacity gap
-    - Premier now smallest alliance (~3.6M TEU), must prove viability
-    
-    **MSC Goes Solo:**
-    - World's largest carrier (7.1M TEU) has scale to operate independently
-    - Flexibility to deploy capacity without alliance constraints
-    - Can optimise network for its own strategic priorities
-    - Retains slot exchange partnerships (e.g., with ZIM on trans-Pacific)
-    """)
-    
-    # ============================================================================
-    # SECTION 3: The New Alliance Structure (2025-Present)
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">The New Alliance Structure (2025-Present)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    As of February 1, 2025, global container shipping is organised into **four competitive groups**: 
-    three alliances (Ocean Alliance, Gemini Cooperation, Premier Alliance) plus MSC operating independently.
-    """)
-    
-    # New alliance data (2025)
+    # Updated alliance data reflecting February 2025 changes
     alliance_data_2025 = pd.DataFrame({
-        'Group': ['Ocean Alliance', 'Gemini Cooperation', 'MSC (Independent)', 'Premier Alliance', 'Other Independents'],
-        'Market Share (%)': [29, 21, 20, 11, 19],
-        'Total Capacity (M TEU)': [8.91, 6.75, 7.10, 3.57, 6.5],
-        'Operational Capacity (M TEU)': [3.8, 3.4, 6.4, 3.0, 'N/A'],
-        'Number of Vessels (Operational)': [330, 290, 886, 250, 'Varies'],
-        'Key Members': [
-            'CMA CGM, COSCO, OOCL, Evergreen',
+        'Alliance/Carrier': ['Gemini Cooperation', 'Ocean Alliance', 'Premier Alliance', 'MSC (Independent)', 'Other Independents'],
+        'Members': [
             'Maersk, Hapag-Lloyd',
-            'MSC only',
+            'CMA CGM, COSCO, OOCL, Evergreen',
             'ONE, HMM, Yang Ming',
-            'ZIM, Wan Hai, PIL, others'
-        ]
+            'MSC (cooperates with Premier on Asia-Europe)',
+            'ZIM, regional carriers'
+        ],
+        'Est. Market Share (%)': [25, 30, 17, 20, 8],
+        'Est. Fleet Capacity (M TEU)': [3.4, 3.7, 2.3, 2.5, 1.0],
+        'Formation/Status': ['Feb 2025 (New)', 'Continues from 2017', 'Feb 2025 (Rebranded)', 'Feb 2025 (Independent)', 'Various']
     })
     
-    st.dataframe(alliance_data_2025, use_container_width=True, hide_index=True)
+    st.dataframe(alliance_data_2025, width='stretch', hide_index=True)
     
-    # Market share visualization
+    st.markdown('<p class="subsection-header">1. Gemini Cooperation (Est. ~25% Market Share)</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.markdown("""
+        **Members:**
+        - **Maersk** (Denmark)
+        - **Hapag-Lloyd** (Germany)
+        
+        **Formation:** February 2025
+        
+        **Fleet:**
+        - ~290 vessels
+        - ~3.4M TEU capacity
+        
+        **Strategic Focus:**
+        - Hub-and-spoke model
+        - Schedule reliability (target >90%)
+        - Integrated logistics
+        """)
+    
+    with col2:
+        st.markdown("""
+        **The New Partnership:**
+        
+        **Background**: Maersk exited the 2M Alliance with MSC and Hapag-Lloyd left THE Alliance to form this 
+        new partnership. This represents a fundamental strategic shift for both companies.
+        
+        **Strategic Rationale:**
+        - **Maersk's evolution**: Shifting from pure carrier to integrated logistics provider (end-to-end supply chain)
+        - **Hapag-Lloyd's positioning**: Seeking reliable partner after THE Alliance dissolution
+        - **Complementary strengths**: Maersk's global brand and digital capabilities + Hapag-Lloyd's operational efficiency
+        - **Divergence from MSC**: Maersk pursuing different business model than MSC's pure-carrier, volume-growth strategy
+        
+        **Network Design: Hub-and-Spoke Focus**
+        
+        Unlike traditional alliance models, Gemini emphasises a hub-and-spoke approach:
+        - Consolidate cargo at major hub ports (Singapore, Rotterdam, New York)
+        - Use feeder vessels for final distribution to smaller ports
+        - Reduces port congestion and improves schedule integrity
+        - Requires efficient terminal coordination
+        
+        **Key Trade Routes:**
+        - Asia-Europe (via Suez Canal when accessible, Cape of Good Hope alternative)
+        - Trans-Pacific (Asia-North America West Coast and via Panama to East Coast)
+        - Transatlantic (Europe-North America)
+        - Asia-Middle East
+        
+        **Service Priorities:**
+        - **Schedule reliability >90%**: Industry-leading target
+        - **Streamlined port calls**: Fewer ports per string, deeper calls at selected hubs
+        - **Digital integration**: Advanced cargo tracking, predictive ETAs, automated documentation
+        """)
+    
+    st.markdown('<p class="subsection-header">2. Ocean Alliance (Est. ~30% Market Share) - UNCHANGED</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.markdown("""
+        **Members:**
+        - **CMA CGM** (France)
+        - **COSCO** (China)
+        - **OOCL** (Hong Kong/China)
+        - **Evergreen** (Taiwan)
+        
+        **Formation:** 2017
+        **Extended:** Through 2032
+        
+        **Fleet:**
+        - ~650 vessels
+        - ~3.7M TEU capacity
+        
+        **Status:**
+        - Largest alliance by capacity
+        - Most stable partnership
+        - No changes in Feb 2025
+        """)
+    
+    with col2:
+        st.markdown("""
+        **The Stable Giant:**
+        
+        **Why Ocean Alliance Survived Unchanged:**
+        
+        Ocean Alliance is the only major alliance partnership that remained intact through the February 2025 
+        restructuring. This stability reflects several factors:
+        
+        - **Long-term commitment**: Extended cooperation agreement through 2032
+        - **Complementary markets**: Members serve different home markets (France, China, Taiwan)
+        - **Balanced partnership**: No single dominant member (unlike 2M where MSC overtook Maersk)
+        - **Successful collaboration**: Strong track record of operational cooperation since 2017
+        
+        **Member Profiles:**
+        
+        **CMA CGM (France)**: 
+        - 3rd largest global carrier (~12% market share)
+        - Strong in French-speaking Africa, Mediterranean, Latin America
+        - Family-owned (Saadé family), long-term strategic thinking
+        - Investing heavily in LNG-powered vessels (environmental leadership)
+        
+        **COSCO (China)**:
+        - State-owned Chinese carrier (~11% market share)
+        - Acquired OOCL in 2017 but maintains separate brand
+        - Critical access to Chinese domestic market
+        - Belt and Road Initiative alignment
+        
+        **OOCL (Hong Kong/China)**:
+        - Subsidiary of COSCO but operationally independent
+        - Premium brand positioning
+        - Strong Hong Kong hub connectivity
+        
+        **Evergreen (Taiwan)**:
+        - Family-owned Taiwanese carrier (~6% market share)
+        - Intra-Asia expertise
+        - Taiwan Strait trade access
+        - Operates Ever Given (the vessel that blocked Suez Canal in 2021)
+        
+        **Key Trade Routes:**
+        - Asia-Europe (multiple services, comprehensive coverage)
+        - Trans-Pacific (all major port pairs)
+        - Asia-Middle East-Red Sea (when accessible)
+        - Strong intra-Asia feeder networks
+        
+        **Strategic Advantages:**
+        - **Asian market access**: Three members provide unmatched Asia coverage
+        - **Political diversity**: French, Chinese, and Taiwanese carriers reduce geopolitical risk
+        - **Service frequency**: Large combined fleet enables multiple weekly sailings
+        """)
+    
+    st.markdown('<p class="subsection-header">3. Premier Alliance (Est. ~17% Market Share) - REBRANDED</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.markdown("""
+        **Members:**
+        - **ONE** (Japan)
+        - **HMM** (South Korea)
+        - **Yang Ming** (Taiwan)
+        
+        **Formation:** 
+        - THE Alliance: 2017
+        - Rebranded to Premier Alliance: Feb 2025
+        
+        **Fleet:**
+        - ~350 vessels
+        - ~2.3M TEU capacity
+        
+        **Status:**
+        - Smallest of three alliances
+        - Lost Hapag-Lloyd to Gemini
+        - Cooperates with MSC on Asia-Europe
+        """)
+    
+    with col2:
+        st.markdown("""
+        **From THE Alliance to Premier Alliance:**
+        
+        **What Changed:**
+        
+        The former THE Alliance lost **Hapag-Lloyd** (which joined Maersk in Gemini Cooperation) but the remaining 
+        three Northeast Asian carriers decided to continue their partnership under the new name "Premier Alliance."
+        
+        **Historical Note**: THE Alliance originally stood for "THHE" - **T**HE, **H**apag-Lloyd, **H**MM, and 
+        **E**vergreen. When Evergreen left for Ocean Alliance and now Hapag-Lloyd has left for Gemini Cooperation, 
+        only the Northeast Asian carriers remain.
+        
+        **Member Profiles:**
+        
+        **ONE** (Ocean Network Express - Japan):
+        - Formed 2018 from merger of three Japanese carriers (NYK, MOL, K Line)
+        - 6th largest global carrier (~6% market share)
+        - Strong trans-Pacific focus (Japan-North America trade)
+        - Emphasises service reliability over volume growth
+        
+        **HMM** (Hyundai Merchant Marine - South Korea):
+        - State-supported South Korean carrier (~3% market share)
+        - Operates some of world's largest vessels (24,000 TEU HMM Algeciras)
+        - Strong Korea-US trade lane
+        - Aggressive growth strategy with mega vessel investments
+        
+        **Yang Ming** (Taiwan):
+        - State-owned Taiwanese carrier (~2% market share)
+        - Regional focus (intra-Asia, Asia-US West Coast)
+        - Smaller but strategically important
+        
+        **Strategic Response to Smaller Size:**
+        
+        With Hapag-Lloyd's departure, Premier Alliance is now the smallest of the three major alliances. To 
+        compensate:
+        
+        - **MSC cooperation**: Slot-sharing agreement with MSC on Asia-Europe trade
+        - **Direct port-to-port services**: Focus on efficiency over comprehensive coverage
+        - **US West Coast expansion**: Three weekly Shanghai/Ningbo-Los Angeles services
+        - **Emphasise reliability**: Compete on service quality rather than scale alone
+        
+        **Key Trade Routes:**
+        - Trans-Pacific (comprehensive Asia-US coverage, especially West Coast)
+        - Asia-Europe (in cooperation with MSC)
+        - Asia-Mediterranean
+        - Intra-Asia feeder services
+        """)
+    
+    st.markdown('<p class="subsection-header">4. MSC - Operating Independently with Strategic Cooperation</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.markdown("""
+        **MSC (Mediterranean Shipping Company)**
+        
+        **Status:** Independent carrier
+        **Market Share:** ~20% (World's largest)
+        
+        **Fleet:**
+        - ~800 vessels
+        - ~2.5M TEU capacity
+        - Largest container fleet globally
+        
+        **Strategic Partnerships:**
+        - Premier Alliance (Asia-Europe slot-sharing)
+        - ZIM (Asia-North America East Coast VSA)
+        
+        **Approach:**
+        - Mostly independent operations
+        - Selective cooperation on specific routes
+        """)
+    
+    with col2:
+        st.markdown("""
+        **Why MSC Left the 2M Alliance:**
+        
+        **Diverging Strategies:**
+        
+        MSC and Maersk, once the two pillars of the dominant 2M Alliance, developed fundamentally different 
+        strategic visions:
+        
+        **MSC's Strategy: Pure Carrier, Volume Growth**
+        - Aggressive vessel acquisition (now owns 800+ vessels)
+        - Focus on being the largest container carrier globally
+        - Vertical integration into terminals (owns 35+ terminals worldwide)
+        - Family-owned by Aponte family (Switzerland/Italy), long-term capacity building
+        - Willing to operate at lower margins to gain market share
+        
+        **Maersk's Strategy: Integrated Logistics Provider**
+        - Shift from pure carrier to end-to-end logistics (warehousing, customs, trucking, rail)
+        - Digital transformation and technology leadership
+        - Higher-margin services beyond ocean freight
+        - Publicly traded company, shareholder return focus
+        - Strategic repositioning from commodity carrier to solutions provider
+        
+        These divergent paths made continued alliance partnership untenable. MSC wanted maximum fleet flexibility 
+        for volume growth; Maersk wanted integrated service offerings.
+        
+        **MSC's Independent Network:**
+        
+        As world's largest carrier, MSC has capacity to operate largely independently:
+        
+        - **34 service loops** covering five major trade routes
+        - **East-West trades**: Asia-Europe, Trans-Pacific, Transatlantic
+        - **1,900+ direct port pairings** (via Suez when accessible)
+        - **1,800+ port pairings** via Cape of Good Hope alternative
+        
+        **Strategic Cooperation (Not Full Alliance):**
+        
+        MSC maintains flexibility through targeted partnerships:
+        - **Premier Alliance**: Slot-sharing on Asia-Europe services only
+        - **ZIM**: Three-year vessel-sharing agreement on Asia-US East Coast
+        - Benefits: Some economies of scale without alliance restrictions
+        - Maintains pricing independence and network flexibility
+        """)
+    
+    # Alliance market share pie chart
     fig = go.Figure(data=[go.Pie(
-        labels=alliance_data_2025['Group'],
-        values=alliance_data_2025['Market Share (%)'],
-        marker=dict(colors=['#10B981', '#3B82F6', '#EF4444', '#F59E0B', '#94A3B8']),
+        labels=alliance_data_2025['Alliance/Carrier'],
+        values=alliance_data_2025['Est. Market Share (%)'],
+        marker=dict(colors=['#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#94A3B8']),
         textinfo='label+percent',
         textfont=dict(size=13, color='white'),
         hole=0.4
@@ -263,1042 +547,661 @@ def show():
     
     fig.update_layout(
         title={
-            'text': 'Global Container Shipping Market Share by Group (February 2025)',
+            'text': 'Global Container Shipping Market Share<br>Post-February 2025 Restructuring (Estimated)',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 18, 'color': '#1F2937'}
         },
-        annotations=[dict(text='Total<br>Market', x=0.5, y=0.5, font_size=16, showarrow=False)],
-        height=450
+        annotations=[dict(text='Feb 2025<br>Structure', x=0.5, y=0.5, font_size=15, showarrow=False)],
+        height=500
     )
     
-    st.plotly_chart(fig, use_container_width=True)
-    
-    st.markdown('<p class="subsection-header">1. Ocean Alliance (29% Market Share - LARGEST)</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns([1, 2])
-    
-    with col1:
-        st.markdown("""
-        **Members:**
-        - CMA CGM (France) - 3rd largest carrier
-        - COSCO Shipping (China) - 4th largest
-        - OOCL (Hong Kong/China)
-        - Evergreen (Taiwan) - 7th largest
-        
-        **Formation:** 2017
-        
-        **Status:** Extended to 2032
-        
-        **Capacity:**
-        - Combined: 8.91M TEU
-        - Operational: ~3.8M TEU
-        - Vessels: ~390 ships, ~330 operational
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Characteristics:**
-        - **LARGEST ALLIANCE** in 2025 restructuring
-        - **ONLY UNCHANGED** alliance (stable through reshuffling)
-        - Strongest Asian presence (COSCO, OOCL, Evergreen)
-        - CMA CGM brings European strength and global reach
-        - **Dominant on trans-Pacific**: 15 weekly USWC sailings, 8 USEC sailings
-        - Widest North Europe coverage: 7 services (matches MSC)
-        
-        **Strategy:**
-        - Balanced approach: good coverage + competitive service
-        - Ultra-large vessel deployment (average 13,200 TEU)
-        - Multiple port calls per service
-        - Focus on Asia trade lanes
-        
-        **Key Routes (41 Services Across 8 Markets):**
-        - Far East - North Europe (7 services)
-        - Far East - Mediterranean
-        - Far East - USWC / USEC / US Gulf
-        - Trans-Atlantic (with ONE slot exchange)
-        - Far East - Middle East
-        - Far East - Red Sea
-        """)
-    
-    st.markdown('<p class="subsection-header">2. Gemini Cooperation (21% Market Share - NEWEST)</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns([1, 2])
-    
-    with col1:
-        st.markdown("""
-        **Members:**
-        - Maersk (Denmark) - 2nd largest carrier
-        - Hapag-Lloyd (Germany) - 5th largest
-        
-        **Formation:** February 1, 2025
-        
-        **Duration:** Long-term (4-5+ years)
-        
-        **Capacity:**
-        - Combined: 6.75-6.82M TEU
-        - Operational: 3.4-3.7M TEU
-        - Vessels: 290-340 ships
-        - Split: Maersk 60%, Hapag-Lloyd 40%
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Characteristics:**
-        - **NEWEST ALLIANCE** (launched February 2025)
-        - **SMALLEST WEEKLY SAILINGS** among major groups
-        - **HIGHEST RELIABILITY TARGET**: >90% (vs industry 60%)
-        - **Hub-and-spoke model**: 12 global hubs + dedicated shuttles
-        - **Fewer direct port calls**: Focus on controlled terminals
-        - **Like-minded** carriers: reliability, decarbonisation, service quality
-        
-        **Innovative Network Design (57 Services):**
-        - **26 mainline services**: Connect major trade lanes
-        - **32 shuttle services**: Hub-to-port feedering
-          - 14 Europe shuttles
-          - 13 Asia shuttles
-          - 4 Middle East shuttles
-          - 1 Gulf of Mexico shuttle
-        - **12 global hubs**: Key transshipment points
-        
-        **Coverage (7 Trade Lanes):**
-        - Asia - North Europe (4 services)
-        - Asia - Mediterranean (3 services)
-        - Asia - Middle East (1 service)
-        - India/Middle East - Europe (4 services)
-        - Trans-Atlantic (5 services)
-        - Trans-Pacific (USWC, USEC)
-        
-        **Phase-In:**
-        - Launched: February 1, 2025
-        - Transition: Feb-May 2025 (gradual rollout)
-        - Fully operational: June 2025
-        - **Red Sea**: Continuing Cape of Good Hope routing
-        
-        **Environmental Leadership:**
-        - Maersk: Net-zero target 2040 (methanol-powered vessels)
-        - Hapag-Lloyd: Net-zero target 2045
-        - Most ambitious decarbonisation timelines in industry
-        """)
+    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
-    <div class="info-box">
-    <strong>💡 Gemini's Reliability Gambit:</strong><br>
-    Gemini's >90% schedule reliability target is <strong>unprecedented</strong>. The industry average has been 
-    ~60% since COVID-19 disruptions. Achieving this requires:<br>
-    - Fewer port calls (reduces disruption points)<br>
-    - Controlled terminals (own APM Terminals, Hapag-Lloyd facilities)<br>
-    - Buffer time in schedules<br>
-    - Simplified vessel operator structure (one operator per mainline service)<br>
-    - Advanced IT systems and predictive planning<br><br>
-    <strong>Early results (March 2025):</strong> Gemini achieving 80%+ reliability during phase-in, 
-    significantly above market average but below 90% target. Full assessment due June 2025.
+    <div class="insight-box">
+    <strong>📊 Market Share Note:</strong> Market share percentages shown are estimates for the new alliance structure 
+    effective February 2025. Final market share data will stabilise over 2025-2026 as the new partnerships fully 
+    operationalise. The fundamental dynamic remains: <strong>three major alliance structures plus MSC operating 
+    semi-independently control approximately 83% of global container capacity</strong>, maintaining the oligopolistic 
+    industry structure despite the alliance reorganisation.
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown('<p class="subsection-header">3. MSC (20% Market Share - LARGEST SOLO OPERATOR)</p>', unsafe_allow_html=True)
+    # ============================================================================
+    # SECTION 3: How Alliances Work - Operations vs Competition
+    # ============================================================================
     
-    col1, col2 = st.columns([1, 2])
-    
-    with col1:
-        st.markdown("""
-        **Status:** Independent (solo)
-        
-        **Formation:** Operating independently from Feb 1, 2025 
-        (left 2M Alliance)
-        
-        **Capacity:**
-        - Total: 7.1M TEU (November 2025)
-        - Operational: 6.4M TEU
-        - Vessels: 886-887 ships
-        
-        **Ranking:** World's largest container carrier
-        
-        **Market Share:** ~20%
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Characteristics:**
-        - **WORLD'S LARGEST CARRIER** operating solo
-        - **Unmatched scale**: 7.1M TEU (50% larger than #2 Maersk)
-        - **Massive orderbook**: 2.2M TEU (130+ vessels) - largest in industry
-        - **Aggressive growth**: Added 831,000 TEU in 2025 (5th consecutive year)
-        - **Flexibility**: Can optimise network without alliance constraints
-        - **Family-owned**: Aponte family (Swiss/Italian), private company
-        
-        **Standalone Network (34 Loops Across 5 East-West Trades):**
-        - Asia - North Europe (7 services, matching Ocean Alliance)
-        - Asia - Mediterranean
-        - Asia - USWC
-        - Asia - USEC
-        - Trans-Atlantic
-        
-        **Strategy:**
-        - **Maximum port coverage**: Direct calls to more ports vs Gemini
-        - **Ultra-large vessels**: Average 13,200 TEU
-        - **Volume focus**: Economies of scale through sheer size
-        - **Rapid expansion**: Acquiring vessels aggressively (400+ ships in 5 years)
-        - **Slot exchanges**: Maintain partnerships where beneficial
-        
-        **Partnerships:**
-        - **ZIM**: Transpacific operational cooperation (6 services, launched Feb 2025)
-        - **Premier Alliance**: Slot exchange on 9 Asia-Europe services
-        - Maintains flexibility while leveraging partner networks
-        
-        **Environmental Approach:**
-        - LNG-focused (vs Maersk/Evergreen methanol focus)
-        - Scrubber installations (allows high-sulphur fuel use)
-        - Less ambitious net-zero timeline than Gemini
-        """)
+    st.markdown('<p class="section-header">How Shipping Alliances Work: Cooperation Without Collusion</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    <div class="warning-box">
-    <strong>⚠️ MSC's Solo Bet:</strong><br>
-    MSC is the ONLY top-5 carrier operating without a full alliance. This is unprecedented but enabled by:<br>
-    - <strong>Unmatched scale</strong>: 7.1M TEU = larger than many alliances<br>
-    - <strong>Massive orderbook</strong>: 2.2M TEU on order (33% of current fleet)<br>
-    - <strong>Owner-operated</strong>: No shareholder pressure, long-term view<br>
-    - <strong>Cost advantage</strong>: Secondhand ship acquisitions at favourable prices<br><br>
-    <strong>Risk</strong>: If overcapacity worsens in 2025-2026, MSC bears full exposure alone. 
-    Alliances can share risk; MSC cannot.
-    </div>
-    """, unsafe_allow_html=True)
+    Shipping alliances are operational partnerships, not mergers or cartels. Understanding what alliance members 
+    share (and crucially, what they do not share) is essential to grasping how modern container shipping operates 
+    and why competition authorities permit these partnerships.
+    """)
     
-    st.markdown('<p class="subsection-header">4. Premier Alliance (11% Market Share - SMALLEST)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">What Alliance Members Share (Operational Cooperation)</p>', unsafe_allow_html=True)
     
-    col1, col2 = st.columns([1, 2])
-    
-    with col1:
-        st.markdown("""
-        **Members:**
-        - ONE (Ocean Network Express) - Japan
-        - HMM (Hyundai Merchant Marine) - South Korea
-        - Yang Ming - Taiwan
-        
-        **Formation:** February 2025 
-        (Rebranded from THE Alliance)
-        
-        **Duration:** 5-year agreement (2025-2030)
-        
-        **Capacity:**
-        - Combined: 3.57-3.59M TEU
-        - Operational: ~3.0M TEU
-        - Vessels: ~250 ships
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Characteristics:**
-        - **SMALLEST ALLIANCE** (lost Hapag-Lloyd to Gemini)
-        - **Northeast Asian focus**: Japanese, Korean, Taiwanese carriers
-        - **Capacity challenge**: Lost ~2M TEU when Hapag-Lloyd exited
-        - **Survival mode**: Must prove viability with smaller scale
-        - **Strategic dilemma**: Too small to compete alone, but who to add?
-        
-        **Network Focus:**
-        - **East-West trades**: Asia - USWC, USEC, Europe, Med, Middle East
-        - Strong trans-Pacific services (traditional strength)
-        - Asia-Europe services
-        - Intra-Asia feedering
-        
-        **Coping Strategies:**
-        - **MSC slot exchange**: 9 Asia-Europe services (critical support)
-        - **Vessel-sharing agreements**: Fill capacity gaps
-        - **Newbuild deliveries**: ONE and HMM adding vessels 2024-2025
-        - **Service optimisation**: Focus on core routes
-        
-        **Key Challenge:**
-        - **Scale disadvantage**: 3.6M TEU vs Ocean 8.9M, Gemini 6.8M, MSC 7.1M
-        - **Cost pressure**: Harder to negotiate with ports at smaller scale
-        - **Competitive squeeze**: Between larger, more capable groups
-        - **Uncertain future**: Can they attract a new member? Will they survive 5 years?
-        
-        **Possible Scenarios:**
-        - Status quo: Operate as 3-member alliance
-        - Expansion: Recruit new member (Zim? Wan Hai?)
-        - Absorption: Members join other alliances
-        - Reorganisation: Merge with independents
-        """)
-    
-    st.markdown("""
-    <div class="warning-box">
-    <strong>⚠️ Premier's Survival Question:</strong><br>
-    Industry analysts question Premier Alliance's long-term viability:<br>
-    - <strong>Scale gap</strong>: 3.6M TEU vs 6.8-8.9M TEU for larger alliances<br>
-    - <strong>Market share</strong>: Just 11% limits negotiating power<br>
-    - <strong>Cost disadvantage</strong>: Smaller scale = higher cost per TEU<br>
-    - <strong>Competitive pressure</strong>: Squeezed by larger, more capable groups<br><br>
-    <strong>Critical period</strong>: 2025-2026 will determine if Premier can thrive or must reorganise. 
-    MSC's slot exchange support provides temporary relief but isn't a long-term solution.
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Comparison table
-    st.markdown('<p class="subsection-header">Alliance Comparison (2025)</p>', unsafe_allow_html=True)
-    
-    comparison_table = pd.DataFrame({
-        'Metric': [
-            'Market Share',
-            'Combined Capacity',
-            'Operational Capacity',
-            'Vessel Count',
-            'Average Vessel Size',
-            'Primary Strategy',
-            'Port Coverage',
-            'Reliability Target',
-            'Environmental Target',
-            'Competitive Advantage'
+    # Alliance cooperation framework
+    cooperation_framework = pd.DataFrame({
+        'Cooperation Area': [
+            'Vessel Sharing',
+            'Service Planning',
+            'Port Calls',
+            'Terminal Operations',
+            'Schedule Coordination'
         ],
-        'Ocean Alliance': [
-            '29% (Largest)',
-            '8.91M TEU',
-            '3.8M TEU (~330 ships)',
-            '~390 total',
-            '~13,200 TEU',
-            'Balanced: Coverage + Service',
-            'Widest (multiple calls)',
-            'Industry standard (~60%)',
-            'Varied by member',
-            'Scale, Asia strength, stability'
+        'What They Share': [
+            'Vessels and capacity on specific services',
+            'Joint route planning and network design',
+            'Coordinate which ports to call and rotation sequence',
+            'Shared use of dedicated alliance terminals',
+            'Synchronise sailing schedules for connections'
         ],
-        'Gemini': [
-            '21%',
-            '6.75M TEU',
-            '3.4M TEU (~290 ships)',
-            '290-340 total',
-            '~12,400 TEU',
-            'Reliability over coverage',
-            'Hub-and-spoke (12 hubs)',
-            '>90% (unprecedented)',
-            'Ambitious (2040/2045)',
-            'Reliability, controlled terminals, quality'
+        'How It Works': [
+            'Carrier A provides vessel, Carriers B & C buy slots. Rotate vessel provision across partners',
+            'Collectively design service network to maximise coverage whilst minimising vessel requirements',
+            'Agree optimal port rotation for shared services. Standardise port pairs across alliance',
+            'Negotiate joint terminal leases. Share berth access and crane resources',
+            'Align departure/arrival times for effective cargo transshipment between alliance services'
         ],
-        'MSC (Solo)': [
-            '20%',
-            '7.1M TEU',
-            '6.4M TEU (~886 ships)',
-            '886 total',
-            '~13,200 TEU',
-            'Maximum coverage, volume',
-            'Direct calls, many ports',
-            'Not disclosed',
-            'LNG focus',
-            'Scale, flexibility, growth capacity'
-        ],
-        'Premier': [
-            '11% (Smallest)',
-            '3.57M TEU',
-            '~3.0M TEU (~250 ships)',
-            '~250 total',
-            '~11,900 TEU',
-            'Focus on core East-West',
-            'Strategic routes',
-            'Industry standard',
-            'Varied by member',
-            'Northeast Asia expertise, agility'
+        'Benefit to Shippers': [
+            'More frequent sailings (daily or multiple weekly services possible)',
+            'Comprehensive global coverage (alliance provides network no single carrier could afford)',
+            'Better connectivity through aligned port networks',
+            'Efficient operations reduce costs passed to customers',
+            'Reliable connections enable tighter supply chains'
         ]
     })
     
-    st.dataframe(comparison_table, use_container_width=True, hide_index=True)
+    st.dataframe(cooperation_framework, width='stretch', hide_index=True)
     
-    # ============================================================================
-    # SECTION 4: How Alliances Work
-    # ============================================================================
+    st.markdown('<p class="subsection-header">What Alliance Members Do NOT Share (Competition Preserved)</p>', unsafe_allow_html=True)
     
-    st.markdown('<p class="section-header">How Shipping Alliances Work</p>', unsafe_allow_html=True)
+    # Competition areas
+    competition_areas = pd.DataFrame({
+        'Competition Area': [
+            'Pricing',
+            'Customer Contracts',
+            'Brand and Marketing',
+            'Cargo Booking',
+            'Service Quality'
+        ],
+        'Maintained Independence': [
+            'Each carrier sets own freight rates independently',
+            'Separate contract negotiations with shippers',
+            'Independent brands, sales teams, marketing',
+            'Cargo booked with specific carrier, not alliance',
+            'Service quality differentiation maintained'
+        ],
+        'Why This Matters': [
+            'Prevents price-fixing. Carriers compete vigorously on rates',
+            'Shippers can negotiate with multiple alliance members for best deal',
+            'Carriers differentiate on service, reputation, customer relationships',
+            'Cargo belongs to booking carrier. Alliance provides vessels, not customers',
+            'Carriers compete on reliability, documentation, customer service'
+        ],
+        'Regulatory Importance': [
+            'Maintains price competition - alliances cannot set rates collectively',
+            'Prevents anti-competitive behaviour - each carrier independently seeks cargo',
+            'Consumer choice preserved - distinct brands offer different value propositions',
+            'Market competition sustained - booking carrier bears revenue risk',
+            'Quality competition drives continuous improvement'
+        ]
+    })
+    
+    st.dataframe(competition_areas, width='stretch', hide_index=True)
     
     st.markdown("""
-    Alliances are operational partnerships, not mergers. Understanding what they share (and don't share) 
-    is crucial to understanding modern maritime operations.
+    **The Critical Balance: Cooperate to Compete**
+    
+    Alliances allow carriers to:
+    - **Achieve economies of scale** through shared vessels and coordinated networks
+    - **Maintain competitive market dynamics** through independent pricing and customer acquisition
+    - **Offer comprehensive global networks** that no single carrier could afford independently
+    - **Preserve individual brands** and customer relationships (alliance largely invisible to shippers)
+    
+    **Regulatory Oversight:**
+    
+    Competition authorities (US FMC, EU Commission, etc.) closely monitor alliances:
+    - **Operational cooperation**: Permitted and encouraged (improves efficiency, benefits customers)
+    - **Price coordination**: Strictly forbidden (would be illegal cartel behaviour)
+    - **Market access**: Alliances cannot block competitors from ports or routes
+    - **Customer choice**: Must maintain multiple independent booking options
+    
+    Alliances must demonstrate that benefits (better service, lower costs through efficiency) outweigh risks 
+    (reduced competition). So far, authorities have concluded alliances improve service whilst competition on 
+    pricing remains vigorous.
     """)
     
-    st.markdown('<p class="subsection-header">What Alliances Share vs Keep Independent</p>', unsafe_allow_html=True)
+    # ============================================================================
+    # SECTION 4: Hub-and-Spoke Networks - The Dominant Model
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Hub-and-Spoke Network Structure: How Global Shipping Actually Works</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Modern container shipping operates primarily on a **hub-and-spoke model**, not point-to-point services. 
+    Understanding this network structure is absolutely fundamental to comprehending maritime logistics, port 
+    competition, and Singapore's strategic position. The lecture materials emphasise that **approximately 85% 
+    of global container cargo transships at intermediate hub ports** rather than moving directly from origin to 
+    final destination.
+    """)
+    
+    st.markdown('<p class="subsection-header">Point-to-Point vs Hub-and-Spoke: A Critical Distinction</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Shared Resources (Cooperation):**
+        **Point-to-Point Model (Minority of Traffic):**
         
-        **Vessel Space:**
-        - Members contribute vessels to joint services
-        - Share capacity on each other's vessels (slot charter)
-        - Coordinate vessel deployments and schedules
-        - Optimise utilisation across combined fleet
-        - Example: Maersk vessel carries Hapag-Lloyd containers
+        **Concept:**
+        - Direct service between origin and destination ports
+        - No intermediate transshipment required
+        - Container loaded at origin, discharged only at final destination
         
-        **Port Calls and Terminals:**
-        - Coordinate port rotations (which ports, in what order)
-        - Share terminal facilities (reducing costs)
-        - Joint negotiations with ports for berth rates
-        - Optimise port call sequences for efficiency
-        - Shared handling equipment and labour
+        **Example Routes:**
+        - Shanghai → Los Angeles (major high-volume direct service)
+        - Ningbo → Long Beach
+        - Shenzhen → Rotterdam
         
-        **Operations and Planning:**
-        - Shared vessel schedules and sailing frequencies
-        - Coordinated service planning (which routes to operate)
-        - Joint network optimisation (minimize empty repositioning)
-        - Shared operational best practices
-        - Coordinated capacity management (add/remove vessels together)
+        **When Point-to-Point Works:**
+        - **Very high cargo volumes**: Enough containers to fill mega vessel (12,000-20,000 TEU)
+        - **Major trade lanes**: Asia-US West Coast, Asia-Europe mainlines
+        - **Consistent year-round demand**: Can justify dedicated weekly or bi-weekly service
+        - **Specific high-value routes**: Justify direct service despite lower utilisation
         
-        **Why Share?**
-        - **Economies of scale**: Fill vessels more fully
-        - **Network reach**: Serve more ports together than alone
-        - **Frequency**: Offer daily/multiple weekly sailings
-        - **Cost reduction**: Share fixed port and operational costs
+        **Advantages:**
+        - **Faster transit**: No transshipment delay (typically 2-4 days saved)
+        - **Lower damage risk**: Fewer container handlings reduce potential for damage or loss
+        - **Simpler tracking**: Straightforward origin-destination monitoring
+        - **Customer preference**: Shippers prefer direct services when available
+        
+        **Disadvantages:**
+        - **Limited geographic coverage**: Can only serve port pairs with sufficient volume
+        - **Lower sailing frequency**: May only offer weekly service (insufficient demand for daily)
+        - **Higher cost per TEU**: Unless vessel is 85-90%+ full, unit economics suffer
+        - **Inflexible network**: Cannot efficiently serve smaller ports
+        
+        **Reality**: Only 10-15% of global container movements are truly point-to-point direct services.
         """)
     
     with col2:
         st.markdown("""
-        **Retained Independence (Competition):**
+        **Hub-and-Spoke Model (Majority of Traffic):**
         
-        **Pricing (MOST CRITICAL):**
-        - **Each carrier sets own freight rates** (no price-fixing)
-        - **Independent contract negotiations** with customers
-        - **Compete on price within alliance** (undercutting partners is legal)
-        - Rate decisions made separately, confidentially
-        - NO sharing of customer pricing information
+        **Concept:**
+        - **Mainline vessels** (mega ships 15,000-24,000 TEU) connect major hub ports
+        - **Feeder vessels** (smaller 1,000-3,000 TEU) connect hubs to regional ports
+        - Containers **transship** at hubs (transferred between vessels)
         
-        **Sales and Marketing:**
-        - **Own sales forces** and sales strategies
-        - **Independent customer relationships** (own client base)
-        - **Separate brand identities** (Maersk ≠ Hapag-Lloyd)
-        - **Compete for same customers** (alliance partners are rivals)
-        - Own marketing campaigns and value propositions
+        **Example Network:**
+        - Malaysia export cargo collected by feeder → Singapore hub
+        - Transshipped to mainline ULCS → Europe
+        - European hub (Rotterdam) receives cargo
+        - Distributed by feeders to regional destinations (Amsterdam, Hamburg, Antwerp)
         
-        **Digital and Logistics:**
-        - **Separate digital platforms** (booking systems, tracking)
-        - **Independent logistics operations** (trucking, warehousing, air freight)
-        - **Own feeder networks** (connecting to alliance mainline)
-        - **Individual competitive strategies** (Maersk's integrator strategy unique)
+        **When Hub-and-Spoke Dominates:**
+        - **Moderate cargo volumes**: Most routes have insufficient volume for direct mega vessel service
+        - **Geographic coverage**: Enables service to hundreds of smaller ports economically
+        - **Network efficiency**: Consolidates cargo to fill mega vessels on main lanes
+        - **85% of global traffic**: The dominant model in modern shipping
         
-        **Why Separate?**
-        - **Legal requirement**: Price-fixing is illegal (anti-trust)
-        - **Competition law**: Alliances must compete on pricing
-        - **Customer choice**: Shippers choose carrier within alliance
-        - **Regulatory scrutiny**: Competition authorities monitor closely
+        **Advantages:**
+        - **Comprehensive coverage**: Can serve 600+ ports globally through hub-feeder networks
+        - **Higher mainline frequency**: Consolidating cargo enables daily/multiple weekly mega vessel services
+        - **Better vessel utilisation**: Larger ships on trunk routes achieve 90%+ load factors
+        - **Economic viability**: Makes small-port service profitable through feeder consolidation
+        - **Network flexibility**: Can easily add/remove feeder connections without disrupting mainline
+        
+        **Disadvantages:**
+        - **Longer total transit**: Transshipment adds 2-4 days vs direct (feeder wait + transfer time)
+        - **Higher damage risk**: Multiple handlings increase potential for damage, loss, or delays
+        - **Complex coordination**: Requires precise scheduling to minimise connection times
+        - **Hub dependency**: Entire network vulnerable if hub experiences disruption
+        
+        **Reality**: **85% of containers transship** at intermediate hubs according to lecture materials and 
+        Singapore's own operational data.
         """)
     
-    st.markdown("""
-    **The Alliance Paradox:**
-    
-    Alliance members **COOPERATE** on vessel operations and network planning while **COMPETING** vigorously 
-    on pricing and customer acquisition. This paradox allows them to:
-    - Achieve economies of scale (shared vessels, better port terms, fuller utilisation)
-    - Maintain competitive market dynamics (independent pricing prevents monopoly)
-    - Offer comprehensive global networks (coordinated services reach more ports)
-    - Preserve individual brands and customer relationships (maintain differentiation)
-    
-    **Example: Maersk and Hapag-Lloyd in Gemini**
-    - **Cooperate**: Both put vessels on Asia-Europe route, share capacity
-    - **Compete**: Customer booking Asia-Europe gets quotes from BOTH, who undercut each other
-    - **Result**: Customer benefits from competitive pricing AND comprehensive service
-    
-    **Regulatory Balance:**
-    - **Competition authorities ALLOW** operational cooperation (vessel sharing, joint services)
-    - But **CLOSELY MONITOR** for price-fixing or anti-competitive behaviour
-    - Alliances must demonstrate customer benefits (better service, lower costs, not higher prices)
-    - Regular reporting to regulators (EU, US FMC, etc.)
-    - Violations can result in massive fines and forced dissolution
-    """)
-    
-    # Benefits visualization
-    st.markdown('<p class="subsection-header">Why Alliances Exist: The Benefits</p>', unsafe_allow_html=True)
-    
-    alliance_benefits = pd.DataFrame({
-        'Benefit': [
-            'Network Coverage',
-            'Service Frequency',
-            'Vessel Utilisation',
-            'Port Negotiation',
-            'Operational Flexibility',
-            'Risk Sharing',
-            'Capital Efficiency'
-        ],
-        'Without Alliance': [
-            'Carrier serves 50-100 ports alone',
-            'Weekly service requires 6-8 vessels alone',
-            '70-80% full (must absorb empty slots)',
-            'Small carrier, weak negotiating position',
-            'Limited - constrained by own fleet',
-            'Full exposure to market volatility alone',
-            'Must own full fleet for all routes'
-        ],
-        'With Alliance': [
-            'Alliance serves 200+ ports collectively',
-            'Daily service with 3-4 vessels per carrier',
-            '85-90% full (partners fill empty slots)',
-            'Large alliance, strong negotiating leverage',
-            'Can swap capacity across partner routes',
-            'Shared exposure - smoother revenue',
-            'Share vessels, reduce capital needs'
-        ],
-        'Impact': [
-            'More destinations served at lower cost',
-            'Attractive to shippers (more sailing options)',
-            '15-20% efficiency gain per vessel',
-            '20-30% lower terminal costs',
-            'Better adapt to demand fluctuations',
-            'Lower earnings volatility',
-            '30-40% less capital required per carrier'
-        ]
-    })
-    
-    st.dataframe(alliance_benefits, use_container_width=True, hide_index=True)
+    st.markdown('<p class="subsection-header">Singapore: The World's Premier Transshipment Hub</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Bottom Line:**
-    Alliances enable carriers to offer better service at lower cost than operating alone, while still 
-    competing on price. This benefits both carriers (lower costs) and shippers (more choice, competitive pricing).
-    """)
-    
-    # ============================================================================
-    # SECTION 5: Hub-and-Spoke Network Model
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Hub-and-Spoke Network Model</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Modern container shipping operates primarily on a **hub-and-spoke model**, where large vessels connect 
-    major hub ports, and smaller feeder vessels distribute cargo to regional ports. This model dominates 
-    global maritime logistics.
-    """)
-    
-    st.markdown('<p class="subsection-header">How Hub-and-Spoke Works</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **The Hub Port:**
-        - **Major transshipment centre** handling massive volumes
-        - **Deep water berths** (16+ metres) for mega vessels
-        - **Large cranes** (65-80m outreach) for 24-wide vessels
-        - **Extensive terminal capacity** (multiple berths, high throughput)
-        - **Strategic location** on major trade routes
-        - **Connects multiple trade lanes** (Asia-Europe, Trans-Pacific, etc.)
-        
-        **Examples of Major Hubs:**
-        - **Singapore**: World's #1 transshipment hub (85% transshipment)
-        - **Rotterdam**: Europe's gateway
-        - **Dubai (Jebel Ali)**: Middle East hub
-        - **Colombo**: Indian Ocean hub
-        - **Los Angeles/Long Beach**: US West Coast gateway
-        - **Shanghai**: Asia's largest port
-        
-        **Hub Functions:**
-        - Receive mega vessels from multiple trade lanes
-        - Transship containers to connecting services
-        - Sort cargo by destination
-        - Consolidate shipments for feeder distribution
-        - Provide warehousing, customs, inspection services
-        """)
-    
-    with col2:
-        st.markdown("""
-        **The Spoke (Feeder Service):**
-        - **Smaller vessels** (500-3,000 TEU) connecting hub to regional ports
-        - **More frequent calls** to smaller ports (weekly or multiple times weekly)
-        - **Shallow draft** (10-12m) to access ports mega vessels cannot
-        - **Regional distribution** from hub to secondary ports
-        - **Flexible scheduling** to match local demand
-        
-        **Why Feeder Vessels?**
-        - Small ports lack depth for mega vessels
-        - Small ports lack cranes for mega vessels
-        - Small ports have insufficient cargo volume for direct mega vessel call
-        - More economical to hub-and-spoke than direct call
-        - Provides connectivity without mega-vessel infrastructure
-        
-        **Example: Singapore as Hub**
-        - **Mainline**: Shanghai → Singapore (mega vessel, 15,000+ containers)
-        - **Transshipment**: Singapore sorts, consolidates cargo
-        - **Feeder 1**: Singapore → Bangkok (feeder vessel, 500 containers)
-        - **Feeder 2**: Singapore → Jakarta (feeder vessel, 800 containers)
-        - **Feeder 3**: Singapore → Ho Chi Minh City (feeder vessel, 600 containers)
-        - **Result**: 85% of cargo in Singapore transships to other destinations
-        """)
-    
-    st.markdown("""
-    **Economics of Hub-and-Spoke:**
-    
-    **For Shipping Lines:**
-    - **Cost savings**: Mega vessels only call major hubs (fewer port calls, faster voyages)
-    - **Efficiency**: High utilisation on mainline (concentrated cargo flows)
-    - **Flexibility**: Feeder network adjusts to demand without changing mainline
-    - **Scale**: Deploy 20,000 TEU vessels economically on high-volume routes
-    
-    **For Hub Ports:**
-    - **Volume**: Handle cargo from multiple trade lanes (multiplier effect)
-    - **Revenue**: Terminal fees from both mainline and feeder vessels
-    - **Value-add services**: Transshipment, warehousing, customs, inspection
-    - **Strategic importance**: Become critical nodes in global supply chain
-    
-    **For Shippers:**
-    - **Connectivity**: Access to 200+ ports via hub connections
-    - **Frequency**: More sailing options through hub consolidation
-    - **Trade-off**: Longer transit time (hub transshipment adds 3-7 days)
-    - **Cost**: Lower freight rates (economies of scale on mainline offset feeder cost)
-    
-    **Alternative: Point-to-Point Service**
-    - Direct service (no transshipment at hub)
-    - Faster transit time BUT requires sufficient cargo volume
-    - Only economical on high-volume trade lanes
-    - Most cargo globally (85%+) goes via hub-and-spoke, not point-to-point
-    """)
-    
-    st.markdown('<p class="subsection-header">Singapore: The World's Premier Hub</p>', unsafe_allow_html=True)
-    
-    # Singapore statistics
-    singapore_stats = pd.DataFrame({
-        'Metric': [
-            'Container Throughput (2024)',
-            'Transshipment Percentage',
-            'Shipping Lines Calling',
-            'Ports Connected',
-            'Vessel Calls per Year',
-            'Weekly Container Services',
-            'Average Vessel Size',
-            'Geographic Advantage'
-        ],
-        'Value': [
-            '39.9 million TEU (world #2 after Shanghai)',
-            '85% (highest among major ports)',
-            '200+ shipping lines',
-            '600+ ports in 120+ countries',
-            '140,000+ vessel calls',
-            '1,000+ weekly services',
-            '8,000-12,000 TEU average',
-            'On major trade routes: Asia-Europe, Intra-Asia, Trans-Pacific'
-        ],
-        'Significance': [
-            'Massive volume enables scale economies',
-            'Pure transshipment hub (not destination)',
-            'Comprehensive carrier coverage',
-            'Global connectivity unmatched',
-            'Highest port efficiency (quick turnaround)',
-            'Frequent sailings (shipper choice)',
-            'Accommodates large and small vessels',
-            'Natural chokepoint (Malacca Strait) and central location'
-        ]
-    })
-    
-    st.dataframe(singapore_stats, use_container_width=True, hide_index=True)
-    
-    st.markdown("""
-    **Why Singapore Dominates as Hub:**
-    
-    **Geographic Location:**
-    - **Malacca Strait**: Natural chokepoint for Asia-Europe trade (40% of world trade)
-    - **Central position**: Equidistant from China, India, Southeast Asia, Australia
-    - **On major trade routes**: All Asia-Europe and many Trans-Pacific services pass through
-    - **Deep water**: Natural harbour with 20m+ depth (handles mega vessels)
-    
-    **Infrastructure Excellence:**
-    - **World-class terminals**: PSA, Jurong Port (high efficiency, low costs)
-    - **Advanced technology**: Automated cranes, AI-optimised operations
-    - **Massive capacity**: Can handle 50+ million TEU (room to grow)
-    - **Quick turnaround**: Vessels in/out in 10-16 hours (vs 24-48 hours elsewhere)
-    
-    **Business Environment:**
-    - **Free trade port**: No tariffs on transshipment cargo
-    - **Efficient customs**: Fast clearance, minimal bureaucracy
-    - **Stable government**: Predictable regulations, strong rule of law
-    - **Skilled workforce**: Maritime expertise, multilingual staff
-    - **24/7 operations**: No labour strikes, consistent service
-    
-    **Network Effects:**
-    - **200+ lines**: All major carriers call Singapore
-    - **600+ ports connected**: Go anywhere from Singapore
-    - **1,000+ services**: Frequent departures (shipper convenience)
-    - **Self-reinforcing**: More carriers attract more cargo, which attracts more carriers
-    
-    **Result:**
-    Singapore is **THE** global transshipment hub. 85% of its cargo transships (arrives on one vessel, 
-    departs on another). This is by design - Singapore optimised for hub-and-spoke model.
+    Singapore represents the ultimate example of the hub-and-spoke model in action. Understanding Singapore's 
+    role illuminates how hub-and-spoke networks function globally and why location, efficiency, and connectivity 
+    are the three pillars of hub competitiveness.
     """)
     
     st.markdown("""
-    <div class="info-box">
-    <strong>💡 Gemini's Hub-and-Spoke Strategy:</strong><br>
-    Gemini Cooperation (Maersk + Hapag-Lloyd) took hub-and-spoke to the extreme with their 2025 network design:<br>
-    - <strong>12 global hubs</strong>: Carefully selected strategic locations<br>
-    - <strong>26 mainline services</strong>: Mega vessels connect ONLY the 12 hubs<br>
-    - <strong>32 dedicated shuttles</strong>: Feeder vessels distribute from hubs to 100+ ports<br>
-    - <strong>Rationale</strong>: Fewer port calls = higher reliability (90% target vs 60% industry)<br>
-    - <strong>Trade-off</strong>: Less direct port coverage but much better schedule integrity<br><br>
-    <strong>Contrast with MSC</strong>: MSC's standalone network emphasizes direct port calls (maximum coverage), 
-    while Gemini prioritizes reliability through hub concentration. Two opposite strategies competing in 2025.
+    <div class="success-box">
+    <strong>🇸🇬 Singapore's Transshipment Statistics (Lecture Materials):</strong><br><br>
+    <strong>85% transshipment cargo</strong>: Only 15% of containers calling Singapore originate or terminate there. 
+    The vast majority arrives from one vessel and departs on another.<br><br>
+    <strong>Connected to 600+ ports</strong> in 120+ countries: Unmatched global connectivity through hub-feeder 
+    and mainline-mainline networks.<br><br>
+    <strong>200+ shipping lines</strong> call at Singapore: Nearly every major carrier operates services through 
+    Singapore, creating dense network effects.<br><br>
+    <strong>Unrivalled connectivity</strong>: Lecture emphasis on Singapore's "unrivalled connectivity" as the 
+    foundation of its hub status.<br><br>
+    <strong>Strategic location</strong>: Positioned on main Asia-Europe shipping lane (33% of global container trade) 
+    and at the centre of Southeast Asian growth markets.
     </div>
     """, unsafe_allow_html=True)
     
+    **Singapore's Hub Business Model: Pure Transshipment**
+    
+    Unlike gateway ports (Los Angeles, Hamburg) where most cargo serves local markets, Singapore operates as 
+    a **pure transshipment hub**:
+    
+    **The Transshipment Process:**
+    
+    1. **Feeder vessel arrives** from regional port (e.g., Port Klang, Tanjung Pelepas, Bangkok)
+       - Carries 500-2,000 TEU collected from 3-5 regional ports
+       - Discharges containers at Singapore
+    
+    2. **Container enters terminal yard**
+       - Stored temporarily (typically 12-48 hours)
+       - Awaiting connection to outbound mainline vessel
+    
+    3. **Mainline vessel arrives** (mega vessel 18,000-24,000 TEU)
+       - Receives transshipment cargo alongside Singapore origin cargo (15%)
+       - Departs for long-haul destination (Europe, US, Africa)
+    
+    4. **At European hub** (Rotterdam, Hamburg, Antwerp)
+       - Container discharges and transfers to European feeder
+       - Final delivery to destination port (Amsterdam, Le Havre, etc.)
+    
+    **Result**: Container handled 4 times (origin port → feeder → Singapore → mainline → European hub → European 
+    feeder → destination port) but enables economically viable service to small ports through consolidation.
+    
+    **Singapore's Strategic Advantages:**
+    
+    **1. Location - Geography is Destiny:**
+    - **Malacca Strait chokepoint**: 80,000+ vessel transits annually, including 33% of global container trade
+    - **Asia-Europe mainline**: Positioned directly on the highest-volume container route globally
+    - **Regional centrality**: Equidistant from major Asian economies (China, India, ASEAN, Australia)
+    - **Deep natural harbour**: 16+ metre depth allows mega vessels without dredging
+    
+    **2. Operational Excellence - Efficiency as Competitive Advantage:**
+    - **Berth on Arrival >90%**: Vessels berth immediately without anchorage wait (unmatched globally)
+    - **24-36 hour vessel turnaround**: Mega vessels with 10,000+ container moves complete in 1.5 days
+    - **Crane productivity 35-40 GMPH**: Among highest globally, critical for mega vessel economics
+    - **Minimal transshipment delays**: Efficient yard operations minimise time between feeder-mainline
+    
+    **3. Connectivity - Network Effects:**
+    - **200+ shipping lines**: Critical mass creates virtuous cycle (more lines → more connections → attracts more lines)
+    - **600+ connected ports**: Comprehensive coverage makes Singapore the default choice for regional distribution
+    - **Multiple daily sailings**: High frequency to/from major markets (daily China service, multiple Europe strings)
+    - **Alliance coverage**: All three alliances plus MSC operate through Singapore, ensuring comprehensive network
+    
+    **Singapore's Vulnerability: The Double-Edged Sword of Pure Transshipment**
+    
+    Singapore's 85% transshipment concentration creates both strength and vulnerability:
+    
+    **Strengths:**
+    - Taps into global trade flows, not limited by local market size (5.8 million population)
+    - Can grow with global trade regardless of Singapore's own economic growth
+    - Benefits from Southeast Asian economic development (all growth routes through Singapore)
+    
+    **Vulnerabilities:**
+    - **Shipping line decisions**: Vulnerable to alliance routing changes or new hub developments
+    - **No local cargo base**: Cannot fall back on hinterland demand if transshipment volumes shift
+    - **Regional competition**: Malaysia, Indonesia, Thailand developing alternative hub ports
+    - **Route disruptions**: Red Sea crisis demonstrated vulnerability to trade route changes
+    - **Existential threats**: Kra Canal (if ever built) would bypass Singapore entirely
+    
+    **Singapore's Strategic Response: "Vital Port in Interconnected Network"**
+    
+    The lecture materials emphasise that Singapore must position itself as a **"vital port in an inter-connected 
+    port network"** rather than simply the "biggest hub." This reflects a strategic shift:
+    
+    **Old Mentality**: "Big Hub" - Compete purely on volume, be largest at any cost, winner-takes-all
+    
+    **New Mentality**: "Vital Node" - Be so efficient, reliable, and connected that shipping lines cannot 
+    afford to bypass Singapore. Emphasise indispensability over mere size.
+    
+    This philosophical shift acknowledges that multiple hubs can coexist if each provides unique value, and that 
+    being irreplaceable (due to efficiency and connectivity) is more valuable than being largest.
+    """)
+    
     # ============================================================================
-    # SECTION 6: Major Trade Routes
+    # SECTION 5: Major Global Trade Routes
     # ============================================================================
     
-    st.markdown('<p class="section-header">Major Global Trade Routes</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Major Global Container Trade Routes</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Container shipping operates on well-established trade routes connecting major economic regions. 
-    Understanding these routes is essential to understanding global trade flows and alliance strategies.
+    Container trade flows along established routes connecting major economic regions. Understanding these 
+    routes—their volumes, characteristics, and strategic importance—is essential for comprehending global 
+    supply chains and port positioning strategies.
     """)
     
     # Trade routes data
     trade_routes = pd.DataFrame({
-        'Trade Route': [
+        'Trade Lane': [
             'Intra-Asia',
-            'Asia - North Europe',
-            'Trans-Pacific (Asia-USWC)',
-            'Trans-Pacific (Asia-USEC)',
-            'Asia - Mediterranean',
-            'Trans-Atlantic',
-            'Asia - Middle East',
-            'North-South (multiple)'
+            'Asia-Europe',
+            'Trans-Pacific (Asia-US West Coast)',
+            'Trans-Pacific (Asia-US East Coast)',
+            'Transatlantic (Europe-North America)',
+            'Asia-Middle East',
+            'North-South (Europe/Asia-Latin America)',
+            'North-South (Europe/Asia-Africa)'
         ],
-        'Annual Volume (TEU)': [
-            '~35 million',
-            '~24 million',
-            '~16 million',
-            '~10 million',
-            '~10 million',
-            '~7 million',
-            '~8 million',
-            '~15 million (combined)'
-        ],
-        'Transit Time': [
-            '3-7 days',
-            '30-35 days (Suez) / 40-45 days (Cape)',
-            '12-16 days',
-            '21-28 days (Panama) / 25-35 days (Suez)',
-            '25-30 days',
-            '10-14 days',
-            '15-20 days',
-            'Varies (10-25 days)'
-        ],
+        'Est. Annual Volume (M TEU)': [35, 24, 17, 9, 8, 7, 6, 4],
+        'Transit Time': ['3-7 days', '30-35 days (Suez)', '12-16 days', '20-25 days (via Panama)', '7-10 days', '10-14 days', '15-25 days', '15-20 days'],
         'Key Characteristics': [
-            'Highest volume, shortest distance, frequent service',
-            'Longest route, largest vessels (20,000+ TEU), Red Sea disruptions 2024-2025',
-            'High-value cargo, fast transit, largest US trade',
-            'Panama Canal or Suez via Asia-Europe, longer but more capacity',
-            'Growing trade, similar to Asia-Europe but shorter',
-            'Balanced trade (Europe-US exports/imports), moderate volumes',
-            'Oil-related, strong growth, strategic importance',
-            'Emerging markets, Europe/Asia to Africa/South America/Oceania'
+            'Highest volume, intra-regional trade, frequent services',
+            'Longest distance, largest vessels (ULCS), via Suez or Cape',
+            'High-value cargo, direct services, Panamax/Post-Panamax vessels',
+            'Growing with new Panama Canal, New-Panamax vessels',
+            'Mature trade, premium cargo, smaller vessels',
+            'Energy products, consumer goods, moderate volume',
+            'Emerging markets, consumer goods to LatAm, commodities back',
+            'Growth market, infrastructure, consumer goods'
         ],
-        'Alliance Competition': [
-            'All groups compete, regional carriers strong',
-            'Ocean Alliance + MSC dominant (7 services each)',
-            'Ocean Alliance leader (15 weekly sailings)',
-            'Balanced across all groups',
-            'Ocean + Gemini + MSC compete',
-            'Gemini strong (5 services), Ocean slot exchange',
-            'All groups present, growing focus',
-            'Mix of mainline and regional services'
+        'Strategic Notes': [
+            '35M TEU reflects China-ASEAN integration, short distances enable frequent rotations',
+            '33% of global trade passes through Suez, Red Sea crisis forced Cape routing (+7-10 days)',
+            'Direct services common due to volume, minimal transshipment',
+            'Panama Canal expansion (2016) enabled larger vessels, growth accelerating',
+            'Relatively balanced trade, premium brands, established routes',
+            'Vulnerable to regional instability, important for energy equipment',
+            'One-way trade imbalance (exports to LatAm, return empty/commodities)',
+            'Long-term growth potential, infrastructure investment heavy'
         ]
     })
     
-    st.dataframe(trade_routes, use_container_width=True, hide_index=True)
+    st.dataframe(trade_routes, width='stretch', hide_index=True)
     
-    st.markdown('<p class="subsection-header">Trade Route Deep Dive: Asia-Europe</p>', unsafe_allow_html=True)
+    # Trade volumes visualisation
+    fig = go.Figure()
     
-    st.markdown("""
-    The Asia-Europe trade route is the world's most important container shipping route by vessel size and 
-    strategic significance.
+    fig.add_trace(go.Bar(
+        x=trade_routes['Trade Lane'],
+        y=trade_routes['Est. Annual Volume (M TEU)'],
+        marker=dict(color='#3B82F6', line=dict(color='#1E40AF', width=2)),
+        text=trade_routes['Est. Annual Volume (M TEU)'],
+        textposition='outside',
+        texttemplate='%{text}M TEU'
+    ))
     
-    **Route:**
-    - **Origin**: East Asia (China, South Korea, Japan, Taiwan, Hong Kong)
-    - **Via**: Southeast Asia → Malacca Strait → (Suez Canal OR Cape of Good Hope) → Mediterranean/North Europe
-    - **Destination**: Mediterranean (Italy, Spain, Egypt, Turkey), North Europe (Rotterdam, Hamburg, Antwerp, Felixstowe/London Gateway)
+    fig.update_layout(
+        title={
+            'text': 'Global Container Trade Volumes by Route (2024 Estimates)',
+            'x': 0.5,
+            'xanchor': 'center',
+            'font': {'size': 18, 'color': '#1F2937'}
+        },
+        xaxis_title="Trade Lane",
+        yaxis_title="Annual Volume (Million TEU)",
+        height=500,
+        plot_bgcolor='white',
+        yaxis=dict(gridcolor='#E5E7EB', range=[0, 40]),
+        xaxis=dict(tickangle=-30)
+    )
     
-    **Statistics:**
-    - **Volume**: ~24 million TEU annually (eastbound + westbound combined)
-    - **Direction imbalance**: Westbound (Asia→Europe) ~60%, Eastbound (Europe→Asia) ~40%
-    - **Transit time**: 30-35 days via Suez, 40-45 days via Cape of Good Hope
-    - **Vessel size**: LARGEST vessels (20,000-24,000 TEU) deployed here
-    
-    **2024-2025 Red Sea Disruption:**
-    - **Crisis**: Red Sea security issues (late 2023-present) forced rerouting
-    - **Impact**: Mega vessels (18,000+ TEU) avoided Suez for 20+ consecutive months
-    - **Alternative**: Cape of Good Hope (+3,500 nautical miles, +7-10 days, +$500K-800K fuel)
-    - **Consequence**: Global emissions +5% in 2024, freight rate volatility, service delays
-    - **2025 status**: Gemini explicitly continuing Cape routing; others case-by-case
-    
-    **Alliance Deployment (2025):**
-    - **Ocean Alliance**: 7 services to North Europe (widest coverage)
-    - **MSC (solo)**: 7 services (matching Ocean)
-    - **Gemini**: 4 services North Europe + 3 Mediterranean (hub-focused)
-    - **Premier**: Multiple services + MSC slot exchange on 9 services (critical support)
-    
-    **Port Changes (2025 Reshuffling):**
-    - **Singapore**: +6 weekly calls Asia-Europe (beneficiary of reshuffling)
-    - **Antwerp**: -4 weekly calls (lost Gemini services)
-    - **Felixstowe**: Dropped by Gemini (switched to London Gateway)
-    - **Rotterdam**: Maintained as key hub
-    
-    **Why Asia-Europe Matters:**
-    - **Largest vessels**: Only route with economies of scale for 20,000+ TEU deployment
-    - **Alliance battlefield**: All major groups compete intensely here
-    - **Strategic importance**: Connects world's two largest economic blocs
-    - **Bellwether route**: Freight rates here signal global market conditions
-    """)
+    st.plotly_chart(fig, width='stretch')
     
     # ============================================================================
-    # SECTION 7: Geopolitics and Trade Shifts
+    # SECTION 6: Geopolitics Reshaping Shipping Patterns
     # ============================================================================
     
-    st.markdown('<p class="section-header">Geopolitics Reshaping Global Trade</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Geopolitics Reshaping Global Shipping Patterns</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Geopolitical tensions, particularly US-China relations, are fundamentally reshaping container shipping 
-    patterns. The "China+1" strategy and supply chain diversification are creating new trade flows and 
-    challenging established hub dominance.
+    Global trade patterns are increasingly influenced by geopolitical tensions, strategic considerations, and 
+    government policies. The era of purely economic decision-making in global supply chains is giving way to 
+    "geoeconomics"—where national security, political alliances, and strategic autonomy shape trade flows as 
+    much as cost efficiency.
     """)
     
-    st.markdown('<p class="subsection-header">US-China Trade Tensions</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">US-China Trade Tensions and "China+1" Diversification</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **The Tension:**
-    - **Trade war** (2018-present): Tariffs, sanctions, export controls
-    - **Tech restrictions**: US limits on semiconductor exports to China
-    - **Port fees**: Proposed US fees on Chinese-built vessels (2025)
-    - **Decoupling rhetoric**: Political pressure to reduce China dependence
-    - **Supply chain security**: Concerns about over-reliance on Chinese manufacturing
+    **The Trade War and Beyond (2018-Present):**
     
-    **Impact on Shipping:**
-    - **Trade volume volatility**: US-China trade fluctuates with policy changes
-    - **Tariff-driven shifts**: Companies relocate production to avoid tariffs
-    - **Fleet deployment challenges**: Carriers uncertain about future volumes
-    - **Rate uncertainty**: Freight rates spike with policy announcements
+    **Key Developments:**
     
-    **Carrier Exposure:**
-    - **COSCO/OOCL**: Highest exposure (Chinese carriers, Chinese-built fleet)
-    - **CMA CGM**: Significant exposure (many Chinese-built vessels)
-    - **MSC/Maersk**: Lower exposure (diverse fleet sources, less Chinese-built)
-    - **Strategy**: Carriers redeploying Chinese-built vessels away from US routes
+    - **2018-2019: Tariff escalation**
+      - US imposed tariffs on $370 billion of Chinese imports
+      - China retaliated with tariffs on $110 billion of US goods
+      - Average tariff on Chinese imports rose from 3% to 20%+
+    
+    - **2020-2022: Supply chain disruptions**
+      - COVID-19 exposed vulnerabilities of concentrated Chinese manufacturing
+      - Semiconductor shortages highlighted dependence on Asian supply chains
+      - "Resilience" became as important as "efficiency" in supply chain design
+    
+    - **2023-Present: Strategic decoupling**
+      - US implementing export controls on advanced semiconductors and manufacturing equipment
+      - Investment restrictions on sensitive technologies
+      - "Friend-shoring" and "de-risking" becoming corporate strategies
+      - Both countries pursuing strategic autonomy in critical sectors
+    
+    **Impact on Container Shipping:**
+    
+    **The "China+1" Strategy:**
+    
+    Rather than abandoning China entirely (impractical given scale and infrastructure), companies are adopting 
+    **"China+1"** strategies—maintaining Chinese production whilst adding manufacturing capacity in alternative 
+    locations:
+    
+    - **Not abandoning China**: Too costly to exit entirely, China remains critical manufacturing base
+    - **Adding alternatives**: Diversifying to reduce concentration risk and navigate tariffs
+    - **"Plus One" locations**: Vietnam, Malaysia, Thailand, India, Mexico gaining manufacturing investments
+    - **Supply chain complexity**: More complex, multi-country supply chains replacing simple China-centric models
     """)
     
-    st.markdown('<p class="subsection-header">"China+1" and Manufacturing Diversification</p>', unsafe_allow_html=True)
-    
-    # China+1 growth data
+    # China+1 beneficiaries data
     intermediary_growth = pd.DataFrame({
-        'Country': ['Vietnam', 'Malaysia', 'Thailand', 'Indonesia', 'Bangladesh', 'Mexico', 'India'],
-        'Export Growth 2019-2024 (%)': ['+80%', '+45%', '+35%', '+40%', '+60%', '+55%', '+50%'],
-        'Key Industries': [
-            'Electronics, textiles, furniture',
-            'Electronics, semiconductors, E&E',
-            'Auto parts, electronics, food processing',
-            'Textiles, electronics, commodities',
-            'Garments, textiles',
-            'Auto, electronics (nearshoring to US)',
-            'Pharmaceuticals, textiles, IT services'
+        'Country': ['Vietnam', 'Malaysia', 'Thailand', 'India', 'Mexico', 'Poland', 'Turkey'],
+        '2018 Export Baseline': [100, 100, 100, 100, 100, 100, 100],
+        '2024 Export Growth Index': [180, 145, 141, 135, 142, 128, 130],
+        'Growth (%)': ['+80%', '+45%', '+41%', '+35%', '+42%', '+28%', '+30%'],
+        'Primary Beneficiary Of': [
+            'China+1, low-cost manufacturing, proximity to China',
+            'Electronics, electrical goods, palm oil',
+            'Automotive, electronics, food processing',
+            'Pharmaceuticals, IT services, textiles',
+            'Nearshoring to US, automotive, electronics',
+            'Nearshoring to EU, automotive, white goods',
+            'Nearshoring to EU, textiles, automotive parts'
         ],
-        'Port Investment': [
-            'Expanding Cai Mep, Hai Phong',
-            'Port Klang expansion, Tanjung Pelepas',
-            'Laem Chabang expansion',
-            'Tanjung Priok expansion',
-            'Chittagong expansion',
-            'Pacific coast ports expansion',
-            'JNPT, Mundra expansion'
-        ],
-        'Impact on Singapore': [
-            'Increased feeder traffic',
-            'Competition + cooperation (nearby hub)',
-            'Increased feeder traffic',
-            'Increased feeder traffic',
-            'Alternative hub (Colombo)',
-            'Reduces Asia-US via Singapore',
-            'Alternative hub (own ports)'
+        'Shipping Impact': [
+            'Rapid growth in Vietnam-US services, intra-Asia feeder expansion',
+            'Strengthened Port Klang and Tanjung Pelepas competitiveness',
+            'Increased Bangkok/Laem Chabang connectivity requirements',
+            'Nhava Sheva and Mundra capacity expansions',
+            'Nearshore advantage: Short Mexico-US rail/truck, less container shipping',
+            'Central Europe hub positioning',
+            'Mediterranean feeder network growth'
         ]
     })
     
-    st.dataframe(intermediary_growth, use_container_width=True, hide_index=True)
+    st.dataframe(intermediary_growth, width='stretch', hide_index=True)
     
     st.markdown("""
-    **"China+1" Strategy Explained:**
-    - **Definition**: Companies maintain China production BUT add secondary manufacturing base
-    - **Goal**: Diversify supply chain risk, avoid tariffs, reduce geopolitical exposure
-    - **NOT "China exit"**: China remains critical, but no longer sole source
-    - **Timeline**: Accelerated 2018-present (trade war), further accelerated by COVID-19
+    **The "Intermediate Country" Phenomenon:**
     
-    **Winners: Intermediate Countries**
-    - **Southeast Asia**: Vietnam (+80%), Malaysia (+45%), Thailand (+35%), Indonesia (+40%)
-    - **South Asia**: Bangladesh (+60%), India (+50%)
-    - **Latin America**: Mexico (+55%, nearshoring to US)
-    - **Characteristics**: Lower labour costs, political stability, improving infrastructure
+    An interesting pattern has emerged: direct China-US trade may be plateauing, but **intermediate countries** 
+    are experiencing explosive export growth. Investigation often reveals:
     
-    **Impact on Shipping:**
-    - **New trade lanes**: Growing volumes to/from intermediate countries
-    - **Hub shifts**: Vietnam, Malaysia, India becoming import/export hubs (not just transshipment)
-    - **Feeder growth**: More feeder services connecting intermediate countries to major hubs
-    - **Alliance strategies**: Must adapt networks to new trade patterns
+    - **Component imports from China**: Vietnam imports Chinese components and sub-assemblies
+    - **Final assembly locally**: Light assembly, packaging, or finishing work
+    - **Export to US/EU**: Now labelled "Made in Vietnam" avoiding tariffs
+    - **Value-add varies**: Sometimes substantial (genuine manufacturing), sometimes minimal (tariff arbitrage)
     
-    **Impact on Singapore:**
-    - **Positive**: More feeder traffic (intermediate countries → Singapore → global mainline)
-    - **Negative**: Some direct services bypass Singapore (e.g., Vietnam → US direct)
-    - **Adaptation needed**: Maintain relevance as trade patterns shift
+    This creates **more complex, multi-hop supply chains**:
+    - China → Vietnam (components) → US (final goods)
+    - China → Mexico (sub-assemblies) → US (finished products)
+    - China → Poland (materials) → EU (consumer goods)
+    
+    **Impact on Ports and Shipping:**
+    - **Transshipment volumes increasing**: More multi-leg routing boosts hub port demand
+    - **Intra-Asia trade growing**: Component movements between Asian countries
+    - **New port competition**: Vietnam, Malaysia, Thailand ports gaining relevance
+    - **Singapore benefits**: Central position captures increased intra-Asian and transshipment flows
     """)
     
-    st.markdown('<p class="subsection-header">Emerging Alternative Routes and Long-Term Threats</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Alternative Routes and Emerging Threats to Established Hubs</p>', unsafe_allow_html=True)
     
     # Alternative routes
     alternative_routes = pd.DataFrame({
         'Alternative Route/Development': [
             'Arctic Route (Northern Sea Route)',
-            'Thailand Kra Canal (proposed)',
+            'Thailand Kra Canal (Proposed)',
             'China-Europe Rail (Belt & Road)',
-            'Belt and Road Initiative (BRI)',
             'Suez Canal Expansion',
-            'Panama Canal (New Locks)'
+            'Panama Canal New Locks',
+            'India-Middle East-Europe Corridor (IMEC)'
         ],
         'Status': [
-            'Operational but limited',
-            'Proposed (not funded)',
-            'Operational',
-            'Ongoing development',
+            'Operational but limited (summer ice-free)',
+            'Proposed only (not funded)',
+            'Operational since 2011',
             'Completed 2015',
-            'Completed 2016'
+            'Completed 2016',
+            'Announced 2023, early planning'
         ],
         'Potential Impact': [
-            'Could divert 30% of Asia-Europe traffic from Suez (if ice-free year-round)',
-            'Would bypass Singapore and Malacca Strait entirely (catastrophic for Singapore if built)',
-            'Competes for China-Europe high-value cargo (limited capacity, ~5% of maritime volume)',
-            'Creates alternative trade corridors (road/rail), reduces reliance on sea routes',
-            'Handles larger vessels, speeds Asia-Europe transit (benefits Singapore)',
-            'Allows New-Panamax vessels (14,500 TEU) on Trans-Pacific routes'
+            '30% shorter Asia-Europe distance, could divert traffic from Suez if year-round accessible',
+            'Would bypass Malacca Strait and Singapore entirely (95% shorter than Malacca route)',
+            'Competes for time-sensitive cargo, limited by rail capacity (~1% of maritime volume)',
+            'Accommodates larger vessels, faster transit, benefits Suez-dependent hubs',
+            'Allows 14,500 TEU vessels to use canal, opened trans-Pacific East Coast services',
+            'Multi-modal India-Middle East-Europe route, reduces dependence on sea routes'
         ],
         'Likelihood/Timeline': [
-            'Climate-dependent, 2030s-2040s possible as Arctic warms',
-            'Low likelihood (<10%), decades away if ever (environmental, political obstacles)',
-            'Niche role (high-value, time-sensitive only), limited growth potential',
-            'Gradual development over decades, uneven success',
-            'Already implemented (2015)',
-            'Already implemented (2016)'
+            'Climate-dependent, potentially viable 2030s-2040s as Arctic warming continues',
+            'Very low likelihood, decades away if ever (cost $28B+, environmental concerns massive)',
+            'Already operational, niche role for high-value time-sensitive cargo',
+            'Already implemented and operational',
+            'Already implemented and operational',
+            'Long-term project, 2030s at earliest for significant operations'
         ],
         'Singapore Impact': [
-            'Moderate threat if Arctic becomes viable (diverts some Asia-Europe traffic)',
-            'Existential threat if built (would bypass Malacca/Singapore entirely)',
-            'Minimal (rail cannot match maritime volume or cost)',
-            'Indirect (shifts some trade to land corridors)',
-            'Positive (larger vessels use Singapore as hub)',
-            'Neutral (different route, Singapore not affected)'
+            'Moderate long-term threat if Arctic becomes reliably ice-free year-round',
+            'Existential threat if built (bypasses Singapore/Malacca Strait entirely)',
+            'Minimal (rail can never match maritime volume and cost efficiency)',
+            'Neutral to positive (more efficient Suez reinforces established route)',
+            'Neutral (different ocean, but creates competitive alternative to Suez for some cargo)',
+            'Potential threat if becomes major India-Europe route (bypasses Southeast Asia)'
         ]
     })
     
-    st.dataframe(alternative_routes, use_container_width=True, hide_index=True)
+    st.dataframe(alternative_routes, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Key Threats to Traditional Routes:**
+    **The Kra Canal: Singapore's Existential Nightmare (Low Probability, High Impact)**
     
-    **Arctic Route (Northern Sea Route):**
-    - **Potential**: Shorten Asia-Europe by ~40% (vs Suez), save 10-15 days transit
-    - **Current limitation**: Ice-free only 3-4 months/year, requires icebreaker escorts
-    - **Climate change**: Arctic warming could extend ice-free period
-    - **Timeline**: Potentially viable 2030s-2040s if current warming trends continue
-    - **Impact**: If viable year-round, could divert 20-30% of Asia-Europe traffic from Suez/Singapore
-    - **Singapore risk**: Moderate (would bypass Malacca Strait)
+    The proposed **Kra Canal** across Thailand's Isthmus of Kra would be Singapore's worst-case scenario:
     
-    **Kra Canal (Thailand):**
-    - **Proposal**: Cut canal across Thai peninsula, bypass Malacca Strait
-    - **Distance saved**: ~1,200 km (~2-3 days sailing)
-    - **Cost**: Estimated $20-30 billion (massive infrastructure project)
-    - **Challenges**: Environmental concerns, political obstacles, financing uncertainty, Thai government skepticism
-    - **Likelihood**: Very low (<10% chance of being built)
-    - **Singapore impact**: EXISTENTIAL THREAT if built (but unlikely)
+    - **Route**: Cut through southern Thailand, connecting Andaman Sea (west) to Gulf of Thailand (east)
+    - **Distance saving**: 1,200 kilometres shorter than Malacca Strait route (95% distance reduction)
+    - **Impact on Singapore**: Would bypass Malacca Strait and Singapore entirely
+    - **Estimated cost**: $28-40 billion (varies by proposal)
+    - **Construction timeline**: 10+ years if ever started
     
-    **China-Europe Rail (Belt & Road):**
-    - **Current**: Operational, ~5,000-8,000 containers/day capacity
-    - **Transit time**: 14-18 days (vs 30-35 days maritime)
-    - **Cost**: 2-3× maritime freight rates
-    - **Use case**: High-value, time-sensitive cargo (electronics, auto parts)
-    - **Limitation**: Cannot match maritime volume (rail ~1% of maritime TEU)
-    - **Singapore impact**: Minimal (different market segment)
+    **Why Singapore Monitors This Closely (Despite Low Probability):**
     
-    **Bottom Line:**
-    Traditional maritime routes (Suez, Malacca, Panama) remain dominant. Alternative routes are niche 
-    or distant threats. Singapore's position is secure medium-term (10-20 years) but must monitor Arctic 
-    and continue infrastructure investment (Tuas Port) to maintain long-term competitiveness.
+    If built, Kra Canal would:
+    - **Eliminate Singapore's locational advantage**: No longer on the mandatory Asia-Europe route
+    - **Bypass Malacca Strait**: Remove the geographical necessity that underpins Singapore's position
+    - **Devastate transshipment volumes**: Mega vessels could route directly through Thailand
+    - **Create new Thai hub ports**: Thailand would capture transshipment business
+    
+    **Why Kra Canal Remains Unlikely:**
+    
+    - **Massive cost**: $28-40B investment with uncertain returns
+    - **Environmental impact**: Would devastate ecosystems, massive opposition
+    - **Geopolitical complexity**: Malaysia and Singapore would strongly oppose
+    - **Economic uncertainty**: Would Thailand benefit enough to justify cost?
+    - **Technical challenges**: Seabed geology complex, construction difficult
+    - **No credible funding**: No serious investor backing despite decades of proposals
+    
+    Despite low probability, Singapore's **$20 billion Tuas investment** partially reflects the imperative to 
+    lock in shipping line commitments and create such operational superiority that even a Kra Canal couldn't 
+    easily divert traffic.
     """)
     
     # ============================================================================
-    # SECTION 8: Key Takeaways
+    # SECTION 7: Key Takeaways
     # ============================================================================
     
-    st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Key Takeaways: Global Shipping & Alliances</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
         **Industry Consolidation:**
-        - 15+ carriers (2000) → 9 major players (2025)
-        - ~80% controlled by 4 groups (3 alliances + MSC solo)
-        - Overcapacity crisis (2015-2016) forced mergers and cooperation
-        - Further consolidation possible (Premier Alliance vulnerable)
+        - 15+ independent carriers (2000) → 9 major players (2025)
+        - Three alliance structures control 83% of global capacity
+        - Overcapacity crisis (2015-2016) forced consolidation wave
+        - Hanjin bankruptcy (2016) demonstrated scale necessity
+        - Further consolidation likely over next decade
         
-        **The 2025 Reshuffling (February 1):**
-        - **2M Alliance DISSOLVED** (MSC + Maersk ended after 10 years)
-        - **Gemini Cooperation FORMED** (Maersk + Hapag-Lloyd, NEW)
-        - **Premier Alliance FORMED** (THE rebranded, lost Hapag-Lloyd)
-        - **MSC INDEPENDENT** (world's largest carrier operating solo)
-        - Biggest alliance reorganisation in a decade
+        **February 2025 Alliance Restructuring:**
+        - **2M Alliance dissolved** (MSC + Maersk, 10-year partnership ended)
+        - **Gemini Cooperation formed** (Maersk + Hapag-Lloyd, hub-spoke focus)
+        - **Premier Alliance created** (ONE + HMM + Yang Ming, formerly THE Alliance)
+        - **Ocean Alliance unchanged** (CMA CGM + COSCO + OOCL + Evergreen)
+        - **MSC independent** (operates alone with selective cooperation)
         
-        **Current Alliance Structure:**
-        - **Ocean**: CMA CGM + COSCO + OOCL + Evergreen (29%, LARGEST)
-        - **Gemini**: Maersk + Hapag-Lloyd (21%, NEWEST, 90% reliability target)
-        - **MSC**: Solo (20%, LARGEST CARRIER, 7.1M TEU)
-        - **Premier**: ONE + HMM + Yang Ming (11%, SMALLEST, survival challenge)
+        **Alliance Operations:**
+        - Cooperate on: Vessels, service planning, port calls, schedules
+        - Compete on: Pricing, contracts, customer service, quality
+        - Regulatory oversight: Competition authorities monitor closely
+        - Balance: Achieve economies of scale whilst preserving competition
         """)
     
     with col2:
         st.markdown("""
         **Hub-and-Spoke Dominance:**
-        - 85% of cargo transships at hubs (not point-to-point)
-        - **Singapore**: World's premier hub (85% transshipment, 200+ lines, 600+ ports)
-        - **Mega vessels** connect hubs, **feeder vessels** distribute to regional ports
-        - **Gemini's extreme**: 12 hubs + 32 shuttles (reliability over coverage)
+        - 85% of containers transship at intermediate hubs
+        - Singapore: 85% transshipment, world's premier hub
+        - Connected to 600+ ports globally through hub-feeder networks
+        - Mainline mega vessels connect hubs (18,000-24,000 TEU)
+        - Feeder vessels connect hubs to regional ports (1,000-3,000 TEU)
+        - "Vital port in interconnected network" vs "biggest hub" strategy
         
         **Major Trade Routes:**
-        - **Intra-Asia**: Highest volume (~35M TEU)
-        - **Asia-Europe**: Longest route, largest vessels (24M TEU, 30-45 days)
-        - **Trans-Pacific**: High-value cargo (26M TEU combined USWC+USEC)
-        - **Red Sea disruption** (2024-2025): Mega vessels via Cape (+7-10 days, +$500K-800K)
+        - Intra-Asia: Largest volume (35M TEU annually)
+        - Asia-Europe: Longest distance (24M TEU, 30-35 days via Suez)
+        - Trans-Pacific: High-value cargo (26M TEU combined East+West Coast)
+        - Various North-South routes to Latin America, Africa, Middle East
         
-        **Geopolitics Reshaping Trade:**
-        - **US-China tensions**: Tariffs, sanctions, decoupling rhetoric
-        - **"China+1"**: Vietnam +80%, Malaysia +45%, Mexico +55% exports (2019-2024)
-        - **Intermediate countries**: Benefiting from supply chain diversification
-        - **Alternative routes**: Arctic (long-term), Kra Canal (unlikely), China-Europe rail (niche)
+        **Geopolitical Reshaping:**
+        - US-China tensions driving "China+1" diversification strategies
+        - Vietnam (+80%), Malaysia (+45%), Mexico (+42%) export growth
+        - Intermediate countries benefit from supply chain reconfiguration
+        - Alternative routes emerging (Arctic, BRI, Kra Canal proposal)
+        - Trade patterns increasingly influenced by strategic considerations
         
         **Singapore's Challenge:**
-        - Maintain hub dominance amid changing trade patterns
-        - Adapt to "China+1" (opportunity + threat)
-        - **Tuas Port**: Massive investment to stay ahead
-        - **Competition**: Malaysia, Vietnam, India growing
+        - Maintain position as indispensable transshipment hub
+        - Face intensifying regional competition (Malaysia, Indonesia, Thailand)
+        - Adapt to changing trade patterns and alliance restructuring
+        - Massive Tuas investment ($20B) to lock in long-term competitiveness
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> The container shipping industry underwent its biggest restructuring in 
-    a decade on February 1, 2025. The 2M Alliance (MSC + Maersk, 34% market share) dissolved after 10 years. 
-    Maersk formed the new <strong>Gemini Cooperation</strong> with Hapag-Lloyd (21%, targeting unprecedented 
-    >90% reliability). MSC now operates <strong>independently</strong> as the world's largest carrier (7.1M TEU, 
-    20%). THE Alliance lost Hapag-Lloyd and rebranded as <strong>Premier Alliance</strong> (ONE + HMM + Yang Ming, 
-    11%, smallest). The <strong>Ocean Alliance</strong> (CMA CGM + COSCO + OOCL + Evergreen, 29%) remained 
-    unchanged and became the largest alliance.
-    <br><br>
-    Modern shipping operates on a <strong>hub-and-spoke model</strong>, with Singapore as the world's premier 
-    transshipment hub (85% transshipment, 200+ lines, 600+ ports connected, 39.9M TEU throughput). Gemini took 
-    this model to the extreme with 12 global hubs and 32 dedicated shuttles, prioritizing reliability over 
-    coverage. Meanwhile, <strong>geopolitical tensions</strong> (US-China trade war) and <strong>"China+1" 
-    diversification</strong> are reshaping trade patterns, with intermediate countries (Vietnam +80%, Malaysia 
-    +45%) experiencing rapid export growth 2019-2024.
-    <br><br>
-    <strong>2025-2026 Outlook:</strong> Watch (1) Can Gemini achieve 90% reliability? (2) Can Premier Alliance 
-    survive at just 11% market share? (3) Does MSC's solo bet pay off amid potential overcapacity? (4) When 
-    will mega vessels return to Suez Canal (Red Sea security)? The next 12-24 months will determine if 2025's 
-    massive reshuffling was successful or requires further reorganisation.
+    <strong>🔍 Bottom Line:</strong> The container shipping industry has consolidated dramatically, with just 9 major 
+    carriers organised into three alliance structures (post-February 2025: Gemini Cooperation, Ocean Alliance, 
+    Premier Alliance) plus MSC operating semi-independently, collectively controlling 83% of global capacity. This 
+    oligopolistic structure emerged from the 2015-2016 overcapacity crisis that forced "get big or get out" dynamics. 
+    Modern shipping operates primarily on hub-and-spoke networks, with 85% of cargo transshipping at intermediate 
+    hubs. Singapore, as the world's premier transshipment hub (connected to 600+ ports, 200+ shipping lines), 
+    exemplifies this model but faces intensifying competition and must position itself as a "vital port in an 
+    interconnected network" through operational excellence and comprehensive connectivity. Geopolitical tensions, 
+    particularly US-China trade disputes, are reshaping global trade patterns through "China+1" diversification, 
+    with Vietnam, Malaysia, India, and Mexico experiencing rapid export growth as intermediate manufacturing 
+    locations. Alternative routes (Arctic, Kra Canal, Belt and Road Initiative) pose potential long-term threats 
+    to established shipping lanes and hub ports, requiring continuous strategic adaptation and infrastructure 
+    investment to maintain competitive positions.
     </div>
     """, unsafe_allow_html=True)
     
@@ -1309,7 +1212,9 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** 🇸🇬 Maritime Singapore Ecosystem - Explore Singapore's comprehensive maritime cluster, 
-    MPA's dual role as regulator and developer, the Tuas Port mega-project, and the innovation ecosystem 
-    driving maritime technology forward in Singapore's quest to remain the world's premier maritime hub.
+    **Next Topic:** 🇸🇬 Maritime Singapore Ecosystem - Explore Singapore's comprehensive maritime cluster beyond 
+    the port (170+ international shipping groups, 30+ shipbroking firms, 20+ banks with shipping portfolios, 
+    100+ MarineTech startups), understand MPA's dual role as both regulator and strategic developer, and discover 
+    the innovation ecosystem that positions Singapore as the world's top international maritime centre for 11 
+    consecutive years.
     """)
