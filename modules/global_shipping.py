@@ -765,7 +765,7 @@ def show():
         Singapore's own operational data.
         """)
     
-    st.markdown('<p class="subsection-header">Singapore: The World's Premier Transshipment Hub</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Singapore: The World\'s Premier Transshipment Hub</p>', unsafe_allow_html=True)
     
     st.markdown("""
     Singapore represents the ultimate example of the hub-and-spoke model in action. Understanding Singapore's 
@@ -789,6 +789,7 @@ def show():
     </div>
     """, unsafe_allow_html=True)
     
+    st.markdown("""
     **Singapore's Hub Business Model: Pure Transshipment**
     
     Unlike gateway ports (Los Angeles, Hamburg) where most cargo serves local markets, Singapore operates as 
