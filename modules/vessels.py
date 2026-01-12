@@ -392,7 +392,7 @@ def show():
             'Short-sea, coastal, river ports',
             'Intra-regional (within Asia, Europe)',
             'Trans-Pacific, Asia-Europe (historical)',
-            'Major trade lanes, can't use Panama',
+            'Major trade lanes, cannot use Panama',
             'Trans-Pacific via new Panama Canal',
             'Asia-Europe mainline via Suez',
             'Asia-Europe mainline via Suez only'
