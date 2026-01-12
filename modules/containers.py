@@ -9,96 +9,140 @@ def show():
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
     Understand ISO container standards, measurement systems (TEU), container types and specifications, 
-    identification systems, and the three-dimensional addressing used in terminals and vessels.
+    identification systems, and the three-dimensional addressing used in terminals and vessels. Grasp how 
+    standardisation revolutionised global trade and enabled the modern intermodal transport system.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: ISO Container Standards
+    # SECTION 1: The Container Revolution Context
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">The Container Revolution: From Concept to Global Standard</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Before diving into technical specifications, it's essential to understand why container standardisation 
+    was revolutionary. In 1956, Malcolm McLean launched the **Ideal-X**, the first purpose-built container 
+    ship, carrying just 58 containers from Newark to Houston. This simple innovation—a standardised, 
+    reusable metal box—transformed global commerce by reducing shipping costs by over 90% and enabling 
+    the intermodal transport system we rely on today.
+    """)
+    
+    st.markdown("""
+    <div class="success-box">
+    <strong>💡 The Power of Standardisation:</strong><br>
+    <strong>Before containers</strong>: Cargo loaded piece by piece, taking 7-10 days per ship, with high theft 
+    and damage rates<br>
+    <strong>After containers</strong>: Sealed boxes loaded in under 24 hours, with dramatically reduced costs and 
+    damage<br><br>
+    The key insight was <strong>intermodal transport</strong>: the same container travels by truck from factory, 
+    transfers to ship, then to rail, then truck again—all without unpacking the cargo. This required global 
+    agreement on exact dimensions so that every crane, every ship, every truck, and every train could handle 
+    the same standardised box.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # ============================================================================
+    # SECTION 2: ISO Container Standards
     # ============================================================================
     
     st.markdown('<p class="section-header">ISO Container Standards: The Foundation of Interoperability</p>', unsafe_allow_html=True)
     
     st.markdown("""
     The genius of containerisation lies in **standardisation**. ISO (International Organisation for 
-    Standardisation) containers have precise specifications that enable seamless global operations.
-    
-    **The Global Container Fleet (2024):**
-    - Global container fleet market valued at **$13.34 billion in 2024**
-    - Projected to reach **$21.9 billion by 2033** (CAGR 5.4%)
-    - Approximately **50+ million containers** in active global circulation
-    - **Dry containers**: 62% of fleet (general cargo)
-    - **Reefer containers**: 6-8% of fleet (growing, valued at $1.94 billion in 2024)
-    - **Specialised containers**: Tank, flat rack, open top (~5%)
+    Standardization) containers have precise specifications that enable seamless global operations. Without 
+    these standards, the global container shipping system simply could not function.
     """)
     
     st.markdown('<p class="subsection-header">Standard Container Dimensions</p>', unsafe_allow_html=True)
     
-    # Container specifications
+    # Container specifications - Enhanced with all sizes from lectures
     container_specs = pd.DataFrame({
         'Container Type': [
             '20ft Standard',
             '40ft Standard',
             '40ft High Cube',
-            '45ft High Cube'
+            '45ft High Cube',
+            '48ft High Cube',
+            '53ft High Cube'
         ],
-        'External Length': ['6.1m (20ft)', '12.2m (40ft)', '12.2m (40ft)', '13.7m (45ft)'],
-        'External Width': ['2.4m (8ft)', '2.4m (8ft)', '2.4m (8ft)', '2.4m (8ft)'],
-        'External Height': ['2.6m (8ft 6in)', '2.6m (8ft 6in)', '2.9m (9ft 6in)', '2.9m (9ft 6in)'],
-        'Internal Length': ['5.9m', '12.0m', '12.0m', '13.6m'],
-        'Internal Width': ['2.35m', '2.35m', '2.35m', '2.35m'],
-        'Internal Height': ['2.39m', '2.39m', '2.69m', '2.69m'],
-        'Tare Weight': ['2,300 kg', '3,750 kg', '3,940 kg', '4,800 kg'],
-        'Max Gross Weight': ['30,480 kg', '30,480 kg', '30,480 kg', '30,480 kg'],
-        'Max Payload': ['28,180 kg', '26,730 kg', '26,540 kg', '25,680 kg'],
-        'Cubic Capacity': ['33 m³', '67 m³', '76 m³', '86 m³']
+        'External Length': ['6.058m (19ft 10.5in)', '12.192m (40ft)', '12.192m (40ft)', '13.716m (45ft)', '14.630m (48ft)', '16.154m (53ft)'],
+        'External Width': ['2.438m (8ft)', '2.438m (8ft)', '2.438m (8ft)', '2.438m (8ft)', '2.591m (8ft 6in)', '2.591m (8ft 6in)'],
+        'External Height': ['2.591m (8ft 6in)', '2.591m (8ft 6in)', '2.896m (9ft 6in)', '2.896m (9ft 6in)', '2.896m (9ft 6in)', '2.896m (9ft 6in)'],
+        'Internal Length': ['5.9m', '12.0m', '12.0m', '13.6m', '14.5m', '16.0m'],
+        'Internal Width': ['2.35m', '2.35m', '2.35m', '2.35m', '2.49m', '2.49m'],
+        'Internal Height': ['2.39m', '2.39m', '2.69m', '2.69m', '2.69m', '2.69m'],
+        'Tare Weight': ['2,300 kg', '3,750 kg', '3,940 kg', '4,800 kg', '5,200 kg', '5,800 kg'],
+        'Max Gross Weight': ['30,480 kg', '30,480 kg', '30,480 kg', '30,480 kg', '34,020 kg', '34,020 kg'],
+        'Max Payload': ['28,180 kg', '26,730 kg', '26,540 kg', '25,680 kg', '28,820 kg', '28,220 kg'],
+        'Cubic Capacity': ['33 m³', '67 m³', '76 m³', '86 m³', '97 m³', '109 m³'],
+        'Primary Market': ['Global standard', 'Global standard', 'Global standard', 'Global/Europe', 'North America', 'North America']
     })
     
-    st.dataframe(container_specs, use_container_width=True, hide_index=True)
+    st.dataframe(container_specs, width='stretch', hide_index=True)
     
     st.markdown("""
     **Key Observations:**
     
-    **Universal Width:**
-    - All containers are **2.4 metres (8 feet) wide**
+    **Universal 8-Foot Width (2.438m):**
+    - All standard containers are **8 feet (2.438m) wide**
     - This is the fundamental standard that everything else is built around
-    - Ships, cranes, trucks, trains all designed for 8ft width
+    - Origin: Based on US truck width regulations from the 1950s
+    - Ships, cranes, trucks, trains, and terminals worldwide designed for this width
+    - 48ft and 53ft containers are slightly wider (8ft 6in) but only used domestically in North America
+    
+    **Length Standards:**
+    - **20ft (6.058m)**: Original standard, still widely used for heavy cargo
+    - **40ft (12.192m)**: Most common globally, exactly double the 20ft
+    - **45ft (13.716m)**: European standard for higher volume
+    - **48ft & 53ft**: Used exclusively in North American domestic markets
+    - Multiples of standard lengths enable efficient stacking and transport planning
     
     **Height Variations:**
-    - **Standard height**: 8ft 6in (2.6m) - Traditional standard
-    - **High Cube**: 9ft 6in (2.9m) - Extra 1 foot of height
-    - High Cube allows more volume without exceeding weight limits
-    - Most new containers are High Cube (more versatile for low-density cargo)
+    - **Standard height**: 8ft 6in (2.591m) - Original traditional standard
+    - **High Cube**: 9ft 6in (2.896m) - Extra 1 foot (30cm) of height
+    - High Cube containers allow more volume without exceeding weight limits
+    - Most new containers manufactured today are High Cube (more versatile for low-density cargo)
+    - Height chosen to balance volume against clearance limits (bridges, tunnels, overhead wires)
     
     **Weight Limits:**
     - **Max gross weight**: 30,480 kg (30.48 tonnes) - International ISO standard
-    - **Tare weight**: Empty container weight (2.3-4.8 tonnes depending on type)
-    - **Max payload**: Gross minus tare (26-28 tonnes typically)
-    - Road transport may have lower limits (varies by country regulations)
-    
-    **Why These Specific Dimensions?**
-    - 8ft width: Matches US truck width regulations (1950s standard)
-    - 20ft/40ft length: Multiples for efficient stacking and transport
-    - Heights: Balance between volume and clearance limits (bridges, tunnels)
-    - 40ft containers dominate: **54% market share** of global container movements
+    - Some countries allow higher gross weights (up to 36 tonnes) for domestic transport
+    - **Tare weight**: Empty container weight (2.3-5.8 tonnes depending on type and size)
+    - **Max payload**: Gross weight minus tare weight (typically 25-28 tonnes)
+    - Road transport often has lower limits (varies by country regulations)
     """)
+    
+    st.markdown("""
+    <div class="insight-box">
+    <strong>🎯 Why These Specific Dimensions?</strong><br><br>
+    <strong>8ft width:</strong> Matched US truck width regulations in the 1950s when Malcolm McLean pioneered 
+    containerisation. This became the global standard because early adoption drove infrastructure investment.<br><br>
+    <strong>20ft/40ft lengths:</strong> Multiples for efficient stacking and transport. A 40ft position on a vessel 
+    can hold one 40ft container or two 20ft containers. This flexibility is crucial for operations.<br><br>
+    <strong>8ft 6in vs 9ft 6in heights:</strong> Balance between cargo volume and transport clearances. Bridges, 
+    tunnels, overhead power lines, and vessel stability all constrain maximum height. High Cube adds valuable 
+    volume for bulky, light cargo without exceeding weight limits.
+    </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("""
     <div class="success-box">
     <strong>💡 The Power of Standardisation:</strong><br>
     Because containers worldwide follow these exact specifications:<br>
-    - <strong>Any container</strong> fits on any ship, truck, train, or terminal<br>
-    - <strong>Global infrastructure</strong> designed for these exact dimensions<br>
-    - <strong>Equipment interoperability</strong>: Cranes and chassis work everywhere<br>
+    - <strong>Any container</strong> fits on any ship, truck, train, or terminal anywhere in the world<br>
+    - <strong>Global infrastructure</strong> designed for these exact dimensions (berths, cranes, yards, roads)<br>
+    - <strong>Equipment interoperability</strong>: Cranes and chassis work everywhere without modification<br>
     - <strong>Planning simplification</strong>: Port operators know exactly what they're handling<br>
-    - <strong>Economies of scale</strong>: Mass production of containers and equipment<br><br>
-    Without standardisation, global containerised shipping would be impossible. This standardisation 
-    enabled the container fleet market to grow from virtually nothing in 1956 to a $13.34 billion industry in 2024.
+    - <strong>Economies of scale</strong>: Mass production of containers and handling equipment<br>
+    - <strong>Intermodal efficiency</strong>: Seamless transfer between transport modes<br><br>
+    Without standardisation, global containerised shipping would be impossible. Each port would need different 
+    equipment, vessels couldn't call at multiple ports efficiently, and costs would be prohibitive.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 2: TEU Measurement System
+    # SECTION 3: TEU Measurement System
     # ============================================================================
     
     st.markdown('<p class="section-header">The TEU: Universal Container Measurement</p>', unsafe_allow_html=True)
@@ -107,10 +151,11 @@ def show():
     **TEU = Twenty-foot Equivalent Unit**
     
     The TEU is the standard unit for measuring container capacity, throughput, and vessel sizes. It provides 
-    a normalised measure that enables comparison across different container mixes.
+    a universal language for the industry, normalising the mix of different container sizes into a single 
+    comparable metric.
     """)
     
-    st.markdown('<p class="subsection-header">TEU Calculation</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Understanding TEU Calculation</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
@@ -120,6 +165,8 @@ def show():
         - 1 × 20ft container = **1 TEU**
         - 1 × 40ft container = **2 TEU**
         - 1 × 45ft container = **2.25 TEU** (approximately)
+        - 1 × 48ft container = **2.4 TEU** (North America only)
+        - 1 × 53ft container = **2.65 TEU** (North America only)
         
         **Examples:**
         - Vessel carrying 10,000 × 20ft containers = 10,000 TEU
@@ -128,59 +175,89 @@ def show():
         
         **Port Throughput:**
         - Singapore handles ~37 million TEU annually (2024)
-        - Shanghai handles ~49 million TEU annually (world's busiest)
-        - Global port throughput: ~860 million TEU (2024)
-        - TEU provides standard measurement regardless of container size mix
+        - This could be any mix of 20ft and 40ft containers
+        - TEU provides standard measurement regardless of actual container size mix
+        - Enables meaningful comparisons between ports globally
         """)
     
     with col2:
         st.markdown("""
-        **Why TEU and Not Just "Container Count"?**
+        **Why TEU Rather Than Just "Container Count"?**
         
         **Problem:**
         - A 20ft and 40ft container are very different
-        - 40ft has 2× length, ~2× volume, ~2× weight
-        - Saying "1,000 containers" doesn't tell you much
+        - 40ft has 2× length, ~2× volume, ~2× weight capacity
+        - Saying "a port handled 1,000 containers" doesn't tell you much
+        - Could be 1,000 × 20ft (1,000 TEU) or 1,000 × 40ft (2,000 TEU)
         
         **Solution:**
-        - TEU normalises to 20ft equivalent
-        - "10,000 TEU" gives clear sense of capacity/volume
-        - Easy to compare vessels, ports, and throughput
+        - TEU normalises everything to 20ft equivalent
+        - "10,000 TEU" gives clear sense of capacity and volume
+        - Easy to compare vessels, ports, and throughput globally
+        - Industry-wide standard for capacity planning
         
-        **Industry Standard:**
+        **Industry Standard Usage:**
         - Vessel capacity: "A 20,000 TEU vessel"
         - Port throughput: "37M TEU per year"
         - Crane productivity: "30 moves per hour = 45 TEU/hour (if all 40ft)"
-        - Fleet capacity: "MSC operates 5.9M TEU capacity" (2025)
+        - Terminal capacity: "Annual capacity of 15M TEU"
         """)
     
-    # TEU comparison visualisation
+    # TEU comparison visualization - Enhanced
+    st.markdown('<p class="subsection-header">TEU in Practice: Different Mixes, Same Capacity</p>', unsafe_allow_html=True)
+    
     teu_examples = pd.DataFrame({
-        'Container Mix': ['All 20ft', 'All 40ft', 'Mixed (50/50)', 'Typical Mix (20% 20ft, 80% 40ft)'],
-        'Number of Containers': [10000, 5000, 6667, 5625],
-        'Total TEU': [10000, 10000, 10000, 10000],
-        'Average TEU per Container': [1.0, 2.0, 1.5, 1.78]
+        'Container Mix': [
+            'All 20ft containers',
+            'All 40ft containers',
+            'Mixed (50% each by count)',
+            'Typical mix (20% 20ft, 80% 40ft by count)',
+            'Volume-optimized (10% 20ft, 90% 40ft)'
+        ],
+        'Number of Containers': [10000, 5000, 6667, 5625, 5278],
+        'Total TEU': [10000, 10000, 10000, 10000, 10000],
+        'Average TEU per Container': [1.0, 2.0, 1.5, 1.78, 1.89],
+        'Notes': [
+            'Heavy cargo routes (metals, minerals)',
+            'Light cargo routes (electronics, clothing)',
+            'Balanced mix',
+            'Common global average',
+            'Modern mega-vessel typical mix'
+        ]
     })
     
-    st.dataframe(teu_examples, use_container_width=True, hide_index=True)
+    st.dataframe(teu_examples, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Note:** In modern shipping, **40ft containers (2 TEU) dominate**, representing ~80% of global movements, 
-    with 40ft High Cube being the most common variant due to volume efficiency for low-density cargo.
+    **Practical Implications:**
+    
+    **Moves vs Boxes vs TEU:**
+    - **Moves**: Physical crane movements (lifting/lowering operations)
+    - **Boxes**: Actual number of individual containers
+    - **TEU**: Normalised capacity measure
+    - Example: Moving 5,000 boxes that are all 40ft = 5,000 moves = 10,000 TEU
+    - Productivity often measured in moves/hour, but capacity measured in TEU
+    
+    **Why the Mix Matters:**
+    - Vessels designed for TEU capacity, not box count
+    - A "20,000 TEU vessel" could carry 20,000 × 20ft or 10,000 × 40ft (or any mix totaling 20,000 TEU)
+    - Port planning based on TEU throughput expectations
+    - Heavy cargo (metals) tends toward 20ft; light cargo (electronics) toward 40ft
     """)
     
     # ============================================================================
-    # SECTION 3: Container Types
+    # SECTION 4: Container Types
     # ============================================================================
     
     st.markdown('<p class="section-header">Container Types: Specialised for Different Cargo</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    While standard dry containers are most common, specialised containers exist for specific cargo types. 
-    The container fleet mix reflects global trade patterns.
+    While standard dry containers dominate the global fleet, specialised containers exist for specific cargo 
+    types. Understanding these types is essential for terminal operations, as each requires different handling 
+    procedures and infrastructure.
     """)
     
-    # Container types data
+    # Container types data - Enhanced with lecture information
     container_types = pd.DataFrame({
         'Type': [
             'Dry Van (General Purpose)',
@@ -191,162 +268,201 @@ def show():
             'Out of Gauge (OOG)',
             'Platform/Bolster'
         ],
-        'Percentage of Fleet': ['85-90%', '6-8%', '~1%', '~1%', '~1%', '<1%', '<1%'],
+        'Percentage of Fleet': ['~90%', '~6%', '~1%', '~1%', '~1%', '<1%', '<1%'],
         'Primary Use': [
-            'General cargo, boxes, pallets, bags, most manufactured goods',
+            'General cargo: boxes, pallets, bags, manufactured goods',
             'Perishables, pharmaceuticals, chemicals requiring temperature control',
-            'Oversized cargo that exceeds height, loaded from top',
-            'Heavy machinery, construction equipment, oversized items',
-            'Liquids: chemicals, food-grade liquids, wine, oils',
-            'Cargo exceeding container dimensions (very large equipment)',
-            'Heavy cargo like steel coils, timber, vehicles'
+            'Oversized cargo that exceeds standard height, loaded from top with crane',
+            'Heavy machinery, construction equipment, oversized items needing open sides',
+            'Liquids: chemicals, food-grade liquids, wine, oils, liquid bulk cargo',
+            'Cargo exceeding container dimensions in any direction (very large equipment)',
+            'Heavy cargo like steel coils, timber, vehicles, requiring open platform'
         ],
         'Key Features': [
-            'Fully enclosed, weatherproof, lockable doors',
+            'Fully enclosed, weatherproof, lockable doors, corrugated steel construction',
             'Built-in refrigeration unit, temperature range -35°C to +30°C, requires continuous power',
-            'Removable roof/tarpaulin, same footprint as standard',
-            'Collapsible sides, can stack flat when empty, lashing points',
-            'Cylindrical tank in standard ISO frame, various sizes (14-26k litres)',
-            'Oversized length/width/height, cannot stack containers on top',
-            'Flat base with corner posts, no walls or roof, secure heavy loads'
+            'Removable roof/tarpaulin, same footprint as standard, crane-accessible top',
+            'Collapsible sides, can stack flat when empty, lashing points for securing',
+            'Cylindrical tank in standard ISO frame, various sizes (14-26k litres), pressure-rated',
+            'Oversized length/width/height, cannot stack containers on top, special stowage',
+            'Flat base with corner posts, no walls or roof, designed for heavy/awkward loads'
         ],
         'Special Handling': [
-            'Standard handling, most common',
+            'Standard crane operations, forklift loading/unloading',
             'Must connect to power (vessel/terminal/truck), monitor temperature continuously, priority handling',
-            'Crane access required for loading/unloading from top',
-            'Special securing, cannot stack other containers on top, heavy-duty lashing',
-            'Requires certified cleaning between loads, hazmat regulations apply',
-            'Special stowage positions, certified lifting equipment, additional securing',
-            'Heavy-duty securing, special stowage considerations'
+            'Top-loading requires crane access, cannot load with standard equipment from doors',
+            'Special securing required, cannot stack other containers on top, careful weight distribution',
+            'Requires certified cleaning between loads, hazmat regulations, specialized connections',
+            'Special stowage positions, certified lifting equipment, cannot obstruct other containers',
+            'Heavy-duty securing, special stowage considerations, load distribution critical'
         ]
     })
     
-    st.dataframe(container_types, use_container_width=True, hide_index=True)
+    st.dataframe(container_types, width='stretch', hide_index=True)
     
-    st.markdown('<p class="subsection-header">Reefer Containers: Growing Cold Chain Market</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Reefer Containers: Special Infrastructure Requirements</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Refrigerated containers (reefers) require special infrastructure and monitoring, and represent a **rapidly 
-    growing segment** of the container fleet:
-    
-    **Market Growth (2024-2025):**
-    - Global reefer container fleet market: **$1.94 billion in 2024**
-    - Projected to reach **$3.05 billion by 2031** (CAGR 6.5%)
-    - Growing demand driven by fresh produce trade, pharmaceuticals, e-commerce food delivery
-    - Asia-Pacific dominates reefer growth (China, India, Southeast Asia)
+    Refrigerated containers (reefers) represent a critical specialised category requiring dedicated 
+    infrastructure throughout the supply chain. Understanding reefer requirements is essential for terminal 
+    design and operations planning.
     
     **Power Requirements:**
-    - Reefers need continuous electrical power (440V 3-phase, 60Hz typically)
-    - **Vessels**: Reefer plugs in specific positions (limited number per bay)
-    - **Terminals**: Power outlets in dedicated reefer zones
-    - **Trucks**: Diesel-powered generators (clip-on units)
-    - Vessels with 2,000+ reefer plugs are common on major trade routes
+    - Reefers need **continuous electrical power** to maintain temperature
+    - **Vessels**: Limited reefer plug positions in specific bays (typically 10-15% of total capacity)
+      - Plugs integrated into vessel structure near holds and on deck
+      - Restricts where reefers can be stowed (stowage constraint)
+      - Power capacity limits number of reefers per voyage
+    - **Terminals**: Dedicated power outlets in yard storage areas (reefer zones)
+      - Electrical grid infrastructure required
+      - Significant operational cost (continuous power consumption)
+    - **Trucks**: Diesel-powered generators (clip-on gensets)
+      - Added fuel cost and emissions
+      - Maintenance requirements
     
     **Temperature Monitoring:**
-    - Continuous remote monitoring of temperature
-    - Automated alarms if temperature deviates from setpoint (±0.5°C tolerance)
-    - IoT integration: Real-time tracking via satellite/cellular (2024+ standard)
-    - Temperature logs for customs/quality assurance/insurance claims
+    - **Remote monitoring systems** track all reefers in real-time
+    - Alarms if temperature deviates from setpoint (immediate action required)
+    - Temperature logs for customs and quality assurance
+    - Cold chain integrity documentation required
     
     **Operational Challenges:**
-    - Limited reefer plug positions on vessels (stowage constraint, typically 20-30% of capacity)
-    - High power consumption at terminals (significant operational cost)
-    - Breakdowns require immediate attention (cargo spoilage risk worth $10,000s)
-    - Priority handling for perishables (time-sensitive fresh produce)
-    - **Pre-trip inspections**: Mandatory to prevent mechanical failures
+    - **Limited plug positions on vessels** = stowage constraint (cannot stow reefers just anywhere)
+    - **Power consumption at terminals** = significant cost consideration (electrical demand)
+    - **Equipment breakdowns** require immediate attention (cargo spoilage risk within hours)
+    - **Priority handling** = time-sensitive perishables cannot wait
+    - **Cleaning requirements** between loads (food safety, cross-contamination prevention)
     
     **Common Reefer Cargo:**
-    - Frozen meat, fish, poultry (−18°C to −25°C)
-    - Fresh fruits and vegetables (+2°C to +10°C)
-    - Dairy products (+2°C to +6°C)
-    - Pharmaceuticals and vaccines (precise temperature control, often +2°C to +8°C)
-    - Chemicals requiring temperature control
-    - Wine and premium beverages (+12°C to +15°C)
-    - Flowers and plants (+1°C to +5°C)
-    
-    **Technology Trends (2024-2025):**
-    - **IoT-enabled smart containers**: Real-time GPS, temperature, humidity monitoring
-    - **Controlled atmosphere**: Modified oxygen/CO2 levels to extend produce shelf life
-    - **Solar-powered reefers**: Emerging technology to reduce diesel dependency
-    - **Predictive maintenance**: AI algorithms predict equipment failures before they occur
+    - **Frozen products**: Meat, fish, poultry (typically -18°C to -25°C)
+    - **Fresh produce**: Fruits, vegetables (typically 0°C to +15°C, varies by product)
+    - **Dairy products**: Cheese, butter, milk products (+2°C to +8°C)
+    - **Pharmaceuticals**: Vaccines, medicines (very strict temperature requirements, often +2°C to +8°C)
+    - **Chemicals**: Temperature-sensitive chemical products (varies widely)
+    - **Wine and beverages**: Temperature-controlled transport (+12°C to +18°C typical)
+    - **Flowers and plants**: Extending shelf life (+2°C to +10°C)
     """)
-    
-    # ============================================================================
-    # SECTION 4: Container Anatomy and Specifications
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Container Anatomy: Key Components</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Understanding container structure helps explain handling procedures and stowage planning. Every component 
-    is engineered for strength, durability, and interoperability.
+    <div class="warning-box">
+    <strong>⚠️ Reefer Operational Criticality:</strong><br><br>
+    Reefer containers represent high-value, time-sensitive cargo. A single power failure or temperature 
+    deviation can result in complete cargo loss worth hundreds of thousands of dollars. This drives:<br>
+    - <strong>Redundant power systems</strong> at terminals<br>
+    - <strong>24/7 monitoring</strong> with immediate alert response<br>
+    - <strong>Priority vessel stowage</strong> near power outlets<br>
+    - <strong>Backup generator capacity</strong> for terminal power outages<br>
+    - <strong>Preferential crane scheduling</strong> to minimise time without power
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # ============================================================================
+    # SECTION 5: Container Anatomy and Specifications
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Container Anatomy: Critical Components</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Understanding container structure is essential for grasping how containers are lifted, secured, and 
+    stacked both on vessels and in terminals. Every component serves a specific purpose in the global 
+    logistics system.
     """)
     
-    st.markdown('<p class="subsection-header">Critical Container Components</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Corner Castings: The Heart of the System</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
         **Corner Castings:**
-        - **Most critical component** of container
-        - Steel fittings at all 8 corners
-        - Standard ISO dimensions: 178mm × 162mm × 119mm
-        - Oval holes (not circular) for twist-locks
-        - Bear all lifting forces and securing loads
-        - Must withstand 150 tonnes of force (stacking load)
-        - Connect container to:
-          - Crane spreaders (lifting)
-          - Vessel cell guides (securing on ship)
-          - Chassis (road transport)
-          - Rail wagons (rail transport)
+        - **Most critical component** of any container
+        - **Location**: Steel fittings at all 8 corners (4 top, 4 bottom)
+        - **Dimensions**: Standardised 178mm × 162mm × 119mm globally
+        - **Shape**: Oval holes (not circular) designed for twist-locks
+        - **Function**: Bear ALL lifting forces and securing loads
         
-        **Floor:**
-        - Hardwood (bamboo, plywood) or steel floor
-        - Must support distributed load up to 5,460 kg/m²
-        - Forklift access for loading/unloading
-        - Drainage channels (if liquid spills)
-        - Some containers have reinforced floors for heavy cargo
+        **Why Corner Castings Enable Everything:**
+        - **Crane lifting**: Spreaders engage top corner castings
+        - **Vessel securing**: Twist-locks through corner castings connect to cell guides
+        - **Chassis transport**: Bottom corners lock onto truck chassis
+        - **Rail transport**: Corner castings secure to rail wagons
+        - **Stacking**: Containers stack directly on corner castings (weight path)
+        
+        **The Twist-Lock Mechanism:**
+        - Twist-locks insert into corner casting oval holes
+        - Operator rotates lock 90 degrees to secure
+        - Automated systems now handle twist-locks mechanically
+        - Traditional method required stevedores working under suspended loads (hazardous)
         """)
     
     with col2:
         st.markdown("""
-        **Walls and Roof:**
-        - Corrugated steel (strength + weight optimisation)
-        - Weatherproof seals (gaskets on doors)
-        - Structural rigidity to prevent racking
-        - Doors: Double doors at one end, rubber seals, locking bars with seals
+        **Other Structural Components:**
         
-        **CSC Plate (Container Safety Convention):**
-        - Metal plate affixed to exterior (near doors)
-        - Contains critical information:
-          - Container owner/operator
-          - Container number (ISO 6346)
-          - Maximum gross weight (30,480 kg)
-          - Tare weight
-          - Manufacturing date
-          - CSC approval and next inspection date (every 30 months)
-        - **Required by international law**
-        - Must be clearly visible for inspections
-        - Example certification: "ACEP" (As per CSC rules)
+        **Floor:**
+        - Hardwood (tropical hardwood) or steel floor construction
+        - Must support distributed load up to maximum payload
+        - Forklift access channels for loading/unloading operations
+        - Drainage channels if liquid cargo spills
+        - Load-bearing strength critical for heavy cargo
+        
+        **Walls and Roof:**
+        - **Corrugated steel**: Provides strength while optimising weight
+        - Weatherproof seals prevent water ingress
+        - Structural rigidity for safe stacking
+        - Double doors at one end with rubber seals
+        - Locking bars secure doors (often with container seal)
+        
+        **Lashing Points:**
+        - Additional securing points for internal cargo
+        - Lashing rings or tracks for straps/chains
+        - Prevent cargo shift during transport
         """)
     
-    st.markdown('<p class="subsection-header">Weight Specifications and SOLAS VGM</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">CSC Plate: Container Safety Convention</p>', unsafe_allow_html=True)
     
-    # Weight table
+    st.markdown("""
+    Every container must have a **CSC Plate** (Container Safety Convention) affixed to it. This metal plate 
+    contains critical safety and identification information required by international maritime law.
+    
+    **CSC Plate Information:**
+    - **Container owner/operator**: Company name and details
+    - **Container number**: Unique identification (discussed in next section)
+    - **Manufacturing date**: When container was built
+    - **Max gross weight**: Maximum total weight including container itself
+    - **Tare weight**: Empty container weight
+    - **Max payload**: Maximum cargo weight (gross minus tare)
+    - **Max volume**: Cubic capacity that can be packed
+    - **CSC approval number**: Safety certification
+    - **Inspection dates**: Required periodic inspections
+    - **Classification society marks**: Inspection and certification bodies
+    
+    **Legal Requirements:**
+    - Required by International Convention for Safe Containers (CSC)
+    - Must be clearly visible for inspection
+    - Container cannot be loaded on vessel without valid CSC certification
+    - Periodic inspections required (typically every 30 months)
+    - Failure to maintain valid CSC can result in container being detained at port
+    """)
+    
+    st.markdown('<p class="subsection-header">Weight Specifications and Considerations</p>', unsafe_allow_html=True)
+    
+    # Weight table - Enhanced with more detail
     weight_specs = pd.DataFrame({
         'Specification': [
-            'Max Gross Weight',
+            'Max Gross Weight (ISO)',
+            'Max Gross Weight (Some Countries)',
             'Tare Weight (20ft)',
             'Tare Weight (40ft)',
             'Tare Weight (40ft HC)',
             'Max Payload (20ft)',
             'Max Payload (40ft)',
-            'Typical Cargo (20ft)',
-            'Typical Cargo (40ft)'
+            'Typical Loaded Weight (20ft)',
+            'Typical Loaded Weight (40ft)'
         ],
         'Value': [
             '30,480 kg (30.48 tonnes)',
+            'Up to 36,000 kg (36 tonnes)',
             '2,200-2,400 kg',
             '3,600-3,900 kg',
             '3,900-4,200 kg',
@@ -356,500 +472,517 @@ def show():
             '22,000-26,000 kg'
         ],
         'Notes': [
-            'International ISO standard, some countries allow higher (up to 36 tonnes in some regions)',
-            'Depends on container type and construction (steel vs aluminium)',
-            'Standard 40ft dry container',
-            'High cube slightly heavier due to extra height',
-            'Max gross minus tare weight',
-            'Max gross minus tare weight',
-            'Most containers not loaded to maximum (volume limit reached first)',
-            'Most 40ft containers hit volume limit before weight limit (low-density cargo)'
+            'International ISO 668 standard, accepted globally',
+            'Some jurisdictions allow higher for domestic transport',
+            'Dry van, varies by manufacturer and age',
+            'Standard height, varies by construction',
+            'High cube slightly heavier due to extra material',
+            'Max gross minus tare weight (theoretical maximum)',
+            'Max gross minus tare weight (theoretical maximum)',
+            'Most containers volume-limited, not weight-limited',
+            'Most 40ft containers reach volume limit before weight limit'
         ]
     })
     
-    st.dataframe(weight_specs, use_container_width=True, hide_index=True)
+    st.dataframe(weight_specs, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Important Weight Considerations:**
+    **Critical Weight Considerations:**
     
-    **Volume vs Weight Limits:**
-    - Most cargo is **volume-limited** (fills container before reaching weight limit)
-    - Example: Furniture, clothing, electronics (low density)
-    - **Weight-limited** cargo is less common
-    - Example: Metals, minerals, machinery, paper (high density)
-    - **Rule of thumb**: If cargo density < 350 kg/m³, volume-limited; if > 350 kg/m³, weight-limited
+    **Volume-Limited vs Weight-Limited Cargo:**
+    - **Most cargo is volume-limited**: Fills container before reaching weight limit
+    - Examples of volume-limited: Furniture, clothing, electronics, packaged goods (low density)
+    - **Weight-limited cargo is less common**: Reaches weight limit before filling volume
+    - Examples of weight-limited: Metals, minerals, machinery, stone products (high density)
+    - This is why High Cube containers are popular—extra volume rarely exceeds weight limits
     
-    **Road Transport Limits:**
-    - Many countries have lower weight limits for trucks
-    - Example: EU allows 44 tonnes total (truck + trailer + container + cargo)
-    - May restrict payload to 24-26 tonnes even though container can legally hold 28 tonnes
-    - US interstate highways: 36,287 kg (80,000 lbs) total, but varies by state
+    **Road Transport Limitations:**
+    - Many countries have lower weight limits for trucks than container maximum
+    - **Example**: EU allows 44 tonnes total (truck + trailer + container + cargo)
+    - This restricts payload to approximately 24-26 tonnes even though container can legally hold 28 tonnes
+    - Trucking companies must carefully monitor weights to avoid fines
+    - Different weight limits in different countries complicate planning
     
-    **SOLAS VGM (Verified Gross Mass) - Mandatory Since 1 July 2016:**
-    - **Critical safety regulation**: All containers must be weighed before loading on vessel
-    - **Shipper's responsibility**: Must provide verified weight before vessel loading
-    - **Prevents overweight containers**: Safety risk for vessel stability and container stacks
-    - **Implementation**: IMO SOLAS regulation VI/2 amendment (adopted November 2014, enforced July 2016)
-    
-    **Two Approved Methods for VGM:**
-    1. **Method 1**: Weigh packed container on certified weighbridge after packing
-    2. **Method 2**: Weigh all cargo items individually, add container tare weight
-    
-    **Consequences of Non-Compliance:**
-    - **Container denied loading** if no VGM provided
-    - Shipper liable for all costs: storage, demurrage, weighing fees, delays
-    - Potential fines from port authorities
-    - Insurance claims may be denied if weight was incorrect
-    
-    **Why SOLAS VGM Matters:**
-    - Before 2016: Estimated **10-20% of containers** had incorrect declared weights
-    - **Safety risks**: Vessel stability, collapsed stacks, equipment overload
-    - **Real incidents**: Several container stack collapses and vessel accidents attributed to misdeclared weights
-    - Since 2016: Significantly improved safety record, fewer incidents related to container weight
-    
-    **Current Practice (2024-2025):**
-    - Most terminals have automated weighbridges at gates
-    - EDI transmission (VERMAS message) standard for VGM communication
-    - Average weighing cost: $50-100 per container (if terminal provides service)
-    - IoT-enabled scales: Automatic data transmission to Terminal Operating Systems
+    **SOLAS VGM (Verified Gross Mass) Requirements:**
+    - **Mandatory since July 1, 2016**: SOLAS (Safety of Life at Sea) amendment
+    - **All export containers must be weighed** before loading on vessel
+    - **Purpose**: Prevent overweight containers that risk vessel stability
+    - **Responsibility**: Shipper must provide accurate verified weight
+    - **Methods**: Weigh entire packed container, or weigh cargo pieces and add tare weight
+    - **Enforcement**: Container without VGM cannot be loaded on vessel
+    - **Safety rationale**: Incorrect cargo weights were causing vessel accidents
     """)
     
+    st.markdown("""
+    <div class="warning-box">
+    <strong>⚠️ Why SOLAS VGM Matters:</strong><br><br>
+    <strong>Before VGM</strong>: Shippers often provided estimated or incorrect weights. Vessels loaded based on 
+    these estimates, leading to improper weight distribution.<br><br>
+    <strong>Problem</strong>: Actual weights sometimes differed by 3-5 tonnes per container. Multiply this across 
+    20,000 containers and you have massive stability and structural stress issues.<br><br>
+    <strong>Result</strong>: Container stack collapses, vessel listing, structural failures, and in extreme cases, 
+    vessel losses.<br><br>
+    <strong>VGM Solution</strong>: Mandatory verified weighing ensures vessels are loaded safely within structural 
+    limits with proper stability.
+    </div>
+    """, unsafe_allow_html=True)
+    
     # ============================================================================
-    # SECTION 5: Container Identification System
+    # SECTION 6: Container Identification System
     # ============================================================================
     
     st.markdown('<p class="section-header">Container Identification: The ISO 6346 System</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Every container has a unique identification number following the **ISO 6346 standard**. This global system 
-    enables tracking and identification of any container anywhere in the world.
+    Every container in the world has a unique identification number following the **ISO 6346** international 
+    standard. This system enables global tracking and ensures no two containers share the same identifier.
     """)
     
-    st.markdown('<p class="subsection-header">Container Number Format</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Container Number Format and Structure</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Format:** `ABCD 123456-7`
+    **Standard Format:** `ABCD 123456-7`
     
     **Example:** `MAEU 1234567`
     
-    **Components:**
+    **Three Components:**
     
     **1. Owner Code (4 letters):**
-    - First 3 letters: Identify container owner/operator
-    - Examples:
-      - **MAEU** = Maersk Line
-      - **MSCU** = Mediterranean Shipping Company (MSC)
-      - **CMAU** = CMA CGM
-      - **CSQU** = COSCO
-      - **TEMU** = ONE (Ocean Network Express)
-      - **HLCU** = Hapag-Lloyd
-      - **EISU** = Evergreen
-    - 4th letter: Always "**U**" (indicates Unit, i.e., container)
-    - Registered with Bureau International des Containers (BIC)
+    - **First 3 letters**: Identify container owner/operator (assigned by BIC - Bureau International des Containers)
+    - **4th letter**: Always "**U**" (indicates "**U**nit" - i.e., freight container)
+    - Examples of owner codes:
+      - **MAEU** = Maersk Line (Denmark)
+      - **MSCU** = Mediterranean Shipping Company - MSC (Switzerland)
+      - **CMAU** = CMA CGM (France)
+      - **CSQU** = COSCO Shipping (China)
+      - **TEMU** = ONE - Ocean Network Express (Japan)
+      - **HLBU** = Hapag-Lloyd (Germany)
+      - **YMLU** = Yang Ming Line (Taiwan)
+    - Owner codes are globally registered and unique
+    - Operators recognize major lines instantly by these codes
     
     **2. Serial Number (6 digits):**
-    - Unique number assigned by owner
+    - Unique number assigned sequentially by owner
     - Range: 000000 to 999999
-    - Sequential allocation (usually)
-    - Combined with owner code, provides up to 999,999 unique containers per owner
+    - Each owner manages their own serial number sequence
+    - Usually allocated sequentially as new containers manufactured
     
     **3. Check Digit (1 digit):**
-    - Mathematical validation digit
-    - Calculated from owner code + serial number using algorithm
-    - Prevents data entry errors (critical for thousands of daily transactions)
-    - Algorithm: Weighted sum modulo 11
-    - **Automatic validation**: TOS systems reject invalid check digits
+    - Mathematical validation digit calculated from owner code and serial number
+    - **Purpose**: Detects data entry errors (transposition, typos)
+    - **Algorithm**: Weighted sum modulo 11
+    - Critically important when processing thousands of containers per day
+    - OCR (Optical Character Recognition) systems validate check digit automatically
     
-    **Size and Type Code (separate, typically 4 characters):**
-    - Indicates container specifications
-    - Format: **Length + Height + Type + Extra codes**
-    - Examples:
-      - **22G1** = 20ft, Standard height (8'6"), General purpose, With doors
-      - **42G1** = 40ft, High Cube (9'6"), General purpose, With doors
-      - **45R1** = 40ft, High Cube, Reefer, Integral reefer unit
-      - **42U1** = 40ft, High Cube, Open top, With doors
+    **Size and Type Code (separate 4-character code):**
+    - Not part of container number but appears on container
+    - Indicates container specifications:
+      - **1st character**: Length code (2=20ft, 4=40ft, L=45ft, M=48ft, N=53ft)
+      - **2nd character**: Height code (0=8'6", 2=8'6" and higher, 5=9'6", etc.)
+      - **3rd character**: Type code (G=general/dry, R=reefer, T=tank, U=open top, P=platform, etc.)
+      - **4th character**: Detailed specifications (varies by type)
+    - Example: **42G1** = 40ft length, High Cube height, General purpose, Standard configuration
+    - Example: **22R1** = 20ft length, Standard height, Reefer, Standard configuration
     """)
     
-    # Example container numbers
+    # Example container numbers - Enhanced
     example_numbers = pd.DataFrame({
-        'Container Number': ['MAEU 1234567', 'MSCU 9876543', 'CMAU 5555555', 'TEMU 1111118', 'HLCU 2468024'],
-        'Owner Code': ['MAEU', 'MSCU', 'CMAU', 'TEMU', 'HLCU'],
-        'Owner': ['Maersk Line', 'MSC', 'CMA CGM', 'ONE', 'Hapag-Lloyd'],
-        'Serial': ['123456', '987654', '555555', '111111', '246802'],
-        'Check Digit': ['7', '3', '5', '8', '4'],
-        'Size/Type (example)': ['42G1', '22G1', '45R1', '42G1', '42G1'],
-        'Meaning': ['40ft HC dry', '20ft std dry', '40ft HC reefer', '40ft HC dry', '40ft HC dry']
+        'Container Number': ['MAEU 1234567', 'MSCU 9876543', 'CMAU 5555555', 'TEMU 1111118', 'CSQU 7777772'],
+        'Owner Code': ['MAEU', 'MSCU', 'CMAU', 'TEMU', 'CSQU'],
+        'Owner': ['Maersk Line', 'MSC', 'CMA CGM', 'ONE', 'COSCO'],
+        'Serial': ['123456', '987654', '555555', '111111', '777777'],
+        'Check Digit': ['7', '3', '5', '8', '2'],
+        'Size/Type (example)': ['42G1', '22G1', '45R1', '42G1', '22T1'],
+        'Meaning': ['40ft HC dry van', '20ft std dry van', '45ft HC reefer', '40ft HC dry van', '20ft std tank']
     })
     
-    st.dataframe(example_numbers, use_container_width=True, hide_index=True)
+    st.dataframe(example_numbers, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Why This System?**
-    - **Global uniqueness**: No two containers have same number worldwide
-    - **Easy identification**: Operators recognise owner codes instantly
-    - **Error detection**: Check digit catches typos (99% accuracy)
-    - **Automated processing**: Optical Character Recognition (OCR) at terminal gates
-    - **Tracking**: Follow container journey globally through all transport modes
-    - **Inventory management**: Shipping lines track 100,000s of containers precisely
-    - **Legal documentation**: Forms part of bill of lading and customs declarations
-    
-    **Technology Integration (2024-2025):**
-    - **OCR gates**: Automatic container number recognition at terminal entry/exit (>95% accuracy)
-    - **RFID tags**: Some containers now have RFID chips for automatic identification
-    - **Blockchain**: Experimental tracking systems using blockchain for immutable records
-    - **Digital twins**: Each container's complete history tracked in digital databases
-    - **IoT devices**: Smart containers transmit their ID automatically via cellular/satellite
+    **Why This System is Essential:**
+    - **Global uniqueness**: No two containers anywhere in the world have the same number
+    - **Instant identification**: Operators recognize owner by code (MAEU = immediately know it's Maersk)
+    - **Error detection**: Check digit catches data entry mistakes (prevents wrong container being tracked)
+    - **Automated processing**: OCR cameras at gates read and validate container numbers automatically
+    - **Supply chain tracking**: Container can be tracked globally across ocean, rail, truck
+    - **Documentation matching**: Bill of lading, customs forms, and physical container all linked by this number
+    - **Damage and repair tracking**: Container's service history maintained throughout its 12-15 year lifespan
     """)
     
+    st.markdown("""
+    <div class="insight-box">
+    <strong>🔍 Automated Container Identification:</strong><br><br>
+    Modern terminals use <strong>Optical Character Recognition (OCR)</strong> systems mounted on gate portals:<br>
+    - <strong>Cameras</strong> automatically photograph trucks entering/exiting<br>
+    - <strong>OCR software</strong> reads container number, chassis number, truck licence plate<br>
+    - <strong>System validates</strong> check digit to confirm accurate read<br>
+    - <strong>Recognition accuracy</strong>: 95-98% (manual verification for failed reads)<br>
+    - <strong>Processing speed</strong>: Instant, as truck passes through gate<br>
+    - <strong>Gate throughput</strong>: Automated lanes process trucks in 20-30 seconds vs 5-10 minutes manual<br><br>
+    This automation is only possible because of the ISO 6346 standardised numbering system.
+    </div>
+    """, unsafe_allow_html=True)
+    
     # ============================================================================
-    # SECTION 6: Bay-Row-Tier Coordinate System
+    # SECTION 7: Bay-Row-Tier Coordinate System
     # ============================================================================
     
     st.markdown('<p class="section-header">Bay-Row-Tier: 3D Positioning System</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Containers in terminals and vessels are positioned using a three-dimensional coordinate system. Every 
-    container location has a unique address that precisely identifies its position.
+    Containers in terminals and vessels are positioned using a precise three-dimensional coordinate system 
+    called **Bay-Row-Tier**. This addressing system enables unambiguous identification of every container 
+    position, which is essential for stowage planning, crane operations, and cargo tracking.
     """)
     
-    st.markdown('<p class="subsection-header">The Three Dimensions</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">The Three Dimensions Explained</p>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
         st.markdown("""
-        **Bay (Longitudinal)**
+        **Bay (Longitudinal Position)**
         
         **Definition:**
-        - Position along length
+        - Position along vessel/block length
         - Numbered front to back
         
         **On Vessels:**
         - Bow (front) to Stern (back)
-        - **Odd numbers**: 20ft positions (01, 03, 05, 07...)
-        - **Even numbers**: 40ft positions (02, 04, 06, 08...)
-        - A 40ft container occupies 2 bays (e.g., Bay 02 covers positions 01+03)
-        - Large vessels: Bay 01 to Bay 200+
+        - **Odd numbers**: 20ft bay positions (01, 03, 05, 07...)
+        - **Even numbers**: 40ft bay positions (02, 04, 06, 08...)
+        - A 40ft container **occupies 2 bays** (e.g., Bay 02 spans bays 01+03)
+        - Large vessels: Bay numbers up to 200+
+        - 20ft containers can go in odd bays; 40ft can only go in even bays
         
         **In Terminals:**
-        - Similar concept
+        - Similar longitudinal concept
         - Yard blocks divided into bays
-        - Sequential numbering
-        - Typically 01 to 40 per block
+        - Sequential numbering along block length
+        - Bays typically 20ft intervals
         """)
     
     with col2:
         st.markdown("""
-        **Row (Transverse)**
+        **Row (Transverse Position)**
         
         **Definition:**
         - Position across width
-        - Numbered left to right
+        - Numbered left to right (or centre out)
         
         **On Vessels:**
         - Port (left) to Starboard (right)
-        - Centre line: **00**
-        - **Odd**: Port side (01, 03, 05, 07...)
-        - **Even**: Starboard side (02, 04, 06, 08...)
-        - Range depends on vessel width
-        - Large vessels: 00 to 24 (12 containers wide)
+        - **Centre line**: 00
+        - **Odd numbers**: Port side (01, 03, 05, 07...)
+        - **Even numbers**: Starboard side (02, 04, 06, 08...)
+        - Range depends on vessel width (e.g., 00-24 for wide vessels)
+        - Mega vessels: 24 containers across (Row 00-23)
         
         **In Terminals:**
-        - Across yard block width
-        - Usually numbered 01-08 (typical RTG span: 1+6+1 or 1+7+1)
-        - RMG systems may have 01-12 or more
+        - Across yard block width (perpendicular to block length)
+        - Usually numbered 01-08 or 01-10
+        - Depends on RTG/RMG span width
+        - Simpler numbering than vessels (just sequential)
         """)
     
     with col3:
         st.markdown("""
-        **Tier (Vertical)**
+        **Tier (Vertical Position)**
         
         **Definition:**
         - Vertical stacking position
         - Numbered bottom to top
         
         **On Vessels:**
-        - Below deck: 02, 04, 06, 08... (even, descending)
-        - Deck level: **80**
-        - Above deck: 82, 84, 86, 88... (even, ascending)
-        - Large vessels: Up to 10 tiers above deck
+        - **Below deck**: 02, 04, 06, 08... (even numbers, descending from deck)
+        - **Deck level**: 80
+        - **Above deck**: 82, 84, 86, 88, 90... (even numbers, ascending)
+        - Example: Tier 02 = 1 below deck, Tier 86 = 3 above deck
         
         **In Terminals:**
-        - Ground level: **01**
-        - Second tier: 02
-        - Third tier: 03
-        - And so on...
-        - Typical RTG: 01-06 (six high)
-        - Typical RMG: 01-08 or higher
+        - **Ground level**: 01
+        - **Second tier**: 02
+        - **Third tier**: 03, etc.
+        - Typical stacking: 01-06 (six high with RTG)
+        - Some terminals stack higher with RMG (up to 08 or 10)
         """)
     
     st.markdown("""
-    **Example Container Position:**
+    **Example Container Position on Vessel:**
     
     **Bay 12, Row 04, Tier 86**
-    - **Bay 12**: 12th longitudinal position (40ft container position)
-    - **Row 04**: 4th position from port side (starboard side, even numbers)
-    - **Tier 86**: 3 tiers above deck (80 = deck, 82 = 1st above, 84 = 2nd above, 86 = 3rd above)
     
-    **Why This System?**
-    - **Unambiguous**: Every position has unique three-dimensional coordinate
-    - **Planning**: Stowage planners specify exact positions in loading plans
-    - **Operations**: Crane operators know exactly where to place/retrieve containers
-    - **Tracking**: Terminal Operating System (TOS) tracks every container location in real-time
-    - **Safety**: Ensures proper weight distribution and vessel stability
-    - **Efficiency**: Minimises search time - crane operators go directly to correct position
-    - **Automation**: Automated systems rely on precise positioning data
+    Let's decode this position:
+    - **Bay 12**: 12th longitudinal position from bow (this is a 40ft container position, as Bay 12 is even)
+    - **Row 04**: 4th position from port side, which means this is on the **starboard (right) side** (even number)
+    - **Tier 86**: This is **3 tiers above deck level** (Deck=80, 82=1st above, 84=2nd above, 86=3rd above)
     
-    **Modern Technology (2024-2025):**
-    - **Auto-stowage algorithms**: AI generates optimal bay plans in seconds
-    - **Real-time tracking**: TOS updates location instantly when container moves
-    - **3D visualisation**: Stowage planners view entire vessel in 3D software
-    - **Collision avoidance**: Systems prevent placing containers in impossible positions
-    - **Weight distribution software**: Automatic checking of stability constraints
+    So this container is toward the front-middle of the vessel, on the starboard side, three containers above 
+    the deck level. The crane operator can immediately locate this container using these coordinates.
+    
+    **Why This System is Critical:**
+    
+    **Unambiguous Positioning:**
+    - Every position on vessel or in terminal has a unique three-dimensional coordinate
+    - No confusion about which container to pick or where to place it
+    - Crane operators work with thousands of containers—precise addressing essential
+    
+    **Stowage Planning:**
+    - Stowage planners specify exact position for each container on vessel
+    - Considers weight distribution, destination sequence, container type
+    - Bay plans show complete vessel load with Bay-Row-Tier for every container
+    - Digital systems automatically generate stowage plans using these coordinates
+    
+    **Operational Efficiency:**
+    - Crane operators receive exact Bay-Row-Tier instructions
+    - Terminal Operating System (TOS) tracks every container by position
+    - No time wasted searching for containers
+    - Automated equipment (ASC, AGV) navigate using these coordinates
+    
+    **Safety:**
+    - Ensures proper weight distribution (stability)
+    - Dangerous goods segregation verified by position
+    - Stack weight limits monitored by tier
+    - Prevents overloading structural elements
+    
+    **Vessel Stability:**
+    - Longitudinal balance (bow to stern): controlled by bay distribution
+    - Transverse balance (port to starboard): controlled by row distribution
+    - Vertical centre of gravity: controlled by tier distribution (heavy low, light high)
+    - Stowage planners use Bay-Row-Tier coordinates to calculate and maintain vessel stability
     """)
     
+    st.markdown("""
+    <div class="success-box">
+    <strong>💡 From Planning to Execution:</strong><br><br>
+    <strong>48 hours before arrival</strong>: Stowage planner creates vessel loading plan with Bay-Row-Tier for 
+    each container<br>
+    <strong>24 hours before arrival</strong>: Plan uploaded to Terminal Operating System (TOS)<br>
+    <strong>At vessel arrival</strong>: Crane operators receive work instructions with exact Bay-Row-Tier positions<br>
+    <strong>During operations</strong>: TOS tracks container movements in real-time by Bay-Row-Tier<br>
+    <strong>After completion</strong>: Final bay plan confirmed with actual positions loaded<br><br>
+    This coordinate system enables handling 10,000+ containers per vessel call with precision and safety.
+    </div>
+    """, unsafe_allow_html=True)
+    
     # ============================================================================
-    # SECTION 7: Container Economics
+    # SECTION 8: Container Economics
     # ============================================================================
     
     st.markdown('<p class="section-header">Container Economics: The Business Side</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Understanding container costs helps explain shipping line and terminal operational decisions. The container 
-    fleet represents a massive capital investment for shipping lines and leasing companies.
+    Understanding container costs helps explain operational decisions by shipping lines and terminal operators. 
+    Containers represent significant capital investment and ongoing operational costs.
     """)
     
-    st.markdown('<p class="subsection-header">Container Costs (2024-2025 Market Prices)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Container Costs and Economics</p>', unsafe_allow_html=True)
     
-    # Cost breakdown with updated 2024-2025 prices
+    # Cost breakdown - Enhanced with more detail
     container_costs = pd.DataFrame({
         'Item': [
             'New 20ft Dry Container',
             'New 40ft Dry Container',
             'New 40ft High Cube Dry',
             'New 40ft Reefer',
-            'Used 20ft Container (cargo-worthy)',
-            'Used 40ft Container (cargo-worthy)',
-            'Lifespan',
-            'Maintenance per Year',
-            'Leasing Cost (per day)',
-            'Repositioning Cost (empty)',
-            'Repair (minor damage)',
-            'Repair (major damage)'
+            'Container Lifespan',
+            'Annual Maintenance',
+            'Daily Leasing Cost (Dry)',
+            'Daily Leasing Cost (Reefer)',
+            'Repositioning Cost (Empty)',
+            'Minor Repair (Dents/Scratches)',
+            'Major Repair (Structural)',
+            'Total Fleet (Global)',
+            'Empty Containers Moved'
         ],
-        'Cost (2024-2025)': [
-            '$2,200-2,800',
-            '$2,500-3,500',
-            '$3,000-4,000',
-            '$12,000-16,000',
-            '$500-3,000',
-            '$1,000-4,000',
+        'Cost/Value': [
+            '$2,000-2,500',
+            '$2,500-3,000',
+            '$3,000-3,500',
+            '$12,000-15,000',
             '12-15 years',
-            '$150-300',
-            '$1-4 (dry), $10-18 (reefer)',
-            '$500-2,500',
-            '$200-600',
-            '$1,000-4,000'
+            '$100-200 per container',
+            '$1-3',
+            '$8-15',
+            '$500-2,000',
+            '$200-500',
+            '$1,000-3,000',
+            '~55 million TEU',
+            '20-25% of moves'
         ],
         'Notes': [
-            'Prices fluctuate with steel costs (currently elevated post-pandemic)',
-            'Most common type globally; prices affected by China manufacturing costs',
-            'Extra height adds cost; most new containers are HC (volume efficiency)',
-            'Refrigeration unit is expensive; Carrier or Thermo King units',
-            'Condition varies; suitable for cargo but may have cosmetic damage',
-            'Widely available; good for storage or one-way shipping',
-            'After 12-15 years, retired from international shipping or sold for storage/modification',
-            'Inspection, cleaning, minor repairs; higher for reefers (compressor maintenance)',
-            'Daily leasing rate; shipping lines often lease 30-50% rather than own all containers',
-            'Moving empty containers to where demand is; major cost for shipping lines',
-            'Dents, scratches, door repairs, floor patches',
-            'Structural damage, floor replacement, extensive corrosion, side panel replacement'
+            'Basic dry container, prices fluctuate with steel costs',
+            'Most common type globally, mass production benefits',
+            'Extra height adds material cost but provides volume flexibility',
+            'Refrigeration unit accounts for majority of cost premium',
+            'After service life, retired or sold for storage/conversion',
+            'Periodic inspection, cleaning, minor repairs',
+            'Daily rate, varies with market conditions and lease term',
+            'Much higher due to reefer unit maintenance and monitoring',
+            'Moving empties to where demand exists, varies by distance',
+            'Cosmetic and minor structural repairs, dents in walls',
+            'Floor replacement, extensive corrosion, structural damage',
+            'Approximate global container fleet size (2024)',
+            'Industry estimate of empty container movements annually'
         ]
     })
     
-    st.dataframe(container_costs, use_container_width=True, hide_index=True)
+    st.dataframe(container_costs, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Container Ownership Models:**
-    - **Carrier-owned**: Shipping lines own ~60% of global container fleet
-    - **Leasing companies**: Own ~40% of fleet (Triton, Textainer, CAI, Florens, SeaCube)
-    - **Leasing advantages**: Flexibility, no capital tied up, easier to adjust fleet size
-    - **Ownership advantages**: Lower long-term cost, full control, no lease payments
+    **The Empty Container Problem: Trade Imbalances**
     
-    **Global Container Fleet Value (2024):**
-    - Total fleet: ~50 million containers (50M × $3,000 average = **$150 billion+ in assets**)
-    - Container fleet market: **$13.34 billion** (leasing and ownership services)
-    - Major leasing companies: Triton (3.5M TEU), Textainer (3.3M TEU), CAI, Florens, SeaCube
+    One of the most significant challenges in container shipping economics is the **empty container repositioning 
+    problem**. This stems from fundamental global trade imbalances.
+    
+    **The Problem:**
+    - Trade flows are **not balanced** in both directions
+    - **Example**: Asia exports far more goods to Europe/North America than it imports
+    - Containers **accumulate** at destination ports (deficit at origin, surplus at destination)
+    - **Real example**: China exports 4 TEU to US for every 1 TEU imported from US
+    - Result: Massive container surpluses in US ports, shortages in Chinese ports
+    
+    **Regional Trade Imbalances:**
+    - **Asia → Europe/North America**: Heavy export flows (manufacturing goods, electronics, clothing)
+    - **Europe/North America → Asia**: Lighter import flows (raw materials, some specialized goods)
+    - **Europe → Africa**: Equipment, machinery flows south
+    - **Africa → Europe**: Raw materials, agricultural products flow north
+    - Pattern: Manufacturing regions accumulate empties at consumption regions
+    
+    **Repositioning Costs:**
+    - Costs **$500-2,000 per container** depending on distance
+    - This is **pure cost**—no revenue earned moving empty containers
+    - Vessel space used for empties = **lost revenue opportunity** (could carry paying cargo)
+    - Terminal handling costs still apply (empties need to be loaded/unloaded)
+    - Industry estimates **20-25% of global container moves are empty**
+    
+    **Solutions and Strategies:**
+    
+    **1. Backhaul Incentives:**
+    - Offer **dramatically reduced rates** on return direction to attract any cargo
+    - Example: China → US might cost $1,500/TEU, but US → China only $400/TEU
+    - Still better to carry cargo cheaply than move empty container
+    
+    **2. Regional Triangulation:**
+    - Route empties through **third countries** where they're needed
+    - Example: Empties from US → Panama → Chile (where mining equipment is shipped to China)
+    - Creates longer routing but captures revenue on multiple legs
+    
+    **3. Container Leasing Companies:**
+    - Specialized companies **own large fleets** and lease to shipping lines
+    - Help **balance supply/demand** across regions
+    - Can reposition containers between lessees
+    - Major lessors: Triton, Textainer, CAI International
+    
+    **4. One-Way Leases:**
+    - Lease container for **one-way trip** only
+    - Lessor handles repositioning
+    - Shifts repositioning cost and risk to leasing company
+    
+    **5. Strategic Container Positioning:**
+    - **Predictive analytics** forecast where containers will be needed
+    - Pre-position empties in advance of seasonal demand
+    - Example: Position empties in agricultural regions before harvest season
+    
+    **6. Collapsible Containers (Future):**
+    - Research into containers that **fold flat** when empty
+    - Would dramatically reduce space needed for empty repositioning
+    - Technical challenges remain (structural integrity, cost)
+    - Not yet commercially viable at scale
     """)
-    
-    st.markdown('<p class="subsection-header">The Empty Container Problem</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    One of shipping's biggest operational and financial challenges is repositioning empty containers. This 
-    problem has **worsened significantly in 2024-2025**.
-    
-    **Trade Imbalances:**
-    - More cargo flows certain directions (e.g., Asia → Europe/US > Europe/US → Asia)
-    - Results in container surplus at destination, deficit at origin
-    - **Classic example**: China exports far more to US than imports from US
-    - Containers accumulate in US ports, shortage in Asian export ports
-    - **2024 data**: US-Asia backhaul utilisation often <50% (half-empty vessels westbound)
-    
-    **Repositioning Challenge:**
-    - Shipping lines must move empty containers back to high-demand origins
-    - Costs **$500-2,500 per container** to reposition (fuel, handling, vessel space)
-    - Vessel space used for empties = **lost revenue opportunity** (could carry paid cargo)
-    - **Industry estimates (2024)**: **20-25% of containers moved globally are empty**
-    - **2024 increase**: Empty container movements **up 20%** compared to 2019 (Sea-Intelligence data)
-    
-    **The Numbers:**
-    - If global throughput = 860M TEU, then **~170-215M TEU moved empty** annually
-    - At $500-2,500 per empty move = **$85-538 billion in repositioning costs** industry-wide
-    - This is pure cost with zero revenue (massive inefficiency in the system)
-    
-    **Regional Imbalances (2024-2025):**
-    - **Asia to North America**: Heavily loaded eastbound, light westbound
-    - **Asia to Europe**: Significant imbalance (more exports from Asia)
-    - **Transpacific westbound**: Often 40-50% empty containers (low backhaul demand)
-    - **US tariffs impact**: 2024-2025 tariff changes worsened imbalances (less US exports)
-    
-    **Solutions Being Implemented:**
-    - **Incentivise backhaul cargo**: Lower freight rates for return direction (sometimes 50-70% cheaper)
-    - **Regional triangulation**: Move empties through third country with better trade balance
-    - **Container leasing companies**: Help balance supply/demand across regions
-    - **Foldable/collapsible containers**: Research stage, not yet commercially viable (too expensive, durability concerns)
-    - **Depot networks**: Strategic positioning of empty containers at key locations
-    - **Digital platforms**: Container tracking platforms help match empty container supply with demand
-    - **Shipper-owned containers**: Some major shippers buy containers to ensure availability (e.g., Amazon, Walmart)
-    
-    **2024-2025 Specific Challenges:**
-    - **Persistent imbalances**: Empty repositioning up 20% vs 2019 baseline
-    - **Geopolitical tensions**: US-China trade tensions worsen container flow imbalances
-    - **E-commerce boom**: One-directional flow (Asia to rest of world) for consumer goods
-    - **Supply chain disruptions**: Red Sea crisis (+70% via Cape route) lengthened repositioning times
-    - **Equipment shortages**: 2024 saw periodic container shortages in Asia despite global surplus
-    """)
-    
-    # ============================================================================
-    # SECTION 8: Current Industry Trends (2024-2025)
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Current Industry Trends (2024-2025)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    The container industry is experiencing significant transformation driven by technology, sustainability, 
-    and changing trade patterns.
-    """)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **Technology Integration:**
-        - **IoT-enabled smart containers**: Real-time tracking of location, temperature, humidity, shock/tilt
-        - **Maersk integration (June 2024)**: Nearly 300 container fleets with IoT sensors
-        - **Blockchain tracking**: Experimental systems for tamper-proof container histories
-        - **Predictive maintenance**: AI algorithms predict when reefer units will fail
-        - **Digital platforms**: Container tracking, booking, and documentation moving online
-        
-        **Sustainability Push:**
-        - **Alternative materials**: Research into lighter, more recyclable container materials
-        - **Solar-powered reefers**: Reducing diesel dependency for refrigeration
-        - **Circular economy**: 15-year-old containers repurposed for storage, housing, offices
-        - **Carbon footprint tracking**: Per-container emissions monitoring
-        - **Reduced tare weight**: Lighter containers = more cargo capacity, less fuel
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Market Dynamics:**
-        - **E-commerce explosion**: Container demand driven by online retail (projected >$6 trillion by 2024)
-        - **Fleet expansion**: Global container fleet grew at 7.3% average (top 12 carriers, 2025)
-        - **MSC dominance**: Added 831,000 TEU in 2025 (5th consecutive year of leadership)
-        - **Overcapacity concerns**: New vessel orders + existing fleet = potential oversupply
-        - **Freight rate volatility**: Shanghai Containerized Freight Index averaged 2,496 points in 2024 (up 149% from 2023)
-        
-        **Operational Challenges:**
-        - **Equipment positioning**: Empty container repositioning up 20% (2024 vs 2019)
-        - **Supply chain fragility**: Red Sea disruptions (−70% Suez traffic) strain container availability
-        - **Port congestion**: Delayed containers tie up equipment longer
-        - **Shortage/surplus cycles**: Asia often has shortages while US/Europe have surplus
-        - **Trade uncertainty**: Tariffs, geopolitical tensions create unpredictable flows
-        """)
+    <div class="warning-box">
+    <strong>⚠️ Economic Impact of Empty Repositioning:</strong><br><br>
+    <strong>Global scale</strong>: With ~800M TEU moved annually, 20-25% empty = 160-200M empty TEU moves<br>
+    <strong>Cost estimate</strong>: At $1,000 average repositioning cost = $160-200 billion annually<br>
+    <strong>Environmental impact</strong>: Ships burning fuel to move empty containers across oceans<br>
+    <strong>Capacity waste</strong>: Vessel space and port capacity consumed by empties rather than revenue cargo<br>
+    <strong>Rate pressure</strong>: Shipping lines must build repositioning costs into freight rates<br><br>
+    This is why backhaul rates (return direction) are often 50-70% lower than headhaul rates—shipping lines would 
+    rather carry cargo cheaply than move empty containers.
+    </div>
+    """, unsafe_allow_html=True)
     
     # ============================================================================
     # SECTION 9: Key Takeaways
     # ============================================================================
     
-    st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Key Takeaways: Containers & Containerisation</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **ISO Standards:**
-        - Universal 2.4m (8ft) width
-        - Standard lengths: 20ft, 40ft, 45ft
-        - Heights: 8ft 6in (standard) or 9ft 6in (high cube)
-        - Max gross weight: 30,480 kg (30.48 tonnes)
-        - Standardisation enables global interoperability
-        - 40ft containers dominate: 54% of global fleet
+        **ISO Standards Foundation:**
+        - Universal **2.438m (8ft) width** - the fundamental global standard
+        - Standard lengths: **20ft, 40ft, 45ft** (plus 48ft/53ft North America only)
+        - Heights: **8ft 6in (standard)** or **9ft 6in (high cube)**
+        - Max gross weight: **30,480 kg (30.48 tonnes)** - international standard
+        - Standardisation enables global interoperability of equipment and infrastructure
         
-        **TEU Measurement:**
-        - TEU = Twenty-foot Equivalent Unit
-        - 20ft container = 1 TEU
-        - 40ft container = 2 TEU
-        - Universal measure for capacity and throughput
-        - Global port throughput: ~860M TEU (2024)
+        **TEU Measurement System:**
+        - TEU = **Twenty-foot Equivalent Unit** (universal capacity metric)
+        - 20ft container = **1 TEU**, 40ft container = **2 TEU**
+        - Universal measure for comparing capacity, throughput, and vessel sizes
+        - Normalises different container size mixes into single metric
+        - Essential for port planning and capacity measurement
         
-        **Container Types:**
-        - Dry van: 85-90% of fleet (general cargo)
-        - Reefer: 6-8% ($1.94B market, growing 6.5% annually)
-        - Specialised: Open top, flat rack, tank, OOG (~5%)
+        **Container Type Distribution:**
+        - **Dry van: ~90%** of fleet (general cargo)
+        - **Reefer: ~6%** (temperature-controlled, requires power)
+        - **Specialised: <4%** (open top, flat rack, tank, OOG)
+        - Each type requires different handling and infrastructure
+        
+        **Container Anatomy:**
+        - **Corner castings**: Most critical component for lifting and securing
+        - **CSC plate**: Legal requirement for safety certification
+        - **Weight**: Tare 2.3-4.2 tonnes, max payload 25-28 tonnes
+        - **SOLAS VGM**: Mandatory verified weighing since 2016 (safety)
         """)
     
     with col2:
         st.markdown("""
-        **Container Anatomy:**
-        - Corner castings: Critical for lifting and securing (150 tonne capacity)
-        - CSC plate: Safety certification and specifications
-        - Weight: Tare 2.2-4.2 tonnes, max payload 26-28 tonnes
-        - **SOLAS VGM**: Mandatory weighing since 1 July 2016
-        
-        **Identification System:**
-        - Format: Owner code (4 letters) + Serial (6 digits) + Check digit
-        - Example: MAEU 1234567
-        - Globally unique identification (ISO 6346 standard)
-        - OCR and RFID for automated tracking
+        **ISO 6346 Identification:**
+        - Format: **Owner code (4 letters) + Serial (6 digits) + Check digit**
+        - Example: MAEU 1234567 (Maersk container)
+        - Globally unique identification for every container
+        - Enables automated tracking and processing
+        - Check digit validates accurate data entry
         
         **Bay-Row-Tier System:**
-        - 3D coordinate system for positioning
-        - Bay: Longitudinal (front to back, odd=20ft, even=40ft)
-        - Row: Transverse (left to right, port=odd, starboard=even)
-        - Tier: Vertical (bottom to top)
-        - Enables precise stowage planning and automated operations
+        - 3D coordinate system for precise positioning
+        - **Bay**: Longitudinal (front to back, odd=20ft, even=40ft)
+        - **Row**: Transverse (left to right, port/starboard)
+        - **Tier**: Vertical (bottom to top, below/above deck)
+        - Enables unambiguous positioning in vessels and terminals
+        - Critical for stowage planning and crane operations
         
-        **Economics & Trends (2024-2025):**
-        - Global fleet market: $13.34B (2024) → $21.9B (2033 projected)
-        - Empty repositioning: 20-25% of moves, up 20% vs 2019
-        - IoT integration: Smart containers with real-time tracking
-        - Overcapacity challenges: Fleet growing faster than trade
+        **Container Economics:**
+        - Purchase cost: $2,000-3,500 (dry), $12,000-15,000 (reefer)
+        - Lifespan: 12-15 years of service
+        - Empty repositioning costs: $500-2,000 per container
+        - **20-25% of global moves are empty** containers
+        - Major cost driver due to trade imbalances
+        
+        **Historical Context:**
+        - **1956**: Malcolm McLean's Ideal-X (birth of containerisation)
+        - Reduced shipping costs by **90%+**
+        - Enabled global supply chains and intermodal transport
+        - Foundation of modern global trade
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Containers follow precise ISO standards (2.4m width, 20/40ft lengths, 
-    30.48 tonne max weight) that enable global interoperability. The TEU (Twenty-foot Equivalent Unit) 
-    provides universal measurement for the ~50 million container global fleet. ~85-90% are dry vans, with 
-    reefers (6-8%) being the fastest-growing segment. Each container has a unique ISO 6346 identifier enabling 
-    global tracking. The Bay-Row-Tier coordinate system enables precise 3D positioning in terminals and vessels. 
-    <br><br>
-    <strong>2024-2025 Context:</strong> The container industry faces dynamic challenges including persistent 
-    empty repositioning problems (20-25% of moves are empty, costing billions), integration of IoT technology 
-    for smart tracking, fleet overcapacity concerns, and volatile freight rates driven by geopolitical 
-    disruptions. The SOLAS VGM regulation (mandatory since 2016) has significantly improved safety by ensuring 
-    accurate container weights. Understanding these fundamentals and current trends is essential for comprehending 
-    how modern container terminal operations work.
+    <strong>🔍 Bottom Line:</strong> Containers follow precise ISO standards (2.438m width, 20/40ft lengths, 
+    30.48 tonne max weight) that enable global interoperability. The TEU (Twenty-foot Equivalent Unit) provides 
+    universal measurement for the industry. Approximately 90% are standard dry vans, with specialised types 
+    (reefer, tank, OOG) for specific cargo requiring dedicated infrastructure. Each container has a unique ISO 
+    6346 identifier (owner code + serial + check digit) enabling global tracking. The Bay-Row-Tier coordinate 
+    system enables precise 3D positioning in terminals and vessels. Corner castings are the critical component 
+    connecting containers to all handling equipment. Understanding these fundamentals is essential for 
+    understanding how container terminal operations work and why standardisation was so revolutionary for 
+    global trade.
     </div>
     """, unsafe_allow_html=True)
     
@@ -861,6 +994,6 @@ def show():
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
     **Next Topic:** 🚢 Container Vessels & Evolution - Explore vessel anatomy, the dramatic growth from 
-    500 to 25,000+ TEU, vessel classifications, and the complex art of stowage planning that relies on the 
-    Bay-Row-Tier system you've just learned.
+    500 TEU to 25,000+ TEU, vessel classifications (Panamax, Post-Panamax, ULCV), and the complex art of 
+    stowage planning that balances stability, destination sequence, and operational efficiency.
     """)
