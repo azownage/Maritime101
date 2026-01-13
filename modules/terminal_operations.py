@@ -1,905 +1,986 @@
 import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
-import plotly.express as px
 
 def show():
-    st.markdown('<p class="main-header">🏗️ Terminal Operations & Planning</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">🏗️ Container Terminal Operations</p>', unsafe_allow_html=True)
     
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand the complete container terminal operational workflow, from vessel arrival to departure, 
-    including berth planning, yard operations, stowage planning, and equipment scheduling.
+    Master the complete container terminal operational workflow from vessel arrival to departure, understand the 
+    four key planning processes (berth planning, yard planning, stowage planning, transportation planning), comprehend 
+    equipment coordination across quay cranes, yard cranes, and horizontal transport (prime movers/AGVs), explore 
+    Terminal Operating Systems (TOS) that orchestrate these complex operations, and understand automation levels from 
+    conventional to fully automated terminals.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Container Terminal Layout
+    # SECTION 1: Container Terminal Layout and Operational Zones
     # ============================================================================
     
-    st.markdown('<p class="section-header">Container Terminal Layout and Zones</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Container Terminal Layout: Understanding the Physical Infrastructure</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    A modern container terminal is divided into distinct operational zones, each serving specific functions 
-    in the cargo handling process.
+    A modern container terminal is a complex physical system divided into distinct operational zones, each serving 
+    specific functions in the cargo handling process. Understanding this layout is essential for comprehending how 
+    containers flow through the terminal and where bottlenecks can occur.
+    
+    The lecture materials emphasize that container terminal operations involve coordinated movement across multiple 
+    zones, with equipment and information systems working together to achieve efficient cargo handling.
     """)
     
-    st.markdown('<p class="subsection-header">Terminal Zones Overview</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">The Seven Key Terminal Zones</p>', unsafe_allow_html=True)
     
-    # Terminal zones
+    # Terminal zones comprehensive breakdown
     terminal_zones = pd.DataFrame({
         'Zone': [
-            'Berth / Quay',
-            'Apron',
-            'Quay Cranes (QC)',
-            'Storage Yard',
-            'Yard Cranes',
-            'Gate Complex',
-            'Control Tower',
-            'Inland Transportation'
+            '1. Berth / Quay',
+            '2. Apron Area',
+            '3. Quay Crane Zone',
+            '4. Storage Yard',
+            '5. Yard Crane Zone',
+            '6. Gate Complex',
+            '7. Control Tower / TOS Center'
         ],
-        'Function': [
-            'Where vessels dock; interface between sea and land',
-            'Area directly behind berth for container staging and crane operations',
-            'Load/discharge containers between vessel and apron',
-            'Store containers awaiting pickup or loading; organised in blocks/bays',
-            'Move containers between yard storage and trucks/trains',
-            'Entry/exit point for trucks; documentation and security checks',
-            'Central command centre for terminal operations coordination',
-            'Roads/rail connecting terminal to hinterland'
+        'Primary Function': [
+            'Where vessels dock; interface between maritime and terrestrial operations',
+            'Buffer zone directly behind berth for container staging during loading/discharge operations',
+            'Quay cranes (ship-to-shore cranes) transfer containers between vessel and apron',
+            'Store containers awaiting vessel loading (exports) or truck pickup (imports); organized in blocks/bays',
+            'Yard cranes move containers between storage locations and horizontal transport equipment',
+            'Entry/exit point for external trucks; documentation verification, security checks, container exchange',
+            'Central command center coordinating all terminal operations via Terminal Operating System (TOS)'
         ],
-        'Key Equipment': [
-            'Bollards, fenders, vessel-to-shore connections',
-            'Prime movers, automated guided vehicles (AGVs)',
-            'Ship-to-shore cranes, dual trolley systems',
-            'Rubber-tyred gantry cranes (RTG), rail-mounted gantry (RMG)',
-            'RTG, RMG, reach stackers, straddle carriers',
-            'Optical character recognition (OCR), automated gates',
-            'IT systems, communications, CCTV, vessel traffic management',
-            'Trucks, trains, road/rail infrastructure'
+        'Key Equipment & Systems': [
+            'Bollards, fenders, mooring equipment, vessel-to-shore power connections',
+            'Prime movers (PM), Automated Guided Vehicles (AGV), chassis, container staging areas',
+            'Ship-to-Shore (STS) cranes with 60-80m outreach, dual trolley systems, spreaders',
+            'Rubber-Tyred Gantry (RTG), Rail-Mounted Gantry (RMG), Automated RMG (ARMG) cranes',
+            'RTG/RMG/ARMG cranes, reach stackers, empty handlers, straddle carriers (some terminals)',
+            'Optical Character Recognition (OCR) cameras, automated gates, truck appointment systems, weighbridges',
+            'TOS software, communications systems, CCTV, vessel traffic monitoring, real-time data analytics'
         ],
-        'Typical Dimensions': [
-            '300-450m length × 50-70m width per berth',
-            '50-100m depth behind quay',
-            '60-80m outreach for mega vessels',
-            '10-30 hectares per terminal',
-            '6-8 containers high stacking',
-            'Multiple lanes, 20-40 gates',
-            'Central location with 360° visibility',
-            'Road/rail corridors'
+        'Typical Dimensions & Capacity': [
+            '300-450m berth length × 50-70m width per berth; accommodates 300-400m LOA vessels',
+            '50-100m depth behind quay; provides staging for 100-200 containers during operations',
+            '60-80m outreach spans 22-24 container rows; 40-50m lift height handles 8-10 tiers on vessel',
+            '10-30 hectares per terminal; 20,000-50,000 ground slots; 6-8 containers high stacking',
+            '1 yard crane per 3-5 hectares; 15-25 moves per hour productivity',
+            '20-40 gate lanes; 200-400 truck transactions per hour capacity',
+            'Central location with visibility across entire terminal; redundant systems for 24/7 operations'
+        ],
+        'Critical for Digital Twin': [
+            'Berth occupancy modeling, vessel schedule optimization, BOA (Berth on Arrival) prediction',
+            'Staging area utilization, quay crane productivity impact, horizontal transport queuing',
+            'Crane allocation optimization, discharge/load sequence planning, interference avoidance',
+            'Space utilization, container location tracking, dwell time analysis, re-handle minimization',
+            'Yard crane workload balancing, travel distance minimization, simultaneous operations coordination',
+            'Truck arrival patterns, gate processing time, appointment system optimization, peak period management',
+            'Real-time decision support, predictive analytics, scenario simulation, KPI monitoring'
         ]
     })
     
     st.dataframe(terminal_zones, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Terminal Flow Logic:**
+    **Understanding Terminal Flow Patterns:**
     
-    **Import Flow (Vessel → Land):**
-    1. Vessel arrives and berths at **Quay**
-    2. **Quay Crane** discharges containers to **Apron**
-    3. **Prime Mover/AGV** transports containers to **Storage Yard**
-    4. **Yard Crane** places containers in storage location
-    5. Truck arrives at **Gate**, processes paperwork
-    6. **Yard Crane** retrieves container and loads onto truck
-    7. Truck exits via **Gate** to hinterland
+    The lecture materials identify three primary cargo flow patterns through container terminals:
     
-    **Export Flow (Land → Vessel):**
-    1. Truck arrives at **Gate** with export container
-    2. **Yard Crane** receives container and places in **Storage Yard**
-    3. When vessel arrives, **Yard Crane** retrieves container
-    4. **Prime Mover/AGV** transports to **Apron**
-    5. **Quay Crane** loads container onto vessel
-    6. Vessel departs when loading complete
+    **1. Import Flow (Vessel → Land Hinterland):**
     
-    **Transshipment Flow (Vessel → Vessel):**
-    1. Container discharged from Vessel A to **Apron**
-    2. Moved to **Storage Yard** for temporary holding
-    3. Retrieved and moved to **Apron** when Vessel B arrives
-    4. Loaded onto Vessel B
-    5. (Ideally minimises storage time in yard)
+    This flow handles containers arriving by vessel destined for local consumption or inland distribution:
+    
+    1. **Vessel arrives** and berths at **Quay** (pilot assistance, tugboat support, mooring operations)
+    2. **Quay Crane discharges** containers from vessel → lowers to **Apron** staging area
+    3. **Prime Mover/AGV** picks up container from apron → transports to **Storage Yard**
+    4. **Yard Crane** lifts container from PM/AGV → stacks in designated **storage location**
+    5. Container **dwells in yard** until truck arrival (typically 3-7 days, varies by port/cargo type)
+    6. **Truck arrives** at **Gate Complex**, completes documentation and security checks
+    7. **Yard Crane retrieves** container from storage → loads onto waiting truck
+    8. **Truck exits** via gate to hinterland destination
+    
+    **Key Metric**: Import dwell time (time from vessel discharge to truck pickup) - target <5 days average
+    
+    **2. Export Flow (Land Hinterland → Vessel):**
+    
+    This flow handles containers arriving by truck destined for maritime transport:
+    
+    1. **Truck arrives** at **Gate Complex** with export container, completes entry procedures
+    2. **Yard Crane** receives container from truck → places in **Export Storage Yard** location
+    3. Container **dwells in yard** until vessel arrival (typically arrive 3-5 days before vessel, closing time varies)
+    4. When **vessel scheduled**, yard crane retrieves container from storage
+    5. **Prime Mover/AGV** transports container from yard to **Apron** staging area near assigned berth
+    6. Containers **staged on apron** in loading sequence (specific order for vessel stowage plan)
+    7. **Quay Crane** lifts container from apron → loads onto **vessel** in planned position
+    8. **Vessel departs** when loading complete (typically 10-24 hours for full operation)
+    
+    **Key Metric**: Export dwell time (time from truck delivery to vessel loading) - target <4 days average
+    
+    **3. Transshipment Flow (Vessel → Vessel):**
+    
+    This flow handles containers transferred between vessels at the hub port (no land hinterland movement):
+    
+    1. **Container discharged** from arriving Vessel A to **Apron**
+    2. **Prime Mover/AGV** transports to **Transshipment Yard** (often separate area from import/export yard)
+    3. Container **dwells in yard** until connecting vessel arrives (ideally <24-48 hours for tight connections)
+    4. **Yard Crane retrieves** container when Vessel B ready for loading
+    5. **Prime Mover/AGV** transports to **Apron** for Vessel B
+    6. **Quay Crane loads** onto Vessel B
+    7. **Vessel B departs** with transshipped cargo continuing journey
+    
+    **Key Metric**: Transshipment dwell time - target <48 hours (enables "tight connections" critical for hub ports)
+    
+    **Singapore Context**: With 85-90% transshipment cargo, the transshipment flow dominates PSA operations. 
+    Minimizing transshipment dwell time is critical for maintaining Singapore's hub competitiveness—shipping lines 
+    demand fast, reliable connections between feeder and mainline vessels.
     """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>💡 Operational Efficiency:</strong> The goal is to minimise:<br>
-    - <strong>Container dwell time</strong>: Time between discharge and pickup (imports) or drop-off and loading (exports)<br>
-    - <strong>Vessel port stay</strong>: Total hours from arrival to departure<br>
-    - <strong>Equipment idle time</strong>: Cranes, prime movers, yard equipment waiting<br>
-    - <strong>Re-handles</strong>: Moving containers multiple times to access others<br><br>
-    Every movement costs time and money. Efficient operations minimise unnecessary moves.
+    <strong>💡 Operational Efficiency Goals:</strong><br><br>
+    Terminal operations aim to minimize four critical metrics:<br><br>
+    1. <strong>Container dwell time</strong>: Minimize time containers spend in yard storage (reduces congestion, 
+    improves yard utilization, faster cargo delivery)<br>
+    2. <strong>Vessel port stay</strong>: Minimize total time from vessel arrival to departure (shipping lines pay 
+    port dues by time, faster turnaround enables more voyages)<br>
+    3. <strong>Equipment idle time</strong>: Keep cranes, prime movers, yard equipment actively working (maximize 
+    asset utilization, reduce unit costs)<br>
+    4. <strong>Re-handles</strong>: Minimize moving containers multiple times to access others underneath (each 
+    re-handle costs 2-3 minutes, creates inefficiency)<br><br>
+    <strong>World-class terminals like PSA Singapore achieve</strong>: <24-36 hour vessel turnaround for mega 
+    vessels, <5 day average dwell time, <10% re-handle rate, >90% equipment utilization during operations.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 2: Container Terminal Operations Process Flow
+    # SECTION 2: The Complete Container Terminal Operations Process
     # ============================================================================
     
-    st.markdown('<p class="section-header">Container Terminal Operations: Complete Process</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Container Terminal Operations: Complete Process Flow</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Container terminal operations follow a structured workflow from vessel notification to departure. 
-    Understanding this end-to-end process is crucial for operational planning.
+    Container terminal operations follow a structured workflow from initial vessel notification through final 
+    departure. The lecture materials emphasize that this process involves **four key planning processes** that must 
+    be coordinated seamlessly: Berth Planning, Yard Planning, Stowage Planning, and Transportation Planning.
+    
+    Understanding this complete process flow is essential for operational planning and for developing digital twins 
+    that accurately model terminal dynamics.
     """)
     
-    st.markdown('<p class="subsection-header">Phase 1: Pre-Arrival Planning (72+ hours before arrival)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Phase 1: Pre-Arrival Planning (72+ hours before vessel arrival)</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Vessel Notification:**
-    - Shipping line sends **vessel arrival notice** via PORTNET (Singapore's port clearance system)
-    - Information includes: Vessel name, size, estimated time of arrival (ETA), cargo manifest
-    - **Cargo manifest**: Complete list of containers to discharge and load
+    **Vessel Notification and Initial Planning:**
     
-    **Information Exchange:**
-    - Terminal receives detailed container data:
-      - Container number, size (20ft/40ft), type (dry/reefer/OOG)
-      - Weight, destination port, dangerous goods classification
-      - Customer, booking reference, special handling requirements
+    Container terminal operations begin long before the physical vessel arrives. Shipping lines provide advance 
+    notification of vessel arrival, allowing terminal planners to prepare.
     
-    **Initial Planning:**
-    - **Berth Planning**: Which berth to assign based on vessel size, draft, schedule
-    - **Resource Planning**: How many cranes, prime movers, yard space needed
-    - **Preliminary Stowage Plan**: Review shipping line's proposed stowage plan
+    **Information Received from Shipping Line:**
+    - **Vessel details**: Name, call sign, IMO number, dimensions (LOA, beam, draft), flag
+    - **Estimated Time of Arrival (ETA)**: Initially rough estimate, refined as vessel approaches
+    - **Container cargo manifest**: List of containers to discharge and load
+    - **Discharge list**: Container numbers, types, weights, hazardous classifications, destinations
+    - **Load list**: Export containers expected, weights, special requirements (reefers, OOG, hazardous)
+    - **Special requirements**: Reefer connections, dangerous goods segregation, oversized cargo
+    
+    **Initial Planning Activities:**
+    
+    **1. Berth Planning (Preliminary):**
+    - Determine which berth the vessel will use based on:
+      - Vessel size and draft requirements
+      - Quay crane availability at different berths
+      - Conflicts with other scheduled vessels
+      - Berth length and depth constraints
+    - Reserve berth time slot in berth planning system
+    - Coordinate with port authority (MPA in Singapore) for pilot and berth slot
+    
+    **2. Resource Estimation:**
+    - Calculate required **quay cranes** based on container volume (typically 4-8 cranes for mega vessels)
+    - Estimate **vessel operation time** (rules of thumb: 1,000 moves ≈ 10-12 hours with 4 cranes)
+    - Identify **special equipment needs** (reefer connections, heavy lift cranes for OOG cargo)
+    - Check **yard capacity** for expected import/transshipment containers
+    
+    **3. Yard Space Reservation:**
+    - Reserve yard blocks for import containers (group by destination, shipping line, container type)
+    - Confirm export container locations in yard (should already be receiving exports from trucks)
+    - Reserve transshipment storage areas (separate from import/export to enable fast retrieval)
+    
+    **4. Communication with Stakeholders:**
+    - Notify **customs** of pending arrival (begin import documentation processing)
+    - Alert **stevedoring teams** for upcoming operation
+    - Inform **trucking companies** of expected import container availability
+    - Coordinate with **shipping line** on any special requirements or changes
     """)
     
-    st.markdown('<p class="subsection-header">Phase 2: Detailed Planning (24-48 hours before arrival)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Phase 2: Detailed Operational Planning (24-48 hours before arrival)</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Berth Planning Confirmation:**
-    - Finalise **berth window** (expected arrival and departure times)
-    - Coordinate with other vessels to avoid conflicts
-    - Target: **Berth on Arrival (BOA)** >90% (vessel berths immediately without waiting)
+    As the vessel approaches, planning becomes more detailed and specific. The lecture materials identify **four 
+    key planning processes** that occur during this phase:
     
-    **Discharge Planning:**
-    - Plan sequence to discharge containers from vessel
-    - Objective: Minimise crane movements and re-handles
-    - Consider vessel stability during discharge process
-    - Identify priority containers (time-sensitive, dangerous goods)
+    **Planning Process 1: Berth Planning (Final Assignment)**
     
-    **Loading Planning / Stowage Planning:**
-    - Determine exact position for each export container on vessel
-    - Constraints:
-      - **Vessel stability**: Weight distribution fore/aft and port/starboard
-      - **Destination sequence**: Containers for later ports on bottom
-      - **Container type**: Reefers near power, OOG can't stack, dangerous goods segregation
-      - **Weight limits**: Stack weight, hatch cover strength
-    - Generate **bay plans** showing each container's position (bay-row-tier)
+    **Objective**: Assign specific berth and time slot to each vessel, optimizing berth utilization.
     
-    **Yard Planning:**
-    - Allocate **yard storage locations** for import containers
-    - Group by destination, shipping line, container type
-    - Plan for efficient retrieval when trucks arrive
-    - Reserve space for export containers arriving by truck
+    **Inputs**:
+    - Updated vessel ETA (more accurate as vessel approaches)
+    - Vessel specifications (LOA, beam, draft, container capacity)
+    - Current berth occupancy and upcoming schedule
+    - Expected handling time based on cargo volume
     
-    **Equipment Scheduling:**
-    - Assign specific **quay cranes** to vessel (typically 4-8 cranes for mega vessels)
-    - Schedule **yard crane** operations
-    - Allocate **prime movers/AGVs** for horizontal transport
-    - Plan equipment **maintenance windows** to avoid conflicts
+    **Planning Decisions**:
+    - **Which berth**: Consider vessel size, crane availability, adjacent berth conflicts
+    - **Arrival time window**: Coordinate with pilot service, tide/draft restrictions
+    - **Berth on Arrival (BOA) feasibility**: Can vessel berth immediately or must wait at anchorage?
+    - **Crane allocation**: Which cranes will serve this vessel (impacts berth choice)
+    
+    **Constraints**:
+    - Berth length must exceed vessel LOA (typically require 50-100m additional space)
+    - Berth depth must accommodate vessel draft (mega vessels require 16-18m depth)
+    - Adjacent berth operations (cranes cannot interfere with neighboring berth operations)
+    - Pilot availability and tidal windows (some ports tide-dependent)
+    
+    **Singapore Context**: PSA targets >90% Berth on Arrival (BOA)—vessels berth immediately without anchorage 
+    wait. This requires excellent berth planning to ensure slot availability when vessels arrive.
+    
+    **Planning Process 2: Stowage Planning (Vessel Load Plan)**
+    
+    **Objective**: Determine exact position of each container on the vessel (bay-row-tier coordinates).
+    
+    **This is one of the most complex planning problems in terminal operations.** The stowage planner must balance 
+    multiple competing constraints and objectives:
+    
+    **Key Constraints**:
+    
+    **1. Structural/Safety Constraints:**
+    - **Weight limits**: Heavier containers on bottom, lighter on top (vessel stability)
+    - **Stack weight limits**: Maximum weight each container can support (crushing prevention)
+    - **Hatch cover strength**: Containers on hatch covers have lower weight limits than in holds
+    - **Dangerous goods segregation**: IMO regulations require minimum separation distances
+    
+    **2. Operational Constraints:**
+    - **Port sequence**: Containers for later ports must be accessible (can't put Hong Kong container under 
+      Singapore container if Singapore is first port)
+    - **Discharge efficiency**: Containers for same port should be grouped together (minimize crane travel)
+    - **Loading efficiency**: Export containers should be near crane position when needed
+    
+    **3. Equipment Constraints:**
+    - **Reefer positions**: Refrigerated containers require power connections (limited reefer slots on vessel)
+    - **OOG positions**: Oversized cargo cannot stack (needs flat rack positions on deck)
+    - **Heavy containers**: Weight distribution for vessel balance (fore/aft and port/starboard)
+    
+    **Stowage Planning Process**:
+    
+    1. **Group containers** by destination port, weight class, type (standard, reefer, OOG, hazardous)
+    2. **Allocate bays** to each destination port along vessel's route
+    3. **Assign positions** within bays considering weight, accessibility, equipment constraints
+    4. **Balance vessel**: Check stability (GM), draft (fore/aft trim), stress on hull
+    5. **Generate bay plans**: Document showing each container's position (bay-row-tier coordinate system)
+    6. **Validate plan**: Check for constraint violations, optimize crane work sequences
+    
+    **Output**: Complete stowage plan showing every container's position, used by crane operators during loading.
+    
+    **Planning Process 3: Yard Planning (Storage Location Assignment)**
+    
+    **Objective**: Allocate specific yard storage locations for import containers and identify export container 
+    locations for efficient retrieval.
+    
+    **Import Container Yard Planning**:
+    
+    **Grouping Strategy**:
+    - **By destination**: Containers going to same location together (reduces truck travel in yard)
+    - **By shipping line**: Keep each shipping line's containers in dedicated blocks
+    - **By container type**: Reefers near power sources, OOG in special areas, dangerous goods in segregated zones
+    - **By discharge sequence**: Consider which containers discharged first/last (impacts stacking)
+    
+    **Storage Location Factors**:
+    - **Accessibility**: High-turnover containers (picked up quickly) in easily accessible positions
+    - **Stacking height**: Heavier containers on bottom, consider maximum stack height (6-8 containers typical)
+    - **Re-handle minimization**: Predict pickup sequence, stack accordingly to avoid moving containers twice
+    - **Yard capacity**: Balance utilization across yard blocks (avoid overloading specific areas)
+    
+    **Export Container Yard Management**:
+    
+    **Receiving Strategy**:
+    - Export containers arrive by truck in days before vessel
+    - Must track location of each export container in yard
+    - Verify container availability against load list (flag no-shows early)
+    
+    **Retrieval Planning**:
+    - Plan retrieval sequence matching vessel loading plan
+    - Stage export containers on apron in loading order (enables efficient crane operations)
+    - Coordinate yard crane scheduling to retrieve containers just-in-time for loading
+    
+    **Planning Process 4: Transportation Planning (Equipment Scheduling)**
+    
+    **Objective**: Coordinate all equipment movements to execute the operational plan efficiently.
+    
+    **Quay Crane Allocation and Sequencing**:
+    
+    **Crane Assignment**:
+    - Determine **crane intensity**: How many cranes to assign to vessel (typically 4-8 for mega vessels)
+    - More cranes = faster operation, but diminishing returns due to crane interference
+    - Assign specific cranes to specific bays on vessel (prevents cranes crossing paths)
+    
+    **Crane Work Sequence**:
+    - **Discharge sequence**: Which containers to discharge in what order
+    - **Loading sequence**: Follow stowage plan for export container loading
+    - **Hatch cover operations**: Coordinate opening/closing of vessel holds
+    - **Productivity target**: 30-40 Gross Moves Per Hour (GMPH) per crane
+    
+    **Horizontal Transport (Prime Movers / AGVs)**:
+    
+    The lecture materials distinguish between two approaches for moving containers between quay and yard:
+    
+    **Prime Mover (PM) Deployment**:
+    - **Traditional approach**: Human-driven trucks with chassis/trailers
+    - **Fixed assignment strategy**: 2 PMs assigned to each quay crane (dedicated service)
+    - **Challenge**: PMs often travel empty on return trip (quay→yard loaded, yard→quay empty)
+    - **Pooling strategy**: Fleet of PMs shared across all cranes (computer dispatches to next job)
+    - **Hybrid approach**: Core PMs fixed to cranes, additional PMs pooled for overflow
+    
+    **AGV (Automated Guided Vehicle) Deployment**:
+    - **Modern approach**: Battery-powered, computer-controlled autonomous vehicles
+    - **Pooling strategy**: Fleet shared across all cranes (no fixed assignments)
+    - **Dynamic dispatch**: AGV system calculates optimal assignment in real-time
+    - **Bi-directional loading**: Can carry container both directions (quay→yard, yard→quay)
+    - **Benefits**: Higher utilization, less empty travel, 24/7 operations, predictable performance
+    
+    **Dispatching Optimization**:
+    - **Objective**: Minimize quay crane waiting time (always have PM/AGV ready when crane ready)
+    - **Constraint**: Minimize empty travel distance (reduces fuel/energy, increases fleet productivity)
+    - **Balancing**: Keep fleet size small (cost) while maintaining high service level (crane productivity)
+    
+    **Yard Crane Scheduling**:
+    - Assign yard cranes to specific blocks
+    - Schedule retrieve operations (export containers for loading)
+    - Schedule placement operations (import containers from discharge)
+    - Balance workload across yard cranes
+    - Coordinate with horizontal transport (PM/AGV) arrival times
     """)
     
-    st.markdown('<p class="subsection-header">Phase 3: Vessel Operations (During port stay)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Phase 3: Vessel Operations (During Port Stay)</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Vessel Arrival:**
-    - Vessel arrives at anchorage or directly to berth
-    - **Pilot** boards vessel to navigate into berth
-    - **Tugboats** assist with docking
-    - Vessel **moors** to berth (secured with lines)
-    - **Gangway** deployed for crew access
+    **The Operational Execution Phase:**
     
-    **Pre-Operations:**
-    - **Safety inspection**: Confirm vessel safe for operations
-    - **Lashing/unlashing**: Secure or release container securing equipment
-    - **Hatch cover removal**: Open vessel holds for crane access
-    - **Reefer connections**: Connect power to refrigerated containers
+    When the vessel physically arrives, all planning must execute seamlessly while adapting to real-time changes.
     
-    **Discharge Operations:**
-    - **Quay cranes** begin discharging containers
-    - Each crane has **operator** controlling movements
-    - **Spreader** (crane attachment) locks onto container corner castings
-    - Container lifted from vessel → lowered to **apron**
-    - **Prime mover/AGV** picks up container → transports to **yard**
-    - **Yard crane** places container in designated storage location
-    - Process continues until all discharge containers removed
+    **Vessel Arrival Sequence**:
     
-    **Loading Operations:**
-    - **Yard cranes** retrieve export containers from storage
-    - **Prime movers/AGVs** transport to **apron staging area**
-    - Containers staged in **loading sequence** for efficient crane operations
-    - **Quay cranes** lift containers from apron → place on vessel
-    - **Lashers** secure containers according to **lashing plan**
-    - Process continues until all export containers loaded
+    **1. Pilot Boarding and Navigation (1-1.5 hours)**:
+    - Vessel arrives at **pilot boarding ground** (typically 3-5 nautical miles offshore)
+    - **Maritime pilot** boards vessel via pilot boat (licensed by port authority to navigate local waters)
+    - Pilot takes command of vessel navigation (captain retains overall command but defers to pilot's local knowledge)
+    - **Tugboats** rendezvous with vessel (typically 2-4 tugs for large vessels)
+    - Pilot navigates vessel through harbor approaches to assigned berth
     
-    **Concurrent Operations:**
-    - Import discharge and export loading often happen **simultaneously**
-    - Different cranes work on different bays of vessel
-    - Coordination critical to avoid conflicts and maintain efficiency
+    **2. Berthing and Mooring (30-45 minutes)**:
+    - Tugboats maneuver vessel into berth position (push/pull to align with berth)
+    - **Line handlers** on quay receive mooring lines from vessel
+    - Vessel secured with multiple **mooring lines** to bollards (typically 8-12 lines)
+    - **Fenders** between vessel and quay absorb movement and prevent hull damage
+    - **Gangway** deployed for crew/personnel access between vessel and shore
     
-    **Real-Time Adjustments:**
-    - **No-shows**: Expected export containers don't arrive → adjust plan
-    - **Roll-overs**: Containers missed this vessel → reschedule for next
-    - **Equipment breakdowns**: Reassign cranes, adjust operations
-    - **Weather issues**: Suspend operations if unsafe (high winds, lightning)
+    **3. Pre-Operations Setup (30-60 minutes)**:
+    - **Safety inspection**: Terminal safety officer inspects vessel, confirms safe for operations
+    - **Cargo documentation exchange**: Final cargo lists, bay plans, special instructions transferred
+    - **Lashing/unlashing crew**: Begin removing container securing equipment (twist locks, lashing rods)
+    - **Hatch cover removal**: Open vessel holds to expose containers below deck
+    - **Reefer connections**: Identify and prepare to connect power to refrigerated containers
+    - **Quay crane positioning**: Move assigned cranes into position along vessel
+    
+    **4. Discharge Operations (typically 8-14 hours for mega vessel)**:
+    
+    **Crane Operations**:
+    - **Crane operator** in crane cab controls all movements (trained specialists, highly skilled role)
+    - **Spreader** (crane attachment device) positioned over target container
+    - **Twist locks** engage container corner castings (automatic locking mechanism)
+    - Container **lifted** from vessel (operators must clear vessel rails, avoid obstacles)
+    - **Trolley travels** horizontally along crane boom toward apron
+    - Container **lowered** to apron staging area
+    - **Spreader releases** container (twist locks disengage automatically)
+    
+    **Horizontal Transport**:
+    - **Prime mover/AGV** positions under spreader to receive container
+    - Once crane releases, PM/AGV transports container to yard
+    - **Travel time**: Typically 3-5 minutes depending on yard distance
+    - Arrives at designated yard block
+    
+    **Yard Operations**:
+    - **Yard crane** picks up container from PM/AGV
+    - **Stacks** container in planned storage location
+    - PM/AGV returns to quay for next container
+    - Process repeats until all discharge containers removed
+    
+    **Productivity Measurement**:
+    - **Gross Moves Per Hour (GMPH)**: Total moves (including delays) / total time
+    - **Target**: 30-40 GMPH per crane (world-class performance)
+    - **Factors affecting productivity**: Crew skill, equipment reliability, weather, vessel stow complexity
+    
+    **5. Loading Operations (typically 10-16 hours for mega vessel)**:
+    
+    **Retrieval Process**:
+    - **Yard cranes** retrieve export containers from storage locations
+    - Sequence follows vessel stowage plan (bottom containers loaded first, etc.)
+    - **PM/AGV** transports containers to apron staging area
+    - Containers **staged on apron** in loading sequence order
+    
+    **Crane Loading**:
+    - **Quay crane** picks up container from apron staging
+    - **Lifts and travels** to vessel position
+    - **Lowers** container into designated bay-row-tier position
+    - **Spreader releases** container
+    - **Lashing crew** secures container (twist locks, lashing rods, stacking cones)
+    
+    **Concurrent Operations**:
+    - Discharge and loading often occur **simultaneously**
+    - Different cranes work on different bays (fore/mid/aft sections of vessel)
+    - Complex coordination required to avoid crane interference
+    - Horizontal transport must serve both discharge and loading operations
+    
+    **6. Post-Operations and Departure (1-1.5 hours)**:
+    
+    **Final Activities**:
+    - **Hatch covers replaced** and secured (close vessel holds)
+    - **Final lashing inspection**: Verify all containers properly secured for sea voyage
+    - **Reefer connections verified**: Confirm all refrigerated containers have power
+    - **Paperwork completion**: Final cargo manifest, dangerous goods declaration, customs clearance
+    - **Gangway removed**, shore connections disconnected
+    
+    **Departure Sequence**:
+    - **Mooring lines released** and retrieved to vessel
+    - **Tugboats** maneuver vessel away from berth
+    - **Pilot** navigates vessel out of harbor
+    - Pilot disembarks at pilot boarding ground
+    - Vessel proceeds to next port
+    
+    **Typical Timeline Example** (Mega Vessel with 2,000 moves):
+    - Arrival and mooring: 1.5 hours
+    - Pre-operations: 1.0 hours
+    - Discharge operations: 8.0 hours (1,000 imports)
+    - Loading operations: 10.0 hours (1,200 exports)
+    - Post-operations: 1.0 hours
+    - Departure: 0.5 hours
+    - **Total port stay: 22 hours** (excellent performance, achieves <24 hour turnaround target)
     """)
-    
-    # Vessel operation timeline
-    operation_timeline = pd.DataFrame({
-        'Phase': ['Arrival & Mooring', 'Pre-Operations', 'Discharge', 'Loading', 'Post-Operations', 'Departure'],
-        'Duration (hours)': [1.5, 1.0, 8.0, 10.0, 1.0, 0.5],
-        'Activities': [
-            'Pilot boards, tugboat assist, vessel moors, gangway',
-            'Safety check, lashing/unlashing prep, hatch covers',
-            '1,000 import containers discharged',
-            '1,200 export containers loaded',
-            'Hatch covers closed, final checks, paperwork',
-            'Lines released, tugboat assist, vessel departs'
-        ]
-    })
-    
-    # Timeline visualization
-    fig = go.Figure()
-    
-    cumulative_time = [0]
-    for duration in operation_timeline['Duration (hours)']:
-        cumulative_time.append(cumulative_time[-1] + duration)
-    
-    for i in range(len(operation_timeline)):
-        fig.add_trace(go.Scatter(
-            x=[cumulative_time[i], cumulative_time[i+1]],
-            y=[operation_timeline['Phase'][i], operation_timeline['Phase'][i]],
-            mode='lines+markers',
-            line=dict(width=20, color=['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4'][i]),
-            marker=dict(size=10),
-            name=operation_timeline['Phase'][i],
-            hovertemplate=f"<b>{operation_timeline['Phase'][i]}</b><br>" +
-                         f"Duration: {operation_timeline['Duration (hours)'][i]} hours<br>" +
-                         f"{operation_timeline['Activities'][i]}<extra></extra>"
-        ))
-    
-    fig.update_layout(
-        title={
-            'text': 'Typical Vessel Operations Timeline (22 hours total)',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        xaxis_title="Elapsed Time (hours)",
-        yaxis_title="",
-        height=400,
-        showlegend=False,
-        xaxis=dict(range=[0, 22], gridcolor='#E5E7EB'),
-        plot_bgcolor='white'
-    )
-    
-    st.plotly_chart(fig, width='stretch')
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 Target Performance:</strong><br>
-    - <strong>Mega vessel (20,000+ TEU)</strong>: 24-36 hour total port stay<br>
-    - <strong>Quay crane productivity</strong>: 30-40 gross moves per hour (GMPH)<br>
-    - <strong>Berth on Arrival (BOA)</strong>: >90% (vessel berths immediately)<br>
-    - <strong>Zero damage</strong>: No containers or cargo damaged during handling<br><br>
-    World-class terminals like Singapore PSA consistently meet or exceed these targets.
+    <strong>✅ World-Class Terminal Performance Benchmarks:</strong><br><br>
+    <strong>PSA Singapore and top-tier terminals achieve</strong>:<br>
+    • <strong>Berth on Arrival (BOA) >90%</strong>: Vessels berth immediately without anchorage wait<br>
+    • <strong>Vessel turnaround <24-36 hours</strong>: For mega vessels with 2,000-3,000 container moves<br>
+    • <strong>Crane productivity 35-40 GMPH</strong>: Gross moves per hour per crane (including all delays)<br>
+    • <strong>Container dwell time <5 days</strong>: Average time from discharge to pickup (imports)<br>
+    • <strong>Re-handle rate <10%</strong>: Percentage of containers moved multiple times in yard<br>
+    • <strong>Equipment availability >95%</strong>: Percentage of time equipment operational (not broken down)<br><br>
+    These metrics represent <strong>operational excellence</strong> achieved through sophisticated planning systems, 
+    skilled workforce, well-maintained equipment, and continuous process improvement.
     </div>
     """, unsafe_allow_html=True)
     
-    # ============================================================================
-    # SECTION 3: Detailed Planning Processes
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">The Four Key Planning Processes</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Container terminal planning involves four interconnected optimisation problems that must be solved 
-    in coordination.
-    """)
-    
-    st.markdown('<p class="subsection-header">1. Berth Planning</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Objective:** Assign vessels to berths and time windows to maximise berth utilisation and minimise 
-    vessel waiting time.
-    
-    **Planning Horizon:** 72+ hours ahead (rolling window)
-    
-    **Inputs:**
-    - Vessel arrival schedule (ETA from shipping lines)
-    - Vessel characteristics (length, draft, cargo volume)
-    - Berth characteristics (length, depth, crane coverage)
-    - Expected operation duration
-    
-    **Constraints:**
-    - **Physical**: Vessel length ≤ berth length, vessel draft ≤ water depth
-    - **Operational**: Vessel operations cannot overlap at same berth
-    - **Safety**: Minimum separation between vessels
-    - **Priority**: Some vessels have priority (alliances, schedule commitments)
-    
-    **Optimisation Objectives:**
-    - **Primary**: Maximise BOA (Berth on Arrival) percentage - vessel berths immediately without waiting
-    - **Secondary**: Minimise total vessel waiting time
-    - **Tertiary**: Balance berth utilisation across all berths
-    
-    **Output:**
-    - **Berth allocation plan**: Which vessel at which berth
-    - **Time windows**: Expected berthing time and departure time for each vessel
-    - **Crane allocation**: How many cranes assigned to each vessel
-    
-    **Key Performance Indicator:**
-    - **BOA (Berth on Arrival)**: Percentage of vessels berthing immediately
-    - Target: >90% BOA
-    - Singapore consistently achieves >90% BOA
-    """)
-    
-    # Berth planning visualization
-    berth_plan = pd.DataFrame({
-        'Berth': ['Berth 1', 'Berth 1', 'Berth 2', 'Berth 2', 'Berth 3', 'Berth 3', 'Berth 4'],
-        'Vessel': ['Vessel A', 'Vessel D', 'Vessel B', 'Vessel E', 'Vessel C', 'Vessel F', 'Vessel G'],
-        'Start': [0, 20, 2, 24, 5, 28, 10],
-        'Duration': [20, 22, 22, 20, 23, 19, 26],
-        'TEU': [8000, 9000, 7500, 8500, 8200, 7800, 9500]
+    # Vessel operation timeline visualization
+    operation_phases = pd.DataFrame({
+        'Phase': ['Arrival & Mooring', 'Pre-Operations', 'Discharge', 'Loading', 'Post-Operations', 'Departure'],
+        'Duration (hours)': [1.5, 1.0, 8.0, 10.0, 1.0, 0.5],
+        'Key Activities': [
+            'Pilot boarding, tugboat assist, vessel moors, gangway deployed',
+            'Safety check, lashing crew, hatch cover removal, documentation exchange',
+            '1,000 import containers discharged (4 cranes, 8 hours, 31 GMPH)',
+            '1,200 export containers loaded (4 cranes, 10 hours, 30 GMPH)',
+            'Hatch covers closed, lashing inspection, final paperwork, disconnections',
+            'Lines released, tugboat assist, pilot navigates out, vessel departs'
+        ]
     })
     
+    # Create timeline visualization
     fig = go.Figure()
     
-    colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4', '#EC4899']
+    cumulative = 0
+    colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899']
     
-    for i, row in berth_plan.iterrows():
+    for idx, row in operation_phases.iterrows():
         fig.add_trace(go.Bar(
-            name=row['Vessel'],
-            x=[row['Duration']],
-            y=[row['Berth']],
+            y=[row['Phase']],
+            x=[row['Duration (hours)']],
             orientation='h',
-            marker=dict(color=colors[i % len(colors)]),
-            text=f"{row['Vessel']}<br>{row['TEU']} TEU<br>{row['Duration']}h",
+            name=row['Phase'],
+            text=f"{row['Duration (hours)']}h",
             textposition='inside',
-            base=row['Start'],
-            hovertemplate=f"<b>{row['Vessel']}</b><br>" +
-                         f"Berth: {row['Berth']}<br>" +
-                         f"Start: {row['Start']}h<br>" +
-                         f"Duration: {row['Duration']}h<br>" +
-                         f"TEU: {row['TEU']}<extra></extra>"
+            marker=dict(color=colors[idx]),
+            hovertemplate=f"<b>{row['Phase']}</b><br>{row['Key Activities']}<br>Duration: {row['Duration (hours)']} hours<extra></extra>"
         ))
     
     fig.update_layout(
-        title={
-            'text': 'Berth Allocation Plan (48-hour window)',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        xaxis_title="Time (hours)",
-        barmode='overlay',
-        height=400,
+        title='Typical Vessel Operation Timeline (2,000 Container Moves)',
+        xaxis_title='Hours',
+        yaxis_title='Operation Phase',
         showlegend=False,
-        xaxis=dict(range=[0, 48], gridcolor='#E5E7EB'),
-        plot_bgcolor='white'
-    )
-    
-    st.plotly_chart(fig, width='stretch')
-    
-    st.markdown('<p class="subsection-header">2. Storage Yard Planning</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Objective:** Allocate storage locations for containers in the yard to minimise handling time and 
-    re-handles (moving containers to access others).
-    
-    **Planning Horizon:** 24-72 hours ahead
-    
-    **Storage Principles:**
-    
-    **For Import Containers (from vessel):**
-    - Group by **destination** (same customer, same city)
-    - Group by **shipping line** (for billing and tracking)
-    - Group by **size and type** (20ft vs 40ft, dry vs reefer)
-    - Place **popular destinations** in easy-access locations
-    - **Reefers** near power connection points
-    - **Dangerous goods** in designated isolated areas
-    
-    **For Export Containers (from trucks):**
-    - Group by **destination port** (will load on same vessel)
-    - Group by **vessel** (departing soonest near loading area)
-    - Group by **size/type/weight** for stowage planning
-    - **Heavy containers** on bottom of stacks
-    - **Time-sensitive cargo** in priority locations
-    
-    **For Transshipment Containers:**
-    - **Minimise dwell time**: Direct transfer from discharge to loading if possible
-    - Group by **outbound vessel**
-    - Segregate from import/export containers
-    
-    **Yard Block Organisation:**
-    - Yard divided into **blocks** (rectangular sections)
-    - Each block has multiple **bays** (columns)
-    - Each bay has multiple **rows** (across width)
-    - Each position has multiple **tiers** (stacking height, typically 5-7 high)
-    - Address: Block-Bay-Row-Tier (e.g., Block 3, Bay 12, Row 04, Tier 03)
-    
-    **Optimisation Objectives:**
-    - Minimise **re-handles**: Avoid moving containers to access others underneath
-    - Minimise **yard crane travel distance**
-    - Balance **yard utilisation** across blocks
-    - Ensure **safe stacking**: Heavy on bottom, compatible types together
-    
-    **Key Challenges:**
-    - **Uncertainty**: Don't know exactly when trucks will pick up import containers
-    - **Dynamic**: Containers constantly arriving and departing
-    - **Re-handles**: Sometimes unavoidable when container arrival sequence doesn't match departure sequence
-    """)
-    
-    st.markdown("""
-    <div class="warning-box">
-    <strong>⚠️ The Re-Handle Problem:</strong><br><br>
-    <strong>Scenario:</strong> Import containers A, B, C, D arrive from vessel and stacked vertically (D on top of A).<br>
-    - Truck for Container A arrives first<br>
-    - Must move containers D, C, B to access A (<strong>3 re-handles</strong>)<br>
-    - Each re-handle costs time, equipment, energy<br><br>
-    <strong>Solution Strategies:</strong><br>
-    - Predict truck arrival patterns using historical data<br>
-    - Stack containers likely to be picked up soon on top<br>
-    - Use AI/ML to optimise stacking decisions<br>
-    - Accept some re-handles as unavoidable (target: <10% re-handle rate)
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown('<p class="subsection-header">3. Vessel Stowage Planning</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Objective:** Determine the exact position of each container on the vessel to ensure safety, stability, 
-    and operational efficiency.
-    
-    **Planning Horizon:** 24-48 hours before vessel arrival
-    
-    **Critical Constraints:**
-    
-    **1. Vessel Stability:**
-    - **Centre of gravity**: Must be within safe limits (too high = unstable, too low = excessive stress)
-    - **Longitudinal balance**: Weight distribution bow to stern (prevent hogging/sagging)
-    - **Transverse balance**: Weight distribution port to starboard (prevent listing)
-    - **Metacentric height (GM)**: Measure of stability (too low = risk of capsizing)
-    
-    **2. Structural Limits:**
-    - **Stack weight**: Maximum weight per vertical stack of containers
-    - **Deck load**: Weight capacity of each deck section
-    - **Hatch cover strength**: Maximum weight that can be placed on hatch covers
-    - **Bay limits**: Maximum weight per bay (longitudinal section)
-    
-    **3. Destination Sequence:**
-    - Containers for **Port 1** must be accessible before **Port 2** containers
-    - Generally: **Later ports on bottom/back**, **earlier ports on top/front**
-    - Minimise **re-stows**: Moving containers between ports to access others
-    
-    **4. Container Compatibility:**
-    - **Dangerous Goods (DG)**: Segregation requirements (class-specific separation distances)
-    - **Reefers**: Must be within reach of power outlets
-    - **Out of Gauge (OOG)**: Cannot stack containers on top
-    - **Heavy containers**: On bottom of stacks, over strong structural points
-    - **Empty containers**: On top (lighter weight)
-    
-    **5. Operational Efficiency:**
-    - Minimise **crane movements**: Complete bays sequentially
-    - **Balance crane productivity**: Distribute work evenly across cranes
-    - Consider **hatch cover operations**: Time to remove/replace covers
-    - Enable **simultaneous operations**: Multiple cranes working without conflicts
-    
-    **Stowage Planning Process:**
-    
-    **Step 1:** Receive container list from shipping line / terminal
-    - All export containers with specifications
-    
-    **Step 2:** Group containers by:
-    - Destination port
-    - Size (20ft / 40ft)
-    - Type (dry / reefer / OOG / dangerous goods)
-    - Weight category
-    
-    **Step 3:** Preliminary allocation
-    - Assign containers to **bays** based on destination sequence
-    - Heavy containers to bottom tiers
-    - Reefers to locations with power
-    - Dangerous goods with proper segregation
-    
-    **Step 4:** Stability calculation
-    - Calculate centre of gravity
-    - Check all stability parameters
-    - Adjust if necessary
-    
-    **Step 5:** Optimise for efficiency
-    - Minimise crane travel
-    - Balance crane workload
-    - Sequence for minimal re-handles
-    
-    **Step 6:** Generate final bay plans
-    - Detailed position for every container (bay-row-tier)
-    - Loading sequence for each crane
-    - Special instructions for DG, OOG, reefers
-    
-    **Output:**
-    - **Stowage plan**: Complete vessel loading plan with every container position
-    - **Loading sequence**: Order in which containers should be loaded
-    - **Crane work distribution**: Which crane loads which containers
-    - **Stability report**: Confirming vessel will be safe
-    """)
-    
-    # Bay plan example visualization
-    st.markdown("""
-    **Example: Bay Plan (Cross-Section View)**
-    
-    Looking at vessel from stern (back) toward bow (front), showing one bay:
-    """)
-    
-    bay_plan_data = []
-    # Create a sample bay plan
-    for tier in range(1, 7):  # 6 tiers high
-        for row in range(1, 9):  # 8 rows across
-            # Colour code by destination
-            if tier <= 2:
-                dest = 'Port 3 (Last)'
-                color = '#EF4444'
-            elif tier <= 4:
-                dest = 'Port 2'
-                color = '#F59E0B'
-            else:
-                dest = 'Port 1 (First)'
-                color = '#10B981'
-            
-            if row <= 4:
-                side = 'Port'
-            else:
-                side = 'Starboard'
-            
-            bay_plan_data.append({
-                'Row': row,
-                'Tier': tier,
-                'Destination': dest,
-                'Color': color,
-                'Side': side
-            })
-    
-    bay_df = pd.DataFrame(bay_plan_data)
-    
-    fig = go.Figure(data=go.Scatter(
-        x=bay_df['Row'],
-        y=bay_df['Tier'],
-        mode='markers',
-        marker=dict(
-            size=30,
-            color=bay_df['Color'],
-            line=dict(color='#1F2937', width=2),
-            symbol='square'
-        ),
-        text=bay_df['Destination'],
-        hovertemplate='Row: %{x}<br>Tier: %{y}<br>%{text}<extra></extra>'
-    ))
-    
-    fig.update_layout(
-        title={
-            'text': 'Bay Plan Example: Stacking by Destination Port',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        xaxis_title="Row (Port ← → Starboard)",
-        yaxis_title="Tier (Bottom → Top)",
         height=400,
-        xaxis=dict(tickmode='linear', tick0=1, dtick=1, gridcolor='#E5E7EB'),
-        yaxis=dict(tickmode='linear', tick0=1, dtick=1, gridcolor='#E5E7EB'),
-        plot_bgcolor='white',
-        annotations=[
-            dict(x=2, y=6.5, text='Port 1 (First discharge)', showarrow=False, font=dict(color='#10B981', size=12)),
-            dict(x=6, y=4, text='Port 2', showarrow=False, font=dict(color='#F59E0B', size=12)),
-            dict(x=6, y=1.5, text='Port 3 (Last discharge)', showarrow=False, font=dict(color='#EF4444', size=12))
-        ]
+        barmode='stack'
     )
     
-    st.plotly_chart(fig, width='stretch')
-    
-    st.markdown('<p class="subsection-header">4. Transportation Planning (Equipment Scheduling)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Objective:** Coordinate all equipment movements to execute the operational plan efficiently.
-    
-    **Planning Horizon:** Real-time to 24 hours ahead
-    
-    **Equipment Types to Coordinate:**
-    
-    **Quay Cranes (QC):**
-    - Assign cranes to vessels
-    - Determine **crane intensity**: How many cranes per vessel (typically 4-8 for mega vessels)
-    - Create **crane work sequences**: Which crane discharges/loads which containers in what order
-    - Optimise for **crane productivity** (target: 30-40 gross moves per hour per crane)
-    - Avoid **crane interference**: Cranes can't cross paths
-    
-    **Yard Cranes (YC):**
-    - Assign yard cranes to blocks
-    - Schedule **retrieve operations**: Pick up export containers for loading
-    - Schedule **placement operations**: Store import containers from discharge
-    - Minimise **yard crane travel** within block
-    - Balance **workload** across yard cranes
-    
-    **Horizontal Transport (Prime Movers / AGVs):**
-    - Coordinate container movement between quay and yard
-    - **Prime Movers (PM)**: Human-driven trucks with trailers
-    - **AGVs**: Automated guided vehicles (battery-powered, computer-controlled)
-    
-    **Prime Mover Deployment:**
-    - Traditional approach: Assign PMs to work with specific cranes
-    - Each PM makes round trips: Quay → Yard → Quay
-    - Challenge: **Empty travel** reduces efficiency (PM returns empty to quay)
-    
-    **AGV Deployment:**
-    - Modern approach: Fleet of AGVs dynamically dispatched
-    - **Pooling strategy**: AGVs shared across all cranes (no fixed assignment)
-    - Computer system optimises routing in real-time
-    - Can carry container in both directions (quay to yard, yard to quay)
-    - **Benefits**: Higher utilisation, less empty travel, more flexible
-    
-    **Dispatching Strategy:**
-    - **Fixed assignment**: PM always works with same crane (simple but inflexible)
-    - **Dynamic pooling**: PM/AGV assigned to next available job (efficient but complex)
-    - **Hybrid**: Core PMs fixed, additional PMs pooled
-    
-    **Optimisation Objectives:**
-    - Minimise **quay crane waiting time** (always have PM/AGV ready when crane ready)
-    - Minimise **empty travel distance**
-    - Balance **fleet utilisation**
-    - Avoid **congestion** at quay and yard interfaces
-    """)
-    
-    # Equipment productivity comparison
-    equipment_productivity = pd.DataFrame({
-        'Equipment Type': ['Quay Crane', 'Yard Crane (RTG)', 'Prime Mover', 'AGV', 'Gate Transaction'],
-        'Unit': ['Moves/hour', 'Moves/hour', 'Cycles/hour', 'Cycles/hour', 'Transactions/hour'],
-        'Traditional System': [25, 15, 4, 0, 20],
-        'Modern Automated': [35, 25, 0, 10, 40],
-        'World-Class Target': [40, 30, 5, 12, 50]
-    })
-    
-    st.dataframe(equipment_productivity, width='stretch', hide_index=True)
+    st.plotly_chart(fig, use_container_width=True)
     
     # ============================================================================
-    # SECTION 4: Terminal Capacity Planning
+    # SECTION 3: Equipment Types and Coordination
     # ============================================================================
     
-    st.markdown('<p class="section-header">Terminal Capacity Planning</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Terminal Equipment: The Physical Assets</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Terminal capacity is determined by multiple bottleneck resources. Understanding these bottlenecks is 
-    critical for expansion planning.
+    Container terminal operations depend on sophisticated equipment working in coordinated sequences. The lecture 
+    materials categorize equipment by operational zone: quay-side equipment (ship-to-shore), yard equipment (storage 
+    handling), and horizontal transport (moving containers between zones).
     """)
     
-    st.markdown('<p class="subsection-header">Key Capacity Components</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Quay-Side Equipment: Ship-to-Shore (STS) Cranes</p>', unsafe_allow_html=True)
     
-    # Capacity components
-    capacity_components = pd.DataFrame({
-        'Component': [
-            'Berth Capacity',
-            'Quay Crane Capacity',
-            'Yard Storage Capacity',
-            'Yard Crane Capacity',
-            'Horizontal Transport',
-            'Gate Capacity',
-            'Marine Channel'
+    # STS Crane specifications
+    sts_specs = pd.DataFrame({
+        'Specification': [
+            'Outreach (Reach across vessel)',
+            'Lift Height',
+            'Lifting Capacity',
+            'Hoist Speed',
+            'Trolley Speed',
+            'Crane Travel Speed',
+            'Productivity Target',
+            'Cost',
+            'Lifespan'
         ],
-        'Formula / Calculation': [
-            'Berth length × Utilisation × Vessel calls per year × TEU per call',
-            'Number of cranes × Moves per hour × Operating hours per year',
-            'Yard area × Ground slots × Stacking height × Turnover rate',
-            'Number of YCs × Moves per hour × Operating hours per year',
-            'Fleet size × Cycles per hour × Operating hours × Containers per cycle',
-            'Number of lanes × Transactions per hour × Operating hours',
-            'Channel depth × Width × Tidal windows × Vessel traffic capacity'
+        'Modern STS Crane (Mega Vessel Capable)': [
+            '60-80 meters (spans 22-24 container rows)',
+            '40-50 meters above rail (handles 8-10 tiers on vessel + clearance)',
+            '65-85 tonnes under spreader (2× 40ft laden containers)',
+            '60-90 meters/minute (faster = higher productivity)',
+            '180-240 meters/minute (boom trolley horizontal movement)',
+            '30-45 meters/minute (crane moves along quay rails)',
+            '35-40 Gross Moves Per Hour (GMPH) including all delays',
+            'US$10-18 million per crane (new)',
+            '25-35 years with proper maintenance and upgrades'
         ],
-        'Typical Bottleneck?': [
-            'Often - Determines vessel capacity',
-            'Yes - Drives vessel turnaround time',
-            'Sometimes - When high dwell time',
-            'Sometimes - Can limit throughput',
-            'Rarely - Usually adequate if planned',
-            'Sometimes - Peak hour congestion',
-            'Rarely - Usually adequate'
-        ],
-        'Expansion Strategy': [
-            'Build additional berths (very expensive, long lead time)',
-            'Add more cranes; improve crane productivity',
-            'Increase stacking height; reduce dwell time; better yard planning',
-            'Add more yard cranes; improve scheduling',
-            'Add more PMs/AGVs; improve dispatching',
-            'Add more lanes; automate; off-peak incentives',
-            'Dredging for deeper channel; widening; traffic management'
+        'Technology Features': [
+            'Twin-lift/Tandem-lift capability (handle 2 containers simultaneously)',
+            'Automated container positioning (semi-automated lowering/raising)',
+            'Anti-sway systems (reduce pendulum motion, speeds up operations)',
+            'Dual trolley design (separate hoist/trolley for landside operations)',
+            'Automated spreader twist-lock (engage/disengage corner castings)',
+            'Remote monitoring sensors (vibration, load, position, maintenance predictions)',
+            'LED lighting + CCTV (operator visibility, safety, remote supervision)',
+            'Variable speed drives (energy efficient, smooth acceleration/deceleration)',
+            'Diesel + electric hybrid (reduce fuel consumption, emissions)'
         ]
     })
     
-    st.dataframe(capacity_components, width='stretch', hide_index=True)
+    st.dataframe(sts_specs, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Capacity Calculation Example:**
+    **Understanding GMPH (Gross Moves Per Hour):**
     
-    **Given:**
-    - 10 berths, each 400m long
-    - Average vessel: 350m long, 2,000 TEU discharged + 2,000 TEU loaded = 4,000 TEU total moves
-    - Berth utilisation target: 70% (to allow flexibility and maintenance)
-    - Average vessel turnaround: 24 hours
-    - 365 days per year
+    GMPH is the primary productivity metric for quay cranes. It measures total container moves divided by total 
+    operation time, including all delays.
     
-    **Calculation:**
-    - Available berth-hours per year: 10 berths × 365 days × 24 hours = 87,600 berth-hours
-    - Actual operational berth-hours: 87,600 × 70% = 61,320 berth-hours
-    - Vessel calls possible: 61,320 / 24 hours per vessel = 2,555 vessel calls per year
-    - Annual capacity: 2,555 vessels × 4,000 TEU per vessel = **10.2 million TEU per year**
+    **What counts as a "move":**
+    - One container lifted from vessel and placed on apron = 1 move (discharge)
+    - One container lifted from apron and placed on vessel = 1 move (loading)
+    - Twin-lift (2 containers simultaneously) = 2 moves
     
-    **Sensitivity:**
-    - If vessel turnaround improves to 20 hours: +20% capacity (12.2M TEU)
-    - If berth utilisation increases to 80%: +14% capacity (11.6M TEU)
-    - If average vessel grows to 5,000 TEU moves: +25% capacity (12.8M TEU)
+    **What's included in "gross" time:**
+    - Actual lifting and lowering operations
+    - Trolley travel time (horizontal movement along boom)
+    - Crane travel time (moving to different bay along vessel)
+    - Waiting time (for PM/AGV to arrive, for yard to provide container, operator breaks)
+    - Hatch cover operations (opening/closing holds)
+    - Lashing operations (securing/unsecuring containers)
+    - All delays and interruptions
+    
+    **Productivity Levels:**
+    - **Below 25 GMPH**: Poor performance, indicates problems (equipment, planning, or skill issues)
+    - **25-30 GMPH**: Average performance (acceptable but room for improvement)
+    - **30-35 GMPH**: Good performance (well-operated terminal)
+    - **35-40 GMPH**: Excellent performance (world-class operations like PSA Singapore)
+    - **Above 40 GMPH**: Exceptional (requires perfect conditions, highly automated, expert crews)
+    
+    **Factors Affecting GMPH:**
+    - **Crane operator skill**: Expert operators 20-30% more productive than novices
+    - **Vessel stow complexity**: Simple stow (all containers accessible) vs complex (many re-handles on vessel)
+    - **Horizontal transport efficiency**: Crane waits if PM/AGV not available when needed
+    - **Weather**: High winds (>25 knots) slow operations or halt for safety
+    - **Equipment reliability**: Breakdowns stop productivity
+    - **Container characteristics**: Heavy/oversize containers take longer to handle safely
     """)
     
+    st.markdown('<p class="subsection-header">Yard Equipment: Storage and Retrieval</p>', unsafe_allow_html=True)
+    
+    # Yard equipment comparison
+    yard_equipment = pd.DataFrame({
+        'Equipment Type': [
+            'RTG - Rubber-Tyred Gantry',
+            'RMG - Rail-Mounted Gantry',
+            'ARMG - Automated RMG',
+            'Reach Stacker',
+            'Straddle Carrier'
+        ],
+        'Description': [
+            'Gantry crane on rubber tyres, spans 6-8 container widths, diesel-powered, operator-driven',
+            'Gantry crane on fixed rails, electric-powered, spans 6-8 container widths, operator-driven',
+            'Fully automated RMG, computer-controlled, no human operator, electric-powered',
+            'Mobile crane with telescopic boom, picks up containers from top, diesel, operator-driven',
+            'Mobile vehicle that straddles container, lifts and carries, diesel, operator-driven'
+        ],
+        'Stacking Height': ['6-7 containers (1-over-6)', '8-10 containers (1-over-9)', '10-12 containers (1-over-11)', '4-5 containers', '3-4 containers'],
+        'Productivity': ['15-25 moves/hour', '20-30 moves/hour', '25-35 moves/hour', '8-12 moves/hour', '10-15 moves/hour'],
+        'Flexibility': ['High (can move anywhere in yard)', 'Low (fixed to rail block)', 'Low (fixed to rail block)', 'Very high (goes anywhere)', 'Very high (goes anywhere)'],
+        'Labor': ['1 operator per crane', '1 operator per crane', 'Zero operators (automated)', '1 operator per unit', '1 operator per unit'],
+        'Cost': ['US$2-3M', 'US$3-5M', 'US$5-8M + automation systems', 'US$300-500K', 'US$600K-1M'],
+        'Best Use Case': [
+            'Flexible yard operations, multiple blocks, growing terminals',
+            'High-volume terminals, dense stacking, long-term fixed layout',
+            'Fully automated terminals (Tuas), 24/7 operations, labor reduction',
+            'Empty container handling, low-volume areas, supplemental equipment',
+            'Small terminals, transshipment operations, combined transport-stacking'
+        ]
+    })
+    
+    st.dataframe(yard_equipment, width='stretch', hide_index=True)
+    
     st.markdown("""
-    <div class="insight-box">
-    <strong>🎯 Capacity Optimisation Strategies:</strong><br><br>
-    Rather than building more berths (expensive, long lead time), optimise existing capacity:<br><br>
-    1. <strong>Improve quay crane productivity</strong>: 25 → 35 GMPH (saves 4 hours per vessel)<br>
-    2. <strong>Better berth planning</strong>: Improve BOA from 85% → 95% (reduce waiting)<br>
-    3. <strong>Faster turnaround</strong>: Reduce vessel port stay from 30h → 24h (20% more capacity)<br>
-    4. <strong>Yard efficiency</strong>: Reduce dwell time from 5 days → 3 days (40% more yard space)<br>
-    5. <strong>Equipment availability</strong>: Better maintenance reduces downtime<br>
-    6. <strong>Process improvement</strong>: Eliminate bottlenecks and inefficiencies<br><br>
-    Modern terminals use operational simulations to identify bottlenecks and test improvement scenarios 
-    before implementing expensive infrastructure changes.
-    </div>
-    """, unsafe_allow_html=True)
+    **Automation Evolution in Yard Equipment:**
     
-    # ============================================================================
-    # SECTION 5: TOS - Terminal Operating System
-    # ============================================================================
+    The maritime industry is progressively automating yard operations to reduce labor costs, increase productivity, 
+    and enable 24/7 operations:
     
-    st.markdown('<p class="section-header">Terminal Operating System (TOS)</p>', unsafe_allow_html=True)
+    **Level 1 - Manual (Traditional)**: RTG/RMG with human operators in crane cab
+    - Operator skill critical for productivity
+    - Requires training, workforce management, labor costs
+    - Subject to human factors (fatigue, variability)
     
-    st.markdown("""
-    Modern container terminals rely on sophisticated **Terminal Operating Systems (TOS)** to plan and 
-    execute all operations. The TOS is the "brain" of the terminal.
+    **Level 2 - Semi-Automated**: RMG with remote operation
+    - Operators sit in control room, control cranes remotely via cameras
+    - Reduces operator fatigue (comfortable office environment)
+    - Multiple operators can cover more cranes (improved efficiency)
+    - Safer (operators not on moving equipment)
+    
+    **Level 3 - Highly Automated**: ARMG with automated container handling
+    - Computer system controls crane movements automatically
+    - Human supervisor monitors multiple cranes, intervenes only if needed
+    - Consistent productivity (no human variability)
+    - 24/7 operations without night-shift labor premium
+    
+    **Level 4 - Fully Automated**: ARMG + AGV + automated gates (complete automation)
+    - Entire terminal operates with minimal human intervention
+    - Computer systems coordinate all equipment
+    - Humans monitor systems, handle exceptions, perform maintenance
+    - Ultimate efficiency but requires massive upfront investment
+    
+    **Singapore's Approach**: PSA's Tuas Mega Port deploying Level 4 automation (ARMGs + AGVs) as new capacity 
+    comes online. Existing terminals use mix of RTG/RMG with progressive automation upgrades.
     """)
     
-    st.markdown('<p class="subsection-header">TOS Core Modules</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Horizontal Transport: Prime Movers vs AGVs</p>', unsafe_allow_html=True)
     
-    # TOS modules
+    # PM vs AGV comparison
+    pm_agv_comparison = pd.DataFrame({
+        'Characteristic': [
+            'Operation',
+            'Navigation',
+            'Productivity',
+            'Flexibility',
+            'Safety',
+            'Emissions',
+            'Consistency',
+            'Cost per Unit',
+            'Infrastructure Required',
+            'Labor',
+            'Operating Hours',
+            'Maintenance'
+        ],
+        'Prime Mover (PM) - Traditional': [
+            'Human-driven truck with trailer/chassis',
+            'Driver navigates using roads, signage',
+            '4-6 cycles/hour (quay-yard round trip)',
+            'Very high (can adapt to any situation)',
+            'Human error risks (accidents, damage)',
+            'Diesel emissions (NOx, particulates)',
+            'Variable (depends on driver skill, fatigue)',
+            'US$100-150K per unit',
+            'Roads, signage, parking areas',
+            '1 driver per PM (plus relief drivers)',
+            'Daytime shifts (night shift premium costs)',
+            'Regular diesel engine maintenance'
+        ],
+        'Automated Guided Vehicle (AGV) - Modern': [
+            'Battery-electric autonomous vehicle',
+            'Magnetic/optical guidance + sensors + GPS + computer control',
+            '8-12 cycles/hour (higher due to bi-directional loading, optimal routing)',
+            'Medium (requires programmed routes, infrastructure)',
+            'Very high (no human operators in operational zones, obstacle detection)',
+            'Zero local emissions (electric, charged from grid)',
+            'Very high (consistent performance 24/7, no fatigue)',
+            'US$300-500K per unit (plus infrastructure: US$5-10M for charging, guidance)',
+            'Magnetic markers / optical lines, charging stations, central control system',
+            'Zero drivers (remote monitoring technicians only)',
+            '24/7 operations (no labor constraints, battery rotation)',
+            'Battery replacement cycles, electronic systems (more predictable than diesel)'
+        ],
+        'Singapore Deployment': [
+            'Legacy terminals (Pasir Panjang) use PM fleet with pooling strategy',
+            'Tuas Mega Port uses full AGV fleet (65+ AGVs per berth pair, scalable)'
+        ]
+    })
+    
+    st.dataframe(pm_agv_comparison, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    **Economics of AGV Investment:**
+    
+    **Why terminals invest in AGVs despite 3-5× higher unit cost:**
+    
+    **Labor Savings** (Primary Benefit):
+    - **PM approach**: 2 PMs per quay crane × 8 quay cranes = 16 PMs × 2 drivers per PM (24/7 shifts) = 32 drivers
+    - **AGV approach**: 65 AGVs serving same 8 cranes with zero drivers
+    - **Annual labor cost savings**: 32 drivers × US$60K average salary = ~US$2M per year
+    - **Payback period**: AGV fleet cost US$20M (65 AGVs) + infrastructure US$10M = US$30M / US$2M savings = 
+      15 years payback
+    - **Actual payback**: Shorter (8-12 years) considering productivity gains, 24/7 operations, reduced accidents
+    
+    **Productivity Gains** (Secondary Benefit):
+    - AGVs achieve 30-40% higher cycle rates through optimal routing and bi-directional loading
+    - Enables same throughput with smaller fleet size (capital efficiency)
+    - Consistent performance eliminates human variability in productivity
+    
+    **Operational Advantages**:
+    - 24/7 operations without night-shift labor premiums
+    - No training requirements (new PMs need 3-6 months training)
+    - Predictable performance (easier planning, scheduling)
+    - Safety improvements (fewer accidents, operator injuries)
+    
+    **When AGVs Make Sense:**
+    - New terminal development (Tuas) - design with AGVs from start
+    - High labor costs (Singapore, Europe, Japan) - payback faster
+    - Large scale operations (>2M TEU/year) - volumes justify investment
+    - Government support for automation (Singapore government backing for Tuas automation)
+    
+    **When PMs Still Preferred:**
+    - Existing terminals with PM infrastructure already in place (retrofit cost prohibitive)
+    - Lower labor cost countries (Southeast Asia, Africa) - longer payback period
+    - Smaller terminals (<500K TEU/year) - insufficient scale
+    - High layout flexibility needs (frequent changes) - PMs more adaptable
+    """)
+    
+    # ============================================================================
+    # SECTION 4: Terminal Operating System (TOS)
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Terminal Operating System (TOS): The Digital Brain</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    The Terminal Operating System (TOS) is the integrated software platform that plans, executes, and monitors all 
+    terminal operations. The lecture materials emphasize that the TOS is essentially the **"brain"** of the terminal, 
+    coordinating thousands of decisions and actions across berth planning, yard management, equipment scheduling, 
+    and gate operations.
+    
+    Without a sophisticated TOS, modern container terminals could not achieve the efficiency levels required by 
+    today's shipping industry. Understanding TOS architecture and capabilities is essential for digital twin development.
+    """)
+    
+    st.markdown('<p class="subsection-header">Core TOS Modules and Functions</p>', unsafe_allow_html=True)
+    
+    # TOS modules breakdown
     tos_modules = pd.DataFrame({
         'TOS Module': [
-            'Berth Planning',
-            'Vessel Planning',
-            'Yard Planning',
-            'Resource Planning',
-            'Equipment Control',
-            'Gate Operations',
-            'Documentation',
-            'Billing & Invoicing',
+            'Berth Planning Module',
+            'Vessel Planning Module',
+            'Yard Planning Module',
+            'Resource Planning Module',
+            'Equipment Control Module',
+            'Gate Operating System (GOS)',
+            'EDI Integration Module',
             'Reporting & Analytics'
         ],
-        'Functions': [
-            'Allocate vessels to berths and time windows; optimise BOA',
-            'Generate discharge and loading plans; stowage coordination',
-            'Allocate yard locations; minimise re-handles; manage inventory',
-            'Schedule cranes, PMs, AGVs, yard cranes; optimise utilisation',
-            'Real-time dispatching of equipment; track positions; performance monitoring',
-            'Truck check-in/out; documentation verification; container matching',
-            'Generate shipping instructions, delivery orders, customs documentation',
-            'Track container movements for billing; generate invoices',
-            'Performance dashboards; KPI tracking; historical analysis'
+        'Primary Functions': [
+            'Berth allocation, vessel scheduling, BOA optimization, pilot coordination, quay crane assignment',
+            'Stowage planning, discharge/load lists, bay plan generation, vessel stability calculations',
+            'Storage location assignment, yard utilization optimization, re-handle minimization, container tracking',
+            'Labor scheduling, equipment allocation, maintenance planning, shift management',
+            'Real-time equipment dispatch (QC, YC, PM/AGV), dynamic routing, workload balancing, exception handling',
+            'Truck appointment scheduling, OCR integration, automated gate processing, documentation verification',
+            'PORTNET integration, shipping line systems, customs (TradeNet), trucking companies, rail operators',
+            'KPI dashboards, operational reports, productivity analysis, predictive analytics, decision support'
         ],
-        'Key Outputs': [
-            'Berth allocation plan, vessel schedule',
-            'Bay plans, crane work lists, loading sequences',
-            'Yard block plans, container locations, retrieval lists',
-            'Equipment assignments, work schedules',
-            'Real-time work orders, route optimisation',
-            'Gate permits, truck appointments, container releases',
-            'eBL, customs declarations, manifests',
-            'Invoices, payment tracking',
-            'Performance reports, bottleneck analysis'
+        'Key Algorithms & Optimization': [
+            'Berth window optimization, vessel arrival sequencing, crane-to-berth matching, conflict resolution',
+            'Weight distribution algorithms, stowage constraints checking, sequence optimization, bay plan validation',
+            'Clustering algorithms (group similar containers), stack optimization, retrieval sequencing, space allocation',
+            'Shift planning, skill matching, equipment maintenance scheduling, resource leveling',
+            'Dynamic dispatching, shortest path routing, load balancing, traffic management, collision avoidance (AGVs)',
+            'Queue management, appointment slot allocation, lane assignment, throughput optimization',
+            'Real-time data exchange, message queuing, error handling, system integration',
+            'Data aggregation, real-time KPI calculation, trend analysis, anomaly detection, forecasting'
+        ],
+        'Typical Response Time': [
+            'Seconds to minutes (updated as vessels arrive/depart)',
+            'Minutes to hours (detailed planning as ETA approaches)',
+            'Real-time (milliseconds for queries, seconds for optimization)',
+            'Hours to days (shift schedules, maintenance windows)',
+            'Real-time (milliseconds for dispatch decisions, AGV routing)',
+            'Seconds (gate transaction processing, instant validation)',
+            'Real-time (asynchronous messaging, event-driven)',
+            'Real-time dashboards, batch reports (hourly/daily/weekly)'
         ]
     })
     
     st.dataframe(tos_modules, width='stretch', hide_index=True)
     
     st.markdown("""
-    **TOS Information Flow:**
+    **PSA's CITOS: A Case Study in TOS Excellence**
     
-    **Inputs to TOS:**
-    - Vessel schedules from shipping lines (via PORTNET or EDI)
-    - Container manifests (discharge and loading lists)
-    - Truck appointments and gate arrivals
-    - Equipment status (location, availability, maintenance)
-    - Yard inventory (current container locations)
+    The lecture materials specifically mention PSA's proprietary Terminal Operating System called **CITOS** (Container 
+    Terminal Information and Operating System). Understanding CITOS provides insights into world-class TOS capabilities:
     
-    **TOS Processing:**
-    - Optimisation algorithms for planning
-    - Real-time dispatching and coordination
-    - Exception handling and alerts
-    - Performance monitoring
+    **CITOS Development History:**
+    - **Developed in-house by PSA** starting in the 1980s (not purchased from vendor)
+    - **Continuous evolution** over 40+ years of operational refinement
+    - **Battle-tested** handling world's largest transshipment volumes (Singapore handles 41.12M TEU in 2024)
+    - **Deployed globally** across PSA terminals worldwide (Singapore, Europe, Americas, Asia)
     
-    **Outputs from TOS:**
-    - Work instructions to equipment operators
-    - Container tracking information
-    - Performance reports and KPIs
-    - Billing and invoicing data
-    - Integration with PORTNET, customs, shipping lines
-    """)
+    **Why PSA Developed CITOS In-House (Strategic Rationale):**
     
-    st.markdown("""
-    **Major TOS Vendors:**
-    - **CITOS® (PSA)**: Developed in-house by PSA Singapore, used in PSA terminals globally
-    - **Navis N4**: Leading commercial TOS, used by many terminals worldwide
-    - **TOS.log (HHLA)**: Hamburg port TOS
-    - **Cosmos (DP World)**: DP World's proprietary TOS
+    1. **Competitive Advantage**: Proprietary TOS creates differentiation vs competitors using commercial TOS products
+    2. **Customization**: Can tailor exactly to PSA's operational philosophy and requirements
+    3. **Rapid Innovation**: No vendor dependency, can implement new features immediately
+    4. **Cost**: Long-term cost savings vs paying licensing fees to vendors
+    5. **IP Protection**: Core operational know-how embedded in software, protected from competitors
     
-    **Modern TOS Trends:**
-    - **Cloud-based**: Deployed on cloud infrastructure for scalability
-    - **AI-powered**: Machine learning for optimisation and predictive analytics
-    - **Real-time**: Instant visibility and dynamic re-planning
-    - **Integrated**: Connected to PORTNET, shipping lines, customs, trucking companies
-    - **Mobile**: Operators access via tablets and smartphones
-    - **IoT-enabled**: Equipment sensors feed real-time data to TOS
+    **CITOS Core Capabilities:**
+    
+    **1. Advanced Optimization Algorithms:**
+    - **Berth planning**: Optimizes vessel-to-berth allocation considering multiple constraints
+    - **Yard planning**: Minimizes re-handles through predictive container grouping
+    - **Equipment dispatching**: Dynamic PM/AGV assignment optimizing productivity and travel distance
+    - **Load sequencing**: Generates efficient crane work sequences
+    
+    **2. Real-Time Operations Management:**
+    - **Live terminal view**: Visualizes all equipment, containers, operations in real-time
+    - **Exception handling**: Alerts operators to problems (equipment breakdowns, no-shows, delays)
+    - **Dynamic re-planning**: Automatically adjusts plans when disruptions occur
+    - **Performance monitoring**: Tracks KPIs (crane productivity, dwell time, gate throughput) continuously
+    
+    **3. Integration with Physical Systems:**
+    - **Crane interfaces**: Sends work instructions directly to crane operators, receives completion confirmations
+    - **AGV control system**: Dispatches AGVs, monitors battery levels, coordinates routing
+    - **Gate automation**: Integrates with OCR cameras, automated gates, truck appointment systems
+    - **PORTNET**: Singapore's maritime single window for documentation, customs clearance
+    
+    **4. Data Analytics and AI/ML:**
+    - **Predictive analytics**: Forecasts berth occupancy, yard utilization, gate traffic
+    - **Machine learning**: Continuously improves optimization algorithms based on operational data
+    - **Anomaly detection**: Identifies unusual patterns indicating potential problems
+    - **What-if simulation**: Allows planners to test different scenarios before execution
+    
+    **5. Mobile and Cloud Capabilities:**
+    - **Mobile apps**: Enable supervisors, operators to access CITOS functions from field
+    - **Cloud deployment**: Modern architecture supports distributed operations, disaster recovery
+    - **API access**: Allows shipping lines, trucking companies to integrate with CITOS
+    
+    **CITOS Competitive Impact:**
+    
+    PSA's CITOS provides several competitive advantages that are difficult for competitors to replicate:
+    
+    1. **Operational Excellence**: Enables PSA to consistently achieve industry-leading productivity (35-40 GMPH, 
+       >90% BOA, <24 hour turnaround)
+    2. **Global Standardization**: Same TOS across all PSA terminals enables best practice sharing, consistent service
+    3. **Innovation Platform**: In-house development enables rapid deployment of new capabilities (AI, ML, digital twins)
+    4. **Customer Integration**: Deep API integration allows shipping lines to directly access PSA systems (competitive 
+       differentiator)
+    5. **Data Advantage**: Decades of operational data from world's busiest port improves algorithms continuously
+    
+    **Implications for Digital Twin Development:**
+    
+    The digital twin must interface with TOS (CITOS in PSA's case) to access real-time operational data and 
+    provide decision support:
+    - **Data feeds**: Terminal digital twin receives real-time data from CITOS (vessel positions, equipment status, 
+      container locations)
+    - **Simulation scenarios**: Digital twin can test "what-if" scenarios independently, then recommend actions to CITOS
+    - **Predictive insights**: Digital twin provides predictions (future berth occupancy, potential bottlenecks) that 
+      CITOS uses for planning
+    - **Optimization suggestions**: Digital twin suggests equipment schedules, container stow plans that CITOS can adopt
+    
+    The relationship is symbiotic: CITOS provides ground truth operational data; digital twin provides predictive 
+    insights and scenario analysis that enhance CITOS planning capabilities.
     """)
     
     # ============================================================================
-    # SECTION 6: Key Takeaways
+    # SECTION 5: Key Takeaways
     # ============================================================================
     
-    st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Key Takeaways: Container Terminal Operations</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Terminal Layout:**
-        - Berth/Quay, Apron, Storage Yard, Gate, Control Tower
-        - Import, Export, Transshipment flows
-        - Goal: Minimise dwell time, vessel stay, re-handles
+        **Terminal Layout and Flows:**
+        - Seven operational zones: Berth/Quay, Apron, QC Zone, Storage Yard, YC Zone, Gate, Control Tower
+        - Three flow patterns: Import (vessel→land), Export (land→vessel), Transshipment (vessel→vessel)
+        - Singapore 85-90% transshipment: Minimize transshipment dwell time critical for hub competitiveness
+        - Operational efficiency goals: Minimize dwell time, vessel stay, equipment idle time, re-handles
         
-        **Operations Process:**
-        - Phase 1: Pre-arrival planning (72+ hours)
-        - Phase 2: Detailed planning (24-48 hours)
-        - Phase 3: Vessel operations (during port stay)
-        - Target: <24-36 hour turnaround for mega vessels
+        **Complete Operations Process:**
+        - **Phase 1 (72+ hours)**: Pre-arrival planning, vessel notification, initial resource estimation
+        - **Phase 2 (24-48 hours)**: Four key planning processes (berth, stowage, yard, transportation)
+        - **Phase 3 (during port stay)**: Execution (arrival, berthing, discharge, loading, departure)
+        - Typical mega vessel turnaround: 22-24 hours (PSA Singapore target <24 hours)
         
         **Four Key Planning Processes:**
-        - **Berth Planning**: Vessel-to-berth allocation (BOA >90%)
-        - **Yard Planning**: Storage location optimisation
-        - **Stowage Planning**: Container position on vessel
-        - **Transportation Planning**: Equipment scheduling
+        - **Berth Planning**: Vessel-to-berth allocation, BOA optimization (PSA >90% BOA)
+        - **Stowage Planning**: Container position on vessel (bay-row-tier), complex constraint optimization
+        - **Yard Planning**: Storage location assignment, grouping strategy, re-handle minimization
+        - **Transportation Planning**: Equipment scheduling (QC/YC/PM/AGV coordination)
         """)
     
     with col2:
         st.markdown("""
-        **Terminal Capacity:**
-        - Multiple bottlenecks: Berths, cranes, yard, gates
-        - Optimisation > expansion (faster, cheaper)
-        - Sensitivity to turnaround time and productivity
-        
-        **Equipment Coordination:**
-        - Quay cranes: 30-40 GMPH target
-        - Yard cranes: Storage and retrieval
-        - Prime Movers: Traditional horizontal transport
-        - AGVs: Modern automated transport
+        **Equipment and Technology:**
+        - **Quay Cranes**: US$10-18M, 60-80m outreach, target 35-40 GMPH productivity
+        - **Yard Equipment**: RTG (flexible), RMG (efficient), ARMG (automated), progressive automation
+        - **Horizontal Transport**: Prime Movers (traditional) vs AGVs (modern automated)
+        - **AGV benefits**: 70-80% labor reduction, 24/7 operations, 30-40% higher cycle rates
         
         **Terminal Operating System (TOS):**
-        - "Brain" of the terminal
-        - Berth, vessel, yard, resource, equipment modules
-        - Real-time optimisation and control
-        - Integration with PORTNET and stakeholders
-        - Modern: Cloud, AI, IoT, mobile
+        - The "brain" coordinating all terminal operations
+        - Core modules: Berth, Vessel, Yard, Resource, Equipment, Gate, EDI, Analytics
+        - **PSA's CITOS**: In-house developed, 40+ years evolution, deployed globally
+        - Competitive advantage through proprietary algorithms, real-time optimization, AI/ML
+        
+        **World-Class Performance:**
+        - **BOA >90%**: Berth on arrival without anchorage wait
+        - **Crane productivity 35-40 GMPH**: Including all delays, world-leading
+        - **Vessel turnaround <24 hours**: For 2,000-move mega vessels
+        - **Dwell time <5 days**: Average import container yard residence
+        - **Re-handle rate <10%**: Minimize unproductive container moves
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Container terminal operations involve complex, interconnected planning 
-    processes across berth allocation, yard management, vessel stowage, and equipment coordination. Success 
-    requires sophisticated Terminal Operating Systems (TOS) that optimise plans in real-time whilst managing 
-    uncertainty and exceptions. World-class terminals like Singapore PSA achieve >90% BOA, <24-hour mega 
-    vessel turnaround, and 35+ crane GMPH through operational excellence and continuous optimisation. 
-    Understanding these workflows is essential for effective operational planning.
+    <strong>🔍 Bottom Line:</strong> Container terminal operations involve intricate coordination across seven 
+    operational zones (berth, apron, quay cranes, yard, yard cranes, gate, control tower) handling three distinct 
+    cargo flows (import, export, transshipment—with Singapore 85-90% transshipment). Success requires excellence 
+    in <strong>four key planning processes</strong>: berth planning (optimal vessel scheduling achieving >90% BOA), 
+    stowage planning (complex container position optimization on vessels), yard planning (storage strategy minimizing 
+    re-handles), and transportation planning (equipment coordination maximizing productivity). Operations execute 
+    through sophisticated equipment ($10-18M quay cranes, automated yard systems, AGV fleets) orchestrated by 
+    <strong>Terminal Operating Systems</strong> like PSA's proprietary CITOS that provide real-time optimization, 
+    predictive analytics, and seamless integration. <strong>World-class terminals like PSA Singapore</strong> achieve 
+    35-40 GMPH crane productivity, <24-hour mega vessel turnaround, and >90% Berth on Arrival through operational 
+    excellence, advanced technology, and continuous improvement. Understanding these operations is essential for 
+    developing digital twins that accurately model terminal dynamics and provide actionable decision support for 
+    operational planning and optimization.
     </div>
     """, unsafe_allow_html=True)
     
@@ -910,6 +991,10 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** 🤖 Equipment, Automation & CITOS - Deep dive into terminal equipment types, automation 
-    technologies, and PSA's CITOS terminal operating system.
+    **Next Topic:** 🚢 Tuas Mega Port Development - Explore Singapore's S$20 billion Tuas Mega Port project, the 
+    world's largest fully automated container terminal under construction, understanding the strategic rationale 
+    (pre-emptive response to competition, mega vessel accommodation, operational efficiency through automation), 
+    development timeline and phases, advanced automation technologies (ARMG yard cranes, AGV fleet, automated gates), 
+    sustainability features (solar power, shore power, green design), and implications for Singapore's maritime 
+    competitiveness through 2040s and beyond.
     """)
