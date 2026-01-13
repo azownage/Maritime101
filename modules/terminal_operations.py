@@ -524,7 +524,7 @@ def show():
         barmode='stack'
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # ============================================================================
     # SECTION 3: Equipment Types and Coordination
@@ -727,14 +727,17 @@ def show():
             'Zero drivers (remote monitoring technicians only)',
             '24/7 operations (no labor constraints, battery rotation)',
             'Battery replacement cycles, electronic systems (more predictable than diesel)'
-        ],
-        'Singapore Deployment': [
-            'Legacy terminals (Pasir Panjang) use PM fleet with pooling strategy',
-            'Tuas Mega Port uses full AGV fleet (65+ AGVs per berth pair, scalable)'
         ]
     })
     
     st.dataframe(pm_agv_comparison, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    **Singapore Deployment Strategy:**
+    - **Legacy terminals** (Pasir Panjang, Keppel, Brani): Use Prime Mover fleet with pooling strategy for flexibility
+    - **Tuas Mega Port** (new development): Deploying full AGV fleet from design phase (65+ AGVs per berth pair, scalable)
+    - **Transition approach**: Gradual automation as old terminals decommissioned, new Tuas capacity comes online
+    """)
     
     st.markdown("""
     **Economics of AGV Investment:**
