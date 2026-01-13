@@ -1212,7 +1212,7 @@ def show():
     scaling globally. Sustainability leadership through multi-fuel strategy (LNG, biofuels, methanol, ammonia), Green 
     Port Programme incentives, and universal shore power at Tuas prepares Singapore for maritime decarbonisation 
     regardless of which alternative fuel ultimately dominates. This comprehensive, integrated approach creates 
-    **extraordinarily high switching costs** and powerful **network effects**—once maritime companies establish Singapore 
+    <strong>extraordinarily high switching costs</strong> and powerful <strong>network effects</strong>—once maritime companies establish Singapore 
     operations, the ecosystem makes it economically rational to consolidate all their maritime services here, reinforcing 
     Singapore's position as the world's indispensable maritime hub.
     </div>
