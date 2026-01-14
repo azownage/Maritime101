@@ -974,12 +974,12 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Containers follow precise ISO standards (2.438m width, 20/40ft lengths, 
-    30.48 tonne max weight) that enable global interoperability. The TEU (Twenty-foot Equivalent Unit) provides 
-    universal measurement for the industry. Approximately 90% are standard dry vans, with specialised types 
-    (reefer, tank, OOG) for specific cargo requiring dedicated infrastructure. Each container has a unique ISO 
-    6346 identifier (owner code + serial + check digit) enabling global tracking. The Bay-Row-Tier coordinate 
-    system enables precise 3D positioning in terminals and vessels. Corner castings are the critical component 
+    <strong>🔍 Bottom Line:</strong> Containers follow precise <strong>ISO standards</strong> (2.438m width, 20/40ft lengths, 
+    30.48 tonne max weight) that enable global interoperability. The <strong>TEU (Twenty-foot Equivalent Unit)</strong> provides 
+    universal measurement for the industry. Approximately <strong>90% are standard dry vans</strong>, with specialised types 
+    (reefer, tank, OOG) for specific cargo requiring dedicated infrastructure. Each container has a unique <strong>ISO 
+    6346 identifier</strong> (owner code + serial + check digit) enabling global tracking. The <strong>Bay-Row-Tier coordinate 
+    system</strong> enables precise 3D positioning in terminals and vessels. <strong>Corner castings</strong> are the critical component 
     connecting containers to all handling equipment. Understanding these fundamentals is essential for 
     understanding how container terminal operations work and why standardisation was so revolutionary for 
     global trade.
