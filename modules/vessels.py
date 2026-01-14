@@ -1119,16 +1119,16 @@ def show():
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Container vessels have grown 50× in capacity since 1956 (500 → 24,000 TEU), 
-    driven by powerful economies of scale that reduce cost per container by 82%. Vessels are classified by size 
+    <strong>🔍 Bottom Line:</strong> Container vessels have grown <strong>50× in capacity</strong> since 1956 (500 → 24,000 TEU), 
+    driven by powerful economies of scale that <strong>reduce cost per container by 82%</strong>. Vessels are classified by size 
     (Feeder through ULCS) with classifications defined by canal constraints (Panama, Suez) and port infrastructure 
-    limits. Modern mega vessels (20,000+ TEU) can only call at 20-30 elite hub ports globally. Stowage planning 
-    is an extraordinarily complex optimisation problem balancing vessel stability (weight distribution, GM, trim, 
+    limits. Modern mega vessels (20,000+ TEU) can only call at <strong>20-30 elite hub ports globally</strong>. Stowage planning 
+    is an <strong>extraordinarily complex optimisation problem</strong> balancing vessel stability (weight distribution, GM, trim, 
     list), structural limits (stack weight, bay limits), destination sequencing (avoiding restows), and container 
     compatibility (dangerous goods, reefers, OOG). Advanced software is essential for vessels >5,000 TEU. Future 
     trends focus on efficiency improvements (slow steaming, hull optimisation) and environmental sustainability 
-    (LNG, methanol, shore power) rather than further size increases, as vessels have reached practical maximum 
-    capacity given infrastructure constraints. Understanding vessel evolution, classification, economics, and 
+    (LNG, methanol, shore power) rather than further size increases, as vessels have reached <strong>practical maximum 
+    capacity</strong> given infrastructure constraints. Understanding vessel evolution, classification, economics, and 
     stowage principles is fundamental to comprehending modern container terminal operations.
     </div>
     """, unsafe_allow_html=True)
