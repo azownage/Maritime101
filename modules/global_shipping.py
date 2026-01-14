@@ -1191,14 +1191,14 @@ def show():
     st.markdown("""
     <div class="insight-box">
     <strong>🔍 Bottom Line:</strong> The container shipping industry has consolidated dramatically, with just 9 major 
-    carriers organised into three alliance structures (post-February 2025: Gemini Cooperation, Ocean Alliance, 
-    Premier Alliance) plus MSC operating semi-independently, collectively controlling 83% of global capacity. This 
+    carriers organised into <strong>three alliance structures</strong> (post-February 2025: Gemini Cooperation, Ocean Alliance, 
+    Premier Alliance) plus MSC operating semi-independently, collectively controlling <strong>83% of global capacity</strong>. This 
     oligopolistic structure emerged from the 2015-2016 overcapacity crisis that forced "get big or get out" dynamics. 
-    Modern shipping operates primarily on hub-and-spoke networks, with 85% of cargo transshipping at intermediate 
+    Modern shipping operates primarily on <strong>hub-and-spoke networks</strong>, with <strong>85% of cargo transshipping</strong> at intermediate 
     hubs. Singapore, as the world's premier transshipment hub (connected to 600+ ports, 200+ shipping lines), 
-    exemplifies this model but faces intensifying competition and must position itself as a "vital port in an 
-    interconnected network" through operational excellence and comprehensive connectivity. Geopolitical tensions, 
-    particularly US-China trade disputes, are reshaping global trade patterns through "China+1" diversification, 
+    exemplifies this model but faces intensifying competition and must position itself as a <strong>"vital port in an 
+    interconnected network"</strong> through operational excellence and comprehensive connectivity. Geopolitical tensions, 
+    particularly US-China trade disputes, are reshaping global trade patterns through <strong>"China+1" diversification</strong>, 
     with Vietnam, Malaysia, India, and Mexico experiencing rapid export growth as intermediate manufacturing 
     locations. Alternative routes (Arctic, Kra Canal, Belt and Road Initiative) pose potential long-term threats 
     to established shipping lanes and hub ports, requiring continuous strategic adaptation and infrastructure 
