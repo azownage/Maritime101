@@ -8,965 +8,1086 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand the equipment used in container terminals, automation technologies transforming operations, 
-    and PSA's CITOS terminal operating system that coordinates all activities.
+    Master the sophisticated equipment powering modern container terminals, from US&#36;10-18 million quay cranes to 
+    automated guided vehicle fleets, understand automation levels from conventional manual operations through fully 
+    automated "lights-out" terminals achieving 70-80% labor reduction, explore PSA's proprietary CITOS Terminal 
+    Operating System that coordinates all terminal activities using AI/ML and real-time optimization, and comprehend 
+    the economics and strategic considerations driving terminal automation investments of US&#36;500M-1B+.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Quay-Side Equipment (Vessel Interface)
+    # SECTION 1: Quay-Side Equipment - Ship-to-Shore Cranes
     # ============================================================================
     
-    st.markdown('<p class="section-header">Quay-Side Equipment: Ship-to-Shore Interface</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Quay-Side Equipment: Ship-to-Shore (STS) Cranes</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Quay-side equipment handles the critical interface between vessel and terminal, transferring containers 
-    from ship to shore and vice versa.
+    Quay cranes—also called Ship-to-Shore (STS) cranes or container gantry cranes—are the massive structures 
+    dominating container terminal skylines. These are among the largest and most expensive pieces of equipment in 
+    terminal operations, with modern super post-Panamax cranes costing US&#36;13-18 million each.
+    
+    The lecture materials emphasize that quay crane specifications directly determine a terminal's ability to serve 
+    modern mega vessels, making crane capability a critical infrastructure constraint for hub port competitiveness.
     """)
     
-    st.markdown('<p class="subsection-header">Ship-to-Shore (STS) Quay Cranes</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Quay Crane Classifications and Design</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Design and Specifications:**
+    **Structural Classifications:**
     
-    **Physical Dimensions:**
-    - **Height**: 70-100+ metres above ground (taller than 20-storey building)
-    - **Outreach**: 60-80 metres (to reach containers on mega vessels 24 containers wide)
-    - **Back reach**: 15-25 metres (for landside operations)
-    - **Lift height**: 35-50 metres above quay
-    - **Rail gauge**: 30-35 metres (distance between crane rails)
+    The lecture materials identify two primary structural designs for quay cranes:
     
-    **Capacity:**
-    - **Lifting capacity**: 50-65 tonnes (twin-lift: two 20ft containers or one 40ft)
-    - **Hoisting speed**: 60-90 metres/minute (empty), 40-60 m/min (loaded)
-    - **Trolley speed**: 180-240 metres/minute
-    - **Gantry speed**: 30-45 metres/minute (crane travelling along quay)
+    **A-Shaped Quay Cranes:**
+    - **Structure**: Single A-frame portal design on seaside
+    - **Footprint**: Narrower base, less stable in high winds
+    - **Historical**: Earlier generation design
+    - **Usage**: Older terminals, smaller vessels
+    - **Advantages**: Lower cost, simpler construction
+    - **Disadvantages**: Limited outreach capability, less stable
     
-    **Performance:**
-    - **Gross moves per hour (GMPH)**: 25-35 containers/hour (industry average)
-    - **World-class**: 35-45 GMPH
-    - **Peak performance**: 50+ GMPH achievable in ideal conditions
+    **H-Shaped Quay Cranes (Modern Standard):**
+    - **Structure**: Dual portal frame creating "H" shape when viewed from vessel
+    - **Footprint**: Wider, more stable base
+    - **Modern**: Current industry standard for mega vessel terminals
+    - **Usage**: All new terminal developments, mega vessel handling
+    - **Advantages**: Greater stability in wind, longer outreach capability (65-80m), higher lifting capacity
+    - **Disadvantages**: Higher cost (US&#36;13-18M vs US&#36;8-13M for A-shaped)
+    
+    **The lecture materials note**: "Due to the huge throughput in the terminals, the H-shaped are mostly adopted." 
+    This reflects industry reality—H-shaped cranes dominate modern terminals because their superior stability and 
+    outreach enable handling of 20,000-24,000 TEU mega vessels that are 24 containers wide.
+    
+    **Trolley System Classifications:**
+    
+    **Single Trolley System:**
+    - **Operation**: One trolley moves horizontally along boom
+    - **Function**: Carries spreader and container
+    - **Travel**: Must travel full distance quay→vessel→quay for each move
+    - **Productivity**: Lower (more travel time per move)
+    - **Cost**: US&#36;8-13M (simpler system)
+    - **Usage**: Older cranes, smaller terminals
+    
+    **Double Trolley System (Modern Standard):**
+    - **Operation**: Two trolleys—main trolley + auxiliary trolley
+    - **Function**: Main trolley serves vessel, auxiliary trolley serves apron (landside)
+    - **Handoff**: Container transferred between trolleys mid-span
+    - **Productivity**: Higher—while main trolley serves vessel, auxiliary trolley simultaneously transports 
+      previous container to/from apron
+    - **Time saving**: 15-25% improvement in cycle time
+    - **Cost**: US&#36;10-15M (added complexity)
+    - **Usage**: Most modern terminals
+    
+    **Triple Spreader System (Latest Technology):**
+    - **Capability**: Can lift three 20ft containers simultaneously OR one 40ft + one 20ft
+    - **Productivity boost**: Up to 50% increase in moves per hour on appropriate cargo
+    - **Constraint**: Only works when consecutive containers in bay plan are all 20ft containers
+    - **Reality**: In practice, 20-30% of moves can use triple-lift (mixed cargo limits usage)
+    - **Cost premium**: Additional US&#36;1-2M over double trolley
+    - **ROI**: Worthwhile for high-volume terminals with significant 20ft cargo
+    - **Example**: Singapore PSA deploying triple-lift cranes at Tuas for productivity gains
     """)
     
-    # Quay crane specifications
-    qc_specs = pd.DataFrame({
+    # Quay crane comparison table
+    qc_comparison = pd.DataFrame({
         'Specification': [
-            'Outreach',
-            'Back Reach',
-            'Lift Height',
-            'Lifting Capacity',
+            'Outreach (Reach across vessel)',
+            'Back Reach (Landside)',
+            'Lift Height Above Quay',
+            'Lifting Capacity Under Spreader',
             'Hoisting Speed (Loaded)',
-            'Trolley Speed',
-            'Gantry Speed',
-            'Target Productivity',
-            'Typical Cost',
-            'Lifespan'
+            'Trolley Travel Speed',
+            'Crane Travel Speed (Along quay)',
+            'Target Productivity (GMPH)',
+            'Typical Cost (New)',
+            'Design Lifespan',
+            'Power Consumption',
+            'Crew Required'
         ],
         'Panamax Crane': [
-            '45-50m (13 containers across)',
+            '45-50m (serves vessels 13 containers wide)',
             '15m',
-            '35m',
-            '40-50 tonnes',
+            '35m above quay level',
+            '40-50 tonnes (twin 20ft or one 40ft)',
             '45 m/min',
             '180 m/min',
             '30 m/min',
-            '25-30 GMPH',
-            '$5-8 million',
-            '25-30 years'
+            '25-30 GMPH (gross moves per hour)',
+            'US&#36;5-8 million',
+            '25-30 years with maintenance',
+            '~1-1.5 MW per crane during operations',
+            '1 operator per crane (+ maintenance team)'
         ],
         'Post-Panamax Crane': [
-            '50-65m (18 containers across)',
+            '50-65m (serves vessels 18 containers wide)',
             '20m',
-            '40m',
+            '40m above quay level',
             '50-60 tonnes',
             '50 m/min',
             '200 m/min',
             '35 m/min',
             '30-35 GMPH',
-            '$10-13 million',
-            '25-30 years'
+            'US&#36;10-13 million',
+            '25-30 years',
+            '~1.5-2 MW per crane',
+            '1 operator + maintenance'
         ],
-        'Super Post-Panamax': [
-            '65-80m (24 containers across)',
+        'Super Post-Panamax (Modern)': [
+            '65-80m (serves mega vessels 22-24 containers wide)',
             '25m',
-            '50m',
-            '60-65 tonnes',
+            '50m above quay level',
+            '60-85 tonnes (triple-lift capable)',
             '60 m/min',
             '240 m/min',
             '45 m/min',
-            '35-40 GMPH',
-            '$13-18 million',
-            '25-30 years'
+            '35-40 GMPH (world-class: 40-45 GMPH)',
+            'US&#36;13-18 million',
+            '30-35 years',
+            '~2-2.5 MW per crane',
+            '1 operator + maintenance'
         ]
     })
     
-    st.dataframe(qc_specs, width='stretch', hide_index=True)
+    st.dataframe(qc_comparison, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Key Components:**
+    **Understanding GMPH (Gross Moves Per Hour):**
     
-    **Spreader:**
-    - Device that attaches to containers via corner castings
-    - **Telescoping**: Extends/retracts to handle 20ft or 40ft containers
-    - **Twistlocks**: Mechanical locks that secure to container corners
-    - **Sensors**: Detect container position and weight
-    - **Types**: Single-lift (one container), Twin-lift (two 20ft), Tandem-lift (two 40ft stacked)
+    GMPH is the critical productivity metric for quay cranes, measuring total container moves divided by total 
+    operation time including all delays. The lecture materials emphasize that world-class terminals target 35-40 GMPH 
+    consistently.
     
-    **Control System:**
-    - **Operator cabin**: Positioned high on crane for visibility
-    - **Computer-assisted**: Anti-sway system, collision avoidance, position tracking
-    - **Semi-automation**: Spreader auto-lands on container corners
-    - **Full automation (ASC)**: Automated Stacking Cranes operate without human in cabin
+    **What factors determine GMPH?**
     
-    **Power Supply:**
-    - **Traditional**: Diesel generators on crane
-    - **Modern**: Electric power from shore (eco-friendly, quieter, cleaner)
-    - **Hybrid**: Combination diesel-electric with regenerative braking
+    **Equipment factors:**
+    - Crane speed (hoisting, trolley, gantry)—faster = more moves
+    - Trolley system (double trolley 15-25% faster than single)
+    - Spreader technology (triple-lift can boost by 50% on suitable cargo)
+    - Equipment reliability (breakdowns stop productivity)
+    
+    **Operational factors:**
+    - Operator skill (expert operators 20-30% more productive)
+    - Horizontal transport availability (crane waits if no PM/AGV ready)
+    - Vessel stow complexity (easy stows allow faster crane operations)
+    - Weather (high winds >25 knots slow or halt operations)
+    
+    **Planning factors:**
+    - Crane work sequence optimization (minimize crane travel between bays)
+    - Container staging on apron (pre-positioned containers enable continuous loading)
+    - Coordination across multiple cranes (avoid interference, optimize workload distribution)
+    
+    **Singapore PSA Performance**: Consistently achieves 35-40 GMPH average across operations, with peak performance 
+    exceeding 45 GMPH under ideal conditions. This world-leading productivity results from combined excellence in 
+    equipment (latest super post-Panamax cranes with triple-lift), operations (CITOS optimization), and workforce 
+    (highly trained crane operators).
     """)
     
-    st.markdown('<p class="subsection-header">Quay Crane Operations</p>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="insight-box">
+    <strong>💡 Quay Crane Investment Economics:</strong><br><br>
+    <strong>Capital Investment</strong>: A mega vessel terminal needs 8-12 super post-Panamax cranes @ US&#36;15M 
+    each = US&#36;120-180M equipment investment just for quay cranes. Add infrastructure (berth, power, rails, 
+    foundations) = total US&#36;200-300M per berth.<br><br>
+    <strong>Operating Costs</strong>: Each crane consumes ~2 MW power (~US&#36;300K/year electricity) + operator 
+    wages (~US&#36;80-120K/year in Singapore) + maintenance (US&#36;200-500K/year) = US&#36;600K-1M per crane 
+    annually.<br><br>
+    <strong>Productivity Impact</strong>: Upgrading from 30 GMPH to 40 GMPH = 33% faster vessel turnaround. For 
+    terminal handling 2M TEU/year, this saves ~100,000 crane-hours annually, enabling 15-20% capacity increase 
+    without additional berths.<br><br>
+    <strong>The Bottom Line</strong>: Quay cranes are extraordinarily expensive but productivity gains justify 
+    investment—faster vessel turnaround attracts more shipping line calls, enabling hub ports to grow volumes and 
+    maintain competitiveness.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # ============================================================================
+    # SECTION 2: Yard Equipment - Storage and Retrieval Systems
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Yard Equipment: Container Storage and Retrieval</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Operating Cycle (Discharge):**
-    1. **Positioning**: Trolley moves over vessel hatch
-    2. **Lowering**: Spreader lowers to container on vessel
-    3. **Locking**: Twistlocks engage container corner castings
-    4. **Hoisting**: Container lifted from vessel
-    5. **Trolley move**: Container transported to landside
-    6. **Lowering**: Container lowered to prime mover/AGV on apron
-    7. **Unlocking**: Spreader releases container
-    8. **Return**: Empty spreader returns to vessel for next container
+    Yard equipment moves containers within the terminal storage yard, stacking containers vertically to maximize 
+    land utilization and retrieving containers when needed for vessel loading or truck pickup. The lecture materials 
+    emphasize that yard equipment selection fundamentally shapes terminal layout, capacity, and operational efficiency.
+    """)
     
-    **Cycle time**: 60-90 seconds per container (world-class: <60 seconds)
+    st.markdown('<p class="subsection-header">Yard Equipment Types: Comprehensive Comparison</p>', unsafe_allow_html=True)
     
-    **Factors Affecting Productivity:**
-    - **Container location**: Deck containers faster than hold containers (no hatch covers)
-    - **Container weight**: Heavier containers = slower hoisting
-    - **Vessel lashing**: Time to unlock securing equipment
-    - **Equipment availability**: Prime movers/AGVs ready when crane ready
-    - **Weather**: High winds (>15 m/s) can stop operations
-    - **Operator skill**: Experienced operators 20-30% faster
-    - **Crane maintenance**: Well-maintained cranes have less downtime
+    # Comprehensive yard equipment comparison
+    yard_equipment_comparison = pd.DataFrame({
+        'Equipment Type': [
+            'RTG (Rubber-Tyred Gantry)',
+            'RMG (Rail-Mounted Gantry)',
+            'ARMG (Automated RMG)',
+            'Reach Stacker',
+            'Straddle Carrier'
+        ],
+        'Power Source & Mobility': [
+            'Diesel engine, rubber tyres, can move anywhere in yard',
+            'Electric (grid-powered), fixed on rail tracks within block',
+            'Electric (grid-powered), fully automated on fixed rails',
+            'Diesel engine, wheels, drives anywhere',
+            'Diesel engine, wheels, drives anywhere'
+        ],
+        'Stacking Height Capability': [
+            '1-over-6 (6 containers high, 1 suspended = 7 total)',
+            '1-over-7 or 1-over-8 (8-9 containers total)',
+            '1-over-9 to 1-over-11 (10-12 containers total)',
+            '4-5 containers high maximum',
+            '3-4 containers high (straddles bottom container)'
+        ],
+        'Productivity (Moves/Hour)': [
+            '15-25 moves/hour (skilled operator)',
+            '20-30 moves/hour (faster due to electric drive)',
+            '25-35 moves/hour (consistent, optimized routing)',
+            '8-12 moves/hour',
+            '10-15 moves/hour'
+        ],
+        'Operational Flexibility': [
+            'High—can relocate to different blocks as needed',
+            'Low—fixed to assigned rail block, cannot move between blocks',
+            'Low—fixed to rail block, requires manual intervention to relocate',
+            'Very high—goes anywhere, multi-purpose (yard + empty depot)',
+            'Very high—combined transport + stacking function'
+        ],
+        'Labor Requirements': [
+            '1 operator per RTG (plus maintenance staff)',
+            '1 operator per RMG',
+            'Zero operators (remote monitoring only, 1 supervisor per 4-6 cranes)',
+            '1 operator per reach stacker',
+            '1 operator per straddle carrier'
+        ],
+        'Capital Cost': [
+            'US&#36;2-3 million per RTG',
+            'US&#36;3-5 million per RMG (includes rail infrastructure)',
+            'US&#36;5-8 million per ARMG + automation systems',
+            'US&#36;300-500K per reach stacker',
+            'US&#36;600K-1M per straddle carrier'
+        ],
+        'Operating Costs (Annual)': [
+            'US&#36;150-250K (diesel fuel, maintenance, operator)',
+            'US&#36;120-200K (electricity cheaper than diesel, maintenance, operator)',
+            'US&#36;80-150K (electricity, maintenance, no operator wage)',
+            'US&#36;80-120K per unit',
+            'US&#36;100-150K per unit'
+        ],
+        'Best Use Case': [
+            'Flexible terminals, growing operations, need to adjust yard configuration',
+            'High-volume terminals, fixed layout, dense stacking needed',
+            'Fully automated terminals (Tuas, Rotterdam Maasvlakte), 24/7 operations',
+            'Empty container depots, low-volume operations, supplemental equipment',
+            'Small-medium terminals, transshipment focus, combined transport/stacking'
+        ],
+        'Advantages': [
+            'Relocatable, no rail infrastructure needed, simpler operations',
+            'Dense stacking (8-9 high), lower operating cost (electric), faster',
+            'No operators (huge labor savings), 24/7 consistent performance, 10-12 high stacking',
+            'Most flexible, multi-purpose, low capital cost',
+            'Combined transport + stacking, no separate horizontal transport needed'
+        ],
+        'Disadvantages': [
+            'Diesel emissions, higher fuel costs, limited stacking (6 high)',
+            'Fixed position (expensive to relocate), requires rail investment',
+            'Very high capital cost, complex automation, inflexible (hard to modify)',
+            'Low productivity, limited stacking height, high operating cost per move',
+            'Limited stacking height, higher capital cost than reach stackers'
+        ]
+    })
+    
+    st.dataframe(yard_equipment_comparison, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    **RTG vs RMG vs ARMG: The Strategic Choice**
+    
+    Terminals face a fundamental strategic decision when selecting yard equipment. Each option represents different 
+    trade-offs between flexibility, cost, productivity, and automation level.
+    
+    **When to Choose RTG (Rubber-Tyred Gantry):**
+    
+    **Ideal for:**
+    - Growing terminals where yard layout may change as volumes increase
+    - Terminals needing operational flexibility (seasonal demand variation, different cargo types)
+    - Brownfield sites retrofitting existing layouts
+    - Terminals without capital for rail infrastructure
+    - Medium-volume terminals (500K-2M TEU/year)
+    
+    **Real-world example**: Many Southeast Asian terminals (Thailand, Vietnam, Indonesia) use RTG fleets because 
+    they're growing rapidly and need flexibility to reconfigure yard blocks as demand evolves.
+    
+    **When to Choose RMG (Rail-Mounted Gantry):**
+    
+    **Ideal for:**
+    - High-volume terminals with stable, predictable operations (2M+ TEU/year)
+    - Greenfield developments where rail infrastructure can be built from start
+    - Terminals prioritizing dense stacking (land-constrained environments)
+    - Operations where environmental concerns favor electric over diesel
+    
+    **Real-world example**: Singapore's existing PSA terminals (Pasir Panjang, Keppel, Brani) deployed RMG systems 
+    in 1990s-2000s for dense stacking on limited land, achieving 1-over-7 and 1-over-8 configurations.
+    
+    **When to Choose ARMG (Automated RMG):**
+    
+    **Ideal for:**
+    - Fully automated terminal developments (greenfield projects)
+    - High-labor-cost environments (Singapore, Europe, North America, Japan)
+    - Terminals targeting 24/7 operations without night-shift premiums
+    - Long-term strategic investments (20-30 year planning horizon)
+    - Terminals with sufficient capital (US&#36;500M-1B+ total automation investment)
+    
+    **Real-world example**: **Singapore's Tuas Mega Port** deploying ARMG as core technology from Phase 1. Lecture 
+    materials note: "It is the main type of yard crane to be deployed at Automated Container Terminal." Tuas will 
+    have 200+ ARMGs when fully operational, achieving 1-over-11 stacking (12 containers high total).
+    
+    **The lecture materials emphasize**: "Multiple ARMGs can be remotely controlled simultaneously"—this is the key 
+    advantage. One supervisor can monitor 4-6 automated cranes from a control room, versus needing individual operators 
+    in RTG/RMG cab. Over 20-30 year lifespan, labor savings dwarf higher upfront capital costs.
     """)
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 Triple Hoist Technology:</strong><br><br>
-    Modern quay cranes feature <strong>three independent hoists</strong>:<br>
-    - <strong>Main hoist</strong>: Lifts containers (primary)<br>
-    - <strong>Auxiliary hoist</strong>: Backup and special cargo<br>
-    - <strong>Boom hoist</strong>: Adjusts crane boom angle<br><br>
-    <strong>Benefit</strong>: Whilst main hoist lowers container landside, auxiliary hoist can already be picking up 
-    next container from vessel, reducing cycle time by 15-20%.
+    <strong>✅ Automation Economics - ARMG vs RMG Example:</strong><br><br>
+    <strong>Scenario</strong>: Terminal needs 40 yard cranes to handle 3M TEU/year<br><br>
+    <strong>Option A - RMG (Manual):</strong><br>
+    • Capital: 40 RMGs @ US&#36;4M = US&#36;160M<br>
+    • Labor: 40 operators × 3 shifts × US&#36;60K salary = US&#36;7.2M/year<br>
+    • 30-year labor cost: US&#36;216M<br>
+    • <strong>Total 30-year cost: US&#36;376M</strong><br><br>
+    <strong>Option B - ARMG (Automated):</strong><br>
+    • Capital: 40 ARMGs @ US&#36;7M = US&#36;280M + automation systems US&#36;50M = US&#36;330M<br>
+    • Labor: 10 supervisors × 3 shifts × US&#36;80K = US&#36;2.4M/year (70% reduction!)<br>
+    • 30-year labor cost: US&#36;72M<br>
+    • <strong>Total 30-year cost: US&#36;402M</strong><br><br>
+    <strong>Analysis</strong>: ARMG costs US&#36;26M more over 30 years BUT delivers: 24/7 consistent performance 
+    (no human fatigue), higher productivity (25-35 vs 20-30 moves/hour), 10-12 high stacking vs 8-9 (20-30% more 
+    yard capacity), fewer accidents/damage. <strong>The productivity and capacity gains easily justify the 7% cost 
+    premium</strong>, especially in land-constrained, high-labor-cost Singapore.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 2: Yard Equipment (Storage Operations)
+    # SECTION 3: Horizontal Transport - Moving Containers Between Zones
     # ============================================================================
     
-    st.markdown('<p class="section-header">Yard Equipment: Container Storage and Handling</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Horizontal Transport: Prime Movers vs Automated Guided Vehicles</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Yard equipment moves containers within the storage area, stacking them efficiently and retrieving them 
-    when needed.
+    Horizontal transport equipment moves containers between quay and yard—the critical link connecting ship-to-shore 
+    cranes and yard cranes. The lecture materials emphasize this as a major automation frontier, with AGVs representing 
+    the most transformative technology shift in terminal operations.
     """)
     
-    st.markdown('<p class="subsection-header">Rubber-Tyred Gantry Cranes (RTG)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Prime Movers: Traditional Approach</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Design:**
-    - Gantry crane on rubber tyres that straddles container stacks
-    - Can move freely within yard block
-    - Operator cabin on top or ground-level remote control
+    **What are Prime Movers?**
+    
+    Prime Movers (PMs) are specialized terminal tractors that pull chassis or trailers carrying containers. The 
+    lecture materials describe them as the conventional horizontal transport solution used at most container terminals 
+    globally.
     
     **Specifications:**
-    - **Span**: 6-8 containers wide (typical: 6+1 configuration)
-    - **Stacking height**: 5-7 containers high (6 high typical)
-    - **Lane**: One truck lane under crane (for loading/unloading)
-    - **Lifting capacity**: 40-50 tonnes
-    - **Stacking speed**: 10-15 moves per hour
-    
-    **Advantages:**
-    - **Flexible**: Can relocate between yard blocks
-    - **Lower capital cost**: $2-3 million per RTG
-    - **Simple infrastructure**: No rails required
-    
-    **Disadvantages:**
-    - **Diesel-powered**: Traditional RTGs produce emissions
-    - **Higher operating cost**: Fuel consumption
-    - **Operator intensive**: Requires skilled operators
-    """)
-    
-    st.markdown('<p class="subsection-header">Rail-Mounted Gantry Cranes (RMG)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Design:**
-    - Gantry crane on fixed rails, cannot relocate
-    - Electric-powered (overhead cable or busbar)
-    - Can be semi-automated or fully automated (ARMG)
-    
-    **Specifications:**
-    - **Span**: 6-10 containers wide
-    - **Stacking height**: 5-8 containers high (automated: up to 10 high)
-    - **Lifting capacity**: 40-65 tonnes
-    - **Stacking speed**: 15-20 moves per hour (automated: 20-25)
-    
-    **Advantages:**
-    - **Electric power**: Zero emissions, lower operating costs
-    - **Automation-ready**: Can be fully automated (ARMG)
-    - **Higher productivity**: Faster and more consistent than RTG
-    - **Precision**: Computer-controlled positioning
-    
-    **Disadvantages:**
-    - **Fixed location**: Cannot move between blocks
-    - **Higher capital cost**: $3-5 million per RMG + rail infrastructure
-    - **Infrastructure required**: Rails, electrical systems
-    """)
-    
-    st.markdown('<p class="subsection-header">Automated RMG (ARMG)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Full Automation:**
-    - No operator required
-    - Computer-controlled via TOS
-    - Sensors and cameras for positioning
-    - Remote monitoring from control room
-    
-    **Performance:**
-    - **24/7 operations**: No breaks, shifts, fatigue
-    - **Consistent productivity**: 20-25 moves per hour
-    - **Higher stacking**: Up to 10 containers high (no operator safety limit)
-    - **Precision**: ±2cm positioning accuracy
-    
-    **Benefits:**
-    - **Labour savings**: 70-80% reduction in yard crane operators
-    - **Safety**: No humans in yard block, fewer accidents
-    - **Efficiency**: Optimal path planning, no idle time
-    - **Space**: Higher stacking = more capacity per hectare
-    
-    **Challenges:**
-    - **Very high capital cost**: $5-8 million per ARMG + automation systems
-    - **Complexity**: Sophisticated IT and maintenance requirements
-    - **Transition**: Requires workforce retraining and organisational change
-    """)
-    
-    st.markdown('<p class="subsection-header">Other Yard Equipment</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **Reach Stackers:**
-        - Mobile crane on wheels
-        - Telescoping boom reaches over stacks
-        - **Capacity**: 40-45 tonnes
-        - **Stacking**: 4-5 high
-        - **Use**: Flexible, smaller terminals, special cargo
-        - **Cost**: $400,000-800,000
-        
-        **Advantages:**
-        - Very flexible, can work anywhere
-        - Lower capital cost
-        - Good for low-volume operations
-        
-        **Disadvantages:**
-        - Lower productivity (5-8 moves/hour)
-        - Higher maintenance costs
-        - Operator intensive
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Straddle Carriers:**
-        - Mobile crane that straddles container
-        - Lifts container from beneath
-        - **Capacity**: 35-40 tonnes
-        - **Stacking**: 3-4 high
-        - **Use**: Combines transport + stacking
-        - **Cost**: $600,000-1,000,000
-        
-        **Advantages:**
-        - No separate transport equipment needed
-        - Flexible operations
-        - Direct vessel-to-yard or yard-to-gate
-        
-        **Disadvantages:**
-        - Lower stacking height
-        - Higher operating costs
-        - Complex to operate
-        """)
-    
-    # Equipment comparison
-    equipment_comparison = pd.DataFrame({
-        'Equipment': ['RTG', 'RMG', 'ARMG', 'Reach Stacker', 'Straddle Carrier'],
-        'Capital Cost ($M)': [2.5, 4.0, 6.0, 0.6, 0.8],
-        'Stacking Height': [6, 7, 10, 4, 3],
-        'Moves/Hour': [12, 18, 23, 6, 8],
-        'Power': ['Diesel', 'Electric', 'Electric', 'Diesel', 'Diesel'],
-        'Automation': ['Manual', 'Semi-auto', 'Full auto', 'Manual', 'Manual'],
-        'Flexibility': ['High', 'Low', 'Low', 'Very High', 'Very High']
-    })
-    
-    st.dataframe(equipment_comparison, width='stretch', hide_index=True)
-    
-    # ============================================================================
-    # SECTION 3: Horizontal Transport Equipment
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Horizontal Transport: Moving Containers Around Terminal</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Horizontal transport equipment moves containers between quay cranes and yard storage, bridging the 
-    critical interface.
-    """)
-    
-    st.markdown('<p class="subsection-header">Prime Movers (Terminal Tractors)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Traditional Approach:**
-    
-    **Design:**
-    - Heavy-duty tractor with trailer for containers
-    - Human driver
-    - Diesel-powered
-    - **Speed**: 15-25 km/h in terminal
+    - **Power**: Diesel engine, 250-400 horsepower
+    - **Speed**: 15-30 km/h maximum (terminal speed limits)
+    - **Capacity**: Pull one 40ft or two 20ft containers on chassis/trailer
+    - **Range**: Diesel tank enables full-day operations
+    - **Cost**: US&#36;100-150K per unit (significantly cheaper than AGVs)
     
     **Operations:**
-    - **Chassis system**: Container placed on separate chassis (trailer)
-    - Prime mover hooks to chassis, transports to yard
-    - Unhooks, returns to quay for next container
-    - **Fleet size**: Typically 1.5-2 prime movers per quay crane
+    - **Driver controlled**: Human operator navigates using roads, signage
+    - **Fixed assignment (traditional)**: 2 PMs dedicated to each quay crane
+    - **Pooling strategy (modern)**: Fleet shared dynamically across all cranes (TOS dispatches)
+    - **Productivity**: 4-6 cycles/hour (quay→yard round trip)
     
-    **Advantages:**
-    - **Proven technology**: Decades of operational experience
-    - **Flexible**: Can adapt to exceptions and unusual situations
-    - **Lower upfront cost**: $100,000-150,000 per unit
+    **Deployment Models:**
     
-    **Disadvantages:**
-    - **Labour intensive**: Requires many drivers
-    - **Safety risks**: Human drivers, accident potential
-    - **Emissions**: Diesel exhaust
-    - **Inefficiency**: Empty return trips, waiting time
-    - **Variability**: Driver skill affects productivity
+    **Traditional Fixed Assignment:**
+    - Each quay crane assigned 2 dedicated PMs
+    - PMs only serve "their" crane (simple coordination)
+    - **Problem**: PMs idle when crane busy with different operation or during crane repositioning
+    - **Utilization**: 50-60% (significant idle time)
+    
+    **Modern Pooling Strategy:**
+    - Fleet of PMs shared across all quay cranes
+    - **TOS dynamically dispatches** PM to whichever crane needs transport next
+    - Algorithm optimizes: (1) Which crane gets next PM, (2) Which PM is closest/available
+    - **Benefits**: 30-40% reduction in fleet size needed, 70-80% utilization
+    - **Challenge**: More complex coordination (requires sophisticated TOS)
+    
+    **Prime Mover Advantages:**
+    - **Low capital cost**: US&#36;100-150K vs US&#36;300-500K for AGVs
+    - **Human flexibility**: Drivers adapt to unexpected situations (obstacles, emergencies, route changes)
+    - **No infrastructure**: Works on regular roads, no magnetic strips or guidance systems needed
+    - **Existing workforce**: Many terminals already have trained PM drivers
+    
+    **Prime Mover Disadvantages:**
+    - **Labor intensive**: Each PM requires driver (plus relief drivers for 24/7 shifts)
+    - **Inconsistent productivity**: Human variability—fatigue, skill differences, break requirements
+    - **Higher operating costs**: Driver wages (US&#36;40-60K/year) + diesel fuel
+    - **Emissions**: Diesel exhaust (local air quality concerns)
+    - **Safety**: Human error risks—accidents, container damage, pedestrian hazards
     """)
     
-    st.markdown('<p class="subsection-header">Automated Guided Vehicles (AGVs)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Automated Guided Vehicles (AGVs): Modern Automated Approach</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Modern Automated Approach:**
+    **What are AGVs?**
     
-    **Design:**
-    - Driverless electric vehicles
-    - Battery-powered (lithium-ion, fast-charging)
-    - Guided by embedded magnets, wires, or laser navigation
-    - Lifts container from below (no separate chassis needed)
+    Automated Guided Vehicles are battery-electric, computer-controlled autonomous vehicles that transport containers 
+    without human operators. The lecture materials emphasize: "For automated terminals, automated guided vehicles (AGVs) 
+    are individually guided by the AGV Development System"—highlighting that AGVs are the cornerstone of terminal 
+    automation.
     
-    **Navigation Systems:**
-    - **Magnetic guidance**: Follow embedded magnetic strips in pavement (most common)
-    - **Laser navigation**: Use lasers to detect position relative to fixed reflectors
-    - **GPS/GNSS**: Satellite positioning (newer systems)
-    - **Vision-based**: Cameras and AI for navigation (cutting edge)
+    **Technical Specifications:**
+    - **Power**: Battery-electric (lithium-ion or lead-acid batteries)
+    - **Guidance**: Magnetic strips buried in pavement + optical sensors + GPS + onboard computers
+    - **Speed**: 10-20 km/h (slower than PMs but more consistent)
+    - **Capacity**: Carry one 40ft or two 20ft containers on integrated platform
+    - **Range**: 4-6 hours on battery, then auto-returns to charging station
+    - **Cost**: US&#36;300-500K per AGV + infrastructure (magnetic strips, charging stations, control systems)
     
-    **Specifications:**
-    - **Capacity**: 60-80 tonnes (including AGV weight)
-    - **Speed**: 15-20 km/h loaded, 25 km/h empty
-    - **Battery**: 2-4 hours operation, 15-30 minute fast charge
-    - **Lifting**: Hydraulic platform lifts container from beneath
+    **How AGVs Work:**
     
-    **Fleet Management:**
-    - **Central control system**: Computer dispatches AGVs dynamically
-    - **Optimisation**: Minimises empty travel, balances workload
-    - **Pooling**: AGVs shared across all quay cranes (not assigned to specific crane)
-    - **Collision avoidance**: Sensors prevent AGV-to-AGV collisions
-    - **Traffic management**: Optimal routing, congestion avoidance
+    **Navigation System:**
+    1. **Magnetic guidance**: AGVs follow magnetic strips embedded in terminal pavement (primary navigation)
+    2. **Optical sensors**: Cameras read painted lines, QR codes for position confirmation
+    3. **GPS**: Provides coarse positioning (accuracy ±2-5 meters)
+    4. **Onboard computer**: Processes sensor data, calculates optimal route, controls movement
+    5. **Central control system**: AGV Development System dispatches vehicles, coordinates traffic, prevents collisions
     
-    **Advantages:**
-    - **Labour savings**: No drivers required (70-80% labour reduction)
-    - **24/7 operations**: No breaks, shifts, or fatigue
-    - **Consistency**: Predictable performance
-    - **Safety**: No human drivers in operations area
-    - **Zero emissions**: Electric power
-    - **Efficiency**: Optimal routing, minimal empty travel
-    - **Scalability**: Easy to add more AGVs as needed
+    **Operational Workflow:**
+    1. **CITOS dispatches** AGV to specific quay crane when container ready
+    2. AGV navigates autonomously from current position to crane
+    3. **Positions under crane spreader**, confirms ready via sensors
+    4. Crane lowers container onto AGV platform, AGV confirms load secured
+    5. AGV navigates to designated yard block (optimal route calculated by system)
+    6. **Arrives at yard crane**, positions for container transfer
+    7. Yard crane lifts container off AGV
+    8. AGV immediately dispatched to next job (bi-directional loading—can carry container both directions)
+    9. When battery low (<20%), AGV autonomously returns to charging station
     
-    **Disadvantages:**
-    - **Very high capital cost**: $300,000-500,000 per AGV
-    - **Infrastructure**: Magnetic strips, charging stations, control systems
-    - **Complexity**: Sophisticated software and maintenance
-    - **Inflexibility**: Cannot handle exceptions as well as humans
-    - **Dependency**: System failure affects entire fleet
+    **Key Advantage - Bi-Directional Loading:**
+    
+    Unlike PMs (often travel empty on return trip), AGVs can efficiently carry containers both directions:
+    - **Quay→Yard**: Deliver import container from discharge
+    - **Yard→Quay**: On return trip, pick up export container from yard, deliver to crane for loading
+    - **Result**: 30-40% fewer vehicles needed vs PM fixed assignment (higher utilization through optimal routing)
+    
+    **AGV Fleet Sizing:**
+    
+    **Rule of thumb**: 65-80 AGVs per berth pair (2 berths, 8-10 quay cranes total)
+    
+    **Example—Tuas Terminal:**
+    - Phase 1: 4 berths (2 berth pairs) = 130-160 AGVs
+    - Ultimate capacity (16 berths): 520-640 AGVs
+    - Each AGV serves multiple cranes dynamically (pooling strategy)
+    - System maintains 10-15% spare capacity (for charging rotation, maintenance, peak demand)
     """)
     
-    st.markdown('<p class="subsection-header">Automated Lift Vehicles (ALVs)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Next-Generation Alternative:**
-    
-    **Design:**
-    - Automated vehicle with integrated lifting capability
-    - Can lift container higher than AGV (stacks 2-3 high)
-    - No need for separate yard crane in some configurations
-    - Battery-powered, automated navigation
-    
-    **Capability:**
-    - **Direct stacking**: Can place container in yard without yard crane
-    - **Higher productivity**: Eliminates yard crane bottleneck
-    - **Flexible operations**: Adapts to different workflows
-    
-    **Status:**
-    - Still relatively new technology
-    - Used in some automated terminals
-    - Higher complexity than standard AGVs
-    - Cost: $500,000-700,000 per unit
-    """)
-    
-    # PM vs AGV comparison
-    pm_agv_comparison = pd.DataFrame({
-        'Aspect': [
-            'Capital Cost',
-            'Operating Cost',
-            'Labour Required',
-            'Productivity',
+    # Prime Mover vs AGV detailed comparison
+    pm_agv_detailed = pd.DataFrame({
+        'Factor': [
+            'Capital Cost per Unit',
+            'Infrastructure Required',
+            'Annual Operating Cost',
+            'Labor Requirements',
+            'Productivity (Cycles/Hour)',
+            'Utilization Rate',
+            'Operating Hours',
+            'Consistency',
+            'Emissions',
+            'Maintenance',
             'Flexibility',
             'Safety',
-            'Emissions',
-            'Predictability'
+            'Lifespan',
+            'Technology Complexity'
         ],
-        'Prime Movers': [
-            '$100K-150K per unit',
-            'High (fuel, maintenance, labour)',
-            'One driver per PM',
-            '3-4 cycles/hour',
-            'High (human adaptability)',
-            'Moderate (human error risk)',
-            'Diesel emissions',
-            'Variable (driver dependent)'
+        'Prime Movers (PM)': [
+            'US&#36;100-150K (lower capital investment)',
+            'Standard roads, signage, parking areas (minimal)',
+            'US&#36;60-100K (fuel US&#36;20-30K + driver US&#36;40-60K + maintenance US&#36;10K)',
+            '1 driver per PM × 3 shifts = 3 FTE per PM (labor intensive)',
+            '4-6 cycles/hour (driver-dependent)',
+            '50-70% (idle time during crane operations, breaks)',
+            'Daytime preference (night shift 20-30% wage premium)',
+            'Variable (human factors: fatigue, skill differences, experience)',
+            'Diesel emissions (NOx, particulates, CO2—local air quality impact)',
+            'Diesel engine maintenance (regular oil changes, repairs)',
+            'Very high (adapts to any situation, changes, obstacles)',
+            'Human error risks (accidents, damage from fatigue/inattention)',
+            '10-15 years typical before replacement',
+            'Low (conventional vehicle technology)'
         ],
-        'AGVs': [
-            '$300K-500K per unit + infrastructure',
-            'Lower (electricity, maintenance)',
-            'Zero drivers (remote monitoring only)',
-            '6-8 cycles/hour',
-            'Moderate (programmed routes)',
-            'High (no humans in operations)',
-            'Zero (electric)',
-            'High (consistent performance)'
+        'Automated Guided Vehicles (AGV)': [
+            'US&#36;300-500K + infrastructure US&#36;5-10M total system (higher capital)',
+            'Magnetic strips in pavement, charging stations, central control room',
+            'US&#36;25-45K (electricity US&#36;15-25K + maintenance US&#36;10-20K, NO driver)',
+            'Zero drivers (1 supervisor monitors 20-30 AGVs remotely)',
+            '8-12 cycles/hour (optimized routing, bi-directional loading)',
+            '75-85% (continuous operations except charging/maintenance)',
+            '24/7 (no labor constraints, battery rotation enables continuous operation)',
+            'Very high (consistent performance, no fatigue, optimized routing)',
+            'Zero local emissions (electric, battery charged from grid)',
+            'Battery replacement (3-5 years), electronic systems (more predictable)',
+            'Medium (requires programmed routes, magnetic strips, cannot improvise)',
+            'Very high (no human operators in danger zones, collision avoidance sensors)',
+            '15-20 years (longer than PMs due to electric drivetrain)',
+            'High (complex navigation, control systems, fleet coordination)'
         ]
     })
     
-    st.dataframe(pm_agv_comparison, width='stretch', hide_index=True)
+    st.dataframe(pm_agv_detailed, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    **AGV Investment Economics: The Compelling Business Case**
+    
+    Despite 3-5× higher unit costs, AGVs deliver compelling ROI through labor savings and productivity gains:
+    
+    **Scenario—Medium Terminal (2M TEU/year, 4 berths, 8 quay cranes):**
+    
+    **Prime Mover Option:**
+    - **Fleet size**: 40 PMs @ US&#36;125K = US&#36;5M capital
+    - **Drivers**: 40 PMs × 3 shifts × 2 reliefs = 240 drivers × US&#36;50K = **US&#36;12M/year**
+    - **Fuel**: US&#36;25K/PM/year × 40 = US&#36;1M/year
+    - **Total annual operating cost**: US&#36;13M
+    - **20-year total cost**: US&#36;5M capital + US&#36;260M operations = **US&#36;265M**
+    
+    **AGV Option:**
+    - **Fleet size**: 130 AGVs @ US&#36;400K = US&#36;52M + infrastructure US&#36;25M = **US&#36;77M capital**
+    - **Supervisors**: 10 supervisors × 3 shifts × US&#36;70K = US&#36;2.1M/year (91% labor reduction!)
+    - **Electricity**: US&#36;20K/AGV/year × 130 = US&#36;2.6M/year
+    - **Total annual operating cost**: US&#36;4.7M (64% lower than PMs!)
+    - **20-year total cost**: US&#36;77M capital + US&#36;94M operations = **US&#36;171M**
+    
+    **AGV Advantage: US&#36;94M savings over 20 years (35% lower total cost)**
+    
+    **Plus additional benefits not quantified above:**
+    - 30-40% higher productivity (faster vessel turnaround attracts more business)
+    - 24/7 operations without night-shift premiums
+    - Fewer accidents (reduced insurance, damage, injury costs)
+    - Environmental benefits (zero local emissions supports green terminal certifications)
+    - Scalability (add AGVs incrementally as volumes grow)
+    
+    **The lecture materials conclude**: AGVs deliver "70-80% labour reduction, 24/7 operations, and pooling strategy 
+    reduces fleet size 30-40%"—making AGVs the clear choice for new automated terminals despite higher upfront costs.
+    """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 PM Deployment Strategy:</strong><br><br>
-    <strong>Traditional Fixed Assignment:</strong><br>
-    - 2 Prime Movers assigned to each Quay Crane<br>
-    - PMs dedicated to "their" crane<br>
-    - Simple coordination but inefficient (PMs idle when crane busy with another container)<br><br>
-    <strong>Modern Pooling Strategy:</strong><br>
-    - Fleet of PMs/AGVs shared across all cranes<br>
-    - Dynamic dispatch by TOS based on:<br>
-      - Which crane needs transport next<br>
-      - Which PM/AGV is closest and available<br>
-      - Minimise empty travel distance<br>
-      - Balance workload across fleet<br><br>
-    <strong>Result</strong>: 30-40% reduction in fleet size needed, higher utilisation, lower costs
+    <strong>💡 Why Singapore Tuas Chose Full AGV Automation:</strong><br><br>
+    <strong>Labor cost context</strong>: Singapore PM drivers earn US&#36;40-60K/year (higher than regional 
+    competitors). Over 30-year Tuas lifespan, PM labor costs would exceed US&#36;500M.<br><br>
+    <strong>AGV investment</strong>: ~600 AGVs @ US&#36;400K = US&#36;240M + infrastructure US&#36;50M = US&#36;290M 
+    capital. Operating costs US&#36;4M/year vs US&#36;18M/year for PM fleet = US&#36;420M savings over 30 years.<br><br>
+    <strong>Strategic advantage</strong>: Tuas automation enables Singapore to maintain cost competitiveness despite 
+    high labor costs, while achieving 24/7 consistent productivity that PM-based competitors cannot match. The 
+    US&#36;130M net savings funds other terminal innovations (ARMGs, AI-powered CITOS, shore power infrastructure).
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 4: Gate Complex Equipment
+    # SECTION 4: Automation Levels Framework
     # ============================================================================
     
-    st.markdown('<p class="section-header">Gate Complex: Truck Entry and Exit</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Terminal Automation Levels: From Manual to "Lights-Out"</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The gate complex is where external trucks enter and exit the terminal to pick up or deliver containers.
+    Container terminals exist along a spectrum from fully manual operations to completely automated "lights-out" 
+    facilities operating 24/7 with minimal human intervention. The industry uses a four-level framework to classify 
+    automation sophistication.
     """)
     
-    st.markdown('<p class="subsection-header">Gate Operations Systems</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">The Four Automation Levels</p>', unsafe_allow_html=True)
     
-    st.markdown("""
-    **Traditional Gate Process:**
-    1. Truck arrives at gate
-    2. **Documentation check**: Driver presents paperwork (delivery order, customs clearance)
-    3. **Manual inspection**: Gate clerk verifies documents, container number, seal
-    4. **System entry**: Clerk enters information into TOS
-    5. **Gate pass issued**: Truck authorised to enter
-    6. Time: 5-10 minutes per transaction
-    
-    **Modern Automated Gate:**
-    
-    **Optical Character Recognition (OCR):**
-    - Cameras automatically read:
-      - Licence plate number
-      - Container number
-      - Chassis number  
-      - ISO code
-      - Seal number
-    - **Accuracy**: 95-98% recognition rate
-    - **Speed**: Instant reading as truck passes
-    
-    **Automated Gate Operating System (GOS):**
-    - Computer system validates truck appointment
-    - Cross-checks container authorisation
-    - Verifies customs clearance
-    - Issues automated gate pass
-    - Records transaction automatically
-    
-    **Automated Lane:**
-    1. Truck arrives at gate lane (no stop)
-    2. OCR cameras read all information
-    3. Computer validates in real-time (<5 seconds)
-    4. Traffic light signals: Green (authorised) or Red (problem)
-    5. If green: Truck proceeds directly into terminal
-    6. Time: 30-60 seconds per transaction
-    
-    **Benefits:**
-    - **10x faster**: 30-60 seconds vs 5-10 minutes
-    - **Higher accuracy**: No manual data entry errors
-    - **Labour savings**: No gate clerks needed
-    - **24/7 operations**: No staffing constraints
-    - **Better tracking**: Automatic record of all movements
-    """)
-    
-    st.markdown('<p class="subsection-header">Truck Appointment System</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Problem:** Without appointments, trucks arrive randomly → gate congestion, long queues
-    
-    **Solution:** **Truck Appointment System (TAS)**
-    
-    **How It Works:**
-    - Trucking companies book time slots online (e.g., "Monday 2:00-2:30 PM")
-    - System limits appointments per time slot (e.g., 20 trucks per 30 minutes)
-    - Prevents overcrowding
-    - Spreads demand throughout the day
-    
-    **Benefits:**
-    - **Eliminate queues**: No more 2-hour waits at gates
-    - **Predictability**: Trucks know their time slot
-    - **Productivity**: Terminal can plan yard crane operations
-    - **Environment**: Less truck idling = lower emissions
-    
-    **Incentives:**
-    - **Off-peak pricing**: Discounts for appointments outside 9 AM - 5 PM
-    - **Penalty fees**: Charge for no-shows or late arrivals
-    - **Priority lanes**: Faster processing for appointment holders
-    
-    **Singapore Example:**
-    - Mandatory TAS at major terminals
-    - 30-minute time windows
-    - Average gate time: <3 minutes
-    - Virtually eliminated gate congestion
-    """)
-    
-    # Gate performance metrics
-    gate_performance = pd.DataFrame({
-        'System Type': ['Traditional Manual', 'Semi-Automated', 'Fully Automated + TAS'],
-        'Transaction Time': ['5-10 minutes', '2-3 minutes', '30-60 seconds'],
-        'Throughput (trucks/hour/lane)': [6-12, 20-30, 60-80],
-        'Labour Required': ['1-2 clerks per lane', '1 clerk per 2-3 lanes', 'Remote monitoring only'],
-        'Accuracy': ['85-90% (human error)', '95-97%', '98-99%'],
-        'Peak Hour Queues': ['30-60 minute waits', '10-15 minute waits', 'No queues']
-    })
-    
-    st.dataframe(gate_performance, width='stretch', hide_index=True)
-    
-    # ============================================================================
-    # SECTION 5: Automation Levels and Technologies
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Automation Levels in Container Terminals</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Container terminals can be automated to different degrees, from conventional manual operations to 
-    fully automated "lights-out" facilities.
-    """)
-    
-    # Automation levels
-    automation_levels = pd.DataFrame({
-        'Level': [
-            'Level 1: Conventional',
-            'Level 2: Semi-Automated',
-            'Level 3: Highly Automated',
-            'Level 4: Fully Automated'
+    # Automation levels framework
+    automation_framework = pd.DataFrame({
+        'Automation Level': [
+            'Level 1: Conventional Terminal',
+            'Level 2: Semi-Automated Terminal',
+            'Level 3: Highly Automated Terminal',
+            'Level 4: Fully Automated Terminal'
         ],
-        'Quay Cranes': [
-            'Manual operation',
-            'Computer-assisted (anti-sway)',
-            'Semi-automated positioning',
-            'Fully automated (ASC)'
+        'Quay Operations': [
+            'Manual quay cranes with human operators in cab',
+            'Quay cranes with computer-assisted controls (anti-sway systems)',
+            'Semi-automated crane positioning, operator supervises',
+            'Fully automated ship-to-shore cranes (ASC—Auto Stacking Crane)'
         ],
         'Horizontal Transport': [
-            'Prime movers (human drivers)',
-            'Prime movers + GPS tracking',
-            'AGVs (automated)',
-            'AGVs or ALVs'
+            'Prime Movers with human drivers',
+            'Prime Movers with GPS tracking, dispatch optimization',
+            'Automated Guided Vehicles (AGV fleet)',
+            'AGVs or ALVs (Automated Lift Vehicles)'
         ],
         'Yard Operations': [
-            'RTG (human operators)',
-            'RTG with remote operation',
-            'RMG semi-automated',
-            'ARMG (fully automated)'
+            'RTG with human operators in crane cab',
+            'RTG with remote operation from control room',
+            'RMG semi-automated (remote supervised)',
+            'ARMG (Automated RMG) with zero operators'
         ],
-        'Gate': [
-            'Manual documentation',
-            'Some OCR, manual verification',
-            'Automated OCR + validation',
-            'Fully automated + TAS'
+        'Gate Operations': [
+            'Manual documentation check, clerk verification',
+            'Partial OCR (Optical Character Recognition), manual verification',
+            'Automated OCR + system validation, minimal manual intervention',
+            'Fully automated gate + TAS (Truck Appointment System)'
         ],
-        'Labour Reduction': [
+        'Labor Reduction': [
             'Baseline (100%)',
-            '20-30% reduction',
-            '50-60% reduction',
-            '70-80% reduction'
+            '20-30% reduction vs Level 1',
+            '50-60% reduction vs Level 1',
+            '70-80% reduction vs Level 1'
         ],
-        'Examples': [
-            'Most ports worldwide',
-            'Many modern terminals',
-            'Singapore PSA (some terminals)',
-            'Rotterdam (Maasvlakte II), Hamburg (CTA), Los Angeles (LBCT), Singapore (Tuas Phase 1)'
+        'Typical Capital Cost': [
+            'US&#36;150-250M per berth (baseline)',
+            'US&#36;200-300M per berth (+20-30%)',
+            'US&#36;350-500M per berth (+100-150%)',
+            'US&#36;500M-1B per berth (+200-300%)'
+        ],
+        'Global Examples': [
+            'Most ports worldwide (majority of capacity)',
+            'Many modern terminals in Asia, Europe, US West Coast',
+            'Singapore PSA (some terminals), Hamburg CTB, Los Angeles LBCT',
+            'Rotterdam Maasvlakte II, Hamburg CTA, Singapore Tuas, Qingdao, Long Beach LBCT'
         ]
     })
     
-    st.dataframe(automation_levels, width='stretch', hide_index=True)
+    st.dataframe(automation_framework, width='stretch', hide_index=True)
     
     st.markdown("""
-    **Automation Technologies:**
+    **Level 1: Conventional Terminal (Baseline)**
     
-    **Sensors and Detection:**
-    - **RFID tags**: Track equipment and containers
-    - **GPS/GNSS**: Vehicle positioning
-    - **LiDAR**: 3D environment scanning
-    - **Cameras**: Visual inspection, OCR
-    - **Load cells**: Weight measurement
-    - **Proximity sensors**: Collision avoidance
+    **Characteristics:**
+    - All equipment operated by humans (quay crane operators, PM drivers, yard crane operators, gate clerks)
+    - Basic TOS for planning but manual execution
+    - Labor-intensive operations requiring large workforce
+    - Equipment utilization depends heavily on operator skill
     
-    **Control Systems:**
-    - **TOS integration**: Equipment controlled by Terminal Operating System
-    - **Fleet management**: Optimise equipment deployment
-    - **Collision avoidance**: Prevent equipment crashes
-    - **Predictive maintenance**: IoT sensors monitor equipment health
+    **When this makes sense:**
+    - Low labor cost countries (Southeast Asia, Africa, Latin America)
+    - Smaller terminals (<500K TEU/year)
+    - Existing brownfield sites with established operations
+    - Limited capital for automation investment
     
-    **Communication:**
-    - **Wireless networks**: 4G/5G for real-time communication
-    - **Edge computing**: Process data locally for faster response
-    - **Cloud platforms**: Centralised data and analytics
+    **Operational reality**: Most global container terminal capacity operates at Level 1. While not cutting-edge, 
+    well-run Level 1 terminals can achieve respectable productivity (25-30 GMPH) through skilled workforce and 
+    efficient processes.
     
-    **Artificial Intelligence:**
-    - **Machine learning**: Optimise equipment scheduling
-    - **Computer vision**: Automated inspection, damage detection
-    - **Predictive analytics**: Forecast demand, plan capacity
-    - **Operational simulation**: Virtual simulation of terminal operations
+    **Level 2: Semi-Automated Terminal (Productivity Enhancement)**
+    
+    **Characteristics:**
+    - Technology assists human operators rather than replacing them
+    - Remote operation rooms (yard crane operators leave cab, control from office)
+    - GPS tracking enables better fleet management
+    - Partial gate automation (OCR speeds processing)
+    
+    **Key technologies:**
+    - Anti-sway systems on quay cranes (faster, safer operations)
+    - Remote-controlled RTGs (operators more comfortable, can supervise multiple cranes)
+    - Automated gate OCR (10× faster than manual, eliminates data entry errors)
+    - Real-time equipment tracking (TOS knows exact position of all equipment)
+    
+    **Benefits**: 20-30% labor reduction plus significant productivity gains without massive capital investment. 
+    This is the "sweet spot" for many terminals—meaningful improvements at manageable cost.
+    
+    **When this makes sense:**
+    - Terminals modernizing existing operations
+    - Growing terminals investing incrementally
+    - Balance of cost and performance
+    
+    **Level 3: Highly Automated Terminal (Selective Automation)**
+    
+    **Characteristics:**
+    - AGV fleet eliminates PM drivers (major labor savings)
+    - Some yard areas use ARMG (automated), others still RMG/RTG (manual)
+    - Automated gates handle routine transactions
+    - Significant reduction in terminal workforce
+    
+    **Implementation approach**: Automate highest-volume, most-repetitive operations first. For example, automate 
+    main transshipment yard with ARMGs while keeping import/export yard manual (more variable workflows).
+    
+    **Benefits**: 50-60% labor reduction, 24/7 yard operations in automated areas, improved consistency.
+    
+    **Challenges**: Operating two systems simultaneously (automated + manual) creates complexity. Need staff skilled 
+    in both traditional operations and automation systems management.
+    
+    **When this makes sense:**
+    - Phased automation journey (step toward Level 4)
+    - High-volume terminals in high-labor-cost regions
+    - Terminals with sufficient capital (US&#36;350-500M per berth)
+    
+    **Level 4: Fully Automated Terminal ("Lights-Out" Operations)**
+    
+    **Characteristics:**
+    - No human operators in operational zones (hence "lights-out"—don't need lighting for operators)
+    - Automated quay cranes, AGV fleet, ARMG yard cranes, automated gates
+    - Humans monitor from central control room, intervene only for exceptions
+    - Truly 24/7 operations without workforce constraints
+    
+    **What "fully automated" means:**
+    - Quay cranes automatically position spreader, pick containers from vessel without operator input
+    - AGVs navigate autonomously, coordinate with cranes automatically
+    - ARMGs stack/retrieve containers without operators
+    - Gates process trucks without human clerks (OCR + system validates, traffic lights direct)
+    - **Only human intervention**: Exception handling (equipment failures, damaged containers, non-standard situations)
+    
+    **The reality of "fully automated":** Even Level 4 terminals aren't completely unmanned. Still need:
+    - Central control room staff (monitor systems, handle exceptions)
+    - Maintenance teams (equipment repairs, preventive maintenance)
+    - Management and planning staff
+    - Security personnel
+    - Gate guards for non-routine situations
+    
+    **Labor reduction**: 70-80% vs Level 1, but not 100%. Example: Conventional terminal with 1,000 employees → 
+    Automated terminal with 200-300 employees (supervisors, maintenance, management, security).
+    
+    **Benefits:**
+    - Massive long-term labor cost savings (justify high upfront investment)
+    - Consistent 24/7 productivity (no fatigue, no strikes, no shift changes)
+    - Higher yard density (ARMG can stack 10-12 high vs 6-7 for manual)
+    - Enhanced safety (humans not in operational danger zones)
+    - Environmental (electric AGVs, ARMGs—zero local emissions)
+    - Predictable performance (easier capacity planning)
+    
+    **Challenges:**
+    - Enormous capital investment (US&#36;500M-1B per berth, US&#36;2-4B for 4-berth terminal)
+    - 5-7 year payback period minimum (labor savings accrue slowly)
+    - Technology risk (complex systems, software bugs, integration issues)
+    - Workforce transition (train existing workers or hire new tech-skilled staff?)
+    - Inflexibility (automated systems harder to modify than manual operations)
+    
+    **Global Examples:**
+    
+    **Rotterdam Maasvlakte II (APM Terminals):** Europe's first fully automated terminal, operational 2015
+    **Hamburg CTA (Container Terminal Altenwerder):** Pioneering automated terminal since 2002
+    **Singapore Tuas Mega Port (PSA):** World's largest automated terminal project, Phase 1 operational 2026-2027
+    **Qingdao Port (China):** Fully automated terminal showcasing Chinese automation technology
+    **Long Beach LBCT (US):** Largest automated terminal in North America
+    
+    **When Level 4 makes sense:**
+    - Greenfield developments (design automation from start, avoid retrofit costs)
+    - High labor cost regions (Singapore, Europe, North America, Japan)
+    - Long-term strategic investments (20-30+ year planning horizon)
+    - Sufficient scale (2M+ TEU/year to justify investment)
+    - Government support (strategic importance recognized)
     """)
     
     st.markdown("""
-    <div class="warning-box">
-    <strong>⚠️ Automation Trade-offs:</strong><br><br>
-    <strong>Advantages:</strong><br>
-    - 70-80% labour reduction<br>
-    - 24/7 consistent operations<br>
-    - Higher safety (fewer human accidents)<br>
-    - Better space utilisation (higher stacking)<br>
-    - Lower long-term operating costs<br>
-    - Environmental benefits (electric power)<br><br>
-    <strong>Challenges:</strong><br>
-    - <strong>Very high capital investment</strong>: $500M-1B+ for fully automated terminal<br>
-    - <strong>Long payback period</strong>: 10-15 years to recover investment<br>
-    - <strong>Complexity</strong>: Sophisticated IT and maintenance requirements<br>
-    - <strong>Inflexibility</strong>: Harder to handle exceptions and unusual situations<br>
-    - <strong>Workforce impact</strong>: Job displacement requires retraining and social management<br>
-    - <strong>Technology risk</strong>: System failures affect entire terminal<br><br>
-    <strong>Strategic Decision:</strong><br>
-    - Greenfield (new) terminals → Often choose full automation<br>
-    - Brownfield (existing) terminals → Gradual automation difficult and expensive<br>
-    - Labour costs → High labour costs favour automation<br>
-    - Throughput volume → High volumes justify investment
+    <div class="success-box">
+    <strong>✅ Automation Decision Framework - Key Questions:</strong><br><br>
+    <strong>1. Labor Cost vs Capital Cost</strong>: In high-wage countries (US&#36;50K+ annual labor), automation 
+    pays back faster. In low-wage countries (US&#36;15K labor), conventional makes more sense.<br><br>
+    <strong>2. Time Horizon</strong>: Automation ROI requires 5-10 year payback. Short-term investments favor 
+    conventional; long-term strategic investments favor automation.<br><br>
+    <strong>3. Scale</strong>: Automation economics improve with scale. <1M TEU/year: difficult to justify. 
+    2M+ TEU/year: compelling case. 5M+ TEU/year: clear winner.<br><br>
+    <strong>4. Greenfield vs Brownfield</strong>: New terminals can design for automation (lower cost). Existing 
+    terminals face expensive retrofits (often not viable).<br><br>
+    <strong>5. Strategic Importance</strong>: National champions (Singapore, Rotterdam, Hamburg) get government 
+    backing for automation—strategic asset to maintain hub status regardless of pure economics.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 6: Non-Conventional Terminal Layouts
+    # SECTION 5: PSA CITOS - Terminal Operating System
     # ============================================================================
     
-    st.markdown('<p class="section-header">Non-Conventional Terminal Layouts</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">PSA CITOS®: The Digital Brain of Terminal Operations</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Some automated terminals use innovative layouts that differ from conventional parallel-to-quay designs.
+    CITOS (Computer Integrated Terminal Operation System) is PSA's proprietary Terminal Operating System—the 
+    sophisticated software platform that plans, coordinates, and monitors all terminal activities. The lecture 
+    materials emphasize: "CITOS®: An Enterprise Resource Planning system that plans and integrates every asset from 
+    PMs/AGVs, [yard cranes] and quay cranes to containers and drivers."
+    
+    This section explores why CITOS represents a critical competitive advantage for PSA, and how advanced TOS 
+    capabilities enable world-class terminal performance.
     """)
     
-    st.markdown('<p class="subsection-header">Grid-Based Layout</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">CITOS Development History and Strategic Rationale</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Concept:**
-    - Yard organised in dense grid pattern
-    - Automated cranes move in X-Y grid (like chess board)
-    - Containers stored very densely with minimal space between
+    **Development Timeline:**
     
-    **Advantages:**
-    - **Maximum density**: 40-50% more capacity per hectare
-    - **Efficient land use**: Critical in space-constrained ports
-    - **Flexible storage**: Any container can go in any slot
+    **1980s - Origins:**
+    - PSA began developing CITOS in-house to manage Singapore's growing container volumes
+    - Initial system: basic berth planning, vessel scheduling, container tracking
+    - Goal: Replace manual paper-based planning with computer-assisted operations
     
-    **Disadvantages:**
-    - **Complex automation**: Requires sophisticated control systems
-    - **Higher cost**: Specialised equipment and software
+    **1990s - Expansion:**
+    - Added sophisticated yard planning, equipment scheduling modules
+    - Integration with PORTNET (Singapore's port community system)
+    - Deployed across Singapore terminals (Tanjong Pagar, Keppel, Brani)
     
-    **Example**: AutoStore-style systems (emerging in some ports)
+    **2000s - Global Deployment:**
+    - CITOS exported to PSA international terminals (Belgium, Italy, Korea, China)
+    - Evolution toward real-time optimization algorithms
+    - Integration with automated equipment (AGVs, ARMGs)
+    
+    **2010s - AI/ML Integration:**
+    - Machine learning for predictive analytics (vessel delay forecasting, berth planning optimization)
+    - Cloud-based architecture for scalability
+    - Mobile applications for supervisors, operators
+    
+    **2020s - Next Generation:**
+    - Advanced AI for autonomous decision-making
+    - Digital twin integration (virtual terminal model)
+    - Tuas deployment with full automation capabilities
+    - Currently: 40+ years of continuous evolution
+    
+    **Why PSA Developed CITOS In-House (Rather Than Buying Commercial TOS):**
+    
+    This strategic decision created lasting competitive advantages:
+    
+    **1. Customization to PSA's Operational Philosophy:**
+    - PSA could embed its specific operational approaches, best practices into software
+    - No compromises required to fit generic vendor product
+    - Continuous refinement based on actual Singapore operations
+    
+    **2. Competitive Differentiation:**
+    - Proprietary system competitors cannot replicate
+    - Unique algorithms optimizing PSA-specific workflows
+    - IP protection of operational know-how
+    
+    **3. Rapid Innovation:**
+    - No vendor dependency—PSA controls development roadmap
+    - Can implement new features immediately when operational needs identified
+    - Fast response to industry changes (e.g., mega vessel handling, alliance restructuring)
+    
+    **4. Cost Savings:**
+    - No ongoing vendor licensing fees (many commercial TOS charge annual fees based on throughput)
+    - Over 40 years, savings enormous compared to commercial products
+    - One-time development cost amortized across decades and multiple terminals globally
+    
+    **5. Global Deployment:**
+    - Standard platform across all PSA terminals (Singapore, Europe, Asia, Americas)
+    - Enables best practice sharing, consistent operations globally
+    - Staff can transfer between PSA terminals using familiar system
+    
+    **6. Data Ownership and Analytics:**
+    - Complete control of operational data (not shared with vendor or competitors)
+    - Decades of data improve AI/ML algorithms
+    - Insights from Singapore operations deployed globally
     """)
     
-    st.markdown('<p class="subsection-header">Perpendicular Layout</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">CITOS Core Modules and Architecture</p>', unsafe_allow_html=True)
     
-    st.markdown("""
-    **Concept:**
-    - Yard blocks positioned perpendicular to quay (90° rotated vs conventional)
-    - AGVs travel longer distance but straighter paths
-    - Automated RMGs serve multiple parallel yard blocks
-    
-    **Advantages:**
-    - **Fewer RMGs needed**: Each RMG covers more area
-    - **Simpler AGV routing**: Straight paths reduce complexity
-    - **Better scalability**: Easy to extend inland
-    
-    **Disadvantages:**
-    - **Longer transport distance**: AGVs travel further on average
-    - **Layout constraints**: Requires specific terminal geometry
-    
-    **Example**: Some European automated terminals (Hamburg CTA)
-    """)
-    
-    # ============================================================================
-    # SECTION 7: PSA CITOS - Terminal Operating System
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">PSA CITOS®: Comprehensive Terminal Operating System</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **CITOS (Computer Integrated Terminal Operation System)** is PSA's proprietary Terminal Operating 
-    System, developed in-house and deployed across PSA terminals globally.
-    """)
-    
-    st.markdown('<p class="subsection-header">CITOS Development History</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Background:**
-    - Developed by PSA starting in the 1980s
-    - Originally for managing Singapore's container terminals
-    - Continuously evolved over 40+ years
-    - Now deployed in PSA terminals worldwide (Singapore, Belgium, Italy, Korea, China, etc.)
-    - Considered one of the world's leading TOS platforms
-    
-    **Why Develop In-House?**
-    - **Customisation**: Tailored exactly to PSA's operational philosophy
-    - **Competitive advantage**: Proprietary system competitors cannot easily copy
-    - **Control**: PSA controls development roadmap and features
-    - **Integration**: Deep integration with PSA processes and equipment
-    - **Continuous improvement**: Refined based on operational experience
-    """)
-    
-    st.markdown('<p class="subsection-header">CITOS Core Modules</p>', unsafe_allow_html=True)
-    
-    # CITOS modules
+    # CITOS modules breakdown
     citos_modules = pd.DataFrame({
-        'Module': [
+        'CITOS Module': [
             'Berth Planning Module',
             'Vessel Planning Module',
-            'Yard Planning Module',
+            'Yard Planning & Management',
             'Resource Planning Module',
-            'Equipment Control Module',
-            'Gate Operating Module',
-            'Reefer Monitoring Module',
-            'Dangerous Goods Module',
-            'PORTNET Integration',
-            'Billing Module'
+            'Equipment Control & Dispatch',
+            'PM/AGV Deployment System',
+            'Gate Operating System (GOS)',
+            'EDI & Integration Hub',
+            'Reporting & Analytics Platform',
+            'Mobile Operations Suite'
         ],
         'Primary Functions': [
-            'Allocate vessels to berths, optimise BOA, schedule berth windows',
-            'Generate discharge/loading plans, stowage coordination, crane work lists',
-            'Allocate yard locations, minimise re-handles, track inventory',
-            'Schedule QCs, YCs, PMs/AGVs, optimise utilisation',
-            'Real-time dispatching, tracking, performance monitoring',
-            'Truck appointments, OCR integration, automated authorisation',
-            'Monitor temperature, power connections, alarms for refrigerated containers',
-            'Track DG containers, ensure segregation compliance, safety alerts',
-            'Exchange data with port authority, customs, shipping lines',
-            'Track transactions, generate invoices, payment processing'
+            'Vessel-to-berth allocation, berth window optimization, BOA maximization, pilot coordination',
+            'Stowage planning, discharge/load lists, bay plan generation, vessel stability calculations',
+            'Container location tracking, storage assignment, yard utilization optimization, re-handle minimization',
+            'Labor shift scheduling, equipment allocation, maintenance windows, skill matching',
+            'Real-time crane assignment, work sequence optimization, productivity monitoring, exception alerts',
+            'Dynamic PM/AGV dispatching, route optimization, battery management, traffic coordination, collision avoidance',
+            'Truck appointment scheduling, OCR integration, automated authorization, lane assignment, throughput optimization',
+            'PORTNET integration (Singapore maritime single window), shipping line EDI, customs TradeNet, rail operators',
+            'Real-time KPI dashboards, productivity reports, trend analysis, predictive analytics, bottleneck identification',
+            'Supervisor tablets, crane operator interfaces, maintenance mobile apps, field reporting'
         ],
-        'Key Technologies': [
-            'Optimisation algorithms, conflict resolution',
-            'Stability calculations, AI-powered stowage optimisation',
-            'Machine learning for location prediction, re-handle minimisation',
-            'Real-time optimisation, predictive maintenance alerts',
-            'Fleet management, collision avoidance, route optimisation',
-            'OCR, automated validation, TAS integration',
-            'IoT sensors, automated alerts, remote monitoring',
-            'Regulatory database, automated checking',
-            'EDI, APIs, real-time data exchange',
-            'Automated invoicing, payment tracking'
+        'Key Algorithms': [
+            'Constraint satisfaction (berth length, draft, crane availability), genetic algorithms for optimal sequence',
+            'Weight distribution algorithms, stowage constraints checking, destination sequencing, equipment compatibility',
+            'Clustering (group similar containers), 3D bin packing, retrieval sequence prediction, hot/cold storage assignment',
+            'Workforce optimization, equipment utilization balancing, preventive maintenance scheduling',
+            'Dynamic task assignment, multi-crane coordination, interference avoidance, workload leveling',
+            'Shortest path routing, task prioritization, fleet size optimization, energy management, deadlock prevention',
+            'Queue management, slot allocation algorithms, peak-period load balancing, priority handling',
+            'Message queuing, data transformation, error handling, real-time synchronization, audit trails',
+            'OLAP cubes, time-series forecasting, anomaly detection, comparative benchmarking, simulation',
+            'Responsive UI, offline capability, role-based access, location-aware features, push notifications'
+        ],
+        'Data Inputs': [
+            'Vessel arrival notifications, ETA updates, vessel specifications, expected cargo volumes',
+            'Cargo manifests, container types/weights, dangerous goods, special requirements (reefers, OOG)',
+            'Container discharge/load lists, truck arrival notifications, customs clearances, container inventory',
+            'Staff availability, equipment status, maintenance schedules, historical productivity patterns',
+            'Equipment position sensors, crane work progress, container move completions, equipment health monitors',
+            'AGV position (GPS + magnetic guidance), battery levels, job queue, container ready notifications',
+            'Truck license plates (OCR), container numbers, booking references, customs documentation',
+            'External system messages (PORTNET, shipping lines, customs, trucking companies, rail operators)',
+            'Transaction logs, equipment telemetry, operational events, performance metrics, historical data warehouse',
+            'User location, equipment assignments, task status, alerts, forms, checklists'
+        ],
+        'Typical Response Time': [
+            'Seconds to minutes (real-time updates as vessel status changes)',
+            'Minutes to hours (detailed planning as vessel ETA approaches within 24-48 hours)',
+            'Real-time (milliseconds for location queries, seconds for optimization)',
+            'Hours to days (shift planning, maintenance windows scheduled in advance)',
+            'Real-time (milliseconds for dispatch decisions, crane operator instruction updates)',
+            'Real-time (milliseconds for AGV routing, continuous position updates)',
+            'Seconds (instant OCR processing, 2-3 second authorization validation)',
+            'Real-time (asynchronous messaging, event-driven, typically <1 second message processing)',
+            'Real-time dashboards (1-5 second refresh), batch reports (hourly/daily/weekly)',
+            'Real-time (instant UI updates, <1 second for queries and transactions)'
         ]
     })
     
     st.dataframe(citos_modules, width='stretch', hide_index=True)
     
-    st.markdown('<p class="subsection-header">CITOS Information Flow</p>', unsafe_allow_html=True)
-    
     st.markdown("""
-    **Inputs to CITOS:**
+    **CITOS Advanced Features: AI/ML and Real-Time Optimization**
     
-    **From External Systems:**
-    - **PORTNET**: Vessel schedules, port clearances, customs declarations
-    - **Shipping Lines**: Container manifests, booking information, stowage requests
-    - **Trucking Companies**: Delivery orders, pickup appointments
-    - **Customs**: Clearance status, inspection requirements
+    Modern CITOS incorporates cutting-edge technologies that elevate it beyond traditional TOS platforms:
     
-    **From Terminal Equipment:**
-    - **Cranes**: Position, status, productivity, faults
-    - **AGVs/PMs**: Location, battery level, assignments
-    - **Yard Cranes**: Position, inventory changes, equipment status
-    - **Gates**: Truck arrivals, OCR readings, transactions
-    - **Reefers**: Temperature readings, power status, alarms
+    **Artificial Intelligence and Machine Learning:**
     
-    **CITOS Processing:**
-    - **Planning algorithms**: Optimise berth, yard, equipment allocation
-    - **Real-time coordination**: Dispatch equipment, adjust plans dynamically
-    - **Exception handling**: Alert supervisors to problems, suggest solutions
-    - **Performance tracking**: Calculate KPIs, identify bottlenecks
+    **Predictive Berth Planning:**
+    - ML models forecast vessel arrival delays based on weather, port congestion, vessel history
+    - Accuracy: ±30 minutes for vessels within 24 hours of ETA (enables optimal berth preparation)
+    - Algorithm continuously improves using decades of PSA arrival data
     
-    **Outputs from CITOS:**
+    **Yard Location Optimization:**
+    - Learns from historical patterns which container types tend to dwell long vs short
+    - Automatically assigns fast-moving cargo to easily accessible locations
+    - Predicts truck pickup patterns, pre-positions containers accordingly
     
-    **To Equipment Operators:**
-    - **Quay crane operators**: Which container to pick next, where to place
-    - **Yard crane operators**: Which container to retrieve, storage location
-    - **AGV control system**: Dispatch instructions, routing
-    - **Gate systems**: Authorisation decisions, truck routing
+    **Equipment Maintenance Prediction:**
+    - IoT sensors on cranes, AGVs, ARMGs feed data to ML models
+    - Predicts equipment failures before they occur (predictive maintenance)
+    - Schedules maintenance during low-demand periods to minimize disruption
+    - Reduces unplanned downtime 30-40%
     
-    **To Management:**
-    - **Dashboards**: Real-time operations overview
-    - **KPI reports**: Productivity, utilisation, delays
-    - **Alert notifications**: Equipment failures, delays, exceptions
-    - **Historical analytics**: Trends, patterns, improvement opportunities
+    **Real-Time Optimization:**
     
-    **To External Stakeholders:**
-    - **PORTNET**: Vessel status, cargo manifests, berth occupancy
-    - **Shipping Lines**: Container tracking, vessel progress
-    - **Trucking Companies**: Container availability, pickup authorisation
-    - **Customs**: Container movements, inspection coordination
+    **Dynamic Re-Planning:**
+    - When disruptions occur (equipment failure, vessel delay, unexpected cargo), CITOS instantly recalculates plans
+    - Reassigns equipment, adjusts schedules, notifies affected stakeholders
+    - Resilient operations—system adapts without human intervention
+    
+    **What-If Scenario Simulation:**
+    - Planners can test "what if?" scenarios before execution
+    - Example: "What if vessel arrives 2 hours early? Will we have berth available? Enough cranes ready?"
+    - Enables better decision-making under uncertainty
+    
+    **Constraint Satisfaction:**
+    - Balances multiple competing objectives simultaneously
+    - Example: Maximize berth utilization WHILE maintaining >90% BOA WHILE balancing crane workload WHILE 
+      minimizing vessel waiting time
+    - NP-hard optimization problem—CITOS uses heuristics to find near-optimal solutions in seconds
+    
+    **Operational Simulation Integration:**
+    
+    **Digital Twin Capability:**
+    - CITOS maintains real-time virtual model of entire terminal
+    - Simulates operations before execution, identifies bottlenecks
+    - Training environment for operators without disrupting actual operations
+    
+    **Mobile and Cloud Capabilities:**
+    
+    **Field Operations:**
+    - Supervisors use tablets to monitor operations, override automated decisions when needed
+    - Crane operators see next container assignment on in-cab displays
+    - Maintenance teams use mobile apps to log repairs, access equipment history
+    
+    **Cloud Architecture:**
+    - Scalable infrastructure supports growing operations
+    - Disaster recovery (backup systems, redundancy)
+    - Remote monitoring enables PSA HQ to oversee global terminal network
+    
+    **API Integration:**
+    - Shipping lines integrate directly with CITOS via APIs
+    - Real-time container tracking, booking confirmations, vessel schedules
+    - Reduces manual coordination, improves service quality
     """)
-    
-    st.markdown('<p class="subsection-header">CITOS Advanced Features</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **AI and Machine Learning:**
-        - **Predictive berth planning**: Forecast vessel arrival delays
-        - **Yard location optimisation**: Learn from historical patterns
-        - **Equipment scheduling**: ML-optimised crane and AGV deployment
-        - **Maintenance prediction**: IoT data predicts equipment failures
-        
-        **Real-Time Optimisation:**
-        - **Dynamic re-planning**: Adjust plans as situations change
-        - **What-if scenarios**: Simulate impact of changes before implementing
-        - **Constraint satisfaction**: Balance multiple competing objectives
-        - **Emergency response**: Rapid replanning during disruptions
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Operational Simulation Integration:**
-        - **Virtual terminal model**: Real-time operational replica
-        - **Simulation capability**: Test changes before implementation
-        - **Training environment**: Train operators without disrupting operations
-        - **Optimisation testing**: Evaluate improvement scenarios
-        
-        **Mobile and Cloud:**
-        - **Mobile apps**: Supervisors monitor operations on tablets
-        - **Cloud deployment**: Scalable infrastructure
-        - **APIs**: Integration with customer systems
-        - **Analytics platform**: Big data processing for insights
-        """)
     
     st.markdown("""
     <div class="success-box">
-    <strong>💡 CITOS Competitive Advantage:</strong><br><br>
-    CITOS gives PSA several strategic advantages:<br><br>
-    1. <strong>Operational Excellence</strong>: Optimised operations → higher productivity, lower costs<br>
-    2. <strong>Rapid Innovation</strong>: PSA controls development → can implement new features quickly<br>
-    3. <strong>Vendor Independence</strong>: Not dependent on external TOS vendors<br>
-    4. <strong>Global Deployment</strong>: Standard platform across PSA terminals worldwide<br>
-    5. <strong>Data Advantage</strong>: Decades of operational data improve AI algorithms<br>
-    6. <strong>Customer Integration</strong>: Deep APIs allow shipping lines to integrate directly<br><br>
-    World-class terminals like Singapore consistently achieve:<br>
-    - <strong>BOA >90%</strong> (berth on arrival)<br>
-    - <strong>35+ GMPH</strong> (gross moves per hour per crane)<br>
-    - <strong><3 minute</strong> average gate transaction time<br>
-    - <strong><24 hour</strong> mega vessel turnaround<br><br>
-    CITOS is a critical enabler of this performance.
+    <strong>💡 CITOS Competitive Advantage - Why It Matters:</strong><br><br>
+    CITOS enables PSA to consistently achieve <strong>world-class performance benchmarks</strong>:<br><br>
+    <strong>1. Berth On Arrival >90%</strong>: Vessels berth immediately without anchorage wait (industry average: 
+    70-80%). Optimized berth planning ensures slot availability when vessels arrive.<br><br>
+    <strong>2. Crane Productivity 35-40 GMPH</strong>: Gross Moves Per Hour per crane (industry average: 25-30 GMPH). 
+    Optimized crane work sequences, perfect PM/AGV coordination, minimal waiting time.<br><br>
+    <strong>3. Gate Transaction <3 minutes</strong>: Average truck processing time (industry average: 5-8 minutes). 
+    Automated OCR + CITOS validation eliminates manual documentation.<br><br>
+    <strong>4. Vessel Turnaround <24 hours</strong>: For 2,000-move mega vessels (industry average: 30-36 hours). 
+    Optimized operations across all modules enable fast, reliable service.<br><br>
+    <strong>These benchmarks are not accidental</strong>—they result from 40+ years of CITOS development, continuous 
+    refinement using operational data from world's busiest port, and PSA's unwavering commitment to operational 
+    excellence. Competitors using commercial TOS products struggle to match this performance.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 8: Key Takeaways
+    # SECTION 6: Key Takeaways
     # ============================================================================
     
-    st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Key Takeaways: Equipment, Automation & CITOS</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Quay-Side Equipment:**
-        - Ship-to-Shore (STS) cranes: $10-18M each
-        - 60-80m outreach for mega vessels
-        - Target: 35-40 GMPH productivity
-        - Triple hoist technology for efficiency
+        **Quay Cranes (Ship-to-Shore):**
+        - H-shaped design now standard (vs A-shaped legacy cranes)
+        - Super post-Panamax: 65-80m outreach, US&#36;13-18M each
+        - Double trolley + triple spreader = 35-40 GMPH productivity
+        - Critical investment: 8-12 cranes @ US&#36;15M = US&#36;120-180M per terminal
         
-        **Yard Equipment:**
-        - RTG: Flexible, diesel, $2-3M
-        - RMG: Electric, fixed, $3-5M
-        - ARMG: Fully automated, $5-8M
-        - Higher automation = higher stacking, productivity
+        **Yard Equipment Evolution:**
+        - RTG: Flexible, US&#36;2-3M, 1-over-6 stacking
+        - RMG: Electric, US&#36;3-5M, 1-over-8 stacking
+        - ARMG: Automated, US&#36;5-8M, 1-over-11 stacking, zero operators
+        - Automation enables 70-80% labor reduction, 24/7 operations
         
         **Horizontal Transport:**
-        - Prime Movers: Traditional, $100-150K
-        - AGVs: Automated, $300-500K + infrastructure
-        - AGVs: 70-80% labour reduction, 24/7 operations
-        - Pooling strategy reduces fleet size 30-40%
+        - Prime Movers: US&#36;100-150K, human drivers, flexible
+        - AGVs: US&#36;300-500K, automated, 75-85% utilization
+        - AGV economics: Higher capital but 64% lower operating costs
+        - Tuas: 600 AGVs enabling US&#36;420M labor savings over 30 years
         """)
     
     with col2:
         st.markdown("""
-        **Gate Automation:**
-        - OCR + GOS: 10x faster than manual
-        - Truck Appointment System eliminates queues
-        - <1 minute transaction time achievable
+        **Automation Levels Framework:**
+        - Level 1 (Conventional): Manual operations, 100% labor baseline
+        - Level 2 (Semi-Auto): Remote operation, 20-30% labor reduction
+        - Level 3 (Highly Auto): AGVs + some ARMG, 50-60% reduction
+        - Level 4 (Fully Auto): Complete automation, 70-80% reduction
+        - Capital: US&#36;150M (L1) → US&#36;500M-1B (L4) per berth
         
-        **Automation Levels:**
-        - Level 1: Conventional (baseline)
-        - Level 2: Semi-automated (20-30% reduction)
-        - Level 3: Highly automated (50-60% reduction)
-        - Level 4: Fully automated (70-80% reduction)
+        **PSA CITOS System:**
+        - Proprietary TOS, 40+ years continuous development
+        - 10 core modules: Berth, Vessel, Yard, Resource, Equipment, PM/AGV, Gate, EDI, Analytics, Mobile
+        - AI/ML: Predictive berth planning, yard optimization, maintenance forecasting
+        - Competitive advantage: In-house control, rapid innovation, global deployment
+        - Enables >90% BOA, 35-40 GMPH, <24h turnaround
         
-        **PSA CITOS:**
-        - Proprietary TOS developed in-house
-        - 40+ years of continuous evolution
-        - Deployed globally across PSA terminals
-        - AI/ML, operational simulation, real-time optimisation
-        - Competitive advantage for PSA
+        **Strategic Investment Decision:**
+        - Automation ROI: 5-10 year payback in high-wage countries
+        - Greenfield preferred (retrofit expensive)
+        - Scale matters: 2M+ TEU/year justifies automation
+        - Government support critical for strategic hubs
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Modern container terminals use sophisticated equipment ranging from 
-    $10M+ quay cranes to $500K AGVs. Automation levels vary from conventional manual operations to fully 
-    automated "lights-out" terminals that achieve 70-80% labour reduction and 24/7 consistent productivity. 
-    PSA's CITOS terminal operating system coordinates all equipment and operations, using AI/ML and 
-    real-time optimisation to achieve world-class performance (>90% BOA, 35+ GMPH, <24h vessel turnaround). 
-    The choice to automate involves major capital investment ($500M-1B+) but delivers long-term operational 
-    advantages, especially in high-labour-cost environments.
+    <strong>🔍 Bottom Line:</strong> Modern container terminals deploy sophisticated equipment ranging from <strong>US&#36;10-18M 
+    quay cranes</strong> (H-shaped, double trolley, 65-80m outreach enabling 35-40 GMPH) through <strong>ARMG yard systems</strong> 
+    (automated rail-mounted gantries achieving 1-over-11 stacking with zero operators) to <strong>AGV fleets</strong> (300-500 
+    autonomous vehicles per major terminal delivering 70-80% labor reduction). Terminal <strong>automation levels</strong> range from 
+    conventional manual (Level 1 baseline) through semi-automated (Level 2: 20-30% labor savings) and highly automated (Level 3: 
+    50-60% savings) to fully automated "lights-out" facilities (Level 4: 70-80% savings, 24/7 operations)—with capital costs 
+    escalating from US&#36;150M to US&#36;500M-1B per berth but delivering compelling ROI through labor savings and productivity gains 
+    in high-wage environments. <strong>PSA's CITOS</strong> Terminal Operating System—developed in-house over 40+ years and deployed 
+    globally—coordinates all equipment and operations through 10 integrated modules using AI/ML for predictive analytics and 
+    real-time optimization, enabling world-class performance benchmarks (>90% BOA, 35-40 GMPH, <24h turnaround) that create 
+    sustainable competitive advantage. <strong>Singapore's Tuas Mega Port</strong> exemplifies this integration: 200+ ARMGs, 600 AGVs, 
+    latest super post-Panamax cranes, and advanced CITOS—a US&#36;20 billion investment in operational excellence that positions 
+    Singapore to maintain hub leadership through 2050 despite intensifying regional competition.
     </div>
     """, unsafe_allow_html=True)
     
@@ -977,6 +1098,6 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Next Topic:** 🌱 Green Maritime & Future Trends - Explore decarbonisation initiatives, alternative 
-    fuels, green port technologies, and the future of sustainable maritime operations.
+    **Next Topic:** Continue exploring maritime operations and industry dynamics to complete your comprehensive 
+    understanding of the container shipping ecosystem and terminal operations that enable global trade.
     """)
