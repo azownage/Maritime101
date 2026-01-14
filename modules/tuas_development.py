@@ -3,847 +3,1117 @@ import plotly.graph_objects as go
 import pandas as pd
 
 def show():
-    st.markdown('<p class="main-header">🏗️ Tuas Mega Port Case Study</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">🏗️ Tuas Mega Port: Singapore\'s S&#36;20 Billion Bet</p>', unsafe_allow_html=True)
     
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand Singapore's strategic rationale for building Tuas Mega Port, its design features, 
-    implementation challenges, and whether this massive investment will be sufficient to maintain 
-    Singapore's competitive position in the evolving maritime landscape.
+    Master Singapore's strategic rationale for the S&#36;20+ billion Tuas Mega Port investment—the world's largest 
+    automated container terminal project—understand the five strategic drivers (consolidation efficiency, mega vessel 
+    accommodation, pre-emptive competition response, greenfield automation opportunity, climate resilience), explore 
+    the comprehensive design features (65M TEU capacity, 1,337 hectares, 26.3 km continuous quay, 1,000+ AGVs, 200+ 
+    ARMGs), analyse the four-phase development timeline (2013-2040), comprehend implementation challenges (70-80% labor 
+    reduction, workforce transformation, transport infrastructure, cybersecurity), and evaluate whether this massive 
+    investment will be sufficient to maintain Singapore's hub dominance through scenario analysis.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: Why Tuas? The Strategic Imperative
+    # SECTION 1: The Tuas Announcement and Strategic Context
     # ============================================================================
     
-    st.markdown('<p class="section-header">Why Tuas? The Strategic Imperative</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">The Tuas Mega Port Announcement: October 2012</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Tuas Mega Port represents Singapore's largest infrastructure project—a S$20+ billion investment 
-    to consolidate and expand container terminal capacity. Understanding **why** Singapore is making 
-    this massive bet is crucial.
+    **Tuas Mega Port was first announced by Singapore's Transport Minister Lui Tuck Yew in October 2012**, marking 
+    the beginning of Singapore's most ambitious infrastructure project. The lecture materials capture the strategic 
+    rationale articulated at that historic announcement.
+    
+    **Minister Lui's Key Statements (October 2012):**
+    
+    The lecture materials quote Transport Minister Lui Tuck Yew explaining the strategic imperatives:
+    
+    **On Land Efficiency:**
+    
+    *"Consolidation at Tuas will also free up prime land, which our City Terminals and Pasir Panjang Terminals are 
+    currently occupying, for re-development."*
+    
+    This reveals a dual benefit: Tuas isn't just about port capacity—it's also about optimal land use. Singapore's 
+    existing terminals (Tanjong Pagar, Keppel, Brani, Pasir Panjang) occupy prime waterfront land near the Central 
+    Business District. Consolidating all operations at Tuas frees up approximately 1,000 hectares of valuable urban 
+    land for residential, commercial, and recreational redevelopment.
+    
+    **On Efficiency and Productivity:**
+    
+    *"Given our land and manpower constraints, we have to strive for even greater efficiency and productivity."*
+    
+    This statement captures Singapore's fundamental challenge: As a small city-state (only 734 km² total area) with 
+    limited workforce (5.8 million population), Singapore cannot compete through scale or low costs. The only path 
+    forward is **operational excellence through technology and efficiency**—which requires greenfield investment like 
+    Tuas to implement cutting-edge automation from the ground up.
+    
+    **On Technology and Innovation:**
+    
+    The lecture materials note that **"MPA and PSA had jointly launched the Port Technology R&D Program in April 2011"**—
+    18 months *before* the Tuas announcement. This program was "studying automated container port systems, optimization 
+    techniques and technologies, and green port technologies, among others."
+    
+    Minister Lui stated: *"We will be able to deploy some of the outcomes of these projects at Tuas Port."*
+    
+    This reveals Singapore's methodical approach: Research and develop automation technologies first (2011-2012), 
+    *then* announce the mega port where these innovations will be deployed. Tuas wasn't a spontaneous decision—it 
+    was the culmination of years of strategic planning and technology development.
     """)
     
+    # Key metrics display
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("Investment", "S$20B+", help="Total investment over multiple phases")
+        st.metric("Total Investment", "S&#36;20B+", help="Total capital investment across all phases")
     with col2:
-        st.metric("Target Capacity", "65M TEU", help="Annual capacity when fully completed by 2040")
+        st.metric("Ultimate Capacity", "65M TEU", help="Annual capacity when fully completed (~2040)")
     with col3:
-        st.metric("Current Capacity", "37.3M TEU", help="Singapore's current throughput (2023)")
+        st.metric("Land Area", "1,337 ha", help="Equivalent to ~2,000 football fields")
     with col4:
-        st.metric("Growth Headroom", "+74%", help="Capacity increase from current levels")
-    
-    st.markdown('<p class="subsection-header">The Five Strategic Drivers</p>', unsafe_allow_html=True)
+        st.metric("Quay Length", "26.3 km", help="Longest continuous berth in the world")
     
     st.markdown("""
-    **1. Consolidation for Efficiency Gains**
-    
-    **Current Problem:**
-    - Container operations spread across **multiple terminals**: Tanjong Pagar, Keppel, Brani, Pasir Panjang
-    - **Fragmentation** reduces operational efficiency
-    - Vessels may need to call at multiple terminals to discharge/load all cargo
-    - **Inter-terminal transfers** add cost and time
-    - Difficult to optimise resources across separate facilities
-    
-    **Tuas Solution:**
-    - **Single mega port** consolidates all container operations
-    - **Continuous quay wall**: Vessels can berth anywhere along 26+ km of berth
-    - **Integrated operations**: Optimise cranes, yard space, labour across entire port
-    - **Eliminate inter-terminal transfers**: All cargo in one location
-    - **Economies of scale**: Shared infrastructure, centralised control
-    
-    **Expected Benefits:**
-    - 20-30% improvement in operational efficiency
-    - Lower cost per TEU handled
-    - Faster vessel turnaround times
-    - Better resource utilisation
-    """)
-    
-    st.markdown("""
-    **2. Attract and Accommodate Mega Alliances and ULCV**
-    
-    **The Challenge:**
-    - Mega alliances (2M, Ocean Alliance, THE Alliance) control 83% of global volumes
-    - Ultra Large Container Vessels (ULCV) now exceed 24,000 TEU capacity
-    - These vessels require:
-      - **Deep berths**: 16-18 metre draft
-      - **Long berths**: 400+ metre LOA
-      - **Super-sized cranes**: 65-80 metre outreach, 24 containers across
-      - **High productivity**: 8-12 cranes working simultaneously
-      - **Fast turnaround**: <24-36 hours port stay
-    
-    **Existing Limitations:**
-    - Some older terminals cannot accommodate latest mega vessels
-    - Berth depth limitations in some areas
-    - Crane coverage gaps
-    - Congestion during peak periods
-    
-    **Tuas Advantage:**
-    - **Purpose-built for mega vessels**: 16+ metre depth, long berths
-    - **Latest crane technology**: Super-post-Panamax cranes with 65+ metre outreach
-    - **Dedicated alliance terminals**: Customised facilities for major alliances
-    - **Ample capacity**: Room for 8-12 cranes per vessel without congestion
-    
-    **Strategic Importance:**
-    - Lock in long-term commitments from mega alliances
-    - Prevent alliances from shifting to competing ports
-    - Maintain hub status as vessel sizes continue growing
-    """)
-    
-    st.markdown("""
-    **3. Pre-emptive Response to Regional Competition**
-    
-    **Competitive Threats:**
-    - **Malaysia**: Carey Island, Melaka Gateway (strategic Malacca Strait locations)
-    - **Indonesia**: Tanjung Priok expansion (serving massive domestic market)
-    - **Thailand**: Proposed Kra Canal (would bypass Singapore entirely)
-    - **Vietnam**: Cai Mep expansion (riding on Vietnamese economic growth)
-    
-    **The "Build It Before They Do" Logic:**
-    - If Singapore waits, competitors build first and capture volumes
-    - Large infrastructure takes 10-15 years from planning to operation
-    - **First-mover advantage**: Lock in shipping line commitments early
-    - **Scale advantages**: Largest, most efficient hub is hardest to displace
-    
-    **Tuas as Competitive Moat:**
-    - **65M TEU capacity**: Nearly double any single competitor
-    - **Technology leadership**: Most automated, efficient port in region
-    - **Long-term contracts**: Shipping lines sign 20-30 year terminal leases
-    - **Switching costs**: Once committed to Tuas, expensive to switch to competitor
-    
-    **The Calculation:**
-    - Better to build and have excess capacity than lose market share to competitors
-    - Excess capacity provides **flexibility** and **bargaining power**
-    - Can offer competitive pricing when needed (marginal cost is low)
-    """)
-    
-    st.markdown("""
-    **4. Enable Next-Generation Technology and Automation**
-    
-    **Brownfield Constraints:**
-    - **Existing terminals** difficult to retrofit with automation
-    - Layout not optimised for AGVs, ARMG
-    - Gradual automation creates complexity (mixed manual/automated operations)
-    - Infrastructure not designed for current technology
-    
-    **Greenfield Opportunity (Tuas):**
-    - **Design from scratch** for full automation
-    - Purpose-built for AGVs, ARMG, automated systems
-    - Optimal layout for efficiency
-    - Latest technology integrated from day one
-    - No legacy constraints
-    
-    **Technology Features:**
-    - **Automated Guided Vehicles (AGVs)**: Battery-electric, zero emissions
-    - **Automated RMG (ARMG)**: Fully automated yard cranes, 24/7 operations
-    - **Advanced TOS**: AI-powered CITOS with operational simulation
-    - **Predictive analytics**: Optimise operations in real-time
-    - **Remote control centres**: Centralised monitoring and management
-    
-    **Competitive Advantage:**
-    - 30-40% higher productivity than conventional terminals
-    - 70-80% reduction in labour costs
-    - 24/7 consistent operations
-    - Lower long-term operating costs despite higher upfront investment
-    """)
-    
-    st.markdown("""
-    **5. Green and Climate-Resilient Design**
-    
-    **Climate Imperatives:**
-    - **Sea level rise**: Projected 0.5-1.0 metre by 2100 (some models higher)
-    - **Extreme weather**: More intense storms, heavier rainfall
-    - **Decarbonisation**: Need to meet IMO 2050 net-zero targets
-    
-    **Tuas Green Features:**
-    
-    **Climate Resilience:**
-    - **Built 5 metres above mean sea level**: Protects against century-long sea level rise projections
-    - **Reinforced structures**: Designed for more extreme weather
-    - **Enhanced drainage**: Handle increased rainfall intensity
-    
-    **Zero Emissions Operations:**
-    - **Fully electrified quay cranes**: No diesel generators, powered by grid
-    - **Battery-electric AGVs**: Zero direct emissions, renewable energy charging
-    - **Shore power**: Vessels plug into grid electricity at berth
-    - **Solar panels**: Extensive solar canopies throughout terminal (one of world's largest solar ports)
-    
-    **Sustainable Design:**
-    - **Energy-efficient buildings**: LED lighting, smart HVAC
-    - **Waste circularity**: Recycle and reuse construction and operational waste
-    - **Green spaces**: Biodiversity preservation where possible
-    - **Sustainable reclamation**: Use of incineration ash and dredged material
-    
-    **Strategic Value:**
-    - **Future-proof**: Won't need expensive retrofitting for climate adaptation
-    - **Regulatory compliance**: Meets future environmental regulations
-    - **Customer demand**: Shipping lines increasingly demand green ports
-    - **Brand value**: Positions Singapore as sustainability leader
-    """)
-    
-    # Strategic drivers visualization
-    drivers_importance = pd.DataFrame({
-        'Driver': [
-            'Consolidation\nEfficiency',
-            'Accommodate\nMega Vessels',
-            'Regional\nCompetition',
-            'Technology\nLeadership',
-            'Climate\nResilience'
-        ],
-        'Strategic Importance': [95, 100, 90, 85, 80],
-        'Urgency': [85, 95, 100, 80, 90]
-    })
-    
-    fig = go.Figure()
-    
-    fig.add_trace(go.Bar(
-        name='Strategic Importance',
-        x=drivers_importance['Driver'],
-        y=drivers_importance['Strategic Importance'],
-        marker_color='#3B82F6'
-    ))
-    
-    fig.add_trace(go.Bar(
-        name='Urgency',
-        x=drivers_importance['Driver'],
-        y=drivers_importance['Urgency'],
-        marker_color='#10B981'
-    ))
-    
-    fig.update_layout(
-        title={
-            'text': 'Tuas Strategic Drivers: Importance vs Urgency',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        yaxis_title="Score (0-100)",
-        barmode='group',
-        height=450,
-        plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB', range=[0, 110])
-    )
-    
-    st.plotly_chart(fig, width='stretch')
-    
-    # ============================================================================
-    # SECTION 2: Tuas Design and Features
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Tuas Mega Port: Design and Features</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Tuas is not just bigger—it's fundamentally different in design philosophy and operational approach.
-    """)
-    
-    st.markdown('<p class="subsection-header">Scale and Capacity</p>', unsafe_allow_html=True)
-    
-    # Tuas specifications
-    tuas_specs = pd.DataFrame({
-        'Specification': [
-            'Total Land Area',
-            'Reclaimed Land',
-            'Quay Length',
-            'Number of Berths',
-            'Water Depth',
-            'Annual Capacity (Phase 1)',
-            'Ultimate Capacity (2040)',
-            'Quay Cranes',
-            'Yard Cranes',
-            'AGVs',
-            'Total Investment'
-        ],
-        'Value': [
-            '1,337 hectares (13.4 km²)',
-            '~800 hectares of new land',
-            '26+ kilometres continuous',
-            '60+ berths',
-            '16-20 metres (accommodate mega vessels)',
-            '20-30M TEU (Phases 1-2)',
-            '65M TEU (fully completed)',
-            '200+ super-post-Panamax cranes',
-            'Hundreds of ARMG',
-            '1,000+ battery-electric AGVs',
-            'S$20+ billion'
-        ],
-        'Comparison': [
-            'Equivalent to ~2,000 football fields',
-            'Largest reclamation project in Singapore',
-            'Longest continuous quay wall globally',
-            'More than entire Singapore currently has',
-            'Deepest in region',
-            'More than many countries\' total throughput',
-            'Nearly 2x current Singapore throughput',
-            'Most advanced crane fleet worldwide',
-            'Fully automated yard operations',
-            'Largest AGV fleet globally',
-            'Singapore\'s largest infrastructure project'
-        ]
-    })
-    
-    st.dataframe(tuas_specs, width='stretch', hide_index=True)
-    
-    st.markdown('<p class="subsection-header">Phased Development Approach</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Why Phased?**
-    - Spread investment over time (manage cash flow)
-    - Learn from each phase (continuous improvement)
-    - Flexibility to adjust to demand (if growth slower/faster than expected)
-    - Gradual transition from existing terminals (minimise disruption)
-    
-    **Development Phases:**
-    """)
-    
-    # Phases timeline
-    phases_timeline = pd.DataFrame({
-        'Phase': ['Phase 1', 'Phase 2A', 'Phase 2B', 'Phase 3', 'Phase 4'],
-        'Timeline': ['2021-2027', '2027-2032', '2032-2037', '2037-2040', '2040+'],
-        'Capacity Added (M TEU)': [8, 12, 15, 15, 15],
-        'Key Features': [
-            'First automated terminal, foundation infrastructure, pilot operations',
-            'Scale up automation, additional berths, expand yard',
-            'Continue expansion, refine operations, full automation',
-            'Near completion, maximise productivity',
-            'Final capacity, potential future expansion'
-        ],
-        'Status': [
-            'Under construction',
-            'Planning/early works',
-            'Planned',
-            'Planned',
-            'Planned'
-        ]
-    })
-    
-    st.dataframe(phases_timeline, width='stretch', hide_index=True)
-    
-    # Capacity growth visualization
-    years = [2020, 2027, 2032, 2037, 2040, 2050]
-    capacity = [37, 45, 57, 72, 65, 65]  # Note: 2037-2040 adjustment for ultimate 65M
-    
-    fig = go.Figure()
-    
-    fig.add_trace(go.Scatter(
-        x=years,
-        y=capacity,
-        mode='lines+markers',
-        line=dict(color='#3B82F6', width=4),
-        marker=dict(size=14, color='#2563EB', line=dict(color='white', width=2)),
-        fill='tozeroy',
-        fillcolor='rgba(59, 130, 246, 0.2)',
-        name='Capacity',
-        text=[f"{val}M TEU" for val in capacity],
-        textposition='top center'
-    ))
-    
-    fig.update_layout(
-        title={
-            'text': 'Singapore Port Capacity Growth: Current → Tuas Fully Operational',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        xaxis_title="Year",
-        yaxis_title="Annual Capacity (Million TEU)",
-        height=450,
-        plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB', range=[0, 80]),
-        xaxis=dict(gridcolor='#E5E7EB')
-    )
-    
-    st.plotly_chart(fig, width='stretch')
-    
-    st.markdown('<p class="subsection-header">Technology and Automation</p>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **Quay-Side Operations:**
-        - **Next-gen quay cranes**: 65-80m outreach, fully electric
-        - **Automated landing**: Spreaders auto-position on containers
-        - **Remote monitoring**: Centralised control room
-        - **Predictive maintenance**: IoT sensors monitor health
-        - **Triple hoist**: Maximum productivity
-        
-        **Horizontal Transport:**
-        - **1,000+ AGVs**: Largest fleet globally
-        - **Battery-electric**: Zero emissions, fast charging
-        - **Dynamic routing**: AI optimises paths in real-time
-        - **Collision avoidance**: Sensors prevent accidents
-        - **24/7 operations**: No breaks, consistent performance
-        """)
-    
-    with col2:
-        st.markdown("""
-        **Yard Operations:**
-        - **Fully automated ARMG**: No operators in yard
-        - **10+ tier stacking**: Higher density than manual
-        - **Computer-optimised**: Minimise re-handles
-        - **Remote monitoring**: Central control
-        - **Predictive algorithms**: Optimal container placement
-        
-        **IT Systems:**
-        - **Advanced CITOS**: Next-generation TOS
-        - **Operational simulation**: Virtual simulation capability
-        - **AI and ML**: Continuous optimisation
-        - **Real-time visibility**: Track every container
-        - **Integrated with digitalOCEANS**: Platform connectivity
-        """)
-    
-    st.markdown("""
-    <div class="success-box">
-    <strong>💡 The Automation Payoff:</strong><br><br>
-    <strong>Productivity Gains:</strong><br>
-    - 30-40% higher crane productivity than conventional terminals<br>
-    - 24/7 consistent operations (no human fatigue)<br>
-    - 50% reduction in vessel turnaround time potential<br>
-    - 70-80% reduction in labour requirements<br><br>
-    <strong>Cost Savings:</strong><br>
-    - Lower long-term operating costs despite higher upfront capital<br>
-    - Payback period: 10-15 years<br>
-    - Competitive pricing capability (low marginal costs)<br><br>
-    <strong>Quality and Safety:</strong><br>
-    - Higher consistency (no human variability)<br>
-    - Fewer accidents (no humans in operations areas)<br>
-    - Better equipment utilisation (optimised by AI)
+    <div class="insight-box">
+    <strong>💡 Understanding the Scale:</strong><br><br>
+    <strong>S&#36;20+ billion</strong> = Singapore's largest infrastructure project ever, exceeding even Changi Airport 
+    Terminal 5 (S&#36;13B) and the entire Circle Line MRT (S&#36;6B). To put in perspective: S&#36;20B could build 
+    ~40 hospitals or ~200 schools.<br><br>
+    <strong>65M TEU capacity</strong> = Nearly 2× Singapore's 2024 throughput (41.12M TEU), enough to handle ~10% 
+    of global container trade if concentrated at one location.<br><br>
+    <strong>1,337 hectares</strong> = Larger than Manhattan's Central Park (341 ha) or Singapore's Sentosa island 
+    (500 ha). This represents ~1.8% of Singapore's entire land area dedicated to a single port.<br><br>
+    <strong>26.3 km quay</strong> = Could berth 60+ mega vessels simultaneously end-to-end. Equivalent to driving 
+    from Singapore's east coast to west coast.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 3: Implementation Challenges
+    # SECTION 2: The Five Strategic Drivers for Tuas Investment
     # ============================================================================
     
-    st.markdown('<p class="section-header">Implementation Challenges: Not Easy</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Why Build Tuas? The Five Strategic Drivers</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Building and operating Tuas Mega Port presents significant challenges that Singapore must navigate.
+    Singapore's decision to invest S&#36;20+ billion in Tuas is driven by five interconnected strategic imperatives. 
+    Understanding these drivers reveals why Singapore views Tuas not as optional but as **existentially necessary** 
+    for maintaining hub competitiveness.
     """)
     
-    st.markdown('<p class="subsection-header">1. Labour Transition and Workforce Impact</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Driver #1: Consolidation for Operational Efficiency</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **The Challenge:**
-    - Automation eliminates 70-80% of traditional port jobs
-    - Thousands of workers affected: crane operators, prime mover drivers, yard crane operators
-    - Social and political sensitivity in employment-focused society
+    **The Current Fragmentation Problem:**
     
-    **Singapore\'s Approach:**
+    Singapore's container operations are currently spread across **four separate terminal locations**:
     
-    **Retraining Programmes:**
-    - **SkillsFuture**: Government-funded reskilling initiatives
-    - **Technical training**: Teach workers to maintain and monitor automated systems
-    - **Career transition support**: Help workers move to other industries
-    - **Early retirement packages**: For workers near retirement age
+    **City Terminals (Tanjong Pagar, Keppel, Brani):**
+    - Located in prime urban areas near CBD
+    - Older infrastructure (developed 1970s-1990s)
+    - Space constraints limit expansion
+    - Total capacity: ~15M TEU combined
     
-    **New Job Creation:**
-    - **Technology roles**: IT specialists, data analysts, automation engineers
-    - **Maintenance technicians**: Service AGVs, cranes, automated systems
-    - **Remote operators**: Monitor and control equipment from central facility
-    - **Planning and optimisation**: Advanced roles requiring higher skills
+    **Pasir Panjang Terminal:**
+    - Southwestern Singapore
+    - More modern (developed 1990s-2000s)
+    - Better infrastructure than City Terminals
+    - Total capacity: ~25M TEU
     
-    **Gradual Transition:**
-    - **Phased automation**: Not overnight, spreads over 20 years
-    - **Natural attrition**: Retirement and voluntary departures reduce need for redundancies
-    - **Parallel operations**: Existing terminals continue whilst Tuas ramps up
+    **The Inefficiency Costs:**
     
-    **Remaining Challenge:**
-    - Not all workers can be retrained (age, aptitude, willingness)
-    - Some job displacement inevitable
-    - Requires continued government support and social safety net
+    **Inter-Terminal Vessel Calls:**
+    - Some mega vessels must call at multiple terminals to discharge/load complete cargo
+    - Extra sailing time between terminals wastes 2-4 hours per vessel
+    - Additional pilotage, tugboat usage increases operational costs
+    - Coordination complexity—different terminals, different systems, different schedules
+    
+    **Inter-Terminal Container Transfers:**
+    - Transshipment containers sometimes need transfer between terminals
+    - Requires trucks or barges to move containers across Singapore
+    - Adds 4-8 hours to transshipment dwell time (undermines "tight connection" advantage)
+    - Extra handling increases damage risk, operational costs
+    
+    **Resource Optimization Challenges:**
+    - Cannot share cranes, yard equipment, AGVs across terminals
+    - Workforce scheduling more complex (can't dynamically shift labor to where needed)
+    - Equipment utilization suffers (one terminal overloaded, another underutilized)
+    - Redundant administrative functions (each terminal needs full support staff)
+    
+    **The Tuas Consolidation Solution:**
+    
+    **Single Mega Port Benefits:**
+    
+    **Operational Integration:**
+    - **26.3 km continuous quay wall**: Vessels berth anywhere based on optimal positioning
+    - **No inter-terminal calls**: All cargo discharged/loaded at single location
+    - **No inter-terminal transfers**: Transshipment containers never leave terminal
+    - **Unified operations**: Single CITOS system optimizes across entire port
+    
+    **Resource Sharing and Optimization:**
+    - **Equipment mobility**: Cranes, AGVs, ARMGs can be deployed wherever needed dynamically
+    - **Workforce flexibility**: Operators move between berths based on demand (no terminal boundaries)
+    - **Integrated yard**: Optimal storage location selection across entire 1,337 hectare yard
+    - **Centralized functions**: Single administration, maintenance, control eliminates redundancy
+    
+    **Expected Efficiency Gains:**
+    
+    **Quantified Benefits:**
+    - **20-30% improvement in operational efficiency** vs fragmented operations
+    - **Vessel turnaround time**: Target <24 hours for mega vessels (vs 30-36 hours at fragmented terminals)
+    - **Cost per TEU**: 15-20% reduction through economies of scale
+    - **Equipment utilization**: 80-85% vs 65-75% at fragmented terminals (higher asset productivity)
+    
+    **The lecture materials emphasized**: "Consolidation at Tuas will free up prime land" for redevelopment. This 
+    creates a **win-win**: More efficient port operations *plus* valuable urban land released for housing, offices, 
+    parks. The economic value of freed land (estimated S&#36;30-50 billion over decades) partially offsets Tuas 
+    investment costs.
     """)
     
-    st.markdown('<p class="subsection-header">2. Foreign Worker Dependency</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Driver #2: Accommodate Mega Vessels and Ultra Large Container Vessels (ULCV)</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Current Situation:**
-    - Singapore\'s port operations rely significantly on foreign workers
-    - Lower-skilled positions filled by workers from Malaysia, Bangladesh, India, China
-    - Automation reduces need for foreign workers
+    **The Mega Vessel Challenge:**
+    
+    Container vessels have grown from 8,000 TEU (2000s) to 24,000 TEU (today), with potential for 30,000+ TEU vessels. 
+    These Ultra Large Container Vessels (ULCVs) impose demanding infrastructure requirements that many existing ports 
+    cannot meet.
+    
+    **ULCV Infrastructure Requirements:**
+    
+    **Physical Specifications:**
+    - **Length (LOA)**: 400 meters (longer than four football fields)
+    - **Width (Beam)**: 60-62 meters (spans 24 containers wide)
+    - **Draft**: 16-18 meters when fully laden (requires deep berths and channel)
+    - **Height**: 70+ meters above water (clearance under bridges, overhead power lines)
+    
+    **Operational Requirements:**
+    - **Deep berth**: Minimum 16-18 meters water depth (many existing ports only 12-14m)
+    - **Super post-Panamax cranes**: 65-80 meter outreach to reach 24 containers across
+    - **Crane intensity**: 8-12 quay cranes working simultaneously for fast turnaround
+    - **Fast productivity**: 35-40 GMPH per crane to complete 3,000-4,000 moves in 24-36 hours
+    - **Massive yard capacity**: Space to temporarily store 2,000-3,000 containers per mega vessel call
+    
+    **Existing Singapore Terminal Limitations:**
+    
+    **City Terminals (Tanjong Pagar, Keppel, Brani):**
+    - Built 1970s-1990s for much smaller vessels (6,000-8,000 TEU)
+    - Berth depth: 13-15 meters (insufficient for fully-laden 24,000 TEU mega vessels)
+    - Older cranes: 45-55 meter outreach (cannot reach 24 containers across vessel)
+    - Space constrained: Cannot add more cranes or expand yard
+    - **Result**: Cannot efficiently serve latest mega vessels
+    
+    **Pasir Panjang:**
+    - More modern but still designed for 12,000-18,000 TEU vessels
+    - Some berths adequate depth but not all
+    - Mix of older and newer cranes creates operational inconsistency
+    - Can serve mega vessels but not optimally
+    
+    **The Tuas Mega Vessel Solution:**
+    
+    **Purpose-Built for ULCVs:**
+    
+    The lecture materials specify Tuas design parameters:
+    - **23 meters berth depth**: Can accommodate any vessel today and future 30,000+ TEU vessels
+    - **66 berths × 400m average** = enough for 60+ mega vessels simultaneously
+    - **200+ super post-Panamax cranes**: All with 65-80m outreach (serves 24 containers across)
+    - **Standardized infrastructure**: Every berth can handle any mega vessel (no "second-tier" berths)
+    
+    **Operational Advantages:**
+    
+    **Flexibility and Reliability:**
+    - **Any vessel, any berth**: No need to pre-assign specific vessels to specific berths based on limitations
+    - **Ample crane coverage**: 3-4 cranes per berth ensures sufficient intensity for fast turnaround
+    - **Deep draft assurance**: Vessels never need to "light ship" (partial unload offshore due to draft limits)
+    - **Future-proof**: Can accommodate vessel growth to 30,000+ TEU without infrastructure changes
+    
+    **Competitive Implications:**
+    
+    **Strategic Lock-In:**
+    - Shipping alliances make **20-30 year terminal commitments** based on infrastructure capability
+    - Tuas ensures Singapore can meet mega alliance needs through 2050 and beyond
+    - Competitors without mega vessel infrastructure lose alliance business to Singapore
+    - **First-mover advantage**: Lock in alliances before competitors build comparable facilities
+    
+    **The lecture materials emphasize**: Tuas infrastructure is **"essential for transshipment"** given "increasing 
+    numbers of ultra-large container ships." Without Tuas, Singapore risks losing mega alliance calls to competing 
+    ports that invest in mega vessel infrastructure first.
+    """)
+    
+    st.markdown('<p class="subsection-header">Driver #3: Pre-emptive Response to Regional Competition</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **The Competitive Landscape:**
+    
+    Singapore faces intensifying competition from regional ports, all seeking to capture transshipment volumes from 
+    the world's premier hub. The "build it before they do" strategic logic drives Tuas timing.
+    
+    **Key Regional Competitors:**
+    
+    **Malaysia (Multiple Threats):**
+    - **Port Klang**: Malaysia's main port, already handling 13M+ TEU, aggressive expansion plans
+    - **Tanjung Pelepas (PTP)**: Southern Malaysia, modern terminal operated by PSA competitor, efficient operations
+    - **Carey Island**: Proposed mega port near Malacca Strait chokepoint (strategic location)
+    - **Melaka Gateway**: Mixed-use development with port component, Chinese funding, aggressive government backing
+    - **East Coast Rail Link**: Connecting east and west Malaysia, improves Port Klang's hinterland connectivity
+    
+    **Indonesia:**
+    - **Tanjung Priok (Jakarta)**: Major expansion targeting 18M TEU (currently ~8M)
+    - **Massive domestic market**: 280 million population provides captive cargo base
+    - **Government priority**: Indonesia determined to reduce dependence on Singapore for transshipment
+    
+    **Thailand:**
+    - **Laem Chabang**: Near Bangkok, expanding capacity, benefits from Thai economic growth
+    - **Kra Canal (proposed)**: Southern Thailand canal linking Andaman Sea to South China Sea—existential threat 
+      if built (would bypass Singapore entirely, save 2-3 days and 1,200 km on Asia-Europe routes)
+    
+    **Vietnam:**
+    - **Cai Mep**: Near Ho Chi Minh City, modern deep-water terminal, growing rapidly
+    - **Economic boom**: Vietnam's export-driven growth provides strong cargo base
+    - **Lower costs**: Labor and land costs 40-50% below Singapore
+    
+    **The "Build It Before They Do" Strategic Logic:**
+    
+    **Infrastructure Timing Dynamics:**
+    
+    **Development Timeline:**
+    - Major port infrastructure requires **10-15 years** from initial planning to full operations
+    - Large-scale land reclamation: 5-7 years
+    - Infrastructure construction: 3-5 years
+    - Equipment procurement and installation: 2-3 years
+    - Testing, commissioning, ramp-up: 1-2 years
+    
+    **First-Mover Advantages:**
+    
+    **Shipping Line Lock-In:**
+    - Alliances need terminal capacity commitments **years in advance** for route planning
+    - Once alliance signs 20-30 year terminal lease at Tuas, **locked in to Singapore**
+    - Very difficult to shift after committing (massive switching costs, network reconfiguration)
+    - **Singapore's goal**: Sign up alliances to Tuas terminals **before** competitors' new capacity comes online
+    
+    **Network Effects:**
+    - Largest hub attracts most shipping lines → most connections → attracts even more lines
+    - **Self-reinforcing cycle**: Early capacity leader becomes long-term dominant hub
+    - Competitors struggle to achieve critical mass once Singapore establishes Tuas leadership
+    
+    **Cost Structure Advantages:**
+    
+    **Economies of Scale:**
+    - **65M TEU capacity** provides unit cost advantages no competitor can match at smaller scale
+    - Fixed costs (infrastructure, systems, administration) spread across massive throughput
+    - **15-20% lower cost per TEU** than competitors operating at 10-20M TEU scale
+    - Enables competitive pricing while maintaining profitability
+    
+    **Excess Capacity as Competitive Weapon:**
+    - Tuas 65M TEU vs Singapore's current 41M = **24M TEU spare capacity**
+    - Can offer **aggressive pricing** to secure alliance commitments (marginal cost is low when capacity unused)
+    - Competitors cannot match pricing if operating near capacity (high marginal costs)
+    - **Strategic flexibility**: Spare capacity = bargaining power
+    
+    **The Calculation:**
+    
+    **Scenario A—Singapore Builds Tuas First (Actual Strategy):**
+    - 2027: Tuas Phase 1 operational (20M TEU capacity)
+    - 2027-2030: Singapore signs long-term terminal leases with mega alliances
+    - 2030s: Competitors' new capacity comes online but alliances already committed to Singapore
+    - **Result**: Singapore maintains hub dominance through 2040s
+    
+    **Scenario B—Singapore Delays, Competitors Build First (Avoided Scenario):**
+    - 2027-2030: Malaysia's Carey Island, Indonesia's Tanjung Priok expansion operational first
+    - Competitors sign up alliances seeking new capacity
+    - Singapore announces Tuas but alliances already committed elsewhere
+    - 2035: Tuas comes online but alliances locked into competitor terminals until 2050-2060
+    - **Result**: Singapore loses 30-40% market share, Tuas operates at 50-60% utilization
+    
+    **The lecture materials' emphasis**: "Given our land and manpower constraints, we have to strive for even greater 
+    efficiency and productivity" reflects Singapore's understanding that **delaying Tuas means losing competitiveness** 
+    to lower-cost regional competitors with government backing and abundant land.
+    
+    **Better to build Tuas and have excess capacity than delay and lose market share permanently to competitors.** 
+    Port infrastructure competition is about strategic positioning, not demand forecasting.
+    """)
+    
+    st.markdown('<p class="subsection-header">Driver #4: Greenfield Opportunity for Complete Automation</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **The Automation Imperative:**
+    
+    Singapore faces a fundamental constraint: **high labor costs** (PM drivers earn US&#36;40-60K/year vs US&#36;15-25K 
+    in regional competitors) and **manpower shortages** (aging population, foreign worker restrictions). The only 
+    sustainable path is radical automation—reducing labor requirements by 70-80%.
+    
+    **Why Existing Terminals Cannot Be Fully Automated:**
+    
+    **Retrofit Challenges:**
+    
+    **Physical Infrastructure Incompatible:**
+    - Existing terminals designed for prime movers (wide roads, right-angle intersections)
+    - AGVs require **magnetic strips embedded in pavement** (cannot retrofit without completely tearing up roads)
+    - RTG/RMG yard cranes on wrong layouts for ARMG conversion
+    - Power infrastructure inadequate (AGVs/ARMGs need massive electrical capacity)
+    
+    **Operational Disruption:**
+    - Cannot shut down operating terminal for years of retrofit (would lose shipping line commitments)
+    - **Catch-22**: Need to automate to stay competitive, but automating requires shutting down operations
+    - Gradual automation creates inefficiency (mixed automated and manual operations increase complexity)
+    
+    **Economic Inefficiency:**
+    - **Retrofit costs often exceed greenfield costs** (demolition, work-around existing structures, maintain operations)
+    - Example: Retrofitting one Pasir Panjang terminal phase estimated at S&#36;3-4 billion vs S&#36;2-3 billion greenfield
+    - Shorter remaining useful life (retrofitted terminal still has aging infrastructure components)
+    
+    **The Greenfield Automation Advantage:**
+    
+    **Design for Automation from Day One:**
+    
+    The lecture materials note that Tuas will incorporate the outcomes of the "Port Technology R&D Program" launched 
+    April 2011. This program studied **"automated container port systems, optimization techniques and technologies, 
+    and green port technologies."**
+    
+    **Tuas Automation Design:**
+    
+    **Infrastructure Built for Automation:**
+    - **AGV road network**: Magnetic strips embedded during initial paving, optimal routing paths, charging stations 
+      positioned strategically
+    - **ARMG yard**: Rail systems laid during construction, power distribution designed for full automation, optimal 
+      block dimensions for automated crane operations
+    - **Electrical capacity**: Grid designed for 1,000+ AGVs, 200+ ARMGs, shore power for all berths simultaneously
+    - **Digital infrastructure**: Fiber optic networks, 5G coverage, redundant control systems, cybersecurity architecture
+    
+    **Advanced CITOS Deployment:**
+    - **Next-generation TOS**: AI/ML capabilities designed specifically for fully automated operations
+    - **Digital twin integration**: Real-time virtual model of entire terminal for simulation and optimization
+    - **Predictive maintenance**: IoT sensors on all equipment feeding AI models for failure prediction
+    - **Autonomous decision-making**: System handles routine operations without human intervention
+    
+    **Automation Technologies:**
+    
+    **Equipment Fleet:**
+    - **1,000+ AGVs**: Largest automated guided vehicle fleet globally, battery-electric, zero local emissions
+    - **200+ ARMGs**: Automated rail-mounted gantry cranes achieving 1-over-11 stacking (12 containers high)
+    - **Super post-Panamax quay cranes**: Latest technology with automation-assist features
+    - **Automated gate systems**: OCR, weighbridges, truck appointment system—zero manual processing
+    
+    **Labor Reduction:**
+    - **70-80% reduction vs conventional terminal** (from 3,000-4,000 workers to 600-800)
+    - **Workforce transformation**: Shift from operators to technicians, engineers, data analysts
+    - **Cost savings**: Labor cost reduction of ~S&#36;400-500M over 30-year lifespan
+    
+    **The lecture materials emphasize**: "Advanced technologies are deployed for port operations, planning and 
+    optimization, to handle increasing numbers of ultra-large container ships—**essential for transshipment.**"
+    
+    Furthermore: "Top-notch infrastructure (automated gantry cranes and AGVs, etc.) are **necessary but not sufficient**. 
+    A core of highly skilled workers also needed—to ensure high-tech port operations are **reliable, efficient, safe 
+    and secure, and constantly updated.**"
+    
+    This reveals Singapore's understanding: **Automation isn't about eliminating humans entirely**—it's about 
+    transforming the workforce from manual operators to skilled technicians managing sophisticated automated systems. 
+    Tuas will employ fewer people, but those employed will be highly skilled and well-paid.
+    
+    **Why This Matters Strategically:**
+    
+    **Sustainable Competitiveness:**
+    - Regional competitors can offer lower labor costs today, but Singapore's automation **eliminates labor cost 
+      disadvantage permanently**
+    - Once Tuas operational, Singapore's **cost per TEU matches or beats competitors** despite high wages
+    - **Productivity advantage**: Automated operations achieve 24/7 consistent performance manual operations cannot match
+    - **Scalability**: Can increase throughput without proportional workforce increase
+    
+    **Technology Leadership:**
+    - Tuas positions Singapore as **global leader in automated port operations**
+    - Exportable expertise (PSA can deploy Tuas technologies globally—competitive advantage for Singapore companies)
+    - Attracts maritime technology startups, R&D investment
+    - Reinforces Singapore's "Maritime 4.0" innovation hub positioning
+    """)
+    
+    st.markdown('<p class="subsection-header">Driver #5: Climate Resilience and Environmental Sustainability</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Long-Term Climate Challenge:**
+    
+    Singapore's existing terminals sit at elevations of **+3 to +5 meters above mean sea level**. With climate change 
+    projections showing **1-2 meter sea level rise by 2100** (and potentially more under pessimistic scenarios), 
+    existing terminals face long-term viability concerns.
+    
+    **The Tuas Climate-Resilient Design:**
+    
+    **Elevated Construction:**
+    - Tuas built at **+5 meters or higher** above current mean sea level
+    - Provides protection against 2-3 meter sea level rise (conservative margin)
+    - **100+ year design life** even under adverse climate scenarios
+    - No need for expensive future adaptations (seawalls, pumping systems, terminal raising)
+    
+    **Proactive vs Reactive:**
+    - Building climate resilience into Tuas from start is **cost-effective**
+    - Retrofitting existing terminals for climate adaptation would cost billions
+    - **Insurance value**: Tuas guaranteed operational regardless of sea level rise scenarios
+    
+    **Green Terminal Design:**
+    
+    **Zero Emissions Operations:**
+    - **Electric AGV fleet**: 1,000+ battery-electric vehicles, zero diesel emissions
+    - **Electric ARMG cranes**: Grid-powered, no diesel generators
+    - **Shore power**: All berths equipped for shore power connection (vessels shut down auxiliary engines while berthed)
+    - **Solar generation**: Extensive solar panel deployment on buildings, canopies (target: 40-60MW solar capacity)
+    
+    **Environmental Benefits:**
+    - **80-90% reduction in local air pollutants** (NOx, particulates, SOx) vs conventional terminal
+    - **60-70% reduction in CO2 emissions** (electric equipment vs diesel)
+    - **Zero bunker fuel usage** for terminal equipment (all electric)
+    - Supports Singapore's national climate goals (net-zero by 2050)
+    
+    **Strategic Implications:**
+    
+    **Regulatory Advantage:**
+    - **IMO regulations** increasingly stringent on port emissions
+    - **Green port certifications** becoming prerequisite for many shipping lines
+    - Tuas positions Singapore ahead of regulatory curve (compliance built-in from start)
+    
+    **Marketing Advantage:**
+    - **Corporate sustainability** increasingly important to shipping lines facing stakeholder pressure
+    - Tuas enables shipping lines to **reduce scope 3 emissions** (port calls contribute to corporate carbon footprint)
+    - Competitive differentiation: "Call at green Tuas vs polluting competitor ports"
+    
+    **The Multi-Decade Perspective:**
+    
+    Tuas is designed for **40-50+ year operational life** (2027-2070+). Climate-resilient design ensures Singapore's 
+    port infrastructure remains operational and competitive through:
+    - Sea level rise (protected to +5m or higher)
+    - Stricter environmental regulations (zero emissions ready)
+    - Changing customer demands (green port positioning)
+    - Extreme weather events (robust infrastructure, redundant systems)
+    
+    This forward-thinking design means **Tuas won't require massive climate adaptation investments** that competitors 
+    will face in 2040s-2050s as climate impacts intensify and regulations tighten.
+    """)
+    
+    # ============================================================================
+    # SECTION 3: Tuas Design Features and Specifications
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Tuas Design: World\'s Largest Automated Terminal</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    The lecture materials provide verified specifications for Tuas Mega Port, revealing the extraordinary scale and 
+    sophistication of Singapore's investment.
+    """)
+    
+    st.markdown('<p class="subsection-header">Comprehensive Technical Specifications</p>', unsafe_allow_html=True)
+    
+    # Tuas specifications table
+    tuas_specifications = pd.DataFrame({
+        'Specification': [
+            'Total Land Area',
+            'Reclaimed Land',
+            'Quay Length (Continuous)',
+            'Number of Berths',
+            'Berth Depth',
+            'Annual TEU Capacity (Ultimate)',
+            'Phase 1 Capacity',
+            'Quay Cranes (Total)',
+            'Yard Cranes (ARMGs)',
+            'AGV Fleet Size',
+            'Total Investment',
+            'Development Timeline',
+            'Design Life'
+        ],
+        'Verified Specification': [
+            '1,337 hectares (lecture materials verified)',
+            '~800 hectares of new land from sea reclamation',
+            '26.3 km of wharf (lecture materials verified)',
+            '66 berths (lecture materials verified)',
+            '23 meters (lecture materials verified)',
+            '65 million TEU per year (lecture materials verified)',
+            '20-30M TEU operational by late 2020s',
+            '200+ super post-Panamax cranes',
+            '200+ automated rail-mounted gantry cranes',
+            '1,000+ battery-electric automated guided vehicles',
+            'S&#36;20+ billion across all phases',
+            '4 phases from 2013-2040 (2013-2022, 2016-2028, 2025-2033, 2031-2038)',
+            '40-50+ years (design horizon through 2070-2080)'
+        ],
+        'Global Context / Comparison': [
+            'Equivalent to ~2,000 football fields; ~1.8% of Singapore\'s entire land area',
+            'Largest land reclamation in Singapore history; visible from satellite imagery',
+            'Longest continuous quay wall in the world; entire Singapore coastline ~200 km',
+            'More berths than most countries\' entire port systems; vs Hong Kong total ~24 berths',
+            'Deepest container berths in Asia; accommodates any vessel today or future 30,000 TEU',
+            'Larger than many countries\' GDP; ~10% of global container trade if concentrated',
+            'Exceeds total throughput of ports like Hamburg, Antwerp, Los Angeles individually',
+            'Largest quay crane fleet at single port globally; vs Rotterdam total ~150 cranes',
+            'Most advanced automated yard system; vs Hamburg CTA ~100 ARMGs',
+            'Largest AGV fleet globally; vs Rotterdam ~100 AGVs',
+            'Singapore\'s largest infrastructure investment; vs Changi T5 S&#36;13B, MRT lines S&#36;5-8B',
+            'Longest mega-project timeline in Singapore; spans 4 governments, multiple decades',
+            'Extends beyond typical infrastructure (20-30 years); built for multi-generational use'
+        ]
+    })
+    
+    st.dataframe(tuas_specifications, width='stretch', hide_index=True)
+    
+    st.markdown('<p class="subsection-header">Phased Development Timeline</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    The lecture materials provide the verified phased development timeline with specific reclamation and construction 
+    schedules:
+    
+    **Tuas Development Phases (Lecture Materials Verified):**
+    """)
+    
+    # Phased timeline table
+    development_phases = pd.DataFrame({
+        'Phase': [
+            'Reclamation Phase 1',
+            'Reclamation Phase 2',
+            'Reclamation Phase 3',
+            'Reclamation Phase 4'
+        ],
+        'Reclamation Start': [
+            '2013',
+            '2016',
+            '2025',
+            '2031'
+        ],
+        'Reclamation Finish': [
+            '2022',
+            '2028',
+            '2033',
+            '2038'
+        ],
+        'Terminal Construction & Commissioning': [
+            '2020-2027 (Finger 2 - Phase 1 terminal)',
+            '2025-2032 (Finger 3 - Phase 2 terminal)',
+            '2030-2037 (Finger 4 - Phase 3 terminal)',
+            '2036-2040+ (Finger 1 - Phase 4 terminal, interim industrial use until 2030/2035)'
+        ],
+        'Capacity Added (M TEU)': [
+            '15-20M TEU',
+            '15-20M TEU',
+            '15-20M TEU',
+            '10-15M TEU'
+        ],
+        'Key Milestones & Notes': [
+            'First automated terminal; foundation infrastructure; pilot AGV/ARMG operations; "learning phase"',
+            'Scale up automation; refine processes; additional berths; expand yard capacity',
+            'Continue expansion; operational excellence focus; full automation maturity',
+            'Final capacity completion; Finger 1 used for interim industrial purposes until 2030/2035 per lecture materials'
+        ]
+    })
+    
+    st.dataframe(development_phases, width='stretch', hide_index=True)
+    
+    st.markdown("""
+    **Why Phased Development?**
+    
+    **Strategic Advantages:**
+    
+    **1. Financial Management:**
+    - Spread S&#36;20B investment over 20+ years (manageable cash flow)
+    - Pay from operational revenues as early phases generate income
+    - Avoid massive upfront debt burden
+    
+    **2. Learn and Adapt:**
+    - Phase 1 is the "pilot" for full automation at scale
+    - Learn from operational experience before committing to later phases
+    - Refine AGV routing, ARMG operations, CITOS algorithms based on real-world performance
+    - **Continuous improvement**: Each phase better than previous
+    
+    **3. Demand Flexibility:**
+    - If demand grows faster than expected → accelerate later phases
+    - If demand slower → delay later phases, avoid excess capacity costs
+    - Adjust capacity to actual market conditions rather than 2012 projections
+    
+    **4. Minimize Disruption:**
+    - Gradual transition from existing terminals to Tuas
+    - Shipping lines can migrate berth-by-berth rather than all at once
+    - Maintain operational continuity (critical for transshipment hub)
+    
+    **5. Technology Evolution:**
+    - Later phases can incorporate even more advanced technologies
+    - 2030s phases will deploy technologies not yet developed in 2020s
+    - Future-proof approach: Don't lock into today's technology for entire port
+    
+    **The lecture materials' phasing timeline reveals sophisticated planning**: Reclamation starts years before terminal 
+    construction (land must settle, consolidate). Phase 4's "Finger 1" used for "interim industrial use till 2030/2035" 
+    shows pragmatic approach—don't build final phase until needed, use land productively in the meantime.
+    """)
+    
+    # ============================================================================
+    # SECTION 4: Implementation Challenges and Solutions
+    # ============================================================================
+    
+    st.markdown('<p class="section-header">Tuas Implementation: Challenges and Strategic Responses</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    Building the world's largest automated container terminal presents enormous implementation challenges. Singapore's 
+    approach to managing these challenges demonstrates sophisticated strategic planning.
+    """)
+    
+    st.markdown('<p class="subsection-header">Challenge #1: Workforce Transformation (70-80% Labor Reduction)</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **The Labor Transition Challenge:**
+    
+    **Current Workforce (Existing Terminals):**
+    - ~3,000-4,000 workers across PSA Singapore terminals
+    - Breakdown: 40% equipment operators (crane operators, PM drivers, yard crane operators), 30% port workers 
+      (lashing, gate clerks, administrative), 20% maintenance technicians, 10% management and planning
+    
+    **Tuas Workforce (Fully Operational):**
+    - ~600-800 workers (70-80% reduction)
+    - Breakdown: 10% equipment supervisors (monitor automated systems), 50% maintenance technicians (ARMGs, AGVs, 
+      sophisticated systems), 20% IT/data specialists (CITOS, cybersecurity, analytics), 20% management and planning
+    
+    **The Human Challenge:**
+    
+    **What Happens to Displaced Workers?**
+    - **2,200-3,200 workers** will see jobs automated away over 10-15 year transition
+    - Ages 30-55 (mid-career), many have spent entire careers in port operations
+    - Specialized skills (crane operation, PM driving) not transferable to other industries
+    - Many are foreign workers (70% of current workforce)—different implications than local workers
+    
+    **Singapore's Multi-Pronged Response:**
+    
+    **1. Retraining Programs:**
+    
+    **SkillsFuture for Port Workers:**
+    - Government-funded retraining for locals (up to S&#36;20-30K per person)
+    - Technical courses: ARMG maintenance, AGV systems, industrial robotics, data analytics
+    - Duration: 6-24 months depending on role transition
+    - **Placement assistance**: PSA committed to re-employing 80% of locals who complete retraining
+    
+    **2. Gradual Transition (Phasing Advantage):**
+    - Phase 1 (2027): 200-300 jobs automated, workers shift to remaining terminals
+    - Phase 2 (2032): Another 400-500 jobs, workers transition to Tuas technical roles
+    - Phase 3-4 (2037-2040): Final automation, natural attrition reduces need for layoffs
+    - **Result**: 10-15 year timeline allows workforce to adapt gradually rather than mass layoffs
+    
+    **3. Higher-Value Jobs for Locals:**
+    - Singapore citizens/PRs priority for technical, supervisory, engineering roles at Tuas
+    - **Higher wages**: Technicians earn S&#36;60-80K vs PM drivers S&#36;40-50K
+    - Career advancement opportunities (specialized skills more valuable)
+    - **Quality of work**: Cleaner, safer, air-conditioned control rooms vs outdoor operations
+    
+    **4. Foreign Worker Implications:**
+    - Singapore's foreign worker policy: Max 35-40% of workforce can be foreign in service sectors
+    - Tuas automation **reduces foreign worker dependency** (political and social benefit)
+    - Diplomatic complexity: Malaysia, Indonesia provide many port workers (bilateral relations consideration)
+    - **Managed reduction**: Natural attrition + repatriation spreads impact over years
+    
+    **The lecture materials emphasize**: "A core of highly skilled workers also needed—to ensure high-tech port 
+    operations are **reliable, efficient, safe and secure, and constantly updated.**"
+    
+    This reveals Singapore's philosophy: **Automation doesn't eliminate workforce—it transforms workforce from manual 
+    labor to knowledge workers.** Fewer people, but higher-skilled, better-paid, more valuable to organization.
+    
+    **Union and Political Dimensions:**
+    
+    **Port Workers Union:**
+    - Strong union representation in Singapore port sector
+    - Potential resistance to automation (job security concerns)
+    - **PSA's engagement strategy**: Early consultation, transparent communication, retraining commitments
+    - Union support critical for smooth transition
+    
+    **Government Role:**
+    - MPA + Ministry of Manpower coordinate workforce transition programs
+    - Employment pass policies adjusted to support technical hiring
+    - **Political commitment**: Government messaging frames Tuas as "future-ready jobs" not "job destruction"
+    - Social safety net ensures no worker left behind
+    """)
+    
+    st.markdown('<p class="subsection-header">Challenge #2: Transport Infrastructure and Hinterland Connectivity</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **The Logistics Challenge:**
+    
+    Tuas is located in **far southwestern Singapore**, significantly further from main industrial and residential areas 
+    than existing City Terminals and Pasir Panjang.
+    
+    **Current Terminal Locations:**
+    - City Terminals (Tanjong Pagar): 5-8 km from CBD, 10-15 km from industrial estates
+    - Pasir Panjang: 12-15 km from CBD, 8-12 km from industrial areas
+    
+    **Tuas Location:**
+    - 25-30 km from CBD
+    - 15-20 km from major industrial estates (Jurong, Woodlands)
+    - 35+ km from Changi Airport (east side of Singapore)
     
     **Implications:**
     
-    **Positive:**
-    - Reduced dependency on foreign labour (strategic advantage)
-    - Less vulnerable to labour supply disruptions
-    - Lower social integration challenges
-    
-    **Concerns:**
-    - May affect bilateral relationships (fewer job opportunities for neighbours)
-    - Reduced wage remittances to source countries
-    - Singapore\'s reputation as employment destination
-    
-    **Policy Balance:**
-    - Singapore must manage transition diplomatically
-    - Maintain good relationships with labour source countries
-    - Position automation as inevitable global trend, not targeting specific groups
-    """)
-    
-    st.markdown('<p class="subsection-header">3. Transportation and Hinterland Connectivity</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **The Challenge:**
-    - Tuas is in **western Singapore**, far from city centre
-    - Current port facilities more centrally located
-    - Moving port west creates transportation challenges
+    **Trucking Distances:**
+    - 50-80% longer truck journeys vs City Terminals
+    - Additional 20-40 minutes per round trip (congestion-dependent)
+    - Higher fuel costs, driver wages, fleet requirements for trucking companies
     
     **Infrastructure Requirements:**
     
-    **Road Connections:**
-    - **Tuas Second Link**: Bridge to Malaysia (already exists)
-    - **Upgraded highways**: Handle truck traffic to/from port
-    - **Congestion management**: Prevent bottlenecks
+    **Road Network:**
+    - **Tuas Second Link** to Malaysia (border crossing infrastructure)
+    - **Ayer Rajah Expressway (AYE) expansion**: 3-4 lanes to 5-6 lanes
+    - **New arterial roads**: Dedicated port access roads to reduce congestion
+    - **Intelligent traffic management**: Real-time routing, traffic light coordination
     
-    **Rail Connections:**
-    - **Port rail connection**: Direct rail link for containers
-    - **Integrated logistics**: Seamless truck-rail transfer
-    - **Future MRT extension**: Public transport for workers
-    
-    **Last-Mile Logistics:**
-    - **Inland distribution centres**: Staging areas closer to customers
-    - **Truck appointment system**: Spread demand, avoid congestion
-    - **Off-peak incentives**: Encourage night/weekend pickups
+    **Rail Connectivity:**
+    - **Tuas West Extension** MRT line (for workers)
+    - **Port rail terminal**: Direct rail connection to Malaysia rail network (under development)
+    - **Intermodal facilities**: Rail-to-truck transfer for cargo distribution
     
     **Investment Required:**
-    - S$5-10 billion in supporting transportation infrastructure
-    - Coordinated planning across agencies
-    - Multi-year implementation timeline
+    - Estimated **S&#36;3-5 billion additional infrastructure** beyond port itself
+    - Road upgrades, rail extensions, bridges, traffic systems
+    - Coordinated by Land Transport Authority (LTA) in parallel with port development
+    
+    **Strategic Benefits of Location:**
+    
+    **Proximity to Malaysia:**
+    - Tuas directly adjacent to Malaysia border
+    - Facilitates cross-border trucking (40% of Singapore's port cargo involves Malaysia hinterland)
+    - Potential future: Integrated Malaysia-Singapore logistics zone
+    
+    **Land Availability:**
+    - Southwestern Singapore had available land for reclamation and development
+    - Central terminals landlocked (no expansion possibility)
+    - Tuas enables 50+ year growth without space constraints
+    
+    **Environmental Separation:**
+    - Port operations (noise, truck traffic, 24/7 activity) separated from residential areas
+    - Reduces conflicts between port and urban development
+    - Enables unrestricted operations (no noise complaints, traffic congestion in residential areas)
     """)
     
-    st.markdown('<p class="subsection-header">4. Security and Cybersecurity</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Challenge #3: Cybersecurity and Digital Infrastructure Protection</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Physical Security:**
-    - Large perimeter to secure (26+ km quay, 1,337 hectares)
-    - Automated systems require robust physical protection
-    - Critical infrastructure protection standards
+    **The Digital Vulnerability:**
     
-    **Cybersecurity Risks:**
-    - **High dependency on IT systems**: Entire port controlled by computers
-    - **Single point of failure**: Cyber attack could cripple operations
-    - **Nation-state threats**: Strategic target for adversaries
-    - **Ransomware**: Criminal attacks seeking financial gain
+    Tuas is the **world's most digitally-dependent port**—1,000+ AGVs, 200+ ARMGs, advanced CITOS, all networked and 
+    computer-controlled. This creates unprecedented cybersecurity risks.
     
-    **Singapore\'s Response:**
+    **Threat Scenarios:**
     
-    **Multi-Layer Security:**
-    - **Perimeter security**: Fencing, cameras, sensors, patrols
-    - **Access control**: Biometric authentication, restricted zones
-    - **ISPS compliance**: International Ship and Port Facility Security Code
+    **Ransomware Attack on CITOS:**
+    - Hackers encrypt CITOS database, demand ransom
+    - **Paralysis**: Cannot plan operations, dispatch equipment, process gates
+    - Entire terminal shut down until systems recovered
+    - **Economic impact**: US&#36;50-100M per day lost throughput
     
-    **Cybersecurity Measures:**
-    - **Air-gapped systems**: Critical systems isolated from internet
-    - **Redundancy**: Backup systems and manual override capabilities
-    - **24/7 monitoring**: Security Operations Centre (SOC)
-    - **Penetration testing**: Regular security audits
-    - **Incident response**: Prepared plans for cyber attacks
-    - **International cooperation**: Share threat intelligence
+    **AGV Fleet Hijacking:**
+    - Attackers gain control of AGV control system
+    - **Chaos**: AGVs driven into collision, containers dropped, equipment damaged
+    - Safety risk: Workers, visitors injured
+    - Weeks to fully restore safe operations
     
-    **Ongoing Challenge:**
-    - Cyber threats constantly evolving
-    - Requires continuous investment and vigilance
-    - Balance security with operational efficiency
+    **Data Theft:**
+    - Cargo manifests, shipping line commercial data, trade secrets stolen
+    - **Competitive intelligence**: Competitors gain insights into Singapore's operations
+    - **National security**: Cargo data could reveal military shipments, strategic supply chains
+    
+    **PSA's Cybersecurity Strategy:**
+    
+    **Defense-in-Depth Architecture:**
+    
+    **Network Segmentation:**
+    - **Operational Technology (OT) networks** isolated from Internet
+    - AGV/ARMG control systems on separate network from corporate IT
+    - Multiple firewalls, air gaps between critical systems
+    - **No direct Internet connection** to automated equipment control systems
+    
+    **Access Controls:**
+    - Multi-factor authentication (MFA) for all system access
+    - Role-based access control (RBAC)—users see only what they need
+    - Regular access audits, automatic session timeouts
+    - Physical security: Control rooms with biometric access, CCTV
+    
+    **Monitoring and Detection:**
+    - **24/7 Security Operations Center (SOC)**: Real-time monitoring of all systems
+    - Intrusion Detection Systems (IDS) watching for anomalies
+    - AI-powered threat detection (machine learning identifies unusual patterns)
+    - Automated alerts + human analyst response
+    
+    **Resilience and Recovery:**
+    - **Redundant systems**: Backup CITOS, control systems ready to take over
+    - **Offline backups**: Air-gapped data backups updated daily
+    - **Disaster recovery exercises**: Regular simulations test recovery procedures
+    - **Manual fallback procedures**: Can operate equipment manually if systems compromised
+    
+    **Collaboration and Intelligence:**
+    - **Singapore Cyber Security Agency (CSA)**: Government support for critical infrastructure protection
+    - **Information sharing**: PSA participates in global maritime cybersecurity forums
+    - **Threat intelligence**: Subscribe to cybersecurity feeds, stay updated on emerging threats
+    - **Penetration testing**: Hire ethical hackers to test defenses, identify vulnerabilities
+    
+    **The Maritime OT Cybersecurity Challenge:**
+    
+    **Unique Vulnerabilities:**
+    - **Operational Technology (OT)** systems (cranes, AGVs) historically not designed for cybersecurity
+    - Legacy industrial protocols (Modbus, Profibus) lack modern security features
+    - **Safety-critical systems**: Can't patch/update frequently (risk of operational disruption)
+    - **Vendor dependencies**: Equipment manufacturers control firmware, may have backdoors
+    
+    **Singapore's Response:**
+    
+    **MariOT Testbed (mentioned in lecture materials):**
+    - World's first maritime Operational Technology cybersecurity testbed
+    - Tests cybersecurity solutions in safe environment before port deployment
+    - Research collaboration: Universities, cybersecurity companies, port operators
+    - **Knowledge sharing**: Singapore leads global maritime OT cybersecurity standards development
+    
+    **The Strategic Importance:**
+    
+    Tuas cybersecurity isn't just about protecting one terminal—it's about **Singapore's national security**:
+    - 65M TEU = ~10% of global container trade
+    - Disruption to Tuas would impact global supply chains
+    - **Hostile actors** (nation-states, terrorists) might target Tuas to cause economic chaos
+    - Singapore's hub status depends on **reliability**—major cyber incident could permanently damage reputation
+    
+    Therefore, cybersecurity is a **top-tier strategic priority**, with investment levels (estimated S&#36;200-300M 
+    over development lifetime) commensurate with threat level.
     """)
     
     # ============================================================================
-    # SECTION 4: Will It Be Enough? Critical Analysis
+    # SECTION 5: Will Tuas Be Enough? Scenario Analysis
     # ============================================================================
     
-    st.markdown('<p class="section-header">Critical Question: Will 65M TEU Be Enough?</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Strategic Assessment: Will 65M TEU Capacity Be Sufficient?</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The ultimate question: Is Singapore making the right bet with Tuas? Will 65M TEU capacity be 
-    sufficient, or could it be too much—or too little?
+    The critical question: Is S&#36;20+ billion investment in 65M TEU capacity justified? Will Tuas be too large 
+    (excess capacity, wasted investment), too small (constrained growth, lost opportunities), or "about right"?
     """)
     
-    st.markdown('<p class="subsection-header">Arguments FOR: Tuas Will Be Sufficient</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">Demand Scenario Analysis (2040 Projection)</p>', unsafe_allow_html=True)
     
-    st.markdown("""
-    **1. Demand Growth Supports Expansion**
-    - **Global trade growth**: 3-4% annually (historical average)
-    - **Asian trade growth**: 4-5% annually (faster than global)
-    - **Singapore\'s transshipment role**: 85% transshipment, taps into regional flows
-    - **Current utilisation**: 37M TEU, approaching capacity limits
-    - **By 2040**: 65M TEU capacity matches projected demand
-    
-    **2. Competitive Position Locked In**
-    - **Scale advantage**: 65M TEU capacity much larger than any regional competitor
-    - **Technology lead**: Most automated, efficient port in Southeast Asia
-    - **Alliance commitments**: Long-term contracts with 2M, Ocean Alliance, THE Alliance
-    - **Network effects**: Connectivity and reliability attract more shipping lines
-    - **First-mover advantage**: Built before competitors can catch up
-    
-    **3. Flexibility Built In**
-    - **Phased development**: Can slow or accelerate based on actual demand
-    - **Marginal cost low**: Operating cost per TEU decreases with volume
-    - **Strategic buffer**: Excess capacity allows competitive pricing
-    - **Adaptability**: Infrastructure can be repurposed if needed
-    
-    **4. Irreplaceable Strategic Location**
-    - **On main Asia-Europe route**: 33% of global trade passes through
-    - **Centre of Southeast Asia**: Ideal hub for regional distribution
-    - **Deep natural harbour**: Expensive for competitors to replicate
-    - **Political stability**: Singapore\'s governance is unique competitive advantage
-    """)
-    
-    st.markdown('<p class="subsection-header">Arguments AGAINST: Tuas May Not Be Enough (or Too Much)</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **1. Demand Uncertainty**
-    - **Slower growth**: Global trade growth slowing (2-3% vs historical 4-5%)
-    - **Structural changes**: Nearshoring, regionalisation reduce long-haul shipping
-    - **E-commerce**: Smaller shipments, more direct routes (less transshipment)
-    - **Manufacturing shifts**: China+1 diversification changes traditional patterns
-    - **What if demand only reaches 50M TEU by 2040?** → Overcapacity, stranded assets
-    
-    **2. Competitive Threats Real and Growing**
-    - **Malaysia**: Carey Island, Melaka Gateway (lower costs, strategic location)
-    - **Indonesia**: Massive domestic market (400M people), Tanjung Priok expansion
-    - **Vietnam**: Rapid economic growth, port infrastructure investments
-    - **Thailand Kra Canal**: Low probability but catastrophic if built (bypasses Singapore)
-    - **What if competitors capture 20-30% of Singapore\'s transshipment volumes?** → Tuas underutilised
-    
-    **3. Technology Disruption**
-    - **Autonomous vessels**: May prefer direct routes over hub-and-spoke (reduces transshipment)
-    - **Blockchain and smart contracts**: Enable more efficient direct shipping
-    - **Arctic routes**: Climate change opens shorter routes bypassing traditional lanes
-    - **What if hub-and-spoke model becomes obsolete?** → Tuas capacity not needed
-    
-    **4. Geopolitical Risks**
-    - **US-China decoupling**: Trade fragmentation reduces volumes on major routes
-    - **Regional conflicts**: Disruption to Malacca Strait traffic
-    - **Economic nationalism**: Countries favour own ports over neutral hubs
-    - **What if geopolitical tensions reduce Singapore\'s neutral hub status?** → Volume loss
-    
-    **5. Environmental Regulations**
-    - **Carbon pricing**: Makes shipping more expensive, could reduce trade volumes
-    - **Slow steaming**: Reduced speed to save fuel = more vessels needed but less throughput per vessel
-    - **What if environmental costs make long-distance trade uneconomical?** → Less transshipment demand
-    """)
-    
-    # Scenario analysis
-    st.markdown('<p class="subsection-header">Scenario Analysis: 2040 Outcomes</p>', unsafe_allow_html=True)
-    
-    scenarios = pd.DataFrame({
+    # Scenario analysis table
+    demand_scenarios = pd.DataFrame({
         'Scenario': [
-            'Optimistic',
+            'Optimistic Growth',
             'Base Case',
             'Conservative',
             'Pessimistic'
         ],
-        'Probability': ['20%', '50%', '25%', '5%'],
-        'Singapore 2040 Throughput': ['70M TEU', '55-60M TEU', '45-50M TEU', '35-40M TEU'],
-        'Tuas Utilisation': ['107% (need expansion)', '85-92%', '69-77%', '54-62%'],
-        'Outcome Assessment': [
-            'Tuas insufficient, need Phase 5',
-            'Tuas appropriate, well-utilised',
-            'Tuas has excess capacity, lower ROI',
-            'Tuas significantly underutilised, stranded assets'
+        'Probability': [
+            '20%',
+            '50%',
+            '25%',
+            '5%'
         ],
-        'Key Assumptions': [
-            'Strong global trade, Singapore maintains share, technology helps efficiency',
-            'Moderate trade growth, modest competition, stable market share',
-            'Slow trade growth, increased competition, some volume loss',
-            'Trade stagnation/decline, major competitive losses, technology disruption'
+        'Assumptions': [
+            'Global trade grows 4-5% annually; Singapore maintains 7-8% market share; intra-Asia trade booms; no major disruptions',
+            'Trade grows 2.5-3.5% annually; Singapore maintains 6-7% market share; moderate competition; steady demand',
+            'Trade grows 1.5-2.5% annually; Singapore loses 1-2% market share to competitors; slower Asian growth',
+            'Trade grows <1% annually; Singapore loses 3-5% market share; major route changes (Kra Canal); severe competition'
+        ],
+        '2040 Singapore Throughput': [
+            '70-75M TEU',
+            '55-60M TEU',
+            '45-50M TEU',
+            '<45M TEU'
+        ],
+        'Tuas Utilization (65M TEU)': [
+            '>100% (need Phase 5 expansion)',
+            '85-92% (optimal utilization)',
+            '69-77% (acceptable, some excess)',
+            '<70% (significant underutilization)'
+        ],
+        'Strategic Implication': [
+            'Tuas too small; need additional capacity beyond 65M; consider Phase 5 expansion starting 2035',
+            'Tuas well-sized; slight excess capacity provides flexibility; achieves strategic objectives',
+            'Tuas has excess capacity but acceptable; provides competitive advantage through spare capacity',
+            'Major excess capacity; financial strain; may need to delay Phase 4 or adjust plans'
         ]
     })
     
-    st.dataframe(scenarios, width='stretch', hide_index=True)
-    
-    # Scenario probability visualization
-    fig = go.Figure(data=[go.Pie(
-        labels=scenarios['Scenario'],
-        values=[20, 50, 25, 5],
-        marker=dict(colors=['#10B981', '#3B82F6', '#F59E0B', '#EF4444']),
-        textinfo='label+percent',
-        textfont=dict(size=14, color='white'),
-        hole=0.4
-    )])
-    
-    fig.update_layout(
-        title={
-            'text': 'Scenario Probability Distribution (Expert Assessment)',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        annotations=[dict(text='2040<br>Outlook', x=0.5, y=0.5, font_size=16, showarrow=False)],
-        height=450
-    )
-    
-    st.plotly_chart(fig, width='stretch')
+    st.dataframe(demand_scenarios, width='stretch', hide_index=True)
     
     st.markdown("""
-    <div class="warning-box">
-    <strong>⚠️ The Real Risk:</strong><br><br>
-    The greatest risk is not that Tuas will be <strong>too small</strong> or <strong>too large</strong>, but that Singapore might be 
-    optimising for the <strong>wrong future</strong>:<br><br>
-    <strong>If the hub-and-spoke transshipment model declines:</strong><br>
-    - Shipping lines increasingly prefer direct routes (autonomous vessels, point-to-point efficiency)<br>
-    - Regional ports capture origin/destination cargo (less need for transshipment hubs)<br>
-    - Trade patterns fragment (regionalisation, nearshoring)<br><br>
-    <strong>Then:</strong><br>
-    - Transshipment volumes globally decline<br>
-    - Singapore\'s 85% transshipment model becomes vulnerability<br>
-    - Massive Tuas capacity underutilised<br>
-    - S$20B+ investment yields poor returns<br><br>
-    <strong>However:</strong><br>
-    - Singapore\'s government has 70+ years of strategic planning success<br>
-    - Phased approach provides flexibility to adapt<br>
-    - Technology and efficiency provide hedge against competition<br>
-    - Even if transshipment share drops, absolute volumes may still grow<br>
-    - Diversification into maritime services (finance, tech, bunkering) reduces dependency on port volumes alone
-    </div>
-    """, unsafe_allow_html=True)
+    **Probabilistic Assessment:**
     
-    st.markdown('<p class="subsection-header">The Verdict: Calculated Risk, Not Reckless Bet</p>', unsafe_allow_html=True)
+    **Expected Value Calculation:**
+    - 20% × 72.5M + 50% × 57.5M + 25% × 47.5M + 5% × 42.5M = **~56M TEU expected throughput 2040**
+    - Tuas 65M capacity → **86% expected utilization**
+    - This is **optimal range (80-90% utilization)**—sufficient capacity without excessive waste
+    
+    **Key Uncertainties Driving Scenarios:**
+    
+    **1. Global Trade Growth Rates:**
+    - **Historical (1990-2019)**: ~3% annually (containerized cargo grew faster than GDP)
+    - **Post-COVID disruption**: 2020-2022 volatile, uncertain new normal
+    - **Structural shifts**: Nearshoring, China+1, potential deglobalization could slow growth
+    - **Counterforces**: Asian middle class growth, e-commerce driving demand
+    - **Assumption range**: 1-5% annual growth (wide range reflects uncertainty)
+    
+    **2. Competitive Displacement:**
+    - **Will competitors capture Singapore market share?**
+    - Malaysia's aggressive port development (Carey Island, Melaka Gateway, Port Klang expansion)
+    - Indonesia's determination to reduce Singapore dependence
+    - Thailand's Kra Canal proposal (existential threat if built, but low probability)
+    - **Assumption range**: Singapore retains 5-8% market share vs current ~7%
+    
+    **3. Transshipment Model Viability:**
+    - **Hub-and-spoke remains dominant** (base case)—most cargo continues via transshipment hubs
+    - **Direct shipping increases** (pessimistic)—mega vessels enable more point-to-point routes, reducing transshipment
+    - **New hub emergence** (pessimistic)—alternative hubs (Colombo, Jebel Ali, new ports) capture regional traffic
+    - Tuas designed for transshipment model—if model disrupted, capacity may be underutilized
+    
+    **4. Geopolitical and Trade Pattern Changes:**
+    - **US-China decoupling**: Trade fragmentation could reduce volumes through Singapore
+    - **Belt and Road Initiative**: Alternative land routes (China-Europe rail) compete with maritime
+    - **Regional trade agreements**: RCEP, CPTPP could reshape trade flows
+    - **Climate policy**: Carbon taxes on shipping could change route economics
+    """)
+    
+    st.markdown('<p class="subsection-header">Conclusion: Strategic Assessment</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Balanced Assessment:**
+    **The Verdict: Tuas is a Calculated Risk, Not a Reckless Bet**
     
-    **Tuas is likely to be "about right" under most plausible scenarios:**
+    **What the Analysis Shows:**
     
-    **Why the bet makes sense:**
-    1. **Base case (50% probability)**: 55-60M TEU by 2040 → Tuas 85-92% utilised ✅
-    2. **Downside protected**: Even conservative scenario (45-50M TEU) → 69-77% utilised (acceptable)
-    3. **Upside captured**: Optimistic scenario → Can build Phase 5 if needed
-    4. **Competitive moat**: Scale and technology make it very hard for competitors to displace Singapore
-    5. **Flexibility**: Phased approach allows adjustments based on actual demand
-    6. **Strategic buffer**: Better to have capacity and not need it than need it and not have it
+    **Most Likely Outcome (70% probability): Tuas "About Right"**
+    - Base case + conservative scenarios = 75% probability
+    - These scenarios project 45-60M TEU throughput → 69-92% Tuas utilization
+    - **Acceptable range**: Enough capacity to grow, not excessive waste
+    - Excess capacity provides strategic flexibility (competitive weapon, accommodates unexpected growth spikes)
     
-    **The risks are real but manageable:**
-    - Technology disruption: Possible but uncertain timing and magnitude
-    - Competition: Serious but Singapore has structural advantages
-    - Geopolitics: Could shift patterns but Singapore\'s neutrality is valuable
-    - Demand: May grow slower than hoped but unlikely to decline absolutely
+    **Downside Protected:**
+    - Even in conservative scenario (25% probability), Tuas 70%+ utilized
+    - **Phased approach** provides escape valve: If demand slower, delay Phase 4 (save S&#36;5B)
+    - Can adjust plans mid-development based on actual demand (not locked into 2012 projections)
     
-    **What would make Tuas a mistake:**
-    - Catastrophic scenario (<5% probability): Major geopolitical shift, technology disruption, competitive collapse
-    - Even then, infrastructure has long life and can be adapted
+    **Upside Captured:**
+    - If optimistic scenario materializes (20% chance), Phase 5 expansion possible
+    - Land available, infrastructure in place, incremental expansion feasible
+    - **Better to have option to expand** than be capacity-constrained and lose business to competitors
     
-    **Conclusion:**
-    Tuas represents a **calculated strategic bet** by Singapore to maintain its position as the world\'s 
-    premier transshipment hub. The investment is massive, the risks are real, but the analysis suggests 
-    it\'s more likely to be **"about right"** than wildly over or under capacity. Singapore is essentially 
-    buying insurance against being displaced by competitors whilst positioning for continued growth.
+    **The Real Risk: Not Building Tuas**
     
-    **The real genius:** Phased development provides flexibility to adjust course if reality diverges from 
-    projections. This is strategic planning at its finest—bold vision combined with pragmatic adaptability.
+    **Scenario: Singapore Doesn't Build Tuas:**
+    - Current capacity ~41M TEU, existing terminals maxed out
+    - Cannot accommodate additional mega vessels (infrastructure limitations)
+    - **Alliances shift** to Malaysia, Indonesia competitors with newer, larger capacity
+    - By 2030s, Singapore loses 30-40% market share
+    - **Result**: Hub status permanently diminished, economic impact >S&#36;100B over decades
+    
+    **Risk of Inaction >> Risk of Building Tuas**
+    
+    **The Strategic Logic:**
+    
+    The lecture materials quote Minister Lui: "Given our land and manpower constraints, we have to strive for even 
+    greater efficiency and productivity."
+    
+    This statement encapsulates Singapore's strategic position: **Cannot compete on cost or scale with regional 
+    competitors**—must compete on **efficiency, technology, reliability**. Tuas is the infrastructure investment 
+    that enables this strategy.
+    
+    **Port infrastructure competition is about strategic positioning, not demand forecasting:**
+    - **First-mover advantage**: Lock in alliances before competitors build comparable capacity
+    - **Technology leadership**: Establish automated operations as industry standard
+    - **Competitive moat**: Massive investment creates barrier competitors struggle to match
+    
+    **Better to build Tuas and have 20% excess capacity than delay and lose 30% market share to competitors.**
+    
+    The S&#36;20B investment is **insurance** against competitive displacement—the cost of building Tuas is far less 
+    than the economic cost of losing hub status.
     """)
     
     # ============================================================================
-    # SECTION 5: Key Takeaways
+    # SECTION 6: Key Takeaways
     # ============================================================================
     
-    st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Key Takeaways: Tuas Mega Port</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Why Tuas:**
-        - **Consolidation**: Combine terminals for 20-30% efficiency gain
-        - **Mega vessels**: Purpose-built for 24,000+ TEU ULCV
-        - **Competition**: Pre-emptive response to regional threats
-        - **Technology**: Greenfield enables full automation
-        - **Sustainability**: Built +5m for sea level rise, zero emissions
+        **Strategic Rationale - Five Drivers:**
+        - **Consolidation**: 20-30% efficiency gains from single mega port
+        - **Mega vessels**: Purpose-built for 24,000+ TEU ULCVs (23m depth, 66 berths)
+        - **Competition**: Pre-emptive response to regional threats (lock in alliances first)
+        - **Automation**: Greenfield enables 70-80% labor reduction (vs retrofit impossible)
+        - **Climate**: Built +5m elevation (sea level rise resilient), zero emissions operations
         
-        **Design Features:**
-        - **Scale**: 65M TEU, 26+ km quay, 1,337 hectares
-        - **Investment**: S$20B+ over multiple phases
-        - **Automation**: 1,000+ AGVs, ARMG, advanced CITOS
-        - **Green**: Solar, electric equipment, shore power
-        - **Phased**: 2021-2040+ rollout provides flexibility
+        **Technical Specifications (Verified):**
+        - **Capacity**: 65M TEU ultimate (Phase 1: 20-30M TEU by late 2020s)
+        - **Land**: 1,337 hectares (~1.8% of Singapore's total area)
+        - **Quay**: 26.3 km continuous wharf, longest in world
+        - **Depth**: 23 meters (deepest in region, future-proof for 30,000 TEU vessels)
+        - **Berths**: 66 total (all super post-Panamax capable)
+        - **Equipment**: 200+ quay cranes, 200+ ARMGs, 1,000+ AGVs
+        - **Investment**: S&#36;20+ billion across all phases
         
-        **Implementation Challenges:**
-        - **Labour**: 70-80% reduction, retraining programmes
-        - **Foreign workers**: Reduced dependency, diplomatic implications
-        - **Transport**: Hinterland connectivity infrastructure
-        - **Security**: Physical and cybersecurity protection
+        **Development Timeline:**
+        - **Phase 1**: 2013-2027 (reclamation 2013-2022, terminal 2020-2027)
+        - **Phase 2**: 2016-2032 (reclamation 2016-2028, terminal 2025-2032)
+        - **Phase 3**: 2025-2037 (reclamation 2025-2033, terminal 2030-2037)
+        - **Phase 4**: 2031-2040+ (reclamation 2031-2038, terminal 2036-2040+)
+        - Phased approach provides flexibility, learning, demand adaptation
         """)
     
     with col2:
         st.markdown("""
-        **Will It Be Enough? Scenario Analysis:**
+        **Implementation Challenges:**
+        - **Workforce**: 70-80% labor reduction (3,000-4,000 → 600-800 workers)
+          - Retraining programs (SkillsFuture, technical upskilling)
+          - Gradual transition (10-15 years, natural attrition)
+          - Higher-value jobs (technicians vs operators, S&#36;60-80K vs S&#36;40-50K)
+        - **Transport**: Far western location (25-30 km from CBD)
+          - S&#36;3-5B road/rail infrastructure investment
+          - MRT extensions, expressway expansions, port rail terminal
+        - **Cybersecurity**: Unprecedented digital dependency
+          - Defense-in-depth architecture, 24/7 SOC monitoring
+          - Network segmentation, redundant systems, disaster recovery
+          - MariOT testbed (world's first maritime OT cybersecurity facility)
         
-        **Optimistic (20%)**: 70M TEU → Need Phase 5 expansion
-        
-        **Base Case (50%)**: 55-60M TEU → Tuas well-utilised ✅
-        
-        **Conservative (25%)**: 45-50M TEU → Excess capacity but acceptable
-        
-        **Pessimistic (5%)**: <45M TEU → Significant underutilisation
-        
-        **Key Uncertainties:**
-        - Trade growth rates (2-5% annually?)
-        - Competitive displacement (0-30% volume loss?)
-        - Technology disruption (hub-spoke vs direct?)
-        - Geopolitical shifts (trade fragmentation?)
+        **Scenario Analysis (2040 Throughput):**
+        - **Optimistic (20%)**: 70-75M TEU → Need Phase 5 expansion
+        - **Base Case (50%)**: 55-60M TEU → 85-92% utilization ✅ **Optimal**
+        - **Conservative (25%)**: 45-50M TEU → 69-77% (acceptable excess)
+        - **Pessimistic (5%)**: <45M TEU → Significant underutilization
+        - **Expected**: ~56M TEU (86% utilization) = **Well-sized**
         
         **Strategic Assessment:**
-        - **Calculated risk**, not reckless bet
-        - Phased approach provides flexibility
-        - Most likely outcome: "about right"
-        - Downside protected, upside captured
-        - Better to build and adjust than fall behind
+        - **Calculated risk**, not reckless bet (70% probability "about right")
+        - **Phased approach** provides flexibility to adjust mid-course
+        - **Downside protected**: Even conservative case 70%+ utilization
+        - **Upside captured**: Can expand Phase 5 if demand exceeds 65M
+        - **Risk of inaction >> Risk of building**: Not building Tuas means losing hub status permanently
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> Tuas Mega Port is Singapore\'s S$20B+ bet to maintain its position as 
-    the world\'s premier transshipment hub. The five strategic drivers (consolidation, mega vessels, 
-    competition, technology, climate resilience) justify the investment. At 65M TEU capacity by 2040, Tuas 
-    is likely to be well-utilised under most plausible scenarios (base case: 55-60M TEU = 85-92% utilisation). 
-    The phased approach (2021-2040+) provides flexibility to adjust if reality diverges from projections. 
-    Key challenges include labour transition (70-80% reduction, retraining programmes), transportation 
-    infrastructure, and cybersecurity. The real risk is not that Tuas will be too large or too small, but 
-    that the hub-and-spoke transshipment model itself could be disrupted by technology or trade pattern 
-    changes. However, Singapore\'s strategic planning track record, structural advantages (location, 
-    stability, ecosystem), and adaptive approach make Tuas a **calculated strategic bet** more likely to 
-    succeed than fail. The investment buys insurance against competitive displacement whilst positioning 
-    for continued growth—strategic planning at its finest.
+    <strong>🔍 Bottom Line:</strong> Tuas Mega Port represents Singapore's <strong>S&#36;20+ billion strategic bet</strong> to 
+    maintain world's premier transshipment hub status through 2050 and beyond. The five drivers (<strong>consolidation for 
+    20-30% efficiency gains</strong>, <strong>purpose-built for 24,000+ TEU mega vessels</strong>, <strong>pre-emptive competition 
+    response locking in alliances first</strong>, <strong>greenfield automation enabling 70-80% labor reduction</strong>, <strong>climate 
+    resilience with +5m elevation and zero emissions</strong>) justify this unprecedented investment. At <strong>65M TEU ultimate 
+    capacity</strong> (1,337 ha, 26.3 km quay, 66 berths, 200+ ARMGs, 1,000+ AGVs), Tuas is likely <strong>well-sized under most 
+    scenarios</strong>—base case projects 55-60M TEU by 2040 (85-92% utilization), with probabilistic expected value of 56M TEU 
+    (86% utilization) falling in optimal 80-90% range. The <strong>four-phase development timeline</strong> (2013-2040+) provides 
+    strategic flexibility to adjust capacity deployment based on actual demand evolution, learning from each phase to refine 
+    automation and operations. Key implementation challenges include <strong>workforce transformation</strong> (retraining 2,200-3,200 
+    workers, gradual 10-15 year transition), <strong>transport infrastructure</strong> (S&#36;3-5B road/rail investments for far western 
+    location), and <strong>cybersecurity</strong> (protecting world's most digitally-dependent port with defense-in-depth architecture 
+    and 24/7 monitoring). The real risk is <strong>not building Tuas</strong>—without this investment, Singapore loses hub status to 
+    regional competitors with newer, larger, more automated capacity. Better to build and have 20% excess capacity than delay 
+    and lose 30% market share permanently. As Transport Minister Lui stated in 2012: "Given our land and manpower constraints, 
+    we have to strive for even greater efficiency and productivity"—Tuas is the infrastructure investment enabling this strategy, 
+    positioning Singapore to maintain competitive advantage through operational excellence, technology leadership, and strategic 
+    positioning rather than competing on cost or scale. The S&#36;20B investment is <strong>insurance against displacement</strong>, and 
+    scenario analysis shows this calculated risk is strategically sound with 70% probability of "about right" outcome.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # Conclusion
+    # Navigation
     # ============================================================================
     
     st.markdown("---")
-    st.markdown('<p class="section-header">🎓 Course Conclusion</p>', unsafe_allow_html=True)
-    
+    st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Congratulations!** You\'ve completed the comprehensive Maritime 101 educational journey.
-    
-    **What You\'ve Learned:**
-    
-    1. **Maritime Industry Foundation**: Why shipping matters, containerisation revolution, three waves of change
-    2. **Containers & Containerisation**: ISO standards, TEU measurement, specialised types
-    3. **Vessels & Evolution**: 500 TEU → 25,000 TEU, classifications, stowage principles
-    4. **Global Shipping & Alliances**: Consolidation to 3 alliances (83% control), hub-spoke networks
-    5. **Maritime Singapore Ecosystem**: MPA\'s dual role, complete maritime cluster, innovation
-    6. **Port Competition**: Critical success factors, gateway vs transshipment, green ports
-    7. **Operations Management**: Big Six competencies, FMEA, capacity planning, trade-offs
-    8. **Terminal Operations**: Berth planning, yard operations, stowage, equipment coordination
-    9. **Equipment & Automation**: QC/YC/AGVs, automation levels, CITOS system
-    10. **Green Maritime**: Decarbonisation (IMO 2050), alternative fuels, digital transformation
-    11. **Tuas Mega Port**: S$20B investment, 65M TEU capacity, strategic rationale and risks
-    
-    **You Now Understand:**
-    - The physical maritime world your systems must model
-    - Why ports make the decisions they do (competition, economics, technology)
-    - How container terminal operations actually work end-to-end
-    - The forces shaping the industry\'s future (decarbonisation, automation, geopolitics)
-    
-    **Next Steps:**
-    - Apply this knowledge to build accurate operational models
-    - Understand the operational context behind the data and systems
-    - Recognise the strategic challenges ports face and how technology can help
-    
-    Thank you for your attention and engagement! 🚢📦🌍
+    Continue exploring maritime operations and industry dynamics to complete your comprehensive understanding of 
+    the container shipping ecosystem and terminal operations that enable global trade.
     """)
