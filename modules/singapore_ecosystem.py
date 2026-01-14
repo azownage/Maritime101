@@ -123,10 +123,10 @@ def show():
     - **20+ banks with shipping portfolios**: Providing ship financing, project finance, working capital facilities
     - **30+ law firms with shipping practice**: Maritime disputes, contracts, admiralty law, arbitration services
     - **10 IG P&I Clubs**: Protection and Indemnity insurance covering 95% of world's ocean-going tonnage
-    - **~100 MarineTech startups**: Innovation ecosystem raised ~S$50 million investment in past 4 years
+    - **~100 MarineTech startups**: Innovation ecosystem raised ~S&#36;50 million investment in past 4 years
     
     **Economic Impact:**
-    - **S$4.3 billion** in total maritime business spending in 2022 (excluding port operations)
+    - **S&#36;4.3 billion** in total maritime business spending in 2022 (excluding port operations)
     - **5th largest ship registry** globally with 108 million GT under Singapore flag (2024)
     - **World's largest bunkering hub**: 54.92 million tonnes supplied in 2024
     - **Complete value chain**: Ship design, construction, operation, financing, insurance, maintenance, recycling
@@ -252,7 +252,7 @@ def show():
         
         **Strategic Infrastructure Planning:**
         - **Long-term port master planning**: 20-30 year horizon, anticipating future vessel sizes and volumes
-        - **Tuas Mega Port development**: S$20 billion investment, ultimate 65M TEU capacity, world's largest automated port
+        - **Tuas Mega Port development**: S&#36;20 billion investment, ultimate 65M TEU capacity, world's largest automated port
         - **International partnerships**: Sister port agreements, green shipping corridors, collaborative initiatives
         - **Modal integration**: Sea-air, sea-rail connections, hinterland logistics development
         
@@ -305,7 +305,7 @@ def show():
     
     **MPA as Developer:**
     - Conceived 65M TEU mega port concept in 2000s
-    - Allocated S$20 billion budget for 40-year development
+    - Allocated S&#36;20 billion budget for 40-year development
     - Designed world's largest fully automated terminal
     - Negotiated long-term commitments from shipping alliances
     
@@ -383,9 +383,9 @@ def show():
             '170+ groups managing thousands of vessels globally',
             'World-class repair capability, ~100 vessels in yards at any time',
             '54.92M tonnes bunkers (world\'s largest), thousands of crew changes monthly',
-            'S$4.3B+ business spending, billions in ship loans outstanding',
+            'S&#36;4.3B+ business spending, billions in ship loans outstanding',
             'Hundreds of cases annually, growing arbitration caseload',
-            '~S$50M raised by startups in 4 years, extensive R&D spending'
+            '~S&#36;50M raised by startups in 4 years, extensive R&D spending'
         ],
         'Strategic Importance': [
             'Core revenue generator, employs thousands, defines Singapore port status',
@@ -564,7 +564,7 @@ def show():
     
     **Benefits Realised:**
     - **Time savings**: Documentation processing cut from 5-7 days to 1 day
-    - **Cost reduction**: Estimated $50-100 per container in administrative costs eliminated
+    - **Cost reduction**: Estimated &#36;50-100 per container in administrative costs eliminated
     - **Fraud prevention**: Blockchain prevents duplicate bills of lading (historical problem in trade finance)
     """)
     
@@ -707,7 +707,7 @@ def show():
     
     According to lecture materials:
     - **~100 MarineTech startups** supported through ecosystem
-    - **~S$50 million in investment** raised by startups in past 4 years
+    - **~S&#36;50 million in investment** raised by startups in past 4 years
     - **Multiple commercial deployments**: Technologies now operational in Singapore port, ships
     - **Global reach**: Singapore-incubated technologies expanding to international markets
     
@@ -729,7 +729,7 @@ def show():
     **Funding Structure:**
     - **Government co-funding**: MPA funds up to **50% of eligible project costs**
     - **Company contribution**: Remainder funded by company (ensures skin in the game, commitment)
-    - **Maximum grants**: Varies by project scope, typically S$500K - S$2M for major initiatives
+    - **Maximum grants**: Varies by project scope, typically S&#36;500K - S&#36;2M for major initiatives
     - **No equity requirement**: Unlike VC funding, MINT is grant-based (government doesn't take company shares)
     
     **Eligible Projects:**
@@ -759,22 +759,22 @@ def show():
     **Project 1: AI-Powered Berth Planning System**
     - **Challenge**: Manual berth allocation suboptimal, vessels waiting for optimal berths
     - **Solution**: AI system optimizing berth assignments considering 20+ variables
-    - **MINT contribution**: S$800K (50% of S$1.6M total cost)
-    - **Company contribution**: S$800K
+    - **MINT contribution**: S&#36;800K (50% of S&#36;1.6M total cost)
+    - **Company contribution**: S&#36;800K
     - **Result**: 15% reduction in average vessel waiting time, system now deployed operationally
     
     **Project 2: Autonomous Tug Vessel**
     - **Challenge**: Tug operations dangerous (collisions, line handling accidents), costly (crew wages)
     - **Solution**: Retrofit existing tug with autonomous navigation, remote operation capability
-    - **MINT contribution**: S$1.2M (50% of S$2.4M project)
-    - **Company contribution**: S$1.2M
+    - **MINT contribution**: S&#36;1.2M (50% of S&#36;2.4M project)
+    - **Company contribution**: S&#36;1.2M
     - **Result**: Successful trials, regulatory approval process underway for commercial operations
     
     **Project 3: Blockchain-Based Bunker Delivery System**
     - **Challenge**: Paper-based bunker delivery notes prone to errors, delays, disputes
     - **Solution**: Digital platform using blockchain for tamper-proof delivery documentation
-    - **MINT contribution**: S$400K (50% of S$800K development cost)
-    - **Company contribution**: S$400K
+    - **MINT contribution**: S&#36;400K (50% of S&#36;800K development cost)
+    - **Company contribution**: S&#36;400K
     - **Result**: Now mandatory for all bunker suppliers in Singapore (April 2025), industry-wide adoption
     
     **Impact on Singapore's Maritime Sector:**
@@ -941,10 +941,10 @@ def show():
     **Economic Impact on Shipping Lines:**
     
     **Cost-Benefit Analysis:**
-    - **Investment**: Tier III engine vs Tier II costs $500K - $2M more per vessel
-    - **Port due savings**: $2,000 - $5,000 per Singapore call (75% rebate)
+    - **Investment**: Tier III engine vs Tier II costs &#36;500K - &#36;2M more per vessel
+    - **Port due savings**: &#36;2,000 - &#36;5,000 per Singapore call (75% rebate)
     - **Singapore call frequency**: Major liners call 50-100 times annually
-    - **Annual savings**: $100K - $500K per vessel in Singapore alone
+    - **Annual savings**: &#36;100K - &#36;500K per vessel in Singapore alone
     - **Payback period**: 1-4 years from Singapore savings alone, faster when all ports considered
     - **Competitive advantage**: As more ports adopt similar schemes, green vessels gain cost advantage globally
     
@@ -1123,7 +1123,7 @@ def show():
     - **Regulatory compliance**: Some jurisdictions (California, EU) requiring shore power usage
     
     **For Singapore:**
-    - **Infrastructure investment**: ~S$2-5 million per berth for shore power equipment
+    - **Infrastructure investment**: ~S&#36;2-5 million per berth for shore power equipment
     - **Attractiveness**: Eco-conscious cargo owners prefer ports offering shore power
     - **Future-proofing**: As regulations tighten globally, shore power becomes necessity not option
     
@@ -1157,14 +1157,14 @@ def show():
         - **20+ banks with shipping portfolios** (billions in ship financing)
         - **30+ maritime law firms** (disputes, contracts, arbitration)
         - **10 IG P&I Clubs** (covering 95% of world's ocean-going tonnage)
-        - **~100 MarineTech startups** (raised ~S$50M in 4 years)
-        - **S$4.3B+ business spending** in maritime services (2022)
+        - **~100 MarineTech startups** (raised ~S&#36;50M in 4 years)
+        - **S&#36;4.3B+ business spending** in maritime services (2022)
         
         **MPA's Unique Dual Role:**
         - **Regulator**: Safety, security, standards, environment
         - **Developer**: Industry growth, innovation, talent, infrastructure
         - **Coordination benefit**: Long-term vision, rapid adaptation, aligned strategy
-        - **Tuas exemplifies**: S$20B investment combining efficiency with sustainability
+        - **Tuas exemplifies**: S&#36;20B investment combining efficiency with sustainability
         """)
     
     with col2:
@@ -1205,7 +1205,7 @@ def show():
     demonstrates continued growth momentum despite global supply chain challenges. Beyond physical infrastructure, 
     Singapore offers a complete maritime cluster (170+ shipping groups, 30+ shipbroking firms, 20+ banks, 30+ law 
     firms, 100+ tech startups) providing every conceivable maritime service under one roof. MPA's globally unique dual 
-    role as both regulator and strategic developer enables coordinated long-term planning exemplified by the S$20 billion 
+    role as both regulator and strategic developer enables coordinated long-term planning exemplified by the S&#36;20 billion 
     Tuas Mega Port investment. Digital transformation initiatives (digitalPORT@SG, digitalOCEANS, mandatory electronic 
     documentation) position Singapore as a Maritime 4.0 leader. The innovation ecosystem (BLOCK71 accelerator, MINT 
     Fund co-financing, academic partnerships) cultivates maritime technology startups that benefit Singapore first before 
