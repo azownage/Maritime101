@@ -8,402 +8,701 @@ def show():
     st.markdown("""
     <div class="info-box">
     <strong>📘 Learning Objectives</strong><br>
-    Understand the maritime industry's decarbonisation journey, alternative fuel technologies, green port 
-    initiatives, digital transformation, and future trends shaping sustainable maritime operations.
+    Master the maritime industry's transformation toward net-zero emissions by 2050 through comprehensive understanding 
+    of IMO's revised greenhouse gas (GHG) strategy with aggressive reduction targets (20-30% by 2030, 70-80% by 2040, 
+    net-zero by ~2050), explore alternative fuel technologies (LNG with 185 global bunkering ports, methanol with 122 
+    ports, emerging ammonia and hydrogen), analyse real-world fleet adoption (CMA CGM deploying 77 dual-fuel vessels 
+    by 2026, 15% of fleet to be green by 2028), understand green port initiatives (shore power, equipment 
+    electrification, renewable energy, Singapore's Future Fuels Port Network), comprehend digital transformation 
+    (digitalPORT&#64;SG, paperless trade, AI optimization), and evaluate the economic, technical, and political 
+    challenges of achieving the most significant maritime transformation in history.
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 1: The Decarbonization Imperative
+    # SECTION 1: IMO Decarbonization Strategy - Revised 2023 Targets
     # ============================================================================
     
-    st.markdown('<p class="section-header">The Decarbonisation Imperative</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">IMO Revised GHG Strategy: The Accelerated Pathway to Net-Zero</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    The maritime industry faces mounting pressure to reduce its carbon footprint and achieve net-zero 
-    emissions by 2050. This represents one of the most significant transformations in maritime history.
+    In **July 2023**, the International Maritime Organization (IMO) adopted a **revised and significantly more 
+    ambitious Greenhouse Gas (GHG) Strategy** at MEPC 80 (Marine Environment Protection Committee, 80th session). 
+    This revision represents a dramatic acceleration of maritime decarbonization commitments compared to the initial 
+    2018 strategy, reflecting mounting scientific evidence and political pressure to address climate change.
+    
+    The lecture materials emphasize this historic shift in ambition, with the revised strategy committing the global 
+    maritime industry to **net-zero GHG emissions by or around 2050**—a target previously considered impossible by 
+    many industry stakeholders.
     """)
     
-    st.markdown('<p class="subsection-header">Current State and Targets</p>', unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns(3)
+    # Key metrics display
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("Global Shipping Emissions", "~3% of CO2", help="Maritime transport accounts for ~3% of global CO2 emissions")
+        st.metric("Current Emissions", "~3% Global CO₂", help="Maritime transport accounts for ~3% of global CO2 emissions (~1 billion tonnes/year)")
     with col2:
-        st.metric("IMO 2030 Target", "-40% intensity", help="40% reduction in carbon intensity by 2030 vs 2008")
+        st.metric("2030 Target", "20-30% Reduction", help="Revised target: 20% reduction, striving for 30%, vs 2008 baseline")
     with col3:
-        st.metric("IMO 2050 Target", "Net Zero", help="Net-zero greenhouse gas emissions by 2050")
+        st.metric("2040 Target", "70-80% Reduction", help="Revised target: 70% reduction, striving for 80%, vs 2008 baseline")
+    with col4:
+        st.metric("2050 Target", "Net-Zero GHG", help="Net-zero greenhouse gas emissions by or around 2050")
     
-    st.markdown("""
-    **International Maritime Organisation (IMO) Targets:**
+    st.markdown('<p class="subsection-header">Comparing Initial vs Revised IMO Strategies</p>', unsafe_allow_html=True)
     
-    **Short-term (2030):**
-    - **40% reduction** in carbon intensity (CO2 per tonne-mile) compared to 2008 baseline
-    - Applicable to all international shipping
-    - Phased implementation through Energy Efficiency Design Index (EEDI) and Carbon Intensity Indicator (CII)
-    
-    **Mid-term (2040):**
-    - Additional measures and technologies deployed
-    - Alternative fuel infrastructure scaling up
-    - Fleet transition accelerating
-    
-    **Long-term (2050):**
-    - **Net-zero greenhouse gas emissions** from international shipping
-    - Complete transformation of maritime fuel mix
-    - Industry-wide adoption of zero-carbon technologies
-    
-    **Regulatory Framework:**
-    - **EEDI (Energy Efficiency Design Index)**: Mandatory for new ships since 2013
-    - **SEEMP (Ship Energy Efficiency Management Plan)**: Required for all ships
-    - **CII (Carbon Intensity Indicator)**: Annual rating from 2023 (A-E grades)
-    - **EU ETS (Emissions Trading System)**: Maritime included from 2024
-    - **FuelEU Maritime**: EU regulation on fuel carbon intensity
-    """)
-    
-    # Emissions reduction pathway
-    reduction_pathway = pd.DataFrame({
-        'Year': [2008, 2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050],
-        'Carbon Intensity (Index)': [100, 95, 90, 75, 60, 45, 30, 15, 0],
-        'Technology Phase': [
-            'Baseline',
-            'Efficiency improvements',
-            'Early alternative fuels',
-            'Alternative fuels scaling',
-            '40% reduction target',
-            'Majority alternative fuels',
-            'Zero-carbon majority',
-            'Near-complete transition',
-            'Net-zero achieved'
+    # IMO strategy comparison table
+    imo_comparison = pd.DataFrame({
+        'Metric': [
+            'Annual GHG Emissions Reduction (2030)',
+            'Annual GHG Emissions Reduction (2040)',
+            'Annual GHG Emissions Reduction (2050)',
+            'Carbon Intensity Reduction (2030)',
+            'Carbon Intensity Reduction (2050)',
+            'Alternative Fuel Uptake Target',
+            'Timeframe for Net-Zero'
+        ],
+        'Initial Strategy (2018)': [
+            'Not specified',
+            'Not specified',
+            '50% reduction vs 2008',
+            '40% reduction vs 2008',
+            '70% reduction vs 2008 (aspirational)',
+            'Not specified',
+            'By end of this century (2100)'
+        ],
+        'Revised Strategy (2023)': [
+            '20%, striving for 30% vs 2008',
+            '70%, striving for 80% vs 2008',
+            'Net-zero (100% reduction)',
+            '40% reduction vs 2008 (maintained)',
+            'Not specified (superseded by net-zero target)',
+            'At least 5%, striving for 10% by 2030',
+            'By or around 2050 (50 years earlier!)'
+        ],
+        'Implication': [
+            'Immediate action required starting now (2024-2030)',
+            'Aggressive fleet transition needed throughout 2030s',
+            'Complete fuel transformation by 2050 (30 years earlier than initial strategy)',
+            'Operational efficiency improvements + some alternative fuel adoption',
+            'Net-zero supersedes intensity targets—requires zero-carbon fuels',
+            'Forces rapid alternative fuel infrastructure development',
+            'Industry must complete transformation in 26 years vs 76 years'
         ]
     })
     
-    fig = go.Figure()
+    st.dataframe(imo_comparison, width='stretch', hide_index=True)
     
-    fig.add_trace(go.Scatter(
-        x=reduction_pathway['Year'],
-        y=reduction_pathway['Carbon Intensity (Index)'],
-        mode='lines+markers',
-        line=dict(color='#10B981', width=4),
-        marker=dict(size=12, color='#059669', line=dict(color='white', width=2)),
-        fill='tozeroy',
-        fillcolor='rgba(16, 185, 129, 0.2)',
-        name='Carbon Intensity',
-        hovertemplate='%{x}<br>Carbon Intensity: %{y}<br>%{text}<extra></extra>',
-        text=reduction_pathway['Technology Phase']
-    ))
+    st.markdown("""
+    **Understanding the Magnitude of Change:**
     
-    # Add target markers
-    fig.add_hline(y=60, line_dash="dash", line_color="#F59E0B", 
-                  annotation_text="2030 Target: -40%", annotation_position="right")
-    fig.add_hline(y=0, line_dash="dash", line_color="#EF4444", 
-                  annotation_text="2050 Target: Net Zero", annotation_position="right")
+    The revised strategy represents a **50-year acceleration** in the net-zero timeline (2050 vs 2100). This is 
+    extraordinary given that:
     
-    fig.update_layout(
-        title={
-            'text': 'IMO Decarbonisation Pathway: 2008 → 2050',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 20, 'color': '#1F2937'}
-        },
-        xaxis_title="Year",
-        yaxis_title="Carbon Intensity (Indexed to 2008 = 100)",
-        height=500,
-        plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB', range=[0, 110]),
-        xaxis=dict(gridcolor='#E5E7EB')
-    )
+    **Fleet Lifespan Reality:**
+    - Container vessels have **25-30 year operational lives**
+    - A vessel ordered in 2024 will still be operating in 2050-2054
+    - **This means vessels ordered TODAY must be net-zero compatible or risk becoming stranded assets**
     
-    st.plotly_chart(fig, width='stretch')
+    **Investment Implications:**
+    - **US&#36;1-3 trillion** estimated global maritime industry investment needed by 2050
+    - Includes new vessel designs, fuel production infrastructure, bunkering facilities, port equipment
+    - **Annual investment: US&#36;40-120 billion** required across industry
+    
+    **Technology Challenge:**
+    - Some required technologies (green ammonia engines, large-scale hydrogen carriers) **not yet commercially proven**
+    - Must go from R&D → commercial deployment → global scale in 20-25 years
+    - Historical precedent: Previous fuel transitions (coal→oil, diesel→HFO) took 40-50 years
+    
+    The lecture materials' visualization shows the divergence between the "Initial GHG Strategy" (gradual decline to 
+    50% by 2050) and "Revised Strategy" (steep decline to net-zero by 2050)—the gap between these curves represents 
+    the accelerated ambition and intensified challenge the industry now faces.
+    """)
+    
+    st.markdown('<p class="subsection-header">Regulatory Framework and Enforcement</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Key IMO Regulations Driving Decarbonization:**
+    
+    **1. EEDI (Energy Efficiency Design Index) - Mandatory Since 2013:**
+    - Applies to **new ship designs**
+    - Sets minimum energy efficiency standards based on vessel type and size
+    - **Phases**: Progressive tightening every 5 years (Phase 0→1→2→3, now entering Phase 4)
+    - **Phase 3 (2022-2025)**: 30% more efficient than baseline
+    - **Phase 4 (2025+)**: 40%+ more efficient than baseline
+    - **Enforcement**: Ships not meeting EEDI cannot receive certification (cannot operate internationally)
+    
+    **2. SEEMP (Ship Energy Efficiency Management Plan) - Required Since 2013:**
+    - Mandatory for **all existing ships**
+    - Requires vessels to develop and implement plans to improve operational efficiency
+    - Includes: Fuel consumption monitoring, efficiency measures implementation, continuous improvement
+    - **Enforcement**: Port state control inspections verify SEEMP compliance
+    
+    **3. CII (Carbon Intensity Indicator) - Mandatory Since 2023:**
+    - **Annual rating system**: Ships graded A (best) through E (worst) based on actual carbon intensity performance
+    - **Calculation**: Grams of CO₂ emitted per tonne-mile of cargo transport
+    - **Consequences**:
+      - Ships rated D for 3 consecutive years OR E for 1 year must submit corrective action plan
+      - Poor CII ratings damage commercial reputation (charterers avoid low-rated vessels)
+      - May face higher insurance premiums, port dues
+    - **Strategic impact**: Forces shipowners to optimize operations—slow steaming, route optimization, hull cleaning
+    
+    **4. EU ETS (Emissions Trading System) - Maritime Included from 2024:**
+    - **Coverage**: 50% of emissions from voyages to/from EU ports + 100% of emissions within EU
+    - **Mechanism**: Shipping companies must purchase carbon allowances for emissions
+    - **Cost**: ~€80-100 per tonne of CO₂ (2024 prices, expected to rise)
+    - **Impact**: Adds significant operational costs—example: 10,000 TEU vessel Asia-Europe round trip generates 
+      ~3,000 tonnes CO₂ in EU waters = €240-300K carbon cost per voyage
+    - **Drives change**: Creates strong economic incentive to reduce emissions (lower fuel consumption, alternative fuels)
+    
+    **5. FuelEU Maritime - EU Regulation from 2025:**
+    - Sets **maximum greenhouse gas intensity limits** for fuels used by vessels calling EU ports
+    - **Progressive tightening**: Limits reduce 2% by 2025, 6% by 2030, 13% by 2035, etc.
+    - **Enforcement**: Non-compliant vessels pay penalties OR must use lower-carbon fuels
+    - **Goal**: Force transition away from conventional marine fuel oil toward alternatives
+    
+    **The Compliance Cascade:**
+    
+    These regulations create a **reinforcing cycle of pressure**:
+    1. **EEDI** → New vessels must be efficient (design constraint)
+    2. **CII** → Existing vessels must operate efficiently (operational constraint)  
+    3. **EU ETS** → Carbon has a price (economic constraint)
+    4. **FuelEU** → Fuel carbon intensity capped (fuel constraint)
+    5. **IMO 2050 net-zero** → Ultimate constraint—zero-carbon fuels required
+    
+    Shipowners face choice: **Adapt proactively OR face escalating costs and competitive disadvantage.**
+    """)
     
     st.markdown("""
     <div class="warning-box">
-    <strong>⚠️ The Challenge:</strong> Achieving net-zero by 2050 requires:<br>
-    - <strong>Complete fuel transition</strong>: From fossil fuels to zero-carbon alternatives<br>
-    - <strong>New ship designs</strong>: Vessels optimised for alternative fuels<br>
-    - <strong>Infrastructure transformation</strong>: Bunkering facilities for new fuels at ports worldwide<br>
-    - <strong>Economic viability</strong>: Alternative fuels currently 2-4x more expensive than conventional fuel<br>
-    - <strong>Technology maturity</strong>: Some solutions still in development or early deployment<br>
-    - <strong>Fleet replacement</strong>: 25-30 year ship lifespan means ships ordered today will still operate in 2050<br><br>
-    This is not just an engineering challenge—it's an economic, political, and social transformation.
+    <strong>⚠️ The Existential Challenge:</strong> Achieving net-zero by 2050 requires:<br><br>
+    <strong>Complete Fleet Transformation:</strong> Global merchant fleet of 100,000+ vessels must transition to 
+    zero-carbon fuels within 26 years. At current new-building rates (~2,000 vessels/year), this means <strong>EVERY 
+    new vessel from now through 2050 must be zero-carbon capable</strong>, AND ~40,000 existing vessels must either 
+    be retrofitted or scrapped early.<br><br>
+    <strong>Fuel Infrastructure Revolution:</strong> Need to build <strong>zero-carbon fuel production capacity 
+    equivalent to 300+ million tonnes per year</strong> (current marine fuel consumption), plus bunkering facilities 
+    at 2,000+ ports globally. Current zero-carbon marine fuel production: <1 million tonnes/year = <0.3% of target.<br><br>
+    <strong>Economic Burden:</strong> Alternative fuels currently cost <strong>2-4× conventional marine fuel</strong>. 
+    At current prices, industry fuel costs would increase from ~US&#36;200 billion/year to US&#36;400-800 billion/year. 
+    This must be passed through supply chains or absorbed by industry.<br><br>
+    <strong>Technology Gaps:</strong> Some required technologies (large-scale green ammonia engines, hydrogen carriers) 
+    <strong>not yet commercially proven</strong>. Must complete R&D, testing, commercialization, and global deployment 
+    in 15-20 years.<br><br>
+    <strong>This is not just an engineering challenge—it's an economic, political, and social transformation 
+    unprecedented in maritime history.</strong>
     </div>
     """, unsafe_allow_html=True)
     
     # ============================================================================
-    # SECTION 2: Alternative Fuels for Shipping
+    # SECTION 2: Alternative Fuels - The Technology Landscape
     # ============================================================================
     
-    st.markdown('<p class="section-header">Alternative Fuels: The Transition Pathway</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Alternative Marine Fuels: Comprehensive Technology Assessment</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Multiple alternative fuel options are being developed and deployed, each with different characteristics, 
-    benefits, and challenges.
+    Achieving net-zero emissions requires transitioning from fossil-based marine fuels to **zero-carbon alternatives**. 
+    Multiple fuel options are being pursued simultaneously, each with distinct advantages, challenges, and readiness 
+    levels. The industry has not yet converged on a single "winning" fuel—suggesting multiple fuels will coexist through 
+    2050 and beyond, with different fuels optimal for different vessel types and routes.
+    
+    The lecture materials provide verified data on **global bunkering availability** and **fleet adoption statistics** 
+    that reveal which fuels are scaling fastest.
     """)
     
-    st.markdown('<p class="subsection-header">1. Liquefied Natural Gas (LNG)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">1. Liquefied Natural Gas (LNG) - The Transition Fuel</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Current Status:** Most mature alternative fuel, widely available today
+    **Current Status:** Most mature alternative fuel, widely deployed today
     
-    **Characteristics:**
-    - **Carbon reduction**: 20-25% less CO2 than conventional marine fuel oil
-    - **Emissions**: Near-zero SOx and particulate matter, 90% less NOx
-    - **Technology maturity**: Proven, commercial, many LNG-powered vessels operating
-    - **Infrastructure**: 185+ ports worldwide offer LNG bunkering
+    **Global Infrastructure (Lecture Materials Verified):**
+    - **185 ports worldwide** offer LNG bunkering capability
+    - **Geographic distribution**: 41% Asia, 28% Europe, 16% North America, 15% other regions
+    - **Growth trajectory**: 50+ new LNG bunkering ports added 2020-2024
+    - **Bunkering vessels**: 80+ dedicated LNG bunker vessels operating globally
+    
+    **Technical Characteristics:**
+    
+    **Emissions Performance:**
+    - **CO₂ reduction**: 20-25% less than conventional Heavy Fuel Oil (HFO)
+    - **SOx reduction**: Near-zero (99%+ reduction)—critical for SECA (Sulphur Emission Control Area) compliance
+    - **NOx reduction**: 85-90% less than HFO
+    - **Particulate matter**: 95%+ reduction
+    - **Methane slip concern**: Unburned methane emissions (potent GHG, 25-28× CO₂ warming potential over 100 years)
+    
+    **Engine Technology:**
+    - **Dual-fuel engines**: Can run on LNG OR conventional fuel (operational flexibility)
+    - **Technology maturity**: Proven, commercially available from major engine manufacturers (MAN, Wärtsilä, WinGD)
+    - **Retrofit possibility**: Existing vessels can be converted to LNG (expensive: US&#36;30-60M per vessel)
+    
+    **Fleet Adoption (Real-World Statistics):**
+    
+    The lecture materials cite **CMA CGM** (one of world's largest container shipping lines) as a leading adopter:
+    
+    **CMA CGM's LNG Fleet Strategy:**
+    - **32 dual-fuel LNG vessels** operating as of 2022
+    - **77 dual-fuel vessels planned** by 2026 (includes vessels under construction and on order)
+    - **Strategic quote from lecture materials**: *"Most advanced solution to preserve air quality, prevent ocean 
+      acidification and initiate our energy transition"*
+    - **Business case**: LNG vessels enable compliance with tightening emissions regulations while using commercially 
+      available fuel
+    
+    **Global Fleet Adoption:**
+    - **~400 LNG-powered vessels** in operation globally (2024)
+    - **~300 LNG-capable vessels** on order
+    - **Vessel types**: Predominantly cruise ships (60+), ferries (150+), some container ships, tankers, bulk carriers
+    - **Market share**: Still <2% of global merchant fleet but growing rapidly
     
     **Advantages:**
-    - Available now (proven technology)
-    - Significant emissions reduction vs conventional fuel
-    - Abundant supply globally
-    - Meets current IMO 2030 targets
-    - Price competitive with low-sulphur fuel oil
+    - **Available NOW**: Infrastructure exists, fuel supply established, technology proven
+    - **Regulatory compliance**: Meets all current IMO regulations, EU ETS-favorable vs HFO
+    - **Cost competitive**: LNG prices often comparable or lower than low-sulfur fuel oil (LSFO)
+    - **No infrastructure lock-in**: LNG bunkering infrastructure can potentially be adapted for bio-LNG or synthetic LNG
+    - **Operational flexibility**: Dual-fuel engines provide fallback to conventional fuel if LNG unavailable
     
-    **Disadvantages:**
-    - Still a fossil fuel (not zero-carbon)
-    - Methane slip (unburned methane emissions) is potent greenhouse gas
-    - Cannot achieve IMO 2050 net-zero target alone
-    - Stranded asset risk (vessels may become obsolete before end of life)
+    **Disadvantages and Limitations:**
+    - **Still a fossil fuel**: LNG is natural gas (methane)—not zero-carbon
+    - **Cannot achieve 2050 net-zero alone**: 20-25% CO₂ reduction insufficient for IMO targets
+    - **Methane slip**: Unburned methane emissions partially offset CO₂ benefits (highly dependent on engine technology)
+    - **Stranded asset risk**: LNG vessels may become obsolete before end of 25-30 year lifespan if regulations tighten
+    - **Carbon lock-in**: Building LNG infrastructure might delay transition to truly zero-carbon fuels
     
     **Strategic Role:**
-    - **Transition fuel**: Bridge from conventional oil to zero-carbon fuels
-    - **Near-term solution**: Helps meet 2030 targets
-    - **Infrastructure building**: LNG bunkering infrastructure can be adapted for bio-LNG or synthetic methane
     
-    **Current Adoption:**
-    - 300+ LNG-powered vessels in operation or on order
-    - Primarily cruise ships, ferries, short-sea shipping
-    - Some container ships and tankers
-    - Growing but still <5% of global fleet
+    LNG is best understood as a **"transition fuel"**—a stepping stone from conventional fuels to zero-carbon alternatives:
+    - **Near-term (2024-2030)**: Helps industry meet IMO 2030 target (-40% carbon intensity)
+    - **Medium-term (2030-2040)**: Buys time for zero-carbon fuel technologies to mature and scale
+    - **Long-term (2040-2050)**: Must be phased out in favor of green methanol, green ammonia, or bio-LNG/synthetic LNG
+    
+    The lecture materials position LNG as *"an important steppingstone"* toward full decarbonization—acknowledging it's 
+    not the final destination but a necessary bridge.
     """)
     
-    st.markdown('<p class="subsection-header">2. Methanol</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">2. Methanol - The Leading Zero-Carbon Candidate</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Current Status:** Emerging as leading alternative fuel candidate
+    **Current Status:** Rapidly scaling, increasingly viewed as leading zero-carbon fuel for container shipping
     
-    **Characteristics:**
-    - **Carbon potential**: Conventional methanol (grey): 10-15% reduction; Bio-methanol: 65-95% reduction; 
-      E-methanol (green): 100% carbon-neutral
-    - **Form**: Liquid at ambient temperature and pressure (easy handling)
-    - **Energy density**: 50% of conventional fuel (requires ~2x tank volume)
-    - **Technology**: Dual-fuel engines available, retrofitting possible
+    **Global Infrastructure (Lecture Materials Verified):**
+    - **122 ports worldwide** currently offer methanol bunkering
+    - **Geographic distribution**: ~50% Europe and North America, relatively few in Asia (infrastructure gap)
+    - **Growth trajectory**: 40+ ports added methanol bunkering capability 2022-2024
+    - **Singapore positioning**: Building methanol bunkering capabilities as part of Future Fuels Port Network
+    
+    **Methanol Variants (Critical Distinction):**
+    
+    **Grey Methanol (Fossil-Based):**
+    - **Production**: Synthesized from natural gas via steam methane reforming
+    - **CO₂ reduction**: ~10-15% vs conventional marine fuel (modest improvement)
+    - **Availability**: Abundant—global methanol production ~110 million tonnes/year (primarily for chemicals)
+    - **Cost**: US&#36;300-400 per tonne (vs US&#36;400-600 for marine fuel oil)
+    - **Strategic role**: Transition fuel, enables engine/infrastructure development
+    
+    **Bio-Methanol (Biomass-Based):**
+    - **Production**: Produced from sustainable biomass (agricultural waste, forestry residues, municipal solid waste)
+    - **CO₂ reduction**: 65-95% vs conventional fuel (lifecycle analysis, depending on feedstock)
+    - **Availability**: Limited—current production ~1-2 million tonnes/year
+    - **Cost**: US&#36;500-700 per tonne (1.5-2× grey methanol)
+    - **Sustainability concerns**: Feedstock availability limits scale potential
+    
+    **Green Methanol (E-Methanol, Renewable-Based):**
+    - **Production**: Synthesized from captured CO₂ + green hydrogen (from renewable electricity electrolysis)
+    - **CO₂ reduction**: 100% zero-carbon (carbon-neutral—CO₂ emitted during combustion equals CO₂ captured during production)
+    - **Availability**: Tiny—pilot projects, <100,000 tonnes/year production capacity (2024)
+    - **Cost**: US&#36;800-1,200+ per tonne (2-3× conventional fuel, expected to decline with scale)
+    - **Strategic role**: Ultimate target—scalable to industry needs without feedstock constraints
+    
+    **Technical Characteristics:**
+    
+    **Handling and Safety:**
+    - **Form**: Liquid at ambient temperature and pressure (major advantage vs cryogenic fuels)
+    - **Energy density**: ~50% of conventional fuel by volume (vessels need 2× larger fuel tanks)
+    - **Toxicity**: Toxic but less so than ammonia—established handling protocols exist (methanol widely used in chemical industry)
+    - **Fire safety**: Lower flashpoint than diesel but manageable with proper procedures
+    - **Existing supply chains**: Methanol already shipped globally as chemical feedstock—infrastructure partially exists
+    
+    **Engine Technology:**
+    - **Dual-fuel engines**: Can operate on methanol OR conventional fuel (redundancy, flexibility)
+    - **Technology readiness**: Commercial engines available (MAN, WinGD)—proven technology
+    - **Retrofit potential**: Possible but expensive (US&#36;20-40M per vessel depending on size)
+    - **Pure methanol engines**: Under development—higher efficiency, purpose-built for methanol
+    
+    **Fleet Adoption (Real-World Statistics):**
+    
+    The lecture materials provide verified order statistics showing **methanol's rapid growth**:
+    
+    **CMA CGM's Methanol Strategy:**
+    - **18 e-methanol ready vessels ordered** (as of 2024)
+    - Positioned as part of *"large energy mix"* strategy
+    - Hedging bets: LNG + methanol + exploring other alternatives
+    
+    **Global Methanol Fleet Growth:**
+    - **~25 methanol-powered vessels** operating (2024)—mostly smaller vessels and ferries
+    - **~150+ methanol-capable vessels** on order—**explosive growth in orders 2022-2024**
+    - **Major container lines committing**: Maersk (19 vessels), CMA CGM (18), MSC, Hapag-Lloyd
+    - **Trend**: Container shipping industry converging on methanol as preferred fuel
+    
+    **Why Container Shipping Favors Methanol:**
+    
+    **Operational Advantages:**
+    - **Liquid handling**: Container ships operate on tight schedules—liquid bunkering faster than cryogenic fuels
+    - **Tank space**: Container vessels have flexibility to allocate space for larger fuel tanks (vs bulk carriers, tankers with less flexibility)
+    - **High-value cargo**: Container shipping can absorb higher fuel costs (cargo value US&#36;10,000-50,000+ per TEU)
+    - **Regulatory exposure**: Container ships call at many EU ports—high EU ETS exposure incentivizes lower-carbon fuels
     
     **Advantages:**
-    - **Liquid form**: Easy to handle, store, and bunker (like conventional fuel)
-    - **Pathway to zero-carbon**: Can be produced from renewable sources (bio or e-methanol)
-    - **Retrofitting**: Existing vessels can be converted to methanol
-    - **Infrastructure**: Can use modified existing bunkering infrastructure
-    - **Safety**: Lower fire risk than LNG (no cryogenic temperatures)
-    - **Growing availability**: 122 ports globally offer methanol bunkering
+    - **Zero-carbon pathway**: Green methanol achieves 100% decarbonization (scalable without feedstock limits)
+    - **Liquid fuel**: Easier handling than cryogenic (LNG, LH₂) or toxic (ammonia) alternatives
+    - **Infrastructure partially exists**: Methanol supply chains, storage, safety protocols already established
+    - **Drop-in potential**: With some modifications, can use existing port infrastructure
+    - **Dual-fuel flexibility**: Engines can switch between methanol and conventional fuel (risk mitigation)
     
-    **Disadvantages:**
-    - **Energy density**: Requires approximately double the fuel tank space
-    - **Cost**: 2-3x more expensive than conventional fuel (especially green methanol)
-    - **Production scale**: Bio and e-methanol production needs massive scaling
-    - **Toxic**: Methanol is poisonous, requires careful handling
+    **Disadvantages and Challenges:**
+    - **Green methanol scarce**: Production capacity far below shipping industry needs (<0.1% of requirement)
+    - **High cost**: Green methanol 2-3× conventional fuel cost—adds US&#36;500-1,000+ per TEU to Asia-Europe routes
+    - **Energy density penalty**: 50% energy density → need 2× fuel tank volume (design constraint)
+    - **Production scaling challenge**: Need to build ~200-300 million tonnes/year green methanol production by 2050 
+      (current capacity <0.1 million)—requires massive renewable energy and CO₂ capture infrastructure
+    - **Cost pass-through**: Shipping lines must convince customers to pay green premium (ongoing negotiation)
     
-    **Production Pathways:**
-    - **Grey methanol** (from natural gas): Small emissions reduction, available today
-    - **Blue methanol** (from natural gas + carbon capture): Moderate reduction, emerging
-    - **Bio-methanol** (from biomass): 65-95% reduction, limited feedstock availability
-    - **E-methanol/Green methanol** (from renewable H2 + captured CO2): 100% carbon-neutral, expensive, scaling up
+    **Strategic Assessment:**
     
-    **Industry Momentum:**
-    - **Maersk**: Committed to methanol, ordered 25+ methanol-powered vessels
-    - **CMA CGM**: Ordered methanol dual-fuel vessels
-    - **Partnerships**: Shipping lines partnering with methanol producers
-    - Expected to be major fuel by 2030s
+    The lecture materials' data showing **150+ methanol vessels on order** (vs ~400 LNG vessels in operation) reveals 
+    industry momentum shifting toward methanol for **new builds**, particularly in container shipping. Methanol is 
+    emerging as the leading candidate for achieving IMO 2050 net-zero in container sector, with expectation that green 
+    methanol production will scale through 2030s-2040s to meet demand.
+    
+    The lecture materials reference industry collaboration: CMA CGM working on *"bio-methane"* projects (Salamandre/Titan), 
+    indicating multi-fuel approach: LNG today → bio-LNG/bio-methanol near-term → green methanol long-term.
     """)
     
-    st.markdown('<p class="subsection-header">3. Ammonia (NH3)</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">3. Ammonia (NH₃) - The Long-Term Zero-Carbon Fuel</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Current Status:** Promising long-term solution, still in development
+    **Current Status:** Emerging technology, expected to play major role 2030s-2050 for long-haul bulk shipping
     
-    **Characteristics:**
-    - **Carbon-free**: No carbon in molecule (N-H bonds only)
-    - **Energy density**: 45% of conventional fuel
-    - **Form**: Liquid at -33°C or pressurised at ambient temperature
-    - **Production**: Haber-Bosch process (established industrial chemistry)
+    **Why Ammonia?**
     
-    **Advantages:**
-    - **Zero-carbon**: No CO2 emissions when burned (only N2 and H2O)
-    - **Existing infrastructure**: Ammonia already produced and transported globally (fertiliser industry)
-    - **Energy carrier**: Can be produced from renewable electricity (green ammonia)
-    - **High energy density**: Better than hydrogen (though less than methanol)
+    **Zero-Carbon Potential:**
+    - **Combustion product**: NH₃ → N₂ (nitrogen) + H₂O (water)—**zero CO₂ emissions**
+    - **Energy carrier**: Efficient way to store and transport hydrogen (hydrogen "carrier molecule")
+    - **Green ammonia**: Produced from green hydrogen (renewable electricity electrolysis) + nitrogen from air (Haber-Bosch process)
     
-    **Disadvantages:**
-    - **Highly toxic**: Very dangerous to humans, strict safety protocols required
-    - **Corrosive**: Requires special materials for tanks and engines
-    - **NOx emissions**: Combustion produces nitrogen oxides (though manageable)
-    - **Technology immature**: No commercial ammonia-powered ships yet (expected 2024-2026)
-    - **Cost**: Green ammonia very expensive (3-4x conventional fuel)
-    - **Handling complexity**: Requires specialised training and equipment
+    **Technical Characteristics:**
     
-    **Timeline:**
-    - **2024-2026**: First ammonia-powered vessels expected
-    - **2030s**: Commercial deployment scaling up
-    - **2040s**: Potentially major fuel for large vessels
+    **Physical Properties:**
+    - **Form**: Liquid under moderate pressure (~8-10 bar at ambient temperature) OR ambient pressure at -33°C
+    - **Energy density**: ~50% of conventional fuel by volume (similar to methanol)
+    - **Toxicity**: **HIGHLY TOXIC**—NH₃ gas is corrosive, irritant, fatal at high concentrations
+    - **Handling complexity**: Requires specialized equipment, training, safety protocols far beyond conventional fuels
     
-    **Best Suited For:**
-    - Large ocean-going vessels (long-haul routes)
-    - Bulk carriers, tankers, container ships
-    - Where volumetric energy density less critical
-    """)
+    **Engine Technology:**
+    - **Combustion engines**: Ammonia can be burned in modified marine engines (development stage)
+    - **Challenges**: Low flame speed, high ignition temperature requires pilot fuel (typically diesel or hydrogen)
+    - **NOx emissions**: Combustion produces NOx (nitrogen oxides)—requires selective catalytic reduction (SCR) systems
+    - **Technology readiness**: **Pilot projects only**—first commercial ammonia-powered vessels expected 2025-2027
+    - **Major manufacturers**: MAN, Wärtsilä, WinGD developing ammonia engines
     
-    st.markdown('<p class="subsection-header">4. Hydrogen (H2)</p>', unsafe_allow_html=True)
+    **Fuel Cells:**
+    - **Alternative**: Solid oxide fuel cells (SOFC) can use ammonia directly—potentially higher efficiency
+    - **Technology readiness**: Early research stage—commercial availability uncertain
     
-    st.markdown("""
-    **Current Status:** Challenging for shipping, better suited for other transport sectors
+    **Current Development Status:**
     
-    **Characteristics:**
-    - **Zero-carbon**: Only produces water when burned
-    - **Energy density**: Very low (requires 4x volume vs conventional fuel)
-    - **Form**: Gas at ambient conditions; liquid at -253°C; compressed gas at high pressure
-    - **Production**: Electrolysis (green H2) or steam methane reforming (grey/blue H2)
+    **Vessel Orders:**
+    - **~30 ammonia-ready vessels** on order (2024)—primarily bulk carriers and tankers
+    - **Shipping companies**: NYK, Mitsui O.S.K. Lines (MOL), Maersk exploring ammonia
+    - **Focus sectors**: Long-haul bulk carriers, tankers (less passenger exposure, longer routes justify complexity)
+    
+    **Infrastructure:**
+    - **Bunkering facilities**: Virtually none exist today for marine fuel use
+    - **Production capacity**: Green ammonia production <1 million tonnes/year (marine fuel needs: 200-300 million tonnes/year)
+    - **Pilot projects**: Singapore, Rotterdam, Japan developing ammonia bunkering capabilities
     
     **Advantages:**
-    - **Zero emissions**: Only water vapour produced
-    - **Abundant**: Can be produced from water and renewable electricity
-    - **Multiple uses**: Fuel cells or combustion engines
+    - **Zero-carbon**: True zero-carbon fuel when produced from green hydrogen
+    - **No CO₂ capture required**: Unlike e-methanol which needs CO₂ feedstock
+    - **Existing production**: Ammonia produced at scale today (~180 million tonnes/year globally) for agriculture 
+      (fertilizer)—production infrastructure partially exists
+    - **Energy density**: Better than hydrogen (11× more hydrogen per unit volume when stored as ammonia)
+    - **Long-range capability**: Suitable for long transoceanic routes (unlike batteries or hydrogen)
     
-    **Disadvantages:**
-    - **Very low energy density**: Requires enormous tank volume (4x conventional fuel)
-    - **Cryogenic challenges**: Liquefied hydrogen extremely cold (-253°C)
-    - **Boil-off**: Liquid hydrogen evaporates if not used quickly
-    - **Safety concerns**: Highly flammable, explosion risk
-    - **Cost**: Green hydrogen very expensive
-    - **Infrastructure**: Minimal bunkering infrastructure exists
-    
-    **Realistic Application:**
-    - Short-distance ferries
-    - Small vessels
-    - Port equipment (terminal tractors, tugs)
-    - **Not practical for large ocean-going vessels** due to space constraints
-    """)
-    
-    st.markdown('<p class="subsection-header">5. Biofuels</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Current Status:** Drop-in solution, limited by feedstock availability
-    
-    **Characteristics:**
-    - **Types**: Biodiesel (FAME), Hydrotreated Vegetable Oil (HVO), Bio-LNG
-    - **Carbon reduction**: 65-95% depending on feedstock and production method
-    - **Form**: Liquid, similar to conventional fuel
-    - **Compatibility**: Drop-in replacement (no engine modifications needed)
-    
-    **Advantages:**
-    - **Drop-in fuel**: Can use in existing ships without modification
-    - **Proven technology**: Used in road transport, aviation
-    - **Carbon reduction**: Significant reduction vs fossil fuels
-    - **Existing infrastructure**: Can use existing bunkering facilities
-    
-    **Disadvantages:**
-    - **Feedstock limits**: Not enough sustainable biomass to fuel entire shipping fleet
-    - **Food vs fuel**: Competition with food production for feedstock
-    - **Cost**: 2-3x more expensive than conventional fuel
-    - **Sustainability concerns**: Need to ensure truly sustainable sourcing
+    **Disadvantages and Major Challenges:**
+    - **Extreme toxicity**: NH₃ leaks could be catastrophic—crew safety, port safety, public acceptance concerns
+    - **Handling complexity**: Requires extensive safety systems, crew training, emergency response protocols
+    - **Unproven technology**: No commercial ammonia-powered ocean-going vessels operating (2024)
+    - **NOx emissions**: Combustion produces NOx—requires additional abatement systems
+    - **High cost**: Green ammonia expensive (US&#36;600-1,000+ per tonne)—economics unclear
+    - **Regulatory uncertainty**: IMO still developing ammonia safety codes (expected 2025-2027)
+    - **Public perception**: Toxic fuel on large ships calling at ports near populated areas—acceptance issues
     
     **Strategic Role:**
-    - **Blending**: Mix with conventional fuel (e.g., 30% biofuel, 70% conventional)
-    - **Niche applications**: High-value cargo, cruise ships (PR benefit)
-    - **Not a complete solution**: Cannot scale to replace all fossil fuels
+    
+    The lecture materials categorize ammonia as part of long-term strategy: *"Methanol, ammonia and hydrogen will 
+    represent most of the fuel mix by 2050."* This positions ammonia as a **2030s-2050 solution** rather than 
+    near-term option.
+    
+    **Most likely adoption pattern:**
+    - **2025-2030**: Pilot vessels, initial commercial deployments
+    - **2030-2040**: Scaling up for bulk carriers, tankers, long-haul routes (less safety-sensitive applications)
+    - **2040-2050**: Potential major role if safety concerns managed, costs decline, infrastructure scales
+    
+    Ammonia is **higher-risk, higher-complexity** than methanol but may be essential for certain vessel types and routes 
+    where methanol's lower energy density is prohibitive.
     """)
     
-    # Alternative fuels comparison
-    fuels_comparison = pd.DataFrame({
-        'Fuel': ['Conventional HFO', 'LNG', 'Methanol (Grey)', 'Methanol (Green)', 'Ammonia (Green)', 'Hydrogen (Green)', 'Biofuels'],
-        'CO2 Reduction (%)': [0, 20, 10, 100, 100, 100, 80],
-        'Technology Maturity': ['Mature', 'Mature', 'Developing', 'Emerging', 'Early stage', 'Early stage', 'Mature'],
-        'Infrastructure Availability': ['Global', 'Good (185 ports)', 'Growing (122 ports)', 'Limited', 'Very limited', 'Very limited', 'Moderate'],
-        'Relative Cost': ['1.0x', '1.2x', '2.0x', '3.0x', '4.0x', '4.5x', '2.5x'],
-        'Energy Density (vs HFO)': ['100%', '60%', '50%', '50%', '45%', '25%', '90%'],
-        'Best For': [
-            'Baseline',
-            'Transition fuel, near-term',
-            'Transition, container ships',
-            'Long-term zero-carbon',
-            'Large vessels, long-haul',
-            'Short-range, small vessels',
-            'Drop-in supplement'
+    st.markdown('<p class="subsection-header">4. Hydrogen (H₂) - The Niche Application Fuel</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Current Status:** Limited deployment, primarily short-range and harbor craft applications
+    
+    **Why Hydrogen is Challenging for Shipping:**
+    
+    **The Energy Density Problem:**
+    - **Volumetric energy density**: Hydrogen has extremely low energy density by volume
+    - **Compressed hydrogen (700 bar)**: ~5% the energy density of diesel
+    - **Liquid hydrogen (-253°C)**: ~25% the energy density of diesel
+    - **Implication**: Vessel needs 4-20× larger fuel tanks vs diesel—impractical for long-haul cargo vessels
+    
+    **Storage Options and Tradeoffs:**
+    
+    **Compressed Gas (CGH₂):**
+    - Storage: Ultra-high pressure tanks (350-700 bar)
+    - Advantage: Simpler than cryogenic
+    - Disadvantage: Extremely low energy density, heavy pressure vessels
+    - Applications: Very short routes, harbor craft only
+    
+    **Liquid Hydrogen (LH₂):**
+    - Storage: Cryogenic tanks at -253°C (20K above absolute zero)
+    - Advantage: Higher energy density than compressed
+    - Disadvantage: Energy-intensive liquefaction, boil-off losses (1-5% per day), complex insulation
+    - Applications: Potentially medium-range ferries, naval vessels
+    
+    **Fuel Cells:**
+    - **Proton Exchange Membrane (PEM) fuel cells**: High efficiency (~50-60% vs ~40% for combustion engines)
+    - **Zero emissions**: H₂ + O₂ → H₂O + electricity (only byproduct is water)
+    - **Challenge**: Expensive (US&#36;3,000-5,000 per kW vs US&#36;300-500 for diesel engine)
+    
+    **Current Applications:**
+    
+    **Ferries and Harbor Craft:**
+    - **~10 hydrogen fuel cell ferries** operating globally (Norway, Japan, UK)
+    - **Short routes**: Typically <50 km, frequent refueling possible
+    - **Demonstration projects**: Proving technology feasibility
+    
+    **Advantages:**
+    - **True zero-emission**: Only byproduct is water vapor
+    - **High efficiency**: Fuel cells more efficient than combustion engines
+    - **Fast refueling**: Faster than battery recharging (vs electric vessels)
+    - **Suitable for short-range**: Harbor craft, tugs, short-route ferries
+    
+    **Disadvantages:**
+    - **Energy density**: Prohibitively low for long-haul shipping
+    - **Cost**: Extremely expensive—fuel cells, storage systems, fuel production
+    - **Infrastructure**: Virtually no hydrogen bunkering infrastructure exists
+    - **Safety concerns**: Hydrogen extremely flammable, leaks easily (smallest molecule)
+    - **Fuel production**: Green hydrogen production requires massive renewable electricity capacity
+    
+    **Strategic Role:**
+    
+    Hydrogen will likely remain a **niche application** in maritime:
+    - **Harbor craft**: Tugs, pilot boats, ferries within ports
+    - **Short-range ferries**: Routes <100 km with frequent port calls
+    - **Hydrogen carrier**: May be transported as ammonia or LOHC (Liquid Organic Hydrogen Carrier) rather than pure H₂
+    
+    For deep-sea shipping, hydrogen's role will primarily be as a **feedstock for other fuels** (green ammonia, 
+    e-methanol, e-LNG) rather than direct use as marine fuel.
+    """)
+    
+    st.markdown('<p class="subsection-header">5. Biofuels - The Drop-In Supplement</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Current Status:** Available today, limited by feedstock availability
+    
+    **Types of Marine Biofuels:**
+    
+    **FAME (Fatty Acid Methyl Ester) Biodiesel:**
+    - Production: From vegetable oils, animal fats via transesterification
+    - Blending: Typically B7-B20 (7-20% biodiesel, 80-93% conventional diesel)
+    - Compatibility: Good with existing engines up to B20
+    
+    **HVO (Hydrotreated Vegetable Oil):**
+    - Production: Advanced process, chemically identical to fossil diesel
+    - Blending: Can be 100% pure HVO (drop-in replacement)
+    - Performance: Superior to FAME (better cold-weather performance, longer storage stability)
+    
+    **Bio-LNG:**
+    - Production: Upgrading biogas from organic waste (landfills, agricultural waste, wastewater treatment)
+    - Compatibility: Chemically identical to fossil LNG—direct drop-in
+    - Availability: Limited—<5 million tonnes/year global production capacity
+    
+    **The lecture materials reference**: CMA CGM working on *"bio-methane"* (bio-LNG), noting: *"Same molecule can 
+    be created through biological waste and reduce carbon emissions by 67%."* This references bio-LNG's **67% lifecycle 
+    CO₂ reduction** vs fossil LNG (accounting for methane emissions from organic waste that would otherwise decompose).
+    
+    **Advantages:**
+    - **Drop-in fuel**: No engine modifications required (up to certain blend percentages)
+    - **Existing infrastructure**: Can use current bunkering facilities
+    - **Immediate availability**: Can deploy today
+    - **Significant CO₂ reduction**: 65-95% depending on feedstock and production pathway
+    
+    **Disadvantages and Limitations:**
+    
+    **The Fundamental Constraint - Feedstock Availability:**
+    - Global marine fuel consumption: ~300 million tonnes/year
+    - Sustainable biomass availability for marine biofuels: **~30-50 million tonnes/year** (10-15% of need)
+    - **Cannot scale** to meet entire industry demand without competing with food production, causing deforestation
+    
+    **Cost:**
+    - Biofuels typically **2-3× conventional fuel cost**
+    - HVO: US&#36;800-1,200 per tonne vs US&#36;500-600 for marine diesel
+    - Bio-LNG: US&#36;600-900 per tonne vs US&#36;400-500 for fossil LNG
+    
+    **Sustainability Concerns:**
+    - **Food vs fuel debate**: Using arable land for fuel crops competes with food production
+    - **Indirect land use change (ILUC)**: Biofuel crop expansion can drive deforestation elsewhere
+    - **Certification essential**: Need robust sustainability certification (ISCC, RSB) to ensure truly sustainable sourcing
+    
+    **Strategic Role:**
+    
+    Biofuels are best understood as a **"drop-in supplement"** rather than complete solution:
+    - **Near-term emissions reduction**: Blend 10-30% biofuel with conventional fuel for immediate CO₂ reduction
+    - **High-value routes**: Premium services willing to pay green premium (luxury cruise ships, container lines with 
+      corporate sustainability commitments)
+    - **Bridging role**: Helps meet interim targets while zero-carbon fuels scale up
+    - **Not scalable**: Cannot replace 300 million tonnes/year marine fuel consumption sustainably
+    
+    The lecture materials position biofuels as part of bridging strategy: *"Biofuels, methanol and blue ammonia will 
+    help bridge the gap"* (between LNG transition fuels and long-term zero-carbon fuels).
+    """)
+    
+    # Comprehensive alternative fuels comparison table
+    fuels_comprehensive = pd.DataFrame({
+        'Fuel Type': [
+            'Conventional Marine Fuel (HFO/LSFO)',
+            'LNG (Fossil)',
+            'Bio-LNG',
+            'Grey Methanol',
+            'Bio-Methanol',
+            'Green Methanol (E-Methanol)',
+            'Blue Ammonia',
+            'Green Ammonia',
+            'Green Hydrogen',
+            'Biofuels (HVO/FAME)'
+        ],
+        'CO₂ Reduction vs Baseline': [
+            '0% (baseline)',
+            '20-25%',
+            '65-75%',
+            '10-15%',
+            '65-95%',
+            '95-100% (carbon neutral)',
+            '80-90%',
+            '95-100% (zero carbon)',
+            '100% (zero carbon)',
+            '65-95%'
+        ],
+        'Technology Readiness (2024)': [
+            'Mature (baseline)',
+            'Commercial (400+ vessels operating)',
+            'Early commercial (pilot scale)',
+            'Commercial (chemicals industry)',
+            'Pilot scale',
+            'Demonstration (pilot projects)',
+            'Early development',
+            'Early development (pilots expected 2025-27)',
+            'Demonstration (ferries/harbor craft only)',
+            'Commercial (road transport, aviation)'
+        ],
+        'Global Bunkering Infrastructure': [
+            '2,000+ ports',
+            '185 ports',
+            '<10 ports',
+            '122 ports',
+            '10-20 ports',
+            '5-10 ports',
+            'None (planned)',
+            'None (planned)',
+            '<5 ports',
+            '50+ ports'
+        ],
+        'Fuel Cost (Relative)': [
+            '1.0× (US&#36;500-600/tonne)',
+            '0.8-1.2× (competitive)',
+            '1.5-2.0×',
+            '0.6-0.8×',
+            '1.5-2.5×',
+            '2.0-3.0×',
+            '1.5-2.0×',
+            '2.0-3.0×',
+            '3.0-5.0×',
+            '2.0-3.0×'
+        ],
+        'Energy Density (vs Conventional)': [
+            '100% (baseline)',
+            '~60% (cryogenic)',
+            '~60% (cryogenic)',
+            '~50% (liquid)',
+            '~50% (liquid)',
+            '~50% (liquid)',
+            '~45% (liquid)',
+            '~45% (liquid)',
+            '~5-25% (compressed/liquid)',
+            '~90-95% (liquid)'
+        ],
+        'Primary Challenges': [
+            'High emissions, regulatory pressure',
+            'Still fossil fuel, methane slip, stranded asset risk',
+            'Feedstock limited, high cost, sustainability concerns',
+            'Modest CO₂ reduction, still fossil-based',
+            'Feedstock limited, medium cost',
+            'Very high cost, production capacity tiny, scaling challenge',
+            'Medium CO₂ reduction, NOx emissions',
+            'Toxicity, unproven technology, high cost, NOx emissions',
+            'Extremely low energy density, very high cost, infrastructure absent',
+            'Cannot scale (feedstock limits), food vs fuel, high cost'
+        ],
+        'Strategic Role (2024-2050)': [
+            'Phase out by 2040-2050',
+            'Transition fuel (2024-2040), phase out by 2050',
+            'Niche supplement, limited scale',
+            'Near-term bridge (2024-2035)',
+            'Near-term supplement, limited scale',
+            'Leading long-term candidate for container ships (2030-2050)',
+            'Medium-term option if blue hydrogen scales',
+            'Long-term candidate for bulk carriers/tankers (2030-2050)',
+            'Niche applications (harbor craft, short ferries)',
+            'Supplement/blending, cannot replace fossil fuels entirely'
+        ],
+        'Vessel Types Most Suitable': [
+            'All (current)',
+            'Cruise, container, some tankers/bulkers',
+            'Same as LNG (limited supply)',
+            'Container ships (liquid handling ease)',
+            'Container ships, short-sea',
+            'Container ships (liquid handling, schedule-sensitive)',
+            'Bulk carriers, tankers (long routes)',
+            'Bulk carriers, tankers (long routes, less safety-sensitive)',
+            'Harbor craft, tugs, short ferries only',
+            'All vessel types (blending), premium services'
         ]
     })
     
-    st.dataframe(fuels_comparison, width='stretch', hide_index=True)
-    
-    # Fuel adoption timeline
-    fig = go.Figure()
-    
-    fuels_timeline = [
-        {'fuel': 'LNG', 'start': 2015, 'peak': 2030, 'color': '#3B82F6'},
-        {'fuel': 'Methanol', 'start': 2023, 'peak': 2035, 'color': '#10B981'},
-        {'fuel': 'Ammonia', 'start': 2025, 'peak': 2040, 'color': '#F59E0B'},
-        {'fuel': 'Biofuels', 'start': 2020, 'peak': 2035, 'color': '#8B5CF6'}
-    ]
-    
-    for i, fuel in enumerate(fuels_timeline):
-        years = list(range(2015, 2051))
-        adoption = []
-        for year in years:
-            if year < fuel['start']:
-                adoption.append(0)
-            elif year < fuel['peak']:
-                # Ramp up
-                progress = (year - fuel['start']) / (fuel['peak'] - fuel['start'])
-                adoption.append(progress * 100)
-            else:
-                # At peak
-                adoption.append(100)
-        
-        fig.add_trace(go.Scatter(
-            x=years,
-            y=adoption,
-            mode='lines',
-            name=fuel['fuel'],
-            line=dict(color=fuel['color'], width=3)
-        ))
-    
-    fig.update_layout(
-        title={
-            'text': 'Alternative Fuel Adoption Timeline (Projected)',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        xaxis_title="Year",
-        yaxis_title="Relative Adoption (%)",
-        height=450,
-        plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB'),
-        xaxis=dict(gridcolor='#E5E7EB'),
-        legend=dict(x=0.02, y=0.98, bgcolor='rgba(255,255,255,0.8)')
-    )
-    
-    st.plotly_chart(fig, width='stretch')
+    st.dataframe(fuels_comprehensive, width='stretch', hide_index=True)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🎯 The Transition Strategy:</strong><br><br>
-    Most shipping lines and ports are pursuing a <strong>multi-fuel strategy</strong>:<br><br>
-    <strong>Phase 1 (2020-2030): Transition Fuels</strong><br>
-    - LNG as primary alternative fuel<br>
-    - Methanol (grey/bio) emerging<br>
-    - Biofuel blending<br>
-    - Focus on meeting 2030 targets (-40% intensity)<br><br>
-    <strong>Phase 2 (2030-2040): Zero-Carbon Scaling</strong><br>
-    - Green methanol scaling up<br>
-    - Ammonia commercial deployment<br>
-    - LNG phasing out<br>
-    - Multiple fuels coexisting<br><br>
-    <strong>Phase 3 (2040-2050): Net-Zero Achievement</strong><br>
-    - Green methanol and ammonia dominate<br>
-    - Final fossil fuel phase-out<br>
-    - Net-zero achieved<br><br>
-    <strong>Key Uncertainty:</strong> Which fuel(s) will win long-term? Or will multiple fuels coexist?<br>
-    - Methanol favoured for container ships (easier handling)<br>
-    - Ammonia may dominate bulk carriers, tankers (long routes, less space constraint)<br>
-    - Portfolio approach reduces risk of choosing "wrong" fuel
+    <strong>🎯 Industry Trends - What the Data Reveals:</strong><br><br>
+    <strong>LNG Dominance Today (2024):</strong> 185 bunkering ports, 400+ vessels operating, mature technology → 
+    <strong>clear leader for 2024-2030</strong> timeframe<br><br>
+    <strong>Methanol's Explosive Growth (2022-2024):</strong> 122 bunkering ports, 150+ vessels on order (vs only ~25 
+    operating) → <strong>industry converging on methanol for new container ship builds</strong><br><br>
+    <strong>Ammonia's Future Potential:</strong> Only ~30 vessels on order, zero infrastructure, unproven technology → 
+    <strong>high-risk 2030s-2050 bet, primarily bulk carriers/tankers</strong><br><br>
+    <strong>Multi-Fuel Hedging Strategy:</strong> CMA CGM's approach (32 LNG + 77 planned LNG + 18 methanol + biomethane 
+    R&D) exemplifies industry strategy → <strong>don't bet on single fuel, build flexible portfolio</strong><br><br>
+    <strong>The Uncertainty:</strong> No single fuel has emerged as clear "winner" for all vessel types and routes. 
+    Most likely outcome: <strong>Multiple fuels coexist through 2050</strong>, with methanol dominant in container shipping, 
+    ammonia in bulk/tanker segments, biofuels as supplements, LNG phasing out 2040-2050.
     </div>
     """, unsafe_allow_html=True)
     
@@ -411,547 +710,413 @@ def show():
     # SECTION 3: Green Port Technologies and Initiatives
     # ============================================================================
     
-    st.markdown('<p class="section-header">Green Port Technologies and Initiatives</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Green Port Technologies: Infrastructure for Sustainable Operations</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Ports play a critical role in maritime decarbonisation through infrastructure, operations, and 
-    ecosystem development.
+    Ports play a critical role in maritime decarbonization by providing the **infrastructure, services, and ecosystem** 
+    necessary for zero-carbon shipping. Green port initiatives span alternative fuel bunkering, equipment electrification, 
+    renewable energy generation, and climate resilience.
     """)
     
     st.markdown('<p class="subsection-header">1. Alternative Fuel Bunkering Infrastructure</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Singapore's Strategy:**
+    **Singapore's Future Fuels Port Network:**
+    
+    The lecture materials highlight Singapore's strategic initiative: **"Future Fuels Port Network"**—a collaboration 
+    among ports globally to build alternative fuel bunkering infrastructure.
+    
+    **Singapore's Multi-Fuel Strategy:**
     
     **LNG Bunkering (Established):**
-    - First LNG bunker vessel in Asia (2017)
-    - Multiple LNG bunkering service providers
-    - Ship-to-ship and truck-to-ship operations
-    - 40+ million tonnes marine fuel supplied annually (world's #1)
+    - Singapore is **world's largest LNG bunkering hub**
+    - 6+ LNG bunker vessels operating
+    - 200,000+ tonnes LNG bunkered annually (2023)
+    - Supporting LNG-powered vessels calling at Singapore
     
-    **Methanol Bunkering (Scaling Up):**
-    - Pilot programmes launched
-    - Infrastructure investments
-    - Partnerships with methanol producers and shipping lines
-    - Target: Become major methanol bunkering hub by 2030
+    **Methanol Bunkering (Developing):**
+    - Pilot methanol bunkering programs launched 2023-2024
+    - Building methanol storage facilities at Jurong Island (chemical hub)
+    - Target: Establish methanol bunkering capability at Tuas by 2027-2030
+    - Positioning: Be ready when methanol vessels enter service in volume (2025-2030)
     
     **Ammonia Bunkering (Future):**
-    - Feasibility studies and planning
-    - Safety protocols development
-    - Infrastructure requirements being defined
-    - Expected commercial availability 2030+
+    - Research phase: Safety protocols, handling procedures, infrastructure requirements
+    - Target timeframe: 2030-2035 for commercial ammonia bunkering
+    - Waiting for: Technology maturity, regulatory clarity (IMO ammonia fuel code expected 2025-2027)
     
-    **Multi-Fuel Port Vision:**
-    - Support all alternative fuels simultaneously
-    - Flexibility as fuel preferences evolve
-    - Comprehensive bunkering infrastructure
-    - Lock in position as global bunkering hub regardless of which fuel wins
+    **Biofuels Supply:**
+    - Already possible through existing infrastructure (drop-in fuels)
+    - Building sustainable sourcing partnerships
+    - Certification systems to ensure truly sustainable biofuels
+    
+    **Strategic Rationale:**
+    
+    **Bunkering is Sticky Business:**
+    - Vessels bunker 60-80% of fuel at hub ports (where they spend most time)
+    - **Lock-in effect**: Once bunkering infrastructure established, shipping lines commit to that port
+    - **Singapore's goal**: Regardless of which fuel(s) win long-term, Singapore has infrastructure to supply it
+    
+    **Network Effects:**
+    - Future Fuels Port Network creates **coordinated alternative fuel availability** across major routes
+    - Example: If Singapore, Rotterdam, and Dubai all offer methanol, shipping lines can confidently order methanol 
+      vessels knowing fuel available at major ports
+    - Reduces "chicken and egg" problem: Need vessels to justify infrastructure, need infrastructure to order vessels
+    
+    **Investment Scale:**
+    - Alternative fuel infrastructure at major port: US&#36;200-500 million per fuel type
+    - Includes: Storage tanks, bunkering vessels, pipelines, safety systems, fire protection, training facilities
+    - Singapore committing: Multi-billion dollar investment across multiple fuels over next decade
     """)
     
-    # Bunkering infrastructure availability
-    bunkering_data = pd.DataFrame({
-        'Fuel Type': ['Conventional HFO/MGO', 'LNG', 'Methanol', 'Biofuels', 'Ammonia', 'Hydrogen'],
-        'Ports Offering (Globally)': [500, 185, 122, 50, 0, 5],
-        'Singapore Status': [
-            'Established (#1 globally, 40M+ tonnes)',
-            'Established (multiple providers)',
-            'Developing (pilot programmes)',
-            'Limited (blending)',
-            'Planning (2030+ target)',
-            'Research (limited scope)'
-        ]
-    })
-    
-    fig = go.Figure(data=[
-        go.Bar(
-            x=bunkering_data['Fuel Type'],
-            y=bunkering_data['Ports Offering (Globally)'],
-            marker=dict(color=['#94A3B8', '#3B82F6', '#10B981', '#8B5CF6', '#F59E0B', '#EF4444']),
-            text=bunkering_data['Ports Offering (Globally)'],
-            textposition='outside'
-        )
-    ])
-    
-    fig.update_layout(
-        title={
-            'text': 'Alternative Fuel Bunkering Infrastructure Availability',
-            'x': 0.5,
-            'xanchor': 'center',
-            'font': {'size': 18, 'color': '#1F2937'}
-        },
-        xaxis_title="Fuel Type",
-        yaxis_title="Number of Ports Offering (Globally)",
-        height=400,
-        plot_bgcolor='white',
-        yaxis=dict(gridcolor='#E5E7EB')
-    )
-    
-    st.plotly_chart(fig, width='stretch')
-    
-    st.markdown('<p class="subsection-header">2. Port Equipment Electrification</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">2. Equipment Electrification and Renewable Energy</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    **Electrifying Port Operations:**
+    **Tuas Mega Port - Zero Emissions Operations:**
+    
+    The lecture materials emphasize Tuas as **"Smarter, greener and automated"**—designed from the ground up for 
+    sustainability:
+    
+    **Electrified Terminal Equipment:**
     
     **Quay Cranes:**
-    - **Traditional**: Diesel generators on crane
-    - **Modern**: Shore power (electric from grid)
-    - **Benefit**: Zero emissions, quieter operations, lower operating costs
-    - **Tuas**: All quay cranes electrically powered
+    - All quay cranes electric-powered (grid electricity, not diesel generators)
+    - **Zero local emissions** during operations
+    - Regenerative braking systems recover energy when lowering containers
     
-    **Yard Equipment:**
-    - **Traditional**: Diesel RTGs, prime movers
-    - **Modern**: Electric RMGs, battery-electric AGVs
-    - **E-RTG**: Electric RTG with regenerative braking (50% energy savings)
-    - **AGVs**: Fully battery-powered, zero emissions
+    **AGV Fleet (1,000+ vehicles):**
+    - **Battery-electric automated guided vehicles** (zero emissions)
+    - Automated charging stations (vehicles charge during idle periods)
+    - Eliminates: Diesel prime movers that would generate ~50,000 tonnes CO₂/year
     
-    **Horizontal Transport:**
-    - **Traditional**: Diesel prime movers
-    - **Modern**: Battery-electric AGVs/ALVs
-    - **Charging infrastructure**: Fast-charging stations throughout terminal
+    **ARMG Yard Cranes (200+ cranes):**
+    - **Electric rail-mounted gantry cranes** (zero diesel)
+    - Grid-powered operations
+    - Regenerative systems capture energy from lowering containers
     
-    **Impact:**
-    - 60-70% reduction in terminal emissions
-    - Improved air quality for workers and neighbours
-    - Lower noise pollution
-    - Reduced operating costs (electricity cheaper than diesel)
+    **Result**: Tuas terminal equipment generates **~80-90% less local emissions** vs conventional diesel-powered terminals
+    
+    **Renewable Energy Generation:**
+    
+    **Solar Power Deployment:**
+    - **Extensive rooftop solar** on terminal buildings, warehouses, office facilities
+    - **Solar canopies** over parking areas, walkways
+    - **Target capacity**: 40-60 MW solar generation (when Tuas fully developed)
+    - **Annual output**: ~50-80 GWh electricity/year (offset ~10-15% of Tuas electricity consumption)
+    
+    **Grid Integration:**
+    - Connection to Singapore's electrical grid (which is transitioning to renewables)
+    - Singapore target: 30% solar + imported renewable electricity by 2030
+    - Tuas benefits as grid decarbonizes over time
+    
+    **Climate Resilience Infrastructure:**
+    
+    **Elevated Construction (+5m Above Sea Level):**
+    - Tuas built at +5 meters (vs +3m at existing terminals)
+    - Protection against **2-3 meter sea level rise** by 2100 (even under pessimistic scenarios)
+    - **40-50+ year operational life** guaranteed regardless of climate change impacts
+    
+    **Extreme Weather Preparedness:**
+    - Reinforced structures for potential increased storm intensity
+    - Flood management systems
+    - Redundant power systems (terminal can operate during grid disruptions)
     """)
     
     st.markdown('<p class="subsection-header">3. Shore Power (Cold Ironing)</p>', unsafe_allow_html=True)
     
     st.markdown("""
+    **What is Shore Power?**
+    
+    Shore power (also called "cold ironing") enables vessels to **plug into electrical grid while berthed**, allowing 
+    them to **shut down auxiliary diesel generators** that normally run 24/7 to power onboard systems (lighting, 
+    ventilation, refrigeration, accommodation).
+    
+    **Emissions Impact:**
+    
+    **Vessel at Berth:**
+    - Large container vessel at berth: Auxiliary engines consume 50-100 tonnes heavy fuel oil per day
+    - Emissions: 150-300 tonnes CO₂ per day + NOx, SOx, particulates
+    - **Singapore average vessel stay**: 24 hours → 150-300 tonnes CO₂ per vessel call
+    
+    **Shore Power Benefits:**
+    - Vessel shuts down diesel generators, connects to grid electricity
+    - **Zero local emissions** (no exhaust in port area)
+    - **Quieter operations** (no engine noise)
+    - **CO₂ reduction**: Depends on grid electricity source (Singapore grid: ~30% reduction vs diesel generation)
+    
+    **Tuas Shore Power Design:**
+    
+    The lecture materials note Tuas designed with **shore power capability** from the start:
+    - **All berths equipped** with shore power connection points
+    - High-voltage electrical infrastructure (6.6-11 kV)
+    - Automated connection systems (reduce crew workload)
+    - **Frequency conversion**: Ships use different electrical frequencies (50Hz vs 60Hz depending on flag state)—
+      Tuas has converters to accommodate all vessels
+    
+    **Adoption Challenges:**
+    
+    **Vessel-Side Requirements:**
+    - Vessels must be **shore power-ready** (onboard electrical systems, connection equipment)
+    - **Retrofit cost**: US&#36;500K - 2M per vessel depending on size
+    - **Current fleet**: <5% of global fleet is shore power-ready (2024)
+    
+    **Economic Challenge:**
+    - Shore power electricity cost must be **competitive with bunker fuel** for vessels to use it
+    - Singapore approach: **Green Port Programme rebates** offset shore power costs
+    - EU approach: Mandatory shore power use at major ports from 2030 (regulatory forcing)
+    
+    **Strategic Importance:**
+    
+    **Local Air Quality:**
+    - Shore power eliminates port emissions (critical for ports near urban areas)
+    - Health benefits: Reduced respiratory illnesses, hospital admissions in port-adjacent neighborhoods
+    
+    **Regulatory Compliance:**
+    - **EU regulations**: Shore power mandatory at TEN-T core ports by 2030
+    - **US California**: Shore power mandatory at California ports since 2014
+    - Singapore positioning: Ready when regulations expand to Asia
+    """)
+    
+    st.markdown('<p class="subsection-header">4. Green Port Programme and Incentives</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **MPA's Green Port Programme:**
+    
+    **Incentive Structure:**
+    - Vessels receive **port due rebates** based on environmental performance
+    - **Criteria**: NOx emissions, SOx emissions, CO₂ efficiency (based on EEDI, CII ratings)
+    - **Rebate levels**: Up to 50% reduction in port dues for best-performing green vessels
+    
+    **Example Impact:**
+    - Large container vessel call: Port dues ~US&#36;20-40K
+    - Green vessel (LNG-powered, high EEDI rating, A/B CII rating): 25-50% rebate = US&#36;5-20K savings per call
+    - **Annual savings** for vessels calling Singapore frequently: US&#36;100-500K
+    
+    **Strategic Effect:**
+    - Creates **economic incentive** for shipping lines to invest in green technology
+    - Vessels optimize operations to improve CII ratings (slow steaming, route optimization, hull cleaning)
+    - Competitive advantage: Green vessels save costs vs competitors still using conventional fuel
+    
+    **Green Shipping Corridors:**
+    
     **Concept:**
-    - Vessels plug into shore-based electrical grid whilst at berth
-    - Shut down onboard diesel generators (which normally provide power for crew, reefers, pumps)
-    - Use clean grid electricity instead
+    - **Bilateral/multilateral agreements** between ports on specific routes
+    - Preferential treatment for zero-carbon vessels
+    - Coordinated alternative fuel availability
     
-    **Benefits:**
-    - **Emissions**: Zero emissions at berth (vs running diesel generators)
-    - **Air quality**: Major improvement in port neighbourhoods
-    - **Noise**: Much quieter (no generator engines running)
-    
-    **Challenges:**
-    - **Infrastructure cost**: $2-5 million per berth for shore power installation
-    - **Vessel compatibility**: Ships need to be equipped with shore power connection
-    - **Different standards**: US (60 Hz) vs Europe/Asia (50 Hz) electrical systems
-    - **Pricing**: Need competitive pricing to incentivise use
-    
-    **Singapore Status:**
-    - Shore power being deployed at Tuas Mega Port
-    - Incentives for vessels to use shore power
-    - Part of broader green port strategy
-    """)
-    
-    st.markdown('<p class="subsection-header">4. Renewable Energy Generation</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Solar Power:**
-    - **Rooftop solar**: Solar panels on terminal buildings, warehouses
-    - **Canopy solar**: Solar panel canopies over container stacks
-    - **Tuas**: Extensive solar deployment (one of world's largest solar-powered ports)
-    
-    **Energy Storage:**
-    - **Battery systems**: Store excess solar for night operations
-    - **Load balancing**: Smooth out demand peaks
-    
-    **Energy Efficiency:**
-    - **LED lighting**: Throughout terminal
-    - **Smart controls**: AI-optimised energy usage
-    - **Building design**: Energy-efficient HVAC and insulation
-    """)
-    
-    st.markdown('<p class="subsection-header">5. Climate Resilience</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Ports must adapt to climate change impacts whilst reducing emissions.
-    
-    **Sea Level Rise Protection:**
-    - **Tuas Mega Port**: Built **5 metres above mean sea level**
-    - Protects against projected sea level rise through 2100
-    - Incorporates climate models and storm surge predictions
-    
-    **Extreme Weather Resilience:**
-    - Reinforced structures for stronger storms
-    - Improved drainage systems for heavier rainfall
-    - Heat-resistant materials and cooling systems
-    
-    **Sustainable Design:**
-    - Natural ventilation where possible
-    - Green spaces and biodiversity preservation
-    - Circular economy principles (waste reduction, recycling)
+    **Singapore Participation:**
+    - Green Corridor with Rotterdam (Asia-Europe route)
+    - Collaboration with Los Angeles/Long Beach (trans-Pacific route)
+    - **Goal**: Create "green lane" where zero-carbon vessels receive priority berthing, faster turnaround, lower fees
     """)
     
     # ============================================================================
     # SECTION 4: Digital Transformation and Innovation
     # ============================================================================
     
-    st.markdown('<p class="section-header">Digital Transformation: The Future is Data-Driven</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Digital Transformation: The Fourth Industrial Revolution in Maritime</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    Beyond green technologies, digital innovation is transforming how ports operate and compete.
+    Beyond physical decarbonization, the maritime industry is undergoing **digital transformation**—leveraging data, 
+    AI, IoT, and automation to optimize operations, reduce waste, and improve efficiency.
     """)
     
-    st.markdown('<p class="subsection-header">1. Digital Documentation and Paperless Trade</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">digitalPORT&#64;SG - Singapore\'s Maritime AI Platform</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Singapore's digitalPORT&#64;SG initiative** represents comprehensive digital transformation of port operations:
+    
+    **Core Capabilities:**
+    
+    **AI-Powered Berth Planning:**
+    - Machine learning predicts vessel arrival times (±30 minutes accuracy 24 hours ahead)
+    - Optimization algorithms allocate berths to maximize utilization while meeting service level targets (>90% BOA)
+    - **Result**: 5-10% improvement in berth utilization = capacity increase without building new berths
+    
+    **Predictive Analytics:**
+    - Equipment failure prediction using IoT sensor data
+    - Maintenance scheduling optimization (perform maintenance during low-demand periods)
+    - **Result**: 30-40% reduction in unplanned downtime
+    
+    **Real-Time Visibility:**
+    - Track every container in Singapore port ecosystem in real-time
+    - Vessel positions, container locations, truck movements, crane operations—all visible on single dashboard
+    - **Result**: Faster exception handling, reduced dwell time, improved customer service
+    
+    **Optimization Engines:**
+    - Yard stacking optimization (minimize re-handles)
+    - Equipment routing (AGVs, cranes, trucks)
+    - Gate scheduling (reduce truck congestion)
+    
+    **Integration:**
+    - digitalPORT&#64;SG integrates with CITOS (PSA's Terminal Operating System)
+    - Connection to PORTNET (Singapore maritime single window)
+    - APIs for shipping lines, trucking companies, cargo owners
+    """)
+    
+    st.markdown('<p class="subsection-header">Paperless Trade and Digital Documentation</p>', unsafe_allow_html=True)
     
     st.markdown("""
     **The Paper Problem:**
-    - Traditional shipping generates massive paperwork (bills of lading, customs docs, certificates)
-    - Paper-based processes slow, error-prone, expensive
-    - Physical documents must be couriered globally
+    
+    Traditional maritime trade generates **massive paper documentation**:
+    - **Bills of Lading (B/L)**: Legal document of cargo ownership—typically 3-6 physical copies
+    - **Certificates of Origin**: Customs documentation
+    - **Cargo Manifests**: Detailed cargo listings
+    - **Delivery Orders**: Authorization for cargo release
+    
+    **Costs of Paper:**
+    - **Courier costs**: US&#36;50-100 per B/L set to send physical documents internationally
+    - **Time delays**: 3-7 days for documents to reach destination (cargo often arrives before documents!)
+    - **Errors**: Manual data entry errors in 5-10% of transactions
+    - **Fraud risk**: Paper documents can be forged, lost, stolen
     
     **Digital Solutions:**
     
     **Electronic Bill of Lading (eBL):**
-    - **Blockchain-based**: Secure, tamper-proof digital record
-    - **Instant transfer**: No physical courier needed
-    - **Cost savings**: Eliminates printing, courier, storage costs
-    - **Time savings**: Hours vs days for document transfer
-    - **Singapore adoption**: MPA promoting eBL adoption
+    - Digital document with cryptographic signatures
+    - **Instant transfer**: Ownership transfer happens electronically in minutes (vs days for physical courier)
+    - **Cost savings**: US&#36;50-100 saved per transaction
+    - **Singapore implementation**: eBL platform connecting shipping lines, banks, cargo owners
     
-    **Electronic Bunker Delivery Note (e-BDN):**
-    - Digital record of fuel delivered to vessel
-    - Automated data capture and verification
-    - Reduces fraud and errors
-    - Integrated with port systems
+    **Blockchain for Trade Finance:**
+    - Distributed ledger ensures document authenticity
+    - Reduces fraud, enables instant verification
+    - Singapore piloting blockchain trade finance platforms
     
-    **E-Certificates:**
-    - Digital ship certificates (safety, security, classification)
-    - Instantly verifiable by port authorities
-    - Reduces administrative burden
-    - IMO-approved frameworks emerging
+    **E-Bunker Delivery Notes (e-BDN):**
+    - Digital documentation of fuel delivery to vessels
+    - Eliminates paper-based bunker delivery notes
+    - Faster processing, reduced errors
     
     **Benefits:**
-    - 30-40% faster document processing
-    - 80%+ reduction in documentation errors
-    - Significant cost savings (estimated $6.5B annually for global shipping)
-    - Environmental: Less paper, less courier travel
+    
+    **Cost Reduction:**
+    - Industry estimate: Digitalization saves **US&#36;50-100 per TEU** in documentation costs
+    - Singapore throughput 41M TEU → **US&#36;2-4 billion annual savings potential** across supply chain
+    
+    **Time Savings:**
+    - Document processing time: 3-7 days → minutes
+    - Enables **just-in-time cargo release** (no waiting for documents to arrive)
+    
+    **Sustainability:**
+    - Eliminate millions of sheets of paper annually
+    - Reduce courier flights for document delivery
+    - Lower carbon footprint of trade documentation
     """)
     
-    st.markdown('<p class="subsection-header">2. digitalPORT@SG Initiative</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subsection-header">BLOCK71 - Maritime Innovation Hub</p>', unsafe_allow_html=True)
     
     st.markdown("""
-    MPA's comprehensive digital transformation programme for Singapore's maritime sector.
-    
-    **Key Components:**
-    
-    **AI-Based Integrated Port Operations Control:**
-    - Centralised AI system coordinates all port operations
-    - Predictive analytics for berth planning, resource allocation
-    - Real-time optimisation of vessel traffic, crane deployment
-    - Machine learning improves over time based on operational data
-    
-    **Multi-Sensor Track Fusion:**
-    - Integrate data from radar, AIS, cameras, sensors
-    - Complete real-time picture of all vessel movements
-    - Enhanced safety and security
-    - Better traffic management
-    
-    **Predictive Analytics:**
-    - Forecast vessel arrival delays
-    - Predict equipment failures before they happen
-    - Optimise maintenance scheduling
-    - Anticipate demand patterns
-    
-    **Operational Simulation:**
-    - Virtual replica of entire port operations
-    - Test scenarios and optimisations before implementing
-    - Training environment for operators
-    - "What-if" analysis for planning
-    """)
-    
-    st.markdown('<p class="subsection-header">3. digitalOCEANS Platform</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Vision:** Digital representation of Singapore's entire maritime domain
-    
-    **Capabilities:**
-    - **Real-time situational awareness**: All vessel movements, port operations, marine traffic
-    - **Data integration**: Connect all maritime stakeholders on single platform
-    - **Analytics and insights**: Advanced analytics on maritime patterns, trends, efficiency
-    - **Collaborative ecosystem**: Shipping lines, ports, authorities share data securely
-    
-    **Benefits:**
-    - Better coordination across maritime ecosystem
-    - Faster decision-making with real-time data
-    - Identify optimisation opportunities
-    - Enhanced safety and security
-    - Platform for innovation (third-party apps can build on digitalOCEANS)
-    """)
-    
-    st.markdown('<p class="subsection-header">4. BLOCK71 Maritime Innovation Hub</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Singapore's Maritime Technology Accelerator** (launched 2018)
-    
-    **Purpose:**
-    - Connect startups with maritime industry challenges
-    - Accelerate development and deployment of maritime technologies
-    - Foster innovation ecosystem
+    **Singapore's BLOCK71** is a maritime technology innovation hub focused on accelerating maritime tech startups:
     
     **Focus Areas:**
-    - Autonomous vessels and robotics
-    - AI and data analytics
-    - Cybersecurity for maritime systems
-    - Green technologies (alternative fuels, efficiency)
-    - Blockchain and digital trade
-    - IoT and sensors
+    - **Decarbonization technologies**: Alternative fuels, energy efficiency, emissions monitoring
+    - **Digitalization**: AI/ML for operations, IoT sensors, predictive analytics
+    - **Automation**: Autonomous vessels, automated terminal equipment, drone inspections
+    - **Sustainability**: Circular economy, waste reduction, green shipping
     
-    **How It Works:**
-    - Startups apply with innovative maritime solutions
-    - Receive funding, mentorship, industry connections
-    - Pilot technologies with actual maritime companies
-    - Scale successful solutions globally
+    **Support for Startups:**
+    - Co-working space, mentorship from maritime industry veterans
+    - Access to testbeds: digitalOCEANS simulation facility, MariOT cybersecurity lab
+    - Funding: Government grants, connections to venture capital
+    - Customer access: Introductions to PSA, MPA, shipping lines
     
-    **Impact:**
-    - 100+ startups supported
-    - Multiple technologies deployed commercially
-    - Singapore positioned as maritime tech innovation leader
+    **Strategic Purpose:**
+    
+    **Innovation Ecosystem:**
+    - Attract global maritime tech talent to Singapore
+    - Accelerate commercialization of maritime innovations
+    - Position Singapore as **maritime innovation hub** (not just logistics hub)
+    
+    **Examples of BLOCK71 Startups:**
+    - Emissions monitoring platforms (real-time CO₂, NOx, SOx tracking)
+    - AI-powered vessel routing optimization
+    - Drone inspection services for vessel hulls, cranes
+    - Blockchain supply chain traceability
     """)
     
     # ============================================================================
-    # SECTION 5: Maritime Safety and Risk Management
+    # SECTION 5: Key Takeaways
     # ============================================================================
     
-    st.markdown('<p class="section-header">Maritime Safety and Risk Management</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Safety remains paramount in maritime operations. Understanding and managing risk is fundamental.
-    """)
-    
-    st.markdown('<p class="subsection-header">Risk Equations in Maritime</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Fundamental Risk Equation:**
-    
-    **Risk = Probability of Incident × Consequence of Incident**
-    
-    **Example:**
-    - **Low probability, high consequence**: Ship collision (rare but catastrophic)
-    - **High probability, low consequence**: Minor equipment damage (frequent but manageable)
-    - **High probability, high consequence**: Unacceptable risk, must be eliminated
-    
-    **Risk Management Strategies:**
-    
-    **1. Reduce Probability:**
-    - Better training for operators
-    - Automation (eliminates human error)
-    - Preventive maintenance
-    - Enhanced safety systems (collision avoidance, fire detection)
-    - Strict procedures and checklists
-    
-    **2. Reduce Consequence:**
-    - Emergency response plans
-    - Backup systems and redundancy
-    - Containment measures (fire suppression, spill containment)
-    - Insurance
-    - Compartmentalisation (isolate problems)
-    
-    **3. Eliminate Risk:**
-    - Don't perform dangerous activities
-    - Substitute safer alternatives
-    - Physical barriers and guards
-    """)
-    
-    st.markdown('<p class="subsection-header">Safety Culture in World-Class Ports</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Zero Incident Mindset:**
-    - **Goal**: Zero fatalities, zero serious injuries, zero environmental incidents
-    - **Not just a slogan**: Backed by policies, training, investment
-    - **Safety first**: Operations stop if unsafe conditions exist
-    
-    **Safety Layers:**
-    - **Engineering controls**: Physical safeguards (guards, barriers, automation)
-    - **Administrative controls**: Procedures, training, supervision
-    - **PPE**: Personal protective equipment (last line of defence)
-    
-    **Continuous Improvement:**
-    - Near-miss reporting and investigation
-    - Regular safety audits
-    - Lessons learned sharing
-    - Benchmarking against best practices
-    
-    **Technology Enablers:**
-    - Automation reduces human exposure to danger
-    - Sensors detect hazards before incidents
-    - Cameras and monitoring ensure compliance
-    - AI identifies risky patterns
-    """)
-    
-    # ============================================================================
-    # SECTION 6: Future Trends and Challenges
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Future Trends: What\'s Next for Maritime?</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Looking ahead, several major trends will shape the maritime industry over the next 20-30 years.
-    """)
-    
-    st.markdown('<p class="subsection-header">1. Autonomous Vessels</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Vision:** Ships that navigate and operate without human crews (or minimal crews)
-    
-    **Technology Status:**
-    - **Short-range autonomous**: Ferries, harbour operations (trials ongoing)
-    - **Remote-controlled**: Vessels controlled from shore (commercially available)
-    - **Fully autonomous ocean-going**: Still many years away (2030s-2040s)
-    
-    **Benefits:**
-    - **Safety**: Eliminate human error (80% of maritime accidents involve human error)
-    - **Efficiency**: Optimal routing and fuel consumption
-    - **Cost**: Reduce crew costs (significant expense)
-    - **Design**: Ships without crew quarters can carry more cargo
-    
-    **Challenges:**
-    - **Regulations**: International maritime law assumes human crew on board
-    - **Reliability**: Systems must be extremely reliable (no second chances at sea)
-    - **Cybersecurity**: Autonomous vessels vulnerable to hacking
-    - **Public acceptance**: Society may resist crewless ships
-    - **Liability**: Who's responsible if autonomous ship has accident?
-    
-    **Realistic Timeline:**
-    - **2025-2030**: Autonomous harbour operations, short-range ferries
-    - **2030-2040**: Remote-controlled ocean vessels (crew on shore)
-    - **2040+**: Fully autonomous ocean-going ships (if regulatory framework allows)
-    """)
-    
-    st.markdown('<p class="subsection-header">2. Hyperconnected Supply Chains</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Vision:** Complete visibility and integration across entire supply chain
-    
-    **Elements:**
-    - **IoT sensors**: Every container tracked in real-time
-    - **Blockchain**: Immutable record of ownership, location, condition
-    - **AI optimisation**: Dynamic routing and scheduling based on real-time conditions
-    - **Predictive analytics**: Anticipate delays, adjust plans proactively
-    - **Customer transparency**: Customers see exactly where cargo is, when it will arrive
-    
-    **Impact:**
-    - Eliminate information gaps and surprises
-    - Faster response to disruptions
-    - More efficient use of assets
-    - Better customer experience
-    - Just-in-time delivery becomes reliable
-    """)
-    
-    st.markdown('<p class="subsection-header">3. Circular Economy and Waste Reduction</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Beyond Zero Emissions:**
-    
-    **Waste Circularity:**
-    - Reuse and recycle port waste
-    - Convert waste to energy
-    - Zero waste to landfill targets
-    - Tuas: Waste heat recovery, material recycling
-    
-    **Ship Recycling:**
-    - Sustainable ship dismantling and recycling
-    - Recover and reuse materials
-    - Eliminate hazardous waste practices
-    
-    **Sustainable Procurement:**
-    - Favour suppliers with sustainable practices
-    - Lifecycle assessment of equipment and materials
-    - Design for disassembly and recycling
-    """)
-    
-    st.markdown('<p class="subsection-header">4. Geopolitical and Trade Pattern Shifts</p>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    **Ongoing Transformations:**
-    
-    **Trade Diversification:**
-    - "China+1" strategies continue
-    - Supply chain resilience prioritised over pure efficiency
-    - Regional trade blocs gaining importance
-    - Impact: More complex routing, more transshipment
-    
-    **Nearshoring and Friendshoring:**
-    - Shift production closer to consumers or to allied nations
-    - Shorter supply chains, different trade lanes
-    - Impact: Changes in port volumes and patterns
-    
-    **Digital Trade Barriers:**
-    - Data localisation requirements
-    - Cross-border data flow restrictions
-    - Impact: Complicates integrated digital platforms
-    
-    **Climate-Driven Changes:**
-    - Carbon border adjustments (EU CBAM, etc.)
-    - Pressure to reduce supply chain emissions
-    - Impact: Favour efficient, green ports and shipping lines
-    """)
-    
-    # ============================================================================
-    # SECTION 7: Key Takeaways
-    # ============================================================================
-    
-    st.markdown('<p class="section-header">Key Takeaways</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-header">Key Takeaways: Green Maritime & Future Trends</p>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        **Decarbonisation Imperative:**
-        - IMO 2030: -40% carbon intensity
-        - IMO 2050: Net-zero emissions
-        - Requires complete fuel transition
-        - Economic, technical, political challenge
+        **IMO Decarbonization Strategy (Revised 2023):**
+        - **2030 target**: 20-30% GHG reduction vs 2008
+        - **2040 target**: 70-80% GHG reduction vs 2008
+        - **2050 target**: Net-zero GHG emissions (50 years earlier than initial strategy!)
+        - **Alternative fuel uptake**: 5-10% by 2030
+        - **Regulatory enforcement**: EEDI, SEEMP, CII, EU ETS, FuelEU Maritime
         
-        **Alternative Fuels:**
-        - **LNG**: Transition fuel (20% reduction, available now)
-        - **Methanol**: Leading candidate (liquid, scalable to 100% with green methanol)
-        - **Ammonia**: Long-term (zero-carbon, toxic, technology developing)
-        - **Hydrogen**: Niche applications (energy density challenge)
-        - **Biofuels**: Supplement (feedstock limited)
-        - Multi-fuel strategy reduces risk
+        **Alternative Fuels Landscape:**
+        - **LNG (185 ports)**: Transition fuel, 20-25% CO₂ reduction, 400+ vessels operating
+        - **Methanol (122 ports)**: Leading zero-carbon candidate, 150+ vessels on order
+        - **Green methanol**: 100% decarbonization, but very high cost (2-3× conventional)
+        - **Ammonia**: Long-term zero-carbon, ~30 vessels on order, toxicity challenges
+        - **Hydrogen**: Niche applications only (energy density too low for deep-sea)
+        - **Biofuels**: Drop-in supplement, limited by feedstock (10-15% of industry needs)
+        - **Multi-fuel strategy**: Industry hedging—no single winner clear
         
-        **Green Port Initiatives:**
-        - Alternative fuel bunkering infrastructure
-        - Equipment electrification (cranes, AGVs)
-        - Shore power for vessels at berth
-        - Renewable energy generation (solar)
-        - Climate resilience (Tuas: +5m above sea level)
+        **Real Fleet Adoption (Lecture Verified):**
+        - **CMA CGM**: 32 LNG vessels operating, 77 dual-fuel planned by 2026, 18 methanol-ready ordered
+        - **15% of fleet** projected to be green fuel by 2028
+        - **Industry trend**: Container shipping converging on methanol for new builds
         """)
     
     with col2:
         st.markdown("""
+        **Green Port Technologies:**
+        - **Alternative fuel bunkering**: Singapore's Future Fuels Port Network
+          - LNG established (world's largest hub)
+          - Methanol developing (pilot programs 2023-2024)
+          - Ammonia future (2030-2035 target)
+        - **Equipment electrification**: Tuas 1,000+ AGVs, 200+ ARMGs (zero emissions)
+        - **Shore power**: All Tuas berths equipped (eliminate vessel emissions at berth)
+        - **Renewable energy**: 40-60 MW solar at Tuas (10-15% of consumption)
+        - **Climate resilience**: Tuas built +5m (sea level rise protection through 2100)
+        - **Green incentives**: Port due rebates up to 50% for green vessels
+        
         **Digital Transformation:**
-        - Paperless trade (eBL, e-BDN, e-Certificates)
-        - digitalPORT@SG (AI, predictive analytics)
-        - digitalOCEANS (maritime operational simulation)
-        - BLOCK71 (innovation accelerator)
-        - Data-driven operations and optimisation
+        - **digitalPORT&#64;SG**: AI-powered berth planning, predictive analytics, real-time visibility
+        - **Paperless trade**: eBL (electronic bills of lading), e-BDN, blockchain
+        - **Cost savings**: US&#36;50-100 per TEU in documentation costs
+        - **BLOCK71**: Maritime innovation hub, startup acceleration
         
-        **Safety and Risk:**
-        - Risk = Probability × Consequence
-        - Zero incident mindset
-        - Engineering + administrative controls + PPE
-        - Automation improves safety
-        
-        **Future Trends:**
-        - Autonomous vessels (2030s-2040s for ocean-going)
-        - Hyperconnected supply chains (IoT, blockchain, AI)
-        - Circular economy (waste reduction, recycling)
-        - Geopolitical shifts (trade diversification)
-        - Climate adaptation (sea level rise, extreme weather)
+        **The Challenge:**
+        - **US&#36;1-3 trillion** industry investment needed by 2050
+        - **Technology gaps**: Green ammonia engines, large-scale e-fuel production
+        - **Cost pass-through**: Alternative fuels 2-4× more expensive
+        - **Infrastructure build-out**: Need alternative fuel availability at 2,000+ ports
+        - **Fleet replacement**: Every new vessel 2024-2050 must be zero-carbon capable
         """)
     
     st.markdown("""
     <div class="insight-box">
-    <strong>🔍 Bottom Line:</strong> The maritime industry is undergoing its most significant transformation 
-    in a century. Achieving net-zero by 2050 requires transitioning from fossil fuels to alternative fuels 
-    (likely methanol and ammonia), massive infrastructure investment, and technological innovation. 
-    Singapore positions itself as a leader through multi-fuel bunkering infrastructure, green port 
-    technologies (Tuas built +5m above sea level, solar-powered, electrified equipment), and digital 
-    transformation (digitalPORT@SG, digitalOCEANS, BLOCK71 innovation hub). Beyond decarbonisation, 
-    autonomous vessels, hyperconnected supply chains, and geopolitical shifts will reshape maritime 
-    competition. Ports that lead in sustainability, digitalisation, and adaptability will thrive; those 
-    that lag will struggle.
+    <strong>🔍 Bottom Line:</strong> The maritime industry faces its <strong>most significant transformation in history</strong>—
+    achieving net-zero GHG emissions by 2050 requires <strong>complete fuel transition</strong> from fossil-based marine fuels to 
+    zero-carbon alternatives within 26 years. The <strong>IMO's revised 2023 strategy</strong> accelerated the timeline by 50 years 
+    (2050 vs 2100), creating urgent pressure for action. <strong>Alternative fuels landscape</strong> shows no single winner: 
+    <strong>LNG dominates today</strong> (185 bunkering ports, 400+ vessels) as transition fuel achieving 20-25% CO₂ reduction but 
+    cannot achieve net-zero alone; <strong>methanol emerging as container shipping favorite</strong> (122 bunkering ports, 150+ 
+    vessels on order) with green methanol providing 100% decarbonization pathway albeit at 2-3× cost; <strong>ammonia positioned 
+    for bulk carriers/tankers</strong> (~30 vessels on order) offering zero-carbon potential but facing toxicity and unproven 
+    technology challenges; <strong>biofuels limited to supplemental role</strong> (10-15% of industry needs due to feedstock 
+    constraints). Real-world adoption data shows <strong>industry hedging with multi-fuel portfolios</strong>—CMA CGM exemplifies 
+    this with 32 LNG + 77 dual-fuel planned + 18 methanol-ready + biomethane R&D. <strong>Singapore positions as green maritime 
+    leader</strong> through Future Fuels Port Network (LNG established, methanol developing, ammonia future), <strong>Tuas Mega 
+    Port sustainability</strong> (1,000+ electric AGVs, 200+ ARMGs, shore power all berths, 40-60 MW solar, +5m climate resilience), 
+    and <strong>digital transformation</strong> (digitalPORT&#64;SG AI platform, paperless trade saving US&#36;50-100/TEU, BLOCK71 
+    innovation hub). The <strong>fundamental challenge</strong>: US&#36;1-3 trillion investment needed, alternative fuels 2-4× more 
+    expensive requiring cost pass-through to supply chains, technology gaps in green ammonia engines and large-scale e-fuel 
+    production, infrastructure build-out across 2,000+ global ports, and fleet replacement urgency where every vessel ordered 
+    2024-2050 must be zero-carbon capable or risk becoming stranded asset. Success requires <strong>coordinated action across 
+    shipowners, ports, fuel producers, regulators, and cargo owners</strong>—the most complex industrial transformation ever 
+    attempted, with global trade and climate stability hanging in the balance.
     </div>
     """, unsafe_allow_html=True)
     
@@ -962,7 +1127,6 @@ def show():
     st.markdown("---")
     st.markdown("### 📚 Continue Learning")
     st.markdown("""
-    **Final Topic:** 🏗️ Tuas Mega Port Case Study - Explore Singapore's $20B+ mega port development, 
-    understanding why it's being built, how it will operate, and whether it will be enough to maintain 
-    Singapore's competitive position.
+    Continue exploring maritime operations and industry dynamics to complete your comprehensive understanding of 
+    the container shipping ecosystem and terminal operations that enable global trade.
     """)
